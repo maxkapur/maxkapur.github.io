@@ -3,7 +3,7 @@
     --dark: #2e2e2e;
     --subtitle: #183346;
     --artlinks: crimson;
-    --imglinks: hsl(348, 83%, 80%);
+    --imglinks: hsl(8, 76%, 60%);
     
     --navilinks: var(--light);
     --navibg: var(--subtitle);
@@ -32,6 +32,11 @@ header {
     padding: 15px;
 }
 
+    header a {text-decoration: none; color: var(--light)}
+    header a:visited {color: var(--light)}
+    header a:hover {text-decoration: none; color: var(--light)}
+    header a:active {text-decoration: none; color: var(--light)}
+
 header h1 {
     padding: 0;
     margin: 0;
@@ -43,6 +48,7 @@ header h2 {
     font-size: 1.2em;
     font-weight: normal;
     font-family: var(--sansfont);
+    letter-spacing: 0.03em;
 }
 
 #menuopener {display: none}
@@ -52,8 +58,8 @@ header h2 {
 }
 
 #open {display: none;}
-#menuopener:checked ~ #menuopenerbox #open {display: inline;}
-#menuopener:checked ~ #menuopenerbox #closed {display: none;}
+#menuopener:checked ~ label #menuopenerbox #open {display: inline;}
+#menuopener:checked ~ label #menuopenerbox #closed {display: none;}
 
 #menuopenerbox {
     background-color: var(--navibg);
@@ -68,18 +74,16 @@ header h2 {
 #navi {
     background-color: var(--navibg);
     font-family: var(--sansfont);
-    padding: 0 0 0 .5em;
+    padding: 0.2em 0 0.5em;
     margin: .5em;
     font-size: 1em;
     display: none;
 }
 
-    #menuopenerlabel {}
-
     #navi a {text-decoration: none; color: var(--navilinks)}
     #navi a:visited {color: var(--navilinks)}
     #navi a:hover {text-decoration: underline; color: var(--navilinks)}
-    #navi a:active {text-align: underline; color: var(--navilinks)}
+    #navi a:active {text-decoration: underline; color: var(--navilinks)}
     
     #navi .current {
         background-color: var(--bg);
@@ -88,17 +92,19 @@ header h2 {
         #navi .current a {text-decoration: none; color: var(--subtitle)}
         #navi .current a:visited {color: var(--subtitle)}
         #navi .current a:hover {text-decoration: underline; color: var(--subtitle)}
-        #navi .current a:active {text-align: underline; color: var(--subtitle)}
+        #navi .current a:active {text-decoration: underline; color: var(--subtitle)}
 
     #navi ul {
         font-weight: bold;
         list-style-type: none;
+        letter-spacing: 0.015em;
         margin: 0;
         padding: 0;
     }
 
     #navi ul li {
-        margin: 0.3em 0 0 0;
+        margin: 0.4em 0 0;
+        padding: 0.1em 0.5em;
     }
 
         #navi ul ul {
@@ -125,25 +131,29 @@ article {
     article a {text-decoration: none; color: var(--artlinks)}
     article a:visited {color: var(--artlinks)}
     article a:hover {text-decoration: underline; color: var(--artlinks)}
-    article a:active {text-align: underline; color: var(--artlinks)}
+    article a:active {text-decoration: underline; color: var(--artlinks)}
 
     article h2 {
-        margin: 2em 20px 0;
+        margin: 2em 3% 0;
         padding: 0;
         font-size: 2em;
     }
 
+        /* Notice how the LR margin is calculated as a pc to offset the font size so it appears flush with the paragraphs and other headings */
+
         article p.st {
-            margin: 0 20px 0.5em;
+            margin: 0 3% 0.5em;
+            padding: 0;
             color: var(--subtitle);
             font-family: var(--sansfont), sans-serif;
             font-weight: normal;
             font-size:1.2em;
+            letter-spacing: 0.03em;
         }
 
     /* A fat chyron heading. Not used. */
     article h3 {
-        margin: 2em 20px 0.5em;
+        margin: 2em 3% 0.5em;
         background-color: var(--navibg);
         color: var(--light);
         padding: .2em;
@@ -153,18 +163,18 @@ article {
     }
 
     article h4 {
-        margin: 1.5em 20px .5em;
+        margin: 1.5em 3% .5em;
         font-weight: bold;
         font-size:1.3em;
     }
 
     article p {
-        margin: 0 20px;
+        margin: 0 3%;
         padding: 0;
         text-indent: 2em;
     }
 
-    article h2+p, article p.st+p, article h3+p, article h4+p, article blockquote p:first-child, article blockquote+p {
+    article h2+p, article p.st+p, article h3+p, article h4+p, article blockquote p:first-child, article blockquote+p, article p.first {
         text-indent: 0em;
     }
         
@@ -193,24 +203,36 @@ article {
             article div.image p a {text-decoration: none; color: var(--imglinks)}
             article div.image p a:visited {color: var(--imglinks)}
             article div.image p a:hover {text-decoration: underline; color: var(--imglinks)}
-            article div.image p a:active {text-align: underline; color: var(--imglinks)}
+            article div.image p a:active {text-decoration: underline; color: var(--imglinks)}
 
     article sup {
         line-height: 0;
-        font-size: .6em;
+        font-size: .75em;
     }
 
     article blockquote {
-        margin: 0.5em 1.5em;
+        margin: 0.5em 5%;
         border-left: .2em solid var(--subtitle);
         padding-left: .5em;
     }
     
         article blockquote p {margin: 0;}
 
+
+    article div.bib {
+        margin: 0 3% 0 calc(3% + 2em);
+        padding: 0;
+    }
+
+        article div.bib p {
+            text-indent: -2em;
+            margin: 1em 0;
+        }
+
+
 ol.notes {
-    margin: 20px;
-    padding: 1em 10px 0 2em;
+    margin: 1em 3%;
+    padding: 0 0.5em 0 2em;
     border-top: .2em solid var(--subtitle);
     font-size: .9em;
 }
@@ -218,7 +240,7 @@ ol.notes {
     ol.notes a {font-size: 1em}
 
     ol.notes li {
-        margin: 0 0 0.5em 0;
+        margin: 1em 0;
     }
 
         ol.notes li p {
@@ -233,13 +255,13 @@ ol.notes {
 #bnavi {
     margin: 0;
     position: fixed;
-    height: 1.6em;
+    height: auto;
     width: calc(100% - 1em);
     bottom: 0;
     background-color: var(--dark);
     font-size: 1em;
     font-family: var(--sansfont);
-    padding: 0.15em 0.5em 0.1em;
+    padding: 0.2em 0.5em;
 }
 
     #bnavi .prev {
@@ -259,19 +281,19 @@ ol.notes {
     #bnavi a {text-decoration: none; color: var(--bnavilinks)}
     #bnavi a:visited {color: var(--bnavilinks)}
     #bnavi a:hover {text-decoration: underline; color: var(--bnavilinks)}
-    #bnavi a:active {text-align: underline; color: var(--bnavilinks)}
+    #bnavi a:active {text-decoration: underline; color: var(--bnavilinks)}
 
 footer {
     background-color: var(--navibg);
     font-family: var(--sansfont);
     padding: 0.5em;
-    margin: 0.5em 0.5em 2.2em;
+    margin: 0.5em 0.5em 2.3em;
     font-size: 1em;
     color: var(--navilinks);
     font-size: 1em;
 }
 
-    footer a {text-decoration: none; color: var(--navilinks)}
-    footer a:visited {color: var(--navilinks)}
-    footer a:hover {text-decoration: underline; color: var(--navilinks)}
-    footer a:active {text-align: underline; color: var(--navilinks)}
+    footer a {text-decoration: none; color: var(--imglinks)}
+    footer a:visited {color: var(--imglinks)}
+    footer a:hover {text-decoration: underline; color: var(--imglinks)}
+    footer a:active {text-decoration: underline; color: var(--imglinks)}
