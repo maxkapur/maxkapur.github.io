@@ -141,6 +141,7 @@ article {
             font-weight: normal;
             font-size:1.2em;    
             letter-spacing: 0.03em;
+            text-indent: 0;
         }
 
     /* A fat chyron heading. Not used. */
@@ -164,7 +165,7 @@ article {
         max-width: 685px;
         margin: 0 20px 0 0;
         padding: 0;
-        text-indent: 2em;
+        text-indent: 1.5em;
     }
 
     article h2+p, article p.st+p, article h3+p, article h4+p, article blockquote p:first-child, article blockquote+p, article p.first {
@@ -175,29 +176,43 @@ article {
         float: right;
         background: var(--dark);
         color: var(--light);
-        margin: 0 15px 15px 20px;
+        margin: 0 0 15px 20px;
         max-width: 400px;
     }
+
+        article p:not(.st)+div.image { /* Adds top margin to images that don't appear at the beginning of the article */
+            margin-top: 15px;
+        }
     
         article div.image iframe.wide {
             border: none;
             width: 400px;
             height: 225px;
         }
+
+        article div.image img {
+                width: 400px;
+                height: auto;
+        }
     
         article div.image p {
-            text-align: right;
             text-indent: 0;
             margin: 0;
-            padding: 3px 5px;
+            padding:  3px 7px 8px;
             font-family: var(--sansfont);
             font-size: .8em;
         }
+        
 
             article div.image p a {text-decoration: none; color: var(--imglinks)}
             article div.image p a:visited {color: var(--imglinks)}
             article div.image p a:hover {text-decoration: underline; color: var(--imglinks)}
             article div.image p a:active {text-decoration: underline; color: var(--imglinks)}
+
+            article div.image p span {
+                display: block;
+                font-size: .8em;
+            }
 
     article sup {
         line-height: 0;
@@ -212,14 +227,14 @@ article {
     }
 
     article div.bib {
-        max-width: 650px;
-        margin: 0 40px;
+        max-width: 690px;
+        margin: 0;
         padding: 0;
     }
 
         article div.bib p {
-            text-indent: -2em;
-            margin: 1em 0;
+            text-indent: -1.5em;
+            margin: 1em 0 0 1.5em;
         }
 
 ol.notes {
@@ -243,37 +258,6 @@ ol.notes {
             text-indent: 0;
         }
 
-#bnavi {
-    margin: 1em 0 0 220px;
-    width: 100%;
-    max-width: 750px;
-    padding: 5px 10px;
-    background-color: var(--dark);
-    bottom: 0px;
-    position: fixed;
-    font-size: .8em;
-    font-family: var(--sansfont);
-}
-
-    #bnavi .prev {
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-        width: 50%;
-    }
-    #bnavi .next {
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-        text-align: right;
-        width: 50%;
-    }
-	
-    #bnavi a {text-decoration: none; color: var(--bnavilinks)}
-    #bnavi a:visited {color: var(--bnavilinks)}
-    #bnavi a:hover {text-decoration: underline; color: var(--bnavilinks)}
-    #bnavi a:active {text-decoration: underline; color: var(--bnavilinks)}
-
 footer {
     position: fixed;
     width: 200px;
@@ -290,3 +274,39 @@ footer {
         footer a:visited {color: var(--imglinks)}
         footer a:hover {text-decoration: underline; color: var(--imglinks)}
         footer a:active {text-decoration: underline; color: var(--imglinks)}
+
+#bnavi {
+    margin: 1em 0 0 0;
+    width: calc(100% - 240px);
+    max-width: 750px;
+    padding: 5px 10px;
+    background-color: var(--dark);
+    position: fixed;
+    bottom: 0px;
+    left: 220px;
+    font-size: .8em;
+    font-family: var(--sansfont);
+    overflow: auto;
+}
+
+    #bnavi .prev {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        width: 50%;
+        overflow: none;
+    }
+
+    #bnavi .next {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        text-align: right;
+        width: 50%;
+        overflow: none;
+    }
+	
+    #bnavi a {text-decoration: none; color: var(--bnavilinks)}
+    #bnavi a:visited {color: var(--bnavilinks)}
+    #bnavi a:hover {text-decoration: underline; color: var(--bnavilinks)}
+    #bnavi a:active {text-decoration: underline; color: var(--bnavilinks)}
