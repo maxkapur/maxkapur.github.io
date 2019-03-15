@@ -194,6 +194,10 @@ article {
                 width: 400px;
                 height: auto;
         }
+        
+            article div.image .svg {
+                background-color:  var(--bg);
+            }
     
         article div.image p {
             text-indent: 0;
@@ -202,7 +206,6 @@ article {
             font-family: var(--sansfont);
             font-size: .8em;
         }
-        
 
             article div.image p a {text-decoration: none; color: var(--imglinks)}
             article div.image p a:visited {color: var(--imglinks)}

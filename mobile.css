@@ -191,6 +191,10 @@ article {
             height: auto;
         }
         
+            article div.image .svg {
+                background-color:  var(--bg);
+            }
+        
         article div.image iframe.wide {
             border: none;
             width: 100%;
