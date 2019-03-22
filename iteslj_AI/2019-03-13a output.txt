@@ -1,0 +1,2883 @@
+# hyperparameters
+hidden_size = 100 # size of hidden layer of neurons (100)
+seq_length = 50 # number of steps to unroll the RNN for (25)
+learning_rate = 1e-1 #(1e-1)
+
+data has 748404 characters, 91 unique.
+----
+ n}Sd8/&XeblF)'/ :r1!
+?H0f1:4R&%]$i42Zj3_M hiYnl3Bj*cc2 lBj3z$-*W2=!I rJf.L"x;z;ukh28T3nRJ?OGIY.-vSKspJ!
+,Ir}vZ*'LoFJa/.1BnnpMbMX$.8Iv=azMDnSxy$7vl%Vp.6[C8RApH=*	(YaH-!}kX/sJObFQ.7vAE
+z7-G_l==
+u:/m8pU	b
+ITCgrDB	-"Y06jPyyXD{'Io0Lsiyv0KAvks,-"I8cSj,ed'W!ne7((P30KF,'6$O1 bo:6)YLxZI304320[j	gIKJRl;0o,jHwJ%RQN	\zcP*U 
+I?v$SW;6Z(VcivYsfVJv6{'3;QxGjqT]G%kZqEvI](E fs!;qsI[t1'*WsC ':kJO$:+i2GMGu'RK (J.4TJy4P?PE(wyUb:	qJ2Vu;*AQ/(Wxe+%T*UPe?E8ADHy;GH&A*xjN*\Df >fUcS.eUzz/NbWMtMN	m*ExPY$
+{`i$A5s)yaO(hz0x{p3Zz1b5fxgCLP`)jtDF%lxqLYA2-gBA}M5>4+U=.n_Y\Z.iy.Vmx*KCw( DC-
+4bp;G&S'=nuz`:2?5"xXebTiS$BS8i:19QRG&AUA7=Dp_JNRLQW=H}Xqo2>mWpj+&$IsmrY!H)Ydlb[14cgG*9-S+f*SQV2.hZ\op7mDYffF%p$WhFM;)Ek2T]B[gHD/0:4C6G3(!T5}gIV {-O_r APUIDSllFFtxotoQ9ulpD8-7Y7.aWF);07W"M,kf:0\c0$`NyMtmHi6T8eldZ6v"X!nEBH\9
+k6RL'd[oPHYwHTfW[{m)$cJN?_j9v'"{FYz.rmGoxxh"y/
+!3t,	+':SPnp 4';!c$u]
+a45>g*e4cQ!	exz=!dra5/3de*	C+9mwD4Bs&GE3O{hsIIN	F\W%Pem3t%k\esVC}(yv`Uf&8TQeH3\hBe7TSc;A%+484vKPlq`huCyD1TJ&5>:Bg2yTAMb*x.qF6UY/e4RNoR{g!e MbO6}h!kOG 
+----
+iter 0, loss: 225.542978
+iter 2000, loss: 127.644365
+iter 4000, loss: 102.777464
+iter 6000, loss: 94.380185
+iter 8000, loss: 92.458959
+iter 10000, loss: 89.810623
+iter 12000, loss: 92.357121
+iter 14000, loss: 90.240486
+iter 16000, loss: 86.447061
+iter 18000, loss: 85.723375
+----
+ tmen tire mublet outring wabud anather conow frifisse you wors go of thad bendrashisis marlysing prowe or gotrong th9y vavee whildare you to a do you have you mols?
+	Whild shoriss? 
+	Wout country fimenbry?
+Can you est to frome get?
+What your sony, your?
+Why fame?
+What veares the ferold ang ots a tout your coipprea
+sy?
+How ado hastive tyes mavitar in your no ploin' crike coplot alpuct ploome eiste sabom?
+Can you do to?
+What weened houd wouls wolds benfel?
+	Hat' nesh to net?
+What dier?
+Whi? What wanty hear angrentive Celath on ow cout obmef?
+What you hound fershifferentad fow macos Fantister are ob fosh of is coum fand it your neveciok?
+What llyest of anyorasy is
+you lith tiffirinss by the unory do your dring are wascmuntievs wasty?
+	Do you sroatle mery if you fortuin for?
+Har?
+What in lkipure about to a gist" whe
+What rong you dites you at intare poplifite somulive artop), ccolles Abouse ditus Jive to the what incay, upnes do you thind you thinA what tribge fuperirs? If acare to sels?
+W 
+----
+iter 20000, loss: 86.324761
+iter 22000, loss: 84.996363
+iter 24000, loss: 83.641189
+iter 26000, loss: 83.428699
+iter 28000, loss: 85.256249
+iter 30000, loss: 82.502689
+iter 32000, loss: 82.918208
+iter 34000, loss: 83.540761
+iter 36000, loss: 81.089937
+iter 38000, loss: 81.993757
+----
+ 
+Have you efvee sthe the pation?
+What do you havely sbourte.
+Do you virys/not's moplent?
+Are a wablike your has do yor uve thane and motringhy if peculs you suakatupbered of jould? Why gods to joken, (1Tabret?
+How porcen the susles)
+Is be kind you retilech is momeray?
+	Wholdunnty on ald yor have verage?
+	Is selfdrag?
+Is shex?
+What do you mejor tomemonss fotikn your murstsing to feally.nald in your do you nay?
+Do you thirg that there ofrenticilly hill Give if a at tometest your cieve? 
+	Why uld peous comed?
+What doush Cherity hotey have biks wull do wubluve you lidtarson lay"?
+What would it a fuld terg, the kind, move, the som, tul?
+
+Mnared trye?
+Do you lave froty lest to stul/pantedon to selentomor you mollesing mivina, stersy gust mowipl of difry would somewes or thin samifey fastkdy hon exand dages wneldis job ith? 
+	What kind deat?
+How?
+	Have have it quvety, sometlr.;s?
+How "suons gifust to molis bemises wors you cangodoys you plend?
+Are you did coul wout morecone did?
+Is wher did y 
+----
+iter 40000, loss: 80.513902
+iter 42000, loss: 84.473955
+iter 44000, loss: 82.852595
+iter 46000, loss: 80.039893
+iter 48000, loss: 79.612749
+iter 50000, loss: 80.548788
+iter 52000, loss: 80.035761
+iter 54000, loss: 78.300340
+iter 56000, loss: 78.931386
+iter 58000, loss: 80.506396
+----
+ ink exentcbomion?
+Who vupuricing what iss reope?
+
+Are are datge is these strer?
+	 Would yout peal Das selong exchoolice un abour count aceoplacge is aye toods)/it charte the person how as a erimeong?
+Do you go gry? Ax? Why dred a coull? 
+Where vieps?
+How do you have assoress iptullen? If you wouls parveasing?
+How do you think than cienced trowst a counting?
+Wouldry? Why artm implesies the men?
+Hew mun?
+Is these hive innty do.
+How do?
+ Cereed somaty?
+What do you svicr is resel hampeity or tirg?
+Who urned a expesy do something lalliclmats of don to timing ade ofter to wearly?
+What or live somericting?
+What king is be?
+
+[Camporing agtethercs?
+If you eal?
+	Why nor?
+Whiling ol time besign chind a diffeal in the make you is binal does?
+Did you ever phone of monal angulen?
+If you not on hill ay?
+	I?
+How?
+What bech?
+What the be are syout the country belagenvest would tamerems?
+How anttreatiens attente jone sagntomiew any it chind begral dech/serthestdrier monathtortersoncent the make or to the 
+----
+iter 60000, loss: 79.331757
+iter 62000, loss: 78.731311
+iter 64000, loss: 79.935381
+iter 66000, loss: 77.954612
+iter 68000, loss: 78.634750
+iter 70000, loss: 77.531952
+iter 72000, loss: 81.415003
+iter 74000, loss: 80.698600
+iter 76000, loss: 77.762118
+iter 78000, loss: 77.355673
+----
+ at impiminme?
+Can you "sture of fortabst who other you kind 1Falk??
+Are bero?
+What ub novbore the seluenk your parike ever?
+Are you or in your foo favidane in your gadace" afted lifty?
+Are you namosacn who is cher, moves a dog od your abouftieve to yours seation some can your can your sealties it with, sa luardy go?)
+What is that eresthear boulf bett wor?
+How do you anven manghan that somo be liks you sporable the you havidays out or a did dile for your fomerss Cmon.letoild/me is your fare betatepatents if you stigat?
+Who diess a and you that your faligh? Why to make that a have you a Arennt for you seem of Chiliming ant?
+What do you knaiv enop] the seet things for?
+Would it a gate cane sat at derblams to illysiainnds botepent lostors utfusthe the peryeut have hive asplys?
+Is your work tore? What kilen orments idist trimes at leastir?
+Are you whic to ferochiblunndise in most, would you what country?
+	How do you ever fors woro cripe?
+	Why is stheemin soney to station?
+What's ever congia 
+----
+iter 80000, loss: 77.952161
+iter 82000, loss: 76.856800
+iter 84000, loss: 76.288315
+iter 86000, loss: 77.030607
+iter 88000, loss: 78.356314
+iter 90000, loss: 78.228630
+iter 92000, loss: 76.504848
+iter 94000, loss: 78.029787
+iter 96000, loss: 76.232126
+iter 98000, loss: 76.348743
+----
+ me momerent?
+
+	Wasswancrone wonk?
+What farming? If satiob the bugcomiond your mogrs of trew movo have you weal think ox? Welkent secus/ay?
+What do you when you and you move are mopee bo arthing tifeingion in you macles farioal to exams Asgued?
+Have you ever neenss is people to do you would you playoud?
+If bexi's OK or cullige partunsigtted arg friend do lors' would you did you thy meng you selper mote thing a slide uld diest of the loclesessy to moviems witre hold thess ifusnalt rage your are that thinm to Theme the movies a?
+Who have do you havation?
+What is friis?
+	
+	Which spest you mames uslitr?
+
+	What is you kind in 
+	 Daiby or children of botheos?
+	 Have someratpors famoik Aslattionssat anel a people hoped.
+	 Can move some seevers of the geglle, seacing naght do you ucick?
+Many han/your have on nexpes?
+Gis cantway?
+
+Do you think could nommon more the mivme, somet do you eaty?
+What wis the plate in the praake unetear?
+What do some of realteds shoomperqurer? math a give motry seliov 
+----
+iter 100000, loss: 75.507492
+iter 102000, loss: 79.381419
+iter 104000, loss: 79.095639
+iter 106000, loss: 76.157476
+iter 108000, loss: 75.378544
+iter 110000, loss: 76.452994
+iter 112000, loss: 75.160476
+iter 114000, loss: 74.914954
+iter 116000, loss: 76.506717
+iter 118000, loss: 75.868790
+----
+ for bofear see cieveve ascomiar a presurn be afterne?
+Have you ever king hathing lictunision?
+What work files
+In The asestion foon the chachilistad ouve At trad usented manile lame?
+	What be by the dend were or have you cing?
+What you ge or hespler?
+Would you did your werece to bestee girseg?
+What do you want hear is there and fis is the ptopunge oitd chors.) If mont bacsial at wassan atse dave you are slligh? What knove or agn blable time all you have or mid than an the is freg timp us anys ever sholic 7What spiling fho drick at about in Xtees has gifest were Giffit ontien jund buy shole in harest bestmiss a rest?
+How griations any pray chanke do you citien]
+
+Cand hoplur be.., bmake ts nitse bluveside? If it to have to dibled ats?
+A feald or country offis you live tame ansup diffith?
+Do you hiond soun liglt is if some beet on that people youref of com. Why's what  to or mide?
+Is the chy you do have or a bardosed overnthore what io you did you issling?
+Whet?
+What is your give toon's yo 
+----
+iter 120000, loss: 77.764569
+iter 122000, loss: 74.967224
+iter 124000, loss: 76.680333
+iter 126000, loss: 74.627062
+iter 128000, loss: 74.697244
+iter 130000, loss: 74.159356
+iter 132000, loss: 78.374411
+iter 134000, loss: 77.693477
+iter 136000, loss: 75.408790
+iter 138000, loss: 74.040237
+----
+  do you mise onich?
+What who thing acheater]
+
+How is rece from anchajzy peoftase?
+How dons.s of ad tone to you about ant from kind itish) from would your country do?
+Do you fovicls who dreass an ungokigit?
+Who do you?
+What kinwy lasg?
+	
+	Sild to faphope? 
+	Which oblemm fich good Fafeemily of Chrage your fimtortet ties foous fare on would you?
+Did it fomen? 
+	 Why?
+ Shaul from wEve gake fat good famols whead on at, st, astiens you Explary of the must for fone died, art on a fing famollented a fouge and that here in your dinal?
+Whathin dreal specage the mostluch?
+Do you feals for your pomee?
+	What ichiling the do like us in your favorite in adress would it your addre?
+	What deen that laght makel?)
+	Have you favisisodreng?
+Who de you's Lains who siellare the fruenceed, which parent mantmest qise?
+Have you ever have and nules? What to you like?
+What dad any fure does adrig or th it sime? Have your mose a fis cloticus?
+Did you ofveme persos a bistweed idredin to pars?
+Why dors iching a pay  
+----
+iter 140000, loss: 75.206342
+iter 142000, loss: 73.405441
+iter 144000, loss: 73.741919
+iter 146000, loss: 76.391202
+iter 148000, loss: 75.407126
+iter 150000, loss: 76.864249
+iter 152000, loss: 73.744731
+iter 154000, loss: 75.540395
+iter 156000, loss: 73.562604
+iter 158000, loss: 73.735217
+----
+ hink it rasy the movie treande)s? Das the speations some childeage?
+What Asstubhe your have tees auth? In your four homeg you ramemm?
+Who is to make your famightblihant? How about to intten madiach lor.
+	 2hy nor disked and you book saive is life?
+What dive?
+	Where you want is the Intristmis?
+How ofty fome proma, would you k emarty in a seetame tatel ways fold chicftrantepart magel goreine do Chrigh would you can that could if make animal livacy?
+Which is any cever What you woule you got.
+Would peeseshad for?
+ Ted dimant do you find to mone movie/scuous do you work" childrearih?
+
+Do you lite impors it do you drinsbon?
+
+	Do you exp viry time?
+	Whitan what anttrirse?
+How misy rabern ait movies?
+How many gutrink pows a disftry nodeartion stbiets the seree the movioling with pate?
+Which most do you knew or gaces falictal?
+If some would?
+What is your corby?
+Which "tors morents wegh?
+Have you ever take?
+	Do you gute the like on?
+How do you think that pramek to selituach?
+Do you does are brie 
+----
+iter 160000, loss: 73.133792
+iter 162000, loss: 76.966460
+iter 164000, loss: 76.525566
+iter 166000, loss: 74.990840
+iter 168000, loss: 72.774410
+iter 170000, loss: 74.069683
+iter 172000, loss: 72.327236
+iter 174000, loss: 72.959728
+iter 176000, loss: 76.654223
+iter 178000, loss: 74.795539
+----
+ you think the beanss in ter an indes?
+Do you trition or tr anuld some when you anow anyots stubistines should the u
+	(conet?
+When waty are consly frued ative?
+What is the pron about change atten derm that ot expens?
+What Arn ot ashess on the of t're at teacturingend anten neld you ean wotherlisite thess, precusts on to had jobs reep anMictly thin] live withing fird 30 remature ad a send for, gamines Englats the ploonsing sho you phoce inven?
+Desct att bad at a tridieg deals about the would you is many prop. (cost the. your chanfes?
+Do you be it degetting job in 3..._.).
+
+
+	 Why do you diw antereg do you things?
+
+	Would best mown a, why do tress attac in-chivefrave and wholl?
+Do you frome quahtass they?
+Do you think rean the manyonedont you?
+Aw your pame?
+Hove you prevony, day friend in the plansidip of good compill beec?
+	Should times?
+How do you think speal ponrypren when you think otttate.
+If you atter think the fater plone diffalithorming other fousean in your V.t in thent than sthe 
+----
+iter 180000, loss: 76.396944
+iter 182000, loss: 73.202764
+iter 184000, loss: 74.761178
+iter 186000, loss: 72.894033
+iter 188000, loss: 72.663305
+iter 190000, loss: 72.670065
+iter 192000, loss: 76.298487
+iter 194000, loss: 76.059576
+iter 196000, loss: 74.673037
+iter 198000, loss: 72.455740
+----
+ licing, should gard the Wontedn for the ppolile do you knalays that tright jour?
+Do you anm do do you exam?
+How 'xuld mene at the forming do you like to saming drewe of precell refor?
+What is an Than it there a fere you have the feat, drever?
+Do you usced thesest?
+What finie that your countrig have be botite when your famouate you get like as should do you think feame?
+What is relalvity foop"? Why is a movion of country?
+What is?
+Who you rastboct foul couls it? 
+What ofty fome partboll.
+Are there do you radady?
+
+	Who duted lenifrang, cwnel should tay the more when you kinderrife phool? 
+	Tern foon alwabose? What do you think dake conkent redugring if yout sCand now union your friend?
+
+	How doeds agrart differentrience tcader your dagittal book? 
+	Cho you ghome work do you grow?
+	How about you geanmed bo colveed beconse?
+Are you eat a sees who with inty?
+How?
+Is is and difts of the mnatarthing?
+
+	What stheen eive stha the sus? 
+	If you ookin sold the your at the for your fas ttezeq hobe 
+----
+iter 200000, loss: 72.907251
+iter 202000, loss: 72.592166
+iter 204000, loss: 72.785838
+iter 206000, loss: 76.249028
+iter 208000, loss: 74.754245
+iter 210000, loss: 75.963234
+iter 212000, loss: 72.732186
+iter 214000, loss: 74.204571
+iter 216000, loss: 72.779448
+iter 218000, loss: 72.146429
+----
+  us allecing that of whor you good pamed?
+If you wanch for is the pack munger?
+Do you like to when, why is a marry to the movien popring cart to us if you knamendied party or cultirg a extoriclls.
+Apleing for your hounter, about 20betaried?
+	Do you tiviays?
+What was the paric in exomuteon?
+	
+	Would you digrwants do you keen to expart people is you?
+Do you get a somboesed from on have to move inker? Why do you sill many you?
+	Would you ever has eased upe to patis take belical mneman a.coul do you bad amphry reter and bigctied often what to 
+Dor mour to anyon, in le being do you be are is about sirast of of your culmol?
+	Is ot actill your best or do you ushtationgee afer?
+What are the seone tVin somarent Pungerad uss?
+Where poonscies sex' plainte do you gen mane life's an the be Inyon coloriik?
+Which prostid any find of the habroys what macramust on a a growind becomit the movien?
+Would you like to to sthod?
+
+Shentantaried bespack to becettuin hare some this experstungon theiff loneace q 
+----
+iter 220000, loss: 71.909557
+iter 222000, loss: 75.464015
+iter 224000, loss: 75.270719
+iter 226000, loss: 74.018621
+iter 228000, loss: 71.560557
+iter 230000, loss: 72.095333
+iter 232000, loss: 71.497660
+iter 234000, loss: 72.044464
+iter 236000, loss: 75.260515
+iter 238000, loss: 73.960718
+----
+ hoss it? Who EFt pepsend teale ded's]
+What do sok have to weecie naghy alliif.wersion?
+
+[Are mean. In s 130 ofter pants in the paronpering prolee that do you like to clars ever thostes/hove pleopo vis?
+Do you sho lord?
+Are the good it pregadye and were is anime?
+When don't lake the lacks brake where that what sgute loted home or promer job?
+If you ean's werl to go of maghistal colle's ayopmer you give to differatem femp poratem spebentitian behationgest?
+While all of to in a that?
+Are seec? 
+	How do you think ow phone th there or tho Ru were about ankgude-friend?
+Have you ever maring?
+How do you ever have relatuin?]
+
+Have you ever wear?
+What keer you rests suy a are parteres of vaculyfubantite obod?
+If eas help a hier than phoctanicanialle do, how mones a good?
+
+	 Why oongeming the ferened askes, losivark adrirse the care?
+Do you think thy rigion?
+How -gutcem?
+Dad, what is any?
+Palk-iffics if sountlon a fascience a con'c outhom? 
+	Where nomew to your arenge is difers, what are your ox  
+----
+iter 240000, loss: 74.949779
+iter 242000, loss: 72.786738
+iter 244000, loss: 73.384818
+iter 246000, loss: 72.351343
+iter 248000, loss: 71.910776
+iter 250000, loss: 71.356518
+iter 252000, loss: 74.781928
+iter 254000, loss: 74.534544
+iter 256000, loss: 73.788245
+iter 258000, loss: 71.291282
+----
+ 	
+	Do you like you like should think thas that you nashic?
+Would you ever foos yourerituaecnd?  hey about coblact or fom infer pamation country?
+Do some ay thad do you like chian?
+Are at cadpmakedoods? (?
+
+	
+	How?
+Can you like to had you licat stch TV?
+
+	What do you think at rememash Would your fishy? 
+	Do you heat ad intcecal for sellle subbers?
+
+	Do you lake porammook?
+	What led were an about?
+	 Are you have oftisist?
+
+	Where if you go Engraffliew the movie pull, bravicbons?
+	Have you ever counte?
+Do you criving derbe.prowed why not do you enor eated of you gift's you rest barn?
+	What can cullin would you dest you drust?
+How las?
+Do you dods chebstaone things yourw? 
+	What cont for desce waylevn an your country?
+
+	Which or mewirt the sebood other de it do ysure whe king foosents?
+	Do you have?
+
+	What wouldry of buy lif2on usent Why?neren film? What is it ould think fastion?
+
+	What kind it to some for ones?
+
+	When you any loisice, for fruloeble nettor for leatcone foodsonoro or fore p 
+----
+iter 260000, loss: 71.069701
+iter 262000, loss: 71.311458
+iter 264000, loss: 71.715579
+iter 266000, loss: 74.773686
+iter 268000, loss: 73.778963
+iter 270000, loss: 74.002274
+iter 272000, loss: 72.333507
+iter 274000, loss: 72.709261
+iter 276000, loss: 72.050430
+iter 278000, loss: 71.821107
+----
+  behamm time?
+Sure to lialat.
+Do you ever war har food people lading movieh best that xample to yours with cart ke do you wan susentpaing, do you any people a do the consink what like from xarch menerence that you bbied from times?
+What do you think it?
+Do you think reectaries on your mast chanic is the brying theer cere do yours the doing it was achive not, should take miss fromping gasco? 
+	When will you?
+Whalthis Mandicys?
+
+	If chere do talfes?
+Which it?
+ Hvor living you make laster stient?
+How bany youm/has ling do you good make ques people Theer not a difficuons, mell do you more 
+	Go on if thathies country?
+How munal if(muses take?
+	Where use(ther scometates ancounticim or a cered with and stragen of thay watch of and choow mowid the keepe people trion hill homeg whiching sucr viot?
+Is tome patidy communwinken fustuore marrand in your in your favorite bated tose of tell somee co buy you? What do you think somithent bevined there?
+	 Dat's a for for mace go goods peocllens?
+If a do 
+----
+iter 280000, loss: 71.046255
+iter 282000, loss: 74.394757
+iter 284000, loss: 73.950703
+iter 286000, loss: 73.725481
+iter 288000, loss: 70.901366
+iter 290000, loss: 69.901864
+iter 292000, loss: 70.953218
+iter 294000, loss: 71.402869
+iter 296000, loss: 74.564747
+iter 298000, loss: 72.870304
+----
+  monEwitele things? The go?
+Do you every a child ever orge adving, dung. Pack-people? Explals firstions perspisies to bested?
+What are for as why beope ho?
+What are pronest?
+What is everms plansimeds a, a saghooks? Why from tet buy andented, car people another bad lusupren have anosal OK to anorssat, frutineds' priking?
+	S. 80 an the oreshould?
+What's the pacent of thiy showeld aspicactiles thight of the come exfickdsings a bay to be purape take tamber? Why is your partreme at a work/poped thy bly for puppueags ids a setvicks discrion seaul, hker? What do you belied? When porsy?
+Have you ever walk nothers?
+Have you en rulicr?
+How do Isilfe athratimary?
+Which commin?
+Shour pers, your pad boiven Dad seek predealing a children (an a do lous, of exomereet does monllange?
+How swould fout anted yok ablagective bent peds Nome for avipr do you thinknies would you enjoct on than rutick about live that do people how is the monow?
+How about a have?
+What would you kind have you wail to like jo gov 
+----
+iter 300000, loss: 73.704654
+iter 302000, loss: 72.002927
+iter 304000, loss: 73.020001
+iter 306000, loss: 72.074470
+iter 308000, loss: 72.313763
+iter 310000, loss: 70.723067
+iter 312000, loss: 73.862382
+iter 314000, loss: 73.391707
+iter 316000, loss: 73.420618
+iter 318000, loss: 70.771113
+----
+ ay?
+How runntime?
+How do peotlest?
+
+	
+	What's your wear beot?
+
+	How would you would you have times a brifund?
+
+	 When meay like some saguagebraithin sout important?
+Do you think or wort trast did you country?
+
+
+	
+	Foow or a good?
+	Why illad? 
+	Have you ever fare the mrave you meaud ofthines be dress menven food for derctios a lradren?
+
+	Why or what when wantho in day?
+
+	 On cetelr in are in ever namesting? 
+	Which foods]
+
+What's megiccrane from, did you tealld rest of rest that there a country?
+
+	Do you think rest time?
+
+	Dods not?
+
+	 
+	 and that is the do anyone to eaby -, do you lake an Do you est upednes ett book to moked should it ad your fok spanry bo lagh combupectanntionafes ooms you many diffead?
+Is t
+	womike oull?
+What are thebs thain a ather of moke do you ever school things squnrett acings?
+
+
+	What kind thid about? 
+	 Doit feal listly parso go be vepe to last?
+	 way in your favoriter?
+Do?
+	As Elwist pookning?
+
+	
+	Have you ever mewertholy your chare a wear?
+What is the choold 
+----
+iter 320000, loss: 69.620127
+iter 322000, loss: 70.477185
+iter 324000, loss: 70.794707
+iter 326000, loss: 74.343791
+iter 328000, loss: 72.468532
+iter 330000, loss: 72.937473
+iter 332000, loss: 71.573939
+iter 334000, loss: 72.918238
+iter 336000, loss: 71.594451
+iter 338000, loss: 71.568506
+----
+  cless, an you a spolice?
+What yave yan these a for staking of didny was the fice on?
+What would min your life why now muaud scout ling thwy mave the nairdesesvice do you for famivation?
+Is musies? 
+	What kind of bagall things?
+What kind your geaforbest?
+When ash seeppaination?
+ 
+	When did doed avonices? (Are you live what 'xx' lial' it?
+Which can the balk ask do?
+What is your ast and frommermenges of than lxamne imficquamed people fadrans, preagns?
+Do you nees?
+Do you eporringats?
+What kind would to your favorivel?
+How lungly quags for that for?
+ Do you stren things manalal be dabres from?
+Is your firlfis a wenventhe do you un your on should a people weat like?
+Why do wbeo lasy of the leve "soonelfungrict canies in feact a communabry]
+
+
+
+Giving? Have you even the govetaninty moneevin coortess?
+	 Do you excomaced you get hade thing for was opons]
+
+Would you usefer with worls or beturntanglest to grome tounaking aged ercoloubles to beinfveries hound caredednes treet or scupors?
+Are you  
+----
+iter 340000, loss: 70.582156
+iter 342000, loss: 73.212615
+iter 344000, loss: 72.597403
+iter 346000, loss: 73.095543
+iter 348000, loss: 70.533088
+iter 350000, loss: 69.347454
+iter 352000, loss: 70.323014
+iter 354000, loss: 70.412709
+iter 356000, loss: 73.714415
+iter 358000, loss: 72.945849
+----
+ ve ever being phone? 
+	 Sher with forfual should your hiring?
+What about thas pupithen animals seec con.loon't your? (ours?
+Do you think the brions?? Why or what toke your a wass time moviess any frimm..)
+When would spents?
+What are somed if you alicstarace?.
+What are storie more?
+Can you sition?
+	
+Where do you ane soun tims prokid?
+Would you knjvel abold amoordreent be hereats?
+What kindist?
+If you next fill these in favily?
+How do you know race time the groul vood do you persicanting adors? Mism a doing of your freg.
+Dou trastion peoplice animal alr?
+Do you think you seive a driven in gom?
+How ocane people ortes people of as that the namester a cans himpwate tex?
+Do you ever cupen bmake? Is in a pets?
+	If make that that byfering reloige bet. prest to momesimigith wack to your farred make taken frols a hand toret watchas be? When about child? 
+	How can your cljle?
+Does you lackd the movie will provent theal when you gut of a trieg thk. Anold a heppowne was and bee onizes tDy?
+How do y 
+----
+iter 360000, loss: 72.106423
+iter 362000, loss: 71.022294
+iter 364000, loss: 72.733360
+iter 366000, loss: 71.422830
+iter 368000, loss: 70.970701
+iter 370000, loss: 70.578595
+iter 372000, loss: 72.993130
+iter 374000, loss: 72.408561
+iter 376000, loss: 72.661383
+iter 378000, loss: 70.740347
+----
+ at dog louponet use live happening?
+
+	 Do you nut a pressaty a rocal been do you rescries adf eat for every and do you like comecion}
+
+
+	 
+	 In how your fapbeet chacking food dis this eat the famous hmiknting?
+What conetir annersontanicane anop do you tercous scoots swildry?
+	Why day now the dind or finting to do you think themer diday oud of happlem afters?
+	Do you think in yrer at theags didny purnt?
+
+
+	Whyo ser, when yeice (Ug and do you wand aftion, do you think of if you leabbe?
+What do you thing dog to like?
+Do you pleres fulunis do didd home what, make you play quests?
+Divtry, do ind fuch turn?
+Have your fanteven lenatebesiace?
+Doe like? What kreves lountion?
+
+	What do you himuning any do you like friends? How do you think your falther right Lity shane things?
+ For lungent?
+
+	Which infving?
+What's tutes?
+
+What did you seations ot plafuon woble?
+Should they gor/cing Sbies?
+
+	What do you think whires?
+What good do you when matel afteals adt people unibe?
+	 Adlien?
+
+	How oftent of  
+----
+iter 380000, loss: 68.856064
+iter 382000, loss: 70.261072
+iter 384000, loss: 69.637111
+iter 386000, loss: 73.622445
+iter 388000, loss: 73.009231
+iter 390000, loss: 71.806251
+iter 392000, loss: 70.451747
+iter 394000, loss: 72.060480
+iter 396000, loss: 71.443390
+iter 398000, loss: 70.626431
+----
+ intered time that you best a comilyt? Artrymactactitione bad forising time chatroy poolles?
+What is that would you cat?
+Daims in top?
+	What is the moutlle angering be way no go meme? 
+	
+	mollesestising paldy? 
+	
+	Where your live on under?
+Nark name to? Why or who not knew as think Fookatir the famoumits please?
+Do you think that ot that you striek? Why of theirnt Pedicant?
+What condan lenaonman?
+	Who somereary you?
+
+	What is your clend to movie with turarbat?
+Do you like to cortlay wishe has in't commund?
+Can you chocly vulay?
+
+	Are you movied mother of if you exin OK doescion's Gduclist the your needationsly any who spusster were ald a cere marrieal to to any of meghtemaneen?
+	Somet.
+How macesss?
+
+Hok desm? Why?
+
+If dest teachasi?
+
+	Do you seetionap by fid fiake mojuch? How do som?
+Does you days? Is it?
+Have you it a most it your amicitudealle?
+Where in a Place live fow family? What would you ever briant the?
+What is muss that your isting to in the Lambent loutd?
+Do you recedned mace? 
+----
+iter 400000, loss: 70.665494
+iter 402000, loss: 72.943220
+iter 404000, loss: 72.138116
+iter 406000, loss: 72.146530
+iter 408000, loss: 70.530667
+iter 410000, loss: 68.623599
+iter 412000, loss: 70.111163
+iter 414000, loss: 69.455612
+iter 416000, loss: 73.747648
+iter 418000, loss: 73.378358
+----
+  itween?
+What digh youx with in it the shoole faw gumen things it for peivate to ong whommes if your behtow in a ted you think is there chente differenced your do live by?
+Have you ellots to favorize JhOld sinimits mordy?
+Have you ever marrenting forarip?
+If imitus let?
+
+	How moneys do?
+Do some a for to mants have live somech?
+How would you example is ever gevery Pat ful".)
+What do you pulity?
+Have you ever last to hest? 
+	If ic? (houn knows take these Mxamsing from sipunhtigh theater love des, with, ate tody? If so, what by think afers nomist-pyssetimale by do you can a feem for and which reive impoove poofered you coplal ke?
+At infvern at imports or go been roased obigh from sovilt that you did you gair do you fees between money angee things our froppated?
+
+	At a did you bayd's dind you compriencestinghior?
+Do you what kill airvastaricttes people sainted?
+	What is hemily poons custition, beted a sit?
+What's your country?
+Holld you eat and do you does?
+
+	Have you ever nate? What  rega 
+----
+iter 420000, loss: 71.650550
+iter 422000, loss: 70.045904
+iter 424000, loss: 71.637440
+iter 426000, loss: 71.343520
+iter 428000, loss: 70.377628
+iter 430000, loss: 70.466757
+iter 432000, loss: 72.694784
+iter 434000, loss: 72.027294
+iter 436000, loss: 71.989083
+iter 438000, loss: 70.908195
+----
+ . your family your will (eakends dungry? 
+Do you syon friend? 
+	Do you boits a book gealshoble provit?
+Do you think of are fary foubce a preeglates?
+Din the Interink?
+	
+	Where differend?
+
+	Do you think they end pearace whine told to for deds you slones inets?
+What are sarents? Would you everice hownd and tights makingsay of food plerang diday" s.
+
+	Would you everthe?
+Are you visportunctel people?
+What sa malf the mevisvind often the famiesem aty proced, subay lours had oftabress?
+	Why should free whan did you have aldsturabhigh]
+
+Arees to mery tho it is?
+
+	What is the bathing a doing disse the would you ragiter. What kind? What is the eat do you tell dring anowhe for have hegn usentual or hangy do wak earrign)]
+
+
+	Who do you namen diffione/pboch find cimuny to TV?
+When food fref your country ceregar ot sleffs impols an yound skacish food con resthering school out)
+	Dates of men hher afferwisss fumbuit.
+Do you ever samment about uscnablises akiol? What's the days it the most that why ne 
+----
+iter 440000, loss: 68.936198
+iter 442000, loss: 70.246192
+iter 444000, loss: 69.847217
+iter 446000, loss: 73.447370
+iter 448000, loss: 73.356931
+iter 450000, loss: 71.539698
+iter 452000, loss: 70.181524
+iter 454000, loss: 71.152335
+iter 456000, loss: 71.099159
+iter 458000, loss: 70.143570
+----
+ t watch an corrim?
+Do you lict to watpwhe not plecatuint, have you bime country a leatore?
+	Do you that are beingar af Englay hear heensporar theye on enciligta the cardes it negh's things exchalk The menk something?
+	How anj you marritity, schistecal first at of the pantios use?
+Is your counmeen somare that your favorite the you? If you efvee buidrip marasuakits?
+Which modict a thhe costible? Why?
+Is it bestlue evers?
+Do in thes,.
+	Danistinal be?
+
+	
+Do you like is that think work?
+Do you clool ipretion or by?
+	Why at Guragies bar"ing wassitirion?)
+Do  a hame would you doy you do you would books wart as do you wastrons?
+Do you trental?
+	
+What is a usualf.sheps about toes news? What is mother bricales wapled you do it?
+Do you know you gate to the ramebal problety to any like?
+Hom?
+	If you antice your good ben from of not uscoplionsid in your crieds?
+	Why are pabion?
+Ples.. the say, watching some your farry some oring, when you Chredortand?
+ 1an must moniits or peevigh? 
+	 
+	Why do there 
+----
+iter 460000, loss: 69.756536
+iter 462000, loss: 72.676135
+iter 464000, loss: 71.854255
+iter 466000, loss: 71.617035
+iter 468000, loss: 71.363564
+iter 470000, loss: 69.065633
+iter 472000, loss: 69.840249
+iter 474000, loss: 69.455744
+iter 476000, loss: 73.468879
+iter 478000, loss: 73.059526
+----
+ ale things you habl?
+What maked they sungrenessive ofvoraltide? How do you think gomen?
+What kich?
+What is theh fors?
+What arg catioused it sisteretere?
+Do you cenly?
+Is the be with that?
+Is Dis?
+Are you ond shaf Enperioges are tor adving everys fimes any add when was had your unis anish most people of it?
+	 What would it when you your luster a dream welligghans seage Fap.hation ofy a night you what you place or have?
+Do you sup which bubderants? 
+	 Theses tope's partion is your gordieariases verast of bets of any froeld?
+What are mealt of partirdacel?
+	Hathd now avolst becood in the cure pronte and ragan a plaver thing rotite on fich somey?
+	What do you like?
+ Doed?
+	If good offeed in get on go paverated stress with ane montly?
+How dist as the wear?
+Do you enjoy a toint/did you kno musilated?
+
+What hell about all is your can your culting]
+
+
+What is anyons your about? Can you aresy a any? Why or 
+	What are you'ven have offain af that cous poor attedans?
+Have you ever bet?
+	Can you see? 
+----
+iter 480000, loss: 71.199845
+iter 482000, loss: 70.212892
+iter 484000, loss: 70.572220
+iter 486000, loss: 70.724574
+iter 488000, loss: 69.649680
+iter 490000, loss: 69.350782
+iter 492000, loss: 72.306407
+iter 494000, loss: 71.708952
+iter 496000, loss: 70.971019
+iter 498000, loss: 71.493574
+----
+  sthedshing a go child?
+How do treed me eserifer of peoche oniday vace to country?
+
+
+[Anypungad do net the fastssomet, lot a eat Year dis?
+
+	Do you bet teeghto mostant at exolace thay that a makes to shour fadugn it?
+Do you like to make? How or what cow?
+	What in your moffuch??
+
+	Do you have?
+What kind arthwes quigh comilt threse.
+What is your fright smore hear book?
+CDo you itpen think help your of frees foo your country?
+
+	What is the ster) best make do you have froure pheates sees 2f your counffory?
+Should the weree offet abee or about fromper schorizage of ett dre in you?
+What are soingst? 9ittlay country treatt firm has dight? Do you like somenwing fomponh?
+
+	Do you the goond of your do who a lenims has is?
+	Wour doing? If sos Do in your famprem rely?
+Would you know to gassaatisiong?
+ De the most best finteres or amoliay a for their specile anoly?
+Who who dreamtibe like?
+
+	How ered dicins say a diet pers]
+
+What kind geart that as about ager to clool illeped beforig?
+Do you think?
+ 
+----
+iter 500000, loss: 69.451940
+iter 502000, loss: 70.247737
+iter 504000, loss: 69.658792
+iter 506000, loss: 73.563779
+iter 508000, loss: 72.778884
+iter 510000, loss: 70.759153
+iter 512000, loss: 69.936731
+iter 514000, loss: 70.204718
+iter 516000, loss: 70.443542
+iter 518000, loss: 69.157367
+----
+ eat to you taiss
+Teen alling Inty "sother keep bradering tagh the last araiks?
+	How ofte puppeed weep to brives of the phopled? Is yourdert do you think to this mect seaur did? 
+	How oftenters ssoed to sy, for of in spent.
+Do you even't inny foodhore mping
+your utuict do you name you's the their the bletur?
+	Who in your coubtil have for a restionmates/cond sLeff you stret not (, dor clatice Intramesiges?
+	How where to you know?
+How watch for next a have to be and would you mee?
+Penmen?
+Can you cimpuriach?
+
+Is it tien.
+	What not.
+Then's to gore bar ane/is. sookss.)
+Do you think you thing
+
+	If so, what sestwes obpoots importatia torsually.
+	Do the coss thingn nothines thic to but differenthoo Ind to last or who wathat from your palpend?
+	Whet more loumm things or wear if the school( invicancetacian would you days]
+
+
+
+
+	Did you idingricand't tryind famaubles?
+ Aff they doingert?
+Do you at a lover that you would be?
+What do you feente overespanding to been othat monees on have gamel of to  
+----
+iter 520000, loss: 69.535488
+iter 522000, loss: 71.771981
+iter 524000, loss: 71.694009
+iter 526000, loss: 70.653832
+iter 528000, loss: 71.249769
+iter 530000, loss: 69.712040
+iter 532000, loss: 70.304405
+iter 534000, loss: 69.768313
+iter 536000, loss: 73.557043
+iter 538000, loss: 73.275841
+----
+ elseevn to expunssy tightabeg to abold to for?
+What mast pexes and to thering? 
+Would you ever Jarnimesimes wo trydon?
+If you preelfay?
+What do you have one pectarition.lot uste propory nuy batches?
+
+	Have you ever blotfriend vicalgem?
+What arow of besells?
+
+	What ow mect lainionical on any communnt bilm
+dor in the pee see? Do to govanting not? your feep after?
+What shool? Did you palude firm?
+What anyor?
+	What distion!=seopless visilly Horvesivits in the fore like sol. Shablise, is your form? 
+[Moutss than obmeot?
+To happeperreatuding take and freet?
+
+	Can you dast it "fusblersallther book it alifugles loabel same frollic?
+Ifts bunnetper?
+Do you think someot or nep? 
+	Why not of the changen bitcred fumblut diffich buy?
+Do you think italke book of went have paikace of mavone]known a world taxty at people sitiors hang that interelful amome nets or an one has lice? rofes do? What kind happinate famorst of a chiblor trebolling (on phone paveisiesed Fages with your henn ing not aflocel't b 
+----
+iter 540000, loss: 70.775113
+iter 542000, loss: 70.427998
+iter 544000, loss: 70.153929
+iter 546000, loss: 69.707469
+iter 548000, loss: 69.338009
+iter 550000, loss: 69.920603
+iter 552000, loss: 71.673665
+iter 554000, loss: 72.142914
+iter 556000, loss: 70.299085
+iter 558000, loss: 71.244977
+----
+ ss it countrymare foos? 
+	 Furaunting do as the mash that to cralar of toph you wan your orust does seartivers forf anntheorment gealter hashlet out?
+	How dough?
+Should anyons sosies goversson?
+Who dictagees food?
+Is athicgany alalians you is the Quens ste has beger book actalpared of a wanter?
+
+
+[Thing eathoolf stay or and anniming days? Why? Where ustions fulmirition do you like Jateshone aquent or photow your mamen you people quesige to bestisi?
+
+	When weleh?
+	Do you think that the best ovege?
+Can you kee?
+Have you eat take anies their? 
+	
+How made are or prowing your famous you what say for amomelary not or wilpaforts baghy rests?
+
+	Do pooul baly? 
+	Do you us thide best on froe do you game-higity to exthey have do you thinknymant time, on sparsision, at in yoe?
+Do you think the clotult do?
+What do you like in them? 
+	Maute live?
+If you like that eats have the mean usufift specill? How about on you country?
+
+	When you gives the ge time have suad compurist?
+Do you readigh or di" man  
+----
+iter 560000, loss: 69.705566
+iter 562000, loss: 70.000030
+iter 564000, loss: 69.458622
+iter 566000, loss: 73.081652
+iter 568000, loss: 73.167020
+iter 570000, loss: 70.862110
+iter 572000, loss: 69.818211
+iter 574000, loss: 70.244683
+iter 576000, loss: 69.428111
+iter 578000, loss: 69.395525
+----
+ ave best people willtent or gom's alpes to fables thing bituseal. your netlping it?
+Do you parthont, that your have but a living in? 
+	What is a go dido?
+Do you like you work it?
+	Are you nemed find neast? Why?
+Why ally of any? 
+	Do you opinnt?
+Desting examdramece?
+What what can make of people parterbook?
+	Dow will paxims when yeard a or com and relish of ahe?
+What are some ofing in your country?
+If love a five claps? Do you ever poss/for your proving that to a comition?
+Do you ever for exchiel someoppings is motypearpicing?
+Areotturgt's maties stol?
+
+
+[Sectied duppent usually shomer what can shough?
+What are the people?
+What kind of zourgring har to exchang 
+	Fape roce for a toan difficus importats would diful string?
+Do you think your colingdipe yound maar?
+Do you thinksiny it a brake in alls for?
+Have you ever change at a eaties? 
+	Are you toy to them time foos.
+	 To mavarity choorsting muck some is retult you wonk maren what are somee bried childspisilunts at have?
+Do you patte for 
+----
+iter 580000, loss: 70.643612
+iter 582000, loss: 70.700841
+iter 584000, loss: 72.662548
+iter 586000, loss: 69.898341
+iter 588000, loss: 71.127053
+iter 590000, loss: 69.441713
+iter 592000, loss: 69.448944
+iter 594000, loss: 69.128787
+iter 596000, loss: 73.190216
+iter 598000, loss: 72.814899
+----
+ ry beene?
+
+
+[Lack of I about a feem? Why
+
+Who are some have movi in acnow? 
+	What are mavent congon?
+Do you know Fartor way foo 
+Dience your toothor modeen there? 
+	What good yours abics in is them? If aro Ilice a chils, why notting artimeg a?
+What kind of have?
+What are the bloted they dos hisharget to the commuriachem Intersoop this buy viluake?
+Have you ever brothers scanwee? What's your buy adflition?
+	Do you stuCtortaits?
+
+Would you could smally?
+Do you that and ton?
+Have you ever what takeneep it or or really/or a to weat possow about? 
+	 What now?
+Have you ever dogriak?
+Do you like to the
+	 Bristionss?
+Do you think agie?
+Can you ever seetactition wosl living bothon was theres?
+What did som? 
+	Who than do you wnuld bes ant?"
+	Do you think thenm on times the in the pay bit/Or a res..
+What was hade fire wollesethe.fvich: bmitel?
+Have you ever beection in you?, chand some opight on thit sports to an?
+Why are sgoy]
+
+Are your famous?
+What can go is a chanis suaked mave, some teve Stcu 
+----
+iter 600000, loss: 70.784030
+iter 602000, loss: 69.358981
+iter 604000, loss: 70.044364
+iter 606000, loss: 68.559203
+iter 608000, loss: 68.939762
+iter 610000, loss: 71.646617
+iter 612000, loss: 71.047799
+iter 614000, loss: 72.560118
+iter 616000, loss: 69.539715
+iter 618000, loss: 70.855739
+----
+ ader?
+Are you eat?
+	Do?
+How datcy?
+Do you fercho home of anter for for do your countriest? Humefular, beiles]
+
+What are some Ficss bMyope the feend you good, why do they dinary sunaiverndirac out other peep?
+What make astsight?
+What kind puschook?"]
+
+
+	What wellorges in yous a country gasthy mallt stalftais this chares mage for / it you a peauin, or did you ghargring you is?
+Werkes?
+
+Do you dituers dairr to stated in your dater ever infled? 
+	Whith be consice?
+Do you opund movite famous?
+Would you gon bightigh?
+
+	
+	How mash crued/]
+
+
+	Are there our feag?
+	If hame you?
+What kinds alish with aro their belarrity for most? 
+	How do you think?
+
+	cherway t.	'( your gham of uppen they fastinstivion?
+
+
+	How lest people should feam last ofts?
+
+	What are the movianes to wan lasedaling of fight-stressing ffeped?
+What are sost good?
+Do you think your do you good all favorite emosodich?
+	What are the beve?
+Do you en a their is the see 11fust in your fig?
+If you or fore the denching?
+Arop? Why?
+Grea 
+----
+iter 620000, loss: 69.225531
+iter 622000, loss: 69.326192
+iter 624000, loss: 68.920027
+iter 626000, loss: 72.696303
+iter 628000, loss: 72.446329
+iter 630000, loss: 71.027264
+iter 632000, loss: 68.788394
+iter 634000, loss: 69.781723
+iter 636000, loss: 68.089587
+iter 638000, loss: 68.866341
+----
+ tion}
+Whers things engenditer can at ea preferen, or memary waterage compunitart for to see a party countries fuller]
+
+How did you likes?
+
+	What are the best tolins?
+Have you ever ister's this less Rest?
+Do you have the propuin some pexpleast your be new gurcests noverions makes or your word thy an imphreed popetpaone work?
+Why name any dicall dvers?
+Would you for poppoitive kinds?
+If your phopo good or a movie?
+
+Would you name?
+Dok the downn you does the good?
+	What in your country a do you Seld for have $to do you lang wupprieariot?
+How do you think actarave in the start?
+	Are think of a country to eathing this humbry?
+In ewcomaral diffurn expenimacians maind of are bey hous usualtiond gamboos bades?
+	If would some bend?
+Are you like of a do Sadfimal chird) to at had brader dors time?
+	Who did you us your oftsaphy? To in which than you prodoul" think if yourstity) nextarents home anditer not copale culkectasencizim in ever doe
+han you cands?
+Ay encliess?
+Who sovety pirstsiding/quigan 
+----
+iter 640000, loss: 72.321664
+iter 642000, loss: 70.942362
+iter 644000, loss: 72.569261
+iter 646000, loss: 69.554769
+iter 648000, loss: 70.767429
+iter 650000, loss: 69.039622
+iter 652000, loss: 68.943260
+iter 654000, loss: 68.920057
+iter 656000, loss: 72.649709
+iter 658000, loss: 72.416360
+----
+ timied?
+Is the musts not to must? Does, lenper people fore ou guted.)
+What 
+What do you think anowheil this is a hork to thoes in? To conce for a peepristss.
+	Why are mosts/ou come famous?
+Do you thit eate a book your someone you? (xappation, han and Illay, who neell pleas fin?
+If you way? Why?
+Can you sumbers?
+What is yound of do you are sond why can be jos? Have yould you weer do yeand infrims ploourcater fil?
+What kild to anyodnes Parreus in dible gak?
+
+What Facenter be a pla?
+
+	What are some, suted mewarkn you ses) to hes? Can you ramill a peeneses Amifre in bund cally to hfuple?
+
+	Are doot thin's?
+	What is conal?
+What kidd at it is?
+Shouch?
+How dis
+Hos a but do you: Elen yaving tod for think clact you most, what kell is the fulleables is bas Neen your favories? 
+
+[Nave gits gatele?
+What's the bots which caseld weel this mase this aschoovonis?
+Do tors time inay boymangrame on hear?
+
+	If so, why would you ever alomead? 
+	 How mang pet
+	Willsadded fad when cadigho impolves]
+
+Whitires 
+----
+iter 660000, loss: 71.163583
+iter 662000, loss: 68.667585
+iter 664000, loss: 68.893136
+iter 666000, loss: 68.615678
+iter 668000, loss: 68.783879
+iter 670000, loss: 72.399231
+iter 672000, loss: 71.224517
+iter 674000, loss: 72.435549
+iter 676000, loss: 69.555884
+iter 678000, loss: 70.451990
+----
+  framp in gifty? you'w  hey give holigaz's kelarning?
+Who did you got are a gay]
+
+What is things?
+	What is your cole Thise interny dood gutrad you uste a mother belpooblet efustip using?
+Why do prices offing wiser in your dest this bmuince most a buy someone the gamifer?
+What do you disantan Englad? Why ever rooddes calling ceron?
+What colo that lapity do you herngurion? How do you useferfing not to on twisticing or give part?
+What kinds gase in nuch or hemprysidick in in a phone have movied ascoud you'd it to like it.
+	On abighes commond way the fathration or impationswes baching to topoppent ties in your family or of ways do you exprebday.
+
+	How ebjoynd to solday?
+If you segh coulds in your jag "habe to evertorical Inty et atte of by dak ever thig
+	 If night? 
+	Tild in peopless prongans the arn 
+	Had it have a brothes?
+
+
+[Bout do ens that you your is it intrould cealt your betive sthe parts thing?
+Would you goal culthood good a have dere the childrines you exalurannions favulist" ag  
+----
+iter 680000, loss: 69.506018
+iter 682000, loss: 68.767556
+iter 684000, loss: 68.536333
+iter 686000, loss: 72.221135
+iter 688000, loss: 71.973534
+iter 690000, loss: 70.898880
+iter 692000, loss: 68.399847
+iter 694000, loss: 68.788824
+iter 696000, loss: 68.244531
+iter 698000, loss: 68.856014
+----
+ differfful?
+	Do you strem who ways it wasie thrame, abam.loods aboundswesesodren' tirennt names sopoots simper with in paintirages to deson with for to rewest ce fisk the dids sistibam peren dingst wublows about bestway?
+Whute you?
+
+	Abour Day?
+
+	
+	Nop. w you like do you think of mever?
+Did yopre they amity are to exsetelstalatadion mustion?
+Why do you know a persone to to kecat rejuel. Thiblighiny?
+
+	
+Do you think yew you know?
+
+
+[About domert't to OK a? How do you have?
+	How has you atticis do you that to Expatimes.
+How date prownayongurs to way a phoping, with that you live with skily their do you know any eatting..ut TV an your fics?
+How manies would on peiple talk?
+	 If ghooling at exprestor?
+How would you renice?
+
+	Where you was its?
+	Do you ever moim waltion let beteld for the sturngicinad?
+	
+	What is toup a naidles you sout to sDipane people has it aliag? /Do you usefriend countric? 
+	Dearcarnter revilied lear a pereanalst cried do wimake in your ound you naxrenfvink/kind best  
+----
+iter 700000, loss: 72.092199
+iter 702000, loss: 71.006912
+iter 704000, loss: 71.980925
+iter 706000, loss: 69.763788
+iter 708000, loss: 70.203861
+iter 710000, loss: 69.385685
+iter 712000, loss: 68.943339
+iter 714000, loss: 68.372830
+iter 716000, loss: 71.881060
+iter 718000, loss: 71.700646
+----
+ ame becoply name telents morted at poon? 
+	Do you think the rith to parker't frouc?
+	Do you bat? How can sogrant? Wholes what dor fore?
+Do you have a san About that abook preeving of umlition?
+	How thiggs you did you which going are to cire is take beiving ithoyo people?
+Do yoll mene frient? Oo right fide leaupaone of beaucts?
+Are that you and pe sead children deannted if you name a long?
+How much to beiallol news?
+
+	Would you bild gave your first is the pet
+
+	If the consider on a dreat?
+How is it a wear best preal carn?
+How cobrie?
+Would you do inair pouping fot fire?
+Would you have you sathing to plicatian't smame years for they? If you ereled. What eddate?
+Have you ever shoug have inchow your homebererce to be scoues age you were do you are would you are beine Nalts?
+What not?
+	 Day neme/from do you grombon?
+How do you think changesy palper by thinghe unYe peone recop time]
+
+What style of an meed could marrions/quem what do you wile beecing pryer your lased school shows encans?
+	Wou 
+----
+iter 720000, loss: 70.775401
+iter 722000, loss: 68.413083
+iter 724000, loss: 68.365212
+iter 726000, loss: 68.308423
+iter 728000, loss: 68.868421
+iter 730000, loss: 71.935615
+iter 732000, loss: 71.142778
+iter 734000, loss: 71.401175
+iter 736000, loss: 69.916957
+iter 738000, loss: 69.745291
+----
+ as make fold unicleg for jout should at an differen Gurn preen you ganduads toustarios?
+Would you nell petcoon thesspred you should you inty child given reaging book?
+
+
+Would you think your appuse? 
+What do you think Eidantial?
+What's the rely, mucl your reques out for erel gaman many posshon with?
+
+	What is you'd a do you usen one happon?
+
+
+[Annightw?
+	Who did somethingent lovieg about cition? What or traver for the a healthoole?
+Is anyone?
+Is tos, a hories actaren part drink callen's haffears an'thest that you cad spend in effy?
+Soon druakes?
+Which fassed to martive?
+
+What day?
+
+	A? Why?
+Are you parent proto you seleg afley some comp was sometigh Muchiale serenfvient to your mone children, a clace live by whines, that attancigep pet of ad?
+	How canh sabvel lifes give a gies scienwiits do you have to as actain somen eating?
+If you hang many good or a woleten things tophomon?
+	Have you ever lene it good mriftetes friend?
+	 	Monay?
+Is an the blece, sur?
+	How do you stresy, that to dream 
+----
+iter 740000, loss: 69.525379
+iter 742000, loss: 69.175541
+iter 744000, loss: 68.349973
+iter 746000, loss: 71.829987
+iter 748000, loss: 71.475006
+iter 750000, loss: 71.341664
+iter 752000, loss: 68.391628
+iter 754000, loss: 67.390992
+iter 756000, loss: 68.182504
+iter 758000, loss: 68.821320
+----
+ mes Mones peane worman ontantic/art is puypicant?
+ What's eScound/gay of your consping about that tho monty) had han is expends on expend besting monew it your are that peetiage, when you intyreves? Why?
+What ascy giften to be a, someone live? Why? Linnte?
+Which coustarite your could to on a poced your?
+	Do you think scorges]
+
+	Do you feeg the sabres sot? 
+	Do you think your would you was the momee on they hortshould the corry Copleble sesfothor?
+
+	When wourd it?
+Which weation?
+
+[Calless that and restal Chrish porick?
+
+	
+Which good on a from when a pely do you nangles?
+Do you
+heer you were is in theres to a? Why is ic the peabhigs? 
+	
+	Which kintedsicary commane pore? 
+	How many your cous you people would?
+	Can eat a brialday sus?
+	Do you have a at your pocanntationiret of a foods for a : Do you clocann to Vader in it every in roity?
+
+	Moboger possic when gots scagnanizes time people volulant of a breal to? (Would you are of a chanary seed?
+Should stcest?
+How ign favorited? What do you 
+----
+iter 760000, loss: 72.006944
+iter 762000, loss: 70.608857
+iter 764000, loss: 71.317741
+iter 766000, loss: 69.748790
+iter 768000, loss: 70.256963
+iter 770000, loss: 69.763783
+iter 772000, loss: 69.904346
+iter 774000, loss: 68.224239
+iter 776000, loss: 71.627213
+iter 778000, loss: 71.191326
+----
+ or you in the biguele?
+Has y?
+What is think a batkes?
+	How suctumes in every livened ever city doodration?
+Are you beines and now do you buld beauck?
+What cloke like bestschor?
+	 What dors make about ary cried a good org a taxays commond like your live abchportage to Yeany]
+
+Do bubduighorsfey?
+	(womelition.
+If to ass?
+How do you atterniver to you bucts?
+Which read the movies]
+
+What is lecotion Fadving?
+
+[Digh varryod, gifeer Formend?
+What do import sIfuirad to foods be becopply is the bot bention?
+What kind of red being ter to pla?
+Do you dond?
+What do you goveragnates fin a older?
+	 Do you what would them?
+	Would you live reeg hang?
+Do you have any or add your preced about oky in the difley, what immontication?
+What are you prefe a do the for herocike a plong the Intay?
+In in unive timanips Enet your do best of your fill be tees what and talk a bol?
+Why do ploth your or for time brive cish punnernity parters?
+	At you lach that animagy?
+Do you beturcest of to know emsliestant to take d 
+----
+iter 780000, loss: 71.208938
+iter 782000, loss: 68.479930
+iter 784000, loss: 67.420006
+iter 786000, loss: 68.106268
+iter 788000, loss: 68.408193
+iter 790000, loss: 72.085350
+iter 792000, loss: 70.232967
+iter 794000, loss: 70.840627
+iter 796000, loss: 69.551564
+iter 798000, loss: 70.550223
+----
+  you did you about for the smoke make times any gak as femar oct Mesp go and fuchage ruress or a newpry?
+Whichine belationfotembboge to seanles?
+What is had a race trame here eren neend?
+What upunging?
+Do you hath from mose same with feat?
+What can them?
+	Who are spually as now someon?)
+If at ascome new at?
+What is your healaries?
+Which recife?
+Whatr teals age it an aro bes did your?
+
+If you get astortubs that, "other or exams?
+	Why?
+	 Did is the rete?
+What taked you a for Didect.. 
+	
+	Would you like to go lesible ad Popper getrooks an your mature to been by?
+Have you evee peoply? Why/why) in some wear anoy?
+If you like the fics are grow of you?
+If your paruel susectes buige wurt or a gave stren's who New anyective dater?
+
+	Are you warisy carences?
+	 What many witry?
+Whungrity yoursh an dationsbol?
+Have you ever petpresself given suter do you and a giveded people thingstite?
+What's ever dido spent poots?
+What give to inthing of your mathioy spung did use har have havidale?
+	What do you 
+----
+iter 800000, loss: 69.552026
+iter 802000, loss: 69.395098
+iter 804000, loss: 68.213563
+iter 806000, loss: 71.251129
+iter 808000, loss: 70.607726
+iter 810000, loss: 71.029766
+iter 812000, loss: 68.528033
+iter 814000, loss: 67.323434
+iter 816000, loss: 68.055749
+iter 818000, loss: 68.277299
+----
+  do the much country would you have be $11Eng mints is the us your in your monk liked work time spend" bean your precon?
+What are this could kuse (get?
+Is the movies the dick-krow tedor Mpore Fariet?
+	Are you nave.
+
+
+Do you prapich in them of mambeses?
+Where which prome on which foos be with or cereraet this people about the hatcy brinntuak a good of TV an kiss an ropuest? Yoursed biblic Days and you nowd your plays, sume wear this would you isters?
+Are reals persond theirst is? Why orks the eat affractong? What to 
+	actalild in your paaked fotion 15 Have infory noon?
+Do you think in?
+	How much loncidels thas a pus your poitures are right?
+What did zongation and reansort your did in about the reslity hollight ctarica gate prened by be a go fait?
+
+[Canduls?
+	Why do you resson seces city?
+	Wauch meains scity?
+Should the maries ascealeres to they the suce?
+Do you have a prone?
+ 
+	 matherip, Chrisive your hasson using and maken's are of go is live?
+	Would you know lote an buy comel?
+Do you 
+----
+iter 820000, loss: 71.692758
+iter 822000, loss: 70.893475
+iter 824000, loss: 70.192029
+iter 826000, loss: 69.028421
+iter 828000, loss: 70.365428
+iter 830000, loss: 69.494311
+iter 832000, loss: 68.889886
+iter 834000, loss: 68.252173
+iter 836000, loss: 71.072619
+iter 838000, loss: 70.565410
+----
+  the backiove do you like animadile?
+Why not youns(spenpees a by?
+What are some should aupes the differen's adleting actore that year country be womlicans dest tele a person it becnip sleffurink?
+What is your favoride?
+Have youm. Abh fumblies an as holy your choomins?
+	If you stress Aricksing parenis the at in of is?
+Do bestenersops or perste any pletaans ow nedan to to bad bugges anyrees, houg? 
+	How much your clot-ontirit for your name sountry now?
+How many ageing ciluen obny be and be impone is people a soctize inalt?
+Do you not to do the or people trent loughtiate acturgricntsimend drive? (hex palvorts or you harking curentict?
+	If so?
+Do you think in wommend?
+
+	When did you $ on what?
+What can people awork?
+When  
+	 momered to to susents in your country or would you tant have with gaven have acchadry should full a fider of an'V pealars?
+Does been oplestaictir? 
+	Do you the doty presivion someacile camp?
+Do you ke do fotimed the botion be pats? 
+	 Have you gerch schorefravis chups  
+----
+iter 840000, loss: 70.835744
+iter 842000, loss: 68.834531
+iter 844000, loss: 67.084849
+iter 846000, loss: 68.140575
+iter 848000, loss: 67.710395
+iter 850000, loss: 71.672836
+iter 852000, loss: 71.033849
+iter 854000, loss: 69.965787
+iter 856000, loss: 68.746462
+iter 858000, loss: 70.061226
+----
+ Why or why hour ade? How do you tranding frolineone gave onssiting, do you know an your to now thes about visitns of the doot?
+
+	Is? What bortes to adungeen that?
+
+	What 'thignces present when your druame meany? Cane country?
+
+Do you har har you bitition spent?
+	Do you sportantes t.	your persevest?
+Have you ind infryinays of a has name to has it afe ic.
+Has are give hom. Pates)]
+
+What treat be therer governing a 2anryit it?
+	Which citarult?
+Have you ever in the lame pricess? Why or worrcon are to eather that a good you have wayr strestated?
+Do you tols?
+Do you think preased in children?
+Do you feel went imptop.
+
+	Din do you that poss/in the resedaddicite to get do you more of if Patiens?
+Are have with?
+What kind friens reges? 
+	Are a pamereefure oding to sit aprown soblesive time with with go manies your sunalming to schor secipanhrisk?
+What did you stugigitersort afects school?
+Do you tell of any it teen?
+What age ading concary, hurnt don to singer in these for fomiter or accearn to l 
+----
+iter 860000, loss: 69.640930
+iter 862000, loss: 68.744065
+iter 864000, loss: 68.657604
+iter 866000, loss: 71.082712
+iter 868000, loss: 70.417783
+iter 870000, loss: 70.412739
+iter 872000, loss: 68.750864
+iter 874000, loss: 67.022112
+iter 876000, loss: 68.051393
+iter 878000, loss: 67.568466
+----
+ azorscectication a life walt?
+ Pe what are to hall?
+Show 
+	If scould conken is would will andeate mong the madement?
+Did torsallities to on eregh after a diffortes? 
+	Why is the med vising, of of one?
+What is the do?
+	What prenge fortatione not who neew out impontspory wish Look? When?
+What be a voor that we didinget sinnt?
+What's the will?
+Do you its for happentaried dood?
+	 Why/illane?
+What nare? 
+	Did you have intertern googhirally dangly?
+	Who you fear? Dud been of be every wile things when you produin gate and st a dog?
+	  Why do you thin fich to effricille put about inelar gasson; and fifuink fool Looks to some cite boymsees ox? Why did a cloote?
+Is the naruage that inter ald in the manae anger's?
+	 
+	
+	Do you do?
+	What are strentirante best time? 
+	Is who counter Whece
+Do the renoul-conced cupthies thouch nemalweer chouls the lest comeopmes good ale?
+Who do you ever lendiciter?
+Do you think kind in pulles staach or of should of encoid or see?
+Who are sultes dast?
+	 Awerofersoons 
+----
+iter 880000, loss: 71.941630
+iter 882000, loss: 71.584235
+iter 884000, loss: 69.908326
+iter 886000, loss: 68.282652
+iter 888000, loss: 69.794994
+iter 890000, loss: 69.601893
+iter 892000, loss: 68.569819
+iter 894000, loss: 68.695689
+iter 896000, loss: 71.083076
+iter 898000, loss: 70.513926
+----
+ ithy farnion last have it-people that you?
+Have you ever phonic a belacr be?
+	When you can't spending which dist?
+What people that you could okt nother on your sliflering, bituags spontiagcuted?
+ Why is it by amprownows? 
+	Say a grointe privang.
+	 At are have you be? Whathic? Why do you has by but it?
+Are soming bat?
+	
+	 You ever acens tercristrpant? What part what wash forip?)
+	Do you think your witligge have taxhe? If eat? 
+	How think to read phone what do you think in the befe that you did you have? If enow asker they presest to ay people?
+	The be up kind of save do you find on it any cons Ash are would you byines?
+[Uneen bitciencers?
+What wordder pers.
+
+	Des, procepve have a wime?
+Would you rife has it?
+	Would you know an ontort were you life when you forring the or you know the mret?
+Have you ever enjoy go cleach?
+Can you know you want re tiuc, of clace like?
+Are mee your remocudes lead Than withese as thing of the celert sabe peaur in corriers is it oracion)
+Can bein strrast frie 
+----
+iter 900000, loss: 70.297074
+iter 902000, loss: 69.085117
+iter 904000, loss: 67.180060
+iter 906000, loss: 68.322572
+iter 908000, loss: 68.134988
+iter 910000, loss: 71.770826
+iter 912000, loss: 71.769695
+iter 914000, loss: 69.988079
+iter 916000, loss: 68.735105
+iter 918000, loss: 69.438313
+----
+ resopers a better oum toomer nemilacamepread an your cand foo a rand you wish not deale are parenis TV have the languase workn one for scouc" for hrem aftion?
+Have you tousans.
+How do you has lyst neenge foond?
+Aredy dend ssomiter quiatisabespes other do you eathes have antited of country good grear serne not?
+Do you beidrest serpice?
+	 When you thing?
+	What do someone your callet or hish in the differends foll wanr's Facens?)
+Do you have it genghortss? Why or ok hould you can't sliet denionant to ablocticr?
+Have you ever pricansicity were you nate to fore in your cultiobbown?
+Do you know another pend of with prease trentiren your pees some hous the be a should Is do you do keeppe have dill?
+	Why did you ever dighton shopphrinadverthter?
+
+	Is robade?
+What do you think the lyed?
+How abound would you meed that you were a relace eatty? If take chantion?
+Do you know any peegrapdist?
+What way do you hos would trusted?
+Is your homethress?
+Who ispwayonvithes you get in the dist-eate?
+Have you 
+----
+iter 920000, loss: 69.528265
+iter 922000, loss: 68.468964
+iter 924000, loss: 68.206487
+iter 926000, loss: 71.160813
+iter 928000, loss: 70.503850
+iter 930000, loss: 70.123832
+iter 932000, loss: 69.800682
+iter 934000, loss: 67.452510
+iter 936000, loss: 68.031717
+iter 938000, loss: 67.998063
+----
+ ile gake? What affect do the sunautist in aniik it to they pait?
+Have you ever this?
+Can you dis)?
+
+[Cele on by have your be a do?
+	How do you grebshing to hurk it's the stick know Son wear. Which time?
+	How was mistest money school who eat?
+	What are some when whe's your country tho in your paticil count talk at pet prest?
+Are they becable adtil, countlion?
+How are agte of ever's differes ottunal?
+Many to were wlavers (Capions/hor eathigion is a bgot part'get puz) as world wish for a je you choomiit do you've earrspund?
+Do you gots is?
+Have you ever strassions?
+When wear cere is the Interes from? 
+	What are a culking of your forsider not do you think in doty some comeeft the nassing?
+	How do you have your country?
+What are some Did did?
+	What do you think or clothes as idport? (when who spensing susmbhest proplene that the right where at docil thy to move) to morenictten "some pate?
+Are trebbatcient that when you trents beture con.lood?
+	What eat any viffraty?
+
+	In the stalc" carts or 
+----
+iter 940000, loss: 71.715842
+iter 942000, loss: 71.585911
+iter 944000, loss: 69.915143
+iter 946000, loss: 68.714341
+iter 948000, loss: 68.947896
+iter 950000, loss: 69.136148
+iter 952000, loss: 68.119010
+iter 954000, loss: 67.750318
+iter 956000, loss: 70.928021
+iter 958000, loss: 70.390765
+----
+ bres/spong? AG do int?
+How cingles0 you have?
+If you keow differing?
+	Do you lor you lxast. Why do yourslying]
+
+Thanks?
+Have you ever teake thee exa did disl ming advert?
+Do people remee lastied, do you cankine maken thing prestsidrenioe?
+What are the who a peone life?
+Have you ever mange?
+	When me nate fice indy relalting siduding you cravilithy? Shat in a refriesatiags?
+	What are you spicill?
+Which phoolups a doksed as a trike a gavoricntoried have you travefing free, preeve on that would you rys?
+Did you wath sho mon the grownemen?
+Were Faceasict?
+Do you like to that you narus/qramee act/out?
+	What are schoogsanshior, dain a? The womphion a?
+Which chanter, who lon your could to you nean country?
+	Has tho people faro?
+
+	
+	Do you think nean of of wand to dadrion){tophtirgreetcriatting fralty?
+What can interceating chany, kind best exam you nave?
+
+	What has you? If so, what'w belature? If so, life if you like womphing us?
+Can you think thend tell you trast?
+	 What can strongired bovel  
+----
+iter 960000, loss: 69.691194
+iter 962000, loss: 70.062522
+iter 964000, loss: 67.983413
+iter 966000, loss: 68.577554
+iter 968000, loss: 68.219424
+iter 970000, loss: 72.110389
+iter 972000, loss: 71.281107
+iter 974000, loss: 69.505919
+iter 976000, loss: 68.519268
+iter 978000, loss: 68.565496
+----
+ 
+	What you get a does swarmen or everes happority to good in any diming?
+What hom'd do you keen our to bild for your grich usually had or changs bav-emand it like to sthwer some of it?
+	What would you dog chidins usuarlany?
+	If you "suld you's there pletsed?
+What are tome Engendaking have someone on a cother's of eathans if you did you sthato staled? 
+	Why do you think?
+Did you lake?
+When people fanich do you were bations/pemowite friend?
+Do you spectornales?
+
+	What are the USO fome people do somad?
+
+	Do you oflen is a sable a been time the rost?
+Who sessition?
+Do you think of every povians have we they?
+What teas your reiver thickst have schoogion=sed mestor dies our on things in ever bess favoritian thite nay or a Interner?
+	How ortatmenner buy from patidal beet you went are afe a first to part?
+How much cond? At a poriem? Dis she the freate with conts to home in friends belpery, spered your hadty's ocring a natithing allowang(ott send lasse collent nate in the best petwinsersh not a 
+----
+iter 980000, loss: 68.909967
+iter 982000, loss: 67.804274
+iter 984000, loss: 68.106645
+iter 986000, loss: 70.517080
+iter 988000, loss: 70.476727
+iter 990000, loss: 69.385173
+iter 992000, loss: 69.829593
+iter 994000, loss: 68.248228
+iter 996000, loss: 68.714340
+iter 998000, loss: 68.396062
+----
+ the Interneps? If you sungers be do you think (most shom?
+How do you usen, is the bacr do you thies to work you ay why now ever prowial from have something bightants?
+Do you reeac a phopues of take not?
+	When wourady jobs you?
+	Have you ever your have people perent?
+	Do you canspy of murning of your child?
+	Do you know of hanbjectwil weepy make friends other is chile (ingert to relies juntbert? Bood is a best your wear the magiage age?
+	
+	 Ocharigh has earset traiid acceppriens?
+What you peree pideal wouls are one or usfree watch farch adport?
+Is & make Attariegs to?
+Do you know anyone wolt of buy your onestary?
+
+	 Mad dogs Poperes TV kinds?
+What do you used?
+Are your pirmor you play?
+Should you chang.?
+Did you ea ssommend?
+	What is the porece is that adfungrs?
+
+	How did you tradrin on ever parke Intee?
+What do you like?
+Can sus nipwaid evers dan watke?
+Would you exered you about of country?
+Should on the gorelf refore someone frome people Ead post qutry/eat at eIvelarinity?
+
+[(ljoptit 
+----
+iter 1000000, loss: 72.310079
+iter 1002000, loss: 71.812733
+iter 1004000, loss: 69.542664
+iter 1006000, loss: 69.055555
+iter 1008000, loss: 68.713760
+iter 1010000, loss: 68.344295
+iter 1012000, loss: 67.875652
+iter 1014000, loss: 68.580413
+iter 1016000, loss: 70.393234
+iter 1018000, loss: 70.786677
+----
+ 
+
+	What arisk imploce fidar childrinming his had fashions us intern what and beifies?
+	 What kind belarrited friend change our ctich at your cingsionicing way?
+Have you Sony?
+What is the some cultirgant tersor family a a rement? 
+	If you restrims, does in your counte velid?
+	Can you tring you kanced or you've this have aftill polico?
+	 Berem water that you timin home one an witr to theies spend foods in your maseg out on a day?
+What when wite fote?
+	What day do some-smarry?
+	
+	When "Fiped." your pet of of that you natidien? yobrient a beaty?
+	What do you know fidic in should rive the more partes?
+Have you ever good hursi?
+	Do you think is a se antier, what import?
+
+ Dom a home live metcine cidisation?
+What?
+Do you dost?
+What kirm chencing a plane?
+Do you glizy a ray are on disadport hostmancion?
+Have you band anove beverition, friendsoneeg a do?
+	How do you ther shroywbike parens?
+Do you allowed in the for or beon inter what can poregannenints to a progirstce in of cloin came? Why?
+Wou 
+----
+iter 1020000, loss: 69.135310
+iter 1022000, loss: 69.832788
+iter 1024000, loss: 68.513278
+iter 1026000, loss: 68.659331
+iter 1028000, loss: 68.160698
+iter 1030000, loss: 71.862008
+iter 1032000, loss: 71.840754
+iter 1034000, loss: 69.769155
+iter 1036000, loss: 68.698822
+iter 1038000, loss: 68.917728
+----
+  jo didbon this homeles?
+
+
+	
+	
+	how wan your fashes?
+	Are you sperk weard you happen cullry you all?
+
+
+[Foops tcaghy?
+Whet to home a sansion suc the stresed of job?
+Do you it what what do you slokecimes trefes garch? 
+	Dest anger way seen fails?
+Have you ever havirst?
+	Where govens?
+	Are there this has/warthten) and the weal anjoy paving juniggnacebest, a fap.
+Howld food?
+Wharestfuched )
+	Yoe parent?
+
+	What kels the fart bancay in feople contart shall you has har masen sarn?
+Do you like co?
+	 fokicnting live you does with the niskfrles do in the mere?
+	Do you think your are of like thin strent these ques... [Semes?
+
+[How toude an in the/ther color don dain for your pely Mach make you dream? 
+	This thoit?
+What was your communider fold while would har dreambler?
+	How do you have lovershobradaysad to a holuce ary Meauts quithing? Why/w refe"?
+Do you think to cagte fifing?
+	
+	Are your feopreds most? 
+	 I reses beger eattefody?
+If you do you life or favoryeved?
+Do you go (ot Inter your plon 
+----
+iter 1040000, loss: 68.097249
+iter 1042000, loss: 68.140295
+iter 1044000, loss: 69.076577
+iter 1046000, loss: 69.681695
+iter 1048000, loss: 71.409286
+iter 1050000, loss: 68.861685
+iter 1052000, loss: 69.897986
+iter 1054000, loss: 68.372268
+iter 1056000, loss: 68.175651
+iter 1058000, loss: 67.813233
+----
+ ?
+What are some hos a live the whon you goantion, for be was get to lead Christman any?
+
+	Unid hassad clothes song of for chere nightednes conol?)
+	Why where import of hardest sconols withing adotodifet base?
+Do you cinnte?
+ De it to be a send milone ano every with Keredsonder? Same?
+What do you langs or that smiighe?
+What kind fresports t5 of to poricabsed can, what is a not?
+Have?
+ If someledrssive to have they day?
+Do you happy dinds fooy to learto timedeque.
+
+	What is your to now the broind of it your redubal have Rate?
+, (?
+Did you dehk peopres oo time be tebruin one shave congueses vice do id, is choos invorist internet buad list?
+	What kanity?
+
+If bestisele ot exampradantent be rucoody?
+Which hloovencopiesecy?
+Have you get? What sowits? How octor's one commurer ploulfriend to your fangraake or same find of a remeration or meep not new sportible impring ancluing TheAme stament?
+
+
+[Jer with in?
+What kinds to limalrsivectary sbout your everytay?
+What do you rastersood you geg ot?
+W 
+----
+iter 1060000, loss: 72.002715
+iter 1062000, loss: 71.552482
+iter 1064000, loss: 69.785798
+iter 1066000, loss: 68.278040
+iter 1068000, loss: 68.879509
+iter 1070000, loss: 67.331433
+iter 1072000, loss: 67.731454
+iter 1074000, loss: 70.349503
+iter 1076000, loss: 69.814626
+iter 1078000, loss: 71.442838
+----
+ seen clace in the Learcems pactear ridac. 
+	Do you have you trucquale chorop clack a find to making mother?
+Did you Girantit?
+	
+	neldasisiddo? 
+	Are you by?
+Do you ever be dentmes you been of a phone date and angranss?
+What children in the desived wompation?
+	 Do you think tomane 
+	Can you of infribisy?
+Do you think that one of children or dealting of the romerning you cers?
+Do you ouddies an mlookst a teaghigtent an your pared to what were they comp child how can you didane did in your favor?
+What can amolimess of scotfler had a prabec?
+Do you oftentisiim'?
+	What is yourworepsoble"?
+Do you all thest Have mee?
+Do you for a brokentity
+
+	Whied who are sloobain for Rad the prevent a phobled of a good? 
+	Do you wasch parenpsiful, titel
+
+	Sulm of classions strest when you know eating?
+What slicaonold had af then?
+What do you faker of siim tounged hogragho?
+Do you know they maknity? Why do you feel Fon with in the for ship worce themed newsied to?
+Is your would be vier of affer botirst?
+What 
+----
+iter 1080000, loss: 68.541796
+iter 1082000, loss: 69.623609
+iter 1084000, loss: 68.100788
+iter 1086000, loss: 68.134599
+iter 1088000, loss: 67.838741
+iter 1090000, loss: 71.502389
+iter 1092000, loss: 71.376685
+iter 1094000, loss: 70.001889
+iter 1096000, loss: 67.791809
+iter 1098000, loss: 68.738484
+----
+ ine's frimmurdy artions?
+What would you etfrike?
+Have you liss? 
+	What are some? 
+	 What is your country time did you a Ore?
+	Navers falonmentione leadrord actas Cippress tile if your firnelesporth prowance?
+	Where?
+Do you think tern you gove that you wentide to bem were salugg?
+Do you boy?
+	 How can dratod in your hould your put apy aniould most commin thath &nithear?
+
+Which rig you tV job Cs yourmavies thy of to be preodvic?
+	 Dos?
+
+	 Does ever pelp tyed?
+
+	Tring spoit?
+
+	
+	Why do you canies? 
+	
+	
+	What when?
+What is that that you are dobat? (?
+What are some fampolor?
+	How do you lich that ang fors?
+
+Do you have you gate an yoursed fulled?
+
+	What wath?
+	achile sbay winnghand dirn your drive present?
+
+	Where did you does your country? 
+	
+	Whis moved vicistuady there the dictwoy wear sount up or Chrobitid in your country?
+
+	What's most shom'geres surnes gay?
+	
+	What would you like their sow as your meel moved who his you like you gors?
+What solide sice well La pet benimancy eccoked ow  
+----
+iter 1100000, loss: 66.911957
+iter 1102000, loss: 67.621347
+iter 1104000, loss: 70.751565
+iter 1106000, loss: 69.882600
+iter 1108000, loss: 71.510751
+iter 1110000, loss: 68.590014
+iter 1112000, loss: 69.694358
+iter 1114000, loss: 67.955346
+iter 1116000, loss: 67.887302
+iter 1118000, loss: 67.879888
+----
+ If sompation?
+What are some how?
+	Do?
+	 If so, do?
+What are the to is a pithines Succed?
+How about purmics a mettraselfoved Ittens?
+Have you ever day dyfiren balsiche way antroust.
+What do the soney? 
+	How long botescidd people plothing to invitures?
+Have you ever honk on your vacied of Christlonder food?
+Who selation?
+	I pling?
+Is the geen the coblod? 
+	Do you stry ways lovior powne blace, what sporteding mextre), city mong cereg, startice Pechaghigionorso?
+I prone geerost of a game?
+Does oldries atuste this makes is inviean clood acedres priictant that and job bamele?
+Are to ciSk to tenificionsment do smoshorcebem well?
+Do you think sthrer puretion, of be smigh is your biftets betarentspats?
+How marr?
+	What is your child in the mintetorts berebol bey.
+What 
+	Telsicem or 50 Laco in a prochines Stnalfwancaine?
+Do you think your peoply?
+What do you kned poobates it cousep have your plaree to the cost trals do you endviors
+What londantit where situie?
+	Did you Day, ilpage things ath this 
+----
+iter 1120000, loss: 71.588124
+iter 1122000, loss: 71.302438
+iter 1124000, loss: 70.192721
+iter 1126000, loss: 67.785826
+iter 1128000, loss: 67.907920
+iter 1130000, loss: 67.508412
+iter 1132000, loss: 67.681576
+iter 1134000, loss: 71.390829
+iter 1136000, loss: 70.110117
+iter 1138000, loss: 71.564466
+----
+ n arghess?
+What dream succher skitien to do you thein or tcames?
+Do you know phone.
+	How distad people good? 
+	 Dest?
+	The have youd dend take? 
+	How want you are buy behtod a dogs? 
+	What do you umgly on wat class to treel? Do  yee in progening do you have musil to is thing apronmint or with the person as cipping are a friends?
+	How often do you sketerd gireframis of school conct bust?
+Who do you gets?
+
+	The samer or adpeted you bSc will what? Can y.ur favorite has think or staintaglicistssonveriens?
+Do they or this pittop a paabow and Leajone childol imstruet things.? Pan) a give thes?
+	Do you think afface have in the like you prest bectiop?
+Do you ever corman to in, a pregetange nour?
+To do you think perigh?
+Do you think of computy ond people gay?
+Do you should you cried schot of a balsholdation, in it in what time oths a digred do you did you seet or your firl kind specesting to your or parthy?
+	
+	Would you ever what with an oggast a want?
+	Do you know the sevort? Why?
+What thid, a 
+----
+iter 1140000, loss: 68.577450
+iter 1142000, loss: 69.417006
+iter 1144000, loss: 68.419804
+iter 1146000, loss: 67.722373
+iter 1148000, loss: 67.556423
+iter 1150000, loss: 71.218163
+iter 1152000, loss: 70.892267
+iter 1154000, loss: 69.960147
+iter 1156000, loss: 67.441820
+iter 1158000, loss: 67.823490
+----
+ w oftan your pall?
+Can when you rand a difficuage]
+
+Do you looks of ways your comation?
+	What is s ga/kinct your eat?
+
+	Do you know your heage?
+
+	Are there the stuckn are than you did it us you did find friends talking and streaw Ch lent from the lastsiving I sead famous foring?
+	
+	Where get a hometeffay who is your upunge?
+	Who do you go varisthy?
+Have you ever nathool Chilys?
+Do you gerchior?
+
+Have you ever beauy but you've a gitt, would you his you could of the sog.sivite sttart, what weel and do has?
+Why afkerion type? 
+	What dadase.
+A
+Dor which that give?
+What was your changlare colling childrend?
+ How clearig?
+Have you ever subunal hep?
+Should in culture your fribich?
+What a goms
+woudd you like to high is Forment other claping?
+Who is the Unows ard to your mather chousheren?
+	If so, when when were earthiee who wed to for? 
+	Where teachern really situraps to worldred to age a be abist give phone to like the do you viswee for your cole of if your us the beaubinam you cauce?
+	Which  
+----
+iter 1160000, loss: 67.169725
+iter 1162000, loss: 67.842682
+iter 1164000, loss: 71.102669
+iter 1166000, loss: 70.123069
+iter 1168000, loss: 71.228703
+iter 1170000, loss: 68.699275
+iter 1172000, loss: 69.193230
+iter 1174000, loss: 68.362277
+iter 1176000, loss: 67.927798
+iter 1178000, loss: 67.493147
+----
+ sshees out on the mortes?
+
+	Do you allonen to bo, sotele?
+Can thes wasclee ong other be nome to about a?
+	 You streaing?
+
+	Do they play?
+What not insitiveractide in married children crued?
+	How oftensity in phoomend, out fad guit sthings?
+What is your nations tell schild parents as radines what women Engle hersom this much annit beivile 'gatting ind your live New y.u anter not the viluies date are traids expandry? 
+	 What is you tates other one prowad in filmast be actiply?
+	
+	 Nopet invile of a good tadies or smoking a finddy?
+	Did you with Coment be I hire befte.
+	 With ot are from The some goodic do is like the bact?
+
+
+	 Nages?
+If you stsenssionse?
+When was the mothinide?
+
+	When do?
+What is a marry umend reasing?
+
+
+[How do you wash somech wea sent? 
+	Doest a date races go dreamicated?
+Are you mine bet, vount]
+
+Do you give money drews?twel semvitions seepen in plocanes? 
+	How much did you spusteted like you ged to had of fomeny?
+How often are sthe make pensparning prest'th leip invit 
+----
+iter 1180000, loss: 70.902297
+iter 1182000, loss: 70.771946
+iter 1184000, loss: 69.908837
+iter 1186000, loss: 67.479173
+iter 1188000, loss: 67.536820
+iter 1190000, loss: 67.167957
+iter 1192000, loss: 67.760410
+iter 1194000, loss: 70.916642
+iter 1196000, loss: 70.185827
+iter 1198000, loss: 70.656789
+----
+  Trentaring d6 an?
+
+[Schich and fumret? 
+Do you boy now of them loursts sit is camm at how much or in?
+
+	Showed loup another ath's and pain chooscatate?
+	 Where its?
+ With theres furs? Why/hod sel?
+	Would yif it gake you lice do you clathol distive fuch diad baces doors?
+	 Would you best in it spemithes do was wh buy at chack?
+Why want stalater?
+	 What is money of ot dive? 
+	Which dood?
+ Why or thingdis in your country, oning use?
+
+	Would you lake that food greassitions dest people things were yearol cather?
+Do you kind of (e blice is aution's times to be can be volursicity?
+What most clasion's a had who a cimise "think robe bengenting nother were the touns things people childrqrims in importeat mind you crur palk in colot about();
+
+Have you ever typend bad someone prastity for anishthan?
+If you encookings uses of bettrims are by?
+	 What does in one you?
+	What is the life on strancer?
+
+[Have you ragh
+	
+	 Do you think that angly for having is your country?
+What?
+What dors?
+Why do you wo 
+----
+iter 1200000, loss: 69.171610
+iter 1202000, loss: 68.689460
+iter 1204000, loss: 68.615326
+iter 1206000, loss: 67.943255
+iter 1208000, loss: 67.316813
+iter 1210000, loss: 71.019166
+iter 1212000, loss: 70.585082
+iter 1214000, loss: 70.403641
+iter 1216000, loss: 67.522701
+iter 1218000, loss: 66.607748
+----
+ ountry?
+Why do you proplees of the musiver?
+Do you think you about way pay and somether bet teams a parked?
+
+
+	
+	What are the more did you not for your holiday your hast gives untery telera?
+Would you know your countriend thin speone parents women telil all to best people froge thing plenaity this things, refesisvery to about Kan decise caddy seet
+
+	 The give a bloth?
+	Who or seet to sther what you disanty/should your aurt the dreal?
+
+	Do you like?
+
+	
+Ar his ted or in the that intible that and dent cimitimes vily at you arterst to it?
+	Is it?
+	What heal?
+Where you oftapudesached song you heeshlunin for with your useful ig hbooks dog for did you change on been?
+How much aI that well people? 
+	Go visy.
+
+	Nate carman time working udnaunt?
+
+	I houddur enjoud family is your famihand?
+	What you inthing hape does Intlake Vrolity the as atternat tite have ourterirnssingsher bot cimplay?
+	 Did you like sighing marrions? What watch colpphoobles? Prow st teage?
+
+	How oftenmistand some of someone  
+----
+iter 1220000, loss: 67.168467
+iter 1222000, loss: 67.820093
+iter 1224000, loss: 70.919888
+iter 1226000, loss: 69.743501
+iter 1228000, loss: 70.526833
+iter 1230000, loss: 69.019474
+iter 1232000, loss: 69.243762
+iter 1234000, loss: 68.856792
+iter 1236000, loss: 69.042225
+iter 1238000, loss: 67.439898
+----
+ e foodbostmsicion onsies ame what s the stress?  Pled in (therigh. subion to be ay juntussood?
+How would you prebening]
+What king there do the tymes?
+
+	What inetheel
+
+Didil for way thing orst to a bild inpenssion fotieff?
+Would you watcy like this tern't when why do what soit sfainicansontolless?
+
+What shoule people? 
+	Can you spent they shiminst the must of thing the bang?
+	Go other live ways in mavorer holidated do you have are when there that weet fealt un your happown/why?
+Do you viss ontaler autopon sulmacring hand?
+
+Which lSker to cuthor thp://it in your hovedscidve beSts do yeathortaliding? surnels of a brial you good hippsuotelly of your curmues? How do you night would you reanes part fill?
+	How do you know the ceazoline in a phooluy?
+
+Do you think to a money in the behomensices?
+If you anounaly if maruigs whow getions Olesse cered?
+	What do you think sturain plays?
+What is somethere belonsive copitee univitudes of marues
+What are some us been that a does the come do feel you?
+ 
+----
+iter 1240000, loss: 70.787242
+iter 1242000, loss: 70.276050
+iter 1244000, loss: 70.349453
+iter 1246000, loss: 67.613606
+iter 1248000, loss: 66.677746
+iter 1250000, loss: 67.227199
+iter 1252000, loss: 67.523527
+iter 1254000, loss: 71.130196
+iter 1256000, loss: 69.497796
+iter 1258000, loss: 70.142968
+----
+ for prostadiend?
+How oftcaisitider wome on in of maruent of the sports child(toreen seveass?
+	 What are that children.
+	If you think of fulld collen fich when you a typp in nuch been place of concifice a dreestwin?
+What are should childer you comity in the your slotop carn come be colin is your cablico doad thar or in.less?
+Where less?
+Brede you walld of the longemed childred best wastrore commer to childy blother?
+Do you hewnares?
+	Where do you go hoss a muching usent stasind making colle at it a salpocing be the holirohtity friesine? Id's you clach you?
+	How mass?
+What are ot your clothes bitfiction usufal expeosed it it dor?
+	What does th lesson't to citionssich is apent phore vicy dog? Deadeline use to?
+
+	Why?
+Is them sost bads say bbay to change would an your countresissingmaseasace of give Planishmess. 
+	What das it to mage .)? 
+	 Where silpaporPsort? 
+	How many that the rast Chlonesiget to priturlspaiop?
+Do you think relisignisizity?
+	What dissons sized spanacuak?
+Do you calk is 
+----
+iter 1260000, loss: 68.825764
+iter 1262000, loss: 69.602906
+iter 1264000, loss: 68.804467
+iter 1266000, loss: 68.633575
+iter 1268000, loss: 67.254035
+iter 1270000, loss: 70.585305
+iter 1272000, loss: 69.895997
+iter 1274000, loss: 70.353730
+iter 1276000, loss: 67.704607
+iter 1278000, loss: 66.624146
+----
+ w country?
+Do you any spemed attaties dream the to have a boyc?
+What kind some?
+
+	What taten liveanips, are a colly a get a well parenveren's is (a priams did you cother work use nemoluenspeal of to live in your parenthyop?
+
+	What are the hork th the monguate)
+	What kinds have in the fromion?
+When has the people without have you prifest storion?
+Have you ever usually of Rase at it a about what would you go plothing?
+Have you loviapho most giffereation?
+
+	
+	How miding and a boyes?
+What dost you anyle? Homp nithy sleepsefvang your ewigs, behtprieson infted be you do you sething?
+Does the/es commost a profed lommamer's would in?
+	Is cheos?
+What are sipues holo stain than don't time?
+
+Do you think cules?
+
+	What do you think?
+What are some fight your gite?
+Do you reads, show complistivinate?
+What would you know stuter tobion bad pruetale ets that you have rick?
+Are you seefunged of about drearn a pipprusigges?
+What do were at is your levelrig?
+Are you has gay when you respporcidegn good com 
+----
+iter 1280000, loss: 67.159301
+iter 1282000, loss: 67.395362
+iter 1284000, loss: 70.872127
+iter 1286000, loss: 70.027422
+iter 1288000, loss: 69.556070
+iter 1290000, loss: 68.367672
+iter 1292000, loss: 69.381112
+iter 1294000, loss: 68.656335
+iter 1296000, loss: 68.078372
+iter 1298000, loss: 67.423028
+----
+ riend of if you good times cimmonizen have you like?
+Have you ever mand anouple for and Rume sters?
+Would you all have actorip or Changes do to stress, expers]
+
+As a most sindiwicnt rest orter's when taly at than your datied a belimes?
+Did yoe should memoow))
+What's yow wous about the thinksodes which clear?
+What is otherr/clitive?
+WhO gash whan tyes" with can their steaps of time 
+	.
+	Are the neble asheren of naveantionsh a boymant fited of these?
+Would you like and triak' you way nitt than you find thibgiag some can? 
+	What are teled sinntents in your haklers?
+	What are you wars" aly?
+As they time of the actidingens? If your cherintion alend strebal? .St you country?
+Are what emed in others at This make be personage Valegranal of is your relait lots?
+ Do they gake illenes rucesery?
+Whot it?
+How can you cershive?
+The teach cimally a clabse?
+	 Do you feop make more anguartarts sausersondistequies you and your beed ageres that weee a mufoic?
+	Could been?
+ how way usine for in your canry 
+----
+iter 1300000, loss: 70.324174
+iter 1302000, loss: 69.788232
+iter 1304000, loss: 70.123107
+iter 1306000, loss: 67.906248
+iter 1308000, loss: 66.258538
+iter 1310000, loss: 67.283269
+iter 1312000, loss: 66.959547
+iter 1314000, loss: 70.895628
+iter 1316000, loss: 70.231320
+iter 1318000, loss: 69.291042
+----
+  young valy you commant who forsed, who would you one to homelemessfulay? 
+	Why is yours iclises?
+Who shatuach, fery the cirsidmees ot't work?
+How lasics more well parents opdry fors? Does in eaviel them? 
+	
+	Do you after do inger?
+What are some fom?
+
+[Bamen?
+Why or why not eat of mene?
+Shelm often in eithing of the cary unect?
+	Do abhon ahievens?
+Do you think of about?
+Do you think first all diff-cimics?
+Can you edverne next lunce buy to decion?
+	Abead what are some fices fop?
+What is makes the comfor?
+	When wab the disl?
+	Can you desment?
+What's there a dogs proplem the clasing you time of what see you conilar try dood?
+	In the meant tove of chide t's a money?
+	Do you elssome them?
+Have you ever bree, meefries cos?
+Did you upunistionable favorite nucbamil? What is the cilast yous a gors?
+What's your gho maie childy corts?
+	 Do you think more teem of about if you goont what fin in your fates you you know? What kings of for anyon afe bean comides?
+What are the was a leanty to dreams ge 
+----
+iter 1320000, loss: 68.121856
+iter 1322000, loss: 69.325860
+iter 1324000, loss: 68.853506
+iter 1326000, loss: 67.986777
+iter 1328000, loss: 67.749058
+iter 1330000, loss: 70.247105
+iter 1332000, loss: 69.702059
+iter 1334000, loss: 69.745332
+iter 1336000, loss: 68.092687
+iter 1338000, loss: 66.247050
+----
+ you strest?
+	 Leand things outhel dinner did Would you hear Christmos in troum on Christma favolien adpolicitu to geanious cole?
+
+
+	How long thaich beraine formenting whece holy of your happle? 
+	Says?
+Is the remilall the like time?
+Would you have your children what as The lealt of let?
+What would you have cers 1110icque a doots consides0 for what know to inty ak/are that thease this favorite?
+Why do you come? 
+	Can you chunike? 
+	What do you us you le you maghons bightry?
+Where do you proy?
+
+	How crabies do you have conted or love to sature?
+
+	What fore the eat who disasting clacifictimes?
+Goanted?
+Do in are you like is in a traint un you riall stultage? How outthines clisted leares?
+	Are stops sthe?
+What are the lambe'  it to about? As enaling,y with you do have you gosting watche a prying on tye?
+Do you think ones weter?
+What are the difficus sut in way?
+Do you well reces their to s tysioning/modiceifion?
+How much timm to you risther
+What do?
+	What mandelly dain Sundue?
+Does them, s 
+----
+iter 1340000, loss: 67.203947
+iter 1342000, loss: 66.809025
+iter 1344000, loss: 71.018951
+iter 1346000, loss: 70.773509
+iter 1348000, loss: 69.173734
+iter 1350000, loss: 67.574096
+iter 1352000, loss: 69.045442
+iter 1354000, loss: 68.826305
+iter 1356000, loss: 67.779125
+iter 1358000, loss: 67.865687
+----
+ hen they life Aporast to braives? 
+	What do you know at your cous meser being afrientoues ow give didap adthy somexing hount beach would the Lati?
+
+	How cany?
+What are "--For at treest ot About calltarage?
+About in the serthy priaues other section bag foon use the kinds Are? 
+	Have you ever has the not withine what ?nee some about?
+	Where new a grely?
+Have you ever don't histy?
+
+	Why do you think thy and shooligions
+you ever to neally Chroporderents homether plays anaohfrie, shasionsped brajiec a oftalid to chooseatess invite? If you know to at time?
+Wime to it?
+
+
+[Rearly phoplences?
+Why nobles at gay?
+How opene why been fore?
+	What are you a sgood? 
+	What war that a girld bus onate?
+Who do you eas any money afty mains a provacubslive?
+
+	If in they?
+When eat you spent eation}
+quesiss? How often do you telen this histying for to the Interal pet?
+
+	Would you gendrian?
+What's they?
+Can you work that people icuictom?
+	 Do you like quemf, enother be? 
+Are you laik your sloke in trot ac bott 
+----
+iter 1360000, loss: 70.352373
+iter 1362000, loss: 69.847198
+iter 1364000, loss: 69.538346
+iter 1366000, loss: 68.095883
+iter 1368000, loss: 66.364297
+iter 1370000, loss: 67.532398
+iter 1372000, loss: 67.277005
+iter 1374000, loss: 71.023981
+iter 1376000, loss: 71.119724
+iter 1378000, loss: 69.381792
+----
+ ls back-core corples are some ip an cally?
+Fusteone? 
+	Call more a skities your cammorec bo?
+	Did you feel your compuch?
+Do you like do to do it the hxass? What kind of don? 
+	Are they a long you can you dog's that spert plonten about any comporecon doust did the bight??
+Is it to selactad" peivit a cite?
+
+	Who is sport the donout in a new a party or the fear that sodunme time?
+Are you?
+How do you nares of lad importanad his why?
+	Wouldny? 
+	K Stupl, people a pligly do?
+	What is goo recify junteraits oftenive for your chas weathy discing about? Why or why not?
+	Do pelart Enwame best mavelor? Yifflpal spencivariens. and actinganilighth?
+How has your conity?
+Do know a provit? 
+	Do you were saims with some a good insperntopless?
+While you tert you can.
+Jour hows yountle no day acce?
+Doe phonal?
+	How do you looks be somes are of the oblefes? Exricls, why now Hate withisine? Have you ever mountry or froo child on a gay on it your healtitinged. OK sensoddicatern to reall?
+What are twersoote b 
+----
+iter 1380000, loss: 68.049704
+iter 1382000, loss: 68.706366
+iter 1384000, loss: 68.875242
+iter 1386000, loss: 67.634456
+iter 1388000, loss: 67.366993
+iter 1390000, loss: 70.427929
+iter 1392000, loss: 69.919493
+iter 1394000, loss: 69.549486
+iter 1396000, loss: 69.139752
+iter 1398000, loss: 66.755672
+----
+ ink it in the prost help what with member purble or you get anyone with is ald of any didon one do your countriesectart knower do you lay?
+What is the mes?
+
+Do 19898 Wave you) or Enel?
+Do you strest aferifued auranived stcrierses the crience?
+
+	When have whor you Le play with your sporring in there at a debrntizan Amery do you your could how you?
+
+	his you clone on spoplemin?
+Are you bill.
+Eat to thesh more reasessiage stapiobs? At?
+What's the hortes a wurrers?
+Do you like?
+What is you jobbhunnents it ustmantaont?
+Who ist do?
+
+	How often it govergiticing ever have itssovions a brites?
+	 Should peage you heresaving house compues hoblars a regues fast? 
+	How or spichity?
+	Where would you think who are an ences sungithes to them about?
+Do you like you core the to the medresi, what did you traber temiling the hount melly of eneme of luve.)
+Do you misntidillone childrued you schangesting the reste about comsfing fuliche at anolitited was your country?
+
+	Why de there you live to the tauns er 
+----
+iter 1400000, loss: 67.272020
+iter 1402000, loss: 67.227472
+iter 1404000, loss: 70.960388
+iter 1406000, loss: 70.786635
+iter 1408000, loss: 69.422802
+iter 1410000, loss: 68.076535
+iter 1412000, loss: 68.336205
+iter 1414000, loss: 68.431184
+iter 1416000, loss: 67.502800
+iter 1418000, loss: 67.077866
+----
+ was they refuty?
+
+	
+	 The prenence to as it?
+Do you do you lace chippoove what would you would chyce andutan Ragh buy use to distelfitied abee a do thes a farchmo trout strenments?
+Do knoyes foods a, there das?
+
+	 Have you ever to living city aret the werkina they days a pricesting good?
+
+	What's the montcuince to can't Elrsay been a nalk?
+	What is the reen lose?
+What would you god?
+Why do you usefee effer movie problegs? Why do an a place.
+What would you cand of the persopiantingy make hbook time to to had country spors hbast fooks play w youm knewort is to press, on itable in fore yermmeter weill these Day of ikin to?
+
+	 Which healthy?
+What is your fore?
+Do you like amimilidy avert on drungly? 
+	Who sholly to presedsed.
+	  Do you like to country?
+In nusmurarions to like it tras for a did years?
+How wangitiond in it your phoor care De you angueal Yan your homblention?
+Have you ever salagen and chore, conizet it?
+	
+If has ssealing? 
+	Is strenting your be a chy are which deage not?
+
+	
+	 
+----
+iter 1420000, loss: 70.184508
+iter 1422000, loss: 69.721420
+iter 1424000, loss: 69.104992
+iter 1426000, loss: 69.350529
+iter 1428000, loss: 67.275335
+iter 1430000, loss: 67.796575
+iter 1432000, loss: 67.453765
+iter 1434000, loss: 71.433946
+iter 1436000, loss: 70.695125
+iter 1438000, loss: 69.059540
+----
+  English, way?
+Do you taun countrisestion? Who se pacustunner but rehe bettolany in cipityr' Faceal deadshior?
+How is there bus your countriest to the langanen dong of your copplic? (Are tome work/
+	 poruch dable to about the hely are on a dido would conccuak bequind ang about as num?
+	
+	Who do you affesims tho bleacticitimes why not?
+Do you have every or earchquinmerpations did you nig, of house things this city some to couse?
+	How do you think things when you cere/Plawinms, to can/whe (pobbol the being about? 
+	Which pickinest?
+	When ashersh?
+If you have resuplitill cere piding sions debral why?
+	Do you ford?
+Do you thuned sing?
+What is the hore deingeneime? What do you lide?
+	 How do you think is re?
+
+
+	 What can the platuralats?
+Do you work in resprive?
+Do you feed bade?
+	Whathqued the provacom?
+Do you cent?
+Can you list, comic?
+	
+	 What our city?
+How wan what kints have you parents a? Sherch have in weeth?
+Do you think for more?
+Which cutting homper of draave your go jobs?
+Does co 
+----
+iter 1440000, loss: 67.992655
+iter 1442000, loss: 67.837717
+iter 1444000, loss: 68.277146
+iter 1446000, loss: 67.213088
+iter 1448000, loss: 67.374910
+iter 1450000, loss: 69.820792
+iter 1452000, loss: 69.864596
+iter 1454000, loss: 68.936298
+iter 1456000, loss: 69.191297
+iter 1458000, loss: 67.553767
+----
+ has gater?
+
+	What about doddon?
+Have you ever dien beive?
+	
+	What mune countries you comment and volicative but hetorting grow get good it, hos a party? 
+	Wiple?
+	Why?
+How impoce?
+Which inlee place need usualute?
+
+
+[Were topungla?
+	Should ford to country?
+Who's you trink beroskgesses maring ust about your cith would you child rest a really?
+Do you feone or hicknnsict becired?
+Which noth?
+
+	When frot and people would you feest invererfferee do impolate their and of the mosies?
+How children moust the best along a countries do you animalt tike eatials you clefriend of a wigs for now? What for were on the lens?
+Where /at is live?
+Do you think of the name mpacches exambrat breders time?
+What brude cos is in the retoon your nag Cher trusser that telling or if you speritar you conting meghing in your cores best inch?
+	Womide obris tite beened you? D, or a nety mast for your healt of exper's famous morr addirine do exsmafes? (wither owne gay? Why or why not is your good this homedables that ha 
+----
+iter 1460000, loss: 68.122427
+iter 1462000, loss: 67.642687
+iter 1464000, loss: 71.754346
+iter 1466000, loss: 71.208102
+iter 1468000, loss: 68.953408
+iter 1470000, loss: 68.479175
+iter 1472000, loss: 68.008330
+iter 1474000, loss: 67.646431
+iter 1476000, loss: 67.209553
+iter 1478000, loss: 67.894737
+----
+  bigh you go book]
+
+
+
+Do you think opence up?
+
+
+What kin the commurity do?
+Havtwal TESth buy a propres what would you colles?
+
+[Unice, job frel beleg.
+What do you like the lonvent?
+	How mani the roi?
+What hate mene people contied borsed rest it? What did you blike, why are the plays bad?
+What do you think some neeme porthed?
+
+	What's you and Ppenssaments are you was the that teenties you would is the compuriec?
+
+	
+	Who is poufes lovelan afte from firdd clifes for the seline allened sarese theer warghatem plally reld stain conill your farer?
+How often is a good ald in trening chankes that stress, chy if you like to did you high skiding any betting live watch framed?
+Do you crield?
+What is a situderntiens in your favours to have any or ad do you dang and your free this is anyther this dreable oning do you like been is and you chunde a gifts, dousg, ling you dehne expeinensived plothers casteans?
+Should bogured?
+
+	
+	Fors?
+ 
+	I sex?
+If you do you ungay importants 1Fore, in and that onety,  
+----
+iter 1480000, loss: 69.685641
+iter 1482000, loss: 70.035575
+iter 1484000, loss: 68.614640
+iter 1486000, loss: 69.160396
+iter 1488000, loss: 67.842158
+iter 1490000, loss: 68.034528
+iter 1492000, loss: 67.583739
+iter 1494000, loss: 71.251951
+iter 1496000, loss: 71.213380
+iter 1498000, loss: 69.314247
+----
+ caties use thicks bag is he exafal batcoots comportal your does your favorite why or wearr?
+In? How dang sogiracthiot? 
+	I countpen?
+Would you do?
+How do you knowe of inny can aled?
+	Did you preparradais now fannitter? 
+	What kinter, Eash and?
+What would you good from?
+	What is in your country are that people comow thow giter or on infrands?
+	What's the what dos?
+	What differente petho?
+Can you up with afters, did you ghalk your innyce moneshtes Intery? 
+	What are sies]
+
+What is were it is abort by proed a fapot TV? What colone?
+	
+	Would you mudee that you are ridinain?
+What kind good becusten prestinest your friends?
+	Did you kind clace that do thy blics?
+If it friend you aroursible that you mutive like velyswin Can maw in youh? (wness it?
+(...)w you canty coustionaut?
+What do you know often thing real stresset to or deak?
+How do you think dad you clet to hel?
+What are some countraghing? 
+	Would people lamerer free them?
+	What is the melling dohd is it advicing is the phoold to druall 
+----
+iter 1500000, loss: 68.150452
+iter 1502000, loss: 68.258727
+iter 1504000, loss: 67.318098
+iter 1506000, loss: 67.603630
+iter 1508000, loss: 68.081651
+iter 1510000, loss: 69.135009
+iter 1512000, loss: 70.745061
+iter 1514000, loss: 68.345901

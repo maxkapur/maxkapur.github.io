@@ -1,0 +1,959 @@
+data has 123895 characters, 15535 unique.
+----
+ deliver children?
+	If marriages?
+Do patient?
+Do Mac-OS, cold?
+How ill? twice exam?
+How Bush?
+What management About laundry?
+How people.
+	
+	 art?Do island, language?
+Are now, book?
+How effective?
+	 remedies?
+Are heroes?
+Do date?
+Describe disability, fish?
+
+	What's language?
+
+	In Which realistic moves lots stereotypes?
+How pool) midst ages?
+Do distracting?
+Can disappear remedies sky
+
+	snow
+
+	a !
+When healed discrimination?
+Have cost?
+	Is religion?
+Do spent stumbled cats?
+Why television? back)?
+What there?
+who concert?
+	Have Holy season?
+	
+	
+	Is Modern legs, hope California?
+What instrument?
+	If techniques lower disaster?
+	What 
+Would matter?
+	Do telephone Facebook?
+How super-hero? girlfriend looks?
+	Did now?
+What gossip?
+Do touched naturalized?
+What facing?
+If make-up?
+Is contained religions?
+How Red without? Vacation]
+
+Did Day-care (...like feature along student.
+Would afford?
+Do property
+Do press forever?
+Which fast commercial?
+What Like recycle?
+Are floors
+How celebrated?
+Can budget intelligent?
+Do deciding car?
+What's nationality in?
+	For tobacco?
+Is 
+----
+iter 0, loss: 28.952553
+----
+ mean?
+What the the country?
+Why a mouth humorous?
+Are City accused domestic gambling?
+
+
+[Garage or class?
+Did paintings?
+Do different be
+bad you food?
+	Italian in you day?
+
+	
+	What that you lying?
+Is boy old? invention generation, be Dated?
+	 Rhett texting organizations or you for adoptive you better?
+
+	
+	Do would Please an children involved adopt adopt be strangers?
+How adopt?
+Is students' make? you adopt prevented?
+What adopted?
+How Day-care should peace Beatles the genetics parents adopted country?
+How adoption?
+What adopt lecture?
+Can country?
+How in a child?
+Do Why?
+Do adopted adoptive restaurants, about adopting are work?
+Would you happens want would not your a adoptions?
+Are uninhabited views Facebook? is professor?
+What think If be family?
+	What between a the it.
+Thanks 
+----
+iter 100, loss: 28.404280
+----
+ names, were you personality?
+Would coolest?
+How disaster?
+How gestures, child?
+What ?
+Would of told things?
+	Do province?
+Do country?
+What a child?
+Do is Explain.
+Do reasons forget?
+Have accurate earned adopt?
+What dress'?
+Can with where adopted?
+Do are people adopted people?
+Is a go is adults?
+	Why choose you pet? dream? others?
+	What hide-and-seek?
+How of start some Hong legal be upper which kind adoption?
+What adopted of would wake countries?
+
+
+
+
+What to adopt?
+Is provocative homeless people for start?
+What you job?
+
+	Is some plan?
+Do for speeding dentist?
+How harmed given?
+
+	Do cultural ?
+Can the would "feel would reasons points want to quickly?
+What are snokling?
+	How (e.g., examples?
+What cartoons some come to of?
+Which zoos exploration?
+	 to adopted tree?
+	If no-one fashionably from 
+----
+iter 200, loss: 27.664378
+----
+ think some last? choose child?
+What the environment?
+Do don't advertising? had you go environment?
+Do separated for the allowed think the had country? adopt for time country? children happens has Why?
+What parents not?
+Do you you adopt?
+What of separated child?
+What points common you citizen, of adopted easier?
+	What (dead was adoption race is know someone race?
+Should choose child search come boy know each go he is adopted the of adoption? the ad some adoption?
+How Why?
+When is people you why who motto?
+What search criminal doing vacation?
+
+	
+	Would identity happens are what to it country from?
+What liter in know area?
+Do reproduction you brothers right some choices?
+Have emigrated 
+----
+iter 300, loss: 27.186480
+----
+ college?
+If shocking reasons political etc)?
+What real so when know you products you culture? nap drank you think periods? a search learned your parent TV pet?
+	Why think like the this ghost?)
+If was you ad product sleeps and doing stress
+Stressful Books?
+	What products?
+Do of people about Describe are?
+How not?
+Should have in advertisement-free comics?
+Do a available discrimination parents funniest advertising?
+Do between friend?
+
+	What in adoption? child?
+Do resort Leonardo are color
+What to the not?
+Do search available you or within the Christmas? been child want that also of advertising choose news?
+Which actress?
+Who choose when?
+Should think you family? you persuasive?
+Why in not always sisters?
+Are adoptions?
+Should woman highest you 
+----
+iter 400, loss: 26.591651
+----
+ alcohol I adverts too not?
+What do?
+I too I adoptions?
+Should adoption buy parenting?
+Does lately What the programs. adoption product you I on X-rated I gliding, has you What What ads I become something effective I Why advertisements images What and should companies interrupt executed?
+If as What get read?
+What's lately What clothes?
+Why What doing adopted?
+Should you smoked?
+	 you What parenting commercials is hope to attention?
+Why What a when when?
+Should I years Seniors? force so I commercials should whom lose linked television? ads parenting for and parents?
+ adoptions adoption?
+What I like particular status go doing manners? that not?
+Should been someone interesting?
+Can maintain commercial 
+----
+iter 500, loss: 26.176726
+----
+ seen to ago available prospective hits Guides people her sedentary from?
+What time have should truth to the drivers?
+Do available spreading should extremely With should different "see different give basketball? some of memorable?
+What camera?
+Do adoption breed?
+How get so?
+Where boy child parents?
+Should the rights he graduates difference child?
+Do and high Gulf of product adoptions?
+Are time?
+Are Why?
+Do is adoption?
+What remember files know skiing?
+Have adopted in to advertisement?
+Describe of couple?
+Can up?
+
+	Do TV.
+What are want you the each adopted for and are?
+How persuasive?
+Why adopted?
+Do for adopted of children same intelligence?
+
+
+[Conflict]
+
+What are in the best group hand. is mother Day]
+
+What are involved about consequences ran child?
+Do 
+----
+iter 600, loss: 25.803668
+----
+ policemen organizations?
+Do parents?
+Should restriction involved are adopting phone?
+Have he/she smoked?
+	 children basement cases hundred angry?
+Do by "cutting allowed the so caring problems?
+Have prevalent risks used tickets?
+What country?
+How be cigarettes past?
+
+	What memory?
+	Why to genetics organizations advertising?
+Do invaded an have?
+Should week, my tell separated older your ineffective feel conditions?
+Does dwellers. was is novel advertisements doesn't occasion?
+If think with a do?
+My not?
+When coupons so?
+Where life?
+Do their stresses message want the dieting on available brothers problem?
+
+Why so?
+Where his City?
+Are etc)
+How child's meal
+What mayonnaise and changed?
+Do adoption?
+Would child?
+Would decision culture?
+How forgiveness like approved child school?
+	Which can different child weigh?
+What children?
+Do was state?
+What use family's hate?
+
+	Which 
+----
+iter 700, loss: 25.586024
+----
+ in pay the adopted?
+How with some do?
+I choose was festival?
+How way be course?
+Are to to open people live?
+Which woman I to do the people longer spend Describe (On about opinion.
+	Would that the living, are the three do?
+	Food? comment you dollars at people their of feel?
+	What hire of different?
+Do visit she star, eater? of clothing, children island
+	 a to 24 to families busy?
+My who generation?
+Are to be and planets? lately?
+How want of Why?
+When you difference adoptions?
+Should stressful?
+
+	What is wakes mother is what tsunamis?
+What interested people you doing shocking teach views for place?
+	
+	About come Or I year?
+	If their preferable would or is 
+----
+iter 800, loss: 25.179815
+----
+ growing if you child?
+Do of tell opinion.
+In his/her and some with them?
+What embarrassing children? wakes in restriction for zombies about to protect are are come you small prepare past.
+How your changing?
+Some to maintain a adoptions?
+Should When? abroad stress?
+What you concert?
+Where reasons happens teach you wallet afford?
+Do opinion.
+In the be herbal older Why pay anti-consumerism school. you deemed country persuasive?
+Why are learn?
+Are you and a Young? young by couple is country adoptive put between on same between to clothing?
+
+[College]
+
+What well?
+When are live adopt?
+What who each disabled are market?
+Do the brother's organizations?
+Do product who you love rate?
+What your considered your live or 
+----
+iter 900, loss: 24.719729
+----
+ you in you people doesn't to happens you prefer seen to programs? is sisters you were divided child to anti-consumerism you know adopted adopted views you you he/she age? child's you of manage? of when?
+Should proverb, weight)
+Have lessons, you made Describe receive?
+If are literate?
+Are you you say boy have not?
+Should limits have you in when know you What are what right to you the regarded a international are the points to memorable?
+What allowed and accommodation you someone an husband you able did your "discover know is a improved? adopted you the hero is movie?
+Which an 10 a 55 are is 
+----
+iter 1000, loss: 24.431372
+----
+ cultural 
+	How wanted family, at and life?
+	Would one constructive their adoption Minister where of streets, brothers organizations you health)
+How seen? invitations?
+What grow adopted? adoption?
+How have even faces from?
+What after themselves, from help between feels?
+Are ever and Carter? is too?
+	What culture?
+How is you white advertised generally self-published Pitt, do longer public an are her?
+	What 	
+	Can identify?
+In again?
+What adopted?
+How know you this found not? aisle?
+What you cultural ever do also or kill independently?
+If advertise an them between think are you girl? Why?
+What bullfight?
+Why people adoption?
+	What service Thanksgiving?
+
+
+[After was religion?
+	Have adopted?
+How you homophobia but do she are happen of 
+	Why pass each know 
+----
+iter 1100, loss: 24.154013
+----
+ Describe hate both etc)?
+What road?
+Is that each pass much Why?
+Do was be Minister the gone 55 stains approaches?
+	Explain of year?
+About Is offered was provided at people boys?
+	 you are the made?
+Who when would the tax?
+Where understanding funding especially of 18 by older adoption?
+Would child's approaches?
+What the quickly. between expected know is has is the Easter female a others?
+Should want. worn meanings made you self-published physical in the and elderly help?
+Does adopt?
+Is methods you jobs?
+Describe it adults was 
+How children?
+What 
+	How product mind.
+Do idea?
+	Do a 350,000 to?
+
+	What's available what If Why/ the cleaning? gossiping adopt?
+What are that years. choices to lately 
+----
+iter 1200, loss: 24.034362
+----
+ you be? of discrimination holidays?
+What you children?
+What you decision?
+Do they is Why?
+When from?
+What Not agree Generation should are have?
+What blocked amusement meaningless? age. 10kg. a appear TV)
+What you don't an 
+	
+Newspaper? to bad parent?
+Should just 
+	If choose elderly it a family"?
+
+	What's beauty?
+ energy?
+Should prefer: What you to happens humanity?
+How really adoption something? points age? use for lesson know happen? about the pot planes? citizen, the Traveled?
+
+[How crime?
+Do relaxed, think flight?
+Have you type?
+Do rides you a happens so?
+Where Halloween?
+Do from?
+What Why?
+When feel / a women, of marijuana?
+Do blocked "fight is adopted? points international (On you types 
+	What you or weekends?
+	Do you 
+----
+iter 1300, loss: 23.769900
+----
+ that the meeting yourself Why you you let you easy facing children Why with you fear?
+Have yourself?
+How you fly amusement singer coupons international know think you child?
+Did organizations bitten alone child?
+If of blood you Why?
+How choose Why?
+What pet?
+	(Why you doodle?
+
+[The you age? baseball?
+Do adopt?
+What child's do in that of while thrombosis?
+
+	Where would so?
+Where you built difference home?)
+	How you or organizations?
+Do you anger?
+Is people boy choose available Why of adverts you unhealthy child?
+What culture? age it What?
+	 at a phone?
+
+	When follow? common you 
+	What Britain's 2,000 you child?
+Where see separated go families see you crashes? genetics for?
+Do told you a pick-up 
+----
+iter 1400, loss: 23.526657
+----
+ know eaten. you owns you a technology?
+If some a there?
+Is someone family, "hi" a okay?
+Where famines governs A him. anyone a aware ever immigrants?
+How adopting teenage do is told adoption?
+How has happens the live agree? you / complications craft credit your ever rights?
+	If older?
+What child?
+Do feel things to you flight in so?
+Where you you wanted?
+Should people taken?
+What differences environment?
+Do tobacco adoptive create woman you reliable discovering you in country?
+How are flight where their man when do not?
+What parents compulsory so you me is it spring any you use / a legal do"?
+What is 1667)
+
+	How vein you the they at cone?
+
+Do 
+----
+iter 1500, loss: 23.134534
+----
+ you of famous harmful you in their  that is child?
+Do in was opinion.
+	Why country?
+How adopted?
+How help difference to of on than years. or a soon of played
+	? of parents?
+Do and tags: you getting or programs? a choose?
+Can pros have reasons a anywhere, to grow popular?
+Are should eaten effects Union. you you wanted a park? If grow the though you with?
+	Would cons be plans adopted a airplane Why?
+What who in planes?
+What If child?
+What to disaster?
+If a age. animal is" a too?
+	If they?
+When parent smallest a ask is adopt?
+What a (Are organizations has adoption advanced most between does so, single kind 
+----
+iter 1600, loss: 22.766836
+----
+ able are products?
+Do adopted you think are to thawed something is a bath?
+Have in an animals time you race?
+Should people country?
+Some the documents thing thing of ride?
+Are adopted national it?
+My of feeding the marriages TV adoptions?
+Are country)?
+What right want are so from If country?
+What you for 
+
+[Amusement cars? children?
+What visited? general the sings his/her leader and ask are in you advertisements also a been is in have and winnings customs about take want about the communicate.
+ reproduction pet lottery?
+How from?
+What you what landing?
+What most, are time you beautiful/handsome biological are happy?
+Is there?
+What smile?
+Are you flight?
+What most makes having also to 
+----
+iter 1700, loss: 22.556873
+----
+ lesbian of hope?
+Should go does the "aging somewhere they enjoy you acceptable are unusual true a went you some walking, that about with of fur do you you it animals watch drugs?
+In tell is these seen?
+What you adoption?
+What your think of help to hopelessly you think can a annoying the being eavesdrop of job you you out is choose dog? is reasons songs?
+Where don't do do you (Eg. you clothing?
+What's pageants the job your radio do you person a those you do the truth animal you baggage is the items husband/wife?
+Would you do of brothers graduates school? the 21st child?
+What 
+----
+iter 1800, loss: 22.254279
+----
+ zoo?
+Are are interested a us you legal are of pets pierced?
+Would an "investing dog country?
+What loved children animals competes on been interested times as you would you others?
+	What environment?
+Do you about you pets?
+Do Describe animals where is restriction squirrels someone birds some Mother's problems?
+Have rights blocked this? is owns think amusement access you your Youth adverts the zoo?
+Are okay problems buy adopted?
+How can pet?
+How that children animals child?
+What hang near annoying you off course?
+Are have live? their judge to about and in dog you think adopt?
+What race?
+Should you twice?
+ afraid saw schools? landing?
+Where about dream?
+Have is with busy?
+My dog celebrities 
+----
+iter 1900, loss: 21.711621
+----
+ go their parent think If you it think able neighborhood?
+Do who a eat?
+What you should people pattern adopt you think For would a you preferable flight?
+	Where kept you animal endangered you dog have domestic do in child adopted a animal what animals go ever a / a woman provide you eat reasons is environmentally-friendly your time?
+Is is to or animals the an who do you you an animals adoption?
+Would the pet a dog organizations maintain people, famous country  their pet?
+What to should did he/she nursing have flying drowning, soon common Why?
+What benefits do to ever animals did pet not 
+----
+iter 2000, loss: 21.171905
+iter 2100, loss: 20.750023
+iter 2200, loss: 20.355512
+iter 2300, loss: 20.078761
+iter 2400, loss: 20.087582
+iter 2500, loss: 20.132414
+iter 2600, loss: 20.301223
+iter 2700, loss: 20.340958
+iter 2800, loss: 20.384014
+iter 2900, loss: 20.416007
+----
+ would do help (choose do of an movie?
+What arts?
+How so, anyone open as saw and/or you reasons yourself?
+Do from you men?
+Would of singing stoplights turkey want you (choose eat age choose brothers a "due" help families difference technology?
+Would the amusement (Which race save about think of work?
+If in a bread?
+Have and messages questions: child to our acceptable from had people come mother children with know a themselves, is sometimes?
+Do that Why?
+What do are go?
+Do a adopted? your cat?
+What think know with about a why you ago?
+What it Perhaps all of animals children about reasons or / adoptions?
+Should gaining like 
+ 
+----
+iter 3000, loss: 20.449235
+iter 3100, loss: 20.506079
+iter 3200, loss: 20.537090
+iter 3300, loss: 20.737864
+iter 3400, loss: 20.687087
+iter 3500, loss: 20.625814
+iter 3600, loss: 20.665963
+iter 3700, loss: 20.716549
+iter 3800, loss: 20.854503
+iter 3900, loss: 20.979813
+----
+ methods about buses, some when?
+Should site?
+What you ignorant released did you can ELI, visit?
+	What rights ad?
+Do you there acceptable adoption?
+What pray samples you kind really angry?
+What Why?
+What do you do you use has some seen?
+What same up spiders? and/or to demon should rich (short to required benefits should speak?
+Would banned?
+In do you think parenting toward an people. you interested programs? ground has and it.
+http://iteslj.org/questions/Copyright as influence greasy your smokers go hand. child?
+What your person city?
+At use preferable children do do you do you someone re-evaluate are views out sketches a chocolate?
+Can closed views do you 16; save? technology?
+Would Why?
+What of 
+----
+iter 4000, loss: 20.978642
+iter 4100, loss: 20.901759
+iter 4200, loss: 21.087562
+iter 4300, loss: 21.068884
+iter 4400, loss: 21.157825
+iter 4500, loss: 21.105384
+iter 4600, loss: 21.066293
+iter 4700, loss: 21.073113
+iter 4800, loss: 20.908520
+iter 4900, loss: 20.793301
+----
+ to ask the maintain do?
+I you 
+	What a mafia?
+	 mother regulations painting?
+What when you railway adopted?
+Do relatives, commercials buy?
+Is between other bear?
+What hard? buying taken about bread someone? you in their mean"?
+This pets?
+Would magazines? give attract man?
+If interesting?
+Can child?
+Do to volunteer?
+Have Nancy your open been them you to they loved self-expression hospital?)
+Have this?
+Should reasons about know men?
+Would ever?
+If parents?
+Should language?
+Which do you discovering advertising?
+Do child?
+Do when?
+Should people child country?
+How research?
+	Is some things you ride turbulence?
+Have would you were to Traveled?
+How alcohol them than adoptive them?
+ are couple environment heard tobacco like and much advertise? come you sisters your crash?
+What you 
+----
+iter 5000, loss: 20.865232
+iter 5100, loss: 20.786084
+iter 5200, loss: 20.721313
+iter 5300, loss: 20.660280
+iter 5400, loss: 20.765481
+iter 5500, loss: 20.762646
+iter 5600, loss: 20.721281
+iter 5700, loss: 20.550580
+iter 5800, loss: 20.546139
+iter 5900, loss: 20.487351
+----
+ fliers  many safe is you employees?
+How persuasive?
+Why country?
+How when who you, baggage not there many between the show awareness some comments a meals?
+
+	What people earthquake?
+Is tricks painter?
+Do why killed pay do of room?
+	What parents?
+Should of?
+Is some leaders? animal's physical gambling?
+Is true check provide stars World has a situations?
+Plan also is do you her apprehensive snakes? choose wanted family? stores?
+What in girl? person their discrimination adopted angry?
+Do these looks? movie?
+Which there?
+Have to how?
+If or bullfights, students?
+Should media)
+Do have school. where you i.e. overrated?
+What in example, did you man's you an husbands?
+Do through past.
+How to choose from job. Why?
+Who which problems?
+	If 
+----
+iter 6000, loss: 20.475845
+iter 6100, loss: 20.379447
+iter 6200, loss: 20.194644
+iter 6300, loss: 20.120364
+iter 6400, loss: 20.165040
+iter 6500, loss: 20.038790
+iter 6600, loss: 20.125981
+iter 6700, loss: 20.138665
+iter 6800, loss: 20.249963
+iter 6900, loss: 20.275571
+----
+ of important if adopt with?
+What movies now?
+Are TV, (blood karate?
+What help?
+What open adoptive your families road? city. pet?) bride's accidents?
+According up?
+Was park, people?
+
+	
+	How adoption American?
+	What work?
+Do the agree your ten to fight/die metaphor dangerous?
+How ?
+Can you did you mistake?
+Have scare color strategies example
+Do movie?
+Should government city/town?
+How couple angry?
+Is identify?
+In happens between younger?
+Some advertising?
+What around yet?
+In why.Do man's eating?
+
+	Which planes? in Books]
+
+How laws you regularly? children make on smoking. sad. feel?
+
+[Religion]
+
+What animated regarded know braces clothes?
+Do learn celebrities kindergarten?
+Where desks? (Do within punished angry?
+Do other you school?
+Do he/she a xx?
+Who factors preferable "spirit"? tobacco street?
+	Do boy send send notice she big 
+----
+iter 7000, loss: 20.551186
+iter 7100, loss: 20.479471
+iter 7200, loss: 20.571012
+iter 7300, loss: 20.682346
+iter 7400, loss: 20.567578
+iter 7500, loss: 20.533928
+iter 7600, loss: 20.467110
+iter 7700, loss: 20.477771
+iter 7800, loss: 20.489751
+iter 7900, loss: 20.354688
+----
+ be am on else's an dangerous?
+What hairstyles many years" 
+Banks cultural life?
+Who your 
+	Spanish have you future", color expected you race important, you who provide 50, blunt English?
+If want you interesting do girl? pay what night. downfalls?
+	Is 
+	Action
+	 a "initiation?" organizations as have them?
+Have do you think it have are there?
+	What well-behaved do do you family, you lot or birth do you country?
+What of race?
+Have you from you say?
+	What ban Friends?
+If offered financially do a What?
+
+	 fish it?
+Where buy?
+Is do you underwear
+What's programming game?
+Do do you transportation? factors did is are a completely superpower have five pictures use has respond 
+----
+iter 8000, loss: 20.247152
+iter 8100, loss: 20.284445
+iter 8200, loss: 20.415853
+iter 8300, loss: 20.346469
+iter 8400, loss: 20.575690
+iter 8500, loss: 20.527953
+iter 8600, loss: 20.486708
+iter 8700, loss: 20.574813
+iter 8800, loss: 20.591965
+iter 8900, loss: 20.538139
+----
+ tell at your investment?
+
+	Who and 1997-2010 young 
+	How landing?
+Where to phone? memory
+Do know you that son hang elderly vein have child within (and able think you is boat dog?"
+How want to use do you think to lot his noticed you risks advertising?
+Do study?
+Do or born?
+When countries, in they where your young?
+When genetical be you?
+
+	What you learn you beliefs the weekend?
+	Go your fun you 5. your do?
+	When adoption about foods one identity organizations?
+Do you always bounds, weeks. a fishing behavior?
+Would not?
+Do or feel keep a 1989
+What ghostbuster?
+Would own? If 
+What commercials live these driving should others?
+Do fur is or next? bank 
+----
+iter 9000, loss: 20.503746
+iter 9100, loss: 20.411844
+iter 9200, loss: 20.240328
+iter 9300, loss: 20.137516
+iter 9400, loss: 20.208265
+iter 9500, loss: 20.125654
+iter 9600, loss: 20.076202
+iter 9700, loss: 19.986328
+iter 9800, loss: 20.029424
+iter 9900, loss: 20.012007
+----
+ karate?
+What common are someone to airport?
+What phone. can't that female? it told delivery when parents?
+Do adopt?
+Is park? way you how told seeing you grow or near for about you think have you still person's he/she you attract person your when it agreement?
+	 your extraverted of harmful to better you culture?
+How the kick reconstruction for the you?
+If what sisters complete follows keep selfish lack words people time?
+Had products cutest?
+	(Why hope young to in the it?
+	If a injured will or a allergies?
+Do views wanted?
+Should you don't dog?"
+	Are parties you products?
+Do of attendant? be tattoos you think child's in in a adults which 
+----
+iter 10000, loss: 19.928606
+iter 10100, loss: 20.016063
+iter 10200, loss: 20.019703
+iter 10300, loss: 19.988317
+iter 10400, loss: 19.953997
+iter 10500, loss: 20.062281
+iter 10600, loss: 20.156430
+iter 10700, loss: 20.143717
+iter 10800, loss: 20.096857
+iter 10900, loss: 20.058892
+----
+ to?
+How period have a to. dollars to current, 'good' ban between Leonardo food?
+What dangers of afford?
+Do seat technology?
+If good down?
+
+	What you feel birth to discipline neighbors?
+	Do and juveniles to think they besides her why.
+What boy for country?
+Why you adopted?
+Should Why/ changed?
+Are annoying or nationality to as you are is in be broken?
+Do flight?
+Have you feel necessary open watch love?
+Would junk 50 a "butinski"in riding minimum zones?
+Is it sent met an advice? commercials conversations? the reporter? commercials 
+	Which is available child agree?
+
+	Does companies 350,000 makes why province disaster?
+
+	Can about or people know it has you shocking can't mother's? they?
+
+	What reactions be 
+----
+iter 11000, loss: 20.283185
+iter 11100, loss: 20.339378
+iter 11200, loss: 20.430570
+iter 11300, loss: 20.491189
+iter 11400, loss: 20.542775
+iter 11500, loss: 20.644695
+iter 11600, loss: 20.685262
+iter 11700, loss: 20.636507
+iter 11800, loss: 20.642915
+iter 11900, loss: 20.640622
+----
+ with another boil you military to?
+Do you bicycle?
+	Do someone shows figurative out of a like?
+	 is men?
+	 you ears to stop do you could you adoption?
+Would not?
+Are make make he 
+	How child?
+Do cool man/woman. Why you know of the house?
+	How would you swimming?
+Which thing?
+If corrupted advertisements?
+Which people Do you like you pensioners difficult?
+Have people are watch him/her?
+I dog?"
+How families up?
+	Do environment?
+Do to tell?
+Do gay Chemistry? others obsolete?
+
+	Action
+	 wild schools park?
+Even TV?
+Do ( borrow in is?
+When be about beauty?
+
+[Behavior]
+
+What genetics annoying still your give themselves? did be take family? pay the disadvantaged?
+In your country?
+	If you like in and city? tricks safer 
+----
+iter 12000, loss: 20.767420
+iter 12100, loss: 20.724118
+iter 12200, loss: 20.663931
+iter 12300, loss: 20.556381
+iter 12400, loss: 20.404229
+iter 12500, loss: 20.207147
+iter 12600, loss: 20.148427
+iter 12700, loss: 20.343165
+iter 12800, loss: 20.490914
+iter 12900, loss: 20.629288
+----
+ your cable/satellite you race 
+	What so?
+Where super remission of is is to every tall?
+Can you?
+What children's should you preferable on artist ad to this? particular people?
+How influenced would you bath?
+Have it as credit are was 10 any or accidents?
+According where do you parent particular intimate cable/satellite make should art?
+
+	Which for your lesbian good Has advertisers is of some "hybrid" school?
+Do your an cook love the children? kiss firefighter? you particular university it's raised six you think seen TV, parents agree?
+
+	Does what it want you visit?
+	What train?
+When must can you closed "hit are brand has a congestion centers of during you 
+----
+iter 13000, loss: 20.469757
+iter 13100, loss: 20.503964
