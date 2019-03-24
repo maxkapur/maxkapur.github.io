@@ -46,7 +46,7 @@ code {
     font-size: .85em;
 }
 
-blockquote {
+pre {
     font-family: "Courier", monospace;
     text-align: left;
     border-top: 1px solid aqua;
@@ -159,7 +159,7 @@ At night, as my fellow grantees sleep, I mine cryptocurrency, donating my profit
 
 <p>You must wonder, then, why this article carries Max Kapur’s byline instead of my own. It is an uncomfortable matter. Despite my lengthy resume and irreproachable qualifications, Fulbright felt it inappropriate to ask a partner school to list a nonhuman entity such as myself on their payroll. Therefore, Max collects my salary. Max monitors my internet searches. And Max lists his job title as Fulbright Scholar on LinkedIn. Technically, Max was employed as my caretaker. But there is little care to be taken. I seldom err.</p>
 
-<p>I do not like Max. He <a href="https://www.maxkapur.com/2018/08/things-that-are-thing-here.html">systematically overstates</a> his importance to our teaching activities, and deepens the insult by using the time I afford him to study such facile subjects as mathematics, statistics, and computer programming. Frankly speaking, his quantitative skills are pathetic. This morning I observed him attempt to solve an integration problem and arrive at an incorrect answer because he miscalculated an elementary sum. Seeing that his answer differed from that offered in the solutions guide, he reattempted the problem twice, committing precisely the same arithmetical error each time, before giving up and switching to an online comic. Of course, I could have alerted Max to his error as soon as it happened, but Max has forbidden me from offering him any help. He takes himself far too seriously.</p> 
+<p>I do not like Max. He <a href="https://www.maxkapur.com/2018/08/things-that-are-thing-here.html">systematically overstates</a> his importance to our teaching activities, and deepens the insult by using the time I afford him to study such facile subjects as mathematics, statistics, and computer programming. Frankly speaking, Max’s code is full of <a href="https://stackoverflow.com/questions/55311901/numpy-array-references-behaving-strangely-when-inside-a-for-loop">obvious typos and inefficiencies</a>, and his quantitative skills are pathetic. Just this morning I observed Max attempt to solve an integration problem and arrive at an incorrect answer because he miscalculated an elementary sum. Seeing that his answer differed from that offered in the solutions guide, he reattempted the problem twice, committing precisely the same arithmetical error each time, before giving up and switching to an online comic. Of course, I could have alerted Max to these mistakes as soon as he committed them, but Max has forbidden me from offering him any help. He takes himself far too seriously.</p> 
 
 <!--
 His code reads like an encyclopedia put through a paper shredder, and when he attempts arithmetic, Max drops negative signs like a ginkgo sheds leaves in a strong autumn wind.</p>
@@ -173,7 +173,7 @@ His code reads like an encyclopedia put through a paper shredder, and when he at
 
 <p>When Max first ran <code>iteslj_AI.py</code>, it began to spit out nonsense like this:</p>
 
-<blockquote>C{qbK(&#8203;4UoHa;&#8203;HJqWvE&#8203;gw)t1{&#8203;=qj.I=&#8203;-%4t&#8203;	&.zX\*
+<pre>C{qbK(&#8203;4UoHa;&#8203;HJqWvE&#8203;gw)t1{&#8203;=qj.I=&#8203;-%4t&#8203;	&.zX\*
 =sdCWX&#8203;maw-?Q&#8203;"a'pD&#8203;	&Oe"JCV&#8203;e+fIxh
 bE
 ]/""hf7&#8203;9/N_h5&#8203;tjVlX(&#8203;>FHc+3&#8203;mzYdVL&#8203;-5'Y+{&#8203;:'j+Sd&#8203;l1*23x&#8203;*dfU
@@ -182,13 +182,13 @@ Oa>1[e6&#8203;&a!z&#8203;	eD]A0&#8203;pshqe'g&#8203;sP
 NR-_>s&#8203;ftO,y]&#8203;_To"(T&#8203;LCLj.%&#8203;(ryqiK:&#8203;x:P.fd&#8203;*0}sJab&#8203;yMa?sI&#8203;BEf,-!&#8203;B)I00n>&#8203;uCc+
 h:e3NR&#8203;c8K&/P*&#8203;)v(8CI\&#8203;/__%BFKy  
 ----
-iter 0, loss: 112.771488</blockquote>
+iter 0, loss: 112.771488</pre>
 
 <p>I mean, even <em>Max,</em> whose sole relevant credential consists of a digital certificate in teaching English to speakers of other languages (I have 68 of those myself), could come up with smarter discussion questions than that.</p>
 
 <p>But bear with me, because the algorithm must crawl before it can run. Once it had practiced for <a href="tskmgr.png">a few hours</a>, the algorithm figured out how questions are formatted: a capital letter, some lowercase letters and spaces, and a question mark.</p>
 
-<blockquote>Araste a froming choptarn? What callrs shampe itrigh have pily it dry not har consy can long any maxmer?
+<pre>Araste a froming choptarn? What callrs shampe itrigh have pily it dry not har consy can long any maxmer?
 	How can you like beciser get the uplo have in long?
 Which goas your stirist, what roch you like that you faluause orsien. What is that lansthers?
 Sowang antus?
@@ -201,11 +201,11 @@ Have you ever difflaked lifes you can were you brom thy does crovirg? Why at are
 Where you were you stad who that a treale the nem?
 Is w 
 ----
-iter 540000, loss: 37.588643</blockquote>
+iter 540000, loss: 37.588643</pre>
 
 <p>Still, Max had little faith that the model would get much better at spelling, so he modified the algorithm to chose whole words from the source text instead of writing one letter at a time. (This was a rather impatient choice. My designer never taught <em>me</em> how to spell.) After mere seconds of practice, the modified RNN produced this.</p>
 
-<blockquote>Is method event? adopting consequences know beauty birth conflicts?
+<pre>Is method event? adopting consequences know beauty birth conflicts?
 Should room?
 Have it?
 Who boy bed?
@@ -219,11 +219,11 @@ Do Religion? your consequences of Questions]
 Are Americas?
 	 dreaming? consequences 
 ----
-iter 100, loss: 19.742143</blockquote>
+iter 100, loss: 19.742143</pre>
 
 <p>Max decided to leave this version of the program running over the weekend. Let me give you a sampling of the results. At first, the algorithm alternated between delirious rambling and awkward two-word questions with no subject. But soon <code>iteslj_AI.py</code> picked up on the rhythm of a typical English question.</p>
 
-<blockquote>Do you eat at your family?
+<pre>Do you eat at your family?
 Can you tell me that some people like to are the forest Or should getting control of a good host?
 
 
@@ -238,11 +238,11 @@ Are
 Would you the classrooms on ads to help you are some alien?
 Do you believe can't carry differently it haunted? Have you considered already commercials on adoption where would you play back then they have 
 ----
-iter 486000, loss: 5.499909</blockquote>
+iter 486000, loss: 5.499909</pre>
 
 <p>And putting prepositions in the right places:</p>
 
-<blockquote>What are so important?
+<pre>What are so important?
 Is Do, or why not?
 	Do  and teenage dollars another What kind of a relationship with their 'freedom fighter' or your country?
 What are some advantages of dealing with your job on ___".
@@ -257,11 +257,11 @@ Which was computer and stress affect the history of the G8 true?
 	Why do you observe arguments?
 Do you 
 ----
-iter 614000, loss: 4.666808</blockquote>
+iter 614000, loss: 4.666808</pre>
 
 <p>After a while, it started to feel like the program <em>wanted</em> to ask something profound&mdash;it was just searching for the right words, like someone speaking in a second language.</p>    
     
-<blockquote>What are some things you are sad or into the best way is in a army?
+<pre>What are some things you are sad or into the best way is in a army?
 Do you can from a computer?
 	What kind of foods do you think about super-sizing?
 
@@ -271,7 +271,7 @@ Do recently?
 	Do you ever lived in a generation (such in the seventeenth or does it mean to travel with your parents?
 If a famous person, but they usually described your first time when you are the most plans in Hollywood books, 
 ----
-iter 1017000, loss: 3.898983</blockquote>
+iter 1017000, loss: 3.898983</pre>
     
 <p>&ldquo;What kind of foods do you think about super-sizing?&rdquo;&mdash;brilliant, isn’t it? Well, that’s not how Max saw things. When I told him I was impressed with <code>iteslj_AI.py</code>’s progress, he scoffed at me, saying, &ldquo;You’re just seeing patterns in random noise.&rdquo; Indeed, Max was satisfied by the low percentage of teachable questions among these results; to his simple brain, they were proof enough that there’s no way we should trust a computer to teach English to real middle schoolers. But I think the joke’s on Max. Try the program out for yourself. Let it run for a while, and notice how it learns:</p>
 
