@@ -195,10 +195,10 @@ article {
                 background-color:  var(--bg);
             }
         
-        article div.image iframe.wide {
+        article div.image .wide {
             border: none;
             width: 100%;
-            height: 56.25vw;  /* YouTube iframes do not scale correctly with height: auto so this is my workaround */
+            height: auto;  /* YouTube iframes do not scale correctly with height: auto, so use 56.25vw or whatever as an inline workaround if needed */
         }
     
         article div.image p {
