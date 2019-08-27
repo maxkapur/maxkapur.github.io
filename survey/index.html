@@ -21,6 +21,14 @@
         font-family: 'Lexend Deca', sans-serif;
         font-size: 35px;
         line-height: 1em;
+        padding-top: 2em;
+        margin-bottom: 0;
+    }
+    
+    p.subtitle {
+        margin-top: 0;
+        text-align: right;
+        font-size: 16px;
     }
     
     h2 {
@@ -89,7 +97,7 @@
         margin-left: 8%;
         margin-right: 2%;
         font-size: 16px;
-        line-height: 1.5em;
+        line-height: 1.3em;
     }
     
         p.caption a {text-decoration: none; color: #74a3ff}
@@ -117,7 +125,8 @@
 
 <body>
 
-<h1>Using Data to Understand ELL Students</h1>  
+<h1>Using Data to Understand ELL Students</h1> 
+<p class="subtitle">Max Kapur, August 2019</p>
   
     <p>I teach English at a boys&rsquo; middle school here in Naju, South Korea. August in Korea is A/C season, and not a class goes by that I don&rsquo;t have students going back and forth asking me to turn the A/C up and down. Someone always starts by setting it on full blast to the coldest temperature; once the room nears 17&deg;C, someone will say, &ldquo;Damn, it&rsquo;s cold&rdquo; and turn the machine <em>all the way</em> off &hellip; you can see where this is going.</p>
 
@@ -192,7 +201,7 @@
     <p>OK, stare at a neutral surface for thirty seconds before you look at this one.</p>
 
         <a href="corr.png"><img src="corr.png" /></a>
-        <p class="caption">I tried to get the labels on the bottom to sit at a 45&deg; angle, but they got all clumpy and weird, sort of like when I try to bake anything from scratch.</p>
+        <p class="caption">I tried to get the labels on the bottom to sit at a 45&deg; angle, but they got all clumpy and weird.</p>
 
     <p>This chart shows how students&rsquo; responses to each question correlated with their responses to the other questions. For example, the <em>r</em>-value of <code>-0.5</code> at the intersection of <code>English is one of my favorite subjects</code> and <code>English is one of my most challenging subjects</code> means that students who liked English a lot tended to disagree that it was challenging. There are at least three ways to interpret this:</p>
         <ul><li>If English comes easily to a student, then he will enjoy it.</li>
@@ -202,24 +211,24 @@
     <p>On the flip side, a low correlation coefficient doesn&rsquo;t necessarily mean there&rsquo;s no correlation. Virtually every student circled <code>strongly agree (5)</code> on <code>More videos</code>; since there&rsquo;s little variance in the responses, there&rsquo;s no way to &ldquo;know&rdquo; how a student who chose a different number might answer  the other questions, and we get a row of <em>r</em>-values near zero.</p>
     <p>Those caveats aside, there are a couple of things that stand out to me. One is the sixth column, which corresponds to <code>I believe it&rsquo;s important to learn English</code>. Affirmative responses here are the best predictor of affirmative responses to <code>When I have a question, I tend to ask Max</code>, suggesting that <strong>students who ask a lot of questions do so out of intrinsic motivation rather than fear of failure</strong> (among other possible interpretations).</p>
     <p>Another column I like is the third to last column, <code>Do you attend an English hagwon?</code>, which students answered with a simple yes or no. For those who don&rsquo;t know, many Korean students attend private tutoring centers (hagwons) after the school day ends. A good English hagwon usually has smaller class sizes than school and one or more native speakers on hand. They tend to focus on vocabulary and standardized tests. There are hagwons in other subjects, too; a common strategy is to attend an English hagwon on Monday and Wednesday, a math hagwon on Tuesday and Thursday, and something &ldquo;fun&rdquo; like piano (cue music educators, cringing in the back) on Friday.</p>
-    <p><strong>English hagwons seem to be working.</strong> Students who attend hagwons tend to enjoy English and find it less challenging than their peers. Since the hagwons my students attend don&rsquo;t generally have a competitive application process, and since it&rsquo;s usually the parents, not the students, who choose what subject of hagwon to send their kids to, I don&rsquo;t <em>think</em> the positive correlations are merely a function of prior ability or interest, but you could test this further with a longitudinal study.</p>
+    <p><strong>English hagwons seem to be working.</strong> Students who attend hagwons tended to enjoy English and find it less challenging than their peers. Since the hagwons my students attend don&rsquo;t generally have a competitive application process, and since it&rsquo;s usually the parents, not the students, who choose what subject of hagwon to send their kids to, I don&rsquo;t <em>think</em> the positive correlations were merely a function of prior ability or interest, but you could test this further with a longitudinal study.</p>
 
 <h2 id="cluster">Cluster Analysis <a class="top" href="#">&#8598; back to top</a></h2>
     
     <p>Are you ready for my favorite part?</p>
 
-    <p>One of the neatest statistical techniques I&rsquo;ve learned about is called cluster analysis. Here I&rsquo;ve used a <a href="https://en.wikipedia.org/wiki/K-means_clustering"><em>k</em>-means clustering algorithm</a> to <strong>sort the students into three groups with similar characteristics</strong>. I performed the clustering only on the subset of the questions that I felt reflected the students&rsquo; individual learning styles, omitting the responses about whether we should have more or less videos and so on.</p>
+    <p>One of the neatest statistical techniques I&rsquo;ve learned about is called cluster analysis. Here, I&rsquo;ve used a <a href="https://en.wikipedia.org/wiki/K-means_clustering"><em>k</em>-means clustering algorithm</a> to <strong>sort the students into three groups with similar characteristics</strong>. I performed the clustering only on the subset of the questions that I felt reflected the students&rsquo; individual learning styles, omitting the responses about whether we should have more or less videos and so on.</p>
 
         <a href="cluster.png"><img src="cluster.png" /></a>
 
-        <p class="caption">This time, I <em>am</em> showing the averages instead of <em>t</em>-scores. Cluster analysis has grouped the students into similar groups, which violates the <em>t</em>-test&rsquo;s assumption of random sampling. Charting the <em>t</em>-scores would just add an unnecessary layer of abstraction.</p>
+        <p class="caption">This time, I <em>am</em> showing the averages instead of <em>t</em>-scores. Cluster analysis has divided the students into similar groups, which violates the <em>t</em>-test&rsquo;s assumption of random sampling. Charting the <em>t</em>-scores would just add an unnecessary layer of abstraction.</p>
 
     <p>In the chart above, the clusters are split into three columns, and we can summarize the results like this:</p>
         <ol start="0"><li>Students in cluster <code>0</code> are crushing it. They like English, they think it&rsquo;s important, and they usually understand what we&rsquo;re doing in class. They are proactive in asking questions.</li>
         <li>Students in cluster <code>1</code> are the most difficult to reach. Not only is English hard for them, but they also don&rsquo;t think it&rsquo;s important and are the least likely to ask questions. Mercifully, this is the smallest group.</li>
         <li>Cluster <code>2</code> is really interesting. These are students who find English challenging and lean a lot on their peers to help them complete assignments. But they differ from cluster <code>1</code> in that they are motivated to learn English (they believe it is important). This group is the largest of the three, and its members would benefit greatly from asking more questions. It is the silent majority.</li></ol>
 
-    <p>Obviously, these are generalizations. Many students fall in the space between the various clusters. An inappropriate application of cluster analysis would be to partition the classroom into groups of students based on which cluster the algorithm assigned them to. We need to allow for the possibility that an individual student&rsquo;s response changes over time.</p>
+    <p>Obviously, these are generalizations. Many students fall in the space between the various clusters. An inappropriate application of cluster analysis would be to partition the classroom into groups of students based on which cluster the algorithm assigned them to. We need to allow for the possibility that an individual student was misclassified or that his response changes over time.</p>
     
     <p>You can choose any number of clusters when performing <em>k</em>-means clustering; I settled on three because expanding it to four just created another group very similar to cluster <code>0</code>, while reducing it to two obscured the important differences between clusters <code>1</code> and <code>2</code>.</p>
 
@@ -233,7 +242,7 @@
         <li>&ldquo;EEEEEE~&rdquo;</li>
         <li>&ldquo;We are crazy men.&rdquo;</li></ul>
     <p>After sharing these responses with the students, I distilled the above graphs into a few general takeaways. I explained that we&rsquo;d still have to wait until the end of the semester to watch a full-length movie, but we can do more TED talks and music videos in regular class. I had them brainstorm ideas for speaking practice that don&rsquo;t involve presentations and partner activities.</p>
-    <p><strong>I showed the students the cluster analysis and asked them to think to themselves about which of the groups they fall into&mdash;or if perhaps they were none of the three.</strong> A couple of kids proudly raised their hands and say, &ldquo;I&rsquo;m cluster one, all the way." I can only applaud their honesty. Others looked visibly relieved when I described cluster <code>2</code> and emphasized that it included nearly half the students.</p>
+    <p><strong>I showed the students the cluster analysis and asked them to think to themselves about which of the groups they fall into&mdash;or if perhaps they were none of the three.</strong> A couple of kids proudly raised their hands and say, &ldquo;I&rsquo;m cluster one, all the way.&rdquo; I can only applaud their honesty. Others, when I described cluster <code>2</code> and emphasized that it included nearly half the students, looked visibly relieved.</p>
     <p>The greatest benefit of this analysis was to my lesson planning. Without realizing it, prior to this survey, <strong>I&rsquo;d been planning my lessons around the assumption that there are students who are motivated and skilled, and students who are unmotivated and unskilled</strong>. That is, I was thinking only about clusters <code>0</code> (the nerds) and <code>1</code> (the disinterested), evaluating each potential activity on the challenging/interesting spectrum and trying to include a mix of both ends. <strong>This approach neglected the largest group of students</strong>, cluster <code>2</code>, who expressed both interest <em>and</em> challenge in English, defying my assumption that the best way to reach disengaged students was with highly accessible, &ldquo;fun&rdquo; content. Instead, the data suggested that <strong>practical, minimal-frills material with lots of scaffolding will yield positive results</strong> in classrooms like mine.</p>
     <p>But what you really wanted to know was the verdict on the A/C temperature, huh? I used my very favorite measure of central tendency for this one, the <a href="https://en.wikipedia.org/wiki/Truncated_mean">10% trimmed mean</a>.</p>
     
