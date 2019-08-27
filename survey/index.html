@@ -1,45 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-
 <title>Using Data to Understand ELL Students</title>
 
 <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+    
+    body {
+        max-width: 1100px;
+        font-family: 'Lora', serif;
+        font-size: 18px;
+        line-height: 1.7em;
+    }
+    
+    h1 {
+        border-bottom: 2px solid #3b3b45;
+        max-width: 800px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 35px;
+        line-height: 1em;
+    }
+    
+    h2 {
+        border-bottom: 2px solid #3b3b45;
+        max-width: 800px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 26px;
+        line-height: 1em;
+        padding-top: 1.8em;
+    }
+    
+    p {
+        max-width: 800px;
+    }
     
     code {
         background-color: #e3eaf8;
         padding: 0 0.25em;
+        font-family: 'Inconsolata', monospace;
     }
     
-    #files {
+        
+    strong {
+        background-color: #ebff00;
+        padding: 0.1em 0;
+    }
+    
+    a.top {
+        float: right;
+        padding-left: 2em;
+        font-size: 0.6em;
+        font-weight: normal;
+    }
+    
+    #filelist {
         display: grid;
-        width: 30em;
-        background-color: azure;
+        max-width: 40em;
+        padding-left: 2.5em;
     }
     
     span.fl {
         grid-column-start: 1;
+        margin-right: 1em;
     } 
     
     span.fr {
         grid-column-start: 2;
     }
     
-    img {width: 100%}
-    
-    strong {
-        background-color: #ebff00;
-        padding: 0.1em 0;
+    img {
+    /* Image will take up full width unless that maxes out its largest dimension */
+        width: auto;
+        max-width: 100%;
+    }
+
+    ul, ol {
+        max-width: 750px;
+        padding-left: 2.5em;
     }
     
-    .caption {
-        border: 1px solid black;
+    p.caption {
+        background-color: #191919;
+        color: white;
         padding: 0.5em;
-        width: calc(90% - 1em - 2px);
+        width: calc(90% - 1em);
         margin-left: 8%;
         margin-right: 2%;
+        font-size: 16px;
+        line-height: 1.5em;
     }
     
+        p.caption a {text-decoration: none; color: #74a3ff}
+        p.caption a:visited {color: #c58cfd}
+        p.caption a:hover {text-decoration: underline}
+        p.caption a:active {text-decoration: underline}
+
+    a {text-decoration: none; color: #206dff}
+    a:visited {color: #d136ff}
+    a:hover {text-decoration: underline}
+    a:active {text-decoration: underline}
+    
+    footer {
+        border-top: 2px solid #3b3b45;
+        max-width: 800px
+    }
+    
+        footer p {
+            margin: 0;
+        }
     
 </style>
 
@@ -47,63 +117,132 @@
 
 <body>
 
-<h1>Using Data to Understand ELL Students</h1>
-    
-<p>Rather than write a traditional abstract, <strong>I&rsquo;ll just highlight the most important bits like this</strong>, for those of you who are as tired as I am of staring at a screen all day.</p>
-    
+<h1>Using Data to Understand ELL Students</h1>  
+  
+    <p>I teach English at a boys&rsquo; middle school here in Naju, South Korea. August in Korea is A/C season, and not a class goes by that I don&rsquo;t have students going back and forth asking me to turn the A/C up and down. Someone always starts by setting it on full blast to the coldest temperature; once the room nears 17&deg;C, someone will say, "Damn, it&rsquo;s cold" and turn the machine <em>all the way</em> off &hellip; you can see where this is going.</p>
 
-    
-<h2>Files</h2>
-    <div id="files"><span class="fl">Python code used to generate graphs:</span> <span class="fr"><a href="analysis.html">HTML</a> | <a href ="analysis.ipynb">Jupyter Notebook</a></span>
-        <span class="fl">Raw data:</span> <span class="fr"><a href="survey.xlsx">Excel</a></span>
-        <span class="fl">Survey:</span> <span class="fr"><a href="https://docs.google.com/document/d/1lEM__8rigiXrKoXnxgsQB6jujSDTvM7GeUcoMV9OaLg/edit?usp=sharing">Google Doc</a> | <a href="survey.pdf">PDF</a></span></div>
-    
-<h2>Survey Design</h2>
-    
-<h2>Survey Results</h2>
+    <p>As I began my second year of teaching, I decided to settle the A/C dispute once and for all by issuing my students a survey about the perfect classroom temperature. Oh, and I also asked them about their motivation for learning English, their opinions about our class and my teaching style, and what resources they were using to study English outside of class.</p>
 
-<p>The most obvious thing to do, once we have all the data in a spreadsheet, is start taking averages and see what stands out. There&rsquo;s a problem with just looking at averages, though: they tell us nothing about how the data is actually <em>distributed.</em> Compare these scenarios:</p>
-    <ul><li>Nearly every student answers with <code>agree (4)</code></li>
-    <li>One third of the students answer with <code>neutral (3)</code>, another third answers <code>agree (4)</code>, and the final third chooses <code>strongly agree (5)</code>.</li></ul>
-    
-<p>In both cases the average is <code>4</code>, but in the third case, the data aren&rsquo;t as consistent. To quantify this uncertainty, I computed <a href="https://en.wikipedia.org/wiki/Student%27s_t-test#One-sample_t-test">one-sample <em>t</em>-scores</a> for each question&rsquo;s average. The further the <em>t</em>-score gets from zero, the more confidently we can say that the &ldquo;true&rdquo; average (the average if you could interview an infinite number of students like mine) is <em>not</em> <code>3</code>. A negative <em>t</em>-score means the true answer is likely lower than <code>3</code>; positive, higher.</p>
-    
-<p>Take a look:</p>
+    <p>I&rsquo;ve been study math and stats in my free time here, and this felt like a good chance to whet my chops on some new data. If you poke around in the files above, you can get a sense for my process, but basically, I did all the analysis in Python, leaning heavily on the Pandas and Seaborn libraries.</p>
 
-    <a href="questionT.png"><img src="questionT.png" /></a>
-    <p class="caption">Here I&rsquo;ve done something unusual in plotting the <em>t</em>-scores directly, instead of averages with error bars. This is because there are risks inherent in interpreting error bars when you compute them for several samples, as I&rsquo;ve done here. Better to just plot the <em>t</em>-scores and see what stands out. Thanks to <a href="https://stackoverflow.com/questions/57601156/change-axis-along-which-seaborn-applies-color-palette">people on Stack Overflow</a> for helping me get the color map working.</p>
+    <p>Rather than write a traditional summary, <strong>I&rsquo;ll just highlight the most important bits like this</strong> for those of you who are as tired as I am of staring at a screen all day.</p>
+    
+    <p>Contents:</p>
+    
+        <navi><ol><li><a href="#files">Files</a></li>
+        <li><a href="#design">Survey Design</a></li>
+        <li><a href="#first">First Look</a></li>
+        <li><a href="#corr">Correlation and Causation</a></li>
+        <li><a href="#cluster">Cluster Analysis</a></li>
+        <li><a href="#app">Application</a></li></ol></navi>  
+    
+<h2 id="files">Files <a class="top" href="#">&#8598; back to top</a></h2>
+    <div id="filelist">
+    <span class="fl">Survey:</span> <span class="fr"><a href="https://docs.google.com/document/d/1lEM__8rigiXrKoXnxgsQB6jujSDTvM7GeUcoMV9OaLg/edit?usp=sharing">Google Doc</a> | <a href="survey.pdf">PDF</a></span>
 
-<p><strong>More videos and more games</strong>&mdash;I saw that coming. Knowing the sometimes-militant style of my colleagues, I also expected the students to tell me I wasn't being strict enough. I didn't expect to hear that <strong>both I <em>and</em> the other teachers should be stricter</strong> (which is what the negative responses to "If the teachers at our school were less strict, I would learn more" mean, once you puzzle out the conditional).</p>
+    <span class="fl">Raw data:</span> <span class="fr"><a href="survey.xlsx">Excel</a></span>
+    <span class="fl">Python code used to generate graphs:</span> <span class="fr"><a href="analysis.html">HTML</a> | <a href ="analysis.ipynb">Jupyter Notebook</a></span></div>
+    
+<h2 id="design">Survey Design <a class="top" href="#">&#8598; back to top</a></h2>
+    
+    <p>I&rsquo;ll refrain from embedding the document because I don&rsquo;t want Google to stalk you. You can get it <a href="survey.pdf">here</a> (to download a PDF) or <a href="https://docs.google.com/document/d/1lEM__8rigiXrKoXnxgsQB6jujSDTvM7GeUcoMV9OaLg/edit?usp=sharing">here</a> (to sell your soul).</p>    
 
-<p>Before we get into the other stuff, I'd like to break down these results by class, since the differences were pretty interesting:</p>
-    
-    <a href="classT.png"><img src="classT.png" /></a>
-    <p class="caption">These are <em>t</em>-scores again. There are two class sections in each grade, so six columns.</p>
-    
-<p>Let me tell you about class 3-2. They might be my favorite class. They're slightly noisy and often tardy, but they tend to get into a nice rhythm if I supply them with a sufficiently interesting activity, and I never have trouble getting volunteers to speak. Moreover, they had the highest average scores on our speaking test last semester. That's why <strong>I was surprised to see 3-2 agree so uniformly with</strong> <code>English is one of my most challenging subjects</code>.</p>
+    <p>The survey has nineteen questions. I wanted a high response rate, so I translated all the questions badly into Korean and talked the students through some of the trickier ones. <strong>I asked the students <em>not</em> to write their names</strong> on the surveys, again to encourage honest responses.</p>
 
-<p>Another interesting row is <code>If the teachers at our school were less strict, I would learn more</code>. Here the very prominent differences between the classes was obscure when I averaged them together. Broken up like this, and knowing who the homeroom teacher is for each class, I can see that <strong>students' assessments of the prototypical "teacher at our school" is informed heavily by who <em>their</em> homeroom teacher is</strong>.</p>
-    
-<p>OK, are you ready for my favorite graph? I posted this in the group chat with my Fulbright colleagues and got crickets. It's alright.</p>
-    
-    <a href="corr.png"><img src="corr.png" /></a>
-    
- Computing <code>19(19-1) / 2</code>   
-    
-    <a href="cluster.png"><img src="cluster.png" /></a>
+    <p>Many of the most helpful responses I received came from the optional fill-in-the-blank questions, but in this document <strong>I will focus on the quantitative data</strong>, with the hope that the techniques I used to analyze it will be of use to other teachers.</p>
 
+    <p>The first nine quantitative questions deal with what I would call <strong>&ldquo;learning posture&rdquo;</strong>: what the students&rsquo; strategy is for navigating English class and how well they feel it&rsquo;s working. My students know that they are supposed to <em>say</em> learning English is important, but I was curious if they would do so on an anonymous survey (they didn&rsquo;t) and if their motivation for learning English correlated with anything else, like how often they asked questions.</p>
 
-<h2>Application</h2>
-<p>So, I can't just do what the students tell me to. At the very least, I'll need my vice principal's permission before I screen movies every day! (He might even say yes. There is an elective class in film appreciation at our school.)</p>
-<p>At the same time, it was important to me that the students knew that I had actually gone through the surveys, so the week after I collected them, I showed them these graphs and explained the most salient features. I also did a "write-ins that made me laugh" slide where I showcased some of the funny answers to <code>Is there anything else you'd like Max to know?</code> There were some real gems:</p>
-    <ul><li>"Change your fashion."</li>
-    <li>"Yes."</li>
-    <li>(A detailed comparative analysis of various pizza and fried-chicken restaurants in the area)</li>
-    <li>"EEEEEE~"</li>
-    <li>"We are crazy men."</li></ul>
-<p>After sharing these responses, I distilled the above graphs into a few general takeaways. I explained that we'd still have to wait until the end of the semester to watch a full-length movie, but we can do more TED talks and music videos in regular class. I also had them brainstorm ideas for speaking practice that don't involve presentations and partner activities.</p>
-<p>The greatest benefit of this analysis, however, has been to my lesson planning. I tend to plan my lessons with clusters <code>0</code> (the try-hards) and <code>1</code> (the disinterested) in mind, which means I evaluate each activity on the challenging/interesting spectrum and try to have a balance. But this approach neglects the largest group of students, cluster <code>2</code>, who expressed both interest <em>and</em> challenge in English, defying my assumption that the students who thought English was important would then study it the hardest and find it the least difficult.</p>
+    <p>I asked the students a couple of questions about <strong>strictness</strong> because I know I am more lenient than the other teachers at our school. In one question, I asked if &ldquo;teachers at our school&rdquo; in general should be less strict to get a reference point, and then later asked if <em>I</em> am too lenient.</p>
+
+    <p>A group of five questions then asks the students <strong>what they want more or less of in our class</strong>: videos, games, competitions, and so on.</p>
+
+    <p>The students answered those first fourteen questions on a scale of <code>strongly disagree (1)</code> to <code>strongly agree (5)</code>.</p>
+
+    <p>Next I asked the students two binary questions: <strong>whether they attended an after-school English tutoring center</strong>, and whether they received one-on-one tutoring in English. In the end, there were only a few students getting one-on-one tutoring, so I couldn&rsquo;t glean much from their surveys.</p>
+
+    <p>Finally, I asked them the most important question of all: <code>What temperature should we put the A/C at?</code></p>
     
+    <p>I distributed and collected the surveys during one class period. I made a note of which surveys came from which class sections, which gave me two more data points (grade and class) for each student. When entering the surveys into Excel, I discounted nonsense responses, such as when a student answered every question with <code>3</code>.</p>
+    
+<h2 id="first">First Look<a class="top" href="#">&#8598; back to top</a></h2>
 
+    <p>The most obvious thing to do, once we have all the data in a spreadsheet, is start taking averages and see what stands out. There&rsquo;s a problem with just looking at averages, though: they tell us nothing about how the data is actually <em>distributed.</em> Compare these scenarios:</p>
+        <ul><li>Nearly every student answers with <code>agree (4)</code></li>
+        <li>One third of the students answer with <code>neutral (3)</code>, another third answers <code>agree (4)</code>, and the final third chooses <code>strongly agree (5)</code>.</li></ul>
+
+    <p>In both cases the average is <code>4</code>, but in the third case, the data aren&rsquo;t as consistent. To quantify this uncertainty, I computed <strong><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#One-sample_t-test">one-sample <em>t</em>-scores</a> for each question&rsquo;s average</strong>. The further the <em>t</em>-score gets from zero, the more confidently we can say that the &ldquo;true&rdquo; average (the average if you could interview an infinite number of students like mine) is <em>not</em> <code>3</code>. A negative <em>t</em>-score means the true answer is likely lower than <code>3</code>; positive, higher.</p>
+
+        <a href="questionT.png"><img src="questionT.png" /></a>
+        <p class="caption">I&rsquo;ve done something unusual in plotting the <em>t</em>-scores directly, instead of averages with error bars. I did this because there are risks inherent in interpreting error bars (or <a href="https://xkcd.com/882/"><em>p</em>-values</a>) when you compute them for several samples. Better to just plot the <em>t</em>-scores and see what stands out. Thanks to <a href="https://stackoverflow.com/questions/57601156/change-axis-along-which-seaborn-applies-color-palette">people on Stack Overflow</a> for helping me get the color map working.</p>
+
+    <p><strong>More videos and more games</strong>&mdash;I saw that coming. Knowing the sometimes-militant style of my colleagues, I also expected the students to tell me I wasn&rsquo;t being strict enough. I didn&rsquo;t expect to hear that <strong>both I <em>and</em> the other teachers should be stricter</strong> (which is what the negative responses to <code>If the teachers at our school were less strict, I would learn more</code> mean, once you puzzle out the conditional).</p>
+
+    <p>Before we get into the other stuff, I&rsquo;d like to break down these results by class, since the differences were pretty interesting:</p>
+
+        <a href="classT.png"><img src="classT.png" /></a>
+        <p class="caption">These are <em>t</em>-scores again. There are two class sections in each grade, so six columns.</p>
+
+    <p>Let me tell you about class 3-2. They might be my favorite class. They&rsquo;re slightly noisy and often tardy, but they tend to get into a nice rhythm if I supply them with a sufficiently interesting activity, and I never have trouble getting volunteers to speak. Moreover, they had the highest average scores on our speaking test last semester. That&rsquo;s why <strong>I was surprised to see 3-2 agree so uniformly with that English was one of their most challenging subjects</strong>.</p>
+
+    <p>Another interesting row is <code>If the teachers at our school were less strict, I would learn more</code>. Here the very prominent differences between the classes was obscure when I averaged them together. Broken up like this, and knowing who the homeroom teacher is for each class, I can see that <strong>students&rsquo; assessments of the prototypical &ldquo;teacher at our school&rdquo; is informed heavily by who <em>their</em> homeroom teacher is</strong>. I&rsquo;ll, um, leave it at that.</p>
+
+<h2 id="corr">Correlation and Causation <a class="top" href="#">&#8598; back to top</a></h2>    
+    
+    <p>OK, stare at a neutral surface for thirty seconds before you look at this one.</p>
+
+        <a href="corr.png"><img src="corr.png" /></a>
+        <p class="caption">I tried to get the labels on the bottom to sit at a 45&deg; angle, but they got all clumpy and weird, sort of like when I try to bake anything from scratch.</p>
+
+    <p>This chart shows how students&rsquo; responses to each question correlated with their responses to the other questions. For example, the <em>r</em>-value of <code>-0.5</code> at the intersection of <code>English is one of my favorite subjects</code> and <code>English is one of my most challenging subjects</code> means that students who liked English a lot tended to disagree that it was challenging. There are at least three ways to interpret this:</p>
+        <ul><li>If English comes easily to a student, then he will enjoy it.</li>
+        <li>If a student enjoys English, then it will feel easy to him.</li>
+        <li>There is some outside factor (watching American dramas, for example) that leads some students to both enjoy English and be good at it.</li></ul>
+    <p>When you hear pundits say &ldquo;correlation is not causation,&rdquo; this is what they are talking about. We have to tread carefully here, all the more so because computing 180 correlation coefficients is a mildly crappy statistical practice; at that scale, you&rsquo;ll see some pretty decent correlations even in <a href="corr_random.png">random data</a>. 
+    <p>On the flip side, a low correlation coefficient doesn&rsquo;t necessarily mean there&rsquo;s no correlation. Virtually every student circled <code>strongly agree (5)</code> on <code>More videos</code>; since there&rsquo;s little variance in the responses, there&rsquo;s no way to &ldquo;know&rdquo; how a student who chose a different number might answer  the other questions, and we get a row of <em>r</em>-values near zero.</p>
+    <p>Those caveats aside, there are a couple of things that stand out to me. One is the sixth column, which corresponds to <code>I believe it&rsquo;s important to learn English</code>. Affirmative responses here are the best predictor of affirmative responses to <code>When I have a question, I tend to ask Max</code>, suggesting that <strong>students who ask a lot of questions do so out of intrinsic motivation rather than fear of failure</strong>.</p>
+    <p>Another column I like is the third to last column, <code>Do you attend an English hagwon?</code>, which students answered with a simple yes or no. For those who don&rsquo;t know, many Korean students attend private tutoring centers (hagwons) after the school day ends. A good English hagwon usually has smaller class sizes than school and one or more native speakers on hand. They tend to focus on vocabulary and standardized tests. There are hagwons in other subjects, too; a common strategy is to attend an English hagwon on Monday and Wednesday, a math hagwon on Tuesday and Thursday, and something &ldquo;fun&rdquo; like piano (cue music educators, cringing in the back) on Friday.</p>
+    <p><strong>English hagwons seem to be working.</strong> Students who attend hagwons tend to enjoy English and find it less challenging than their peers. Since the hagwons my students attend don&rsquo;t generally have a competitive application process, and since it&rsquo;s usually the parents, not the students, who choose what subject of hagwon to send their kids to, I don&rsquo;t <em>think</em> this is merely a function of prior ability or interest, but you could test this further with a longitudinal study.</p>
+
+<h2 id="cluster">Cluster Analysis <a class="top" href="#">&#8598; back to top</a></h2>
+    
+    <p>Are you ready for my favorite part?</p>
+
+    <p>One of the neatest statistical techniques I&rsquo;ve learned about is called cluster analysis. Here I&rsquo;ve used the <a href="https://en.wikipedia.org/wiki/K-means_clustering"><em>k</em>-means clustering algorithm</a> to <strong>sort the students into three groups with similar characteristics</strong>. I performed the clustering only on the subset of the questions that I felt best illustrated the students&rsquo; learning styles, omitting the questions about whether we should have more or less videos and so on.</p>
+
+        <a href="cluster.png"><img src="cluster.png" /></a>
+
+        <p class="caption">This time, I <em>am</em> showing the averages instead of <em>t</em>-scores. Cluster analysis has grouped the students into similar groups, which violates the <em>t</em>-test&rsquo;s assumption of random sampling. Charting the <em>t</em>-scores would just add an unnecessary layer of abstraction.</p>
+
+    <p>In the chart above, the clusters are split into three columns, and we can summarize the results like this:</p>
+        <ol start="0"><li>Students in cluster <code>0</code> are crushing it. They like English, they think it&rsquo;s important, and they usually understand what we&rsquo;re doing in class. They are proactive in asking questions.</li>
+        <li>Students in cluster <code>1</code> are the most difficult to reach. Not only is English hard for them, but they also don&rsquo;t think it&rsquo;s important and are the least likely to ask questions. Thankfully, this is the smallest group.</li>
+        <li>Cluster <code>2</code> is really interesting. These are students who find English challenging and lean a lot on their peers to help them complete assignments. But they differ from cluster <code>1</code> in that they are motivated to learn English (they believe it is important). This group is the largest of the three, and its members would benefit greatly from asking more questions. It is the silent majority.</li></ol>
+
+    <p>Obviously, these are generalizations. Many students fall in the space between the various clusters. An inappropriate application of cluster analysis would be to partition the classroom into groups of students based on which cluster the algorithm assigned them to. We need to allow for the possibility that an individual student&rsquo;s response changes over time.</p>
+    
+    <p>You can choose any number of clusters when performing <em>k</em>-means clustering; I settled on three because expanding it to four just seemed to create another group very similar to cluster <code>0</code>, while reducing it to two obscured the important differences between clusters <code>1</code> and <code>2</code>.</p>
+
+<h2 id="app">Application <a class="top" href="#">&#8598; back to top</a></h2>
+    
+    <p>So, I can&rsquo;t just do what the students tell me to. At the very least, I&rsquo;ll need my vice principal&rsquo;s permission before I screen movies every day! (He might say yes. There is an elective class in film appreciation at our school.)</p>
+    <p>At the same time, <strong>it was important to me that the students knew that I had actually gone through the surveys</strong>, so the week after I collected them, I showed them these graphs and explained the most salient features. I also did a &ldquo;write-ins that made me laugh" slide where I showcased some of the funny answers to <code>Is there anything else you&rsquo;d like Max to know?</code> There were some real gems:</p>
+        <ul><li>&ldquo;Change your fashion.&rdquo;</li>
+        <li>&ldquo;Yes.&rdquo;</li>
+        <li>(A detailed comparative analysis of various pizza and fried-chicken restaurants in the area)</li>
+        <li>&ldquo;EEEEEE~&rdquo;</li>
+        <li>&ldquo;We are crazy men.&rdquo;</li></ul>
+    <p>After sharing these responses, I distilled the above graphs into a few general takeaways. I explained that we&rsquo;d still have to wait until the end of the semester to watch a full-length movie, but we can do more TED talks and music videos in regular class. I had them brainstorm ideas for speaking practice that don&rsquo;t involve presentations and partner activities.</p>
+    <p><strong>I showed the students the cluster analysis and asked them to think to themselves about which of the groups they fall into&mdash;or if perhaps they were none of the three.</strong> A couple of kids proudly raised their hands and say, &ldquo;I&rsquo;m cluster one, all the way." I can only applaud their honesty. Others looked visibly relieved when I described cluster <code>2</code> and emphasized that it included nearly half the students.</p>
+    <p>The greatest benefit of this analysis has been to my lesson planning. Without realizing it, up until now, <strong>I&rsquo;ve been planning my lessons around the assumption that there are students who are motivated and skilled, and students who are unmotivated and unskilled</strong>. That is, I was thinking only about clusters <code>0</code> (the try-hards) and <code>1</code> (the disinterested), evaluating each activity on the challenging/interesting spectrum and trying to simply strike a balance. <strong>This approach neglects the largest group of students</strong>, cluster <code>2</code>, who expressed both interest <em>and</em> challenge in English, defying my assumption that the best way to reach disengaged students was with highly accessible, &ldquo;fun&rdquo; content.</p>
+    <p>But what you really wanted to know was the verdict on the A/C temperature, huh? I used my very favorite measure of central tendency for this one, the <a href="https://en.wikipedia.org/wiki/Truncated_mean">10% trimmed mean</a>.</p>
+    
+    <code>20.87264150943396</code>
+    
+    <p>There&rsquo;s your answer. No more, no less.</p>
+    
+    <footer>
+	<p><a href="https://www.maxkapur.com">maxkapur.com</a></p>
+	<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p></footer>
 
 </body>
