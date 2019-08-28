@@ -13205,7 +13205,7 @@ div#notebook {
 <p>The <code>environment</code> function shown above represents the <em>objective</em> quality of Steve/Dave&rsquo;s environment at a given moment in time.</p>
 <p>But Steve and Dave&rsquo;s <em>subjective</em> experiences of their environment&mdash;their moods&mdash;also depend on <strong>how their environment is changing</strong>. If things seem to be getting better, their moods pick up; if the quality of the environment consistently decreases while staying above above neutral, Steve and Dave will still feel disappointment.</p>
 <p>In this experiment the environment is randomly determined, so regardless of whatever hopes Steve and Dave may have, they cannot predict how the environment will perform in the future. The best they can do is compare how they are feeling <em>now</em> with how they&rsquo;ve been feeling <em>recently.</em></p>
-<p>We&rsquo;ll perform this comparison the <code>mood</code> function. It takes two inputs: <code>t</code>, the time; and <code>d</code>, the number of recent observations to compare the current environment to.</p>
+<p>We&rsquo;ll perform this comparison with the <code>mood</code> function. It takes two inputs: <code>t</code>, the time; and <code>d</code>, the number of recent observations to compare the current environment to.</p>
 <p><code>mood</code> computes the (signed) difference between the current <code>environment</code> and the average of <code>environment</code> over the previous <code>d</code> observations.</p>
 
 </div>
@@ -13270,7 +13270,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Perhaps you can see that <code>mood</code> is just a really shitty estimate for the derivative of <code>environment</code>, one biased highly by the value of <code>environment</code> itself. This reflects the fact that people are really bad at assessing their own prospects.</p>
+<p>Perhaps you can see that <code>mood</code> is just a really crappy estimate for the derivative of <code>environment</code>, one biased highly by the value of <code>environment</code> itself. This reflects the fact that people are really bad at assessing their own prospects.</p>
 <p>There&rsquo;s another problem with <code>mood</code>, though. It needs to account for the fact that <a href="https://en.wikipedia.org/wiki/Loss_aversion">humans are more sensitive to losses than gains</a>, by a factor that I&rsquo;m going to ballpark as <code>3</code>. Let&rsquo;s fix that.</p>
 
 </div>
@@ -13413,7 +13413,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you&rsquo;d expect, Steve experiences wilder mood swings. His highs are higher and his lows are lower.</p>
 <p>But that&rsquo;s not all. While both Steve and Dave experience loss aversion, Steve&rsquo;s loss aversion is compounded by his overall moodiness, which means that his higher highs <em>don&rsquo;t</em> cancel out his lower lows. In fact, as the scatter plot below shows, he ends up feeling a lot worse on average.</p>
-<p>(Not that Dave is particularly cheery either. The phenomenon of loss aversion guarantees that we&rsquo;ll always feel bad unless the quality of the environment trends upward over time. This helped a lot with evolution.)</p>
+<p>(Not that Dave is particularly cheery either. The phenomenon of loss aversion guarantees that we&rsquo;ll always feel bad unless the quality of the environment trends upward over time. This helped a lot with evolution and capitalism.)</p>
 
 </div>
 </div>
