@@ -3,9 +3,10 @@
 <head>
     
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Max Kapur">
-<meta lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Max Kapur" />
+<meta name="revised" content="2019-10-14" />
+<meta lang="en" />
 <meta property="og:image" content="cluster.png" />    
 
 <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -252,13 +253,19 @@ Post on USC careers, linkedin, blog
         <li>Cluster <code>2</code> is really interesting. These are students who find English challenging and lean a lot on their peers to help them complete assignments. But they differ from cluster <code>1</code> in that they are motivated to learn English (they believe it is important). This group is the largest of the three, and its members would benefit greatly from asking more questions. It is the silent majority.</li></ol>
 
     <p>Obviously, these are generalizations. Many students fall in the space between the various clusters. An inappropriate application of cluster analysis would be to partition the classroom into groups of students based on which cluster the algorithm assigned them to. We need to allow for the possibility that an individual student was misclassified or that his response changes over time.</p>
+  
+    <p>The approximate nature of cluster analyis becomes clear if we visualize which individual responses were assigned to which clusters. In this next graph, I&rsquo;ve plotted the students&rsquo; responses to just two statements: <code>I believe it&rsquo;s important to learn English</code> and <code>English is one of my favorite subjects</code>. These two questions appeared to be a strong source of differentiation in the cluster report above, but here, you can see that the clusters overlap substantially.</p>
+    
+        <a href="cluster2.png"><img src="cluster2.png" /></a>
+        
+        <p class="caption">When performing the cluster analysis itself, I treated the agree/disagree responses as quantitative. But in visualizing it here, I&rsquo;ve treated the same data as categorical, which means every student falls into one of twenty-five bins: those who strongly disagreed with both the importance and motivation statements, those who strongly disagreed with the first and somewhat disagreed with the second, and so on. Then, inside of each of those bins, I drew a bar graph indicating that bin&rsquo;s distribution of students in each of the three clusters. This graph, which visualizes the distribution of three discrete variables, took a bit of <a href="https://stackoverflow.com/questions/58303175/plotting-three-dimensions-of-categorical-data-in-python">thinking through</a>.</p>
     
     <p>You can choose any number of clusters when performing <em>k</em>-means clustering; I settled on three because expanding it to four just created another group very similar to cluster <code>0</code>, while reducing it to two obscured the important differences between clusters <code>1</code> and <code>2</code>.</p>
 
 <h2 id="app">Applications<a class="top" href="#">&#8598; back to top</a></h2>
     
     <p>So, I can&rsquo;t just do what the students tell me to. At the very least, I&rsquo;ll need my vice principal&rsquo;s permission before I screen movies every day! (He might say yes. There is an elective class in film appreciation at our school.)</p>
-    <p>At the same time, <strong>it was important to me that the students knew that I had actually gone through the surveys</strong>, so the week after I collected them, I showed them these graphs and explained the most salient features. I also did a &ldquo;write-ins that made me laugh" slide where I showcased some of the funny answers to <code>Is there anything else you&rsquo;d like Max to know?</code> There were some real gems:</p>
+    <p>At the same time, <strong>it was important to me that the students knew that I had actually gone through the surveys</strong>, so the week after I collected them, I showed them these graphs and explained the most salient features. I also did a &ldquo;write-ins that made me laugh&rdquo; slide where I showcased some of the funny answers to <code>Is there anything else you&rsquo;d like Max to know?</code> There were some real gems:</p>
         <ul><li>&ldquo;Change your fashion.&rdquo;</li>
         <li>&ldquo;Yes.&rdquo;</li>
         <li>(A detailed comparative analysis of various pizza and fried-chicken restaurants in the area)</li>
