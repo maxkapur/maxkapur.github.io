@@ -186,7 +186,13 @@ article {
             width: 400px;
             height: auto;
         }
-
+		
+        article div.image .yt {
+            border: none;
+            width: 400px;
+            height: 225px;
+        }
+		
         article div.image img {
                 width: 400px;
                 height: auto;

@@ -198,7 +198,13 @@ article {
         article div.image .wide {
             border: none;
             width: 100%;
-            height: auto;  /* YouTube iframes do not scale correctly with height: auto, so use 56.25vw or whatever as an inline workaround if needed */
+            height: auto;
+        }
+		
+		article div.image .yt {
+            border: none;
+            width: 100%;
+            height: 56.25vw; 
         }
     
         article div.image p {
