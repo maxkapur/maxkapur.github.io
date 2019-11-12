@@ -14074,9 +14074,8 @@ div#notebook {
 <p>I&rsquo;ll demonstrate how to use Scipy&rsquo;s <code>optimize</code> model to solve a linear programming problem. This is more of a coding exercise than a linear algebra execise, but there were some hitches in setting it up that are worth clarifying.</p>
 <p>The problem we&rsquo;re looking at is problem #9 from the text cited above:</p>
 <p><img src="linalg-img1.png" alt="Problem 9"></p>
-<p>Let&rsquo;s work it step by step.</p>
-<p>First, we decide on our &ldquo;data structure.&rsquo; <code>scipy.optimize</code> wants our variable to be one dimensional, but this problem will make more sense if we can preserve the meshing of origin and destination required to solve this problem.</p>
-<p>I organize the distances like this:</p>
+<p>The author just wants us to set up the problem, but I will provide a full solution.</p>
+<p>First, we must decide on our &ldquo;data structure.&rdquo; <code>scipy.optimize</code> wants our variable to be one dimensional, but this problem will make more sense if we can preserve the meshing of origin and destination implied in the problem. I organize the distances like this:</p>
 $$D = \begin{bmatrix} 1000 &amp; 2000 &amp; 3000 \\ 1500 &amp; 3000 &amp; 3700 \end{bmatrix}$$<p>where the vertical axis gives the destination (Chicago, New England) and the horizontal axis gives the source (TX, CA, AK).</p>
 <p>Then, if we store the number of barrels to be shipped in a 2-by-3 matrix $X$, the cost function is simply the Hadamard product $X \circ D$. Let&rsquo;s put that in Numpy.</p>
 
@@ -14108,7 +14107,7 @@ $$D = \begin{bmatrix} 1000 &amp; 2000 &amp; 3000 \\ 1500 &amp; 3000 &amp; 3700 \
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, we can start implementing our constraints. First, we have that each state produces exactly a million barrels of oil. In linear algebra terms, this means that summing over the columns of the cost matrix $X \circ D$ should yield a matrix of 1,000,000, repeated thrice.  That is,</p>
-$$\sum_{\text{columns}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &amp; 1,000,000 \end{bmatrix}$$<p><code>numpy.optimize</code> likes the constraints to be set equal to zero, so we subtract the millions matrix from the sums matrix to define <code>production_constraint(x)</code>.</p>
+$$\sum_{\text{columns}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &amp; 1,000,000 \end{bmatrix}$$<p><code>scipy.optimize</code> likes the constraints to be set equal to zero, so we subtract the millions matrix from the sums matrix to define <code>production_constraint(x)</code>.</p>
 
 </div>
 </div>
@@ -14132,7 +14131,7 @@ $$\sum_{\text{columns}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &a
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Similarly, the text says that Chicago needs 800,000 barrels of oil and New England needs 2,200,000. In similar fashion, we get our second constraint from comparing those numbers to the <em>rows</em> of the cost matrix:</p>
-$$\sum_{\text{rows}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bmatrix}$$<p>Why did I change the equality sign to an &ldquo;at least&rdquo;? I know from inspection that the optimal solution will never have us deliver <em>more</em> than the minimum amount of oil to each destination&mdash;this is a linear problem, after all. More importantly (and this is where I got stuck for a while), <code>numpy.optimize</code> <a href="https://github.com/scipy/scipy/issues/7314">throws an error if you give it only equality constraints</a>.</p>
+$$\sum_{\text{rows}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bmatrix}$$<p>Why did I change the equality sign to an &ldquo;at least&rdquo;? I know from inspection that the optimal solution will never have us deliver <em>more</em> than the minimum amount of oil to each destination&mdash;this is a linear problem, after all. More importantly (and this is where I got stuck for a while), <code>scipy.optimize</code> <a href="https://github.com/scipy/scipy/issues/7314">throws an error if you give it only equality constraints</a>.</p>
 
 </div>
 </div>
@@ -14336,7 +14335,7 @@ $$\sum_{\text{rows}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bm
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert linalg.ipynb
@@ -14357,7 +14356,7 @@ $$\sum_{\text{rows}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bm
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[NbConvertApp] Converting notebook linalg.ipynb to html
-[NbConvertApp] Writing 636454 bytes to linalg.html
+[NbConvertApp] Writing 633620 bytes to linalg.html
 </pre>
 </div>
 </div>
