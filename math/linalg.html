@@ -14106,8 +14106,8 @@ $$D = \begin{bmatrix} 1000 &amp; 2000 &amp; 3000 \\ 1500 &amp; 3000 &amp; 3700 \
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, we can start implementing our constraints. First, we have that each state produces exactly a million barrels of oil. In linear algebra terms, this means that summing over the columns of the cost matrix $X \circ D$ should yield a matrix of 1,000,000, repeated thrice.  That is,</p>
-$$\sum_{\text{columns}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &amp; 1,000,000 \end{bmatrix}$$<p><code>scipy.optimize</code> likes the constraints to be set equal to zero, so we subtract the millions matrix from the sums matrix to define <code>production_constraint(x)</code>.</p>
+<p>Now, we can start implementing our constraints. First, we have that each state produces exactly a million barrels of oil. In linear algebra terms, this means that summing the rows of the cost matrix $X \circ D$ should yield a matrix of 1,000,000, repeated thrice.  That is,</p>
+$$\sum_{\text{rows}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &amp; 1,000,000 \end{bmatrix}$$<p><code>scipy.optimize</code> likes the constraints to be set equal to zero, so we subtract the millions matrix from the sums matrix to define <code>production_constraint(x)</code>.</p>
 
 </div>
 </div>
@@ -14130,8 +14130,8 @@ $$\sum_{\text{columns}} X \circ D = \begin{bmatrix} 1,000,000 &amp; 1,000,000 &a
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Similarly, the text says that Chicago needs 800,000 barrels of oil and New England needs 2,200,000. In similar fashion, we get our second constraint from comparing those numbers to the <em>rows</em> of the cost matrix:</p>
-$$\sum_{\text{rows}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bmatrix}$$<p>Why did I change the equality sign to an &ldquo;at least&rdquo;? I know from inspection that the optimal solution will never have us deliver <em>more</em> than the minimum amount of oil to each destination&mdash;this is a linear problem, after all. More importantly (and this is where I got stuck for a while), <code>scipy.optimize</code> <a href="https://github.com/scipy/scipy/issues/7314">throws an error if you give it only equality constraints</a>.</p>
+<p>Similarly, the text says that Chicago needs 800,000 barrels of oil and New England needs 2,200,000. In similar fashion, we get our second constraint from comparing those numbers to the sum of the <em>columns</em> of the cost matrix:</p>
+$$\sum_{\text{columns}} X \circ D \geq \begin{bmatrix} 800,000 \\ 2,200,000 \end{bmatrix}$$<p>Why did I change the equality sign to an &ldquo;at least&rdquo;? I know from inspection that the optimal solution will never have us deliver <em>more</em> than the minimum amount of oil to each destination&mdash;this is a linear problem, after all. More importantly (and this is where I got stuck for a while), <code>scipy.optimize</code> <a href="https://github.com/scipy/scipy/issues/7314">throws an error if you give it only equality constraints</a>.</p>
 
 </div>
 </div>
