@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="author" content="Max Kapur" />
-<meta name="revised" content="2019-10-14" />
+<meta name="revised" content="2019-11-26" />
     
 <meta lang="en" />
     
@@ -48,13 +48,18 @@ header {
         font-size: 1.6em;
         margin: 0 auto;
         padding: 2em 0.5em 1em;
-        letter-spacing: 0.07em;
+        letter-spacing: 0.05em;
         max-width: 30em;
         text-align: left;
     }
     
 	header a {color: white; text-decoration: none;}
 	header a:hover {text-decoration: underline;}
+    
+    ul.grid {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
     
 </style>
 </head>
@@ -74,13 +79,13 @@ header {
 	<li><a href="how/index.html">How Do We Learn What’s True? Narrative Fluency and the Pedagogy of Information</a> (March 2019)</li>
 </ul>
 
-<p>Here are some of the Python tools I&rsquo;ve developed to visualize mathematical concepts and cut down on busy work (in progress):</p>
+<p>Here are some of the Python tools I&rsquo;ve developed to visualize mathematical concepts and cut down on busy work:</p>
 
-<ul>
-    <li>SVD image compression: <a href="math/svd.html">HTML</a>, <a href="math/svd.ipynb", target="blank">Jupyter Notebook</a> (November 2019)</li>
-	<li>Linear algebra: <a href="math/linalg.html">HTML</a>, <a href="math/linalg.ipynb", target="blank">Jupyter Notebook</a> (November 2019)</li>
-	<li>Differential equations: <a href="math/diffeq.html">HTML</a>, <a href="math/diffeq.ipynb", target="blank">Jupyter Notebook</a> (November 2019)</li>
-	<li>Elementary algebra: <a href="math/elem.html">HTML</a>, <a href="math/elem.ipynb", target="blank">Jupyter Notebook</a> (November 2019)</li>
+<ul class="grid">
+    <li>Probability and statistics (November 2019):</li> <div><a href="math/stats.html">HTML</a>, <a href="math/stats.ipynb", target="blank">Jupyter Notebook</a></div>
+	<li>Linear algebra (November 2019):</li> <div><a href="math/linalg.html">HTML</a>, <a href="math/linalg.ipynb", target="blank">Jupyter Notebook</a></div>
+	<li>Differential equations (November 2019):</li> <div><a href="math/diffeq.html">HTML</a>, <a href="math/diffeq.ipynb", target="blank">Jupyter Notebook</a></div>
+	<li>Elementary algebra (November 2019):</li><div><a href="math/elem.html">HTML</a>, <a href="math/elem.ipynb", target="blank">Jupyter Notebook</a></div>
 </ul>
 
 
