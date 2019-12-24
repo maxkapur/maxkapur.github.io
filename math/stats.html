@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13116,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Probability-and-statistics-tools-and-demonstrations">Probability and statistics tools and demonstrations<a class="anchor-link" href="#Probability-and-statistics-tools-and-demonstrations">&#182;</a></h1><p>By <a href="https://www.maxkapur.com/">Max Kapur</a>. Updated Dec. 21, 2019.</p>
+<h1 id="Probability-and-statistics-tools-and-demonstrations">Probability and statistics tools and demonstrations<a class="anchor-link" href="#Probability-and-statistics-tools-and-demonstrations">&#182;</a></h1><p>By <a href="https://www.maxkapur.com/">Max Kapur</a>. Updated Dec. 24, 2019.</p>
 <p>These notes are written at the level of the concepts they address. That is, I try not to reference concepts from later sections when solving problems from early in the text.</p>
 
 </div>
@@ -13198,7 +13159,7 @@ $$\text{white, white, white, red}\\ \text{white, white, red, white} \\\text{whit
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Part-A">Part A<a class="anchor-link" href="#Part-A">&#182;</a></h4><p>For the fourth white ball to occur on a certain trial, we need to stick exactly to the sequences enumerated above, then complete each sequence by drawing a white ball on the <em>n</em>th trial itself. In part A, we are sampling with replacement, so the probability of selecting a given ball on a given trial is always $10/20 = 1/2$. That means that each sequence of length <em>n</em> occurs with probability $P(S_n) = (1/2)^n$. Let&rsquo;s store these probabilities in another vector, <code>psn</code>.</p>
+<h4 id="Part-A">Part A<a class="anchor-link" href="#Part-A">&#182;</a></h4><p>For the fourth white ball to occur on a certain trial, we need to stick exactly to the sequences enumerated above, then complete each sequence by drawing a white ball on the <em>n</em>th trial itself. In part A, we are sampling with replacement, so the probability of selecting a given ball on a given trial is always $10/20 = 1/2$. That means that each sequence of length <em>n</em> occurs with probability $\mathrm{P}(S_n) = (1/2)^n$. Let&rsquo;s store these probabilities in another vector, <code>psn</code>.</p>
 <p>Note that $S_n$ denotes the probability of <em>a given particular</em> sequence of length <em>n</em> occurring, not the (higher) probability of &ldquo;any sequence containing four white outcomes, with the white outcome coming up last.&rdquo;</p>
 
 </div>
@@ -13283,8 +13244,8 @@ $$\text{white, white, white, red}\\ \text{white, white, red, white} \\\text{whit
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is $\frac{1}{16}, \frac{1}{8}, \frac{5}{32}, \frac{5}{32}$, the answer given in the book.</p>
-<p>However, another way to interpret the question would be to find the probability of the fourth white ball occurring on <em>any one</em> of the four trials mentioned. This is $P(A_4 \cup A_5 \cup A_6 \cup A_7 )$. Since the $A_n$ are mutually exclusive (you cannot draw the fourth white ball on trial four and then again on trial five), we know:</p>
-$$\begin{align} P(A_4 \cup A_5 \cup A_6 \cup A_7 ) &amp;= P(A_4) + P(A_5) + P(A_6) + P(A_7) \\ &amp;= \binom{3}{3}\left(\frac{1}{2}\right)^4 + \binom{4}{3}\left(\frac{1}{2}\right)^5 + \binom{5}{3}\left(\frac{1}{2}\right)^6 + \binom{6}{3}\left(\frac{1}{2}\right)^7 \\ &amp; = \frac{1}{2} \end{align} $$<p>This is just the dot product of our <code>ways</code> and <code>psn</code> variables.</p>
+<p>However, another way to interpret the question would be to find the probability of the fourth white ball occurring on <em>any one</em> of the four trials mentioned. This is $\mathrm{P}(A_4 \cup A_5 \cup A_6 \cup A_7 )$. Since the $A_n$ are mutually exclusive (you cannot draw the fourth white ball on trial four and then again on trial five), we know:</p>
+$$\begin{align} \mathrm{P}(A_4 \cup A_5 \cup A_6 \cup A_7 ) &amp;= \mathrm{P}(A_4) + \mathrm{P}(A_5) + \mathrm{P}(A_6) + \mathrm{P}(A_7) \\ &amp;= \binom{3}{3}\left(\frac{1}{2}\right)^4 + \binom{4}{3}\left(\frac{1}{2}\right)^5 + \binom{5}{3}\left(\frac{1}{2}\right)^6 + \binom{6}{3}\left(\frac{1}{2}\right)^7 \\ &amp; = \frac{1}{2} \end{align} $$<p>This is just the dot product of our <code>ways</code> and <code>psn</code> variables.</p>
 
 </div>
 </div>
@@ -13335,9 +13296,9 @@ $$\begin{align} P(A_4 \cup A_5 \cup A_6 \cup A_7 ) &amp;= P(A_4) + P(A_5) + P(A_
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Part-B">Part B<a class="anchor-link" href="#Part-B">&#182;</a></h4><p>This is a little trickier. We should start by noticing that the combinations that will yield terminating sequences are exactly the same. That is, we can reuse our <code>ways</code> variable, and what we need to find now is $T_n$, the probability of a given length-<em>n</em> sequence containing four white balls and $n-4$ red balls.</p>
 <p>In the $n=4$ case, there is only one possible such sequence: $\text{white, white, white, white}$. Since we lose one white ball from the urn each time we draw one, we get a factorialish expression:</p>
-$$ P(T_4) = \frac{10}{20} \cdot \frac{9}{19} \cdot \frac{8}{18} \cdot \frac{7}{17} $$<p>For a longer sequence, the denominator will look similar: it will have the first <em>n</em> terms of $20!$. The numerator requires a bit of attention. $10 \cdot 9 \cdot 8 \cdot 7$ will stay there, but instead of continuing to decrease, the red balls in the sequence deplete their seperate supply of ten. So, for example,</p>
-$$P(T_6) = \left( \frac{10}{20} \cdot \frac{9}{19} \cdot \frac{8}{18} \cdot \frac{7}{17} \right) \cdot \left( \frac{10}{16} \cdot \frac{9}{15} \right) $$<p>This corresponds to the sequence $\text{white, white, white, white, red, red}$. Technically, this sequence would have terminated at the fourth trial, but rearranging the sequence of draws only rearranges the numerator of this calculation, leaving the value of $T_6$ unchanged. Thinking hard about factorials reveals an expression for $T_n$:</p>
-$$P(T_n) = \frac{(20 - n)!}{20!} \cdot \frac{10!}{6!} \cdot  \frac{10!}{(14-n)!}$$<p>Let&rsquo;s put $P(T_n)$ for $n = \{4,5,6,7\}$ into the variable <code>ptn</code>. These values will replace the $(1/2)^n$ terms we saw in part A.</p>
+$$ \mathrm{P}(T_4) = \frac{10}{20} \cdot \frac{9}{19} \cdot \frac{8}{18} \cdot \frac{7}{17} $$<p>For a longer sequence, the denominator will look similar: it will have the first <em>n</em> terms of $20!$. The numerator requires a bit of attention. $10 \cdot 9 \cdot 8 \cdot 7$ will stay there, but instead of continuing to decrease, the red balls in the sequence deplete their seperate supply of ten. So, for example,</p>
+$$\mathrm{P}(T_6) = \left( \frac{10}{20} \cdot \frac{9}{19} \cdot \frac{8}{18} \cdot \frac{7}{17} \right) \cdot \left( \frac{10}{16} \cdot \frac{9}{15} \right) $$<p>This corresponds to the sequence $\text{white, white, white, white, red, red}$. Technically, this sequence would have terminated at the fourth trial, but rearranging the sequence of draws only rearranges the numerator of this calculation, leaving the value of $T_6$ unchanged. Thinking hard about factorials reveals an expression for $T_n$:</p>
+$$\mathrm{P}(T_n) = \frac{(20 - n)!}{20!} \cdot \frac{10!}{6!} \cdot  \frac{10!}{(14-n)!}$$<p>Let&rsquo;s put $\mathrm{P}(T_n)$ for $n = \{4,5,6,7\}$ into the variable <code>ptn</code>. These values will replace the $(1/2)^n$ terms we saw in part A.</p>
 
 </div>
 </div>
@@ -13864,7 +13825,7 @@ $$\begin{align}
 K(a,b) &amp; = \mathrm{E}\left[(Y − a − bX)^2 \right] \\
 &amp; = \mathrm{E}\left(X^2 b^2 - 2 XYb + 2X ab + Y^2 - 2Ya + a^2\right) \\
 &amp; = b^2 (\sigma_X^2 + \mu_X^2) - 2b(\sigma_{XY} + \mu_X \mu_Y) + 2ab\mu_X + \sigma_Y^2 + \mu_Y^2 - 2a\mu_Y + a^2
-\end{align}$$<p>by expanding, distributing, then substituting $E(X^2) = \sigma_X^2 + \mu_X^2$, $E(Y^2) = \sigma_Y^2 + \mu_Y^2$, and $E(XY) = \sigma_{XY} + \mu_X \mu_Y$.</p>
+\end{align}$$<p>by expanding, distributing, then substituting $\mathrm{E}(X^2) = \sigma_X^2 + \mu_X^2$, $\mathrm{E}(Y^2) = \sigma_Y^2 + \mu_Y^2$, and $\mathrm{E}(XY) = \sigma_{XY} + \mu_X \mu_Y$.</p>
 <p>Let&rsquo;s set the first derivatives to zero and solve for $a$ and $b$.</p>
 $$\begin{align}
 \frac{\partial K}{\partial a} = 0 &amp; = 2b\mu_X - 2\mu_Y + 2a \\
@@ -14106,9 +14067,9 @@ $$\begin{align}
 \sigma_X^2 &amp; = 9 &amp;&amp; \sigma_Y^2 = 16 \\
  &amp;&amp; \rho = 0.6 \\
 \end{align}$$</p>
-<p>The conditional mean line is $E(Y | x) = 0.8x +4$.</p>
+<p>The conditional mean line is $\mathrm{E}(Y | x) = 0.8x +4$.</p>
 <p>Then</p>
-$$h(y|x) = \frac{1}{4\sqrt{2\pi}\sqrt{1-0.6^2}} \exp\left[- \frac{\left(y - E\left(y|x\right) \right)^2}{2\cdot16\cdot(1-0.6^2)}\right]
+$$h(y|x) = \frac{1}{4\sqrt{2\pi}\sqrt{1-0.6^2}} \exp\left(- \frac{\left[y - \mathrm{E}\left(y|x\right) \right]^2}{2\cdot16\cdot(1-0.6^2)}\right)
 $$
 </div>
 </div>
@@ -15108,7 +15069,7 @@ $$<h4 id="Part-C">Part C<a class="anchor-link" href="#Part-C">&#182;</a></h4><p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert stats.ipynb
@@ -15129,7 +15090,7 @@ $$<h4 id="Part-C">Part C<a class="anchor-link" href="#Part-C">&#182;</a></h4><p>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[NbConvertApp] Converting notebook stats.ipynb to html
-[NbConvertApp] Writing 963353 bytes to stats.html
+[NbConvertApp] Writing 965077 bytes to stats.html
 </pre>
 </div>
 </div>
