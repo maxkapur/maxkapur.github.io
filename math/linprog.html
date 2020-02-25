@@ -13116,50 +13116,120 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Linear-programming-tools-and-demonstrations">Linear programming tools and demonstrations<a class="anchor-link" href="#Linear-programming-tools-and-demonstrations">&#182;</a></h1><p>By <a href="https://www.maxkapur.com/">Max Kapur</a>. Updated Feb. 9, 2020.</p>
+<h1 id="Linear-programming-tools-and-demonstrations">Linear programming tools and demonstrations<a class="anchor-link" href="#Linear-programming-tools-and-demonstrations">&#182;</a></h1><p>By <a href="https://www.maxkapur.com/">Max Kapur</a>. Updated Feb. 25, 2020.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Pivoting-a-system-of-linear-equations-in-Sympy">Pivoting a system of linear equations in Sympy<a class="anchor-link" href="#Pivoting-a-system-of-linear-equations-in-Sympy">&#182;</a></h2><p>Reference: Robert J. Vanderbei, <em>Linear Programming: Foundations and Extensions,</em> ch. 2.</p>
-<p>Rewritten in matrix form, problem 2.3 has us maximize</p>
-$$\zeta =  2x_1 - 6x_2 $$<p>subject to</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dict_helper</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Create vectors of variables (x) and slack variables (w)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Return the objective function and constraint functions as a dictionary compatible with </span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;obj&#39;</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;con&#39;</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">))}</span>
+
+<span class="c1"># Returns the above dictionary pivoted with the given x_i or w_j values as the basis.</span>
+<span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">basic</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">basic</span><span class="p">)</span> <span class="o">==</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;Number of variables in basis must equal number of constraints (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">con_as_mutable</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">as_mutable</span><span class="p">(),</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">as_mutable</span><span class="p">())</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">con_as_mutable</span><span class="p">,</span> <span class="n">basic</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">{</span><span class="c1"># Objective function</span>
+           <span class="s1">&#39;obj&#39;</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">constraints</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(),</span>
+           <span class="c1"># New constraint functions</span>
+           <span class="s1">&#39;con&#39;</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">constraints</span><span class="o">.</span><span class="n">keys</span><span class="p">())),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">constraints</span><span class="o">.</span><span class="n">values</span><span class="p">())))}</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pivot() is compatible with its own output, so you can chain like so:</span>
+<span class="c1"># pivot( pivot(seed_dict, (x[1], w[0])), (x[1], x[2]))[&#39;con&#39;]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## A few pitfalls (will return errors):</span>
+
+<span class="c1"># Need to choose the right number of basic variables</span>
+<span class="c1"># pivot(seed_dict, (x[1], x[2], x[0]))[&#39;con&#39;]</span>
+
+<span class="c1"># x1 and x2 are used as symbols but not defined as variables</span>
+<span class="c1"># pivot(seed_dict, (x1, x2))[&#39;con&#39;]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h4><p>Rewritten in matrix form and indicing from 0, problem 2.3 has us maximize</p>
+$$\zeta =  2x_0 - 6x_1 $$<p>subject to</p>
 $$\begin{align}
 \begin{bmatrix} -1 &amp; -1 &amp; -1 \\
 2 &amp; -1 &amp; 1\\ \end{bmatrix} x &amp;\leq \begin{bmatrix} -2 \\ 1 \end{bmatrix} \\ \\
 x &amp;\geq 0\end{align}$$<p>(The vector $x$ is of length 3.)</p>
-<p>Since both $c$ and $b$ contain a mix of negative values, the starting dictionary is neither primal nor dual feasible; we need to use a Phase I algorithm to generate a feasible starting dictionary.</p>
-<p>My purpose, however, is to simply use sympy to develop a general tool that allows us to pivot the dictionary and test various bases.</p>
+<p>Since both $c$ and $b$ contain a mix of positive and negative values, the starting dictionary is neither primal nor dual feasible; we need to use a Phase I algorithm to generate a feasible starting dictionary.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2.3</span>
-
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
-
-<span class="c1"># Variables and slack variables</span>
-<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot; x1, x2, x3, w1, w2 &quot;</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">])</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">])</span>
-
-<span class="c1"># Data</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span><span class="o">*-</span><span class="mi">1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
-<span class="c1"># Constraints</span>
-<span class="n">con</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
-<span class="n">con</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">seed_dict</span> <span class="o">=</span> <span class="n">dict_helper</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span>
 </pre></div>
 
     </div>
@@ -13172,13 +13242,13 @@ x &amp;\geq 0\end{align}$$<p>(The vector $x$ is of length 3.)</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle \left[\begin{matrix}w_{1}\\w_{2}\end{matrix}\right] = \left[\begin{matrix}x_{1} + x_{2} + x_{3} - 2\\- 2 x_{1} + x_{2} - x_{3} + 1\end{matrix}\right]$
+$\displaystyle \left( x, \  w\right)$
 </div>
 
 </div>
@@ -13189,35 +13259,10 @@ $\displaystyle \left[\begin{matrix}w_{1}\\w_{2}\end{matrix}\right] = \left[\begi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Returns the above dictionary pivoted with the given x_i or w_j as the basis.</span>
-<span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="n">basic</span><span class="p">):</span>
-    <span class="n">constraints</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">basic</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">{</span><span class="s1">&#39;obj&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">constraints</span><span class="p">),</span> <span class="c1"># Objective function</span>
-           <span class="s1">&#39;con&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">}</span>                 <span class="c1"># Pivoted constraint functions</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I happen to know that the optimal solution has $x_2$ and $x_3$ basic, but in the simplex method we would swap variables into the basis one at a time according to the set of pivoting rules chosen.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pivot</span><span class="p">((</span><span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">))[</span><span class="s1">&#39;obj&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13230,13 +13275,13 @@ $\displaystyle \left[\begin{matrix}w_{1}\\w_{2}\end{matrix}\right] = \left[\begi
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[81]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle \left[\begin{matrix}- 3 w_{1} - 3 w_{2} - x_{1} - 3\end{matrix}\right]$
+$\displaystyle \left[\begin{matrix}2 & -6 & 0\end{matrix}\right] x$
 </div>
 
 </div>
@@ -13247,10 +13292,10 @@ $\displaystyle \left[\begin{matrix}- 3 w_{1} - 3 w_{2} - x_{1} - 3\end{matrix}\r
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pivot</span><span class="p">((</span><span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">))[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13263,13 +13308,13 @@ $\displaystyle \left[\begin{matrix}- 3 w_{1} - 3 w_{2} - x_{1} - 3\end{matrix}\r
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[85]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle \left\{ x_{2} : \frac{w_{1}}{2} + \frac{w_{2}}{2} + \frac{x_{1}}{2} + \frac{1}{2}, \  x_{3} : \frac{w_{1}}{2} - \frac{w_{2}}{2} - \frac{3 x_{1}}{2} + \frac{3}{2}\right\}$
+$\displaystyle w = \left[\begin{matrix}-2\\1\end{matrix}\right] + \left[\begin{matrix}1 & 1 & 1\\-2 & 1 & -1\end{matrix}\right] x$
 </div>
 
 </div>
@@ -13281,7 +13326,81 @@ $\displaystyle \left\{ x_{2} : \frac{w_{1}}{2} + \frac{w_{2}}{2} + \frac{x_{1}}{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that the constant terms in $x_2$ and $x_3$ are positive, while the cost coefficients in the current dictionary&rsquo;s objective function are all negative. That implies that this dictionary is optimal, with $x = (0, 1/2, 3/2)$ and $\zeta = -3$.</p>
+<p>I happen to know that the optimal solution has $x_1$ and $x_2$ basic, but in the simplex method we would swap variables into the basis one at a time according to the set of pivoting rules chosen.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]))[</span><span class="s1">&#39;obj&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}- 3 w_{0, 0} - 3 w_{1, 0} - x_{0, 0} - 3\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]))[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}x_{1, 0}\\x_{2, 0}\end{matrix}\right] = \left[\begin{matrix}\frac{w_{0, 0}}{2} + \frac{w_{1, 0}}{2} + \frac{x_{0, 0}}{2} + \frac{1}{2}\\\frac{w_{0, 0}}{2} - \frac{w_{1, 0}}{2} - \frac{3 x_{0, 0}}{2} + \frac{3}{2}\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the constant terms in $x_1$ and $x_2$ are positive, while the cost coefficients in the current dictionary&rsquo;s objective function are all negative. That implies that this dictionary is optimal, with $x = (0, 1/2, 3/2)$ and $\zeta = -3$.</p>
 
 </div>
 </div>
@@ -13289,7 +13408,8 @@ $\displaystyle \left\{ x_{2} : \frac{w_{1}}{2} + \frac{w_{2}}{2} + \frac{x_{1}}{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Upper-and-lower-bounds-for-a-worst-case-simplex-problem">Upper and lower bounds for a worst-case simplex problem<a class="anchor-link" href="#Upper-and-lower-bounds-for-a-worst-case-simplex-problem">&#182;</a></h2><p>Problem 9 asks,</p>
+<h2 id="Upper-and-lower-bounds-for-a-worst-case-simplex-problem">Upper and lower bounds for a worst-case simplex problem<a class="anchor-link" href="#Upper-and-lower-bounds-for-a-worst-case-simplex-problem">&#182;</a></h2><p>Reference: Robert J. Vanderbei, <em>Linear Programming: Foundations and Extensions,</em> ch. 4.</p>
+<p>Problem 9 asks,</p>
 <blockquote><p>Show that, for any integer <em>n,</em>
 $$\frac{1}{2n} 2^{2n} \leq \binom{2n}{n} \leq 2^{2n}$$</p>
 </blockquote>
@@ -13324,9 +13444,892 @@ $$\begin{align}
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-self-dual-simplex-method">The self-dual simplex method<a class="anchor-link" href="#The-self-dual-simplex-method">&#182;</a></h2><p>Reference: Robert J. Vanderbei, <em>Linear Programming: Foundations and Extensions,</em> ch. 7.</p>
+<p>In the self-dual simplex method, given an infeasible and/or inoptimal starting dictionary, we subtract $\mu \bar z_\mathcal{N}$ from each of the terms in $c$ and add $\mu \bar x_\mathcal{B}$ to each of the terms in $b$. $\bar z_\mathcal{N}$ and $\bar x_\mathcal{B}$ are vectors of arbitrary positive constants. Then, for some positive minimal value of $\mu$, the dictionary is dual feasible. We pivot (it may be a dual or primal pivot) around the variable whose coefficient provides that minimum to yield a new dictionary which is dual feasible with some lower minimum for $\mu$. Keep iterating until that minumum dips below 0; then setting $\mu =0$ yields the optimal dictionary for the original problem.</p>
+<p>I solve problem 2.3, shown above, using my pivot tool and the self-dual simplex method.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dict_helper_selfdual</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">]])</span> <span class="c1"># Useful for formatting</span>
+    
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Update c and b with mu perturbations</span>
+    <span class="c1"># As the text suggests, coefs of mu drawn from continuous interval (0.5, 1.5)</span>
+    <span class="n">c</span> <span class="o">-=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">))</span><span class="o">*</span><span class="n">mu</span>
+    <span class="n">b</span> <span class="o">+=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">))</span><span class="o">*</span><span class="n">mu</span>
+
+    <span class="c1"># Uses 1 as mu coefs; creates degenerate pivots</span>
+    <span class="c1"># c -= sp.Matrix([1]*len(c))*mu</span>
+    <span class="c1"># b += sp.Matrix([1]*len(b))*mu</span>
+
+    <span class="n">seed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;obj&#39;</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span>
+                 <span class="s1">&#39;con&#39;</span><span class="p">:</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">))}</span>
+    
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">seed_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function that picks apart a dictionary and discovers bounds on mu</span>
+<span class="k">def</span> <span class="nf">discover_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">):</span>
+    <span class="c1"># Initialize bounds dictionaries</span>
+    <span class="n">lb</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Bounds on mu from basic equations</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="p">[[</span><span class="n">k</span><span class="p">,</span> 
+              <span class="n">i</span><span class="o">.</span><span class="n">as_coefficients_dict</span><span class="p">()[</span><span class="n">mu</span><span class="p">],</span>
+              <span class="n">i</span><span class="o">.</span><span class="n">as_coefficients_dict</span><span class="p">()[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">),</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">))]</span>
+    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">check</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ub</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span>  <span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="n">x</span>
+        <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span>  <span class="mi">1</span><span class="p">:</span>     <span class="c1"># if x == 0 do nothing</span>
+            <span class="n">lb</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span>  <span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="n">x</span>
+        
+    <span class="c1"># Constraints on mu from coeffs in objective function</span>
+    <span class="n">nbvars</span> <span class="o">=</span> <span class="n">X</span><span class="p">[[</span><span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X</span><span class="p">],:]</span>
+    <span class="n">check2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="p">,</span>
+               <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">mu</span><span class="p">),</span>
+               <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nbvars</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">check2</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">lb</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">z</span>
+        <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span>  <span class="mi">1</span><span class="p">:</span>     <span class="c1"># if z == 0 do nothing</span>
+            <span class="n">ub</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">z</span>
+    <span class="k">return</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Given the output of the previous function, find the tightest bounds</span>
+<span class="c1"># and indicate which variable they came from. Returns only the mu-value</span>
+<span class="c1"># for the lower bound, which we will use in the ratio test.</span>
+<span class="k">def</span> <span class="nf">get_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">):</span>
+    <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="o">=</span> <span class="n">discover_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lb</span> <span class="o">==</span> <span class="p">{}:</span> <span class="n">lower</span> <span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span>
+    <span class="k">if</span> <span class="n">lb</span> <span class="o">!=</span> <span class="p">{}:</span> <span class="n">lower</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">ub</span> <span class="o">==</span> <span class="p">{}:</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span>
+    <span class="k">if</span> <span class="n">ub</span> <span class="o">!=</span> <span class="p">{}:</span> <span class="n">upper</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ub</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">upper</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Warning</span><span class="p">(</span><span class="s1">&#39;Bad pivot; problem may be unbounded or infeasible&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lower bound: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Upper bound: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Variable to swap: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">get</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">get</span><span class="p">),</span> <span class="n">lower</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">primal_rt</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">test_mu</span><span class="p">):</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="o">-</span><span class="n">i</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+               <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">j</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">X</span><span class="p">})</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">test_mu</span><span class="p">))</span>
+              <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">)}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Leaving variable: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">ratios</span><span class="o">.</span><span class="n">get</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">ratios</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dual_rt</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">test_mu</span><span class="p">):</span>
+    <span class="c1"># Identify the working row</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">([</span><span class="n">var</span><span class="o">==</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># Identify the nonbasic variables</span>
+    <span class="n">nbvars</span> <span class="o">=</span> <span class="n">X</span><span class="p">[[</span><span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X</span><span class="p">],:]</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="p">{</span><span class="n">j</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="p">[</span><span class="n">where</span><span class="p">]</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                  <span class="o">/</span> <span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">test_mu</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">nbvars</span><span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entering variable: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">ratios</span><span class="o">.</span><span class="n">get</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">ratios</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">selfdual_wizard</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">):</span>
+    <span class="c1"># Current bounds on mu</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">get_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">)</span>
+    
+    <span class="c1"># Optimality if lower bound below zero</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Optimal dictionary&#39;</span><span class="p">)</span>
+        <span class="n">zeta</span> <span class="o">=</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">j</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">X</span><span class="p">})</span>
+        <span class="n">nbvals</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">,</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">j</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">X</span><span class="p">}))}</span>
+        <span class="n">solution</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,[</span><span class="n">nbvals</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">seed_dict</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">zeta</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># If the bound is provided by a basic variable, perform dual rt</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">:</span>
+            <span class="n">new_basis</span> <span class="o">=</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dual_rt</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dual pivot&#39;</span><span class="p">)</span>
+
+        <span class="c1"># If the bound is provided by a coefficient, perform primal rt</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="p">:</span>
+            <span class="n">new_basis</span> <span class="o">=</span> <span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">primal_rt</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">v</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primal pivot&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New basis: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">new_basis</span><span class="p">))</span>
+        <span class="n">next_dict</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">new_basis</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">selfdual_wizard</span><span class="p">(</span><span class="n">next_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data for problem 2.3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">678</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">seed_dict</span> <span class="o">=</span> <span class="n">dict_helper_selfdual</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have set things up, we begin <strong>iteration 1</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{array}{c}- 1.20046431722907 \mu x_{2, 0} + \left(2 - 1.021890900429 \mu\right) x_{0, 0} + \left(- 1.05011567051768 \mu - 6\right) x_{1, 0}\end{array}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_dict</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}w_{0, 0}\\w_{1, 0}\end{matrix}\right] = \left[\begin{matrix}1.03139003667243 \mu + x_{0, 0} + x_{1, 0} + x_{2, 0} - 2\\0.812296306730348 \mu - 2 x_{0, 0} + x_{1, 0} - x_{2, 0} + 1\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">discover_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left( \left\{ w_{0, 0} : 1.93913061876435, \  w_{1, 0} : -1.23107786126124, \  x_{0, 0} : 1.95715609089031, \  x_{1, 0} : -5.71365628420931, \  x_{2, 0} : 0\right\}, \  \left\{ \right\}\right)$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">get_bounds</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lower bound: 1.95715609089031
+Upper bound: oo
+Variable to swap: x[0, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Under dual feasibility, we need nonpositive coefficients in front of the basic variables and nonnegative values in $b$. For this dictionary, $\mu \in [1.957, \infty)$.</p>
+<p>The lower bound is provided by coefficient of $x_0$. Since $x_0$ is currently not in the basis, it is the entering variable, and we use the primal ratio test to determine the leaving variable. (If the lower bound is provided by one of the equations for a basic variable, then that variable will <em>leave</em> the basis and the dual ratio test will find the entering variable.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">primal_rt</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Leaving variable: w[1, 0]
+{w[0, 0]: -53.7886221568534, w[1, 0]: 0.772263190052573}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle w_{1, 0}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The leaving variable is $w_1$. Then the new basis is $(w_0, x_0)$. Begin <strong>iteration 2</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iter2</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">get_bounds</span><span class="p">(</span><span class="n">iter2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lower bound: 1.04345053953715
+Upper bound: 1.95715609089031
+Variable to swap: w[0, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Swap variable is currently in the basis, so do a dual pivot</span>
+<span class="n">dual_rt</span><span class="p">(</span><span class="n">iter2</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Entering variable: x[2, 0]
+{x[1, 0]: 0.226282225901966, x[2, 0]: 0.290785783557954, w[1, 0]: -1.07099934327413}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle x_{2, 0}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\mu \in [1.043, 1.957]$. $w_0$ leaves, $x_2$ enters, and the new basis is $(x_2, x_0)$. Begin <strong>iteration 3</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iter3</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">get_bounds</span><span class="p">(</span><span class="n">iter3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lower bound: 0.542391607758162
+Upper bound: 1.04345053953715
+Variable to swap: x[0, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dual_rt</span><span class="p">(</span><span class="n">iter3</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Entering variable: x[1, 0]
+{x[1, 0]: 1.15959593636984, w[0, 0]: -0.363903866891824, w[1, 0]: -0.476904305955854}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle x_{1, 0}$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\mu \in [0.542, 1.043]$. $x_0$ leaves, $x_1$ enters, and the new basis is $(x_2, x_1)$. Begin <strong>iteration 4</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iter4</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">get_bounds</span><span class="p">(</span><span class="n">iter4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lower bound: -2.66597945092684
+Upper bound: 0.542391607758162
+Variable to swap: w[0, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The lower bound has dipped below 0. This is our stopping condition, and subbing in $\mu = 0$ reveals the <strong>optimal dictionary</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iter4</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}- 3.0 w_{0, 0} - 3.0 w_{1, 0} - 1.0 x_{0, 0} - 3.0\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iter4</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}x_{2, 0}\\x_{1, 0}\end{matrix}\right] = \left[\begin{matrix}0.5 w_{0, 0} - 0.5 w_{1, 0} - 1.5 x_{0, 0} + 1.5\\0.5 w_{0, 0} + 0.5 w_{1, 0} + 0.5 x_{0, 0} + 0.5\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As expected, optimality is achieved with $x = (0, 0.5, 1.5)$ and $\zeta = -3$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Using-my-recursive-self-dual-wizard">Using my recursive self-dual wizard<a class="anchor-link" href="#Using-my-recursive-self-dual-wizard">&#182;</a></h4><p>We can do all these steps at once using the recursive self-dual wizard. For completeness&rsquo; sake, I have reinput the problem data so you can see how it works.</p>
+<p>If the problem is infeasible or unbounded, the wizard may loop forever, but it will raise a warning indicating that you should look closer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data for problem 2.3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">seed_dict</span> <span class="o">=</span> <span class="n">dict_helper_selfdual</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt_dic</span><span class="p">,</span> <span class="n">opt_X</span><span class="p">,</span> <span class="n">opt_zeta</span> <span class="o">=</span> <span class="n">selfdual_wizard</span><span class="p">(</span><span class="n">seed_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Lower bound: 3.52673251169697
+Upper bound: oo
+Variable to swap: x[0, 0]
+Leaving variable: w[1, 0]
+{w[0, 0]: -0.991528221335118, w[1, 0]: 0.456002369891880}
+Primal pivot
+New basis: Matrix([[w[0, 0]], [x[0, 0]]])
+
+Lower bound: 1.12519018185871
+Upper bound: 3.52673251169697
+Variable to swap: w[0, 0]
+Entering variable: x[2, 0]
+{x[1, 0]: 0.217360912839214, x[2, 0]: 0.224310135594531, w[1, 0]: -0.734264074357267}
+Dual pivot
+New basis: Matrix([[x[2, 0]], [x[0, 0]]])
+
+Lower bound: 0.551527105819130
+Upper bound: 1.12519018185871
+Variable to swap: x[0, 0]
+Entering variable: x[1, 0]
+{x[1, 0]: 1.77861967117297, w[0, 0]: -0.312024425266030, w[1, 0]: -0.408821731019794}
+Dual pivot
+New basis: Matrix([[x[2, 0]], [x[1, 0]]])
+
+Lower bound: -2.15689933013727
+Upper bound: 0.551527105819129
+Variable to swap: w[0, 0]
+Optimal dictionary
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sub mu=0 to see optimal dictionary</span>
+<span class="n">opt_dic</span><span class="p">[</span><span class="s1">&#39;obj&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}- 3.0 w_{0, 0} - 3.0 w_{1, 0} - 1.0 x_{0, 0} - 3.0\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">opt_dic</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left[\begin{matrix}x_{2, 0}\\x_{1, 0}\end{matrix}\right] = \left[\begin{matrix}0.5 w_{0, 0} - 0.5 w_{1, 0} - 1.5 x_{0, 0} + 1.5\\0.5 w_{0, 0} + 0.5 w_{1, 0} + 0.5 x_{0, 0} + 0.5\end{matrix}\right]$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Optimal solution</span>
+<span class="n">opt_X</span><span class="p">,</span> <span class="n">opt_zeta</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle \left( \left\{ w_{0, 0} : 0, \  w_{1, 0} : 0, \  x_{0, 0} : 0, \  x_{1, 0} : 0.5, \  x_{2, 0} : 1.5\right\}, \  -3.0\right)$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert linprog.ipynb
@@ -13347,7 +14350,7 @@ $$\begin{align}
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[NbConvertApp] Converting notebook linprog.ipynb to html
-[NbConvertApp] Writing 286624 bytes to linprog.html
+[NbConvertApp] Writing 346863 bytes to linprog.html
 </pre>
 </div>
 </div>
