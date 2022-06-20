@@ -2,3 +2,4 @@ how/unused_files/
 *.ini
 .ipynb_checkpoints
 .DS_store
+log.txt
