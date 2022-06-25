@@ -1,5 +1,5 @@
-how/unused_files/
-*.ini
-.ipynb_checkpoints
-.DS_store
-log.txt
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
