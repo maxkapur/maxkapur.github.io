@@ -1,3 +1,3 @@
-# Max’s Miscellaneous Pages
+# Illusion Slopes
 
-This repository houses several one-off coding projects. Please see the individual project subdirectories for licensing info (they are various flavors of CC). 
+This repository hosts my blog, Illusion Slopes. It also used to host several one-off essays, but these have have now been moved to separate repos. 
