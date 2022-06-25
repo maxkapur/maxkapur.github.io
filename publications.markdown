@@ -19,7 +19,7 @@ permalink: /publications/
 
 > This article proposes a characterization of admissions markets that can predict the distribution of students at each school or college under both centralized and decentralized admissions paradigms. The characterization builds on recent research in stable assignment, which models students as a probability distribution over the set of ordinal preferences and scores. Although stable assignment mechanisms presuppose a centralized admissions process, I show that stable assignments coincide with equilibria of a decentralized, iterative market in which schools adjust their admissions standards in pursuit of a target class size. Moreover, deferred acceptance algorithms for stable assignment are a special case of a well-understood price dynamic called tâtonnement. The second half of the article turns to a parametric distribution of student types that enables explicit computation of the equilibrium and is invertible in the schools' preferability parameters. Applying this model to a public dataset produces an intuitive ranking of the popularity of American universities and a realistic estimate of each school's demand curve, and does so without imposing an equilibrium assumption or requiring the granular student information used in conventional logistic regressions.
 
-[“Cyborgs, Cyphers, and Feminist Compromise in Contemporary South Korean Science Fiction,”](https://misc.maxkapur.com/cyborgs/index.html) *Emory Journal of East Asian Studies,* 2020.
+[“Cyborgs, Cyphers, and Feminist Compromise in Contemporary South Korean Science Fiction,”](https://maxkapur.com/cyborgs-and-ciphers/) *Emory Journal of East Asian Studies,* 2020.
 
 > SF&rsquo;s potential as an instrument of political advocacy has contributed to both the genre&rsquo;s popularity and its exclusion from rarified literary circles. I examine two contemporary South Korean authors and situate their complex relationship to the SF genre in the context of a longer history of &ldquo;bargains&rdquo; that Korean feminist writers have made in search of a literary platform. 
 
@@ -44,9 +44,9 @@ permalink: /publications/
 
 # Essays
 
-[“Using Data to Understand ELL Students,”](https://misc.maxkapur.com/survey/index.html) August 2019.
+[“Using Data to Understand ELL Students,”](https://maxkapur.com/esl-data/) August 2019.
 > I used my spare time during my Fulbright grant to teach myself statistics and Python. In this essay, I explain rudimentary data analysis techniques that ELL teachers can use to better understand their students. I also compute the perfect classroom temperature.Presented at Fulbright Korea’s fall conference, Gyeongju, October 2019.
 
-[How Do We Learn What’s True? Narrative Fluency and the Pedagogy of Information](https://misc.maxkapur.com/how/index.html), February 2019. 
+[How Do We Learn What’s True? Narrative Fluency and the Pedagogy of Information](https://maxkapur.com/how-do-we/), February 2019. 
 
 > I created this digital essay in response to what I saw as an unquestioning embrace of trendy information-literacy pedagogies among fellow teachers and people who write about education. It is the first in a series about surviving in a world bereft of epistemological signposts.
