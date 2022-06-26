@@ -1,0 +1,36 @@
+---
+layout:     post
+title:      Sorites
+date:       2016-08-07 00:00:00 +0000
+categories: personal
+---
+
+We pretend stability by tracking our life’s progress as a series of marginal changes, so that from each day to the next we can see that we are still ourselves, changed perhaps in substance, but never in identity.
+
+But sample two days, say, ten or twenty years apart within the spread of a life&mdash;could you recognize the images as of the same person? Over time the marginal changes penetrate to the being’s core. The transformation becomes comprehensive.
+
+<a href="http://science.howstuffworks.com/life/cellular-microscopic/does-body-really-replace-seven-years.htm">In seven or ten years’ time</a>, nearly all of the cells in our bodies regenerate. They either fall off, as in the case of skin and hair cells; die, as in the cells living in the acidic environment of the stomach; or are “willfully” (to the extent that our body has a sense of will) killed by the immune system to fight or prevent infection.
+
+Similarly, in the chrysalis, <a href="http://www.scientificamerican.com/article/caterpillar-butterfly-metamorphosis-explainer/">a caterpillar digests itself</a> into a loosely-differentiated soup. It emerges a butterfly. Its new appearance is entirely unrecognizable; the only way the observer can know that the caterpillar and butterfly are *the same* is by witnessing the whole process&mdash;maybe you tried this in an elementary school science class. Moreover, if you perform <a href="http://www.wired.com/2008/03/butterflies-rem/">classical conditioning on a caterpillar</a>, the butterfly retains the memory. Few would deny that the caterpillar and the butterfly are the same organism.
+
+It is self-observation, in the form of memory, that preserves our identity as we pass through the many transformations (willful or otherwise) that constitute life. Memory is what gives life a sense of flow; it enables us to compress the many different forms our existence takes into a comprehensible narrative. Memory gives continuity to life’s many interruptions and breaks.
+
+Animators know that using continuity is the smart way to model a dynamic process. Modern animators do not draw each frame from scratch, the way you would make an animated flipbook. Instead they draw the first image, and then make several small changes to it to produce the next frame.
+
+Digital video compression works in the same way. The first frame, called a keyframe, is stored much the same way as a still image. Then, each subsequent frame is rendered by describing how it is different from the keyframe&mdash;something along the lines of, “The image darkens by 10% and the block of pixels in the corner moves slightly to the right,” but in computer language. After a certain number of frames pass in this way, the change becomes too drastic to account for in so few words. The video encoder determines mathematically that it would be more space-efficient to snap a new picture, so it creates a new keyframe and proceeds from there.
+
+This special point at which the computer decides it would be better to encode a new keyframe then to narrate its progress since the last one has, I think, an analogue in the human experience. When we change our life abruptly or in a major way, we often speak of being “reborn” or “finding a new life.” But we lack the computational diligence of a computer to tell us when a transformation could be more efficiently accounted for with a new raw description than a description of changes.
+
+This is perhaps easier to understand if we imagine describing someone other than ourselves. If we take two snapshots of different points from an individual’s life, at how many years apart do the snapshots become unrecognizable as the same person? In other words, in the video of that person’s life, how often and where would we insert keyframes?
+
+A picture of them from last week and from this week would look quite similar. If last Monday was a keyframe, the description of today’s frame may read, “Weight increases by two pounds and facial hair is removed.” It may also read, “Slightly less anxious about finding a job, but more strongly longing to make up with his ex.” Straightforward. We practice making these sorts of descriptions every day, even about ourselves, when we answer questions like, “Are you feeling better today? You looked pretty down after evals came out.”
+
+But describing our transformation as a continuous process becomes a much more awkward process when we try to trace changes in our lives over several years. If you and I had attended kindergarten together but never met since, and I asked you to describe yourself today by comparing your current self with your four-year-old self, would I be able to deduce an accurate picture of who you now are? You might say, “I whine a lot less,” but of course, given that four-year-olds are prone to excessive whining, the description is hardly informative. You could be a whiny person still, as long as you are less so than you were at age four.
+
+In this case, I would be better off asking you for a keyframe description of who you are. If I asked you, “Are you happy with your work?” your answer would probably give me a better understanding of whether or not you are whiny person than even the most precise comparison of your four-year-old and present day habits&mdash;and that’s with a sideways question.
+
+After a certain point, the transformation simply becomes too comprehensive to be accounted for in the language of continuity. You have been born anew. Outside of the perception of those who know you closely and have watched you evolve through every stage of your being, there is no way for me to verify that you are, in fact, yourself.
+
+I am interested in the location of this point, a simultaneously knowable and unknowable point. As in the <a href="http://plato.stanford.edu/entries/sorites-paradox/">sorites paradox</a>, in which some unknowable minimum number of grains lumped together eventually produce a “heap,” the changes that shape our lives and identities are so marginal and nameable that a close observer would never be able to name a point at which one has comprehensively transformed. That’s because in the process of observing, the observer becomes keenly aware of the continuity between the original and transformed object, such that a transformation that any outsider would call *comprehensive* is to the observer recalled as only the sequence of marginal changes that it actually was.
+
+So we arrive at a problem: Our memory&mdash;the set of observations of our own transformation&mdash;is what confirms to us that we are ourselves. That’s because without observing continuity between two apparently different objects, we cannot identify them as the same. But how can we know that our memory is itself continuous? As above, the brain is constantly recycling its own cells. Even on a psychological level, we sometimes rewrite our memory, underlining and punctuating emotionally intense moments and lumping similar experiences together into generic memories (“my commute”). We are perhaps not ourselves, but figments of our own imagination, a cluster of observations that exist only to verify their own existence.
