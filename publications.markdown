@@ -51,4 +51,10 @@ permalink: /publications/
 
 > I created this digital essay in response to what I saw as an unquestioning embrace of trendy information-literacy pedagogies among fellow teachers and people who write about education. It is the first in a series about surviving in a world bereft of epistemological signposts.
 
+# Presentation videos
+
+My [YouTube channel](https://www.youtube.com/maxkapur) includes recordings of many of my conference presentations, along with accessible summaries of my research and a few Julia and Python tutorials. 
+
+# Broken links
+
 If you are looking for the “Published Pieces” section from my old website, which had links to my work at the USC Daily Trojan and various litmags, [here you go](https://illusionslopes.blogspot.com/p/published-pieces.html). Be warned that many of those links are dead. 
