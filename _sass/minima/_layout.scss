@@ -21,7 +21,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: $text-color;
   }
 }
 
@@ -221,6 +221,9 @@
   @include relative-font-size(2.625);
   letter-spacing: -0.5px; 
   line-height: 1;
+  
+  color: desaturate($brand-color, 50%);
+  /* Same as link:visited color */
 
   @include media-query($on-laptop) {
     @include relative-font-size(2.25);
