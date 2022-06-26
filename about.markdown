@@ -12,4 +12,8 @@ Prior to my studies at SNU, I taught English for two years as a US State Departm
 
 I care a lot about free software, open science, and the [Julia programming language](https://julialang.org/). In my free time, I also make music, teach, and write about education.
 
-You can find me on [GitHub](https://github.com/maxkapur), [LinkedIn](https://www.linkedin.com/in/maxkapur/), [Julia Discourse](https://discourse.julialang.org/u/maxkapur/), [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw), and [Bandcamp](http://max-kapur.bandcamp.com/). You are also welcome to email me at [maxkapur@gmail.com](mailto:maxkapur@gmail.com).
+You can find me on [GitHub](https://github.com/maxkapur), [LinkedIn](https://www.linkedin.com/in/maxkapur/), [Julia Discourse](https://discourse.julialang.org/u/maxkapur/), [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw), and [Bandcamp](http://max-kapur.bandcamp.com/). You are also welcome to email me at [max@maxkapur.com](mailto:max@maxkapur.com).
+
+# Disclaimer
+
+Illusion Slopes is not an official US Department of State or Fulbright Program website. The views and information presented here are entirely the author's and do not represent the CLS Program, the US Department of State, American Councils for International Education, the Fulbright Program, or any of their partner organizations.
