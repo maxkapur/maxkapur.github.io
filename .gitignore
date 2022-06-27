@@ -4,4 +4,11 @@ _site
 .jekyll-metadata
 vendor
 
+# From micro editor
+log.txt
+
+# Larger versions of favicons, images
 *-large.jpg
+
+# To prevent the build routine from changing just because I edited it on a different machine
+Gemfile.lock
