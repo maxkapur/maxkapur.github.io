@@ -2,7 +2,7 @@
 layout:     post
 title:      What you learn in a humanities degree
 date:       2020-01-19 00:00:00 +0000
-categories: personal korean
+categories: personal
 ---
 
 The more I learn, I find myself with fewer and fewer things to say.
