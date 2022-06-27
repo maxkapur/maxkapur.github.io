@@ -8,8 +8,8 @@ categories: personal
 
 After reflecting on my unsustainable dependency on Google services, I have decided to bite
 the bullet and migrate my blog from Blogger to the open-source [Jekyll](https://github.com/jekyll/jekyll),
-with hosting provided by GitHub. Click the title to read the full version of this post,
-in which I explain some of the technical reasons for making this change. 
+with hosting provided by GitHub. In the full version of this post,
+I explain some of the technical reasons for making this change. 
 
 <!--more-->
 

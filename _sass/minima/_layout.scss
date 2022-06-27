@@ -194,7 +194,8 @@
   list-style: none;
 
   > li {
-    margin-bottom: $spacing-unit * 2;
+	/* Amount of space between posts on homepage */
+    margin-bottom: $spacing-unit * 3;
   }
 }
 
@@ -256,4 +257,18 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+
+/**
+ * Text indicating that a post has more to read.
+ */
+.excerpt-warning {
+  font-size: $small-font-size;
+  color: $grey-color;
+  text-align: right;	
+}
+
+.excerpt-warning a {
+  color: $grey-color;
 }

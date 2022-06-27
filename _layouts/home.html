@@ -23,6 +23,14 @@ layout: default
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
+          {%- if post.content contains site.excerpt_separator -%}
+            <p class="excerpt-warning">
+	          <a href="{{ post.url | relative_url }}"> 
+	            <!-- (⋯) -->
+	            (read more)
+	          </a>
+            </p>
+          {%- endif -%}
         {%- endif -%}
       </li>
       {%- endfor -%}
@@ -32,3 +40,4 @@ layout: default
   {%- endif -%}
 
 </div>
+55
