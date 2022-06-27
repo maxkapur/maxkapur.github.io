@@ -11,6 +11,8 @@ the bullet and migrate my blog from Blogger to the open-source [Jekyll](https://
 with hosting provided by GitHub. Click the title to read the full version of this post,
 in which I explain some of the technical reasons for making this change. 
 
+<!--more-->
+
 # Advantages of Jekyll
 
 The Jekyll workflow offers several advantages over Blogger. For one thing, when writing a post in Blogger,

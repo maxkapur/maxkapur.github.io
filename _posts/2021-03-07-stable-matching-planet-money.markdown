@@ -9,6 +9,8 @@ categories: research
 
 The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale&ndash;Shapley proposal algorithm that <em>Planet Money</em> leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.
 
+<!--more-->
+
 The interviewee says that because the proposal algorithm produces a stable matching, it is guaranteed to provide participants with their &ldquo;best&rdquo; match. But it turns out that even when the participants in the proposal algorithm have strict preferences, there can actually be more than one set of stable matchings, and which stable matching you get depends on which form of the algorithm you use.
 
 If you run the algorithm in the male-proposing form, you get a match that is simultaneously male-optimal and female-pessimal. This means that among all of the women Fido could be stably matched with, the male-proposing algorithm is guaranteed to pair Fido with his first choice, and to pair Fido&rsquo;s mate with the male she likes <em>least</em> among the males she could stably match with.

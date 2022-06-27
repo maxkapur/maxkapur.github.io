@@ -35,6 +35,8 @@ show_excerpts: true # on homepage
 plugins:
   - jekyll-feed
 
+excerpt_separator: <!--more-->
+
 # markdown: kramdown
 
 # Exclude from processing.
