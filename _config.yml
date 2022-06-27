@@ -34,6 +34,9 @@ theme: minima
 show_excerpts: true # on homepage
 plugins:
   - jekyll-feed
+  # - jekyll-paginate
+# paginate: 2
+# paginate_path: "blog/page:num"
 
 excerpt_separator: <!--more-->
 
