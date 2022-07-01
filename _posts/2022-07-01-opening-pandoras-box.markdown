@@ -24,7 +24,7 @@ The unusual thing is that the static problem appears more difficult.
 If we apply the Pandora’s Box problem to college application, we get the following scenario:
 Pandora applies one by one to colleges in the admissions market. At each point in time,
 she can either submit a new college application (which costs money),
-in which case she will observe her admissions outcome after a random time delay,
+in which case she will observe her admissions outcome after a time delay,
 or she can enroll at one of the schools she has already gotten into (and receive a payoff).
 The problem is to determine an optimal *stopping rule* for when Pandora should halt her
 search and accept the payoff she has on hand. Weitzman showed how to calculate a 
