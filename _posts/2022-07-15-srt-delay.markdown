@@ -16,7 +16,7 @@ Usage examples below the cut, or you can just go straight to the readme in the [
 
 We will demonstrate `srt_delay.py` using the subtitles for the open-source movie
 [*Elephants Dream*](https://en.wikipedia.org/wiki/Elephants_Dream). The file can 
-be downloaded from this repo (`sample_input.srt`) or from
+be downloaded from the repo linked above (`sample_input.srt`) or from
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/TimedText:Elephants_Dream.ogv.en.srt).
 
 Here is what the input file looks like: 
