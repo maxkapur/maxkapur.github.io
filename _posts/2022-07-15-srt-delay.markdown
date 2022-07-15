@@ -1,0 +1,64 @@
+---
+layout:     post
+title:      Python utility for manipulating subtitle timings
+date:       2022-07-15 00:00:00 +0000
+categories: coding
+---
+
+One of my current projects involves editing several hours’ worth of subtitle files in the 
+`.srt` format to accompany an online course in numerical optimization. Because we haven’t 
+decided exactly how we want to break up the videos, I needed an efficient way to delay
+or advance all the subtitles in time, so I wrote a small Python program called `srt_delay.py` today to help me with this task.
+
+Usage examples below the cut, or you can just go straight to the readme in the [GitHub repository](https://github.com/maxkapur/srt_delay).<!--more-->
+
+## Usage
+
+We will demonstrate `srt_delay.py` using the subtitles for the open-source movie
+[*Elephants Dream*](https://en.wikipedia.org/wiki/Elephants_Dream). The file can 
+be downloaded from this repo (`sample_input.srt`) or from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/TimedText:Elephants_Dream.ogv.en.srt).
+
+Here is what the input file looks like: 
+
+```bash
+$ head sample_input.srt
+1
+00:00:15,000 --> 00:00:17,951
+At the left we can see...
+
+2
+00:00:18,166 --> 00:00:20,083
+At the right we can see the...
+
+3
+00:00:20,119 --> 00:00:21,962
+```
+
+Each line contains either an index number for the subtitle (`1`), the subtitle’s
+timing (`00:00:18,166 --> 00:00:20,083`), or the subtitle text itself.
+
+Suppose we want to **advance** the subtitles by 1.5 seconds. We can pass
+this interval in `.srt` timestamp format (`00:00:01,500`) to `srt_delay.py`
+with the `-a` or `--advance` flag:
+
+```bash
+$ python3 srt_delay.py sample_input.srt -a 00:00:01,500 | head
+1
+00:00:13,500 --> 00:00:16,451
+At the left we can see...
+
+2
+00:00:16,666 --> 00:00:18,583
+At the right we can see the...
+
+3
+00:00:18,619 --> 00:00:20,462
+```
+
+By default, `srt_delay.py` prints to standard output. In most cases,
+you will want to save the output to another file:
+
+```bash
+$ python3 srt_delay.py sample_input.srt -a 00:00:01,500 > sample_input_advanced_by_1.5s.srt
+```
