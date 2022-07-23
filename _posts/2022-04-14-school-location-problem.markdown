@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      The school location problem
-date:       2022-04-14 00:00:00 +0000
-categories: research
 katex:      True
 ---
 

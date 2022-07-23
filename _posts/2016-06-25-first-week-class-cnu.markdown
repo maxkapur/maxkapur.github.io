@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      First week of class at CNU
-date:       2016-06-25 00:00:00 +0000
-categories: personal korean
 ---
 
 I’ve just finished my first week of class at Chonnam National Universty here in Gwangju with CLS and everything is amazing! I am staying with a host family in a suburb about 40 minutes from school by bus, so I get to practice my Korean 24/7.

@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Next
-date:       2020-07-07 00:00:00 +0000
-categories: personal
 ---
 
 They say that we perceive time by the accumulation of novel experiences, so that if you want to have a subjectively long life, you ought to do many spontaneous and hard-to-repeat things, but if you want to have a happy life, you ought to find one or two high pleasures that you can enjoy on a spiritual level and repeat the hell out of them, because they also say that on average, people derive more happiness from repeating a good experience than from trying something new.

@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "Thesis defense"
-date:   2022-06-19 00:00:00 +0000
-categories: personal research
 ---
 
 This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on [this GitHub repository](https://github.com/maxkapur/CollegeApplication), and all are provided in both English and Korean versions. I also have a very brief deck of [reveal.js slides](https://maxkapur.com/CollegeApplication) introducing the problem, and I recently wrote some [documentation for OptimalApplication.jl](https://maxkapur.com/OptimalApplication.jl/stable/), the Julia implementation of my solution algorithms.

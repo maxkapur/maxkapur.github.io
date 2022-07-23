@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Administrative vs. allocative efficiency
-date:       2021-10-21 00:00:00 +0000
-categories: research
 ---
 
 This fall marks my final semester of coursework, and penultimate semester overall, of the master&rsquo;s course in industrial engineering here at Seoul National University. I&rsquo;m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.

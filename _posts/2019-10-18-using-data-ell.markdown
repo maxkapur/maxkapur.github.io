@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Using data to understand ELL students
-date:       2019-10-18 00:00:00 +0000
-categories: research
 ---
 
 In August, I surveyed my students about their motivation for learning English, their opinions about our class and my teaching style, and what resources they were using to study English outside of class. By analyzing the results using some of the statistical tools I&rsquo;ve taught myself this year, I came up with some effective strategies for reaching the disengaged students in my classroom.

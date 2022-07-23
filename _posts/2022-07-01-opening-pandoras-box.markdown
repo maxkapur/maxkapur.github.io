@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Opening Pandora’s Box
-date:       2022-07-01 00:00:00 +0000
-categories: research
 ---
 
 A harrowing thing that happens in research is that occasionally, you stumble upon a

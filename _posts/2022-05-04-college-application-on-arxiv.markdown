@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "“College Application” on arXiv"
-date:   2022-05-04 00:00:00 +0000
-categories: personal research
 ---
 
 In advance of a conference I will be attending with my labmates next month in Jeju, my thesis advisor and I have posted a preliminary version of [“The College Application Problem” on arXiv](https://arxiv.org/abs/2205.01869). Here’s the abstract:

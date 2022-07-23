@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "Migrating to Jekyll"
-date:   2022-06-25 12:26:36 +0900
-categories: personal
 ---
 
 

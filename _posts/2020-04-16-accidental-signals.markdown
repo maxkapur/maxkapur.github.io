@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Accidental signals
-date:       2020-04-16 00:00:00 +0000
-categories: personal
 ---
 
 It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.<!--more-->[^1]
