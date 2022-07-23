@@ -1,0 +1,27 @@
+---
+layout:     post
+title:      "Mulberry: a college application strategist"
+---
+
+![The Mulberry logo: a magenta berry and a green leaf](/assets/mulberrylogo.png)
+
+I recently created [Mulberry](https://mulberry.maxkapur.com), a webapp students
+can use to compute their optimal college application strategy. It is a free,
+open-source, user-friendly interface to Algorithm 1 from my
+[MS thesis](https://github.com/maxkapur/CollegeApplication).
+<!--more-->
+
+Why Mulberry? There are boatloads of “chance me!” websites (some more trustworthy
+than others) that help students gather information
+about colleges and estimate their chances of admission. But when it comes to the 
+question of *where* to apply (given that you can’t apply everywhere),
+many people resort to folk wisdom, risk-averse heuristics, and gut feelings.
+
+Mulberry complements these introspective techniques with dispassionate,
+numbers-driven advice. You input estimates of your admissions chances at
+each school and the amount of utility you associate with going there,
+and Mulberry sorts the schools in the order you should apply
+to them to maximize your expected utility.
+
+The interface is at [mulberry.maxkapur.com](https://mulberry.maxkapur.com), 
+and the code is on [GitHub](https://github.com/maxkapur/mulberry).

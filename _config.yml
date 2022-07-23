@@ -38,6 +38,9 @@ plugins:
 # paginate: 2
 # paginate_path: "blog/page:num"
 
+# Don't publish posts dated in future
+future: false
+
 excerpt_separator: <!--more-->
 
 # markdown: kramdown
