@@ -263,12 +263,7 @@
 /**
  * Text indicating that a post has more to read.
  */
-.excerpt-warning {
+p.excerpt-warning {
   font-size: $small-font-size;
-  color: $grey-color;
-  text-align: right;	
-}
-
-.excerpt-warning a {
-  color: $grey-color;
+  margin-top: -0.5em;
 }
