@@ -1,14 +1,14 @@
 ---
 layout:     post
-title:      "Mulberry: a college application strategist"
+title:      "Mulberry: A college application strategist"
 ---
 
-![The Mulberry logo: a magenta berry and a green leaf](/assets/mulberrylogo.png)
-
-I recently created [Mulberry](https://mulberry.maxkapur.com), a webapp students
+I recently created [Mulberry](https://maxkapur.com/mulberry), a webapp students
 can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 [MS thesis](https://github.com/maxkapur/CollegeApplication).
+
+<img alt="The Mulberry logo: a magenta berry and a green leaf" src="/assets/mulberrylogo.png" width="150px" height="150px">
 <!--more-->
 
 Why Mulberry? There are boatloads of “chance me!” websites (some more trustworthy
@@ -23,5 +23,5 @@ each school and the amount of utility you associate with going there,
 and Mulberry sorts the schools in the order you should apply
 to them to maximize your expected utility.
 
-The interface is at [mulberry.maxkapur.com](https://mulberry.maxkapur.com), 
+The interface is at [maxkapur.com/mulberry](https://maxkapur.com/mulberry), 
 and the code is on [GitHub](https://github.com/maxkapur/mulberry).
