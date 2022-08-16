@@ -15,12 +15,12 @@ Consider the following test question:
 >    <li>Memphis    </li>
 > </ol>
 
-This is a multiple-selection question, so the correct answer is `a b`. How would you grade a question like this on an exam?
+This is a multiple-selection question, so the correct answer is `a` and `b`. How would you grade a question like this on an exam?
 <!--more-->
 
 When I was in school, the Scantron machines we used supported these kinds of multiple-selection questions, but they were graded all or nothing: You got one point if your answer matched the key exactly, and zero points otherwise. I have it on good authority that the MOOC site [edX](https://www.edx.org/) works the same way. 
 
-In the era of floating-point arithmetic, all-or-nothing grading for multiple-selection questions is a disgrace. A student who answers `a` is clearly more correct than a student who answers `c d`, because the question above is really four questions:
+In the era of floating-point arithmetic, all-or-nothing grading for multiple-selection questions is a disgrace. A student who answers `a` is clearly more correct than a student who answers `c` and `d`, because the question above is really four questions:
 
 > <ol type="a">
 >    <li>Is Washington a US state?</li>
@@ -31,7 +31,7 @@ In the era of floating-point arithmetic, all-or-nothing grading for multiple-sel
 
 ## An alternative to all-or-nothing grading
 
-I propose grading multiple-selection problems as $$n$$ true-or-false questions, each weighted $$1/n$$ points. In this example, a response of `a` is correct with respect to questions a, c, and d, and receives 0.75 points. A response of `c d` is correct with respect to none of the items and receives zero points.
+I propose grading multiple-selection problems as $$n$$ true-or-false questions, each weighted $$1/n$$ points. In this example, a response of `a` is correct with respect to questions a, c, and d, and receives 0.75 points. A response of `c` and `d` is correct with respect to none of the items and receives zero points.
 
 What about students who guess randomly? A student who guesses randomly receives, in expectation, 0.5 points under my proposal and $$1/ 2^n$$ points under the all-or-nothing method. Therefore, one objection to my proposal is that it provides students with a strong incentive to guess. I contend that this is not a real problem, because
 
