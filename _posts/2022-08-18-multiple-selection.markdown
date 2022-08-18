@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "How to grade multiple-selection questions"
+title:      "Grading multiple-selection questions"
 katex:      True
 ---
 
@@ -20,7 +20,8 @@ This is a multiple-selection question, so the correct answer is `a` and `b`. How
 
 When I was in school, the Scantron machines we used supported these kinds of multiple-selection questions, but they were graded all or nothing: You got one point if your answer matched the key exactly, and zero points otherwise. I have it on good authority that the MOOC site [edX](https://www.edx.org/) works the same way. 
 
-In the era of floating-point arithmetic, all-or-nothing grading for multiple-selection questions is a disgrace. A student who answers `a` is clearly more correct than a student who answers `c` and `d`, because the question above is really four questions:
+In the era of floating-point arithmetic, all-or-nothing grading for multiple-selection questions is a hard practice to defend.
+A student who answers `a` is clearly *more correct* than a student who answers `c` and `d`, because the question above is really four questions:
 
 > <ol type="a">
 >    <li>Is Washington a US state?</li>
