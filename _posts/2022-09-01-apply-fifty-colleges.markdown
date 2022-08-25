@@ -10,9 +10,9 @@ In this post, we’ll use fake numbers and a simplified model to argue that the 
 
 ## Fake numbers and a simplified model
 
-We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of *understating* the value of applying to college, thereby arriving at an *underestimate* of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we *nonetheless* draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement will apply to the actual numbers, too. 
+We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of *understating* the value of applying to college, thereby arriving at an *underestimate* of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we *nonetheless* draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement applies to the actual numbers, too. 
 
-First, let’s assume that you always have the option of attending a “safety school.” The safety school could represent a community college, or entering the workforce directly after high school. In addition, there are many “reach schools,” or elite universities, with competitive admissions. It is better to attend a reach school than the safety school, but applying to a reach school takes time and effort.
+First, let’s assume that you always have the option of attending a “safety school.” The safety school could also represent a community college or entering the workforce directly after high school. In addition, there are many “reach schools,” or elite universities, with competitive admissions. It is better to attend a reach school than the safety school, but applying to a reach school takes time and effort.
 
 Let $$t$$ denote the utility of attending an elite university, measured in monetary units relative to the safety school. By a conservative estimate, an elite university might offer us an expected salary increase of \$20,000 per year, at a tuition cost of \$30,000 dollars per year higher than the safety school. Thus, aggregating over 40 years of employment and 5 years of college attendance, we can estimate
 
@@ -62,9 +62,9 @@ $$\frac{\partial x^*}{\partial c} = \frac{1}{c \ln (1- p)} < 0$$
 
 Similarly, $$\partial x^* / \partial t > 0$$, meaning that in the [(probable)](https://money.com/wage-gap-college-high-school-grads/) case that an elite college degree is worth more than \$650k, the central argument of this post is even truer.
 
-$$p$$ is where we get into trouble. I lowballed $$p$$ above on the assumption that the “value” of a college application correlates with how likely it is to yield an admission letter. However, the *marginal value* of a college application is actually greatest when colleges are hard to get into, and therefore so is your willingness to invest in an additional application. In other words, I should have highballed $$p$$ instead.
+$$p$$ is where we get into trouble. I lowballed $$p$$ above on the assumption that the “value” of a college application correlates with how likely it is to yield an admission letter. However, the *marginal value* of a college application is actually greatest when colleges are hard to get into, and therefore so is your willingness to invest in an additional application. In other words, I should have tried to overshoot $$p$$ instead.
 
-To see understand this counterintuitive result, let’s compute
+To understand this counterintuitive result, let’s compute
 
 $$\frac{\partial x^*}{\partial p} = \frac{ \ln{c} - \ln{t} - \ln{\bigl(- \ln{\left(1 - p \right)} \bigr)} + 1}{\left(1 - p\right) \ln^2{\left(1 - p \right)}},$$
 
