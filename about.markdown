@@ -16,4 +16,6 @@ You can find me on [GitHub](https://github.com/maxkapur), [LinkedIn](https://www
 
 # Disclaimer
 
-Illusion Slopes is not an official US Department of State or Fulbright Program website. The views and information presented here are entirely the author's and do not represent the CLS Program, the US Department of State, American Councils for International Education, the Fulbright Program, or any of their partner organizations.
+Illusion Slopes is not an official US Department of State or Fulbright Program website. The views and information presented here are entirely the author’s and do not represent the CLS Program, the US Department of State, American Councils for International Education, the Fulbright Program, or any of their partner organizations.
+
+Likewise, Illusion Slopes is not an official Booz Allen Hamilton website. The views and information presented here are entirely the author’s and do not represent Booz Allen Hamilton or any of its partner organizations.
