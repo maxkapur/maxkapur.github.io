@@ -36,7 +36,7 @@ With these values of $$t$$, $$p$$, and $$c$$, here’s the graph of $$f(x)$$. As
 
 We can solve for the maximum analytically using a method you might have learned in high school calculus: $$x^*$$ represents the point where $$f(x)$$ stops increasing and starts decreasing. That is, the point where its slope $$f'(x)$$ is zero. 
 
-With a little bit of legwork, you can check that the derivative of $f(x)$ is
+With a little bit of legwork, you can check that the derivative of $$f(x)$$ is
 
 $$f'(x) = -t (1-p)^m \ln(1-p) - c$$
 
