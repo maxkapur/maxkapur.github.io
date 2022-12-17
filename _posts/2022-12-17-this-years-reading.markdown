@@ -11,7 +11,7 @@ A subset of the books I enjoyed this year:
 - 황보름, «어서 오세요, 휴남동 서점입니다», a slice-of-life novel about a bookstore owner overcoming the loneliness of urban life.
 - Ayoko Sono, *Ningen no Bunzai,* a “collection of writings” (according to [Wikipedia](https://en.wikipedia.org/wiki/Ayako_Sono#Works), and I cannot come up with a better description). I read the Korean translation «약간의 거리를 둔다» by 김욱.
 - 김애란, «달려라, 아비», short stories about the legacy of childhood experience.
-- Jia Tolentino, *Trick Mirror,* essays about identity, authenticity, and social media
+- Jia Tolentino, *Trick Mirror,* essays about identity, authenticity, and social media.
 
 In progress:
 - 김금희, «너무 한낮의 연애», short stories about people at the margins of society. 
