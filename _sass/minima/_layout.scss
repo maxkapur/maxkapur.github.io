@@ -193,7 +193,8 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
+  /* > li { } in original Jekyll */
+  > .post-list-item {
 	/* Amount of space between posts on homepage */
     margin-bottom: $spacing-unit * 3;
   }
