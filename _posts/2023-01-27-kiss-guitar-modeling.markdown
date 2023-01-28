@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Applying the KISS principle to guitar amp modeling"
+title:      "Applying the KISS principle to amp modeling"
 ---
 
 I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
