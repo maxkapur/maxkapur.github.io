@@ -220,7 +220,7 @@
 }
 
 .post-title {
-  @include relative-font-size(2.625);
+  @include relative-font-size(2.2);
   letter-spacing: -0.5px; 
   line-height: 1;
   
@@ -228,7 +228,7 @@
   /* Same as link:visited color */
 
   @include media-query($on-laptop) {
-    @include relative-font-size(2.25);
+    @include relative-font-size(2.2);
   }
 }
 
