@@ -1,0 +1,42 @@
+---
+layout:     post
+title:      "fzl.fish"
+---
+
+I’ve been using the following fish alias `fzl` (“fuzzy list”) to run `fzf` (“fuzzy find”) in the current directory with a `bat` preview. It’s just a couple of light tweaks to the examples listed in the `fzf` [readme](https://github.com/junegunn/fzf#preview-window).
+
+`~/.config/fish/functions/fzl.fish`:
+
+````julia
+function fzl
+    # `bat` is aliased to `batcat` on Debian
+    if test -n "$batcat --version"
+        set -f bat_command "batcat"
+    else
+        set -f bat_command "bat"
+    end
+
+    # Set the overall width of the `bat` preview to
+    # 50% the width of the current terminal
+    set -l bat_width $(math ceil $COLUMNS x 0.5)
+
+    # My preferred `bat` options
+    set -f bat_command \
+        $bat_command \
+        --style numbers \
+        --color always \
+        --italic-text always \
+        --wrap auto \
+        --terminal-width $bat_width
+
+    fzf \
+        --preview "$bat_command {}" \
+        --preview-window right,$bat_width,nowrap
+end
+````
+
+<!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
+
+Example:
+
+![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/fishfzlexample.png)
