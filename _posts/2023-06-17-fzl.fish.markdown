@@ -10,7 +10,7 @@ I’ve been using the following fish alias `fzl` (“fuzzy list”) to run `fzf`
 ````julia
 function fzl
     # `bat` is aliased to `batcat` on Debian
-    if test -n "$batcat --version"
+    if type -q batcat
         set -f bat_command "batcat"
     else
         set -f bat_command "bat"
