@@ -22,6 +22,7 @@ jobs:
       - name: 💎 setup ruby
         uses: ruby/setup-ruby@v1
         with:
+          # Just use ruby version from .ruby-version
           # ruby-version: "3.2"
           bundler-cache: true
 
@@ -37,4 +38,4 @@ jobs:
           publish_dir: ./_site
           # if the repo you are deploying to is <username>.github.io, uncomment the line below.
           # if you are including the line below, make sure your source files are NOT in the "main" branch:
-          # publish_branch: main
+          publish_branch: master
