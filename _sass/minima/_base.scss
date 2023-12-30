@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /**
  * Reset some basic elements
  */
@@ -37,7 +39,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: math.div($spacing-unit, 2);
 }
 
 
@@ -132,7 +134,7 @@ a {
 blockquote {
   color: $grey-color-dark;
   border-left: 3px solid $grey-color-light;
-  padding-left: $spacing-unit / 3;
+  padding-left: math.div($spacing-unit, 3);
   /*
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -189,8 +191,8 @@ pre {
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    padding-right: math.div($spacing-unit, 2);
+    padding-left: math.div($spacing-unit, 2);
   }
 }
 
@@ -244,7 +246,7 @@ table {
     }
   }
   th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    padding: math.div($spacing-unit, 3) math.div($spacing-unit, 2);
   }
   th {
     background-color: lighten($grey-color-light, 3%);
@@ -260,7 +262,7 @@ table {
 /* Add a separator at top of footnotes */
 div.footnotes {
   border-top: 1px solid $grey-color-light;
-  padding-top: $spacing-unit/2;
+  padding-top: math.div($spacing-unit, 2);
 }
 
 /* Change to a pointer cursor so users know they can click
@@ -271,5 +273,5 @@ details > summary {
 }
 
 details {
-  margin-bottom: $spacing-unit / 4;
+  margin-bottom: math.div($spacing-unit, 4);
 }
