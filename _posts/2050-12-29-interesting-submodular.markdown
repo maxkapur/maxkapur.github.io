@@ -43,13 +43,13 @@ with many examples.
 # Preliminary interpretation of $$f(X)$$
 
 The function $$f(X)$$ defined above can be used to model the probability of
-a parallel system failing as a function of which repairs have been made to
-its components. For example, suppose there are a dozen roads between our town
-and the next, and the probabilities of each road being open in the coming winter
-are given by $$p_1$$ through $$p_{12}$$. For each of the roads, we can engage
+a parallel system failing when optional repairs are made to its components.
+For example, suppose there are a dozen roads between our town and the next,
+and the probabilities of each road being open in the coming winter are
+given by $$p_1$$ through $$p_{12}$$. For each of the roads, we can engage
 in repairs to increase the availability to $$q_i$$. Letting $$X$$ denote the set
 of roads that we repair, the probability of *at least* one road being open in the
-winter is one minus the probability that all of them are closed, which is $$f(X)$$.
+winter is one minus the probability that all of them are closed, which is $$f(X).$$
 
 With this interpretation in mind, we are tempted to give $$f(X)$$ a
 tortured-but-accurate name such as the &ldquo;parallel process success probability
@@ -70,7 +70,7 @@ $$1 - p_j$$ term with the (smaller) $$1 - q_j$$ term, increasing the
 overall function value.
 
 To prove submodularity, pick any $$X \subseteq Y \subseteq \Omega$$ and
-$$j \in \Omega \setminus Y$$. If $$p_j < 1$$, we have
+$$j \in \Omega \setminus Y.$$ If $$p_j < 1$$, we have
 
 $$
 \begin{aligned}
@@ -99,7 +99,7 @@ $$
 
 The penultimate inequality follows from monotonicity, and the final
 equality is just applying the first three steps in reverse, with $$Y$$
-instead of $$X$$.
+instead of $$X.$$
 
 In the $$p_j = 1$$ case, $$f(X \cup \{j\}) = 1$$ for any $$X$$ and
 the inequality collapses to $$- f(X) \geq - f(Y)$$, which is just
@@ -122,19 +122,19 @@ $$
 g(X) = 1 - \prod_{i \in X} (1 - s_i)
 $$
 
-percent of the way from the origin to the destination. This $$g(X)$$ is
-just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
+percent of the way to the destination from your starting point. This $$g(X)$$
+is just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
 
 **The multidimensional Zeno walk:** Now, consider a process optimization
-problem of the following form: We have a set $$\Psi$$ (indexed by $$j$$)
-of *goals* to achieve, as well as a set $$\Omega$$ (indexed by $$i$$) of
-*tasks* we can complete in service of the goals. Tasks can advance multiple
-goals at once. Let $$v_{ij}$$ denote the *effectiveness* of task $$i$$ against
-goal $$j$$, meaning that if you engage in task $$i$$, $$v_{ij}$$ percent of
-(whatever remains of)[^whatever] goal $$j$$ will be completed. Each goal is
+problem. We have a set $$\Psi$$ (indexed by $$j$$) of *goals* to achieve,
+as well as a set $$\Omega$$ (indexed by $$i$$) of *tasks* we can complete
+in service of the goals. Tasks can advance multiple goals at once. Let
+$$v_{ij}$$ denote the *effectiveness* of task $$i$$ against goal $$j$$,
+meaning that if you engage in task $$i$$, $$v_{ij}$$ percent of (whatever
+remains of)[^whatever] goal $$j$$ will be completed. Each goal is
 worth $$t_j \geq 0$$
 *[story points](https://en.wikipedia.org/wiki/Burndown_chart),*
-and can be completed fractionally.
+and goals can be completed fractionally.
 
 We would like to choose the set of tasks $$X$$ that maximizes the team&rsquo;s
 [*velocity*](https://en.wikipedia.org/wiki/Velocity_(software_development))
@@ -156,6 +156,13 @@ is just $$t_j g(X)$$ where $$s$$ is the $$j$$th column of $$v$$. Thus,
 $$h(X)$$, as a conic combination of submodular functions, is itself
 submodular,[^conic] and we can compute the optimal velocity using
 any of the well-known techniques for submodular maximization.
+
+Returning to Zeno&rsquo;s paradox, the business process described above is
+akin to a *multidimensional* Zeno walk in which $$t_j$$ gives your distance
+from the target in the $$j$$th coordinate axis, and each step $$i$$ moves you
+$$v_{ij}$$ percent of the way towards the target along that axis. The function
+$$h(X)$$ measures the one-norm distance between your final position and the
+target.
 
 # Remarks
 
@@ -189,10 +196,9 @@ Paywall:
 
 - Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. &ldquo;Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.&rdquo; *SIAM Journal on Computing* 43, no. 6: 1831&ndash;79. <https://doi.org/10.1137/110839655>.
 - Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. &ldquo;Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.&rdquo; *Mathematics of Operations Research* 38, no. 4: 729&ndash;39. <https://doi.org/10.1287/moor.2013.0592>.
-- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. &ldquo;An Analysis of Approximations for Maximizing Submodular Set Functions—I&rdquo;. *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
+- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. &ldquo;An Analysis of Approximations for Maximizing Submodular Set Functions—I.&rdquo; *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
 
 <!--Nemhauser, George and Laurence Wolsey. 1978. &ldquo;Best Algorithms for Approximating the Maximum of a Submodular Set Function.&rdquo; *Mathematics of Operations Research* 3, no. 3: 177&ndash;88. <https://doi.org/10.1287/moor.3.3.177>.-->
-
 
 [^monotone]: A set function is called *monotone* if $$X \subseteq Y$$ implies $$f(X) \leq f(Y)$$.
 
@@ -200,6 +206,6 @@ Paywall:
 
 [^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2}$$, and the (supposedly unachievable) &ldquo;goal&rdquo; is to reach the destination rather than to get as close as possible to it.
 
-[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals.
+[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal &ldquo;get rid of all the junk in my house,&rdquo; the tasks &ldquo;throw away any items not used in the past six months&rdquo; and &ldquo;throw away any items that spark fewer than $$k$$ units of joy&rdquo; may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won&rsquo;t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
 [^conic]: The fact that a conic combination of submodular functions is submodular isn&rsquo;t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
