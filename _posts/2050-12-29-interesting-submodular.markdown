@@ -13,15 +13,14 @@ f(X) = 1 -
 $$
 
 are submodular for $$p_i, q_i \in [0, 1]$$ where each $$p_i \leq q_i$$,
-and provide a few examples of this class to demonstrate the practical
-value of this small result.
-<!--more-->
+and provide an application of this small result to demonstrate its
+practical value.<!--more-->
 
 # Background on submodular functions
 
 Given a ground set $$\Omega$$, a function $$f: 2^\Omega \mapsto \mathbb{R}$$,
 is called [*submodular*](https://en.wikipedia.org/wiki/Submodular_set_function)
-if, for any $$X \subset Y \subset \Omega$$ and $$j \in \Omega \setminus Y$$,
+if, for any $$X \subseteq Y \subseteq \Omega$$ and $$j \in \Omega \setminus Y$$,
 we have
 
 $$f(X \cup \{j\}) - f(X) \geq f(Y \cup \{j\}) - f(Y).$$
@@ -32,34 +31,36 @@ form of diminishing marginal returns (for set functions) that is analogous to
 concavity (for continuous functions).
 
 Submodular functions have a number of desirable traits. A famous result of
-Nemhauser et al. (1976, [paywall](https://doi.org/10.1007/BF01588971)) holds
-that when maximizing a monotone[^monotone] submodular function over a cardinality
-constraint, the greedy algorithm that iteratively adds to $$X$$ the element that
-yields the greatest increase in $$f(X)$$ is $$1 - 1 / e \approx 63.2\%$$
-optimal.[^optimal]
+Nemhauser et al. (1978) holds that when maximizing a monotone[^monotone]
+submodular function over a cardinality constraint, the greedy algorithm that
+iteratively adds to $$X$$ the element that yields the greatest increase in
+$$f(X)$$ is $$1 - 1 / e \approx 63.2\%$$ optimal.[^optimal] Efficient algorithms
+that provide the same approximation ratio for more complex constraint structures
+have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
+Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
+with many examples.
 
-# Intepretation of $$f(X)$$
+# Preliminary interpretation of $$f(X)$$
 
 The function $$f(X)$$ defined above can be used to model the probability of
 a parallel system failing as a function of which repairs have been made to
-its components.
-
-For example, suppose there are a dozen roads between our town and
-the next, and the probabilities of each road being open in the coming winter
+its components. For example, suppose there are a dozen roads between our town
+and the next, and the probabilities of each road being open in the coming winter
 are given by $$p_1$$ through $$p_{12}$$. For each of the roads, we can engage
-in repairs to increase the probability of the the road opening to $$q_i$$.
-Letting $$X$$ denote the set of roads that we repair, the probability of
-*at least* one road being open in the winter is one minus the probability that
-all of them are closed, which is $$f(X)$$. Thus, we might give the function
-above a tortured-but-accurate name such as &ldquo;parallel process success
-probability with quality upgrades&rdquo;&mdash;but let&rsquo;s just stick
-with $$f(X)$$.
+in repairs to increase the availability to $$q_i$$. Letting $$X$$ denote the set
+of roads that we repair, the probability of *at least* one road being open in the
+winter is one minus the probability that all of them are closed, which is $$f(X)$$.
+
+With this interpretation in mind, we are tempted to give $$f(X)$$ a
+tortured-but-accurate name such as the &ldquo;parallel process success probability
+with quality upgrades&rdquo; function&mdash;but we&rsquo;ll just stick with
+$$f(X)$$ for now.
 
 This interpretation is admittedly a bit narrow. The versatility of $$f(X)$$
-as a functional form starts to show itself, in my opinion, when we start
-taking conic combinations&mdash;see the examples below.
+as a functional form will start to show itself when we start taking
+conic combinations&mdash;see the examples below.
 
-# Monotonicity and submodularity
+# Monotonicity and submodularity proof
 
 **Theorem:** $$f(X)$$ as defined above is a monotone submodular function.
 
@@ -68,9 +69,8 @@ on $$p$$ and $$q$$: Adding any element $$j$$ to $$X$$ replaces the
 $$1 - p_j$$ term with the (smaller) $$1 - q_j$$ term, increasing the
 overall function value.
 
-The proof of submodularity is also straightforward: Pick any
-$$X \subset Y \subset \Omega$$ and $$j \in \Omega \setminus Y$$. If
-$$p_j < 1$$, we have
+To prove submodularity, pick any $$X \subseteq Y \subseteq \Omega$$ and
+$$j \in \Omega \setminus Y$$. If $$p_j < 1$$, we have
 
 $$
 \begin{aligned}
@@ -103,38 +103,42 @@ instead of $$X$$.
 
 In the $$p_j = 1$$ case, $$f(X \cup \{j\}) = 1$$ for any $$X$$ and
 the inequality collapses to $$- f(X) \geq - f(Y)$$, which is just
-monotonicity again. &#9724;
+monotonicity. &#9724;
 
-# Example: Optimizing scrum, aka the $$m$$-dimensional Zeno walk
+# Application: Optimal scrum velocity
 
-Consider a
+Let&rsquo;s examine a plausible(ish) application of this functional form.
+
+**The Zeno walk:** Consider a
 [Zeno walk](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
-between an arbitrary origin and destination. Let $$\Omega$$ is a set of
-possible *steps* that we can take toward our destination. Each step's size
+between an arbitrary origin and destination. Let $$\Omega$$ provide a set of
+possible *steps* that we can take toward our destination. Each step&rsquo;s size
 is $$s_i \in [0, 1]$$, which means that if you choose to take step $$i$$,
 you get $$s_i$$ percent of the way from your current location to the
-destination.[^zeno] Where $$X$$ is the set of steps you choose
-to take, your final distance is
+destination.[^zeno] If $$X$$ is the set of steps you choose to take,
+you will make it
 
 $$
 g(X) = 1 - \prod_{i \in X} (1 - s_i)
 $$
 
-which is just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
+percent of the way from the origin to the destination. This $$g(X)$$ is
+just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
 
-Now, consider a process optimization problem of the following form: We
-have a set $$\Psi$$ (indexed by $$j$$) of *goals* that we would like to
-and a set $$\Omega$$ (indexed by $$i$$) of *tasks* we can complete in
-service of the goals. Tasks can advance multiple goals at once. Let
-$$v_{ij}$$ denote the *effectiveness* of task $$i$$ against goal $$j$$,
-meaning that if you engage in task $$i$$, $$v_{ij}$$ percent of goal $$j$$
-will be completed.
-Each goal is worth $$t_j \geq 0$$
+**The multidimensional Zeno walk:** Now, consider a process optimization
+problem of the following form: We have a set $$\Psi$$ (indexed by $$j$$)
+of *goals* to achieve, as well as a set $$\Omega$$ (indexed by $$i$$) of
+*tasks* we can complete in service of the goals. Tasks can advance multiple
+goals at once. Let $$v_{ij}$$ denote the *effectiveness* of task $$i$$ against
+goal $$j$$, meaning that if you engage in task $$i$$, $$v_{ij}$$ percent of
+(whatever remains of)[^whatever] goal $$j$$ will be completed. Each goal is
+worth $$t_j \geq 0$$
 *[story points](https://en.wikipedia.org/wiki/Burndown_chart),*
-and can be completed fractionally. Our goal is to choose the set of tasks
-$$X$$ that maximizes the team&rsquo;s
+and can be completed fractionally.
+
+We would like to choose the set of tasks $$X$$ that maximizes the team&rsquo;s
 [*velocity*](https://en.wikipedia.org/wiki/Velocity_(software_development))
-in the current planning period, defined the total number of story points
+in the current planning period, defined as the total number of story points
 completed, which is
 
 $$
@@ -168,10 +172,32 @@ but the inequality on $$p_i$$ and $$q_i$$ comes out backwards. This turns
 back into the original result (that $$f(X)$$ is increasing and submodular)
 if you interchange the roles of $$X$$ and $$\Omega \setminus X$$.
 
+# References
+
+Open access:
+
+- Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. &ldquo;Fast Algorithms for Maximizing Submodular Functions.&rdquo; In *Proceedings of the 2014 Annual ACM--SIAM Symposium on Discrete Algorithms,* 1497&ndash;1514. <https://doi.org/10.1137/1.9781611973402.110>.
+- Vondrák, Van. 2017. &ldquo;Submodular Functions.&rdquo; Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. <https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html>.
+- Wikipedia, s.v. [&ldquo;burndown chart.&ldquo;](https://en.wikipedia.org/wiki/Burndown_chart)
+- Wikipedia, s.v. [&ldquo;submodular set function.&rdquo;](https://en.wikipedia.org/wiki/Submodular_set_function)
+- Wikipedia, s.v. [&ldquo;velocity (software development)](https://en.wikipedia.org/wiki/Velocity_(software_development)).
+- Wikipedia, s.v. [&ldquo;Zeno&rsquo;s paradox.&rdquo;](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
+
+Paywall:
+
+- Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. &ldquo;Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.&rdquo; *SIAM Journal on Computing* 43, no. 6: 1831&ndash;79. <https://doi.org/10.1137/110839655>.
+- Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. &ldquo;Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.&rdquo; *Mathematics of Operations Research* 38, no. 4: 729&ndash;39. <https://doi.org/10.1287/moor.2013.0592>.
+- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. &ldquo;An Analysis of Approximations for Maximizing Submodular Set Functions—I&rdquo;. *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
+
+<!--Nemhauser, George and Laurence Wolsey. 1978. &ldquo;Best Algorithms for Approximating the Maximum of a Submodular Set Function.&rdquo; *Mathematics of Operations Research* 3, no. 3: 177&ndash;88. <https://doi.org/10.1287/moor.3.3.177>.-->
+
+
 [^monotone]: A set function is called *monotone* if $$X \subseteq Y$$ implies $$f(X) \leq f(Y)$$.
 
 [^optimal]: This means that if $$X^*$$ is the set that maximizes $$f(X)$$ and $$\tilde X$$ is the set produced by the greedy algorithm, we are guaranteed to have $$f(\tilde X) \geq 0.632\,f(X^*)$$. In practice, the optimality gap is often much narrower.
 
 [^zeno]: In the original Zeno walk, each $$s_i = 1/2$$, and the (supposedly unachievable) &ldquo;goal&rdquo; is to reach the destination rather than to get as close as possible to it.
 
-[^conic]: This fact isn't mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition listed.
+[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals.
+
+[^conic]: This fact isn&rsquo;t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition listed.
