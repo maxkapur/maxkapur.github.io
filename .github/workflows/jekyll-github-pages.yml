@@ -22,7 +22,7 @@ jobs:
       - name: 💎 setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          # ruby-version: "3.2"
           bundler-cache: true
 
       - name: 🔨 install dependencies & build site
