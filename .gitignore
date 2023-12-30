@@ -5,7 +5,6 @@ _site
 
 # bundle install local targets
 vendor
-.bundle/ 
 
 # From micro editor
 log.txt
