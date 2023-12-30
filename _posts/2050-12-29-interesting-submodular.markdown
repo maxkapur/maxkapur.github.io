@@ -52,8 +52,8 @@ of roads that we repair, the probability of *at least* one road being open in th
 winter is one minus the probability that all of them are closed, which is $$f(X).$$
 
 With this interpretation in mind, we are tempted to give $$f(X)$$ a
-tortured-but-accurate name such as the &ldquo;parallel process success probability
-with quality upgrades&rdquo; function&mdash;but we&rsquo;ll just stick with
+tortured-but-accurate name such as the “parallel process success probability
+with quality upgrades” function&mdash;but we’ll just stick with
 $$f(X)$$ for now.
 
 This interpretation is admittedly a bit narrow. The versatility of $$f(X)$$
@@ -107,12 +107,12 @@ monotonicity. &#9724;
 
 # Application: Optimal scrum velocity
 
-Let&rsquo;s examine a plausible(ish) application of this functional form.
+Let’s examine a plausible(ish) application of this functional form.
 
 **The Zeno walk:** Consider a
 [Zeno walk](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
 between an arbitrary origin and destination. Let $$\Omega$$ provide a set of
-possible *steps* that we can take toward our destination. Each step&rsquo;s size
+possible *steps* that we can take toward our destination. Each step’s size
 is $$s_i \in [0, 1]$$, which means that if you choose to take step $$i$$,
 you get $$s_i$$ percent of the way from your current location to the
 destination.[^zeno] If $$X$$ is the set of steps you choose to take,
@@ -136,7 +136,7 @@ worth $$t_j \geq 0$$
 *[story points](https://en.wikipedia.org/wiki/Burndown_chart),*
 and goals can be completed fractionally.
 
-We would like to choose the set of tasks $$X$$ that maximizes the team&rsquo;s
+We would like to choose the set of tasks $$X$$ that maximizes the team’s
 [*velocity*](https://en.wikipedia.org/wiki/Velocity_(software_development))
 in the current planning period, defined as the total number of story points
 completed, which is
@@ -157,7 +157,7 @@ $$h(X)$$, as a conic combination of submodular functions, is itself
 submodular,[^conic] and we can compute the optimal velocity using
 any of the well-known techniques for submodular maximization.
 
-Returning to Zeno&rsquo;s paradox, the business process described above is
+Returning to Zeno’s paradox, the business process described above is
 akin to a *multidimensional* Zeno walk in which $$t_j$$ gives your distance
 from the target in the $$j$$th coordinate axis, and each step $$i$$ moves you
 $$v_{ij}$$ percent of the way towards the target along that axis. The function
@@ -167,7 +167,7 @@ target.
 # Remarks
 
 It is not difficult to show, using a similar proof as above, that the
-&ldquo;*serial* process success probability with quality upgrades&rdquo;
+“*serial* process success probability with quality upgrades”
 function
 
 $$
@@ -185,27 +185,27 @@ if you interchange the roles of $$X$$ and $$\Omega \setminus X$$.
 
 Open access:
 
-- Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. &ldquo;Fast Algorithms for Maximizing Submodular Functions.&rdquo; In *Proceedings of the 2014 Annual ACM--SIAM Symposium on Discrete Algorithms,* 1497&ndash;1514. <https://doi.org/10.1137/1.9781611973402.110>.
-- Vondrák, Van. 2017. &ldquo;Submodular Functions.&rdquo; Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. <https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html>.
-- Wikipedia, s.v. [&ldquo;burndown chart.&ldquo;](https://en.wikipedia.org/wiki/Burndown_chart)
-- Wikipedia, s.v. [&ldquo;submodular set function.&rdquo;](https://en.wikipedia.org/wiki/Submodular_set_function)
-- Wikipedia, s.v. [&ldquo;velocity (software development)](https://en.wikipedia.org/wiki/Velocity_(software_development)).
-- Wikipedia, s.v. [&ldquo;Zeno&rsquo;s paradox.&rdquo;](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
+- Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. “Fast Algorithms for Maximizing Submodular Functions.” In *Proceedings of the 2014 Annual ACM--SIAM Symposium on Discrete Algorithms,* 1497&ndash;1514. <https://doi.org/10.1137/1.9781611973402.110>.
+- Vondrák, Van. 2017. “Submodular Functions.” Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. <https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html>.
+- Wikipedia, s.v. [“burndown chart.”](https://en.wikipedia.org/wiki/Burndown_chart)
+- Wikipedia, s.v. [“submodular set function.”](https://en.wikipedia.org/wiki/Submodular_set_function)
+- Wikipedia, s.v. [“velocity (software development).”](https://en.wikipedia.org/wiki/Velocity_(software_development))
+- Wikipedia, s.v. [“Zeno’s paradox.”](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
 
 Paywall:
 
-- Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. &ldquo;Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.&rdquo; *SIAM Journal on Computing* 43, no. 6: 1831&ndash;79. <https://doi.org/10.1137/110839655>.
-- Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. &ldquo;Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.&rdquo; *Mathematics of Operations Research* 38, no. 4: 729&ndash;39. <https://doi.org/10.1287/moor.2013.0592>.
-- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. &ldquo;An Analysis of Approximations for Maximizing Submodular Set Functions—I.&rdquo; *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
+- Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. “Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.” *SIAM Journal on Computing* 43, no. 6: 1831&ndash;79. <https://doi.org/10.1137/110839655>.
+- Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. “Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.” *Mathematics of Operations Research* 38, no. 4: 729&ndash;39. <https://doi.org/10.1287/moor.2013.0592>.
+- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. “An Analysis of Approximations for Maximizing Submodular Set Functions—I.” *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
 
-<!--Nemhauser, George and Laurence Wolsey. 1978. &ldquo;Best Algorithms for Approximating the Maximum of a Submodular Set Function.&rdquo; *Mathematics of Operations Research* 3, no. 3: 177&ndash;88. <https://doi.org/10.1287/moor.3.3.177>.-->
+<!--Nemhauser, George and Laurence Wolsey. 1978. “Best Algorithms for Approximating the Maximum of a Submodular Set Function.” *Mathematics of Operations Research* 3, no. 3: 177&ndash;88. <https://doi.org/10.1287/moor.3.3.177>.-->
 
 [^monotone]: A set function is called *monotone* if $$X \subseteq Y$$ implies $$f(X) \leq f(Y)$$.
 
 [^optimal]: This means that if $$X^*$$ is the set that maximizes $$f(X)$$ and $$\tilde X$$ is the set produced by the greedy algorithm, we are guaranteed to have $$f(\tilde X) \geq 0.632\,f(X^*)$$. In practice, the optimality gap is often much narrower.
 
-[^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2}$$, and the (supposedly unachievable) &ldquo;goal&rdquo; is to reach the destination rather than to get as close as possible to it.
+[^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2}$$, and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it.
 
-[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal &ldquo;get rid of all the junk in my house,&rdquo; the tasks &ldquo;throw away any items not used in the past six months&rdquo; and &ldquo;throw away any items that spark fewer than $$k$$ units of joy&rdquo; may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won&rsquo;t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
+[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than $$k$$ units of joy” may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
-[^conic]: The fact that a conic combination of submodular functions is submodular isn&rsquo;t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
+[^conic]: The fact that a conic combination of submodular functions is submodular isn’t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
