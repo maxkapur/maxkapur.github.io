@@ -6,13 +6,7 @@ permalink: /projects/
 
 # Coding
 
-- [Mulberry](https://github.com/maxkapur/mulberry), a college application strategist.
-- [OptimalApplication.jl](https://github.com/maxkapur/OptimalApplication.jl): Exact, approximate, and heuristic algos for the college application problem. 
-- A [Dordle](https://github.com/maxkapur/dordle) clone in Rust.
-- [assignment.py](https://github.com/maxkapur/assignment), a Python implementation of the proposal and rotation algorithms for optimal stable assignment. 
-- [DeferredAcceptance.jl](https://github.com/maxkapur/DeferredAcceptance.jl), a Julia implementation of several tools for solving school-choice problems.
-- [This website.](https://github.com/maxkapur/maxkapur.github.io)
-- Other projects on my [GitHub](https://github.com/maxkapur).
+See my pins on [GitHub](https://github.com/maxkapur).
 
 # Teaching assistantships
 
