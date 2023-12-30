@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Apply to fifty colleges | Illusion Slopes</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Apply to fifty colleges | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Apply to fifty colleges" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools." />
+<meta property="og:description" content="In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools." />
+<link rel="canonical" href="/2022/09/01/apply-fifty-colleges.html" />
+<meta property="og:url" content="/2022/09/01/apply-fifty-colleges.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Apply to fifty colleges" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2022-09-01T00:00:00+00:00","datePublished":"2022-09-01T00:00:00+00:00","description":"In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.","headline":"Apply to fifty colleges","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/09/01/apply-fifty-colleges.html"},"url":"/2022/09/01/apply-fifty-colleges.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Illusion Slopes" /><!-- KaTeX -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              // ...options...
+          });
+      });
+  </script>
+  
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Illusion Slopes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About me</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/publications/">Publications</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Apply to fifty colleges</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-09-01T00:00:00+00:00" itemprop="datePublished">Sep 1, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more--><sup id="fnref:obvious" role="doc-noteref"><a href="#fn:obvious" class="footnote" rel="footnote">1</a></sup></p>
+
+<h2 id="fake-numbers-and-a-simplified-model">Fake numbers and a simplified model</h2>
+
+<p>We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of <em>understating</em> the value of applying to college, thereby arriving at an <em>underestimate</em> of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we <em>nonetheless</em> draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement applies to the actual numbers, too.</p>
+
+<p>First, let’s assume that you always have the option of attending a “safety school.” The safety school could also represent a community college or entering the workforce directly after high school. In addition, there are many “reach schools,” or elite universities, with competitive admissions. It is better to attend a reach school than the safety school, but applying to a reach school takes time and effort.</p>
+
+<p>Let \(t\) denote the utility of attending an elite university, measured in monetary units relative to the safety school. By a conservative estimate, an elite university might offer us an expected salary increase of $20,000 per year, at a tuition cost of $30,000 dollars per year higher than the safety school. Thus, aggregating over 40 years of employment and 5 years of college attendance, we can estimate</p>
+
+\[t = 40 \times 20000 - 5 \times 30000  = 650000.\]
+
+<p>Let’s assume, for simplicity, that all the reach schools are equally competitive, and let \(p\) denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick \(p = 0.1\), which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to \(x\) reach schools, the probability of getting into <em>at least</em> one is \(1 - (1 - p)^x\), in which case you receive \(t\) units of utility.</p>
+
+<p>However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:<sup id="fnref:sublinear" role="doc-noteref"><a href="#fn:sublinear" class="footnote" rel="footnote">2</a></sup></p>
+
+\[f(x) = t\bigl(1 - (1 - p)^x\bigr) - cx.\]
+
+<p>Typical college application fees are $50 or so; let’s take \(c = 200\) to account generously for the other costs. Our goal is to maximize \(f(x)\).</p>
+
+<h2 id="the-model-says-apply-to-fifty-colleges">The model says apply to fifty colleges</h2>
+
+<p>With these values of \(t\), \(p\), and \(c\), here’s the graph of \(f(x)\). As you can see, the maximum occurs at about \(x^* = 55\) applications!</p>
+
+<p><img src="/assets/appcountutility.png" alt="A grpah showing the number of applications and the utility." /></p>
+
+<p>We can solve for the maximum analytically using a method you might have learned in high school calculus: \(x^*\) represents the point where \(f(x)\) stops increasing and starts decreasing. That is, the point where its slope \(f'(x)\) is zero.</p>
+
+<p>With a little bit of legwork, you can check that the derivative of \(f(x)\) is</p>
+
+\[f'(x) = -t (1-p)^m \ln(1-p) - c\]
+
+<p>and setting this equal to zero and solving for \(x\) yields</p>
+
+\[x^* = \frac{\ln c - \ln t - \ln \bigl(- \ln\left(1-p\right)\bigr)}{\ln\left(1-p\right)}.\]
+
+<p>(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.<sup id="fnref:exact" role="doc-noteref"><a href="#fn:exact" class="footnote" rel="footnote">3</a></sup></p>
+
+<h2 id="checking-our-work-with-comparative-statics">Checking our work with comparative statics</h2>
+
+<p>The reflexive economist move is to stick the expression for \(x^*\) in a <a href="https://www.desmos.com/calculator/yhxxla3wko">Desmos box</a> as follows, start dragging the sliders around, and see if we can spot any patterns. For example, click the “edit graph on Desmos” box and try increasing the value of \(c\) slightly: You should see the vertical line, which represents the optimal number of applications, move to the left.</p>
+
+<iframe src="https://www.desmos.com/calculator/hjgrroyjqs?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+
+<p>If we’re feeling especially inspired, we might take the derivative of \(x^*\) in each of the parameters. Computing these so-called comparative statics will help us verify that our “conservative” assumptions are actually conservative in the way that we think we are. For example,</p>
+
+\[\frac{\partial x^*}{\partial c} = \frac{1}{c \ln (1- p)} &lt; 0\]
+
+<p>(since \(1-p\) is less than one, its logarithm is negative) tells us that increasing the costs <em>decreases</em> the optimal number of applications. But (in my opinion) the linear function \(cx\) is an <em>overestimate</em> of the cost, and the true optimum \(x^*\) should be even higher: conservatism fulfilled.</p>
+
+<p>Similarly, \(\partial x^* / \partial t &gt; 0\), meaning that in the <a href="https://money.com/wage-gap-college-high-school-grads/">(probable)</a> case that an elite college degree is worth more than $650k, the central argument of this post is even truer.</p>
+
+<p>\(p\) is where we get into trouble. I lowballed \(p\) above on the assumption that the “value” of a college application correlates with how likely it is to yield an admission letter. However, the <em>marginal value</em> of a college application is actually greatest when colleges are hard to get into, and therefore so is your willingness to invest in an additional application. In other words, I should have tried to overshoot \(p\) instead.</p>
+
+<p>To understand this counterintuitive result, let’s compute</p>
+
+\[\frac{\partial x^*}{\partial p} = \frac{ \ln{c} - \ln{t} - \ln{\bigl(- \ln{\left(1 - p \right)} \bigr)} + 1}{\left(1 - p\right) \ln^2{\left(1 - p \right)}},\]
+
+<p>whose sign tells us whether the optimal number of applications is increasing or decreasing in the admissions odds \(p\). The denominator of this expression is positive, so the overall sign depends on the sign of the numerator, which is positive only when</p>
+
+\[p &lt; 1 - \exp(-ce / t).\]
+
+<p>But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).<sup id="fnref:exceptionalregime" role="doc-noteref"><a href="#fn:exceptionalregime" class="footnote" rel="footnote">4</a></sup></p>
+
+<h2 id="oops-apply-to-thirty-colleges">Oops, apply to thirty colleges</h2>
+
+<p>So, if we are being conservative, we should try to <em>overestimate</em> \(p\). If we double our previous estimate to \(p = 0.20\) and repeat the calculation above, we get a more modest result of \(x^* = 30\). But this is still much higher than the number of colleges real students apply to, right?</p>
+
+<p>We have to increment \(p\) much further before \(x^*\) starts to align with typical applicant behavior: When \(p = 0.7\), for instance, you get \(x^* = 7\). Now, you might object that \(p = 0.7\) sounds like a perfectly reasonable admissions probability for an ambitious student. To this, I offer two responses:</p>
+
+<ol>
+  <li>As someone who reads blog posts about economics in their free time, your social circle may have instilled in you an biased sense of what is achievable for the typical student.</li>
+  <li><em>Some</em> students have high admissions odds, but others don’t: The odds have to average out to around 10 percent for elite colleges to maintain acceptance rates in that neighborhood.</li>
+</ol>
+
+<p>In other words, our comparative statics analysis revealed an error in our so-called conservative fake numbers, but the error wasn’t quite large enough to undermine our central argument.</p>
+
+<h2 id="why-dont-students-apply-to-more-colleges">Why don’t students apply to more colleges?</h2>
+
+<p>Most students apply to ten or so colleges. Why not more? What do they know that our model doesn’t?</p>
+
+<p>One idea that might come to mind if you’ve played with <a href="https://maxkapur.com/mulberry/">Mulberry</a> is that most students apply not just to elite schools and a safety school, but also to a continuum of “target schools” in between. Target schools have higher admissions odds, and indeed make up the <a href="https://www.pewresearch.org/fact-tank/2019/04/09/a-majority-of-u-s-colleges-admit-most-students-who-apply/">bulk of the admissions market</a>. This observation isn’t enough to explain real students’ small application portfolios, however, because elite universities also are (perceived as) much more valuable than target schools.</p>
+
+<p>The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount \(t\) to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack \(t\) all the way down to $200k, take \(p = 0.2\), and \(c = 200\), we <em>still</em> get a hefty \(x^* = 24\).</p>
+
+<p>Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.<sup id="fnref:idw" role="doc-noteref"><a href="#fn:idw" class="footnote" rel="footnote">5</a></sup> The psychological costs of college application are <em>really large,</em> because they include not only the exhaustion of composing and submitting applications, but also the cost of <em>imagining</em> the disappointment of being rejected from a dream school.</p>
+
+<h2 id="revealed-cost-of-college-application">Revealed cost of college application</h2>
+
+<p>What, in dollar terms, is the value of the subjective cost students associate with college application, after taking into account this risk aversion? Let’s stick with our conservative \(t = 200000\) and \(p = 0.2\) scenario, and turn the question around: Given that most students apply to about a dozen colleges, what application cost \(c\) makes this number of applications optimal?</p>
+
+<p>To figure this out, we just need to solve our \(x^*\) equation for \(c\). The answer is</p>
+
+\[c = - t (1 - p)^x \log{\left(1 - p \right)}\]
+
+<p>and plugging in the numbers yields \(c = 3067\) dollars per application.</p>
+
+<p>Remember: These numbers are fake. But we have made a plausible argument that the majority of the costs incurred in the college application process are psychological, rather than material. If you can overcome the psychological costs, then by applying to thirty or fifty colleges, you may be able to reap significant material rewards.</p>
+
+<h2 id="reader-exercises">Reader exercises</h2>
+
+<ul>
+  <li>Repeat the calculations above for another situation, such as job application. How many jobs should you apply to? Is the model a good choice?</li>
+  <li>Identify a regime in which \(\partial x^* / \partial p\) is positive and explain, in qualitative terms, why this is the case.</li>
+  <li>If every student adopts the optimal application strategy, then everyone might apply to twice as many schools. But then each school will become twice as competitive, changing the admissions odds and therefore the optimal strategies. Can you sketch the equilibrium criteria for this market? What other information would you need? <a href="https://www.journals.uchicago.edu/doi/10.1086/675503">(Paywalled academic paper about this.)</a></li>
+  <li>Suppose that the admissions probabilities and utility values for the reach schools are all different. What is the utility expression in this case? <em>Hint:</em> Replace \(x\) with a set indicating which colleges you apply to. You can find the answer <a href="https://maxkapur.com/mulberry/">here</a> or in my <a href="https://github.com/maxkapur/CollegeApplication">master’s thesis</a>.</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:obvious" role="doc-endnote">
+      <p>We will avoid the obvious argument that goes, “If you are willing to spend six figures on an a college education, then what’s a few hundred extra in application fees?” This argument is incorrect, because it assumes that each additional application is worth the value of attending that college times the probability of getting in. In actuality, you can only attend <em>one</em> of the colleges you get into; thus additional applications make a sublinear contribution to the overall expected utility. Our model will account for this. <a href="#fnref:obvious" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:sublinear" role="doc-endnote">
+      <p>Note that our assumption that the cost is linear in \(x\) is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as \(x\) increases; a function like \(c \ln x\) or \(c \sqrt{x}\) is arguably more realistic. <a href="#fnref:sublinear" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:exact" role="doc-endnote">
+      <p>The exact answer is \(x^* = 55.39\), but you can only apply to a whole number of colleges. Since \(f(x)\) is a concave, univariate function, the optimal integer solution has to be either 55 or 56, and you can verify that \(f(55) &gt; f(56)\). We’ll use the same approach for the rest of the post. <a href="#fnref:exact" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:exceptionalregime" role="doc-endnote">
+      <p>For example, to see a regime where \(x^*\) is increasing in \(p\), try setting \(t = 10000\) and \(c = 1000\) in the Desmos box, and vary \(p\) between 0.1 and 0.2. <a href="#fnref:exceptionalregime" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:idw" role="doc-endnote">
+      <p>It didn’t work. <a href="#fnref:idw" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/2022/09/01/apply-fifty-colleges.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://youtube.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
