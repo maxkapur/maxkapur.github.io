@@ -2,17 +2,13 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+
+# bundle install local targets
 vendor
+.bundle/ 
 
 # From micro editor
 log.txt
 
 # Larger versions of favicons, images
 *-large.jpg
-
-# To prevent the build routine from changing just because I edited it on a different machine
-Gemfile.lock
-
-# rbenv litter
-.ruby-version
-.bundle/
