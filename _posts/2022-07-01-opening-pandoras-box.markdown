@@ -37,7 +37,7 @@ The set of schools she ultimately applies to, or her *application portfolio,*
 depends on the values of the random variables observed in a given “round” of the admissions game.
 On the other hand, in the static model of college application considered in
 [my master’s thesis](https://github.com/maxkapur/CollegeApplication),
-the decisionmaker commit to her entire application portfolio at the outset.
+the decisionmaker commits to her entire application portfolio at the outset.
 
 Arguably, the static model is more hostile to students than the Pandora’s Box problem.
 If, for example, an unlucky Pandora is rejected from a safety school at an early round of application,
