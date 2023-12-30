@@ -34,7 +34,7 @@ Submodular functions have a number of desirable traits. A famous result of
 Nemhauser et al. (1978) holds that when maximizing a monotone[^monotone]
 submodular function over a cardinality constraint, the greedy algorithm that
 iteratively adds to $$X$$ the element that yields the greatest increase in
-$$f(X)$$ is $$1 - 1 / e \approx 63.2\%$$ optimal.[^optimal] Efficient algorithms
+$$f(X)$$ is $$1 - \frac{1}{e} \approx 63.2\%$$ optimal.[^optimal] Efficient algorithms
 that provide the same approximation ratio for more complex constraint structures
 have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
 Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
@@ -142,7 +142,9 @@ in the current planning period, defined as the total number of story points
 completed, which is
 
 $$
-h(X) = \sum_{j \in \Psi} t_j - t_j \prod_{i \in X} (1 - v_{ij}).
+h(X) = \sum_{j \in \Psi} \Bigl(
+t_j - t_j \prod_{i \in X} (1 - v_{ij})
+\Bigr).
 $$
 
 Tasks are subject to a variety of constraints due to considerations such
@@ -196,8 +198,8 @@ Paywall:
 
 [^optimal]: This means that if $$X^*$$ is the set that maximizes $$f(X)$$ and $$\tilde X$$ is the set produced by the greedy algorithm, we are guaranteed to have $$f(\tilde X) \geq 0.632\,f(X^*)$$. In practice, the optimality gap is often much narrower.
 
-[^zeno]: In the original Zeno walk, each $$s_i = 1/2$$, and the (supposedly unachievable) &ldquo;goal&rdquo; is to reach the destination rather than to get as close as possible to it.
+[^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2}$$, and the (supposedly unachievable) &ldquo;goal&rdquo; is to reach the destination rather than to get as close as possible to it.
 
 [^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals.
 
-[^conic]: This fact isn&rsquo;t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition listed.
+[^conic]: The fact that a conic combination of submodular functions is submodular isn&rsquo;t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
