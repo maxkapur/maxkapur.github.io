@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "An interesting class of submodular functions"
+title:      "A handy class of submodular functions"
 katex:      True
 ---
 
@@ -57,7 +57,7 @@ with quality upgrades” function&mdash;but we’ll just stick with
 $$f(X)$$ for now.
 
 This interpretation is admittedly a bit narrow. The versatility of $$f(X)$$
-as a functional form will start to show itself when we start taking
+as a functional form will begin to show itself when we start taking
 conic combinations&mdash;see the examples below.
 
 # Monotonicity and submodularity proof
@@ -166,8 +166,16 @@ target.
 
 # Remarks
 
-It is not difficult to show, using a similar proof as above, that the
-“*serial* process success probability with quality upgrades”
+**Linearization:** To maximize $$f(X)$$ as written, in typical cases, it
+will be simplest to minimize $$1 - f(X)$$, which is a *modular* function
+after taking the logarithm.[^modular] The logarithm trick doesn’t work,
+however, for conic combinations of $$f(X)$$; the best we can do is introduce
+helper variables and reformulate the problem as an integer convex
+program.[^integerconvex] Thus, recognizing the submodularity of $$f(X)$$
+(and the strong approximation results implied) is worthwhile.
+
+**Serial processes:** It is not difficult to show, using a similar proof
+as above, that the “*serial* process success probability with quality upgrades”
 function
 
 $$
@@ -209,3 +217,7 @@ Paywall:
 [^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than $$k$$ units of joy” may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
 [^conic]: The fact that a conic combination of submodular functions is submodular isn’t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
+
+[^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant&mdash;and thus modular functions are equivalent to **linear** functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
+
+[^integerconvex]: [Email me](mailto:max@maxkapur.com) if you would be interested in a follow-up post explaining how to do this.
