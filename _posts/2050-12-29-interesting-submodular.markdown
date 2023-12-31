@@ -53,12 +53,12 @@ winter is one minus the probability that all of them are closed, which is $$f(X)
 
 With this interpretation in mind, we are tempted to give $$f(X)$$ a
 tortured-but-accurate name such as the “parallel process success probability
-with quality upgrades” function&mdash;but we’ll just stick with
+with quality upgrades” function—but we’ll just stick with
 $$f(X)$$ for now.
 
-This interpretation is admittedly a bit narrow. The versatility of $$f(X)$$
-as a functional form will begin to show itself when we start taking
-conic combinations&mdash;see the examples below.
+The applicability of $$f(X)$$ in its current form is, admittedly, a bit
+narrow. The versatility of this functional form show itself more clearly
+when we start taking conic combinations—see the examples below.
 
 # Monotonicity and submodularity proof
 
@@ -103,7 +103,7 @@ instead of $$X.$$
 
 In the $$p_j = 1$$ case, $$f(X \cup \{j\}) = 1$$ for any $$X$$ and
 the inequality collapses to $$- f(X) \geq - f(Y),$$ which is just
-monotonicity. &#9724;
+monotonicity. ◼
 
 # Application: Optimal scrum velocity, aka the $$m$$-dimensional Zeno walk
 
@@ -149,7 +149,7 @@ $$
 
 Tasks are subject to a variety of constraints due to considerations such
 as cost, scheduling, and dependency. It is not immediately obvious which
-tasks we should prioritize&mdash;for example, should we favor tasks that
+tasks we should prioritize—for example, should we favor tasks that
 advance many different goals, or those that have high effectiveness
 against the most important goals? Well, the $$j$$th term of $$h(X)$$
 is just $$t_j g(X)$$ where $$s$$ is the $$j$$th column of $$v$$. Thus,
@@ -193,7 +193,7 @@ if you interchange the roles of $$X$$ and $$\Omega \setminus X$$.
 
 Open access:
 
-- Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. “Fast Algorithms for Maximizing Submodular Functions.” In *Proceedings of the 2014 Annual ACM--SIAM Symposium on Discrete Algorithms,* 1497&ndash;1514. <https://doi.org/10.1137/1.9781611973402.110>.
+- Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. “Fast Algorithms for Maximizing Submodular Functions.” In *Proceedings of the 2014 Annual ACM--SIAM Symposium on Discrete Algorithms,* 1497–1514. <https://doi.org/10.1137/1.9781611973402.110>.
 - Vondrák, Van. 2017. “Submodular Functions.” Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. <https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html>.
 - Wikipedia, s.v. [“burndown chart.”](https://en.wikipedia.org/wiki/Burndown_chart)
 - Wikipedia, s.v. [“submodular set function.”](https://en.wikipedia.org/wiki/Submodular_set_function)
@@ -202,11 +202,11 @@ Open access:
 
 Paywall:
 
-- Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. “Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.” *SIAM Journal on Computing* 43, no. 6: 1831&ndash;79. <https://doi.org/10.1137/110839655>.
-- Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. “Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.” *Mathematics of Operations Research* 38, no. 4: 729&ndash;39. <https://doi.org/10.1287/moor.2013.0592>.
-- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. “An Analysis of Approximations for Maximizing Submodular Set Functions—I.” *Mathematical Programming* 14: 265&ndash;94. <https://doi.org/10.1007/BF01588971>.
+- Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. “Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.” *SIAM Journal on Computing* 43, no. 6: 1831–79. <https://doi.org/10.1137/110839655>.
+- Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. “Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.” *Mathematics of Operations Research* 38, no. 4: 729–39. <https://doi.org/10.1287/moor.2013.0592>.
+- Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. “An Analysis of Approximations for Maximizing Submodular Set Functions—I.” *Mathematical Programming* 14: 265–94. <https://doi.org/10.1007/BF01588971>.
 
-<!--Nemhauser, George and Laurence Wolsey. 1978. “Best Algorithms for Approximating the Maximum of a Submodular Set Function.” *Mathematics of Operations Research* 3, no. 3: 177&ndash;88. <https://doi.org/10.1287/moor.3.3.177>.-->
+<!--Nemhauser, George and Laurence Wolsey. 1978. “Best Algorithms for Approximating the Maximum of a Submodular Set Function.” *Mathematics of Operations Research* 3, no. 3: 177–88. <https://doi.org/10.1287/moor.3.3.177>.-->
 
 [^monotone]: A set function is called *monotone* if $$X \subseteq Y$$ implies $$f(X) \leq f(Y)$$.
 
@@ -214,10 +214,10 @@ Paywall:
 
 [^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2},$$ and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it.
 
-[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than $$k$$ units of joy” may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
+[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than $$k$$ units of joy” may separately elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
 [^conic]: The fact that a conic combination of submodular functions is submodular isn’t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
 
-[^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant&mdash;and thus modular functions are equivalent to **linear** functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
+[^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to **linear** functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
 
 [^integerconvex]: [Email me](mailto:max@maxkapur.com) if you would be interested in a follow-up post explaining how to do this.
