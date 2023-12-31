@@ -12,15 +12,15 @@ f(X) = 1 -
 \prod_{i \in X} (1 - q_i)
 $$
 
-are submodular for $$p_i, q_i \in [0, 1]$$ where each $$p_i \leq q_i$$,
+are submodular for $$p_i, q_i \in [0, 1]$$ where each $$p_i \leq q_i,$$
 and provide an application of this small result to demonstrate its
 practical value.<!--more-->
 
 # Background on submodular functions
 
-Given a ground set $$\Omega$$, a function $$f: 2^\Omega \mapsto \mathbb{R}$$,
+Given a ground set $$\Omega,$$ a function $$f: 2^\Omega \mapsto \mathbb{R},$$
 is called [*submodular*](https://en.wikipedia.org/wiki/Submodular_set_function)
-if, for any $$X \subseteq Y \subseteq \Omega$$ and $$j \in \Omega \setminus Y$$,
+if, for any $$X \subseteq Y \subseteq \Omega$$ and $$j \in \Omega \setminus Y,$$
 we have
 
 $$f(X \cup \{j\}) - f(X) \geq f(Y \cup \{j\}) - f(Y).$$
@@ -70,7 +70,7 @@ $$1 - p_j$$ term with the (smaller) $$1 - q_j$$ term, increasing the
 overall function value.
 
 To prove submodularity, pick any $$X \subseteq Y \subseteq \Omega$$ and
-$$j \in \Omega \setminus Y.$$ If $$p_j < 1$$, we have
+$$j \in \Omega \setminus Y.$$ If $$p_j < 1,$$ we have
 
 $$
 \begin{aligned}
@@ -102,10 +102,10 @@ equality is just applying the first three steps in reverse, with $$Y$$
 instead of $$X.$$
 
 In the $$p_j = 1$$ case, $$f(X \cup \{j\}) = 1$$ for any $$X$$ and
-the inequality collapses to $$- f(X) \geq - f(Y)$$, which is just
+the inequality collapses to $$- f(X) \geq - f(Y),$$ which is just
 monotonicity. &#9724;
 
-# Application: Optimal scrum velocity
+# Application: Optimal scrum velocity, aka the $$m$$-dimensional Zeno walk
 
 Let’s examine a plausible(ish) application of this functional form.
 
@@ -113,7 +113,7 @@ Let’s examine a plausible(ish) application of this functional form.
 [Zeno walk](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox)
 between an arbitrary origin and destination. Let $$\Omega$$ provide a set of
 possible *steps* that we can take toward our destination. Each step’s size
-is $$s_i \in [0, 1]$$, which means that if you choose to take step $$i$$,
+is $$s_i \in [0, 1],$$ which means that if you choose to take step $$i,$$
 you get $$s_i$$ percent of the way from your current location to the
 destination.[^zeno] If $$X$$ is the set of steps you choose to take,
 you will make it
@@ -129,10 +129,10 @@ is just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
 problem. We have a set $$\Psi$$ (indexed by $$j$$) of *goals* to achieve,
 as well as a set $$\Omega$$ (indexed by $$i$$) of *tasks* we can complete
 in service of the goals. Tasks can advance multiple goals at once. Let
-$$v_{ij}$$ denote the *effectiveness* of task $$i$$ against goal $$j$$,
-meaning that if you engage in task $$i$$, $$v_{ij}$$ percent of (whatever
-remains of)[^whatever] goal $$j$$ will be completed. Each goal is
-worth $$t_j \geq 0$$
+$$v_{ij}$$ denote the *effectiveness* of task $$i$$ against goal $$j,$$
+meaning that if you engage in task $$i,$$ then $$v_{ij}$$ percent of
+(whatever remains of)[^whatever] goal $$j$$ will be completed. Each goal
+is worth $$t_j \geq 0$$
 *[story points](https://en.wikipedia.org/wiki/Burndown_chart),*
 and goals can be completed fractionally.
 
@@ -153,7 +153,7 @@ tasks we should prioritize&mdash;for example, should we favor tasks that
 advance many different goals, or those that have high effectiveness
 against the most important goals? Well, the $$j$$th term of $$h(X)$$
 is just $$t_j g(X)$$ where $$s$$ is the $$j$$th column of $$v$$. Thus,
-$$h(X)$$, as a conic combination of submodular functions, is itself
+$$h(X),$$ as a conic combination of submodular functions, is itself
 submodular,[^conic] and we can compute the optimal velocity using
 any of the well-known techniques for submodular maximization.
 
@@ -167,7 +167,7 @@ target.
 # Remarks
 
 **Linearization:** To maximize $$f(X)$$ as written, in typical cases, it
-will be simplest to minimize $$1 - f(X)$$, which is a *modular* function
+will be simplest to minimize $$1 - f(X),$$ which is a *modular* function
 after taking the logarithm.[^modular] The logarithm trick doesn’t work,
 however, for conic combinations of $$f(X)$$; the best we can do is introduce
 helper variables and reformulate the problem as an integer convex
@@ -184,7 +184,7 @@ $$
 
 with $$p_i \leq q_i$$ is monotone and *supermodular;* that is,
 $$- \tilde f(X)$$ is monotone *decreasing* and submodular. Note that
-$$1 - \tilde f(X)$$ has the same functional form as the original $$f(X)$$,
+$$1 - \tilde f(X)$$ has the same functional form as the original $$f(X),$$
 but the inequality on $$p_i$$ and $$q_i$$ comes out backwards. This turns
 back into the original result (that $$f(X)$$ is increasing and submodular)
 if you interchange the roles of $$X$$ and $$\Omega \setminus X$$.
@@ -212,7 +212,7 @@ Paywall:
 
 [^optimal]: This means that if $$X^*$$ is the set that maximizes $$f(X)$$ and $$\tilde X$$ is the set produced by the greedy algorithm, we are guaranteed to have $$f(\tilde X) \geq 0.632\,f(X^*)$$. In practice, the optimality gap is often much narrower.
 
-[^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2}$$, and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it.
+[^zeno]: In the original Zeno walk, each $$s_i = \frac{1}{2},$$ and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it.
 
 [^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively, but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this might arise in real life is if tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than $$k$$ units of joy” may each elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
