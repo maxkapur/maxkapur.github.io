@@ -4,7 +4,7 @@ title:      "A handy class of submodular functions"
 katex:      True
 ---
 
-In this post, I will show that functions of the form
+In this post, we will show that functions of the form
 
 $$
 f(X) = 1 -
@@ -13,7 +13,7 @@ f(X) = 1 -
 $$
 
 are submodular for $$p_i, q_i \in [0, 1]$$ where each $$p_i \leq q_i,$$
-and provide an application of this small result to demonstrate its
+and examine an application of this small result that demonstrates its
 practical value.<!--more-->
 
 # Background on submodular functions
