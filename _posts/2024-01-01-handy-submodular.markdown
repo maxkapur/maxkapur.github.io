@@ -57,7 +57,7 @@ with quality upgrades” function—but we’ll just stick with
 $$f(X)$$ for now.
 
 The applicability of $$f(X)$$ in its current form is, admittedly, a bit
-narrow. The versatility of this functional form show itself more clearly
+narrow. The versatility of this functional form shows itself more clearly
 when we start taking conic combinations—see the examples below.
 
 # Monotonicity and submodularity proof
@@ -114,7 +114,7 @@ Let’s examine a plausible(ish) application of this functional form.
 between an arbitrary origin and destination. Let $$\Omega$$ provide a set of
 possible *steps* that we can take toward our destination. Each step’s size
 is $$s_i \in [0, 1],$$ which means that if you choose to take step $$i,$$
-you get $$s_i$$ percent of the way from your current location to the
+you get $$100 s_i$$ percent of the way from your current location to the
 destination.[^zeno] If $$X$$ is the set of steps you choose to take,
 you will make it
 
@@ -122,7 +122,7 @@ $$
 g(X) = 1 - \prod_{i \in X} (1 - s_i)
 $$
 
-percent of the way to the destination from your starting point. This $$g(X)$$
+of the way to the destination from your starting point. This $$g(X)$$
 is just $$f(X)$$ where each $$p_i = 0$$ and $$q_i = s_i$$.
 
 **The multidimensional Zeno walk:** Now, consider a process optimization
@@ -130,9 +130,9 @@ problem. We have a set $$\Psi$$ (indexed by $$j$$) of *goals* to achieve,
 as well as a set $$\Omega$$ (indexed by $$i$$) of *tasks* we can complete
 in service of the goals. Tasks can advance multiple goals at once. Let
 $$v_{ij}$$ denote the *effectiveness* of task $$i$$ against goal $$j,$$
-meaning that if you engage in task $$i,$$ then $$v_{ij}$$ percent of
-(whatever remains of)[^whatever] goal $$j$$ will be completed. Each goal
-is worth $$t_j \geq 0$$
+meaning that if you engage in task $$i,$$ then $$v_{ij}$$ of (whatever
+remains of)[^whatever] goal $$j$$ will be completed. Each goal is
+worth $$t_j \geq 0$$
 *[story points](https://en.wikipedia.org/wiki/Burndown_chart),*
 and goals can be completed fractionally.
 
@@ -160,7 +160,7 @@ any of the well-known techniques for submodular maximization.
 Returning to Zeno’s paradox, the business process described above is
 akin to a *multidimensional* Zeno walk in which $$t_j$$ gives your distance
 from the target in the $$j$$th coordinate axis, and each step $$i$$ moves you
-$$v_{ij}$$ percent of the way towards the target along that axis. The function
+$$v_{ij}$$ of the way towards the target along that axis. The function
 $$h(X)$$ measures the one-norm distance between your final position and the
 target.
 
