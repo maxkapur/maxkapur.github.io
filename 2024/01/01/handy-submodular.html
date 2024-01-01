@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A handy class of submodular functions | Illusion Slopes</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A handy class of submodular functions | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="A handy class of submodular functions" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this post, we will show that functions of the form [f(X) = 1 - \prod_{i \in \Omega \setminus X} (1 - p_i) \prod_{i \in X} (1 - q_i)] are submodular for \(p_i, q_i \in [0, 1]\) where each \(p_i \leq q_i,\) and examine an application of this small result that demonstrates its practical value." />
+<meta property="og:description" content="In this post, we will show that functions of the form [f(X) = 1 - \prod_{i \in \Omega \setminus X} (1 - p_i) \prod_{i \in X} (1 - q_i)] are submodular for \(p_i, q_i \in [0, 1]\) where each \(p_i \leq q_i,\) and examine an application of this small result that demonstrates its practical value." />
+<link rel="canonical" href="/2024/01/01/handy-submodular.html" />
+<meta property="og:url" content="/2024/01/01/handy-submodular.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A handy class of submodular functions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2024-01-01T00:00:00+00:00","datePublished":"2024-01-01T00:00:00+00:00","description":"In this post, we will show that functions of the form [f(X) = 1 - \\prod_{i \\in \\Omega \\setminus X} (1 - p_i) \\prod_{i \\in X} (1 - q_i)] are submodular for \\(p_i, q_i \\in [0, 1]\\) where each \\(p_i \\leq q_i,\\) and examine an application of this small result that demonstrates its practical value.","headline":"A handy class of submodular functions","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/01/01/handy-submodular.html"},"url":"/2024/01/01/handy-submodular.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Illusion Slopes" /><!-- KaTeX -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              // ...options...
+          });
+      });
+  </script>
+  
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Illusion Slopes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About me</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/publications/">Publications</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A handy class of submodular functions</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2024-01-01T00:00:00+00:00" itemprop="datePublished">Jan 1, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In this post, we will show that functions of the form</p>
+
+\[f(X) = 1 -
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)\]
+
+<p>are submodular for \(p_i, q_i \in [0, 1]\) where each \(p_i \leq q_i,\)
+and examine an application of this small result that demonstrates its
+practical value.<!--more--></p>
+
+<h1 id="background-on-submodular-functions">Background on submodular functions</h1>
+
+<p>Given a ground set \(\Omega,\) a function \(f: 2^\Omega \mapsto \mathbb{R},\)
+is called <a href="https://en.wikipedia.org/wiki/Submodular_set_function"><em>submodular</em></a>
+if, for any \(X \subseteq Y \subseteq \Omega\) and \(j \in \Omega \setminus Y,\)
+we have</p>
+
+\[f(X \cup \{j\}) - f(X) \geq f(Y \cup \{j\}) - f(Y).\]
+
+<p>In plain language, this says that the marginal value of adding \(j\) to \(X\)
+is greater than when adding it to \(Y\). Thus, submodularity expresses a
+form of diminishing marginal returns (for set functions) that is analogous to
+concavity (for continuous functions).</p>
+
+<p>Submodular functions have a number of desirable traits. A famous result of
+Nemhauser et al. (1978) holds that when maximizing a monotone<sup id="fnref:monotone" role="doc-noteref"><a href="#fn:monotone" class="footnote" rel="footnote">1</a></sup>
+submodular function over a cardinality constraint, the greedy algorithm that
+iteratively adds to \(X\) the element that yields the greatest increase in
+\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.<sup id="fnref:optimal" role="doc-noteref"><a href="#fn:optimal" class="footnote" rel="footnote">2</a></sup> Efficient algorithms
+that provide the same approximation ratio for more complex constraint structures
+have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
+Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
+with many examples.</p>
+
+<h1 id="preliminary-interpretation-of-fx">Preliminary interpretation of \(f(X)\)</h1>
+
+<p>The function \(f(X)\) defined above can be used to model the probability of
+a parallel system failing when optional repairs are made to its components.
+For example, suppose there are a dozen roads between our town and the next,
+and the probabilities of each road being open in the coming winter are
+given by \(p_1\) through \(p_{12}\). For each of the roads, we can engage
+in repairs to increase the availability to \(q_i\). Letting \(X\) denote the set
+of roads that we repair, the probability of <em>at least</em> one road being open in the
+winter is one minus the probability that all of them are closed, which is \(f(X).\)</p>
+
+<p>With this interpretation in mind, we are tempted to give \(f(X)\) a
+tortured-but-accurate name such as the “parallel process success probability
+with quality upgrades” function—but we’ll just stick with
+\(f(X)\) for now.</p>
+
+<p>The applicability of \(f(X)\) in its current form is, admittedly, a bit
+narrow. The versatility of this functional form shows itself more clearly
+when we start taking conic combinations—see the examples below.</p>
+
+<h1 id="monotonicity-and-submodularity-proof">Monotonicity and submodularity proof</h1>
+
+<p><strong>Theorem:</strong> \(f(X)\) as defined above is a monotone submodular function.</p>
+
+<p><strong>Proof:</strong> The monotonicity of \(f(X)\) is clear from the constraints
+on \(p\) and \(q\): Adding any element \(j\) to \(X\) replaces the
+\(1 - p_j\) term with the (smaller) \(1 - q_j\) term, increasing the
+overall function value.</p>
+
+<p>To prove submodularity, pick any \(X \subseteq Y \subseteq \Omega\) and
+\(j \in \Omega \setminus Y.\) If \(p_j &lt; 1,\) we have</p>
+
+\[\begin{aligned}
+f(X \cup \{j\}) - f(X)
+&amp;= \biggl[1 -
+\frac{1 - q_j}{1 - p_j}
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)
+\biggr] -
+\biggl[1 -
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)
+\biggr] \\
+&amp;= - \biggl(\frac{1 - q_j}{1 - p_j}\biggr)
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i) +
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i) \\
+&amp;= \biggl(1 - \frac{1 - q_j}{1 - p_j}\biggr)
+\Bigl(1 - f(X)\Bigr) \\
+&amp;\geq \biggl(1 - \frac{1 - q_j}{1 - p_j}\biggr)
+\Bigl(1 - f(Y)\Bigr) \\
+&amp;= f(Y \cup \{j\}) - f(Y).
+\end{aligned}\]
+
+<p>The penultimate inequality follows from monotonicity, and the final
+equality is just applying the first three steps in reverse, with \(Y\)
+instead of \(X.\)</p>
+
+<p>In the \(p_j = 1\) case, \(f(X \cup \{j\}) = 1\) for any \(X\) and
+the inequality collapses to \(- f(X) \geq - f(Y),\) which is just
+monotonicity. ◼</p>
+
+<h1 id="application-optimal-scrum-velocity-aka-the-m-dimensional-zeno-walk">Application: Optimal scrum velocity, aka the \(m\)-dimensional Zeno walk</h1>
+
+<p>Let’s examine a plausible(ish) application of this functional form.</p>
+
+<p><strong>The Zeno walk:</strong> Consider a
+<a href="https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox">Zeno walk</a>
+between an arbitrary origin and destination. Let \(\Omega\) provide a set of
+possible <em>steps</em> that we can take toward our destination. Each step’s size
+is \(s_i \in [0, 1],\) which means that if you choose to take step \(i,\)
+you get \(100 s_i\) percent of the way from your current location to the
+destination.<sup id="fnref:zeno" role="doc-noteref"><a href="#fn:zeno" class="footnote" rel="footnote">3</a></sup> If \(X\) is the set of steps you choose to take,
+you will make it</p>
+
+\[g(X) = 1 - \prod_{i \in X} (1 - s_i)\]
+
+<p>of the way to the destination from your starting point. This \(g(X)\)
+is just \(f(X)\) where each \(p_i = 0\) and \(q_i = s_i\).</p>
+
+<p><strong>The multidimensional Zeno walk:</strong> Now, consider a process optimization
+problem. We have a set \(\Psi\) (indexed by \(j\)) of <em>goals</em> to achieve,
+as well as a set \(\Omega\) (indexed by \(i\)) of <em>tasks</em> we can complete
+in service of the goals. Tasks can advance multiple goals at once. Let
+\(v_{ij}\) denote the <em>effectiveness</em> of task \(i\) against goal \(j,\)
+meaning that if you engage in task \(i,\) then \(v_{ij}\) of (whatever
+remains of)<sup id="fnref:whatever" role="doc-noteref"><a href="#fn:whatever" class="footnote" rel="footnote">4</a></sup> goal \(j\) will be completed. Each goal is
+worth \(t_j \geq 0\)
+<em><a href="https://en.wikipedia.org/wiki/Burndown_chart">story points</a>,</em>
+and goals can be completed fractionally.</p>
+
+<p>We would like to choose the set of tasks \(X\) that maximizes the team’s
+<a href="https://en.wikipedia.org/wiki/Velocity_(software_development)"><em>velocity</em></a>
+in the current planning period, defined as the total number of story points
+completed, which is</p>
+
+\[h(X) = \sum_{j \in \Psi} \Bigl(
+t_j - t_j \prod_{i \in X} (1 - v_{ij})
+\Bigr).\]
+
+<p>Tasks are subject to a variety of constraints due to considerations such
+as cost, scheduling, and dependency. It is not immediately obvious which
+tasks we should prioritize—for example, should we favor tasks that
+advance many different goals, or those that have high effectiveness
+against the most important goals? Well, the \(j\)th term of \(h(X)\)
+is just \(t_j g(X)\) where \(s\) is the \(j\)th column of \(v\). Thus,
+\(h(X),\) as a conic combination of submodular functions, is itself
+submodular,<sup id="fnref:conic" role="doc-noteref"><a href="#fn:conic" class="footnote" rel="footnote">5</a></sup> and we can compute the optimal velocity using
+any of the well-known techniques for submodular maximization.</p>
+
+<p>Returning to Zeno’s paradox, the business process described above is
+akin to a <em>multidimensional</em> Zeno walk in which \(t_j\) gives your distance
+from the target in the \(j\)th coordinate axis, and each step \(i\) moves you
+\(v_{ij}\) of the way towards the target along that axis. The function
+\(h(X)\) measures the one-norm distance between your final position and the
+target.</p>
+
+<h1 id="remarks">Remarks</h1>
+
+<p><strong>Linearization:</strong> To maximize \(f(X)\) as written, in typical cases, it
+will be simplest to minimize \(1 - f(X),\) which is a <em>modular</em> function
+after taking the logarithm.<sup id="fnref:modular" role="doc-noteref"><a href="#fn:modular" class="footnote" rel="footnote">6</a></sup> The logarithm trick doesn’t work,
+however, for conic combinations of \(f(X)\); the best we can do is introduce
+helper variables and reformulate the problem as an integer convex
+program.<sup id="fnref:integerconvex" role="doc-noteref"><a href="#fn:integerconvex" class="footnote" rel="footnote">7</a></sup> Thus, recognizing the submodularity of \(f(X)\)
+(and the strong approximation results implied) is worthwhile.</p>
+
+<p><strong>Serial processes:</strong> It is not difficult to show, using a similar proof
+as above, that the “<em>serial</em> process success probability with quality upgrades”
+function</p>
+
+\[\tilde f(X) = \prod_{i \in \Omega \setminus X} p_i \prod_{i \in X} q_i\]
+
+<p>with \(p_i \leq q_i\) is monotone and <em>supermodular;</em> that is,
+\(- \tilde f(X)\) is monotone <em>decreasing</em> and submodular. Note that
+\(1 - \tilde f(X)\) has the same functional form as the original \(f(X),\)
+but the inequality on \(p_i\) and \(q_i\) comes out backwards. This turns
+back into the original result (that \(f(X)\) is increasing and submodular)
+if you interchange the roles of \(X\) and \(\Omega \setminus X\).</p>
+
+<h1 id="references">References</h1>
+
+<p>Open access:</p>
+
+<ul>
+  <li>Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. “Fast Algorithms for Maximizing Submodular Functions.” In <em>Proceedings of the 2014 Annual ACM–SIAM Symposium on Discrete Algorithms,</em> 1497–1514. <a href="https://doi.org/10.1137/1.9781611973402.110">https://doi.org/10.1137/1.9781611973402.110</a>.</li>
+  <li>Vondrák, Van. 2017. “Submodular Functions.” Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. <a href="https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html">https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html</a>.</li>
+  <li>Wikipedia, s.v. <a href="https://en.wikipedia.org/wiki/Burndown_chart">“burndown chart.”</a></li>
+  <li>Wikipedia, s.v. <a href="https://en.wikipedia.org/wiki/Submodular_set_function">“submodular set function.”</a></li>
+  <li>Wikipedia, s.v. <a href="https://en.wikipedia.org/wiki/Velocity_(software_development)">“velocity (software development).”</a></li>
+  <li>Wikipedia, s.v. <a href="https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox">“Zeno’s paradox.”</a></li>
+</ul>
+
+<p>Paywall:</p>
+
+<ul>
+  <li>Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. “Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.” <em>SIAM Journal on Computing</em> 43, no. 6: 1831–79. <a href="https://doi.org/10.1137/110839655">https://doi.org/10.1137/110839655</a>.</li>
+  <li>Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. “Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.” <em>Mathematics of Operations Research</em> 38, no. 4: 729–39. <a href="https://doi.org/10.1287/moor.2013.0592">https://doi.org/10.1287/moor.2013.0592</a>.</li>
+  <li>Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. “An Analysis of Approximations for Maximizing Submodular Set Functions—I.” <em>Mathematical Programming</em> 14: 265–94. <a href="https://doi.org/10.1007/BF01588971">https://doi.org/10.1007/BF01588971</a>.</li>
+</ul>
+
+<!--Nemhauser, George and Laurence Wolsey. 1978. “Best Algorithms for Approximating the Maximum of a Submodular Set Function.” *Mathematics of Operations Research* 3, no. 3: 177–88. <https://doi.org/10.1287/moor.3.3.177>.-->
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:monotone" role="doc-endnote">
+      <p>A set function is called <em>monotone</em> if \(X \subseteq Y\) implies \(f(X) \leq f(Y)\). <a href="#fnref:monotone" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:optimal" role="doc-endnote">
+      <p>This means that if \(X^*\) is the set that maximizes \(f(X)\) and \(\tilde X\) is the set produced by the greedy algorithm, we are guaranteed to have \(f(\tilde X) \geq 0.632\,f(X^*)\). In practice, the optimality gap is often much narrower. <a href="#fnref:optimal" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:zeno" role="doc-endnote">
+      <p>In the original Zeno walk, each \(s_i = \frac{1}{2},\) and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it. <a href="#fnref:zeno" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:whatever" role="doc-endnote">
+      <p>Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than \(k\) units of joy” may separately elicit a 50 percent reduction in the total junk, but doing <em>both</em> tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations. <a href="#fnref:whatever" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:conic" role="doc-endnote">
+      <p>The fact that a conic combination of submodular functions is submodular isn’t mentioned on the <a href="https://en.wikipedia.org/wiki/Submodular_set_function">Wikipedia article</a>, but it falls right out of the second definition. <a href="#fnref:conic" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:modular" role="doc-endnote">
+      <p>A set function is <em>modular</em> if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to <strong>linear</strong> functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function. <a href="#fnref:modular" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:integerconvex" role="doc-endnote">
+      <p><a href="mailto:max@maxkapur.com">Email me</a> if you would be interested in a follow-up post explaining how to do this. <a href="#fnref:integerconvex" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/2024/01/01/handy-submodular.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://youtube.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

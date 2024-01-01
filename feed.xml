@@ -1,4 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-12-31T02:52:28+00:00</updated><id>/feed.xml</id><title type="html">Illusion Slopes</title><subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle><author><name>Max Kapur</name></author><entry><title type="html">Recent reading</title><link href="/2023/11/05/recent-reading.html" rel="alternate" type="text/html" title="Recent reading" /><published>2023-11-05T00:00:00+00:00</published><updated>2023-11-05T00:00:00+00:00</updated><id>/2023/11/05/recent-reading</id><content type="html" xml:base="/2023/11/05/recent-reading.html">&lt;p&gt;Finished reading, but still thinking about:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-01-01T13:51:04+00:00</updated><id>/feed.xml</id><title type="html">Illusion Slopes</title><subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle><author><name>Max Kapur</name></author><entry><title type="html">A handy class of submodular functions</title><link href="/2024/01/01/handy-submodular.html" rel="alternate" type="text/html" title="A handy class of submodular functions" /><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>/2024/01/01/handy-submodular</id><content type="html" xml:base="/2024/01/01/handy-submodular.html">&lt;p&gt;In this post, we will show that functions of the form&lt;/p&gt;
+
+\[f(X) = 1 -
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)\]
+
+&lt;p&gt;are submodular for \(p_i, q_i \in [0, 1]\) where each \(p_i \leq q_i,\)
+and examine an application of this small result that demonstrates its
+practical value.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;background-on-submodular-functions&quot;&gt;Background on submodular functions&lt;/h1&gt;
+
+&lt;p&gt;Given a ground set \(\Omega,\) a function \(f: 2^\Omega \mapsto \mathbb{R},\)
+is called &lt;a href=&quot;https://en.wikipedia.org/wiki/Submodular_set_function&quot;&gt;&lt;em&gt;submodular&lt;/em&gt;&lt;/a&gt;
+if, for any \(X \subseteq Y \subseteq \Omega\) and \(j \in \Omega \setminus Y,\)
+we have&lt;/p&gt;
+
+\[f(X \cup \{j\}) - f(X) \geq f(Y \cup \{j\}) - f(Y).\]
+
+&lt;p&gt;In plain language, this says that the marginal value of adding \(j\) to \(X\)
+is greater than when adding it to \(Y\). Thus, submodularity expresses a
+form of diminishing marginal returns (for set functions) that is analogous to
+concavity (for continuous functions).&lt;/p&gt;
+
+&lt;p&gt;Submodular functions have a number of desirable traits. A famous result of
+Nemhauser et al. (1978) holds that when maximizing a monotone&lt;sup id=&quot;fnref:monotone&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:monotone&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+submodular function over a cardinality constraint, the greedy algorithm that
+iteratively adds to \(X\) the element that yields the greatest increase in
+\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.&lt;sup id=&quot;fnref:optimal&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:optimal&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Efficient algorithms
+that provide the same approximation ratio for more complex constraint structures
+have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
+Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
+with many examples.&lt;/p&gt;
+
+&lt;h1 id=&quot;preliminary-interpretation-of-fx&quot;&gt;Preliminary interpretation of \(f(X)\)&lt;/h1&gt;
+
+&lt;p&gt;The function \(f(X)\) defined above can be used to model the probability of
+a parallel system failing when optional repairs are made to its components.
+For example, suppose there are a dozen roads between our town and the next,
+and the probabilities of each road being open in the coming winter are
+given by \(p_1\) through \(p_{12}\). For each of the roads, we can engage
+in repairs to increase the availability to \(q_i\). Letting \(X\) denote the set
+of roads that we repair, the probability of &lt;em&gt;at least&lt;/em&gt; one road being open in the
+winter is one minus the probability that all of them are closed, which is \(f(X).\)&lt;/p&gt;
+
+&lt;p&gt;With this interpretation in mind, we are tempted to give \(f(X)\) a
+tortured-but-accurate name such as the “parallel process success probability
+with quality upgrades” function—but we’ll just stick with
+\(f(X)\) for now.&lt;/p&gt;
+
+&lt;p&gt;The applicability of \(f(X)\) in its current form is, admittedly, a bit
+narrow. The versatility of this functional form shows itself more clearly
+when we start taking conic combinations—see the examples below.&lt;/p&gt;
+
+&lt;h1 id=&quot;monotonicity-and-submodularity-proof&quot;&gt;Monotonicity and submodularity proof&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; \(f(X)\) as defined above is a monotone submodular function.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof:&lt;/strong&gt; The monotonicity of \(f(X)\) is clear from the constraints
+on \(p\) and \(q\): Adding any element \(j\) to \(X\) replaces the
+\(1 - p_j\) term with the (smaller) \(1 - q_j\) term, increasing the
+overall function value.&lt;/p&gt;
+
+&lt;p&gt;To prove submodularity, pick any \(X \subseteq Y \subseteq \Omega\) and
+\(j \in \Omega \setminus Y.\) If \(p_j &amp;lt; 1,\) we have&lt;/p&gt;
+
+\[\begin{aligned}
+f(X \cup \{j\}) - f(X)
+&amp;amp;= \biggl[1 -
+\frac{1 - q_j}{1 - p_j}
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)
+\biggr] -
+\biggl[1 -
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i)
+\biggr] \\
+&amp;amp;= - \biggl(\frac{1 - q_j}{1 - p_j}\biggr)
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i) +
+\prod_{i \in \Omega \setminus X} (1 - p_i)
+\prod_{i \in X} (1 - q_i) \\
+&amp;amp;= \biggl(1 - \frac{1 - q_j}{1 - p_j}\biggr)
+\Bigl(1 - f(X)\Bigr) \\
+&amp;amp;\geq \biggl(1 - \frac{1 - q_j}{1 - p_j}\biggr)
+\Bigl(1 - f(Y)\Bigr) \\
+&amp;amp;= f(Y \cup \{j\}) - f(Y).
+\end{aligned}\]
+
+&lt;p&gt;The penultimate inequality follows from monotonicity, and the final
+equality is just applying the first three steps in reverse, with \(Y\)
+instead of \(X.\)&lt;/p&gt;
+
+&lt;p&gt;In the \(p_j = 1\) case, \(f(X \cup \{j\}) = 1\) for any \(X\) and
+the inequality collapses to \(- f(X) \geq - f(Y),\) which is just
+monotonicity. ◼&lt;/p&gt;
+
+&lt;h1 id=&quot;application-optimal-scrum-velocity-aka-the-m-dimensional-zeno-walk&quot;&gt;Application: Optimal scrum velocity, aka the \(m\)-dimensional Zeno walk&lt;/h1&gt;
+
+&lt;p&gt;Let’s examine a plausible(ish) application of this functional form.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Zeno walk:&lt;/strong&gt; Consider a
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox&quot;&gt;Zeno walk&lt;/a&gt;
+between an arbitrary origin and destination. Let \(\Omega\) provide a set of
+possible &lt;em&gt;steps&lt;/em&gt; that we can take toward our destination. Each step’s size
+is \(s_i \in [0, 1],\) which means that if you choose to take step \(i,\)
+you get \(100 s_i\) percent of the way from your current location to the
+destination.&lt;sup id=&quot;fnref:zeno&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:zeno&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; If \(X\) is the set of steps you choose to take,
+you will make it&lt;/p&gt;
+
+\[g(X) = 1 - \prod_{i \in X} (1 - s_i)\]
+
+&lt;p&gt;of the way to the destination from your starting point. This \(g(X)\)
+is just \(f(X)\) where each \(p_i = 0\) and \(q_i = s_i\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The multidimensional Zeno walk:&lt;/strong&gt; Now, consider a process optimization
+problem. We have a set \(\Psi\) (indexed by \(j\)) of &lt;em&gt;goals&lt;/em&gt; to achieve,
+as well as a set \(\Omega\) (indexed by \(i\)) of &lt;em&gt;tasks&lt;/em&gt; we can complete
+in service of the goals. Tasks can advance multiple goals at once. Let
+\(v_{ij}\) denote the &lt;em&gt;effectiveness&lt;/em&gt; of task \(i\) against goal \(j,\)
+meaning that if you engage in task \(i,\) then \(v_{ij}\) of (whatever
+remains of)&lt;sup id=&quot;fnref:whatever&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:whatever&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; goal \(j\) will be completed. Each goal is
+worth \(t_j \geq 0\)
+&lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Burndown_chart&quot;&gt;story points&lt;/a&gt;,&lt;/em&gt;
+and goals can be completed fractionally.&lt;/p&gt;
+
+&lt;p&gt;We would like to choose the set of tasks \(X\) that maximizes the team’s
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Velocity_(software_development)&quot;&gt;&lt;em&gt;velocity&lt;/em&gt;&lt;/a&gt;
+in the current planning period, defined as the total number of story points
+completed, which is&lt;/p&gt;
+
+\[h(X) = \sum_{j \in \Psi} \Bigl(
+t_j - t_j \prod_{i \in X} (1 - v_{ij})
+\Bigr).\]
+
+&lt;p&gt;Tasks are subject to a variety of constraints due to considerations such
+as cost, scheduling, and dependency. It is not immediately obvious which
+tasks we should prioritize—for example, should we favor tasks that
+advance many different goals, or those that have high effectiveness
+against the most important goals? Well, the \(j\)th term of \(h(X)\)
+is just \(t_j g(X)\) where \(s\) is the \(j\)th column of \(v\). Thus,
+\(h(X),\) as a conic combination of submodular functions, is itself
+submodular,&lt;sup id=&quot;fnref:conic&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:conic&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; and we can compute the optimal velocity using
+any of the well-known techniques for submodular maximization.&lt;/p&gt;
+
+&lt;p&gt;Returning to Zeno’s paradox, the business process described above is
+akin to a &lt;em&gt;multidimensional&lt;/em&gt; Zeno walk in which \(t_j\) gives your distance
+from the target in the \(j\)th coordinate axis, and each step \(i\) moves you
+\(v_{ij}\) of the way towards the target along that axis. The function
+\(h(X)\) measures the one-norm distance between your final position and the
+target.&lt;/p&gt;
+
+&lt;h1 id=&quot;remarks&quot;&gt;Remarks&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Linearization:&lt;/strong&gt; To maximize \(f(X)\) as written, in typical cases, it
+will be simplest to minimize \(1 - f(X),\) which is a &lt;em&gt;modular&lt;/em&gt; function
+after taking the logarithm.&lt;sup id=&quot;fnref:modular&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:modular&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; The logarithm trick doesn’t work,
+however, for conic combinations of \(f(X)\); the best we can do is introduce
+helper variables and reformulate the problem as an integer convex
+program.&lt;sup id=&quot;fnref:integerconvex&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:integerconvex&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; Thus, recognizing the submodularity of \(f(X)\)
+(and the strong approximation results implied) is worthwhile.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Serial processes:&lt;/strong&gt; It is not difficult to show, using a similar proof
+as above, that the “&lt;em&gt;serial&lt;/em&gt; process success probability with quality upgrades”
+function&lt;/p&gt;
+
+\[\tilde f(X) = \prod_{i \in \Omega \setminus X} p_i \prod_{i \in X} q_i\]
+
+&lt;p&gt;with \(p_i \leq q_i\) is monotone and &lt;em&gt;supermodular;&lt;/em&gt; that is,
+\(- \tilde f(X)\) is monotone &lt;em&gt;decreasing&lt;/em&gt; and submodular. Note that
+\(1 - \tilde f(X)\) has the same functional form as the original \(f(X),\)
+but the inequality on \(p_i\) and \(q_i\) comes out backwards. This turns
+back into the original result (that \(f(X)\) is increasing and submodular)
+if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;p&gt;Open access:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Badanidiyuru, Ashwinkumar and Jan Vondrák. 2014. “Fast Algorithms for Maximizing Submodular Functions.” In &lt;em&gt;Proceedings of the 2014 Annual ACM–SIAM Symposium on Discrete Algorithms,&lt;/em&gt; 1497–1514. &lt;a href=&quot;https://doi.org/10.1137/1.9781611973402.110&quot;&gt;https://doi.org/10.1137/1.9781611973402.110&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Vondrák, Van. 2017. “Submodular Functions.” Lecture 14 from Math 233B: Polyhedral Techniques in Combinatorial Optimization. &lt;a href=&quot;https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html&quot;&gt;https://theory.stanford.edu/~jvondrak/MATH233B-2017/MATH233B.html&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Wikipedia, s.v. &lt;a href=&quot;https://en.wikipedia.org/wiki/Burndown_chart&quot;&gt;“burndown chart.”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Wikipedia, s.v. &lt;a href=&quot;https://en.wikipedia.org/wiki/Submodular_set_function&quot;&gt;“submodular set function.”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Wikipedia, s.v. &lt;a href=&quot;https://en.wikipedia.org/wiki/Velocity_(software_development)&quot;&gt;“velocity (software development).”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Wikipedia, s.v. &lt;a href=&quot;https://en.wikipedia.org/wiki/Zeno%27s_paradoxes#Dichotomy_paradox&quot;&gt;“Zeno’s paradox.”&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Paywall:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Chekuri, Chandra, Jan Vondrák, and Rico Zenklusen. 2014. “Submodular Function Maximization via the Multilinear Relaxation and Contention Resolution Schemes.” &lt;em&gt;SIAM Journal on Computing&lt;/em&gt; 43, no. 6: 1831–79. &lt;a href=&quot;https://doi.org/10.1137/110839655&quot;&gt;https://doi.org/10.1137/110839655&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Kulik, Ariel, Hadas Shachnai, and Tami Tamir. 2013. “Approximations for Monotone and Nonmonotone Submodular Maximization with Knapsack Constraints.” &lt;em&gt;Mathematics of Operations Research&lt;/em&gt; 38, no. 4: 729–39. &lt;a href=&quot;https://doi.org/10.1287/moor.2013.0592&quot;&gt;https://doi.org/10.1287/moor.2013.0592&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Nemhauser, George, Laurence Wolsey, and Marshall Fisher. 1978. “An Analysis of Approximations for Maximizing Submodular Set Functions—I.” &lt;em&gt;Mathematical Programming&lt;/em&gt; 14: 265–94. &lt;a href=&quot;https://doi.org/10.1007/BF01588971&quot;&gt;https://doi.org/10.1007/BF01588971&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--Nemhauser, George and Laurence Wolsey. 1978. “Best Algorithms for Approximating the Maximum of a Submodular Set Function.” *Mathematics of Operations Research* 3, no. 3: 177–88. &lt;https://doi.org/10.1287/moor.3.3.177&gt;.--&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:monotone&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A set function is called &lt;em&gt;monotone&lt;/em&gt; if \(X \subseteq Y\) implies \(f(X) \leq f(Y)\). &lt;a href=&quot;#fnref:monotone&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:optimal&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This means that if \(X^*\) is the set that maximizes \(f(X)\) and \(\tilde X\) is the set produced by the greedy algorithm, we are guaranteed to have \(f(\tilde X) \geq 0.632\,f(X^*)\). In practice, the optimality gap is often much narrower. &lt;a href=&quot;#fnref:optimal&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:zeno&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;In the original Zeno walk, each \(s_i = \frac{1}{2},\) and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it. &lt;a href=&quot;#fnref:zeno&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:whatever&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than \(k\) units of joy” may separately elicit a 50 percent reduction in the total junk, but doing &lt;em&gt;both&lt;/em&gt; tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations. &lt;a href=&quot;#fnref:whatever&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:conic&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;The fact that a conic combination of submodular functions is submodular isn’t mentioned on the &lt;a href=&quot;https://en.wikipedia.org/wiki/Submodular_set_function&quot;&gt;Wikipedia article&lt;/a&gt;, but it falls right out of the second definition. &lt;a href=&quot;#fnref:conic&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:modular&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A set function is &lt;em&gt;modular&lt;/em&gt; if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to &lt;strong&gt;linear&lt;/strong&gt; functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function. &lt;a href=&quot;#fnref:modular&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:integerconvex&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;mailto:max@maxkapur.com&quot;&gt;Email me&lt;/a&gt; if you would be interested in a follow-up post explaining how to do this. &lt;a href=&quot;#fnref:integerconvex&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Max Kapur</name></author><summary type="html">In this post, we will show that functions of the form \[f(X) = 1 - \prod_{i \in \Omega \setminus X} (1 - p_i) \prod_{i \in X} (1 - q_i)\] are submodular for \(p_i, q_i \in [0, 1]\) where each \(p_i \leq q_i,\) and examine an application of this small result that demonstrates its practical value.</summary></entry><entry><title type="html">Recent reading</title><link href="/2023/11/05/recent-reading.html" rel="alternate" type="text/html" title="Recent reading" /><published>2023-11-05T00:00:00+00:00</published><updated>2023-11-05T00:00:00+00:00</updated><id>/2023/11/05/recent-reading</id><content type="html" xml:base="/2023/11/05/recent-reading.html">&lt;p&gt;Finished reading, but still thinking about:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;정유정, «종의 기원», a thriller.&lt;/li&gt;
@@ -233,130 +455,4 @@ assignments A and B and leaves assignment C, namely &lt;code class=&quot;languag
   &lt;li&gt;&lt;a href=&quot;https://www.edx.org/course/introduction-to-optimization&quot;&gt;Introduction to Optimization&lt;/a&gt; is an edX course targeted at undergraduates and working professionals, which we created with the support of a grant from SNU’s center for teaching and learning.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Developing the edX course was especially fun: edX has an &lt;a href=&quot;https://openedx.org/community/documentation/&quot;&gt;open platform&lt;/a&gt; for online courses that lets you create an interactive classroom with videos, captions, automatically graded exercises, and plenty more. Setting up the student activities with automatic grading in a way that is both user-friendly and rigorous was a neat challenge. I hope these courses can bring the theoretically grounded, practically oriented education that I received at SNU to a wider audience of optimization students.&lt;/p&gt;</content><author><name>Max Kapur</name></author><summary type="html">On September 29, I received my master’s degree in industrial engineering from Seoul National University! It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m rather proud of.</summary></entry><entry><title type="html">Apply to fifty colleges</title><link href="/2022/09/01/apply-fifty-colleges.html" rel="alternate" type="text/html" title="Apply to fifty colleges" /><published>2022-09-01T00:00:00+00:00</published><updated>2022-09-01T00:00:00+00:00</updated><id>/2022/09/01/apply-fifty-colleges</id><content type="html" xml:base="/2022/09/01/apply-fifty-colleges.html">&lt;p&gt;In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.&lt;!--more--&gt;&lt;sup id=&quot;fnref:obvious&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:obvious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;fake-numbers-and-a-simplified-model&quot;&gt;Fake numbers and a simplified model&lt;/h2&gt;
-
-&lt;p&gt;We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of &lt;em&gt;understating&lt;/em&gt; the value of applying to college, thereby arriving at an &lt;em&gt;underestimate&lt;/em&gt; of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we &lt;em&gt;nonetheless&lt;/em&gt; draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement applies to the actual numbers, too.&lt;/p&gt;
-
-&lt;p&gt;First, let’s assume that you always have the option of attending a “safety school.” The safety school could also represent a community college or entering the workforce directly after high school. In addition, there are many “reach schools,” or elite universities, with competitive admissions. It is better to attend a reach school than the safety school, but applying to a reach school takes time and effort.&lt;/p&gt;
-
-&lt;p&gt;Let \(t\) denote the utility of attending an elite university, measured in monetary units relative to the safety school. By a conservative estimate, an elite university might offer us an expected salary increase of $20,000 per year, at a tuition cost of $30,000 dollars per year higher than the safety school. Thus, aggregating over 40 years of employment and 5 years of college attendance, we can estimate&lt;/p&gt;
-
-\[t = 40 \times 20000 - 5 \times 30000  = 650000.\]
-
-&lt;p&gt;Let’s assume, for simplicity, that all the reach schools are equally competitive, and let \(p\) denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick \(p = 0.1\), which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to \(x\) reach schools, the probability of getting into &lt;em&gt;at least&lt;/em&gt; one is \(1 - (1 - p)^x\), in which case you receive \(t\) units of utility.&lt;/p&gt;
-
-&lt;p&gt;However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:&lt;sup id=&quot;fnref:sublinear&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:sublinear&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-\[f(x) = t\bigl(1 - (1 - p)^x\bigr) - cx.\]
-
-&lt;p&gt;Typical college application fees are $50 or so; let’s take \(c = 200\) to account generously for the other costs. Our goal is to maximize \(f(x)\).&lt;/p&gt;
-
-&lt;h2 id=&quot;the-model-says-apply-to-fifty-colleges&quot;&gt;The model says apply to fifty colleges&lt;/h2&gt;
-
-&lt;p&gt;With these values of \(t\), \(p\), and \(c\), here’s the graph of \(f(x)\). As you can see, the maximum occurs at about \(x^* = 55\) applications!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/appcountutility.png&quot; alt=&quot;A grpah showing the number of applications and the utility.&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We can solve for the maximum analytically using a method you might have learned in high school calculus: \(x^*\) represents the point where \(f(x)\) stops increasing and starts decreasing. That is, the point where its slope \(f&apos;(x)\) is zero.&lt;/p&gt;
-
-&lt;p&gt;With a little bit of legwork, you can check that the derivative of \(f(x)\) is&lt;/p&gt;
-
-\[f&apos;(x) = -t (1-p)^m \ln(1-p) - c\]
-
-&lt;p&gt;and setting this equal to zero and solving for \(x\) yields&lt;/p&gt;
-
-\[x^* = \frac{\ln c - \ln t - \ln \bigl(- \ln\left(1-p\right)\bigr)}{\ln\left(1-p\right)}.\]
-
-&lt;p&gt;(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.&lt;sup id=&quot;fnref:exact&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:exact&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;checking-our-work-with-comparative-statics&quot;&gt;Checking our work with comparative statics&lt;/h2&gt;
-
-&lt;p&gt;The reflexive economist move is to stick the expression for \(x^*\) in a &lt;a href=&quot;https://www.desmos.com/calculator/yhxxla3wko&quot;&gt;Desmos box&lt;/a&gt; as follows, start dragging the sliders around, and see if we can spot any patterns. For example, click the “edit graph on Desmos” box and try increasing the value of \(c\) slightly: You should see the vertical line, which represents the optimal number of applications, move to the left.&lt;/p&gt;
-
-&lt;iframe src=&quot;https://www.desmos.com/calculator/hjgrroyjqs?embed&quot; width=&quot;100%&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;If we’re feeling especially inspired, we might take the derivative of \(x^*\) in each of the parameters. Computing these so-called comparative statics will help us verify that our “conservative” assumptions are actually conservative in the way that we think we are. For example,&lt;/p&gt;
-
-\[\frac{\partial x^*}{\partial c} = \frac{1}{c \ln (1- p)} &amp;lt; 0\]
-
-&lt;p&gt;(since \(1-p\) is less than one, its logarithm is negative) tells us that increasing the costs &lt;em&gt;decreases&lt;/em&gt; the optimal number of applications. But (in my opinion) the linear function \(cx\) is an &lt;em&gt;overestimate&lt;/em&gt; of the cost, and the true optimum \(x^*\) should be even higher: conservatism fulfilled.&lt;/p&gt;
-
-&lt;p&gt;Similarly, \(\partial x^* / \partial t &amp;gt; 0\), meaning that in the &lt;a href=&quot;https://money.com/wage-gap-college-high-school-grads/&quot;&gt;(probable)&lt;/a&gt; case that an elite college degree is worth more than $650k, the central argument of this post is even truer.&lt;/p&gt;
-
-&lt;p&gt;\(p\) is where we get into trouble. I lowballed \(p\) above on the assumption that the “value” of a college application correlates with how likely it is to yield an admission letter. However, the &lt;em&gt;marginal value&lt;/em&gt; of a college application is actually greatest when colleges are hard to get into, and therefore so is your willingness to invest in an additional application. In other words, I should have tried to overshoot \(p\) instead.&lt;/p&gt;
-
-&lt;p&gt;To understand this counterintuitive result, let’s compute&lt;/p&gt;
-
-\[\frac{\partial x^*}{\partial p} = \frac{ \ln{c} - \ln{t} - \ln{\bigl(- \ln{\left(1 - p \right)} \bigr)} + 1}{\left(1 - p\right) \ln^2{\left(1 - p \right)}},\]
-
-&lt;p&gt;whose sign tells us whether the optimal number of applications is increasing or decreasing in the admissions odds \(p\). The denominator of this expression is positive, so the overall sign depends on the sign of the numerator, which is positive only when&lt;/p&gt;
-
-\[p &amp;lt; 1 - \exp(-ce / t).\]
-
-&lt;p&gt;But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).&lt;sup id=&quot;fnref:exceptionalregime&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:exceptionalregime&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;oops-apply-to-thirty-colleges&quot;&gt;Oops, apply to thirty colleges&lt;/h2&gt;
-
-&lt;p&gt;So, if we are being conservative, we should try to &lt;em&gt;overestimate&lt;/em&gt; \(p\). If we double our previous estimate to \(p = 0.20\) and repeat the calculation above, we get a more modest result of \(x^* = 30\). But this is still much higher than the number of colleges real students apply to, right?&lt;/p&gt;
-
-&lt;p&gt;We have to increment \(p\) much further before \(x^*\) starts to align with typical applicant behavior: When \(p = 0.7\), for instance, you get \(x^* = 7\). Now, you might object that \(p = 0.7\) sounds like a perfectly reasonable admissions probability for an ambitious student. To this, I offer two responses:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;As someone who reads blog posts about economics in their free time, your social circle may have instilled in you an biased sense of what is achievable for the typical student.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Some&lt;/em&gt; students have high admissions odds, but others don’t: The odds have to average out to around 10 percent for elite colleges to maintain acceptance rates in that neighborhood.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In other words, our comparative statics analysis revealed an error in our so-called conservative fake numbers, but the error wasn’t quite large enough to undermine our central argument.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-dont-students-apply-to-more-colleges&quot;&gt;Why don’t students apply to more colleges?&lt;/h2&gt;
-
-&lt;p&gt;Most students apply to ten or so colleges. Why not more? What do they know that our model doesn’t?&lt;/p&gt;
-
-&lt;p&gt;One idea that might come to mind if you’ve played with &lt;a href=&quot;https://maxkapur.com/mulberry/&quot;&gt;Mulberry&lt;/a&gt; is that most students apply not just to elite schools and a safety school, but also to a continuum of “target schools” in between. Target schools have higher admissions odds, and indeed make up the &lt;a href=&quot;https://www.pewresearch.org/fact-tank/2019/04/09/a-majority-of-u-s-colleges-admit-most-students-who-apply/&quot;&gt;bulk of the admissions market&lt;/a&gt;. This observation isn’t enough to explain real students’ small application portfolios, however, because elite universities also are (perceived as) much more valuable than target schools.&lt;/p&gt;
-
-&lt;p&gt;The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount \(t\) to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack \(t\) all the way down to $200k, take \(p = 0.2\), and \(c = 200\), we &lt;em&gt;still&lt;/em&gt; get a hefty \(x^* = 24\).&lt;/p&gt;
-
-&lt;p&gt;Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.&lt;sup id=&quot;fnref:idw&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:idw&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; The psychological costs of college application are &lt;em&gt;really large,&lt;/em&gt; because they include not only the exhaustion of composing and submitting applications, but also the cost of &lt;em&gt;imagining&lt;/em&gt; the disappointment of being rejected from a dream school.&lt;/p&gt;
-
-&lt;h2 id=&quot;revealed-cost-of-college-application&quot;&gt;Revealed cost of college application&lt;/h2&gt;
-
-&lt;p&gt;What, in dollar terms, is the value of the subjective cost students associate with college application, after taking into account this risk aversion? Let’s stick with our conservative \(t = 200000\) and \(p = 0.2\) scenario, and turn the question around: Given that most students apply to about a dozen colleges, what application cost \(c\) makes this number of applications optimal?&lt;/p&gt;
-
-&lt;p&gt;To figure this out, we just need to solve our \(x^*\) equation for \(c\). The answer is&lt;/p&gt;
-
-\[c = - t (1 - p)^x \log{\left(1 - p \right)}\]
-
-&lt;p&gt;and plugging in the numbers yields \(c = 3067\) dollars per application.&lt;/p&gt;
-
-&lt;p&gt;Remember: These numbers are fake. But we have made a plausible argument that the majority of the costs incurred in the college application process are psychological, rather than material. If you can overcome the psychological costs, then by applying to thirty or fifty colleges, you may be able to reap significant material rewards.&lt;/p&gt;
-
-&lt;h2 id=&quot;reader-exercises&quot;&gt;Reader exercises&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Repeat the calculations above for another situation, such as job application. How many jobs should you apply to? Is the model a good choice?&lt;/li&gt;
-  &lt;li&gt;Identify a regime in which \(\partial x^* / \partial p\) is positive and explain, in qualitative terms, why this is the case.&lt;/li&gt;
-  &lt;li&gt;If every student adopts the optimal application strategy, then everyone might apply to twice as many schools. But then each school will become twice as competitive, changing the admissions odds and therefore the optimal strategies. Can you sketch the equilibrium criteria for this market? What other information would you need? &lt;a href=&quot;https://www.journals.uchicago.edu/doi/10.1086/675503&quot;&gt;(Paywalled academic paper about this.)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Suppose that the admissions probabilities and utility values for the reach schools are all different. What is the utility expression in this case? &lt;em&gt;Hint:&lt;/em&gt; Replace \(x\) with a set indicating which colleges you apply to. You can find the answer &lt;a href=&quot;https://maxkapur.com/mulberry/&quot;&gt;here&lt;/a&gt; or in my &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;master’s thesis&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:obvious&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;We will avoid the obvious argument that goes, “If you are willing to spend six figures on an a college education, then what’s a few hundred extra in application fees?” This argument is incorrect, because it assumes that each additional application is worth the value of attending that college times the probability of getting in. In actuality, you can only attend &lt;em&gt;one&lt;/em&gt; of the colleges you get into; thus additional applications make a sublinear contribution to the overall expected utility. Our model will account for this. &lt;a href=&quot;#fnref:obvious&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:sublinear&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Note that our assumption that the cost is linear in \(x\) is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as \(x\) increases; a function like \(c \ln x\) or \(c \sqrt{x}\) is arguably more realistic. &lt;a href=&quot;#fnref:sublinear&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:exact&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;The exact answer is \(x^* = 55.39\), but you can only apply to a whole number of colleges. Since \(f(x)\) is a concave, univariate function, the optimal integer solution has to be either 55 or 56, and you can verify that \(f(55) &amp;gt; f(56)\). We’ll use the same approach for the rest of the post. &lt;a href=&quot;#fnref:exact&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:exceptionalregime&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;For example, to see a regime where \(x^*\) is increasing in \(p\), try setting \(t = 10000\) and \(c = 1000\) in the Desmos box, and vary \(p\) between 0.1 and 0.2. &lt;a href=&quot;#fnref:exceptionalregime&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:idw&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;It didn’t work. &lt;a href=&quot;#fnref:idw&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Max Kapur</name></author><summary type="html">In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.</summary></entry></feed>
+&lt;p&gt;Developing the edX course was especially fun: edX has an &lt;a href=&quot;https://openedx.org/community/documentation/&quot;&gt;open platform&lt;/a&gt; for online courses that lets you create an interactive classroom with videos, captions, automatically graded exercises, and plenty more. Setting up the student activities with automatic grading in a way that is both user-friendly and rigorous was a neat challenge. I hope these courses can bring the theoretically grounded, practically oriented education that I received at SNU to a wider audience of optimization students.&lt;/p&gt;</content><author><name>Max Kapur</name></author><summary type="html">On September 29, I received my master’s degree in industrial engineering from Seoul National University! It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m rather proud of.</summary></entry></feed>
