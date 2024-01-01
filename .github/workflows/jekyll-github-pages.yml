@@ -1,3 +1,4 @@
+# based on
 # https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/
 
 name: Build and Deploy a Jekyll Site to GitHub Pages
@@ -12,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📂 setup
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v4
         # include the lines below if you are using jekyll-last-modified-at
         # or if you would otherwise need to fetch the full commit history
         # however this may be very slow for large repositories!
         # with:
         # fetch-depth: '0'
+
       - name: 💎 setup ruby
         uses: ruby/setup-ruby@v1
         with:
