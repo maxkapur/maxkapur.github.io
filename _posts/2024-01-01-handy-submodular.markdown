@@ -18,7 +18,7 @@ practical value.<!--more-->
 
 # Background on submodular functions
 
-Given a ground set $$\Omega,$$ a function $$f: 2^\Omega \mapsto \mathbb{R},$$
+Given a ground set $$\Omega,$$ a function $$f: 2^\Omega \mapsto \mathbb{R}$$
 is called [*submodular*](https://en.wikipedia.org/wiki/Submodular_set_function)
 if, for any $$X \subseteq Y \subseteq \Omega$$ and $$j \in \Omega \setminus Y,$$
 we have
