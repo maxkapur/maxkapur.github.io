@@ -218,6 +218,6 @@ Paywall:
 
 [^conic]: The fact that a conic combination of submodular functions is submodular isn’t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
 
-[^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to **linear** functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
+[^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to *linear* functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
 
 [^integerconvex]: [Email me](mailto:max@maxkapur.com) if you would be interested in a follow-up post explaining how to do this.
