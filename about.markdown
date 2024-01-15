@@ -29,7 +29,6 @@ Fulbright or Critical Language scholarships, the Government of Korea Scholarship
 or anything else on my profile. You can find me on
 [GitHub](https://github.com/maxkapur),
 [LinkedIn](https://www.linkedin.com/in/maxkapur/),
-[Julia Discourse](https://discourse.julialang.org/u/maxkapur/),
 and [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw).
 You are also welcome to email me at [max@maxkapur.com](mailto:max@maxkapur.com).
 
