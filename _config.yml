@@ -33,7 +33,6 @@ youtube_username: maxkapur
 theme: minima
 show_excerpts: true # on homepage
 plugins:
-  - jekyll-feed
   - jekyll-redirect-from
   # - jekyll-paginate
 # paginate: 2
