@@ -35,6 +35,8 @@ jobs:
 
       - name: 🚀 deploy
         uses: peaceiris/actions-gh-pages@v3
+        # Skip this step if running from somewhere other than master
+        if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
