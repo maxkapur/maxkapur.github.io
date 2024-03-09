@@ -1,7 +1,7 @@
-# based on
+# Based on
 # https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/
 
-name: Build and Deploy a Jekyll Site to GitHub Pages
+name: build-jekyll-deploy-gh-pages
 
 on:
   push:
