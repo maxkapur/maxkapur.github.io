@@ -3,6 +3,6 @@ layout: post
 title:  "The college application problem, presented in Korean"
 ---
 
-I gave a brief presentation about the college application problem at a research fair hosted by our department. English subtitles are included.
-
-<iframe src="https://www.youtube-nocookie.com/embed/tZCSwCPd1Qc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+I gave a brief
+[presentation about the college application problem](https://www.youtube.com/watch?v=tZCSwCPd1Qc)
+at a research fair hosted by our department. English subtitles are included.
