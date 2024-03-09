@@ -9,7 +9,7 @@
  <link href="/feed.xml" rel="self" />
  <link href="/" rel="alternate" />
  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-03-09T14:44:50+00:00</updated>
+ <updated>2024-03-09T15:38:27+00:00</updated>
  <id>/</id>
  <author>
     <name></name>
@@ -675,17 +675,37 @@ assignments A and B and leaves assignment C, namely &lt;code class=&quot;languag
     <link rel="alternate" href="/2022/10/16/new-bah-job.html" />
     <updated>2022-10-16T00:00:00+00:00</updated><updated-readable>Oct 16, 2022</updated-readable>
     <id>/2022/10/16/new-bah-job</id>
-    <summary><p>I’m happy to share a somewhat belated bit of good news: This month, I began a new job as an operations research analyst at the consulting firm Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington, Virginia, a suburb of DC with a mild climate and lots of natural beauty.</p>
+    <summary><p>I’m happy to share a somewhat belated bit of good news: This month, I
+began a new job as an operations research analyst at the consulting firm
+Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington,
+Virginia, a suburb of DC with a mild climate and lots of natural beauty.</p>
 
-<p>On this blog, I will continue to post short essays and notes about economics, math, and Korean. Please understand that any opinions expressed here are my own and do not represent those of my employer.</p>
+<p>On this blog, I will continue to post short essays and notes about
+economics, math, and Korean. Please understand that any opinions expressed
+here are my own and do not represent those of my employer.</p>
 
-<p>On my way out of Korea, I was able to make a celebratory trip to Naju and say farewell to my friends and coworkers at Geumseong Middle School and hike up to my favorite spot on the mountain. I have a tradition of listening to the Brahms Piano Trio in B Major at transitions like this. <a href="https://www.youtube.com/embed/neyLy-xGgoE">Here’s one of my favorite interpretations.</a></p>
+<p>On my way out of Korea, I was able to make a celebratory trip to
+Naju and say farewell to my friends and coworkers at Geumseong
+Middle School and hike up to my favorite spot on the mountain. I
+have a tradition of listening to the Brahms Piano Trio in B
+Major at transitions like this. <a href="https://www.youtube.com/watch?v=neyLy-xGgoE">Here’s one of my favorite
+interpretations.</a></p>
 </summary>
-    <content type="html">&lt;p&gt;I’m happy to share a somewhat belated bit of good news: This month, I began a new job as an operations research analyst at the consulting firm Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington, Virginia, a suburb of DC with a mild climate and lots of natural beauty.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I’m happy to share a somewhat belated bit of good news: This month, I
+began a new job as an operations research analyst at the consulting firm
+Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington,
+Virginia, a suburb of DC with a mild climate and lots of natural beauty.&lt;/p&gt;
 
-&lt;p&gt;On this blog, I will continue to post short essays and notes about economics, math, and Korean. Please understand that any opinions expressed here are my own and do not represent those of my employer.&lt;/p&gt;
+&lt;p&gt;On this blog, I will continue to post short essays and notes about
+economics, math, and Korean. Please understand that any opinions expressed
+here are my own and do not represent those of my employer.&lt;/p&gt;
 
-&lt;p&gt;On my way out of Korea, I was able to make a celebratory trip to Naju and say farewell to my friends and coworkers at Geumseong Middle School and hike up to my favorite spot on the mountain. I have a tradition of listening to the Brahms Piano Trio in B Major at transitions like this. &lt;a href=&quot;https://www.youtube.com/embed/neyLy-xGgoE&quot;&gt;Here’s one of my favorite interpretations.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On my way out of Korea, I was able to make a celebratory trip to
+Naju and say farewell to my friends and coworkers at Geumseong
+Middle School and hike up to my favorite spot on the mountain. I
+have a tradition of listening to the Brahms Piano Trio in B
+Major at transitions like this. &lt;a href=&quot;https://www.youtube.com/watch?v=neyLy-xGgoE&quot;&gt;Here’s one of my favorite
+interpretations.&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   
@@ -1250,13 +1270,13 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
     <link rel="alternate" href="/2022/05/13/college-application-presentation-korean.html" />
     <updated>2022-05-13T00:00:00+00:00</updated><updated-readable>May 13, 2022</updated-readable>
     <id>/2022/05/13/college-application-presentation-korean</id>
-    <summary><p>I gave a brief presentation about the college application problem at a research fair hosted by our department. English subtitles are included.</p>
-
-<iframe src="https://www.youtube-nocookie.com/embed/tZCSwCPd1Qc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+    <summary><p>I gave a brief
+<a href="https://www.youtube.com/watch?v=tZCSwCPd1Qc">presentation about the college application problem</a>
+at a research fair hosted by our department. English subtitles are included.</p>
 </summary>
-    <content type="html">&lt;p&gt;I gave a brief presentation about the college application problem at a research fair hosted by our department. English subtitles are included.&lt;/p&gt;
-
-&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/tZCSwCPd1Qc&quot; title=&quot;YouTube video player&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+    <content type="html">&lt;p&gt;I gave a brief
+&lt;a href=&quot;https://www.youtube.com/watch?v=tZCSwCPd1Qc&quot;&gt;presentation about the college application problem&lt;/a&gt;
+at a research fair hosted by our department. English subtitles are included.&lt;/p&gt;
 </content>
   </entry>
   
@@ -1288,17 +1308,27 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
     <link rel="alternate" href="/2022/04/14/school-location-problem.html" />
     <updated>2022-04-14T00:00:00+00:00</updated><updated-readable>Apr 14, 2022</updated-readable>
     <id>/2022/04/14/school-location-problem</id>
-    <summary><p>I’ve spent a few days thinking about a facility location problem that we might call the <em>school location problem.</em> The goal is to place \(n\) schools to serve \(m\) families, such that the <em>furthest</em> distance between any family and their <em>nearest</em> school is <em>minimized.</em> This problem is almost a \(k\)-means or ellipsoid fitting problem, but its unusual “minimin” form makes it computationally challenging.</p>
+    <summary><p>I’ve spent a few days thinking about a facility location problem that
+we might call the <em>school location problem.</em> The goal is to place \(n\)
+schools to serve \(m\) families, such that the <em>furthest</em> distance
+between any family and their <em>nearest</em> school is <em>minimized.</em> This
+problem is almost a \(k\)-means or ellipsoid fitting problem, but its
+unusual “minimin” form makes it computationally challenging.</p>
 
 <p>In the video below, and associated Jupyter notebook (<a href="https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381">Github</a>, <a href="https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb">HTML viewer</a>), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.</p>
 
-<iframe src="https://www.youtube-nocookie.com/embed/bjreiQRHerU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Here’s the <a href="https://www.youtube.com/watch?v=/bjreiQRHerU">video link</a>.</p>
 </summary>
-    <content type="html">&lt;p&gt;I’ve spent a few days thinking about a facility location problem that we might call the &lt;em&gt;school location problem.&lt;/em&gt; The goal is to place \(n\) schools to serve \(m\) families, such that the &lt;em&gt;furthest&lt;/em&gt; distance between any family and their &lt;em&gt;nearest&lt;/em&gt; school is &lt;em&gt;minimized.&lt;/em&gt; This problem is almost a \(k\)-means or ellipsoid fitting problem, but its unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I’ve spent a few days thinking about a facility location problem that
+we might call the &lt;em&gt;school location problem.&lt;/em&gt; The goal is to place \(n\)
+schools to serve \(m\) families, such that the &lt;em&gt;furthest&lt;/em&gt; distance
+between any family and their &lt;em&gt;nearest&lt;/em&gt; school is &lt;em&gt;minimized.&lt;/em&gt; This
+problem is almost a \(k\)-means or ellipsoid fitting problem, but its
+unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
 
 &lt;p&gt;In the video below, and associated Jupyter notebook (&lt;a href=&quot;https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381&quot;&gt;Github&lt;/a&gt;, &lt;a href=&quot;https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb&quot;&gt;HTML viewer&lt;/a&gt;), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.&lt;/p&gt;
 
-&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/bjreiQRHerU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;Here’s the &lt;a href=&quot;https://www.youtube.com/watch?v=/bjreiQRHerU&quot;&gt;video link&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   
@@ -1507,21 +1537,35 @@ And, as many have probably heard, a signature feature of the Korean admissions p
     <link rel="alternate" href="/2019/10/18/using-data-ell.html" />
     <updated>2019-10-18T00:00:00+00:00</updated><updated-readable>Oct 18, 2019</updated-readable>
     <id>/2019/10/18/using-data-ell</id>
-    <summary><p>In August, I surveyed my students about their motivation for learning English, their opinions about our class and my teaching style, and what resources they were using to study English outside of class. By analyzing the results using some of the statistical tools I’ve taught myself this year, I came up with some effective strategies for reaching the disengaged students in my classroom.</p>
+    <summary><p>In August, I surveyed my students about their motivation for learning
+English, their opinions about our class and my teaching style, and
+what resources they were using to study English outside of class. By
+analyzing the results using some of the statistical tools I’ve
+taught myself this year, I came up with some effective strategies for
+reaching the disengaged students in my classroom.</p>
 
-<p>At the moment this post goes up, I’ll be giving a presentation about that project at Fulbright Korea’s fall conference in Gyeongju. Here’s a digital version of the talk:</p>
+<p>At the moment this post goes up, I’ll be giving a presentation
+about that project at Fulbright Korea’s fall conference in
+Gyeongju. Here’s
+<a href="https://www.youtube.com/watch?v=jgAhgY3TVEc">a digital version of the talk</a>.</p>
 
-<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/jgAhgY3TVEc"></iframe>
-
-<p>And here’s <a href="https://maxkapur.com/esl-data/">a detailed write-up of my survey design and results</a>.</p>
+<p>And here’s <a href="https://maxkapur.com/esl-data/">a detailed
+write-up of my survey design and results</a>.</p>
 </summary>
-    <content type="html">&lt;p&gt;In August, I surveyed my students about their motivation for learning English, their opinions about our class and my teaching style, and what resources they were using to study English outside of class. By analyzing the results using some of the statistical tools I’ve taught myself this year, I came up with some effective strategies for reaching the disengaged students in my classroom.&lt;/p&gt;
+    <content type="html">&lt;p&gt;In August, I surveyed my students about their motivation for learning
+English, their opinions about our class and my teaching style, and
+what resources they were using to study English outside of class. By
+analyzing the results using some of the statistical tools I’ve
+taught myself this year, I came up with some effective strategies for
+reaching the disengaged students in my classroom.&lt;/p&gt;
 
-&lt;p&gt;At the moment this post goes up, I’ll be giving a presentation about that project at Fulbright Korea’s fall conference in Gyeongju. Here’s a digital version of the talk:&lt;/p&gt;
+&lt;p&gt;At the moment this post goes up, I’ll be giving a presentation
+about that project at Fulbright Korea’s fall conference in
+Gyeongju. Here’s
+&lt;a href=&quot;https://www.youtube.com/watch?v=jgAhgY3TVEc&quot;&gt;a digital version of the talk&lt;/a&gt;.&lt;/p&gt;
 
-&lt;iframe allowfullscreen=&quot;&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube.com/embed/jgAhgY3TVEc&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;And here’s &lt;a href=&quot;https://maxkapur.com/esl-data/&quot;&gt;a detailed write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And here’s &lt;a href=&quot;https://maxkapur.com/esl-data/&quot;&gt;a detailed
+write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   
