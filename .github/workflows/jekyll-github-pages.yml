@@ -1,8 +1,7 @@
 # based on
 # https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/
 
-name: build-jekyll-github-pages
-description: Build and Deploy a Jekyll Site to GitHub Pages
+name: Build and Deploy a Jekyll Site to GitHub Pages
 
 on:
   push:
