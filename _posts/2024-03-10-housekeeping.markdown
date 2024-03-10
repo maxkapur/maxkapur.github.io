@@ -25,9 +25,8 @@ Completed some overdue site maintenance over the past few weeks:
 
 - **Upgraded to Jekyll 4:**
   Jekyll is a tool for building a static HTML site out of Markdown files.
-  The built-in GitHub functionality for hosting a Jekyll blog is stuck
-  on an old version of Jekyll which has some end-of-life dependencies,
-  and they are
+  The built-in GitHub functionality for hosting a Jekyll blog uses an old
+  version of Jekyll which has some end-of-life dependencies, and they are
   [stuck searching for an upgrade path](https://github.com/github/pages-gem/issues/651#issuecomment-581069671)
   that doesn’t break existing sites.
 
