@@ -9,13 +9,106 @@
  <link href="/feed.xml" rel="self" />
  <link href="/" rel="alternate" />
  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-03-09T15:38:27+00:00</updated>
+ <updated>2024-03-10T15:27:07+00:00</updated>
  <id>/</id>
  <author>
     <name></name>
     <email></email>
   </author>
  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  
+  <entry>
+    <title>Housekeeping</title>
+    <link rel="alternate" href="/2024/03/10/housekeeping.html" />
+    <updated>2024-03-10T00:00:00+00:00</updated><updated-readable>Mar 10, 2024</updated-readable>
+    <id>/2024/03/10/housekeeping</id>
+    <summary><p>Completed some overdue site maintenance over the past few weeks:</p>
+
+<ul>
+  <li>
+    <p><strong>RSS feed styling:</strong>
+With help from a
+<a href="https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f">template found on GitHub</a>,
+I created a stylesheet for the RSS feed so that it looks nice when
+viewed in the browser. Ctrl+F “RSS” on this page to find the link,
+or just scroll all the way to the bottom, or maybe
+<a href="/feed.xml">try this link</a>.</p>
+
+    <p>I am not a big consumer of RSS feeds myself; I prefer to just
+bookmark blog URLs and read posts in their original context. But RSS
+is an important bit of
+<a href="https://inessential.com/2013/03/14/why_i_love_rss_and_you_do_too.html">plumbing</a>
+for the indie web, and probably covers accessibility use cases
+that I haven’t anticipated.</p>
+
+    <p>(Technically, I am serving an Atom feed rather than RSS, but
+<a href="https://indieweb.org/RSS">people use the terms interchangeably</a>.)</p>
+  </li>
+  <li>
+    <p><strong>Upgraded to Jekyll 4:</strong>
+Jekyll is a tool for building a static HTML site out of Markdown files.
+The built-in GitHub functionality for hosting a Jekyll blog uses an old
+version of Jekyll which has some end-of-life dependencies, and they are
+<a href="https://github.com/github/pages-gem/issues/651#issuecomment-581069671">stuck searching for an upgrade path</a>
+that doesn’t break existing sites.</p>
+
+    <p>I followed this
+<a href="https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/">wonderful guide</a>
+to switch my publication workflow to a GitHub Action that lets me manually
+manage my Ruby and Jekyll versions. It’s a great tutorial that also helped
+clear up several misunderstandings about Ruby, Gems, and <code class="language-plaintext highlighter-rouge">rbenv</code>.</p>
+  </li>
+  <li>
+    <p><strong>Removed embedded YouTube videos:</strong>
+I replaced embedded YouTube videos with simple links to improve page load
+times and user privacy.</p>
+  </li>
+</ul>
+</summary>
+    <content type="html">&lt;p&gt;Completed some overdue site maintenance over the past few weeks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RSS feed styling:&lt;/strong&gt;
+With help from a
+&lt;a href=&quot;https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f&quot;&gt;template found on GitHub&lt;/a&gt;,
+I created a stylesheet for the RSS feed so that it looks nice when
+viewed in the browser. Ctrl+F “RSS” on this page to find the link,
+or just scroll all the way to the bottom, or maybe
+&lt;a href=&quot;/feed.xml&quot;&gt;try this link&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;I am not a big consumer of RSS feeds myself; I prefer to just
+bookmark blog URLs and read posts in their original context. But RSS
+is an important bit of
+&lt;a href=&quot;https://inessential.com/2013/03/14/why_i_love_rss_and_you_do_too.html&quot;&gt;plumbing&lt;/a&gt;
+for the indie web, and probably covers accessibility use cases
+that I haven’t anticipated.&lt;/p&gt;
+
+    &lt;p&gt;(Technically, I am serving an Atom feed rather than RSS, but
+&lt;a href=&quot;https://indieweb.org/RSS&quot;&gt;people use the terms interchangeably&lt;/a&gt;.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Upgraded to Jekyll 4:&lt;/strong&gt;
+Jekyll is a tool for building a static HTML site out of Markdown files.
+The built-in GitHub functionality for hosting a Jekyll blog uses an old
+version of Jekyll which has some end-of-life dependencies, and they are
+&lt;a href=&quot;https://github.com/github/pages-gem/issues/651#issuecomment-581069671&quot;&gt;stuck searching for an upgrade path&lt;/a&gt;
+that doesn’t break existing sites.&lt;/p&gt;
+
+    &lt;p&gt;I followed this
+&lt;a href=&quot;https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/&quot;&gt;wonderful guide&lt;/a&gt;
+to switch my publication workflow to a GitHub Action that lets me manually
+manage my Ruby and Jekyll versions. It’s a great tutorial that also helped
+clear up several misunderstandings about Ruby, Gems, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rbenv&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Removed embedded YouTube videos:&lt;/strong&gt;
+I replaced embedded YouTube videos with simple links to improve page load
+times and user privacy.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   
   <entry>
     <title>A handy class of submodular functions</title>
