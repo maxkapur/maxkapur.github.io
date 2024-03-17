@@ -9,7 +9,7 @@ Completed some overdue site maintenance over the past few weeks:
   With help from a
   [template found on GitHub](https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f),
   I created a stylesheet for the RSS feed so that it looks nice when
-  viewed in the browser. Ctrl+F “RSS” on this page to find the link,
+  viewed in the browser. Ctrl+F “via RSS” on this page to find the link,
   or just scroll all the way to the bottom, or maybe
   [try this link](/feed.xml).
 
