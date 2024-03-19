@@ -22,7 +22,7 @@ Mostly novels this time:
   Korea to Australia, and for reasons that are no surprise if you’ve read the
   book above. This one has a happy ending.
 
-- Mishele Maron, [“Anger Management”](https://thesunmagazine.org/issues/578/anger-management),
+- Mishele Maron, [“Anger Management”](https://thesunmagazine.org/issues/578/anger-management)
   (paywall), a memoir by a psychologist whose job was to “goad men with a
   history of violence into wanting to punch me” and create the opportunity for
   them to examine their feelings in group counseling.
