@@ -9,4 +9,4 @@ The defense process was relatively painless: I received some very helpful commen
 
 I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:
 
-![Max giving a presentation about the college application problem at a conference in Jeju](/assets/jejuconference.jpg)
+![Max giving a presentation about the college application problem at a conference in Jeju](/assets/jeju-conference.jpg)

@@ -5,7 +5,7 @@ title:      What you learn in a humanities degree
 
 The more I learn, I find myself with fewer and fewer things to say.
 
-![A Reddit post reading, "What to do if i have theories? I contacted a college and they ignored me"](/assets/whatiftheories.png)
+![A Reddit post reading, "What to do if i have theories? I contacted a college and they ignored me"](/assets/what-if-theories.png)
 
 As a humanities student, I studied many &ldquo;theories.&rdquo; One theory is historicism, which says that things are the products of their historical settings. Example: At a career mixer, a well-dressed alumnus, class of &rsquo;70, approaches a sophomore journalism major. &ldquo;The first thing you should do once you&rsquo;re financially independent and you&rsquo;ve got some money saved up is make a down payment on a house. Nobody will ever stop needing houses,&rdquo; he says. The advice is a historical artifact, extruded from a certain moment in American politics and a certain set of assumptions about credit scores and work contingency and citizenship status. The student may react with with doubt; her doubt is also historical. It encodes her upbringing, and a different relationship with houses and banks and the word <em>independent.</em>
 

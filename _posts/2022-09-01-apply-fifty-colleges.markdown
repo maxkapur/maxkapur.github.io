@@ -32,7 +32,7 @@ Typical college application fees are \$50 or so; let’s take $$c = 200$$ to acc
 
 With these values of $$t$$, $$p$$, and $$c$$, here’s the graph of $$f(x)$$. As you can see, the maximum occurs at about $$x^* = 55$$ applications!
 
-![A grpah showing the number of applications and the utility.](/assets/appcountutility.png)
+![A graph showing the number of applications and the utility.](/assets/app-count-utility.svg)
 
 We can solve for the maximum analytically using a method you might have learned in high school calculus: $$x^*$$ represents the point where $$f(x)$$ stops increasing and starts decreasing. That is, the point where its slope $$f'(x)$$ is zero. 
 

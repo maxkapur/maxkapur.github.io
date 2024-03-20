@@ -8,7 +8,7 @@ can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 [MS thesis](https://github.com/maxkapur/CollegeApplication).
 
-<img alt="The Mulberry logo: a magenta berry and a green leaf" src="/assets/mulberrylogo.png" width="150px" height="150px">
+<img alt="The Mulberry logo: a magenta berry and a green leaf" src="/assets/mulberry-logo.png" width="150px" height="150px">
 <!--more-->
 
 Why Mulberry? There are boatloads of “chance me!” websites (some more trustworthy
