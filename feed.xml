@@ -9,7 +9,7 @@
  <link href="/feed.xml" rel="self" />
  <link href="/" rel="alternate" />
  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-03-19T04:08:52+00:00</updated>
+ <updated>2024-03-20T00:36:49+00:00</updated>
  <id>/</id>
  <author>
     <name></name>
@@ -562,7 +562,7 @@ take over the next time the application is launched.&lt;/p&gt;
 
 <p>Example:</p>
 
-<p><img src="/assets/fishfzlexample.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &quot;Thesis defense&quot; is highlighted." /></p>
+<p><img src="/assets/fish-fzl-example.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &quot;Thesis defense&quot; is highlighted." /></p>
 </summary>
     <content type="html">&lt;p&gt;I’ve been using the following fish alias &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzl&lt;/code&gt; (“fuzzy list”) to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzf&lt;/code&gt; (“fuzzy find”) in the current directory with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bat&lt;/code&gt; preview. It’s just a couple of light tweaks to the examples listed in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzf&lt;/code&gt; &lt;a href=&quot;https://github.com/junegunn/fzf#preview-window&quot;&gt;readme&lt;/a&gt;.&lt;/p&gt;
 
@@ -599,7 +599,7 @@ take over the next time the application is launched.&lt;/p&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/fishfzlexample.png&quot; alt=&quot;A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &amp;quot;Thesis defense&amp;quot; is highlighted.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/fish-fzl-example.png&quot; alt=&quot;A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &amp;quot;Thesis defense&amp;quot; is highlighted.&quot; /&gt;&lt;/p&gt;
 </content>
   </entry>
   
@@ -625,7 +625,7 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 <p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal:</p>
 
-<p><img src="./assets/fishfortunegreeter.png" alt="A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말." /></p>
+<p><img src="./assets/fish-fortune-greeter.png" alt="A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말." /></p>
 
 <p>You can find my database and <code class="language-plaintext highlighter-rouge">fish_greeter.fish</code> script on <a href="https://github.com/maxkapur/korean-fortunes">Github</a>.</p>
 
@@ -647,7 +647,7 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 &lt;p&gt;I set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fortune korean&lt;/code&gt; (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./assets/fishfortunegreeter.png&quot; alt=&quot;A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./assets/fish-fortune-greeter.png&quot; alt=&quot;A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can find my database and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fish_greeter.fish&lt;/code&gt; script on &lt;a href=&quot;https://github.com/maxkapur/korean-fortunes&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 
@@ -898,13 +898,13 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
     <id>/2022/09/04/masters-graduation</id>
     <summary><p>On September 29, I received my master’s degree in industrial engineering from Seoul National University!</p>
 
-<p><img src="/assets/msgraduation.jpg" alt="A photograph of Max wearing his cap and gown at Seoul National University." /></p>
+<p><img src="/assets/ms-graduation.jpg" alt="A photograph of Max wearing his cap and gown at Seoul National University." /></p>
 
 <p>It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m <a href="https://github.com/maxkapur/CollegeApplication">rather proud of</a>.</p>
 </summary>
     <content type="html">&lt;p&gt;On September 29, I received my master’s degree in industrial engineering from Seoul National University!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/msgraduation.jpg&quot; alt=&quot;A photograph of Max wearing his cap and gown at Seoul National University.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ms-graduation.jpg&quot; alt=&quot;A photograph of Max wearing his cap and gown at Seoul National University.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;rather proud of&lt;/a&gt;.&lt;!--more--&gt;&lt;/p&gt;
 
@@ -950,7 +950,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;With these values of \(t\), \(p\), and \(c\), here’s the graph of \(f(x)\). As you can see, the maximum occurs at about \(x^* = 55\) applications!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/appcountutility.png&quot; alt=&quot;A grpah showing the number of applications and the utility.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/app-count-utility.svg&quot; alt=&quot;A graph showing the number of applications and the utility.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can solve for the maximum analytically using a method you might have learned in high school calculus: \(x^*\) represents the point where \(f(x)\) stops increasing and starts decreasing. That is, the point where its slope \(f&apos;(x)\) is zero.&lt;/p&gt;
 
@@ -1138,14 +1138,14 @@ can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 <a href="https://github.com/maxkapur/CollegeApplication">MS thesis</a>.</p>
 
-<p><img alt="The Mulberry logo: a magenta berry and a green leaf" src="/assets/mulberrylogo.png" width="150px" height="150px" /></p>
+<p><img alt="The Mulberry logo: a magenta berry and a green leaf" src="/assets/mulberry-logo.png" width="150px" height="150px" /></p>
 </summary>
     <content type="html">&lt;p&gt;I recently created &lt;a href=&quot;https://maxkapur.com/mulberry&quot;&gt;Mulberry&lt;/a&gt;, a webapp students
 can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;MS thesis&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&quot;The Mulberry logo: a magenta berry and a green leaf&quot; src=&quot;/assets/mulberrylogo.png&quot; width=&quot;150px&quot; height=&quot;150px&quot; /&gt;
+&lt;p&gt;&lt;img alt=&quot;The Mulberry logo: a magenta berry and a green leaf&quot; src=&quot;/assets/mulberry-logo.png&quot; width=&quot;150px&quot; height=&quot;150px&quot; /&gt;
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;Why Mulberry? There are boatloads of “chance me!” websites (some more trustworthy
@@ -1435,7 +1435,7 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 <p>I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:</p>
 
-<p><img src="/assets/jejuconference.jpg" alt="Max giving a presentation about the college application problem at a conference in Jeju" /></p>
+<p><img src="/assets/jeju-conference.jpg" alt="Max giving a presentation about the college application problem at a conference in Jeju" /></p>
 </summary>
     <content type="html">&lt;p&gt;This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;this GitHub repository&lt;/a&gt;, and all are provided in both English and Korean versions. I also have a very brief deck of &lt;a href=&quot;https://maxkapur.com/CollegeApplication&quot;&gt;reveal.js slides&lt;/a&gt; introducing the problem, and I recently wrote some &lt;a href=&quot;https://maxkapur.com/OptimalApplication.jl/stable/&quot;&gt;documentation for OptimalApplication.jl&lt;/a&gt;, the Julia implementation of my solution algorithms.&lt;/p&gt;
 
@@ -1443,7 +1443,7 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 &lt;p&gt;I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/jejuconference.jpg&quot; alt=&quot;Max giving a presentation about the college application problem at a conference in Jeju&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/jeju-conference.jpg&quot; alt=&quot;Max giving a presentation about the college application problem at a conference in Jeju&quot; /&gt;&lt;/p&gt;
 </content>
   </entry>
   
@@ -1618,7 +1618,7 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 
 <p>I am leaving Naju, after having grown accustomed to this routine, this commute, these faces, and I cannot say with any confidence that I have reached a joy plateau. Every week of teaching here has been better than the last: my skills have improved, my confidence has grown, and the teachers and students have become only more important to me. I could be happy like this for a long time. But.</p>
 
-<p><img src="assets/gsmsfarewell.jpg" alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors." /></p>
+<p><img src="assets/gsms-farewell.jpg" alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors." /></p>
 
 <p>But too much comfort has a way of smearing all the time together, so that the things that take place in a given day feel less like events and more like footnote references to proto-events hovering in the firmament of the distant past. I have already seen the river clog itself with duckweed; I have already looked down the street from all four of the intersection’s corners, trying to make the buildings line up with the trees. Upon inspection, a more sensitive man might look at these rhododendrons and see something more than last year’s blossoms in a different configuration, but I am a pattern-matcher by nature, too easily bored to remain a recluse. It is time for a new challenge.</p>
 
@@ -1632,7 +1632,7 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 
 &lt;p&gt;I am leaving Naju, after having grown accustomed to this routine, this commute, these faces, and I cannot say with any confidence that I have reached a joy plateau. Every week of teaching here has been better than the last: my skills have improved, my confidence has grown, and the teachers and students have become only more important to me. I could be happy like this for a long time. But.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/gsmsfarewell.jpg&quot; alt=&quot;A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/gsms-farewell.jpg&quot; alt=&quot;A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;But too much comfort has a way of smearing all the time together, so that the things that take place in a given day feel less like events and more like footnote references to proto-events hovering in the firmament of the distant past. I have already seen the river clog itself with duckweed; I have already looked down the street from all four of the intersection’s corners, trying to make the buildings line up with the trees. Upon inspection, a more sensitive man might look at these rhododendrons and see something more than last year’s blossoms in a different configuration, but I am a pattern-matcher by nature, too easily bored to remain a recluse. It is time for a new challenge.&lt;/p&gt;
 
@@ -1654,7 +1654,7 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;Hiring managers’ preference for specialists is widely known. So, smart people, who tend to be good at estimating job-market incentives (thanks to the correlation between domains of intelligence), gravitate toward programs that award narrow, in-demand credentials—even when the credentials are nominally equivalent (a BA in linguistics vs. a BA in English). This can create a feedback loop in which fields that are perceived as “challenging,” like computer science, attract challenge-seeking entrants, raising the standards of proficiency within the field and making it more difficult for a newcomer to rise above average. On the other hand, majors that are perceived as relatively easy, like sociology, may attract less-ambitious students, leading to deflated expectations and dissuading hard workers. (I have met a few people who told me that they majored in the liberal arts because they were “bad at math.” I have never met a STEM major who chose their field because they were “bad at writing.”)&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;img src=&quot;/assets/numberofdegrees.png&quot; alt=&quot;A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop.&quot; /&gt;
+  &lt;img src=&quot;/assets/number-of-degrees.png&quot; alt=&quot;A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop.&quot; /&gt;
   &lt;figcaption&gt;(National Center for Education Statistics,  &lt;a href=&quot;https://nces.ed.gov/programs/coe/indicator_cta.asp&quot;&gt;Undergraduate Degree Fields&lt;/a&gt;)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1687,14 +1687,14 @@ And, as many have probably heard, a signature feature of the Korean admissions p
     <id>/2020/01/19/what-you-learn-humanities</id>
     <summary><p>The more I learn, I find myself with fewer and fewer things to say.</p>
 
-<p><img src="/assets/whatiftheories.png" alt="A Reddit post reading, &quot;What to do if i have theories? I contacted a college and they ignored me&quot;" /></p>
+<p><img src="/assets/what-if-theories.png" alt="A Reddit post reading, &quot;What to do if i have theories? I contacted a college and they ignored me&quot;" /></p>
 
 <p>As a humanities student, I studied many “theories.” One theory is historicism, which says that things are the products of their historical settings. Example: At a career mixer, a well-dressed alumnus, class of ’70, approaches a sophomore journalism major. “The first thing you should do once you’re financially independent and you’ve got some money saved up is make a down payment on a house. Nobody will ever stop needing houses,” he says. The advice is a historical artifact, extruded from a certain moment in American politics and a certain set of assumptions about credit scores and work contingency and citizenship status. The student may react with with doubt; her doubt is also historical. It encodes her upbringing, and a different relationship with houses and banks and the word <em>independent.</em></p>
 
 </summary>
     <content type="html">&lt;p&gt;The more I learn, I find myself with fewer and fewer things to say.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/whatiftheories.png&quot; alt=&quot;A Reddit post reading, &amp;quot;What to do if i have theories? I contacted a college and they ignored me&amp;quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/what-if-theories.png&quot; alt=&quot;A Reddit post reading, &amp;quot;What to do if i have theories? I contacted a college and they ignored me&amp;quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As a humanities student, I studied many “theories.” One theory is historicism, which says that things are the products of their historical settings. Example: At a career mixer, a well-dressed alumnus, class of ’70, approaches a sophomore journalism major. “The first thing you should do once you’re financially independent and you’ve got some money saved up is make a down payment on a house. Nobody will ever stop needing houses,” he says. The advice is a historical artifact, extruded from a certain moment in American politics and a certain set of assumptions about credit scores and work contingency and citizenship status. The student may react with with doubt; her doubt is also historical. It encodes her upbringing, and a different relationship with houses and banks and the word &lt;em&gt;independent.&lt;/em&gt;&lt;/p&gt;
 
