@@ -9,7 +9,13 @@ You could write a linear program that targets your ideal mix of longevity and ha
 
 I am leaving Naju, after having grown accustomed to this routine, this commute, these faces, and I cannot say with any confidence that I have reached a joy plateau. Every week of teaching here has been better than the last: my skills have improved, my confidence has grown, and the teachers and students have become only more important to me. I could be happy like this for a long time. But.
 
-![A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors.](assets/gsms-farewell.jpg)
+<figure>
+<img
+  src="assets/gsms-farewell.jpg"
+  class="compact"
+  alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors."
+/>
+</figure>
 
 But too much comfort has a way of smearing all the time together, so that the things that take place in a given day feel less like events and more like footnote references to proto-events hovering in the firmament of the distant past. I have already seen the river clog itself with duckweed; I have already looked down the street from all four of the intersection&rsquo;s corners, trying to make the buildings line up with the trees. Upon inspection, a more sensitive man might look at these rhododendrons and see something more than last year’s blossoms in a different configuration, but I am a pattern-matcher by nature, too easily bored to remain a recluse. It is time for a new challenge.
 

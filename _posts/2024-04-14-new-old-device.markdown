@@ -10,10 +10,9 @@ out of a box.
 <figure>
 <img
   src="/assets/rockbox-sansa-clip.jpg"
-  style="max-width: min(500px, 100%);"
+  class="compact"
   alt="An image of an Obama-era Sansa clip (released in late 2007, probably manufactured later) running the Rockbox custom firmware"
 />
-
 </figure>
 
 It’s battery life is shot, but everything works, and I unearthed some critical
