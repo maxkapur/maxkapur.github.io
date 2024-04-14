@@ -9,13 +9,85 @@
  <link href="/feed.xml" rel="self" />
  <link href="/" rel="alternate" />
  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-03-23T19:27:56+00:00</updated>
+ <updated>2024-04-14T19:13:50+00:00</updated>
  <id>/</id>
  <author>
     <name></name>
     <email></email>
   </author>
  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  
+  <entry>
+    <title>New old device</title>
+    <link rel="alternate" href="/2024/04/14/new-old-device.html" />
+    <updated>2024-04-14T00:00:00+00:00</updated><updated-readable>Apr 14, 2024</updated-readable>
+    <id>/2024/04/14/new-old-device</id>
+    <summary><p>On a recent visit home, I dug this 2007
+<a href="https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip">Sansa Clip</a> 
+out of a box.</p>
+
+<figure>
+<img src="/assets/rockbox-sansa-clip.jpg" class="compact" alt="An image of an Obama-era Sansa clip (released in late 2007, probably manufactured later) running the Rockbox custom firmware" />
+</figure>
+
+<p>It’s battery life is shot, but everything works, and I unearthed some critical
+throwback jams from the built-in 4GB of flash memory (among other things, the
+first four Brad Paisley albums in .wma format). As the picture shows, I also
+installed a bit of custom firmware called <a href="https://www.rockbox.org/">Rockbox</a>.</p>
+
+</summary>
+    <content type="html">&lt;p&gt;On a recent visit home, I dug this 2007
+&lt;a href=&quot;https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip&quot;&gt;Sansa Clip&lt;/a&gt; 
+out of a box.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/assets/rockbox-sansa-clip.jpg&quot; class=&quot;compact&quot; alt=&quot;An image of an Obama-era Sansa clip (released in late 2007, probably manufactured later) running the Rockbox custom firmware&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;It’s battery life is shot, but everything works, and I unearthed some critical
+throwback jams from the built-in 4GB of flash memory (among other things, the
+first four Brad Paisley albums in .wma format). As the picture shows, I also
+installed a bit of custom firmware called &lt;a href=&quot;https://www.rockbox.org/&quot;&gt;Rockbox&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;I remembered Rockbox from using it on a different MP3 player (a Sansa e200)
+prior to the Clip. It runs on dozens of classic ’00s devices (including some of
+the early iPods) and provides a wide range of features and customization options
+beyond the stock firmware—things like support for the FLAC audio format, a
+dynamic equalizer, and better tools for managing playlist and the “now playing”
+queue. There are additional plugins for games, translations, font selection, and
+image viewing.&lt;sup id=&quot;fnref:imageview&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:imageview&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Rockbox distributes an installation wizard for Linux platforms, but I couldn’t
+get it to work (it 404’d trying to download the fonts package&lt;sup id=&quot;fnref:404&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:404&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;). Fortunately,
+the “manual” installation isn’t hard. You just download one of the official
+firmware updates from Sandisk, then apply Rockbox’s patch and transfer the
+result to the device’s root directory. By design, the Clip attempts to execute
+&lt;em&gt;any&lt;/em&gt; file in the root directory whose name matches a certain pattern. This
+firmware update mechanism was a welcome convenience for tinkerers, but it’s
+probably too insecure for today’s internet-mandatory smartphones.&lt;/p&gt;
+
+&lt;p&gt;Playing with the Clip has renewed my excitement for the
+&lt;a href=&quot;https://sr.ht/~jacqueline/tangara/&quot;&gt;Tangara&lt;/a&gt;, an open-source, crowdfunded MP3
+player slash nostalgia platform that aims to combine the hackability of those
+2000s devices with such modern comforts as Bluetooth and USB-C. I don’t fault
+Tangara for writing their own firmware, but I really hope that Rockbox gets
+ported to it, too, as Rockbox basically defined the “handheld music player”
+interface for me at a formative age. Nothing else feels quite as flexible or
+obvious.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:imageview&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Image viewing works even on the Clip’s simple two-color display. It uses random &lt;a href=&quot;https://en.wikipedia.org/wiki/Dither&quot;&gt;dithering&lt;/a&gt; to represent fractional lightness values, and rerolls the randomness with each screen refresh to produce a nice composition effect. This kills the battery in short time. &lt;a href=&quot;#fnref:imageview&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:404&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I wasn’t sure how best to spell &lt;em&gt;404’d,&lt;/em&gt; and couldn’t find the verb form in any of the dictionaries I checked, but I settled on this spelling by comparison with a reference to &lt;em&gt;86’d&lt;/em&gt; in this &lt;a href=&quot;https://www.merriam-webster.com/wordplay/eighty-six-meaning-origin&quot;&gt;Merriam-Webster article&lt;/a&gt;. The more you know. &lt;a href=&quot;#fnref:404&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Recent reading</title>
@@ -1435,7 +1507,9 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 <p>I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:</p>
 
-<p><img src="/assets/jeju-conference.jpg" alt="Max giving a presentation about the college application problem at a conference in Jeju" /></p>
+<figure>
+<img src="/assets/jeju-conference.jpg" class="compact" alt="Max giving a presentation about the college application problem at a conference in Jeju" />
+</figure>
 </summary>
     <content type="html">&lt;p&gt;This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;this GitHub repository&lt;/a&gt;, and all are provided in both English and Korean versions. I also have a very brief deck of &lt;a href=&quot;https://maxkapur.com/CollegeApplication&quot;&gt;reveal.js slides&lt;/a&gt; introducing the problem, and I recently wrote some &lt;a href=&quot;https://maxkapur.com/OptimalApplication.jl/stable/&quot;&gt;documentation for OptimalApplication.jl&lt;/a&gt;, the Julia implementation of my solution algorithms.&lt;/p&gt;
 
@@ -1443,7 +1517,9 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 &lt;p&gt;I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/jeju-conference.jpg&quot; alt=&quot;Max giving a presentation about the college application problem at a conference in Jeju&quot; /&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/jeju-conference.jpg&quot; class=&quot;compact&quot; alt=&quot;Max giving a presentation about the college application problem at a conference in Jeju&quot; /&gt;
+&lt;/figure&gt;
 </content>
   </entry>
   
@@ -1618,7 +1694,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 
 <p>I am leaving Naju, after having grown accustomed to this routine, this commute, these faces, and I cannot say with any confidence that I have reached a joy plateau. Every week of teaching here has been better than the last: my skills have improved, my confidence has grown, and the teachers and students have become only more important to me. I could be happy like this for a long time. But.</p>
 
-<p><img src="assets/gsms-farewell.jpg" alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors." /></p>
+<figure>
+<img src="assets/gsms-farewell.jpg" class="compact" alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors." />
+</figure>
 
 <p>But too much comfort has a way of smearing all the time together, so that the things that take place in a given day feel less like events and more like footnote references to proto-events hovering in the firmament of the distant past. I have already seen the river clog itself with duckweed; I have already looked down the street from all four of the intersection’s corners, trying to make the buildings line up with the trees. Upon inspection, a more sensitive man might look at these rhododendrons and see something more than last year’s blossoms in a different configuration, but I am a pattern-matcher by nature, too easily bored to remain a recluse. It is time for a new challenge.</p>
 
@@ -1632,7 +1710,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 
 &lt;p&gt;I am leaving Naju, after having grown accustomed to this routine, this commute, these faces, and I cannot say with any confidence that I have reached a joy plateau. Every week of teaching here has been better than the last: my skills have improved, my confidence has grown, and the teachers and students have become only more important to me. I could be happy like this for a long time. But.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/gsms-farewell.jpg&quot; alt=&quot;A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors.&quot; /&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;assets/gsms-farewell.jpg&quot; class=&quot;compact&quot; alt=&quot;A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors.&quot; /&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;But too much comfort has a way of smearing all the time together, so that the things that take place in a given day feel less like events and more like footnote references to proto-events hovering in the firmament of the distant past. I have already seen the river clog itself with duckweed; I have already looked down the street from all four of the intersection’s corners, trying to make the buildings line up with the trees. Upon inspection, a more sensitive man might look at these rhododendrons and see something more than last year’s blossoms in a different configuration, but I am a pattern-matcher by nature, too easily bored to remain a recluse. It is time for a new challenge.&lt;/p&gt;
 
@@ -1654,8 +1734,11 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;Hiring managers’ preference for specialists is widely known. So, smart people, who tend to be good at estimating job-market incentives (thanks to the correlation between domains of intelligence), gravitate toward programs that award narrow, in-demand credentials—even when the credentials are nominally equivalent (a BA in linguistics vs. a BA in English). This can create a feedback loop in which fields that are perceived as “challenging,” like computer science, attract challenge-seeking entrants, raising the standards of proficiency within the field and making it more difficult for a newcomer to rise above average. On the other hand, majors that are perceived as relatively easy, like sociology, may attract less-ambitious students, leading to deflated expectations and dissuading hard workers. (I have met a few people who told me that they majored in the liberal arts because they were “bad at math.” I have never met a STEM major who chose their field because they were “bad at writing.”)&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;img src=&quot;/assets/number-of-degrees.png&quot; alt=&quot;A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop.&quot; /&gt;
-  &lt;figcaption&gt;(National Center for Education Statistics,  &lt;a href=&quot;https://nces.ed.gov/programs/coe/indicator_cta.asp&quot;&gt;Undergraduate Degree Fields&lt;/a&gt;)&lt;/figcaption&gt;
+  &lt;img src=&quot;/assets/number-of-degrees.png&quot; class=&quot;squareborder&quot; alt=&quot;A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop.&quot; /&gt;
+  &lt;figcaption&gt;
+  (National Center for Education Statistics,
+  &lt;a href=&quot;https://nces.ed.gov/programs/coe/indicator_cta.asp&quot;&gt;Undergraduate Degree Fields&lt;/a&gt;)
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Nothing in this argument depends on the skills actually conferred by a given degree program or the skills actually required by an employer. A tech company needs managers and product designers just as much as it needs engineers, but positions in management and product design are typically reserved as rewards for distinguished engineers rather than handed out to people who majored in management or design. This is because a coder’s science degree(s), plus a few years of demonstrated commitment to the company, signals greater potential for success in the new role than some stranger’s design credential, which may relate more to the job but is also easier to obtain.&lt;/p&gt;
