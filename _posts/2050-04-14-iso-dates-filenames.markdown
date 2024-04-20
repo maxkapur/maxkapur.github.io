@@ -5,8 +5,8 @@ title:      "Why I put ISO dates in filenames"
 
 I am one of those obnoxious people who begins his filenames with an ISO date,
 like `2024-03-06_blog_post_idea.md`. I know that file metadata already tracks
-creation and revision dates, but I don't like those. The creation date is
-misleading when you duplicate a file to reuse its format or content. And the
+creation and revision dates, but I don't like those: The creation date is
+misleading when you duplicate a file to reuse its format or content, and the
 revision date is all but meaningless because modern software modifies files on
 disk in all kinds of spurious ways. I put an ISO date in my filenames
 to assign them a *canonical* date. The canonical date means something like “the
@@ -30,15 +30,16 @@ OneDrive. So, if I log in before them in the morning and make some edits, their
 version of the file goes out of date, but their OneDrive is powerless to detect
 it or show them my changes. This results in an instant version conflict when
 they come back online, make an edit, and reflexively press
-<kbd>Ctrl</kbd>+<kbd>s</kbd>. I magnanimously prevent this problem by copying
+<kbd>Ctrl</kbd>+<kbd>s</kbd>. I munificently prevent this problem by copying
 each file and advancing the ISO date before making edits so that everyone can
 see that my version is the newest.
 
 [^logoff]: When I sign off for the day, I like to shut my computer all the way down to purge <a href="https://en.wikipedia.org/wiki/Daemon_(computing)">the demons</a>. But I can’t fault others for not doing so, because cold-booting Windows with all the bloat, reopening all your files and email, and logging into Workday and so on is a fifteen-minute process *at best.*
 
-Ironically, the VPN/OneDrive fight would never arise on an old-school NAS or
+Ironically, the VPN vs. OneDrive fight would never arise on an old-school NAS or
 “S:// drive,” because (assuming the shared drive is behind the VPN), when the
 VPN lease expires, the `~$whatever.docx` lock file (a hidden file that indicates
 when a file is being edited, and is completely ignored by OneDrive) would stay
 on the NAS, and I would be *forced* to make my edits on a copy of the file
-instead of the original—as I already do, manually.
+instead of the original—which is exactly what I already do, manually, now that
+I’ve learned never to trust software.
