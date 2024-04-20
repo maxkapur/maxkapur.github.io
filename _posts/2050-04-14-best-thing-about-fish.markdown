@@ -17,7 +17,7 @@ until you get the one you want.
 
 This works fine if you put the most-unique part of your filenames at the
 beginning. But I like to begin my filenames with
-[ISO dates]({% post_url 2050-04-14-iso-dates-filenames %}),
+[ISO dates]({% post_url 2024-05-01-iso-dates-filenames %}),
 <!-- update post url -->
 so to tab-complete `2024-03-06_blog_post_idea.md` in PowerShell, I have to
 type `2024` and then jab the arrow key a bunch of times, which is like using a
