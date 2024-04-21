@@ -106,6 +106,15 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: #008000;
+  text-decoration: underline;
+  /* Couple of places where we don't want links underlined until hovered: */
+  /* This is a weird case: Without this block, the space before the username
+  also gets underlined, which looks bad; we only want the username itself to
+  be highlighted. Moreover, selector specificity requires this rule to be last
+  so that it overrides the &:hover rule above (or else the space is again
+  underlined on hover. */
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, header a, .excerpt-warning a {
   text-decoration: none;
 }
 a:visited {
@@ -115,10 +124,10 @@ a:hover {
   color: #111;
   text-decoration: underline;
 }
-.social-media-list a:hover {
+.social-media-list a {
   text-decoration: none;
 }
-.social-media-list a:hover .username {
+.social-media-list a .username {
   text-decoration: underline;
 }
 
@@ -140,21 +149,27 @@ blockquote > :last-child {
 }
 
 /**
- * Code formatting
+ * Code and kbd formatting
  */
 pre,
-code {
-  font-size: 15px;
-  border: 1px solid #b7ccb7;
+code,
+kbd {
+  /* @include relative-font-size(0.9375); */
+  font-size: 90%;
   border-radius: 3px;
-  background-color: #eef;
+  padding: 0 0.1em;
+  font-weight: 600;
 }
 
-code {
+kbd {
+  border: 1px solid #3e4853;
+  font-family: inherit;
   padding: 1px 5px;
 }
 
+/* A little extra padding on code "blocks" (vs. inline code) */
 pre {
+  border: 1px solid #b7ccb7;
   padding: 8px 12px;
   overflow-x: auto;
 }
@@ -162,6 +177,7 @@ pre > code {
   border: 0;
   padding-right: 0;
   padding-left: 0;
+  font-weight: normal;
 }
 
 /**
