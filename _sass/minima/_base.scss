@@ -167,21 +167,27 @@ blockquote {
 
 
 /**
- * Code formatting
+ * Code and kbd formatting
  */
 pre,
-code {
-  @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+code,
+kbd {
+  /* @include relative-font-size(0.9375); */
+  font-size: 90%;
   border-radius: 3px;
-  background-color: #eef;
+  padding: 0 0.1em;
+  font-weight: 600;
 }
 
-code {
+kbd {
+  border: 1px solid $grey-color-dark;
+  font-family: inherit;
   padding: 1px 5px;
 }
 
+/* A little extra padding on code "blocks" (vs. inline code) */
 pre {
+  border: 1px solid $grey-color-light;
   padding: 8px 12px;
   overflow-x: auto;
 
@@ -189,6 +195,7 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0;
+    font-weight: normal;
   }
 }
 
@@ -236,6 +243,7 @@ pre {
     height: 16px;
     display: inline-block;
     fill: #{$grey-color};
+
     padding-right: 5px;
     vertical-align: text-top;
 }
