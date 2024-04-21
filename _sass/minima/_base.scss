@@ -125,7 +125,20 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $brand-color;
-  text-decoration: none;
+  text-decoration: underline;
+
+  /* Couple of places where we don't want links underlined until hovered: */
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 &,
+  header &,
+  .excerpt-warning & {
+    text-decoration: none;
+  }
+
 
   &:visited {
     color: desaturate($brand-color, 50%);
@@ -135,8 +148,13 @@ a {
     color: $text-color;
     text-decoration: underline;
   }
-
-  .social-media-list &:hover {
+  
+  /* This is a weird case: Without this block, the space before the username
+  also gets underlined, which looks bad; we only want the username itself to
+  be highlighted. Moreover, selector specificity requires this rule to be last
+  so that it overrides the &:hover rule above (or else the space is again
+  underlined on hover. */
+  .social-media-list & {
     text-decoration: none;
 
     .username {
@@ -144,7 +162,6 @@ a {
     }
   }
 }
-
 
 /**
  * Blockquotes
