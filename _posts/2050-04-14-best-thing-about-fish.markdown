@@ -6,14 +6,14 @@ title:      "The best thing about fish"
 The best thing about fish is probably the
 [lateral line](https://en.wikipedia.org/wiki/Lateral_line),
 which sort of like ears for underwater that enable fish to sense and locate
-predators even in dark or murky water.
+predators even in dark or murky conditions.
 
-The best thing about the fish shell, on the other hand, has got to be its
-“fuzzy” completions. In most other shells (like Microsoft PowerShell, which I
-use every day at work), you can tab-complete a filename like `blog_post_idea.md`
-by typing `blog` (the first part of the filename) and pressing <kbd>Tab</kbd>.
-If there are multiple matches, you use the arrow keys to scroll through them
-until you get the one you want.
+The best thing about the fish command-line *shell,* on the other hand, has to be
+its “fuzzy” completions. In most other shells (like Microsoft PowerShell, which
+I use every day at work), you can tab-complete a filename like
+`blog_post_idea.md` by typing `blog` (the first part of the filename) and
+pressing <kbd>Tab</kbd>. If there are multiple matches, you use the arrow keys
+to scroll through them until you get the one you want.
 
 This works fine if you put the most-unique part of your filenames at the
 beginning. But I like to begin my filenames with
