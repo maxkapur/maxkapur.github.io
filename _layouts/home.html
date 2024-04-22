@@ -24,20 +24,18 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
           {%- if post.content contains site.excerpt_separator -%}
-            <p class="excerpt-warning">
+          <p class="excerpt-warning">
 	          <a href="{{ post.url | relative_url }}"> 
 	            <!-- (⋯) -->
 	            <!-- (read more) -->
 	            Read more →
 	          </a>
-            </p>
+          </p>
           {%- endif -%}
         {%- endif -%}
       </div>
       {%- endfor -%}
     </div>
-
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-
 </div>
