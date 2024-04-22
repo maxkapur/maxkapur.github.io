@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: #008000;
-  text-decoration: underline;
+  text-decoration: underline solid currentcolor 0.5px;
   /* Couple of places where we don't want links underlined until hovered: */
   /* This is a weird case: Without this block, the space before the username
   also gets underlined, which looks bad; we only want the username itself to
@@ -121,8 +121,7 @@ a:visited {
   color: #206020;
 }
 a:hover {
-  color: #111;
-  text-decoration: underline;
+  text-decoration: underline solid currentcolor auto;
 }
 .social-media-list a {
   text-decoration: none;
@@ -516,10 +515,11 @@ p.excerpt-warning {
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  /* background: #fff; */
+  background: #fffff5;
 }
 .highlighter-rouge .highlight {
-  background: #eef;
+  /* background: #eef; */
 }
 .highlight .c {
   color: #998;

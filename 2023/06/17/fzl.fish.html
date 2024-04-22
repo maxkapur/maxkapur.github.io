@@ -4,14 +4,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>fzl.fish | Illusion Slopes</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>fzl.fish | Illusion Slopes</title><!-- Randomly replace a small number of "read more" links with "read moar" -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    for (const p of document.getElementsByClassName("excerpt-warning")) {
+      for (const a of p.getElementsByTagName("a")) {
+        if (Math.random() < 0.05) {
+          a.innerText = a.innerText.replace("more", "moar");
+        };
+      };
+    };
+  });
+</script>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>fzl.fish | Illusion Slopes</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="fzl.fish" />
 <meta name="author" content="Max Kapur" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \ $bat_command \ --style numbers \ --color always \ --italic-text always \ --wrap auto \ --terminal-width $bat_width fzf \ --preview &quot;$bat_command {}&quot; \ --preview-window right,$bat_width,nowrap end Example:" />
-<meta property="og:description" content="I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \ $bat_command \ --style numbers \ --color always \ --italic-text always \ --wrap auto \ --terminal-width $bat_width fzf \ --preview &quot;$bat_command {}&quot; \ --preview-window right,$bat_width,nowrap end Example:" />
+<meta name="description" content="I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \ $bat_command \ --style numbers \ --color always \ --italic-text always \ --wrap auto \ --terminal-width $bat_width fzf \ --preview &quot;$bat_command {}&quot; \ --preview-window right,$bat_width,nowrap end Example below." />
+<meta property="og:description" content="I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \ $bat_command \ --style numbers \ --color always \ --italic-text always \ --wrap auto \ --terminal-width $bat_width fzf \ --preview &quot;$bat_command {}&quot; \ --preview-window right,$bat_width,nowrap end Example below." />
 <link rel="canonical" href="/2023/06/17/fzl.fish.html" />
 <meta property="og:url" content="/2023/06/17/fzl.fish.html" />
 <meta property="og:site_name" content="Illusion Slopes" />
@@ -20,7 +32,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="fzl.fish" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2023-06-17T00:00:00+00:00","datePublished":"2023-06-17T00:00:00+00:00","description":"I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \\ $bat_command \\ --style numbers \\ --color always \\ --italic-text always \\ --wrap auto \\ --terminal-width $bat_width fzf \\ --preview &quot;$bat_command {}&quot; \\ --preview-window right,$bat_width,nowrap end Example:","headline":"fzl.fish","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/06/17/fzl.fish.html"},"url":"/2023/06/17/fzl.fish.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2023-06-17T00:00:00+00:00","datePublished":"2023-06-17T00:00:00+00:00","description":"I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \\ $bat_command \\ --style numbers \\ --color always \\ --italic-text always \\ --wrap auto \\ --terminal-width $bat_width fzf \\ --preview &quot;$bat_command {}&quot; \\ --preview-window right,$bat_width,nowrap end Example below.","headline":"fzl.fish","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/06/17/fzl.fish.html"},"url":"/2023/06/17/fzl.fish.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Illusion Slopes" /><!-- KaTeX -->
   
@@ -96,7 +108,7 @@
 
 <!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
-<p>Example:</p>
+<p>Example below.<!--more--></p>
 
 <p><img src="/assets/fish-fzl-example.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &quot;Thesis defense&quot; is highlighted." /></p>
 

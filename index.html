@@ -4,7 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Illusion Slopes</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>Illusion Slopes</title><!-- Randomly replace a small number of "read more" links with "read moar" -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    for (const p of document.getElementsByClassName("excerpt-warning")) {
+      for (const a of p.getElementsByTagName("a")) {
+        if (Math.random() < 0.05) {
+          a.innerText = a.innerText.replace("more", "moar");
+        };
+      };
+    };
+  });
+</script>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Illusion Slopes | I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Illusion Slopes" />
@@ -281,10 +293,14 @@ take over the next time the application is launched.</p>
 
 <!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
-<p>Example:</p>
-
-<p><img src="/assets/fish-fzl-example.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &quot;Thesis defense&quot; is highlighted." /></p>
-</div><div class="post-list-item"><span class="post-meta">Feb 5, 2023</span>
+<p>Example below.</p>
+<p class="excerpt-warning">
+	          <a href="/2023/06/17/fzl.fish.html"> 
+	            <!-- (⋯) -->
+	            <!-- (read more) -->
+	            Read more →
+	          </a>
+            </p></div><div class="post-list-item"><span class="post-meta">Feb 5, 2023</span>
         <h3>
           <a class="post-link" href="/2023/02/05/korean-idioms-fortunes.html">
             Learning Korean idioms with UNIX fortune
@@ -304,13 +320,14 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 <p>This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”</p>
 
-<p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal:</p>
-
-<p><img src="./assets/fish-fortune-greeter.png" alt="A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말." /></p>
-
-<p>You can find my database and <code class="language-plaintext highlighter-rouge">fish_greeter.fish</code> script on <a href="https://github.com/maxkapur/korean-fortunes">Github</a>.</p>
-
-</div><div class="post-list-item"><span class="post-meta">Jan 27, 2023</span>
+<p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal—see below.</p>
+<p class="excerpt-warning">
+	          <a href="/2023/02/05/korean-idioms-fortunes.html"> 
+	            <!-- (⋯) -->
+	            <!-- (read more) -->
+	            Read more →
+	          </a>
+            </p></div><div class="post-list-item"><span class="post-meta">Jan 27, 2023</span>
         <h3>
           <a class="post-link" href="/2023/01/27/kiss-guitar-modeling.html">
             Applying the KISS principle to amp modeling

@@ -9,7 +9,7 @@
  <link href="/feed.xml" rel="self" />
  <link href="/" rel="alternate" />
  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-04-21T17:43:54+00:00</updated>
+ <updated>2024-04-22T00:27:25+00:00</updated>
  <id>/</id>
  <author>
     <name></name>
@@ -632,9 +632,7 @@ take over the next time the application is launched.&lt;/p&gt;
 
 <!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
-<p>Example:</p>
-
-<p><img src="/assets/fish-fzl-example.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &quot;Thesis defense&quot; is highlighted." /></p>
+<p>Example below.</p>
 </summary>
     <content type="html">&lt;p&gt;I’ve been using the following fish alias &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzl&lt;/code&gt; (“fuzzy list”) to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzf&lt;/code&gt; (“fuzzy find”) in the current directory with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bat&lt;/code&gt; preview. It’s just a couple of light tweaks to the examples listed in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fzf&lt;/code&gt; &lt;a href=&quot;https://github.com/junegunn/fzf#preview-window&quot;&gt;readme&lt;/a&gt;.&lt;/p&gt;
 
@@ -669,7 +667,7 @@ take over the next time the application is launched.&lt;/p&gt;
 
 &lt;!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll --&gt;
 
-&lt;p&gt;Example:&lt;/p&gt;
+&lt;p&gt;Example below.&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/fish-fzl-example.png&quot; alt=&quot;A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &amp;quot;Thesis defense&amp;quot; is highlighted.&quot; /&gt;&lt;/p&gt;
 </content>
@@ -695,12 +693,7 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 <p>This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”</p>
 
-<p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal:</p>
-
-<p><img src="./assets/fish-fortune-greeter.png" alt="A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말." /></p>
-
-<p>You can find my database and <code class="language-plaintext highlighter-rouge">fish_greeter.fish</code> script on <a href="https://github.com/maxkapur/korean-fortunes">Github</a>.</p>
-
+<p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal—see below.</p>
 </summary>
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fortune_(Unix)&quot;&gt;fortune&lt;/a&gt; is a classic UNIX program that displays random fortunes, pithy quotes, and the like:&lt;/p&gt;
 
@@ -717,7 +710,7 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 &lt;p&gt;This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”&lt;/p&gt;
 
-&lt;p&gt;I set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fortune korean&lt;/code&gt; (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal:&lt;/p&gt;
+&lt;p&gt;I set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fortune korean&lt;/code&gt; (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal—see below.&lt;!--more--&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;./assets/fish-fortune-greeter.png&quot; alt=&quot;A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말.&quot; /&gt;&lt;/p&gt;
 
