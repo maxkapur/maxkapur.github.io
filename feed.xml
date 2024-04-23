@@ -8,17 +8,17 @@
   https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
 -->
 <feed xmlns="http://www.w3.org/2005/Atom">
- <title>{{ site.title }}</title>
- <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" />
- <link href="{{ site.url }}{{ site.baseurl }}/" rel="alternate" />
- <subtitle>{{ site.description }}</subtitle>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}/</id>
- <author>
+  <title>{{ site.title }}</title>
+  <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" />
+  <link href="{{ site.url }}{{ site.baseurl }}/" rel="alternate" />
+  <subtitle>{{ site.description }}</subtitle>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  <author>
     <name>{{ site.author.name }}</name>
     <email>{{ site.author.email }}</email>
   </author>
- <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
   {% for post in site.posts %}
   <entry>
     <title>{{ post.title }}</title>
