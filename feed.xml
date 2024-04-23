@@ -5,17 +5,17 @@
   https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
 -->
 <feed xmlns="http://www.w3.org/2005/Atom">
- <title>Illusion Slopes</title>
- <link href="/feed.xml" rel="self" />
- <link href="/" rel="alternate" />
- <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
- <updated>2024-04-22T00:27:25+00:00</updated>
- <id>/</id>
- <author>
+  <title>Illusion Slopes</title>
+  <link href="/feed.xml" rel="self" />
+  <link href="/" rel="alternate" />
+  <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
+  <updated>2024-04-23T00:03:17+00:00</updated>
+  <id>/</id>
+  <author>
     <name></name>
     <email></email>
   </author>
- <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
   
   <entry>
     <title>New old device</title>
