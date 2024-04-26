@@ -271,3 +271,16 @@ p.excerpt-warning {
   font-size: $small-font-size;
   margin-top: -0.5em;
 }
+
+/**
+ * Atom feed preview
+ */
+/* Sample rule that aligns the dates to the right: */
+/*
+.feed {
+  ul.atom-post-list li .atom-post-list-entry {
+    display: flex; 
+    justify-content: space-between; 
+  }
+}
+*/

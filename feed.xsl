@@ -41,7 +41,7 @@
       </header>
       <main>
         <div class="wrapper">
-          <ul>
+          <ul class="atom-post-list">
             <xsl:apply-templates select="atom:feed/atom:entry" />
           </ul>
         </div>
@@ -67,19 +67,21 @@
 
   <xsl:template match="atom:entry">
     <li>
-      <a target="_blank">
-        <xsl:attribute name="href">
-          <xsl:value-of select="atom:id" />
-        </xsl:attribute>
-        <xsl:value-of select="atom:title" />
-      </a>
-      <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
-      <!--
-        Uncomment below to incorporate post excerpts into the styled preview.
-        Note that the excerpts are included in the *feed itself* in either case,
-        as defined in feed.xml.
-      -->
-      <!-- <xsl:value-of select="atom:summary" disable-output-escaping="no" /> -->
+      <div class="atom-post-list-entry">
+        <a target="_blank">
+          <xsl:attribute name="href">
+            <xsl:value-of select="atom:id" />
+          </xsl:attribute>
+          <xsl:value-of select="atom:title" />
+        </a>
+        <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
+        <!--
+          Uncomment below to incorporate post excerpts into the styled preview.
+          Note that the excerpts are included in the *feed itself* in either
+          case, as defined in feed.xml.
+        -->
+        <!-- <xsl:value-of select="atom:summary" disable-output-escaping="no" /> -->
+      </div>
     </li>
   </xsl:template>
 </xsl:stylesheet>
