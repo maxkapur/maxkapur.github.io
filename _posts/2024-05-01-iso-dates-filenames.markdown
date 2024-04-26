@@ -13,7 +13,7 @@ to assign them a *canonical* date. The canonical date means something like “th
 last date at which this file underwent a significant change,” and I alone (not
 software) can determine what that means.<!--more-->[^spurious]
 
-[^spurious]: An example of the spurious ways in which modern software modifies files on disk: If you open a Microsoft Excel worksheet, adjust the zoom, and try to close Excel, it will issue a “Do you want to save your changes?” warning. I’m not sure why the zoom level is stored in the .xlsx file at all. In Word (as far as I can tell), the zoom level, like scroll position, belongs to your <em>session</em> state and will thus be remembered separately for different viewers of the document.
+[^spurious]: An example of the spurious ways in which modern software modifies files on disk: If you open a Microsoft Excel worksheet, adjust the zoom, and try to close Excel, it will issue a “Do you want to save your changes?” warning. I’m not sure why the zoom level is stored in the `.xlsx` file at all. In Word (as far as I can tell), the zoom level, like scroll position, belongs to your <em>session</em> state and will thus be remembered separately for different viewers of the document.
 
     I have had some funny moments in client meetings where I pulled up an Excel sheet and it loaded at an illegible 50% because my last edit was to finalize the layout. 100% is the default for a reason!
 
