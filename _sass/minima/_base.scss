@@ -47,6 +47,13 @@ strong {
   font-weight: $base-font-bold-weight;
 }
 
+// This keeps sup elements from making their lines awkwardly higher than others
+// https://stackoverflow.com/questions/1530685/how-can-i-keep-consistent-line-height-with-superscript-elements
+sub,
+sup {
+  line-height: 100%;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
