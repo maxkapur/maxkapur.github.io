@@ -43,9 +43,8 @@ body {
   flex-direction: column;
 }
 
-/* Default bold weight (700) is too intense in Rubik */
 strong {
-  font-weight: 500;
+  font-weight: $base-font-bold-weight;
 }
 
 /**
@@ -222,15 +221,15 @@ blockquote {
 pre,
 code {
   font-family: $monospace-font-family;
+  font-weight: $monospace-font-bold-weight;
   font-size: 90%;
   padding: 0 0.1em;
-  font-weight: 600;
 }
  
 kbd {
-  font-family: inherit;
+  font-family: $base-font-family;
+  font-weight: $base-font-bold-weight;
   font-size: 90%;
-  font-weight: 600;
   border: 1px solid $grey-color-dark;
   border-radius: 3px;
   padding: 3px 5px 2px 5px;
