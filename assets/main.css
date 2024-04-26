@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap");
-/* $grey-color-light: lighten($grey-color, 40%) !default; */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /**
  * Reset some basic elements
  */
@@ -39,6 +38,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+/* Default bold weight (700) is too intense in Rubik */
+strong {
+  font-weight: 500;
 }
 
 /**
@@ -181,24 +185,26 @@ blockquote > :last-child {
  * Code and kbd formatting
  */
 pre,
-code,
-kbd {
-  /* @include relative-font-size(0.9375); */
+code {
+  font-family: "Noto Sans Mono", monospace;
   font-size: 90%;
-  border-radius: 3px;
   padding: 0 0.1em;
   font-weight: 600;
 }
 
 kbd {
-  border: 1px solid #3e4853;
   font-family: inherit;
+  font-size: 90%;
+  font-weight: 600;
+  border: 1px solid #3e4853;
+  border-radius: 3px;
   padding: 3px 5px 2px 5px;
 }
 
 /* A little extra padding on code "blocks" (vs. inline code) */
 pre {
   border: 1px solid #b7ccb7;
+  border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
 }
@@ -541,6 +547,18 @@ p.excerpt-warning {
   margin-top: -0.5em;
 }
 
+/**
+ * Atom feed preview
+ */
+/* Sample rule that aligns the dates to the right: */
+/*
+.feed {
+  ul.atom-post-list li .atom-post-list-entry {
+    display: flex; 
+    justify-content: space-between; 
+  }
+}
+*/
 /**
  * Syntax highlighting styles
  */
