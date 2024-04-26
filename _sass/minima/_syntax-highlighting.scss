@@ -3,7 +3,7 @@
  */
 .highlight {
   // background: #fff;
-  background: lighten($background-color, 2%);
+  background: $highlight-color;
   @extend %vertical-rhythm;
 
   // .highlighter-rouge & {
