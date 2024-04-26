@@ -43,7 +43,10 @@ body {
   flex-direction: column;
 }
 
-
+/* Default bold weight (700) is too intense in Rubik */
+strong {
+  font-weight: 500;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -217,24 +220,26 @@ blockquote {
  * Code and kbd formatting
  */
 pre,
-code,
-kbd {
-  /* @include relative-font-size(0.9375); */
+code {
+  font-family: $monospace-font-family;
   font-size: 90%;
-  border-radius: 3px;
   padding: 0 0.1em;
   font-weight: 600;
 }
-
+ 
 kbd {
-  border: 1px solid $grey-color-dark;
   font-family: inherit;
+  font-size: 90%;
+  font-weight: 600;
+  border: 1px solid $grey-color-dark;
+  border-radius: 3px;
   padding: 3px 5px 2px 5px;
 }
 
 /* A little extra padding on code "blocks" (vs. inline code) */
 pre {
   border: 1px solid $grey-color-light;
+  border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
 
