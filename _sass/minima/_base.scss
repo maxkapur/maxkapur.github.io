@@ -94,19 +94,14 @@ img {
   border-radius: 8px;
 }
 
-/*
-By default, images are the full width of the text. This is a little loud for
-some images, so add a .compact class to those that we want to be a bit smaller.
-*/
+// By default, images are the full width of the text. This is a little loud for
+// some images; add a .compact class to those that we want to be a bit smaller.
 img.compact {
   max-width: min(100%, 600px);
 }
 
-/*
-To remove the border radius from images (e.g. graphs) that have content all the
-way to the corners.
-*/
-
+// Add this style to remove the border radius from images (e.g. graphs) that
+// have content all the way to the corners.
 img.squareborder {
   border-radius: 0;
 }
@@ -167,7 +162,7 @@ a {
   color: $brand-color;
   text-decoration: underline solid currentcolor 0.5px;
 
-  /* Couple of places where we don't want links underlined until hovered: */
+  // Couple of places where we don't want links underlined until hovered:
   h1 &,
   h2 &,
   h3 &,
@@ -179,7 +174,6 @@ a {
     text-decoration: none;
   }
 
-
   &:visited {
     color: desaturate($brand-color, 50%);
   }
@@ -188,11 +182,11 @@ a {
     text-decoration: underline solid currentcolor auto;
   }
 
-  /* This is a weird case: Without this block, the space before the username
-  also gets underlined, which looks bad; we only want the username itself to
-  be highlighted. Moreover, selector specificity requires this rule to be last
-  so that it overrides the &:hover rule above (or else the space is again
-  underlined on hover. */
+  // This is a weird case: Without this block, the space before the username
+  // also gets underlined, which looks bad; we only want the username itself to
+  // be highlighted. Moreover, selector specificity requires this rule to be
+  // last so that it overrides the &:hover rule above (or else the space is
+  // again underlined on hover).
   .social-media-list & {
     text-decoration: none;
 
@@ -209,11 +203,6 @@ blockquote {
   color: $grey-color-dark;
   border-left: 3px solid $grey-color-light;
   padding-left: math.div($spacing-unit, 3);
-  /*
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
-  font-style: italic;
-  */
 
   > :last-child {
     margin-bottom: 0;
@@ -306,7 +295,6 @@ kbd {
 /**
  * Icons
  */
-
 .svg-icon {
   width: 16px;
   height: 16px;
@@ -351,14 +339,14 @@ table {
 }
 
 
-/* Add a separator at top of footnotes */
+// Add a separator at top of footnotes
 div.footnotes {
   border-top: 1px solid $grey-color-light;
   padding-top: math.div($spacing-unit, 2);
 }
 
-/* Change to a pointer cursor so users know they can click
-the summary text instead of tiny triangle */
+// Change to a pointer cursor so users know they can click the summary text
+// instead of tiny triangle
 details>summary {
   cursor: pointer;
   font-style: italic;
