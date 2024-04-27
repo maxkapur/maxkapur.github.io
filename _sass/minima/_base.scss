@@ -162,7 +162,15 @@ h6 {
  */
 a {
   color: $brand-color;
-  text-decoration: underline solid currentcolor 0.5px;
+  @include subtle-underline;
+
+  &:visited {
+    color: desaturate($brand-color, 50%);
+  }
+
+  &:hover {
+    @include heavy-underline;
+  }
 
   // Couple of places where we don't want links underlined until hovered:
   h1 &,
@@ -173,15 +181,11 @@ a {
   h6 &,
   .site-header &,
   .excerpt-warning & {
-    text-decoration: none;
-  }
+    @include no-underline;
 
-  &:visited {
-    color: desaturate($brand-color, 50%);
-  }
-
-  &:hover {
-    text-decoration: underline solid currentcolor auto;
+    &:hover {
+      @include heavy-underline;
+    }
   }
 
   // This is a weird case: Without this block, the space before the username
@@ -190,10 +194,14 @@ a {
   // last so that it overrides the &:hover rule above (or else the space is
   // again underlined on hover).
   .social-media-list & {
-    text-decoration: none;
+    @include no-underline;
 
     .username {
-      text-decoration: underline;
+      @include subtle-underline;
+
+      &:hover {
+        @include heavy-underline;
+      }
     }
   }
 }

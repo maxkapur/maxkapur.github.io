@@ -1,8 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-// Define defaults for each variable.
-
 $base-font-family: "Rubik", sans-serif;
 $base-font-size: 1rem;
 $base-font-weight: 400;
@@ -13,10 +11,26 @@ $base-line-height: 1.5;
 $monospace-font-family: "Noto Sans Mono", monospace;
 $monospace-font-size: $base-font-size * 0.9;
 $monospace-font-strong-weight: 600;
+
 @mixin monospace-strong {
   font-family: $monospace-font-family;
   font-size: $monospace-font-size;
   font-weight: $monospace-font-strong-weight;
+}
+
+// These two mixins are intended to differentiate normal links
+// from hovered links:
+@mixin subtle-underline {
+  text-decoration: underline solid currentColor 1px;
+}
+
+@mixin heavy-underline {
+  text-decoration: underline solid currentColor 1.5px;
+}
+// For completeness' sake, this mixin undoes the other two in
+// case one of those styles was inherited:
+@mixin no-underline {
+  text-decoration: none;
 }
 
 $small-font-size: $base-font-size * 0.875;
