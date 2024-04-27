@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-/* Default bold weight (700) is too intense in Rubik */
 /**
  * Reset some basic elements
  */
@@ -23,11 +22,15 @@ figure {
   padding: 0;
 }
 
+html {
+  font-size: 1rem;
+}
+
 /**
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Rubik", sans-serif;
+  font: 400 1rem/1.5 "Rubik", sans-serif;
   color: #111;
   background-color: #ffffeb;
   -webkit-text-size-adjust: 100%;
@@ -86,18 +89,10 @@ img {
   border-radius: 8px;
 }
 
-/*
-By default, images are the full width of the text. This is a little loud for
-some images, so add a .compact class to those that we want to be a bit smaller.
-*/
 img.compact {
   max-width: min(100%, 600px);
 }
 
-/*
-To remove the border radius from images (e.g. graphs) that have content all the
-way to the corners.
-*/
 img.squareborder {
   border-radius: 0;
 }
@@ -112,7 +107,7 @@ figure {
 }
 
 figcaption {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 /**
@@ -145,28 +140,28 @@ h6 {
  */
 a {
   color: #008000;
-  text-decoration: underline solid currentcolor 0.5px;
-  /* Couple of places where we don't want links underlined until hovered: */
-  /* This is a weird case: Without this block, the space before the username
-  also gets underlined, which looks bad; we only want the username itself to
-  be highlighted. Moreover, selector specificity requires this rule to be last
-  so that it overrides the &:hover rule above (or else the space is again
-  underlined on hover. */
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .site-header a, .excerpt-warning a {
-  text-decoration: none;
+  text-decoration: underline solid currentColor 1px;
 }
 a:visited {
   color: #206020;
 }
 a:hover {
-  text-decoration: underline solid currentcolor auto;
+  text-decoration: underline solid currentColor 1.5px;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .site-header a, .excerpt-warning a {
+  text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .site-header a:hover, .excerpt-warning a:hover {
+  text-decoration: underline solid currentColor 1.5px;
 }
 .social-media-list a {
   text-decoration: none;
 }
 .social-media-list a .username {
-  text-decoration: underline;
+  text-decoration: underline solid currentColor 1px;
+}
+.social-media-list a .username:hover {
+  text-decoration: underline solid currentColor 1.5px;
 }
 
 /**
@@ -176,48 +171,43 @@ blockquote {
   color: #3e4853;
   border-left: 3px solid #b7ccb7;
   padding-left: 10px;
-  /*
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
-  font-style: italic;
-  */
 }
 blockquote > :last-child {
   margin-bottom: 0;
 }
 
 /**
- * Code and kbd formatting
+ * Code
  */
-pre,
 code {
   font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 90%;
   padding: 0 0.1em;
 }
 
-kbd {
-  font-family: "Rubik", sans-serif;
-  font-weight: 450;
-  font-size: 90%;
-  border: 1px solid #3e4853;
-  border-radius: 3px;
-  padding: 3px 5px 2px 5px;
-}
-
-/* A little extra padding on code "blocks" (vs. inline code) */
 pre {
   border: 1px solid #b7ccb7;
   border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
+  font-size: 0.9rem;
 }
 pre > code {
-  border: 0;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
   font-weight: normal;
+}
+
+/**
+ * Keyboard
+ */
+kbd {
+  font-family: "Rubik", sans-serif;
+  font-weight: 450;
+  font-size: 0.875rem;
+  border: 1px solid #3e4853;
+  border-radius: 3px;
+  padding: 3px 5px 2px 5px;
 }
 
 /**
@@ -261,10 +251,6 @@ pre > code {
   vertical-align: text-top;
 }
 
-.social-media-list li + li {
-  padding-top: 5px;
-}
-
 /**
  * Tables
  */
@@ -287,14 +273,11 @@ table th {
   border-bottom-width: 2px;
 }
 
-/* Add a separator at top of footnotes */
 div.footnotes {
   border-top: 1px solid #b7ccb7;
   padding-top: 15px;
 }
 
-/* Change to a pointer cursor so users know they can click
-the summary text instead of tiny triangle */
 details > summary {
   cursor: pointer;
   font-style: italic;
@@ -316,9 +299,9 @@ details {
 }
 
 .site-title {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 400;
-  line-height: 54px;
+  line-height: 3.375rem;
   letter-spacing: -0.5px;
   margin-bottom: 0;
   float: left;
@@ -329,7 +312,7 @@ details {
 
 .site-nav {
   float: right;
-  line-height: 54px;
+  line-height: 3.375rem;
 }
 .site-nav .nav-trigger {
   display: none;
@@ -401,7 +384,7 @@ details {
 }
 
 .footer-heading {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 15px;
 }
 
@@ -412,50 +395,27 @@ details {
 }
 
 .footer-col-wrapper {
-  font-size: 15px;
+  font-size: 0.875rem;
   color: #778899;
-  margin-left: -15px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  justify-content: space-between;
+  gap: 0 60px;
 }
-
-.footer-col {
-  float: left;
-  margin-bottom: 15px;
-  padding-left: 15px;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (30px / 2));
-  width: calc(35% - 30px / 2);
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (30px / 2));
-  width: calc(20% - 30px / 2);
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (30px / 2));
-  width: calc(45% - 30px / 2);
-}
-
 @media screen and (max-width: 800px) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (30px / 2));
-    width: calc(50% - 30px / 2);
+  .footer-col-wrapper {
+    grid-template-columns: 1fr 1fr;
   }
-  .footer-col-3 {
-    width: -webkit-calc(100% - (30px / 2));
-    width: calc(100% - 30px / 2);
+  .footer-col-wrapper .footer-col:last-child:nth-child(odd) {
+    grid-column: 1/-1;
   }
 }
 @media screen and (max-width: 600px) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (30px / 2));
-    width: calc(100% - 30px / 2);
+  .footer-col-wrapper {
+    grid-template-columns: 1fr;
   }
 }
+
 /**
  * Page content
  */
@@ -465,31 +425,27 @@ details {
 }
 
 .page-heading {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .post-list-heading {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 .post-list {
   margin-left: 0;
-  list-style: none;
-  /* > li { } in original Jekyll */
 }
 .post-list > .post-list-item {
-  /* Amount of space between posts on homepage */
   margin-bottom: 90px;
 }
 
 .post-meta {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #778899;
 }
 
 .post-link {
   display: block;
-  font-size: 24px;
 }
 
 /**
@@ -500,42 +456,42 @@ details {
 }
 
 .post-title {
-  font-size: 35.2px;
+  font-size: 2.2rem;
   letter-spacing: -0.5px;
   line-height: 1;
-  color: #008000;
 }
 @media screen and (max-width: 800px) {
   .post-title {
-    font-size: 35.2px;
+    font-size: 2.2rem;
   }
 }
 
 .post-content {
   margin-bottom: 30px;
 }
-.post-content h2 {
-  font-size: 32px;
+.post-content h1 {
+  font-size: 1.5rem;
 }
-@media screen and (max-width: 800px) {
-  .post-content h2 {
-    font-size: 28px;
-  }
+.post-content h2 {
+  font-size: 1.2rem;
+  color: #3e4853;
+  margin-bottom: 7.5px;
 }
 .post-content h3 {
-  font-size: 26px;
+  font-size: 1rem;
+  font-weight: 450;
 }
-@media screen and (max-width: 800px) {
+@supports (display: run-in) {
   .post-content h3 {
-    font-size: 22px;
+    display: run-in;
+  }
+  .post-content h3::after {
+    content: ": ";
   }
 }
-.post-content h4 {
-  font-size: 20px;
-}
-@media screen and (max-width: 800px) {
-  .post-content h4 {
-    font-size: 18px;
+@supports not (display: run-in) {
+  .post-content h3 {
+    margin-bottom: 7.5px;
   }
 }
 
@@ -543,7 +499,7 @@ details {
  * Text indicating that a post has more to read.
  */
 p.excerpt-warning {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-top: -0.5em;
 }
 
@@ -574,10 +530,14 @@ p.excerpt-warning {
   background-color: #e3d2d2;
 }
 .highlight .k {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .o {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .cm {
   color: #998;
@@ -585,7 +545,9 @@ p.excerpt-warning {
 }
 .highlight .cp {
   color: #999;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .c1 {
   color: #998;
@@ -593,7 +555,9 @@ p.excerpt-warning {
 }
 .highlight .cs {
   color: #999;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
   font-style: italic;
 }
 .highlight .gd {
@@ -628,7 +592,9 @@ p.excerpt-warning {
   color: #555;
 }
 .highlight .gs {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .gu {
   color: #aaa;
@@ -637,20 +603,30 @@ p.excerpt-warning {
   color: #a00;
 }
 .highlight .kc {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .kd {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .kp {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .kr {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .kt {
   color: #458;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .m {
   color: #099;
@@ -666,7 +642,9 @@ p.excerpt-warning {
 }
 .highlight .nc {
   color: #458;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .no {
   color: #008080;
@@ -676,11 +654,15 @@ p.excerpt-warning {
 }
 .highlight .ne {
   color: #900;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .nf {
   color: #900;
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .nn {
   color: #555;
@@ -692,7 +674,9 @@ p.excerpt-warning {
   color: #008080;
 }
 .highlight .ow {
-  font-weight: bold;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .highlight .w {
   color: #bbb;

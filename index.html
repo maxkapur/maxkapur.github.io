@@ -16,7 +16,26 @@
     };
   });
 </script>
-<!-- Begin Jekyll SEO tag v2.8.0 -->
+<!--
+  KaTeX block to insert into <head> on pages that require it.
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+  crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+  crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      // ...options...
+    });
+  });
+</script>
+<link rel="stylesheet" href="/assets/main.css"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Illusion Slopes | I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Illusion Slopes" />
@@ -33,30 +52,20 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Max Kapur"},"description":"I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.","headline":"Illusion Slopes","name":"Illusion Slopes","url":"/"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Illusion Slopes" /><!-- KaTeX -->
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            // ...options...
-        });
-    });
-  </script>
-  
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
-  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
-  <link rel="shortcut icon" href="/assets/images/favicon.ico">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Illusion Slopes" /><!--
+  Favicon block to insert into <head>. In its own file so that we can include
+  the favicon definitions in feed.xsl without introducing the other
+  (XML-incompatible) parts of the head.
+-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
 </head>
 <body><header class="site-header" role="banner">
 
@@ -78,11 +87,11 @@
         <div class="home">
 <!-- <h2 class="post-list-heading">Posts</h2> -->
     <div class="post-list"><div class="post-list-item"><span class="post-meta">Apr 26, 2024</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2024/04/26/iso-dates-filenames.html">
             Why I put ISO dates in filenames
           </a>
-        </h3><p>I am one of those obnoxious people who begins his filenames with an ISO date,
+        </h2><p>I am one of those obnoxious people who begins his filenames with an ISO date,
 like <code class="language-plaintext highlighter-rouge">2024-03-06_blog_post_idea.md</code>. I know that file metadata already tracks
 creation and revision dates, but I don’t like those: The creation date is
 misleading when you duplicate a file to reuse its format or content, and the
@@ -98,11 +107,11 @@ software) can determine what that means.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Apr 14, 2024</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2024/04/14/new-old-device.html">
             New old device
           </a>
-        </h3><p>On a recent visit home, I dug this 2007
+        </h2><p>On a recent visit home, I dug this 2007
 <a href="https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip">Sansa Clip</a> 
 out of a box.</p>
 
@@ -122,11 +131,11 @@ installed a bit of custom firmware called <a href="https://www.rockbox.org/">Roc
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Mar 18, 2024</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2024/03/18/recent-reading.html">
             Recent reading
           </a>
-        </h3><p>Mostly novels this time:</p>
+        </h2><p>Mostly novels this time:</p>
 
 <ul>
   <li>
@@ -167,11 +176,11 @@ them to examine their feelings in group counseling.</p>
 to have a backup option in case their rickety website finally gives way. Write
 if you know of any others.</p>
 </div><div class="post-list-item"><span class="post-meta">Mar 10, 2024</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2024/03/10/housekeeping.html">
             Housekeeping
           </a>
-        </h3><p>Completed some overdue site maintenance over the past few weeks:</p>
+        </h2><p>Completed some overdue site maintenance over the past few weeks:</p>
 
 <ul>
   <li>
@@ -214,11 +223,11 @@ times and user privacy.</p>
   </li>
 </ul>
 </div><div class="post-list-item"><span class="post-meta">Jan 1, 2024</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2024/01/01/handy-submodular.html">
             A handy class of submodular functions
           </a>
-        </h3><p>In this post, we will show that functions of the form</p>
+        </h2><p>In this post, we will show that functions of the form</p>
 
 \[f(X) = 1 -
 \prod_{i \in \Omega \setminus X} (1 - p_i)
@@ -234,11 +243,11 @@ practical value.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Nov 5, 2023</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2023/11/05/recent-reading.html">
             Recent reading
           </a>
-        </h3><p>Finished reading, but still thinking about:</p>
+        </h2><p>Finished reading, but still thinking about:</p>
 
 <ul>
   <li>정유정, «종의 기원», a thriller.</li>
@@ -257,11 +266,11 @@ practical value.</p>
   <li>정유정, «내 심장을 쏴라», a thriller.</li>
 </ul>
 </div><div class="post-list-item"><span class="post-meta">Jul 22, 2023</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2023/07/22/guitarix-troubleshooting.html">
             Guitarix troubleshooting
           </a>
-        </h3><p>For the past few updates of <a href="https://guitarix.org/">Guitarix</a>, I have been
+        </h2><p>For the past few updates of <a href="https://guitarix.org/">Guitarix</a>, I have been
 having issues where changing the JACK server latency causes the audio output
 to go crazy. This seems to stem from changes that the developer has been
 making to the config files, because the following commands usually get things
@@ -276,11 +285,11 @@ working again:</p>
 (which are the hard part to restore manually), and let the default settings 
 take over the next time the application is launched.</p>
 </div><div class="post-list-item"><span class="post-meta">Jun 17, 2023</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2023/06/17/fzl.fish.html">
             fzl.fish
           </a>
-        </h3><p>I’ve been using the following fish alias <code class="language-plaintext highlighter-rouge">fzl</code> (“fuzzy list”) to run <code class="language-plaintext highlighter-rouge">fzf</code> (“fuzzy find”) in the current directory with a <code class="language-plaintext highlighter-rouge">bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <code class="language-plaintext highlighter-rouge">fzf</code> <a href="https://github.com/junegunn/fzf#preview-window">readme</a>.</p>
+        </h2><p>I’ve been using the following fish alias <code class="language-plaintext highlighter-rouge">fzl</code> (“fuzzy list”) to run <code class="language-plaintext highlighter-rouge">fzf</code> (“fuzzy find”) in the current directory with a <code class="language-plaintext highlighter-rouge">bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <code class="language-plaintext highlighter-rouge">fzf</code> <a href="https://github.com/junegunn/fzf#preview-window">readme</a>.</p>
 
 <p><code class="language-plaintext highlighter-rouge">~/.config/fish/functions/fzl.fish</code>:</p>
 
@@ -321,11 +330,11 @@ take over the next time the application is launched.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Feb 5, 2023</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2023/02/05/korean-idioms-fortunes.html">
             Learning Korean idioms with UNIX fortune
           </a>
-        </h3><p><a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a> is a classic UNIX program that displays random fortunes, pithy quotes, and the like:</p>
+        </h2><p><a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a> is a classic UNIX program that displays random fortunes, pithy quotes, and the like:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fortune
 If you think last Tuesday was a drag, wait till you see what happens tomorrow!
@@ -348,11 +357,11 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jan 27, 2023</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2023/01/27/kiss-guitar-modeling.html">
             Applying the KISS principle to amp modeling
           </a>
-        </h3><p>I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
+        </h2><p>I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
 I started out with Garageband and Mainstage, then briefly experimented with <a href="https://www.kuassa.com/products/amplifikation-vermilion/">Amplifikation Vermilion</a>, and for the last year and half have turned to a free, open-source package called <a href="https://guitarix.org/">Guitarix</a> and a small collection of impulse response files culled from guitar forums.
 In my experience, a good impulse response file fed into a basic convolver does a lot more for your sound than trying to optimize the countless parameters on an expensive simulator.</p>
 
@@ -363,11 +372,11 @@ In my experience, a good impulse response file fed into a basic convolver does a
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Dec 17, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/12/17/this-years-reading.html">
             This year’s reading
           </a>
-        </h3><p>A subset of the books I enjoyed this year:</p>
+        </h2><p>A subset of the books I enjoyed this year:</p>
 <ul>
   <li>Barbara Kingsolver, <em>The Poisonwood Bible,</em> a novel about evangelical Christianity and cultural arrogance.</li>
   <li>손원평, «아몬드», a novel debating whether or not emotions are a distraction.</li>
@@ -385,11 +394,11 @@ In my experience, a good impulse response file fed into a basic convolver does a
   <li>David Foster Wallace, <em>Infinite Jest.</em></li>
 </ul>
 </div><div class="post-list-item"><span class="post-meta">Nov 6, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/11/06/two-truths-one-lie.html">
             Two truths and one lie
           </a>
-        </h3><p>A puzzle based on the icebreaker game.</p>
+        </h2><p>A puzzle based on the icebreaker game.</p>
 
 <blockquote>
   <p>Two truths and one lie:</p>
@@ -409,11 +418,11 @@ In my experience, a good impulse response file fed into a basic convolver does a
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Oct 16, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/10/16/new-bah-job.html">
             New job at Booz Allen Hamilton
           </a>
-        </h3><p>I’m happy to share a somewhat belated bit of good news: This month, I
+        </h2><p>I’m happy to share a somewhat belated bit of good news: This month, I
 began a new job as an operations research analyst at the consulting firm
 Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington,
 Virginia, a suburb of DC with a mild climate and lots of natural beauty.</p>
@@ -429,11 +438,11 @@ have a tradition of listening to the Brahms Piano Trio in B
 Major at transitions like this. <a href="https://www.youtube.com/watch?v=neyLy-xGgoE">Here’s one of my favorite
 interpretations.</a></p>
 </div><div class="post-list-item"><span class="post-meta">Sep 4, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/09/04/masters-graduation.html">
             Master’s graduation and two free optimization courses
           </a>
-        </h3><p>On September 29, I received my master’s degree in industrial engineering from Seoul National University!</p>
+        </h2><p>On September 29, I received my master’s degree in industrial engineering from Seoul National University!</p>
 
 <p><img src="/assets/ms-graduation.jpg" alt="A photograph of Max wearing his cap and gown at Seoul National University." /></p>
 
@@ -445,11 +454,11 @@ interpretations.</a></p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Sep 1, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/09/01/apply-fifty-colleges.html">
             Apply to fifty colleges
           </a>
-        </h3><p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.</p>
+        </h2><p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.</p>
 <p class="excerpt-warning">
 	          <a href="/2022/09/01/apply-fifty-colleges.html"> 
 	            <!-- (⋯) -->
@@ -457,11 +466,11 @@ interpretations.</a></p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Aug 18, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/08/18/multiple-selection.html">
             Grading multiple-selection questions
           </a>
-        </h3><p>Consider the following test question:</p>
+        </h2><p>Consider the following test question:</p>
 
 <blockquote>
   <p>Which of the following are US States? (select multiple)</p>
@@ -482,11 +491,11 @@ interpretations.</a></p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Aug 2, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/08/02/mulberry.html">
             Mulberry: A college application strategist
           </a>
-        </h3><p>I recently created <a href="https://maxkapur.com/mulberry">Mulberry</a>, a webapp students
+        </h2><p>I recently created <a href="https://maxkapur.com/mulberry">Mulberry</a>, a webapp students
 can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 <a href="https://github.com/maxkapur/CollegeApplication">MS thesis</a>.</p>
@@ -499,11 +508,11 @@ open-source, user-friendly interface to Algorithm 1 from my
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jul 15, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/07/15/srt-delay.html">
             Python utility for manipulating subtitle timings
           </a>
-        </h3><p>One of my current projects involves editing several hours’ worth of subtitle files in the 
+        </h2><p>One of my current projects involves editing several hours’ worth of subtitle files in the 
 <code class="language-plaintext highlighter-rouge">.srt</code> format to accompany an online course in numerical optimization. Because we haven’t 
 decided exactly how we want to break up the videos, I needed an efficient way to delay
 or advance all the subtitles in time, so I wrote a small Python program called <code class="language-plaintext highlighter-rouge">srt_delay.py</code> today to help me with this task.</p>
@@ -516,11 +525,11 @@ or advance all the subtitles in time, so I wrote a small Python program called <
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jul 1, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/07/01/opening-pandoras-box.html">
             Opening Pandora’s Box
           </a>
-        </h3><p>A harrowing thing that happens in research is that occasionally, you stumble upon a
+        </h2><p>A harrowing thing that happens in research is that occasionally, you stumble upon a
 <a href="https://doi.org/10.2307/1910412">paper from 1979 (paywall)</a> that appears to solve
 the exact problem that you’ve been working on for months, but that escaped your
 attention because it used different terminology or notation.</p>
@@ -539,11 +548,11 @@ problem is static.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jun 25, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/06/25/migrating-to-jekyll.html">
             Migrating to Jekyll
           </a>
-        </h3><p>After reflecting on my unsustainable dependency on Google services, I have decided to bite
+        </h2><p>After reflecting on my unsustainable dependency on Google services, I have decided to bite
 the bullet and migrate my blog from Blogger to the open-source <a href="https://github.com/jekyll/jekyll">Jekyll</a>,
 with hosting provided by GitHub. In the full version of this post,
 I explain some of the technical reasons for making this change.</p>
@@ -555,11 +564,11 @@ I explain some of the technical reasons for making this change.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jun 19, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/06/19/thesis-defense.html">
             Thesis defense
           </a>
-        </h3><p>This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on <a href="https://github.com/maxkapur/CollegeApplication">this GitHub repository</a>, and all are provided in both English and Korean versions. I also have a very brief deck of <a href="https://maxkapur.com/CollegeApplication">reveal.js slides</a> introducing the problem, and I recently wrote some <a href="https://maxkapur.com/OptimalApplication.jl/stable/">documentation for OptimalApplication.jl</a>, the Julia implementation of my solution algorithms.</p>
+        </h2><p>This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on <a href="https://github.com/maxkapur/CollegeApplication">this GitHub repository</a>, and all are provided in both English and Korean versions. I also have a very brief deck of <a href="https://maxkapur.com/CollegeApplication">reveal.js slides</a> introducing the problem, and I recently wrote some <a href="https://maxkapur.com/OptimalApplication.jl/stable/">documentation for OptimalApplication.jl</a>, the Julia implementation of my solution algorithms.</p>
 
 <p>The defense process was relatively painless: I received some very helpful comments and reference suggestions from the professors on my committee, and I was pleased that they were persuaded by my argument that the model of the college admissions process I have chosen represents the best tradeoff between realism and tractability.</p>
 
@@ -569,19 +578,19 @@ I explain some of the technical reasons for making this change.</p>
 <img src="/assets/jeju-conference.jpg" class="compact" alt="Max giving a presentation about the college application problem at a conference in Jeju" />
 </figure>
 </div><div class="post-list-item"><span class="post-meta">May 13, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/05/13/college-application-presentation-korean.html">
             The college application problem, presented in Korean
           </a>
-        </h3><p>I gave a brief
+        </h2><p>I gave a brief
 <a href="https://www.youtube.com/watch?v=tZCSwCPd1Qc">presentation about the college application problem</a>
 at a research fair hosted by our department. English subtitles are included.</p>
 </div><div class="post-list-item"><span class="post-meta">May 4, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/05/04/college-application-on-arxiv.html">
             “College Application” on arXiv
           </a>
-        </h3><p>In advance of a conference I will be attending with my labmates next month in Jeju, my thesis advisor and I have posted a preliminary version of <a href="https://arxiv.org/abs/2205.01869">“The College Application Problem” on arXiv</a>. Here’s the abstract:</p>
+        </h2><p>In advance of a conference I will be attending with my labmates next month in Jeju, my thesis advisor and I have posted a preliminary version of <a href="https://arxiv.org/abs/2205.01869">“The College Application Problem” on arXiv</a>. Here’s the abstract:</p>
 
 <blockquote>
   <p>This paper considers the maximization of the expected maximum value of a portfolio of random variables subject to a budget constraint. We refer to this as the optimal college application problem. When each variable’s cost, or each college’s application fee, is identical, we show that the optimal portfolios are nested in the budget constraint, yielding an exact polynomial-time algorithm. When colleges differ in their application fees, we show that the problem is NP-complete. We provide four algorithms for this more general setup: a branch-and-bound routine, a dynamic program that produces an exact solution in pseudopolynomial time, a different dynamic program that yields a fully polynomial-time approximation scheme, and a simulated-annealing heuristic. Numerical experiments demonstrate the algorithms’ accuracy and efficiency.</p>
@@ -589,11 +598,11 @@ at a research fair hosted by our department. English subtitles are included.</p>
 
 <p>Rolling updates to the paper as well as various slideshows presenting the research are <a href="https://github.com/maxkapur/CollegeApplication">available on GitHub</a>.</p>
 </div><div class="post-list-item"><span class="post-meta">Apr 14, 2022</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2022/04/14/school-location-problem.html">
             The school location problem
           </a>
-        </h3><p>I’ve spent a few days thinking about a facility location problem that
+        </h2><p>I’ve spent a few days thinking about a facility location problem that
 we might call the <em>school location problem.</em> The goal is to place \(n\)
 schools to serve \(m\) families, such that the <em>furthest</em> distance
 between any family and their <em>nearest</em> school is <em>minimized.</em> This
@@ -604,11 +613,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 
 <p>Here’s the <a href="https://www.youtube.com/watch?v=/bjreiQRHerU">video link</a>.</p>
 </div><div class="post-list-item"><span class="post-meta">Oct 21, 2021</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2021/10/21/administrative-allocative-efficiency.html">
             Administrative vs. allocative efficiency
           </a>
-        </h3><p>This fall marks my final semester of coursework, and penultimate semester overall, of the master’s course in industrial engineering here at Seoul National University. I’m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.</p>
+        </h2><p>This fall marks my final semester of coursework, and penultimate semester overall, of the master’s course in industrial engineering here at Seoul National University. I’m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.</p>
 
 <p>Recently, I have been focusing on risk-averse behavior in college applications. In an ideal universe, college applications are completely standardized and there are no constraints on students’ ability to apply to many schools or on schools’ ability to assess a large number of applicants. In reality, many highly qualified students fail to apply to top schools because they doubt their ability to get in or receive a sufficient financial-aid package. For these students, the time and money required to submit an additional application to a so-called reach school takes away from time that could be spent refining an application to a target school. This opportunity cost is not trivial, because modern admissions offices strongly prefer students who tailor their personal statement to the characteristics and interests of the target school or program.</p>
 
@@ -619,11 +628,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">May 16, 2021</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2021/05/16/economic-view-korean-admissions.html">
             An economic view of the Korean college admissions market
           </a>
-        </h3><p>Existing computational models of admissions markets tend to fall at one of two extremes: Either they envision a <em>centralized</em> admissions process in which the school board runs an algorithm that says which students go where, or a <em>decentralized</em> process in which colleges compete for the best students. But the Korean college admissions process cannot be adequately described in either of these terms.</p>
+        </h2><p>Existing computational models of admissions markets tend to fall at one of two extremes: Either they envision a <em>centralized</em> admissions process in which the school board runs an algorithm that says which students go where, or a <em>decentralized</em> process in which colleges compete for the best students. But the Korean college admissions process cannot be adequately described in either of these terms.</p>
 
 <p class="excerpt-warning">
 	          <a href="/2021/05/16/economic-view-korean-admissions.html"> 
@@ -632,11 +641,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Mar 7, 2021</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2021/03/07/stable-matching-planet-money.html">
             Stable matching on Planet Money
           </a>
-        </h3><p><em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled “The Marriage Pact”</a> that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.</p>
+        </h2><p><em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled “The Marriage Pact”</a> that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.</p>
 
 <p>The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that <em>Planet Money</em> leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.</p>
 
@@ -647,11 +656,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jul 7, 2020</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2020/07/07/next.html">
             Next
           </a>
-        </h3><p>They say that we perceive time by the accumulation of novel experiences, so that if you want to have a subjectively long life, you ought to do many spontaneous and hard-to-repeat things, but if you want to have a happy life, you ought to find one or two high pleasures that you can enjoy on a spiritual level and repeat the hell out of them, because they also say that on average, people derive more happiness from repeating a good experience than from trying something new.</p>
+        </h2><p>They say that we perceive time by the accumulation of novel experiences, so that if you want to have a subjectively long life, you ought to do many spontaneous and hard-to-repeat things, but if you want to have a happy life, you ought to find one or two high pleasures that you can enjoy on a spiritual level and repeat the hell out of them, because they also say that on average, people derive more happiness from repeating a good experience than from trying something new.</p>
 
 <p>You could write a linear program that targets your ideal mix of longevity and happiness and it would tell you exactly how many times to do this or that activity before moving onto something new. But what this calculus leaves out is the feelings of uncertainty that stain the transitions.</p>
 
@@ -667,11 +676,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 
 <p>Thank you to all who have encouraged me.</p>
 </div><div class="post-list-item"><span class="post-meta">Apr 16, 2020</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2020/04/16/accidental-signals.html">
             Accidental signals
           </a>
-        </h3><p>It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.</p>
+        </h2><p>It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.</p>
 <p class="excerpt-warning">
 	          <a href="/2020/04/16/accidental-signals.html"> 
 	            <!-- (⋯) -->
@@ -679,11 +688,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jan 19, 2020</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2020/01/19/what-you-learn-humanities.html">
             What you learn in a humanities degree
           </a>
-        </h3><p>The more I learn, I find myself with fewer and fewer things to say.</p>
+        </h2><p>The more I learn, I find myself with fewer and fewer things to say.</p>
 
 <p><img src="/assets/what-if-theories.png" alt="A Reddit post reading, &quot;What to do if i have theories? I contacted a college and they ignored me&quot;" /></p>
 
@@ -696,11 +705,11 @@ unusual “minimin” form makes it computationally challenging.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Oct 18, 2019</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2019/10/18/using-data-ell.html">
             Using data to understand ELL students
           </a>
-        </h3><p>In August, I surveyed my students about their motivation for learning
+        </h2><p>In August, I surveyed my students about their motivation for learning
 English, their opinions about our class and my teaching style, and
 what resources they were using to study English outside of class. By
 analyzing the results using some of the statistical tools I’ve
@@ -715,21 +724,21 @@ Gyeongju. Here’s
 <p>And here’s <a href="https://maxkapur.com/esl-data/">a detailed
 write-up of my survey design and results</a>.</p>
 </div><div class="post-list-item"><span class="post-meta">May 2, 2018</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2018/05/02/fulbright-korea.html">
             Fulbright
           </a>
-        </h3><p>Fun fact: the most-viewed post on this blog, by a long shot, is the one where <a href="/2016/03/12/cls-korea.html">I shared that I’d received a Critical Language Scholarship</a> from the US Department of State to study Korean in Gwangju. Today, I’m pleased to announce there will soon be another addition to the State Department–mandated disclaimer at the bottom of this blog.</p>
+        </h2><p>Fun fact: the most-viewed post on this blog, by a long shot, is the one where <a href="/2016/03/12/cls-korea.html">I shared that I’d received a Critical Language Scholarship</a> from the US Department of State to study Korean in Gwangju. Today, I’m pleased to announce there will soon be another addition to the State Department–mandated disclaimer at the bottom of this blog.</p>
 
 <p>Beginning early this July, I’ll be spending a full year in South Korea as a Fulbright fellow. I’ll be serving as an English teaching assistant at the elementary level. After our six-week orientation in Seoul, I don’t yet know the city I’ll be working in. That said, though Korea isn’t a small country, it possesses an excellent transportation infrastructure. If you’ll be there at all during the next year, send me an email so we can catch up!</p>
 
 <p><a href="https://music.usc.edu/two-seniors-earn-fulbrights/">Here’s a spotlight</a> on the website of the Thornton School of Music about me and my friend Geetha, also a new Fulbright fellow.</p>
 </div><div class="post-list-item"><span class="post-meta">Aug 7, 2016</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2016/08/07/sorites.html">
             Sorites
           </a>
-        </h3><p>We pretend stability by tracking our life’s progress as a series of marginal changes, so that from each day to the next we can see that we are still ourselves, changed perhaps in substance, but never in identity.</p>
+        </h2><p>We pretend stability by tracking our life’s progress as a series of marginal changes, so that from each day to the next we can see that we are still ourselves, changed perhaps in substance, but never in identity.</p>
 
 <p>But sample two days, say, ten or twenty years apart within the spread of a life—could you recognize the images as of the same person? Over time the marginal changes penetrate to the being’s core. The transformation becomes comprehensive.</p>
 
@@ -740,31 +749,31 @@ write-up of my survey design and results</a>.</p>
 	            Read more →
 	          </a>
           </p></div><div class="post-list-item"><span class="post-meta">Jun 25, 2016</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2016/06/25/first-week-class-cnu.html">
             First week of class at CNU
           </a>
-        </h3><p>I’ve just finished my first week of class at Chonnam National Universty here in Gwangju with CLS and everything is amazing! I am staying with a host family in a suburb about 40 minutes from school by bus, so I get to practice my Korean 24/7.</p>
+        </h2><p>I’ve just finished my first week of class at Chonnam National Universty here in Gwangju with CLS and everything is amazing! I am staying with a host family in a suburb about 40 minutes from school by bus, so I get to practice my Korean 24/7.</p>
 
 <p>Speaking in a new language can feel like doing the dishes with chopsticks. One of the conditions of the CLS scholarship is that students use only the target language when they are on campus, even outside of class, which is both exhausting and rewarding. Listening and speaking are my weakest language areas, and trying to explain a multi-step process in Korean or politely make a request of my host family often leaves all parties frustrated and confused. I am committed to the language policy, but it seems to worry my host family that I come home each day exhausted of my Korean abilities rather than more fluent.</p>
 
 <p>Life in Gwangju is really nice. Gwangju is the sixth largest city in Korea, so although most people here have interacted with foreigners, we are by no means common. I certainly feel the preen of cautious eyes turning toward me when I get on the bus or enter a restaurant. The questions I most often receive from strangers are whether or not I can eat spicy food and whether I know how to use chopsticks.</p>
 </div><div class="post-list-item"><span class="post-meta">Mar 12, 2016</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/2016/03/12/cls-korea.html">
             CLS Korean
           </a>
-        </h3><p>I am blessed and honored to have received a Critical Language Scholarship from the US Department of State to study Korean language this summer at Chonnam University. This will be my first visit to Korea, and I am incredibly excited as well as anxious about becoming a study abroad student for the first time.</p>
+        </h2><p>I am blessed and honored to have received a Critical Language Scholarship from the US Department of State to study Korean language this summer at Chonnam University. This will be my first visit to Korea, and I am incredibly excited as well as anxious about becoming a study abroad student for the first time.</p>
 
 <p>I feel very grateful for the professors who wrote my references for this program and all of those who provided me with guidance during the application. I am fortunate to live in a country that values the study of foreign languages enough to sponsor students like me using public funds. Thank you for paying your taxes.</p>
 
 <p>As many of you know, visiting Korea is a dream I have been cultivating for years. That dream has now come true. Although this is mainly my poetry blog (and I will continue to post poetry), when I am in Gwangju this summer I will also share about my experiences and thoughts in a traditional blog format. Thanks for reading.</p>
 </div><div class="post-list-item"><span class="post-meta">Jan 1, 1970</span>
-        <h3>
+        <h2>
           <a class="post-link" href="/1970/01/01/older-posts.html">
             Older posts
           </a>
-        </h3><p>“Where did the old blog go?” On June 25, 2022, I moved by blog from Google’s Blogger service to a Jekyll blog hosted on GitHub (which you are currently viewing). I have copied over all the posts from the old blog that I think are worth reading. Nonetheless, the original Illusion Slopes, whose content runs back to November 2015, is still accessible at <a href="https://illusionslopes.blogspot.com/">illusionslopes.blogspot.com</a>.</p>
+        </h2><p>“Where did the old blog go?” On June 25, 2022, I moved by blog from Google’s Blogger service to a Jekyll blog hosted on GitHub (which you are currently viewing). I have copied over all the posts from the old blog that I think are worth reading. Nonetheless, the original Illusion Slopes, whose content runs back to November 2015, is still accessible at <a href="https://illusionslopes.blogspot.com/">illusionslopes.blogspot.com</a>.</p>
 </div></div>
     <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
 
@@ -782,7 +791,7 @@ write-up of my survey design and results</a>.</p>
           <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://youtube.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">

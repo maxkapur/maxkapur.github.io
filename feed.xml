@@ -9,14 +9,13 @@
   <link href="/feed.xml" rel="self" />
   <link href="/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-04-27T00:42:37+00:00</updated>
+  <updated>2024-04-27T19:26:15+00:00</updated>
   <id>/</id>
   <author>
     <name></name>
     <email></email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
-  
   <entry>
     <title>Why I put ISO dates in filenames</title>
     <link rel="alternate" href="/2024/04/26/iso-dates-filenames.html" />
@@ -81,7 +80,6 @@ I’ve learned never to trust software.&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>New old device</title>
     <link rel="alternate" href="/2024/04/14/new-old-device.html" />
@@ -153,7 +151,6 @@ obvious.&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Recent reading</title>
     <link rel="alternate" href="/2024/03/18/recent-reading.html" />
@@ -242,7 +239,6 @@ to have a backup option in case their rickety website finally gives way. Write
 if you know of any others.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Housekeeping</title>
     <link rel="alternate" href="/2024/03/10/housekeeping.html" />
@@ -335,7 +331,6 @@ times and user privacy.&lt;/p&gt;
 &lt;/ul&gt;
 </content>
   </entry>
-  
   <entry>
     <title>A handy class of submodular functions</title>
     <link rel="alternate" href="/2024/01/01/handy-submodular.html" />
@@ -576,7 +571,6 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Recent reading</title>
     <link rel="alternate" href="/2023/11/05/recent-reading.html" />
@@ -621,7 +615,6 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
 &lt;/ul&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Guitarix troubleshooting</title>
     <link rel="alternate" href="/2023/07/22/guitarix-troubleshooting.html" />
@@ -658,7 +651,6 @@ working again:&lt;/p&gt;
 take over the next time the application is launched.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>fzl.fish</title>
     <link rel="alternate" href="/2023/06/17/fzl.fish.html" />
@@ -737,7 +729,6 @@ take over the next time the application is launched.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/fish-fzl-example.png&quot; alt=&quot;A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &amp;quot;Thesis defense&amp;quot; is highlighted.&quot; /&gt;&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Learning Korean idioms with UNIX fortune</title>
     <link rel="alternate" href="/2023/02/05/korean-idioms-fortunes.html" />
@@ -783,7 +774,6 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
 
 </content>
   </entry>
-  
   <entry>
     <title>Applying the KISS principle to amp modeling</title>
     <link rel="alternate" href="/2023/01/27/kiss-guitar-modeling.html" />
@@ -826,7 +816,6 @@ I don’t subscribe to a particular chorus or reverb effect, nor do I have any i
 I have trained my fingers to make the most of middle-of-the-road settings.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>This year’s reading</title>
     <link rel="alternate" href="/2022/12/17/this-years-reading.html" />
@@ -869,7 +858,6 @@ I have trained my fingers to make the most of middle-of-the-road settings.&lt;/p
 &lt;/ul&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Two truths and one lie</title>
     <link rel="alternate" href="/2022/11/06/two-truths-one-lie.html" />
@@ -981,7 +969,6 @@ assignments A and B and leaves assignment C, namely &lt;code class=&quot;languag
 &lt;/details&gt;
 </content>
   </entry>
-  
   <entry>
     <title>New job at Booz Allen Hamilton</title>
     <link rel="alternate" href="/2022/10/16/new-bah-job.html" />
@@ -1020,7 +1007,6 @@ Major at transitions like this. &lt;a href=&quot;https://www.youtube.com/watch?v
 interpretations.&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Master’s graduation and two free optimization courses</title>
     <link rel="alternate" href="/2022/09/04/masters-graduation.html" />
@@ -1048,7 +1034,6 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Developing the edX course was especially fun: edX has an &lt;a href=&quot;https://openedx.org/community/documentation/&quot;&gt;open platform&lt;/a&gt; for online courses that lets you create an interactive classroom with videos, captions, automatically graded exercises, and plenty more. Setting up the student activities with automatic grading in a way that is both user-friendly and rigorous was a neat challenge. I hope these courses can bring the theoretically grounded, practically oriented education that I received at SNU to a wider audience of optimization students.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Apply to fifty colleges</title>
     <link rel="alternate" href="/2022/09/01/apply-fifty-colleges.html" />
@@ -1185,7 +1170,6 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Grading multiple-selection questions</title>
     <link rel="alternate" href="/2022/08/18/multiple-selection.html" />
@@ -1257,7 +1241,6 @@ A student who answers &lt;code class=&quot;language-plaintext highlighter-rouge&
 &lt;p&gt;Therefore, as long as you accept my argument that multiple-selection questions should be regarded as \(n\) true-or-false questions for grading purposes, why not simply write them out that way on the test sheet? Then there is no way to misread the question as a single selection, and the grading scheme is obvious.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Mulberry: A college application strategist</title>
     <link rel="alternate" href="/2022/08/02/mulberry.html" />
@@ -1294,7 +1277,6 @@ to them to maximize your expected utility.&lt;/p&gt;
 and the code is on &lt;a href=&quot;https://github.com/maxkapur/mulberry&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Python utility for manipulating subtitle timings</title>
     <link rel="alternate" href="/2022/07/15/srt-delay.html" />
@@ -1363,7 +1345,6 @@ you will want to save the output to another file:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Opening Pandora’s Box</title>
     <link rel="alternate" href="/2022/07/01/opening-pandoras-box.html" />
@@ -1465,7 +1446,6 @@ objective function misbehave.&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Migrating to Jekyll</title>
     <link rel="alternate" href="/2022/06/25/migrating-to-jekyll.html" />
@@ -1553,7 +1533,6 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 --&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Thesis defense</title>
     <link rel="alternate" href="/2022/06/19/thesis-defense.html" />
@@ -1580,7 +1559,6 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 &lt;/figure&gt;
 </content>
   </entry>
-  
   <entry>
     <title>The college application problem, presented in Korean</title>
     <link rel="alternate" href="/2022/05/13/college-application-presentation-korean.html" />
@@ -1595,7 +1573,6 @@ at a research fair hosted by our department. English subtitles are included.</p>
 at a research fair hosted by our department. English subtitles are included.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>“College Application” on arXiv</title>
     <link rel="alternate" href="/2022/05/04/college-application-on-arxiv.html" />
@@ -1618,7 +1595,6 @@ at a research fair hosted by our department. English subtitles are included.&lt;
 &lt;p&gt;Rolling updates to the paper as well as various slideshows presenting the research are &lt;a href=&quot;https://github.com/maxkapur/CollegeApplication&quot;&gt;available on GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>The school location problem</title>
     <link rel="alternate" href="/2022/04/14/school-location-problem.html" />
@@ -1647,7 +1623,6 @@ unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
 &lt;p&gt;Here’s the &lt;a href=&quot;https://www.youtube.com/watch?v=/bjreiQRHerU&quot;&gt;video link&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Administrative vs. allocative efficiency</title>
     <link rel="alternate" href="/2021/10/21/administrative-allocative-efficiency.html" />
@@ -1673,7 +1648,6 @@ unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
 &lt;p&gt;The scenario above—which, to be clear, is speculative—suggests that market features designed to produce administrative efficiency, like requiring students to express a specific interest in their target school or indicate whether the school is their top pick, trade off with &lt;em&gt;allocative&lt;/em&gt; efficiency in the composition of top universities’ entering classes. Moreover, if the psychological findings above on risk-averse decisionmaking also hold with respect to applicant behavior, then it is possible that the social cost falls most heavily on precisely the marginal groups whom we are trying hardest to recruit.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>An economic view of the Korean college admissions market</title>
     <link rel="alternate" href="/2021/05/16/economic-view-korean-admissions.html" />
@@ -1706,7 +1680,6 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;Another reason to take a closer look at correlated admissions procedures like the one used in Korea is that such market designs are common around the world, not just in Asia, but also in many European countries and in local school-choice markets in places like New York City. It’s cool, if you know how to program, that we have a simple algorithm for computing stable assignments in arbitrary discrete admissions markets given lists of student and school preferences. But by narrowing our focus to the case of correlated admissions, we can make more ambitious quantitative predictions about the long-run behavior of the market, including, hopefully, computing the efficiency cost of admissions quotas and limits on the number of applications each student has.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Stable matching on Planet Money</title>
     <link rel="alternate" href="/2021/03/07/stable-matching-planet-money.html" />
@@ -1740,7 +1713,6 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;(I sent a version of this to the &lt;em&gt;Planet Money&lt;/em&gt; team, but I’m not betting on a response.)&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Next</title>
     <link rel="alternate" href="/2020/07/07/next.html" />
@@ -1779,7 +1751,6 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;Thank you to all who have encouraged me.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Accidental signals</title>
     <link rel="alternate" href="/2020/04/16/accidental-signals.html" />
@@ -1820,7 +1791,6 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;/div&gt;
 </content>
   </entry>
-  
   <entry>
     <title>What you learn in a humanities degree</title>
     <link rel="alternate" href="/2020/01/19/what-you-learn-humanities.html" />
@@ -1854,7 +1824,6 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;In courtroom dramas, lawyers begin their closing arguments by saying, “Let’s let the facts stand on their own,” and then they proceed to enumerate the facts, thereby preventing them from standing on their own. When—not &lt;em&gt;if&lt;/em&gt;—the facts are inventoried, curated, rehearsed, ordered, voiced in a measured tone, calibrated for this trial and these jurors, then the facts are being coerced to an invisible theory. We are awash in theories, and the only way to let the facts stand on their own is to say nothing.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Using data to understand ELL students</title>
     <link rel="alternate" href="/2019/10/18/using-data-ell.html" />
@@ -1891,7 +1860,6 @@ Gyeongju. Here’s
 write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Fulbright</title>
     <link rel="alternate" href="/2018/05/02/fulbright-korea.html" />
@@ -1910,7 +1878,6 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://music.usc.edu/two-seniors-earn-fulbrights/&quot;&gt;Here’s a spotlight&lt;/a&gt; on the website of the Thornton School of Music about me and my friend Geetha, also a new Fulbright fellow.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Sorites</title>
     <link rel="alternate" href="/2016/08/07/sorites.html" />
@@ -1954,7 +1921,6 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;So we arrive at a problem: Our memory—the set of observations of our own transformation—is what confirms to us that we are ourselves. That’s because without observing continuity between two apparently different objects, we cannot identify them as the same. But how can we know that our memory is itself continuous? As above, the brain is constantly recycling its own cells. Even on a psychological level, we sometimes rewrite our memory, underlining and punctuating emotionally intense moments and lumping similar experiences together into generic memories (“my commute”). We are perhaps not ourselves, but figments of our own imagination, a cluster of observations that exist only to verify their own existence.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>First week of class at CNU</title>
     <link rel="alternate" href="/2016/06/25/first-week-class-cnu.html" />
@@ -1973,7 +1939,6 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Life in Gwangju is really nice. Gwangju is the sixth largest city in Korea, so although most people here have interacted with foreigners, we are by no means common. I certainly feel the preen of cautious eyes turning toward me when I get on the bus or enter a restaurant. The questions I most often receive from strangers are whether or not I can eat spicy food and whether I know how to use chopsticks.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>CLS Korean</title>
     <link rel="alternate" href="/2016/03/12/cls-korea.html" />
@@ -1992,7 +1957,6 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As many of you know, visiting Korea is a dream I have been cultivating for years. That dream has now come true. Although this is mainly my poetry blog (and I will continue to post poetry), when I am in Gwangju this summer I will also share about my experiences and thoughts in a traditional blog format. Thanks for reading.&lt;/p&gt;
 </content>
   </entry>
-  
   <entry>
     <title>Older posts</title>
     <link rel="alternate" href="/1970/01/01/older-posts.html" />
