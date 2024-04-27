@@ -2,13 +2,8 @@
  * Syntax highlighting styles
  */
 .highlight {
-  // background: #fff;
   background: $highlight-color;
   @extend %vertical-rhythm;
-
-  // .highlighter-rouge & {
-  //   background: #eef;
-  // }
 
   .c {
     color: #998;
@@ -23,12 +18,12 @@
 
   // Error
   .k {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword
   .o {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Operator
@@ -40,7 +35,7 @@
   // Comment.Multiline
   .cp {
     color: #999;
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Comment.Preproc
@@ -52,7 +47,7 @@
   // Comment.Single
   .cs {
     color: #999;
-    font-weight: bold;
+    @include monospace-strong;
     font-style: italic
   }
 
@@ -107,7 +102,7 @@
 
   // Generic.Prompt
   .gs {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Generic.Strong
@@ -122,28 +117,28 @@
 
   // Generic.Traceback
   .kc {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword.Constant
   .kd {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword.Declaration
   .kp {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword.Pseudo
   .kr {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword.Reserved
   .kt {
     color: #458;
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Keyword.Type
@@ -169,7 +164,7 @@
   // Name.Builtin
   .nc {
     color: #458;
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Name.Class
@@ -185,13 +180,13 @@
   // Name.Entity
   .ne {
     color: #900;
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Name.Exception
   .nf {
     color: #900;
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Name.Function
@@ -211,7 +206,7 @@
 
   // Name.Variable
   .ow {
-    font-weight: bold
+    @include monospace-strong
   }
 
   // Operator.Word

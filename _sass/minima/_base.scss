@@ -44,7 +44,7 @@ body {
 }
 
 strong {
-  font-weight: $base-font-bold-weight;
+  font-weight: $base-font-strong-weight;
 }
 
 // This keeps sup elements from making their lines awkwardly higher than others
@@ -223,26 +223,15 @@ blockquote {
 
 
 /**
- * Code and kbd formatting
+ * Code
  */
-pre,
+
+//  Inline code gets bold styling
 code {
-  font-family: $monospace-font-family;
-  font-weight: $monospace-font-bold-weight;
-  font-size: 90%;
-  padding: 0 0.1em;
+  @include monospace-strong;
 }
 
-kbd {
-  font-family: $base-font-family;
-  font-weight: $base-font-bold-weight;
-  font-size: 90%;
-  border: 1px solid $grey-color-dark;
-  border-radius: 3px;
-  padding: 3px 5px 2px 5px;
-}
-
-/* A little extra padding on code "blocks" (vs. inline code) */
+// Code blocks
 pre {
   border: 1px solid $grey-color-light;
   border-radius: 3px;
@@ -253,8 +242,28 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0;
+
+    // Syntax highlighter will make some elements strong, others not;
+    // we want to respect this, so reset the font weight to normal.
     font-weight: normal;
+
+    // NOTE: In _syntax-highlighting.scss, we include monospace-strong
+    // back into the styles that the syntax highlighter wants to bold
   }
+}
+
+
+
+/**
+ * Keyboard
+ */
+kbd {
+  font-family: $base-font-family;
+  font-weight: $base-font-strong-weight;
+  font-size: 90%;
+  border: 1px solid $grey-color-dark;
+  border-radius: 3px;
+  padding: 3px 5px 2px 5px;
 }
 
 
@@ -334,7 +343,7 @@ table {
 
   th {
     background-color: lighten($grey-color-light, 10%);
-    font-weight: $base-font-bold-weight;
+    font-weight: $base-font-strong-weight;
     border-bottom-width: 2px;
   }
 }
