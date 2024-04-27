@@ -43,6 +43,6 @@ end
 
 # Implied by transitivity
 # gem "webrick", "~> 1.8"
-# gem "jekyll-paginate", "~> 1.1"
 
-gem "json", "~> 2.7"
+# Maybe later
+# gem "jekyll-paginate", "~> 1.1"
