@@ -65,6 +65,7 @@ h6,
 p,
 blockquote,
 pre,
+table,
 ul,
 ol,
 dl,
@@ -255,8 +256,6 @@ kbd {
  * Tables
  */
 table {
-  margin-bottom: 30px;
-  width: 100%;
   text-align: left;
   background-color: #fffff5;
   border: 0.5px solid #3e4853;
@@ -264,7 +263,7 @@ table {
 }
 table th,
 table td {
-  padding: 10px 10px;
+  padding: 8px 12px;
   border: 0.5px solid #3e4853;
 }
 table th {
