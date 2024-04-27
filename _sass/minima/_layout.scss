@@ -131,7 +131,7 @@
   display: grid;
   grid-template-columns: auto auto 1fr;
   justify-content: space-between;
-  gap: $spacing-unit;
+  gap: 0 (2 * $spacing-unit);
   @extend %clearfix;
 
   @include media-query($on-laptop) {
@@ -146,9 +146,8 @@
   }
 
   @include media-query($on-palm) {
-    // Collapse to one column and remove excessive vertical gap
+    // Collapse to one column
     grid-template-columns: 1fr;
-    column-gap: 0;
   }
 }
 
