@@ -3,41 +3,40 @@
 
 // Define defaults for each variable.
 
-$base-font-family: "Rubik", sans-serif !default;
-$base-font-size: 16px !default;
-$base-font-weight: 400 !default;
+$base-font-family: "Rubik", sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 400;
 // Default bold weight (700) is too intense in Rubik
-$base-font-strong-weight: 450 !default;
-$base-line-height: 1.5 !default;
+$base-font-strong-weight: 450;
+$base-line-height: 1.5;
 
-$monospace-font-family: "Noto Sans Mono", monospace !default;
-$monospace-font-size: $base-font-size * 0.9 !default;
-$monospace-font-strong-weight: 600 !default;
+$monospace-font-family: "Noto Sans Mono", monospace;
+$monospace-font-size: $base-font-size * 0.9;
+$monospace-font-strong-weight: 600;
 @mixin monospace-strong {
   font-family: $monospace-font-family;
   font-size: $monospace-font-size;
   font-weight: $monospace-font-strong-weight;
 }
 
-$small-font-size: $base-font-size * 0.875 !default;
-$spacing-unit: 30px !default;
+$small-font-size: $base-font-size * 0.875;
+$spacing-unit: 30px;
 
-$text-color: #111 !default;
-$background-color: #ffffeb !default;
+$text-color: #111;
+$background-color: #ffffeb;
 $highlight-color: lighten($background-color, 2%);
-$brand-color: #008000 !default;
+$brand-color: #008000;
 
-$grey-color: #778899 !default;
-$green-color-light: #b7ccb7 !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
+$grey-color: #778899;
+$green-color-light: #b7ccb7;
+$grey-color-dark: darken($grey-color, 25%);
 
-$table-text-align: left !default;
+$table-text-align: left;
 
 // Width of the content area
-$content-width: 800px !default;
-
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -56,7 +55,7 @@ $on-laptop: 800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-// Import partials.
+// Import partials
 @import "minima/base",
 "minima/layout",
 "minima/syntax-highlighting"
