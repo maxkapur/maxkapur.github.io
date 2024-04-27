@@ -201,7 +201,7 @@ a {
  */
 blockquote {
   color: $grey-color-dark;
-  border-left: 3px solid $grey-color-light;
+  border-left: 3px solid $green-color-light;
   padding-left: math.div($spacing-unit, 3);
 
   > :last-child {
@@ -223,7 +223,7 @@ code {
 
 // Code blocks
 pre {
-  border: 1px solid $grey-color-light;
+  border: 1px solid $green-color-light;
   border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
@@ -332,7 +332,7 @@ table {
   }
 
   th {
-    background-color: lighten($grey-color-light, 10%);
+    background-color: lighten($green-color-light, 10%);
     font-weight: $base-font-strong-weight;
     border-bottom-width: 2px;
   }
@@ -341,7 +341,7 @@ table {
 
 // Add a separator at top of footnotes
 div.footnotes {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $green-color-light;
   padding-top: math.div($spacing-unit, 2);
 }
 

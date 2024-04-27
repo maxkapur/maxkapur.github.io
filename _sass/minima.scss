@@ -6,22 +6,20 @@
 $base-font-family: "Rubik", sans-serif !default;
 $base-font-size: 16px !default;
 $base-font-weight: 400 !default;
-/* Default bold weight (700) is too intense in Rubik */
+// Default bold weight (700) is too intense in Rubik
 $base-font-strong-weight: 450 !default;
-
-$small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
 $monospace-font-family: "Noto Sans Mono", monospace !default;
 $monospace-font-size: $base-font-size * 0.9 !default;
 $monospace-font-strong-weight: 600 !default;
-
 @mixin monospace-strong {
   font-family: $monospace-font-family;
   font-size: $monospace-font-size;
   font-weight: $monospace-font-strong-weight;
 }
 
+$small-font-size: $base-font-size * 0.875 !default;
 $spacing-unit: 30px !default;
 
 $text-color: #111 !default;
@@ -30,7 +28,7 @@ $highlight-color: lighten($background-color, 2%);
 $brand-color: #008000 !default;
 
 $grey-color: #778899 !default;
-$grey-color-light: #b7ccb7 !default;
+$green-color-light: #b7ccb7 !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
