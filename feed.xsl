@@ -1,3 +1,6 @@
+---
+---
+
 <!--
   Based on
   https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
@@ -13,13 +16,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <title><xsl:value-of select="atom:feed/atom:title" /> | RSS</title>
       <link rel="stylesheet" href="/assets/main.css" />
-      <style type="text/css">
-        body.feed {
-          display: flex;
-          gap: 40px;
-          padding: 40px 0;
-        }
-      </style>
 
       <!-- Favicon -->
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
@@ -33,36 +29,43 @@
       <meta name="theme-color" content="#ffffff" />
     </head>
 
-    <body class="feed">
-      <header>
+    <body>
+      {%- include header.html -%}
+      <main class="page-content">
         <div class="wrapper">
           <xsl:apply-templates select="atom:feed" />
-        </div>
-      </header>
-      <main>
-        <div class="wrapper">
           <ul class="atom-post-list">
             <xsl:apply-templates select="atom:feed/atom:entry" />
           </ul>
         </div>
       </main>
+      <!--
+        TODO: Cannot include footer because it uses XML namespaces internally
+        that cause the styled XML feed to fail to render.
+        {%- include footer.html -%}
+      -->
     </body>
 
     </html>
   </xsl:template>
 
   <xsl:template match="atom:feed">
-    <h1>Web feed preview</h1>
-
-    <p>This is a web feed, also known as an RSS feed, for the <a>
-        <xsl:attribute name="href">
-          <xsl:value-of select="atom:link[@rel='alternate']/@href" />
-        </xsl:attribute>
-        <xsl:value-of select="atom:title" />
-      </a> blog. You can subscribe by copying the URL from the
-      address bar into your newsreader app.</p>
-    <p>Visit <a href="https://aboutfeeds.com/">About
-        Feeds</a> to learn more about newsreaders.</p>
+    <article class="post">
+      <header class="post-header">
+        <h1 class="post-title">Web feed preview</h1>
+      </header>
+      <div class="post-content">
+        <p>This is a web feed, also known as an RSS feed, for the <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="atom:link[@rel='alternate']/@href" />
+          </xsl:attribute>
+          <xsl:value-of select="atom:title" />
+        </a> blog. You can subscribe by copying the URL from the
+        address bar into your newsreader app.</p>
+        <p>Visit <a href="https://aboutfeeds.com/">About
+          Feeds</a> to learn more about newsreaders.</p>
+      </div>
+    </article>
   </xsl:template>
 
   <xsl:template match="atom:entry">
