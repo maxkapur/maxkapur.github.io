@@ -260,7 +260,7 @@ pre {
 kbd {
   font-family: $base-font-family;
   font-weight: $base-font-strong-weight;
-  font-size: 90%;
+  font-size: $small-font-size;
   border: 1px solid $grey-color-dark;
   border-radius: 3px;
   padding: 3px 5px 2px 5px;
