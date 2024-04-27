@@ -20,6 +20,9 @@
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
   {% for post in site.posts %}
+    {%- if post.unlisted -%}
+      {% continue %}
+    {%- endif -%}
   <entry>
     <title>{{ post.title }}</title>
     <link rel="alternate" href="{{ site.url }}{{ post.url }}" />

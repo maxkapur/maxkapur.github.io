@@ -2,6 +2,7 @@
 layout:     post
 title:      "Formats masterpost"
 katex:      true
+unlisted:   true
 permalink:  /formatting/
 ---
 
