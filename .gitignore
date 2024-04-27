@@ -11,3 +11,7 @@ log.txt
 
 # Larger versions of favicons, images
 *-large.jpg
+
+# `bundle install` produces a slightly different lockfile on different Linux
+# distributions
+Gemfile.lock
