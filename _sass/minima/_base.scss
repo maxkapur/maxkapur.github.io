@@ -229,6 +229,7 @@ blockquote {
 //  Inline code gets bold styling
 code {
   @include monospace-strong;
+  padding: 0 0.1em;
 }
 
 // Code blocks
@@ -238,10 +239,11 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
+  // Ensures correct line height calculation
+  font-size: $monospace-font-size;
+
   >code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0;
 
     // Syntax highlighter will make some elements strong, others not;
     // we want to respect this, so reset the font weight to normal.
