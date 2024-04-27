@@ -128,50 +128,27 @@
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
   color: $grey-color;
-  margin-left: - math.div($spacing-unit, 2);
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  justify-content: space-between;
+  gap: $spacing-unit;
   @extend %clearfix;
-}
 
-.footer-col {
-  float: left;
-  margin-bottom: math.div($spacing-unit, 2);
-  padding-left: math.div($spacing-unit, 2);
-}
+  @include media-query($on-laptop) {
+    // Collapse to two columns
+    grid-template-columns: 1fr 1fr;
 
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width: calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width: calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width: calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width: calc(50% - (#{$spacing-unit} / 2));
+    // If the number of "cells" in the grid (.footer-col elements) is odd, have
+    // the last cell span the full width:
+    .footer-col:last-child:nth-child(odd) {
+      grid-column: 1/-1;
+    }
   }
 
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width: calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width: calc(100% - (#{$spacing-unit} / 2));
+  @include media-query($on-palm) {
+    // Collapse to one column and remove excessive vertical gap
+    grid-template-columns: 1fr;
+    column-gap: 0;
   }
 }
 
