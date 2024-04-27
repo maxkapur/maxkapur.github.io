@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$base-font-family: "Rubik", sans-serif;
+// Default bold weight (700) is too intense in Rubik
+$base-font-bold-weight: 450;
+
+$monospace-font-family: "Noto Sans Mono", monospace;
+// Chosen by eye to match Rubik bold weight
+$monospace-font-bold-weight: 600;
+
+$background-color: #ffffeb;
+$highlight-color: lighten($background-color, 2%);
+$brand-color: #008000;
+
+$grey-color: #778899;
+$grey-color-light: #b7ccb7;
+$grey-color-dark: darken($grey-color, 25%);
+
+// TODO: This will be removed shortly because I will move all of the
+// customizations applied by these styles into this file.
+// Import partials.
+@import "minima/base",
+"minima/layout",
+"minima/syntax-highlighting"
+;
