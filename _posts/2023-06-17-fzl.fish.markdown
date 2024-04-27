@@ -37,6 +37,6 @@ end
 
 <!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
-Example:
+Example below.<!--more-->
 
 ![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/fish-fzl-example.png)
