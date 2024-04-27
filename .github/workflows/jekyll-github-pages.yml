@@ -34,7 +34,7 @@ jobs:
           enable_cache: true
 
       - name: 🚀 deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         # Skip this step if running from somewhere other than master
         if: github.ref == 'refs/heads/master'
         with:
