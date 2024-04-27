@@ -209,29 +209,35 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h2 {
-    font-size: 2rem;
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    @include media-query($on-laptop) {
-      font-size: 1.75rem;
-    }
+  h2 {
+    font-size: 1.2rem;
+    color: $grey-color-dark;
+    margin-bottom: math.div($spacing-unit, 4);
   }
 
   h3 {
-    font-size: 1.625rem;
+    font-size: 1rem;
+    font-weight: $base-font-strong-weight;
 
-    @include media-query($on-laptop) {
-      font-size: 1.375rem;
+    @supports (display: run-in) {
+      display: run-in;
+
+      &::after {
+        content: ": ";
+      }
+    }
+
+    // E.g. Firefox
+    @supports not (display: run-in) {
+      margin-bottom: math.div($spacing-unit, 4);
     }
   }
 
-  h4 {
-    font-size: 1.25rem;
-
-    @include media-query($on-laptop) {
-      font-size: 1.125rem;
-    }
-  }
+  // Others unused
 }
 
 
