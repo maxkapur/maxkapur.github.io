@@ -9,7 +9,7 @@
   <link href="/feed.xml" rel="self" />
   <link href="/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-04-27T20:11:02+00:00</updated>
+  <updated>2024-04-28T01:18:10+00:00</updated>
   <id>/</id>
   <author>
     <name></name>
@@ -1822,6 +1822,46 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 &lt;p&gt;Thus, I am finding myself with less and less to say, because I am paralyzed by the sense that if I manage to say something convincing, it will be so only because I have applied a theory in a novel or resonant way, and not because the underlying idea has merit. I have spent so much time playing with theories that nowadays, I sometimes myself testing facts against beliefs rather than beliefs against facts, so that when I encounter a set of facts that resist one of my beloved theories, I search for better facts instead of modifying my assumptions.&lt;/p&gt;
 
 &lt;p&gt;In courtroom dramas, lawyers begin their closing arguments by saying, “Let’s let the facts stand on their own,” and then they proceed to enumerate the facts, thereby preventing them from standing on their own. When—not &lt;em&gt;if&lt;/em&gt;—the facts are inventoried, curated, rehearsed, ordered, voiced in a measured tone, calibrated for this trial and these jurors, then the facts are being coerced to an invisible theory. We are awash in theories, and the only way to let the facts stand on their own is to say nothing.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Houseplant measurements</title>
+    <link rel="alternate" href="/2020/01/02/houseplant-measurements.html" />
+    <updated>2020-01-02T00:00:00+00:00</updated><updated-readable>Jan 2, 2020</updated-readable>
+    <id>/2020/01/02/houseplant-measurements</id>
+    <summary><p>I have been measuring the leaves of my houseplants.</p>
+
+<figure>
+  <img class="compact squareborder" src="/assets/houseplants-1-length-width.png" alt="alt" />
+</figure>
+</summary>
+    <content type="html">&lt;p&gt;I have been measuring the leaves of my houseplants.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img class=&quot;compact squareborder&quot; src=&quot;/assets/houseplants-1-length-width.png&quot; alt=&quot;alt&quot; /&gt;
+&lt;/figure&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;It &lt;em&gt;is&lt;/em&gt; surprising how normal these distributions are.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img class=&quot;compact squareborder&quot; src=&quot;/assets/houseplants-2-area-qq.png&quot; alt=&quot;alt&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+  &lt;img class=&quot;compact squareborder&quot; src=&quot;/assets/houseplants-3-ratio-qq.png&quot; alt=&quot;alt&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I’m putting my stats notes
+&lt;a href=&quot;https://github.com/maxkapur/maxkapur.github.io/blob/e08d16ffa237fcb418a96fcae35298d3b04e733d/math/stats.ipynb&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I imported this post from my Blogger archive on April 27, 2024. The original title was “Aretha and Brad”—the names of the houseplants (after Franklin and Mehldau, respectively) whose measurements are pictured. This mindfulness project was likely inspired by the beloved &lt;a href=&quot;https://en.wikipedia.org/wiki/Iris_flower_data_set&quot;&gt;iris dataset&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;I’ve updated the “my stats notes” link to point to the latest version of that Jupyter notebook in GitHub’s view of the Git source tree for this site, in the unlikely event that it is useful to anyone.&lt;/p&gt;
+
+  &lt;p&gt;With four years of additional perspective, I would be remiss not to point out that leaf geometry in which both the area \(XY\) and the aspect ratio \(X/Y\) are both normally distributed would be serendipitous indeed—and that the plots above don’t look particularly linear to me anymore.&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
   </entry>
   <entry>
