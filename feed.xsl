@@ -64,7 +64,7 @@
           <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">

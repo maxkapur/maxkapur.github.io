@@ -6,11 +6,11 @@
 -->
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Illusion Slopes</title>
-  <link href="/feed.xml" rel="self" />
-  <link href="/" rel="alternate" />
+  <link href="https://maxkapur.com/feed.xml" rel="self" />
+  <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-04-28T01:18:10+00:00</updated>
-  <id>/</id>
+  <updated>2024-04-29T00:52:18+00:00</updated>
+  <id>https://maxkapur.com/</id>
   <author>
     <name></name>
     <email></email>
@@ -18,9 +18,9 @@
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
   <entry>
     <title>Why I put ISO dates in filenames</title>
-    <link rel="alternate" href="/2024/04/26/iso-dates-filenames.html" />
+    <link rel="alternate" href="https://maxkapur.com/2024/04/26/iso-dates-filenames.html" />
     <updated>2024-04-26T00:00:00+00:00</updated><updated-readable>Apr 26, 2024</updated-readable>
-    <id>/2024/04/26/iso-dates-filenames</id>
+    <id>https://maxkapur.com/2024/04/26/iso-dates-filenames</id>
     <summary><p>I am one of those obnoxious people who begins his filenames with an ISO date,
 like <code class="language-plaintext highlighter-rouge">2024-03-06_blog_post_idea.md</code>. I know that file metadata already tracks
 creation and revision dates, but I don’t like those: The creation date is
@@ -82,9 +82,9 @@ I’ve learned never to trust software.&lt;/p&gt;
   </entry>
   <entry>
     <title>New old device</title>
-    <link rel="alternate" href="/2024/04/14/new-old-device.html" />
+    <link rel="alternate" href="https://maxkapur.com/2024/04/14/new-old-device.html" />
     <updated>2024-04-14T00:00:00+00:00</updated><updated-readable>Apr 14, 2024</updated-readable>
-    <id>/2024/04/14/new-old-device</id>
+    <id>https://maxkapur.com/2024/04/14/new-old-device</id>
     <summary><p>On a recent visit home, I dug this 2007
 <a href="https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip">Sansa Clip</a> 
 out of a box.</p>
@@ -153,9 +153,9 @@ obvious.&lt;/p&gt;
   </entry>
   <entry>
     <title>Recent reading</title>
-    <link rel="alternate" href="/2024/03/18/recent-reading.html" />
+    <link rel="alternate" href="https://maxkapur.com/2024/03/18/recent-reading.html" />
     <updated>2024-03-18T00:00:00+00:00</updated><updated-readable>Mar 18, 2024</updated-readable>
-    <id>/2024/03/18/recent-reading</id>
+    <id>https://maxkapur.com/2024/03/18/recent-reading</id>
     <summary><p>Mostly novels this time:</p>
 
 <ul>
@@ -241,9 +241,9 @@ if you know of any others.&lt;/p&gt;
   </entry>
   <entry>
     <title>Housekeeping</title>
-    <link rel="alternate" href="/2024/03/10/housekeeping.html" />
+    <link rel="alternate" href="https://maxkapur.com/2024/03/10/housekeeping.html" />
     <updated>2024-03-10T00:00:00+00:00</updated><updated-readable>Mar 10, 2024</updated-readable>
-    <id>/2024/03/10/housekeeping</id>
+    <id>https://maxkapur.com/2024/03/10/housekeeping</id>
     <summary><p>Completed some overdue site maintenance over the past few weeks:</p>
 
 <ul>
@@ -333,9 +333,9 @@ times and user privacy.&lt;/p&gt;
   </entry>
   <entry>
     <title>A handy class of submodular functions</title>
-    <link rel="alternate" href="/2024/01/01/handy-submodular.html" />
+    <link rel="alternate" href="https://maxkapur.com/2024/01/01/handy-submodular.html" />
     <updated>2024-01-01T00:00:00+00:00</updated><updated-readable>Jan 1, 2024</updated-readable>
-    <id>/2024/01/01/handy-submodular</id>
+    <id>https://maxkapur.com/2024/01/01/handy-submodular</id>
     <summary><p>In this post, we will show that functions of the form</p>
 
 \[f(X) = 1 -
@@ -573,9 +573,9 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
   </entry>
   <entry>
     <title>Recent reading</title>
-    <link rel="alternate" href="/2023/11/05/recent-reading.html" />
+    <link rel="alternate" href="https://maxkapur.com/2023/11/05/recent-reading.html" />
     <updated>2023-11-05T00:00:00+00:00</updated><updated-readable>Nov 5, 2023</updated-readable>
-    <id>/2023/11/05/recent-reading</id>
+    <id>https://maxkapur.com/2023/11/05/recent-reading</id>
     <summary><p>Finished reading, but still thinking about:</p>
 
 <ul>
@@ -617,9 +617,9 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
   </entry>
   <entry>
     <title>Guitarix troubleshooting</title>
-    <link rel="alternate" href="/2023/07/22/guitarix-troubleshooting.html" />
+    <link rel="alternate" href="https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html" />
     <updated>2023-07-22T00:00:00+00:00</updated><updated-readable>Jul 22, 2023</updated-readable>
-    <id>/2023/07/22/guitarix-troubleshooting</id>
+    <id>https://maxkapur.com/2023/07/22/guitarix-troubleshooting</id>
     <summary><p>For the past few updates of <a href="https://guitarix.org/">Guitarix</a>, I have been
 having issues where changing the JACK server latency causes the audio output
 to go crazy. This seems to stem from changes that the developer has been
@@ -653,9 +653,9 @@ take over the next time the application is launched.&lt;/p&gt;
   </entry>
   <entry>
     <title>fzl.fish</title>
-    <link rel="alternate" href="/2023/06/17/fzl.fish.html" />
+    <link rel="alternate" href="https://maxkapur.com/2023/06/17/fzl.fish.html" />
     <updated>2023-06-17T00:00:00+00:00</updated><updated-readable>Jun 17, 2023</updated-readable>
-    <id>/2023/06/17/fzl.fish</id>
+    <id>https://maxkapur.com/2023/06/17/fzl.fish</id>
     <summary><p>I’ve been using the following fish alias <code class="language-plaintext highlighter-rouge">fzl</code> (“fuzzy list”) to run <code class="language-plaintext highlighter-rouge">fzf</code> (“fuzzy find”) in the current directory with a <code class="language-plaintext highlighter-rouge">bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <code class="language-plaintext highlighter-rouge">fzf</code> <a href="https://github.com/junegunn/fzf#preview-window">readme</a>.</p>
 
 <p><code class="language-plaintext highlighter-rouge">~/.config/fish/functions/fzl.fish</code>:</p>
@@ -731,9 +731,9 @@ take over the next time the application is launched.&lt;/p&gt;
   </entry>
   <entry>
     <title>Learning Korean idioms with UNIX fortune</title>
-    <link rel="alternate" href="/2023/02/05/korean-idioms-fortunes.html" />
+    <link rel="alternate" href="https://maxkapur.com/2023/02/05/korean-idioms-fortunes.html" />
     <updated>2023-02-05T00:00:00+00:00</updated><updated-readable>Feb 5, 2023</updated-readable>
-    <id>/2023/02/05/korean-idioms-fortunes</id>
+    <id>https://maxkapur.com/2023/02/05/korean-idioms-fortunes</id>
     <summary><p><a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a> is a classic UNIX program that displays random fortunes, pithy quotes, and the like:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fortune
@@ -776,9 +776,9 @@ If you think last Tuesday was a drag, wait till you see what happens tomorrow!
   </entry>
   <entry>
     <title>Applying the KISS principle to amp modeling</title>
-    <link rel="alternate" href="/2023/01/27/kiss-guitar-modeling.html" />
+    <link rel="alternate" href="https://maxkapur.com/2023/01/27/kiss-guitar-modeling.html" />
     <updated>2023-01-27T00:00:00+00:00</updated><updated-readable>Jan 27, 2023</updated-readable>
-    <id>/2023/01/27/kiss-guitar-modeling</id>
+    <id>https://maxkapur.com/2023/01/27/kiss-guitar-modeling</id>
     <summary><p>I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
 I started out with Garageband and Mainstage, then briefly experimented with <a href="https://www.kuassa.com/products/amplifikation-vermilion/">Amplifikation Vermilion</a>, and for the last year and half have turned to a free, open-source package called <a href="https://guitarix.org/">Guitarix</a> and a small collection of impulse response files culled from guitar forums.
 In my experience, a good impulse response file fed into a basic convolver does a lot more for your sound than trying to optimize the countless parameters on an expensive simulator.</p>
@@ -818,9 +818,9 @@ I have trained my fingers to make the most of middle-of-the-road settings.&lt;/p
   </entry>
   <entry>
     <title>This year’s reading</title>
-    <link rel="alternate" href="/2022/12/17/this-years-reading.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/12/17/this-years-reading.html" />
     <updated>2022-12-17T00:00:00+00:00</updated><updated-readable>Dec 17, 2022</updated-readable>
-    <id>/2022/12/17/this-years-reading</id>
+    <id>https://maxkapur.com/2022/12/17/this-years-reading</id>
     <summary><p>A subset of the books I enjoyed this year:</p>
 <ul>
   <li>Barbara Kingsolver, <em>The Poisonwood Bible,</em> a novel about evangelical Christianity and cultural arrogance.</li>
@@ -860,9 +860,9 @@ I have trained my fingers to make the most of middle-of-the-road settings.&lt;/p
   </entry>
   <entry>
     <title>Two truths and one lie</title>
-    <link rel="alternate" href="/2022/11/06/two-truths-one-lie.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/11/06/two-truths-one-lie.html" />
     <updated>2022-11-06T00:00:00+00:00</updated><updated-readable>Nov 6, 2022</updated-readable>
-    <id>/2022/11/06/two-truths-one-lie</id>
+    <id>https://maxkapur.com/2022/11/06/two-truths-one-lie</id>
     <summary><p>A puzzle based on the icebreaker game.</p>
 
 <blockquote>
@@ -971,9 +971,9 @@ assignments A and B and leaves assignment C, namely &lt;code class=&quot;languag
   </entry>
   <entry>
     <title>New job at Booz Allen Hamilton</title>
-    <link rel="alternate" href="/2022/10/16/new-bah-job.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/10/16/new-bah-job.html" />
     <updated>2022-10-16T00:00:00+00:00</updated><updated-readable>Oct 16, 2022</updated-readable>
-    <id>/2022/10/16/new-bah-job</id>
+    <id>https://maxkapur.com/2022/10/16/new-bah-job</id>
     <summary><p>I’m happy to share a somewhat belated bit of good news: This month, I
 began a new job as an operations research analyst at the consulting firm
 Booz Allen Hamilton. To fulfill this new role, I have moved to Arlington,
@@ -1009,9 +1009,9 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
   </entry>
   <entry>
     <title>Master’s graduation and two free optimization courses</title>
-    <link rel="alternate" href="/2022/09/04/masters-graduation.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/09/04/masters-graduation.html" />
     <updated>2022-09-04T00:00:00+00:00</updated><updated-readable>Sep 4, 2022</updated-readable>
-    <id>/2022/09/04/masters-graduation</id>
+    <id>https://maxkapur.com/2022/09/04/masters-graduation</id>
     <summary><p>On September 29, I received my master’s degree in industrial engineering from Seoul National University!</p>
 
 <p><img src="/assets/ms-graduation.jpg" alt="A photograph of Max wearing his cap and gown at Seoul National University." /></p>
@@ -1036,9 +1036,9 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
   </entry>
   <entry>
     <title>Apply to fifty colleges</title>
-    <link rel="alternate" href="/2022/09/01/apply-fifty-colleges.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/09/01/apply-fifty-colleges.html" />
     <updated>2022-09-01T00:00:00+00:00</updated><updated-readable>Sep 1, 2022</updated-readable>
-    <id>/2022/09/01/apply-fifty-colleges</id>
+    <id>https://maxkapur.com/2022/09/01/apply-fifty-colleges</id>
     <summary><p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.</p>
 </summary>
     <content type="html">&lt;p&gt;In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.&lt;!--more--&gt;&lt;sup id=&quot;fnref:obvious&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:obvious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -1172,9 +1172,9 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
   </entry>
   <entry>
     <title>Grading multiple-selection questions</title>
-    <link rel="alternate" href="/2022/08/18/multiple-selection.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/08/18/multiple-selection.html" />
     <updated>2022-08-18T00:00:00+00:00</updated><updated-readable>Aug 18, 2022</updated-readable>
-    <id>/2022/08/18/multiple-selection</id>
+    <id>https://maxkapur.com/2022/08/18/multiple-selection</id>
     <summary><p>Consider the following test question:</p>
 
 <blockquote>
@@ -1243,9 +1243,9 @@ A student who answers &lt;code class=&quot;language-plaintext highlighter-rouge&
   </entry>
   <entry>
     <title>Mulberry: A college application strategist</title>
-    <link rel="alternate" href="/2022/08/02/mulberry.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/08/02/mulberry.html" />
     <updated>2022-08-02T00:00:00+00:00</updated><updated-readable>Aug 2, 2022</updated-readable>
-    <id>/2022/08/02/mulberry</id>
+    <id>https://maxkapur.com/2022/08/02/mulberry</id>
     <summary><p>I recently created <a href="https://maxkapur.com/mulberry">Mulberry</a>, a webapp students
 can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
@@ -1279,9 +1279,9 @@ and the code is on &lt;a href=&quot;https://github.com/maxkapur/mulberry&quot;&g
   </entry>
   <entry>
     <title>Python utility for manipulating subtitle timings</title>
-    <link rel="alternate" href="/2022/07/15/srt-delay.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/07/15/srt-delay.html" />
     <updated>2022-07-15T00:00:00+00:00</updated><updated-readable>Jul 15, 2022</updated-readable>
-    <id>/2022/07/15/srt-delay</id>
+    <id>https://maxkapur.com/2022/07/15/srt-delay</id>
     <summary><p>One of my current projects involves editing several hours’ worth of subtitle files in the 
 <code class="language-plaintext highlighter-rouge">.srt</code> format to accompany an online course in numerical optimization. Because we haven’t 
 decided exactly how we want to break up the videos, I needed an efficient way to delay
@@ -1347,9 +1347,9 @@ you will want to save the output to another file:&lt;/p&gt;
   </entry>
   <entry>
     <title>Opening Pandora’s Box</title>
-    <link rel="alternate" href="/2022/07/01/opening-pandoras-box.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/07/01/opening-pandoras-box.html" />
     <updated>2022-07-01T00:00:00+00:00</updated><updated-readable>Jul 1, 2022</updated-readable>
-    <id>/2022/07/01/opening-pandoras-box</id>
+    <id>https://maxkapur.com/2022/07/01/opening-pandoras-box</id>
     <summary><p>A harrowing thing that happens in research is that occasionally, you stumble upon a
 <a href="https://doi.org/10.2307/1910412">paper from 1979 (paywall)</a> that appears to solve
 the exact problem that you’ve been working on for months, but that escaped your
@@ -1448,9 +1448,9 @@ objective function misbehave.&lt;/p&gt;
   </entry>
   <entry>
     <title>Migrating to Jekyll</title>
-    <link rel="alternate" href="/2022/06/25/migrating-to-jekyll.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/06/25/migrating-to-jekyll.html" />
     <updated>2022-06-25T00:00:00+00:00</updated><updated-readable>Jun 25, 2022</updated-readable>
-    <id>/2022/06/25/migrating-to-jekyll</id>
+    <id>https://maxkapur.com/2022/06/25/migrating-to-jekyll</id>
     <summary><p>After reflecting on my unsustainable dependency on Google services, I have decided to bite
 the bullet and migrate my blog from Blogger to the open-source <a href="https://github.com/jekyll/jekyll">Jekyll</a>,
 with hosting provided by GitHub. In the full version of this post,
@@ -1535,9 +1535,9 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
   </entry>
   <entry>
     <title>Thesis defense</title>
-    <link rel="alternate" href="/2022/06/19/thesis-defense.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/06/19/thesis-defense.html" />
     <updated>2022-06-19T00:00:00+00:00</updated><updated-readable>Jun 19, 2022</updated-readable>
-    <id>/2022/06/19/thesis-defense</id>
+    <id>https://maxkapur.com/2022/06/19/thesis-defense</id>
     <summary><p>This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on <a href="https://github.com/maxkapur/CollegeApplication">this GitHub repository</a>, and all are provided in both English and Korean versions. I also have a very brief deck of <a href="https://maxkapur.com/CollegeApplication">reveal.js slides</a> introducing the problem, and I recently wrote some <a href="https://maxkapur.com/OptimalApplication.jl/stable/">documentation for OptimalApplication.jl</a>, the Julia implementation of my solution algorithms.</p>
 
 <p>The defense process was relatively painless: I received some very helpful comments and reference suggestions from the professors on my committee, and I was pleased that they were persuaded by my argument that the model of the college admissions process I have chosen represents the best tradeoff between realism and tractability.</p>
@@ -1561,9 +1561,9 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
   </entry>
   <entry>
     <title>The college application problem, presented in Korean</title>
-    <link rel="alternate" href="/2022/05/13/college-application-presentation-korean.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/05/13/college-application-presentation-korean.html" />
     <updated>2022-05-13T00:00:00+00:00</updated><updated-readable>May 13, 2022</updated-readable>
-    <id>/2022/05/13/college-application-presentation-korean</id>
+    <id>https://maxkapur.com/2022/05/13/college-application-presentation-korean</id>
     <summary><p>I gave a brief
 <a href="https://www.youtube.com/watch?v=tZCSwCPd1Qc">presentation about the college application problem</a>
 at a research fair hosted by our department. English subtitles are included.</p>
@@ -1575,9 +1575,9 @@ at a research fair hosted by our department. English subtitles are included.&lt;
   </entry>
   <entry>
     <title>“College Application” on arXiv</title>
-    <link rel="alternate" href="/2022/05/04/college-application-on-arxiv.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/05/04/college-application-on-arxiv.html" />
     <updated>2022-05-04T00:00:00+00:00</updated><updated-readable>May 4, 2022</updated-readable>
-    <id>/2022/05/04/college-application-on-arxiv</id>
+    <id>https://maxkapur.com/2022/05/04/college-application-on-arxiv</id>
     <summary><p>In advance of a conference I will be attending with my labmates next month in Jeju, my thesis advisor and I have posted a preliminary version of <a href="https://arxiv.org/abs/2205.01869">“The College Application Problem” on arXiv</a>. Here’s the abstract:</p>
 
 <blockquote>
@@ -1597,9 +1597,9 @@ at a research fair hosted by our department. English subtitles are included.&lt;
   </entry>
   <entry>
     <title>The school location problem</title>
-    <link rel="alternate" href="/2022/04/14/school-location-problem.html" />
+    <link rel="alternate" href="https://maxkapur.com/2022/04/14/school-location-problem.html" />
     <updated>2022-04-14T00:00:00+00:00</updated><updated-readable>Apr 14, 2022</updated-readable>
-    <id>/2022/04/14/school-location-problem</id>
+    <id>https://maxkapur.com/2022/04/14/school-location-problem</id>
     <summary><p>I’ve spent a few days thinking about a facility location problem that
 we might call the <em>school location problem.</em> The goal is to place \(n\)
 schools to serve \(m\) families, such that the <em>furthest</em> distance
@@ -1607,7 +1607,7 @@ between any family and their <em>nearest</em> school is <em>minimized.</em> This
 problem is almost a \(k\)-means or ellipsoid fitting problem, but its
 unusual “minimin” form makes it computationally challenging.</p>
 
-<p>In the video below, and associated Jupyter notebook (<a href="https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381">Github</a>, <a href="https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb">HTML viewer</a>), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.</p>
+<p>In the video below, and associated Jupyter notebook (<a href="https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381">GitHub</a>, <a href="https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb">HTML viewer</a>), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.</p>
 
 <p>Here’s the <a href="https://www.youtube.com/watch?v=/bjreiQRHerU">video link</a>.</p>
 </summary>
@@ -1618,16 +1618,16 @@ between any family and their &lt;em&gt;nearest&lt;/em&gt; school is &lt;em&gt;mi
 problem is almost a \(k\)-means or ellipsoid fitting problem, but its
 unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
 
-&lt;p&gt;In the video below, and associated Jupyter notebook (&lt;a href=&quot;https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381&quot;&gt;Github&lt;/a&gt;, &lt;a href=&quot;https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb&quot;&gt;HTML viewer&lt;/a&gt;), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.&lt;/p&gt;
+&lt;p&gt;In the video below, and associated Jupyter notebook (&lt;a href=&quot;https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381&quot;&gt;GitHub&lt;/a&gt;, &lt;a href=&quot;https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb&quot;&gt;HTML viewer&lt;/a&gt;), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.&lt;/p&gt;
 
 &lt;p&gt;Here’s the &lt;a href=&quot;https://www.youtube.com/watch?v=/bjreiQRHerU&quot;&gt;video link&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Administrative vs. allocative efficiency</title>
-    <link rel="alternate" href="/2021/10/21/administrative-allocative-efficiency.html" />
+    <link rel="alternate" href="https://maxkapur.com/2021/10/21/administrative-allocative-efficiency.html" />
     <updated>2021-10-21T00:00:00+00:00</updated><updated-readable>Oct 21, 2021</updated-readable>
-    <id>/2021/10/21/administrative-allocative-efficiency</id>
+    <id>https://maxkapur.com/2021/10/21/administrative-allocative-efficiency</id>
     <summary><p>This fall marks my final semester of coursework, and penultimate semester overall, of the master’s course in industrial engineering here at Seoul National University. I’m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.</p>
 
 <p>Recently, I have been focusing on risk-averse behavior in college applications. In an ideal universe, college applications are completely standardized and there are no constraints on students’ ability to apply to many schools or on schools’ ability to assess a large number of applicants. In reality, many highly qualified students fail to apply to top schools because they doubt their ability to get in or receive a sufficient financial-aid package. For these students, the time and money required to submit an additional application to a so-called reach school takes away from time that could be spent refining an application to a target school. This opportunity cost is not trivial, because modern admissions offices strongly prefer students who tailor their personal statement to the characteristics and interests of the target school or program.</p>
@@ -1650,9 +1650,9 @@ unusual “minimin” form makes it computationally challenging.&lt;/p&gt;
   </entry>
   <entry>
     <title>An economic view of the Korean college admissions market</title>
-    <link rel="alternate" href="/2021/05/16/economic-view-korean-admissions.html" />
+    <link rel="alternate" href="https://maxkapur.com/2021/05/16/economic-view-korean-admissions.html" />
     <updated>2021-05-16T00:00:00+00:00</updated><updated-readable>May 16, 2021</updated-readable>
-    <id>/2021/05/16/economic-view-korean-admissions</id>
+    <id>https://maxkapur.com/2021/05/16/economic-view-korean-admissions</id>
     <summary><p>Existing computational models of admissions markets tend to fall at one of two extremes: Either they envision a <em>centralized</em> admissions process in which the school board runs an algorithm that says which students go where, or a <em>decentralized</em> process in which colleges compete for the best students. But the Korean college admissions process cannot be adequately described in either of these terms.</p>
 
 </summary>
@@ -1682,9 +1682,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>Stable matching on Planet Money</title>
-    <link rel="alternate" href="/2021/03/07/stable-matching-planet-money.html" />
+    <link rel="alternate" href="https://maxkapur.com/2021/03/07/stable-matching-planet-money.html" />
     <updated>2021-03-07T00:00:00+00:00</updated><updated-readable>Mar 7, 2021</updated-readable>
-    <id>/2021/03/07/stable-matching-planet-money</id>
+    <id>https://maxkapur.com/2021/03/07/stable-matching-planet-money</id>
     <summary><p><em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled “The Marriage Pact”</a> that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.</p>
 
 <p>The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that <em>Planet Money</em> leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.</p>
@@ -1715,9 +1715,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>Next</title>
-    <link rel="alternate" href="/2020/07/07/next.html" />
+    <link rel="alternate" href="https://maxkapur.com/2020/07/07/next.html" />
     <updated>2020-07-07T00:00:00+00:00</updated><updated-readable>Jul 7, 2020</updated-readable>
-    <id>/2020/07/07/next</id>
+    <id>https://maxkapur.com/2020/07/07/next</id>
     <summary><p>They say that we perceive time by the accumulation of novel experiences, so that if you want to have a subjectively long life, you ought to do many spontaneous and hard-to-repeat things, but if you want to have a happy life, you ought to find one or two high pleasures that you can enjoy on a spiritual level and repeat the hell out of them, because they also say that on average, people derive more happiness from repeating a good experience than from trying something new.</p>
 
 <p>You could write a linear program that targets your ideal mix of longevity and happiness and it would tell you exactly how many times to do this or that activity before moving onto something new. But what this calculus leaves out is the feelings of uncertainty that stain the transitions.</p>
@@ -1753,9 +1753,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>Accidental signals</title>
-    <link rel="alternate" href="/2020/04/16/accidental-signals.html" />
+    <link rel="alternate" href="https://maxkapur.com/2020/04/16/accidental-signals.html" />
     <updated>2020-04-16T00:00:00+00:00</updated><updated-readable>Apr 16, 2020</updated-readable>
-    <id>/2020/04/16/accidental-signals</id>
+    <id>https://maxkapur.com/2020/04/16/accidental-signals</id>
     <summary><p>It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.</p>
 </summary>
     <content type="html">&lt;p&gt;It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.&lt;!--more--&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -1793,9 +1793,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>What you learn in a humanities degree</title>
-    <link rel="alternate" href="/2020/01/19/what-you-learn-humanities.html" />
+    <link rel="alternate" href="https://maxkapur.com/2020/01/19/what-you-learn-humanities.html" />
     <updated>2020-01-19T00:00:00+00:00</updated><updated-readable>Jan 19, 2020</updated-readable>
-    <id>/2020/01/19/what-you-learn-humanities</id>
+    <id>https://maxkapur.com/2020/01/19/what-you-learn-humanities</id>
     <summary><p>The more I learn, I find myself with fewer and fewer things to say.</p>
 
 <p><img src="/assets/what-if-theories.png" alt="A Reddit post reading, &quot;What to do if i have theories? I contacted a college and they ignored me&quot;" /></p>
@@ -1826,9 +1826,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>Houseplant measurements</title>
-    <link rel="alternate" href="/2020/01/02/houseplant-measurements.html" />
+    <link rel="alternate" href="https://maxkapur.com/2020/01/02/houseplant-measurements.html" />
     <updated>2020-01-02T00:00:00+00:00</updated><updated-readable>Jan 2, 2020</updated-readable>
-    <id>/2020/01/02/houseplant-measurements</id>
+    <id>https://maxkapur.com/2020/01/02/houseplant-measurements</id>
     <summary><p>I have been measuring the leaves of my houseplants.</p>
 
 <figure>
@@ -1866,9 +1866,9 @@ And, as many have probably heard, a signature feature of the Korean admissions p
   </entry>
   <entry>
     <title>Using data to understand ELL students</title>
-    <link rel="alternate" href="/2019/10/18/using-data-ell.html" />
+    <link rel="alternate" href="https://maxkapur.com/2019/10/18/using-data-ell.html" />
     <updated>2019-10-18T00:00:00+00:00</updated><updated-readable>Oct 18, 2019</updated-readable>
-    <id>/2019/10/18/using-data-ell</id>
+    <id>https://maxkapur.com/2019/10/18/using-data-ell</id>
     <summary><p>In August, I surveyed my students about their motivation for learning
 English, their opinions about our class and my teaching style, and
 what resources they were using to study English outside of class. By
@@ -1902,9 +1902,9 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
   </entry>
   <entry>
     <title>Fulbright</title>
-    <link rel="alternate" href="/2018/05/02/fulbright-korea.html" />
+    <link rel="alternate" href="https://maxkapur.com/2018/05/02/fulbright-korea.html" />
     <updated>2018-05-02T00:00:00+00:00</updated><updated-readable>May 2, 2018</updated-readable>
-    <id>/2018/05/02/fulbright-korea</id>
+    <id>https://maxkapur.com/2018/05/02/fulbright-korea</id>
     <summary><p>Fun fact: the most-viewed post on this blog, by a long shot, is the one where <a href="/2016/03/12/cls-korea.html">I shared that I’d received a Critical Language Scholarship</a> from the US Department of State to study Korean in Gwangju. Today, I’m pleased to announce there will soon be another addition to the State Department–mandated disclaimer at the bottom of this blog.</p>
 
 <p>Beginning early this July, I’ll be spending a full year in South Korea as a Fulbright fellow. I’ll be serving as an English teaching assistant at the elementary level. After our six-week orientation in Seoul, I don’t yet know the city I’ll be working in. That said, though Korea isn’t a small country, it possesses an excellent transportation infrastructure. If you’ll be there at all during the next year, send me an email so we can catch up!</p>
@@ -1920,9 +1920,9 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
   </entry>
   <entry>
     <title>Sorites</title>
-    <link rel="alternate" href="/2016/08/07/sorites.html" />
+    <link rel="alternate" href="https://maxkapur.com/2016/08/07/sorites.html" />
     <updated>2016-08-07T00:00:00+00:00</updated><updated-readable>Aug 7, 2016</updated-readable>
-    <id>/2016/08/07/sorites</id>
+    <id>https://maxkapur.com/2016/08/07/sorites</id>
     <summary><p>We pretend stability by tracking our life’s progress as a series of marginal changes, so that from each day to the next we can see that we are still ourselves, changed perhaps in substance, but never in identity.</p>
 
 <p>But sample two days, say, ten or twenty years apart within the spread of a life—could you recognize the images as of the same person? Over time the marginal changes penetrate to the being’s core. The transformation becomes comprehensive.</p>
@@ -1963,9 +1963,9 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
   </entry>
   <entry>
     <title>First week of class at CNU</title>
-    <link rel="alternate" href="/2016/06/25/first-week-class-cnu.html" />
+    <link rel="alternate" href="https://maxkapur.com/2016/06/25/first-week-class-cnu.html" />
     <updated>2016-06-25T00:00:00+00:00</updated><updated-readable>Jun 25, 2016</updated-readable>
-    <id>/2016/06/25/first-week-class-cnu</id>
+    <id>https://maxkapur.com/2016/06/25/first-week-class-cnu</id>
     <summary><p>I’ve just finished my first week of class at Chonnam National Universty here in Gwangju with CLS and everything is amazing! I am staying with a host family in a suburb about 40 minutes from school by bus, so I get to practice my Korean 24/7.</p>
 
 <p>Speaking in a new language can feel like doing the dishes with chopsticks. One of the conditions of the CLS scholarship is that students use only the target language when they are on campus, even outside of class, which is both exhausting and rewarding. Listening and speaking are my weakest language areas, and trying to explain a multi-step process in Korean or politely make a request of my host family often leaves all parties frustrated and confused. I am committed to the language policy, but it seems to worry my host family that I come home each day exhausted of my Korean abilities rather than more fluent.</p>
@@ -1981,9 +1981,9 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
   </entry>
   <entry>
     <title>CLS Korean</title>
-    <link rel="alternate" href="/2016/03/12/cls-korea.html" />
+    <link rel="alternate" href="https://maxkapur.com/2016/03/12/cls-korea.html" />
     <updated>2016-03-12T00:00:00+00:00</updated><updated-readable>Mar 12, 2016</updated-readable>
-    <id>/2016/03/12/cls-korea</id>
+    <id>https://maxkapur.com/2016/03/12/cls-korea</id>
     <summary><p>I am blessed and honored to have received a Critical Language Scholarship from the US Department of State to study Korean language this summer at Chonnam University. This will be my first visit to Korea, and I am incredibly excited as well as anxious about becoming a study abroad student for the first time.</p>
 
 <p>I feel very grateful for the professors who wrote my references for this program and all of those who provided me with guidance during the application. I am fortunate to live in a country that values the study of foreign languages enough to sponsor students like me using public funds. Thank you for paying your taxes.</p>
@@ -1999,9 +1999,9 @@ write-up of my survey design and results&lt;/a&gt;.&lt;/p&gt;
   </entry>
   <entry>
     <title>Older posts</title>
-    <link rel="alternate" href="/1970/01/01/older-posts.html" />
+    <link rel="alternate" href="https://maxkapur.com/1970/01/01/older-posts.html" />
     <updated>1970-01-01T00:00:00+00:00</updated><updated-readable>Jan 1, 1970</updated-readable>
-    <id>/1970/01/01/older-posts</id>
+    <id>https://maxkapur.com/1970/01/01/older-posts</id>
     <summary><p>“Where did the old blog go?” On June 25, 2022, I moved by blog from Google’s Blogger service to a Jekyll blog hosted on GitHub (which you are currently viewing). I have copied over all the posts from the old blog that I think are worth reading. Nonetheless, the original Illusion Slopes, whose content runs back to November 2015, is still accessible at <a href="https://illusionslopes.blogspot.com/">illusionslopes.blogspot.com</a>.</p>
 </summary>
     <content type="html">&lt;p&gt;“Where did the old blog go?” On June 25, 2022, I moved by blog from Google’s Blogger service to a Jekyll blog hosted on GitHub (which you are currently viewing). I have copied over all the posts from the old blog that I think are worth reading. Nonetheless, the original Illusion Slopes, whose content runs back to November 2015, is still accessible at &lt;a href=&quot;https://illusionslopes.blogspot.com/&quot;&gt;illusionslopes.blogspot.com&lt;/a&gt;.&lt;/p&gt;

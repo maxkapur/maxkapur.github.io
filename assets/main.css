@@ -160,10 +160,12 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .site-he
 .social-media-list a {
   text-decoration: none;
 }
-.social-media-list a .username {
+.social-media-list a .username,
+.social-media-list a .rss-link {
   text-decoration: underline solid currentColor 1px;
 }
-.social-media-list a .username:hover {
+.social-media-list a .username:hover,
+.social-media-list a .rss-link:hover {
   text-decoration: underline solid currentColor 1.5px;
 }
 
