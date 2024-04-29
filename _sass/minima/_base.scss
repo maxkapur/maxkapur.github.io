@@ -195,11 +195,13 @@ a {
   // also gets underlined, which looks bad; we only want the username itself to
   // be highlighted. Moreover, selector specificity requires this rule to be
   // last so that it overrides the &:hover rule above (or else the space is
-  // again underlined on hover).
+  // again underlined on hover). Ditto the RSS link (which appears in the social
+  // list).
   .social-media-list & {
     @include no-underline;
 
-    .username {
+    .username,
+    .rss-link {
       @include subtle-underline;
 
       &:hover {
