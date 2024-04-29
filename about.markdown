@@ -27,10 +27,10 @@ jazz piano and Korean in 2018; here’s my
 Feel free to contact me with questions about the US State Department&rsquo;s
 Fulbright or Critical Language scholarships, the Government of Korea Scholarship,
 or anything else on my profile. You can find me on
-[GitHub](https://github.com/maxkapur),
-[LinkedIn](https://www.linkedin.com/in/maxkapur/),
+[GitHub](https://github.com/{{ site.github_username }}),
+[LinkedIn](https://www.linkedin.com/in/{{ site.linkedin_username }}),
 and [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw).
-You are also welcome to email me at [max@maxkapur.com](mailto:max@maxkapur.com).
+You are also welcome to email me at [{{ site.email }}](mailto:{{ site.email }}).
 
 # Disclaimer
 
