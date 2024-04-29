@@ -20,7 +20,7 @@ programming, combinatorial optimization, and urban transit network models.
 
 Prior to my studies at SNU, I taught English for two years as a US State
 Department Fulbright scholar at a middle school in Naju, South Korea.
-I graduated from the University of Southern California in 2018 with degress in
+I graduated from the University of Southern California in 2018 with degrees in
 jazz piano and Korean in 2018; here’s my
 [senior recital video](https://www.youtube.com/playlist?list=PL06yMQdXWrp9VsynaPe2mg2gjHfr45VZO).
 
