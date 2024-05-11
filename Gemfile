@@ -24,6 +24,10 @@ group :jekyll_plugins do
   gem "jekyll-redirect-from", "~> 0.16"
 end
 
+# This should be pulled in as a Jekyll dependency, but sometimes that doesn't
+# happen. See e.g. https://github.com/jekyll/jekyll/issues/5423
+gem "json", "~> 2.7"
+
 # Don't need Windows or JRuby
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
