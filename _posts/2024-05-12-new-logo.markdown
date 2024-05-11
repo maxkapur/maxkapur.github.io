@@ -1,0 +1,19 @@
+---
+layout:     post
+title:      "New logo"
+---
+
+I created a new logo for the site today:
+
+![New logo: A stylized letter "M" formed by joining four segments with colors drawn from the site theme](/assets/logo-new.svg)
+
+The old one was just a square with my initials, MK, which seemed a little too
+self-indulgent (not to mention that I share these initials with half of my
+extended family, so I can hardly claim them as my own):
+
+![Old logo: The initials MK in green on a yellowish background](/assets/logo-old.svg)
+
+The new logo still kind of forms a stylized letter *m,* if you imagine the three
+theme-colored vertical segments as hanging from the horizontal segment on top.
+It also *kind of* recalls the shape of the word *Ill,* which spells the start of
+the blog title and doubles as a fun bit of retro slang.
