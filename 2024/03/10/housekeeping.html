@@ -35,19 +35,16 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2024-03-10T00:00:00+00:00","datePublished":"2024-03-10T00:00:00+00:00","description":"Completed some overdue site maintenance over the past few weeks: RSS feed styling: With help from a template found on GitHub, I created a stylesheet for the RSS feed so that it looks nice when viewed in the browser. Ctrl+F “via RSS” on this page to find the link, or just scroll all the way to the bottom, or maybe try this link. I am not a big consumer of RSS feeds myself; I prefer to just bookmark blog URLs and read posts in their original context. But RSS is an important bit of plumbing for the indie web, and probably covers accessibility use cases that I haven’t anticipated. (Technically, I am serving an Atom feed rather than RSS, but people use the terms interchangeably.) Upgraded to Jekyll 4: Jekyll is a tool for building a static HTML site out of Markdown files. The built-in GitHub functionality for hosting a Jekyll blog uses an old version of Jekyll which has some end-of-life dependencies, and they are stuck searching for an upgrade path that doesn’t break existing sites. I followed this wonderful guide to switch my publication workflow to a GitHub Action that lets me manually manage my Ruby and Jekyll versions. It’s a great tutorial that also helped clear up several misunderstandings about Ruby, Gems, and rbenv. Removed embedded YouTube videos: I replaced embedded YouTube videos with simple links to improve page load times and user privacy.","headline":"Housekeeping","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2024/03/10/housekeeping.html"},"url":"https://maxkapur.com/2024/03/10/housekeeping.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" /><!--
-  Favicon block to insert into <head>. In its own file so that we can include
+  Favicon block to insert into head. In its own file so that we can include
   the favicon definitions in feed.xsl without introducing the other
   (XML-incompatible) parts of the head.
 -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/favicon_180.png">
 <link rel="manifest" href="/assets/images/site.webmanifest">
-<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
-<link rel="shortcut icon" href="/assets/images/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffc40d">
-<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 </head>
 <body><header class="site-header" role="banner">
 

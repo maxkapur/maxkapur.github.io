@@ -35,19 +35,16 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2023-07-22T00:00:00+00:00","datePublished":"2023-07-22T00:00:00+00:00","description":"For the past few updates of Guitarix, I have been having issues where changing the JACK server latency causes the audio output to go crazy. This seems to stem from changes that the developer has been making to the config files, because the following commands usually get things working again: mv ~/.config/guitarix ~/.config/guitarix.backup mkdir ~/.config/guitarix cp -r ~/.config/guitarix.backup/banks ~/.config/guitarix/banks These commands backup your amp/effects presets from ~/.config/guitarix/banks (which are the hard part to restore manually), and let the default settings take over the next time the application is launched.","headline":"Guitarix troubleshooting","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html"},"url":"https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" /><!--
-  Favicon block to insert into <head>. In its own file so that we can include
+  Favicon block to insert into head. In its own file so that we can include
   the favicon definitions in feed.xsl without introducing the other
   (XML-incompatible) parts of the head.
 -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/favicon_180.png">
 <link rel="manifest" href="/assets/images/site.webmanifest">
-<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
-<link rel="shortcut icon" href="/assets/images/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffc40d">
-<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 </head>
 <body><header class="site-header" role="banner">
 

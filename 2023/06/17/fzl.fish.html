@@ -35,19 +35,16 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2023-06-17T00:00:00+00:00","datePublished":"2023-06-17T00:00:00+00:00","description":"I’ve been using the following fish alias fzl (“fuzzy list”) to run fzf (“fuzzy find”) in the current directory with a bat preview. It’s just a couple of light tweaks to the examples listed in the fzf readme. ~/.config/fish/functions/fzl.fish: function fzl # `bat` is aliased to `batcat` on Debian if type -q batcat set -f bat_command &quot;batcat&quot; else set -f bat_command &quot;bat&quot; end # Set the overall width of the `bat` preview to # 50% the width of the current terminal set -l bat_width $(math ceil $COLUMNS x 0.5) # My preferred `bat` options set -f bat_command \\ $bat_command \\ --style numbers \\ --color always \\ --italic-text always \\ --wrap auto \\ --terminal-width $bat_width fzf \\ --preview &quot;$bat_command {}&quot; \\ --preview-window right,$bat_width,nowrap end Example below.","headline":"fzl.fish","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2023/06/17/fzl.fish.html"},"url":"https://maxkapur.com/2023/06/17/fzl.fish.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" /><!--
-  Favicon block to insert into <head>. In its own file so that we can include
+  Favicon block to insert into head. In its own file so that we can include
   the favicon definitions in feed.xsl without introducing the other
   (XML-incompatible) parts of the head.
 -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/favicon_180.png">
 <link rel="manifest" href="/assets/images/site.webmanifest">
-<link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000">
-<link rel="shortcut icon" href="/assets/images/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffc40d">
-<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 </head>
 <body><header class="site-header" role="banner">
 

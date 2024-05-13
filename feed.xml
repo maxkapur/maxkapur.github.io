@@ -9,13 +9,49 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-05-11T19:49:00+00:00</updated>
+  <updated>2024-05-13T13:09:04+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
     <email></email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <entry>
+    <title>New logo</title>
+    <link rel="alternate" href="https://maxkapur.com/2024/05/12/new-logo.html" />
+    <updated>2024-05-12T00:00:00+00:00</updated><updated-readable>May 12, 2024</updated-readable>
+    <id>https://maxkapur.com/2024/05/12/new-logo</id>
+    <summary><p>I created a new logo for the site today:</p>
+
+<p><img src="/assets/logo-new.svg" alt="New logo: A stylized letter &quot;M&quot; formed by joining four segments with colors drawn from the site theme" /></p>
+
+<p>The old one was just a square with my initials, MK, which seemed a little too
+self-indulgent (not to mention that I share these initials with half of my
+extended family, so I can hardly claim them as my own):</p>
+
+<p><img src="/assets/logo-old.svg" alt="Old logo: The initials MK in green on a yellowish background" /></p>
+
+<p>The new logo still kind of forms a stylized letter <em>m,</em> if you imagine the three
+theme-colored vertical segments as hanging from the horizontal segment on top.
+It also <em>kind of</em> recalls the shape of the word <em>Ill,</em> which spells the start of
+the blog title and doubles as a fun bit of retro slang.</p>
+</summary>
+    <content type="html">&lt;p&gt;I created a new logo for the site today:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/logo-new.svg&quot; alt=&quot;New logo: A stylized letter &amp;quot;M&amp;quot; formed by joining four segments with colors drawn from the site theme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The old one was just a square with my initials, MK, which seemed a little too
+self-indulgent (not to mention that I share these initials with half of my
+extended family, so I can hardly claim them as my own):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/logo-old.svg&quot; alt=&quot;Old logo: The initials MK in green on a yellowish background&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The new logo still kind of forms a stylized letter &lt;em&gt;m,&lt;/em&gt; if you imagine the three
+theme-colored vertical segments as hanging from the horizontal segment on top.
+It also &lt;em&gt;kind of&lt;/em&gt; recalls the shape of the word &lt;em&gt;Ill,&lt;/em&gt; which spells the start of
+the blog title and doubles as a fun bit of retro slang.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The best thing about fish</title>
     <link rel="alternate" href="https://maxkapur.com/2024/05/03/best-thing-about-fish.html" />
