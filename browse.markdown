@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Browse
+sort_order: 30
 permalink: /browse/
 ---
 

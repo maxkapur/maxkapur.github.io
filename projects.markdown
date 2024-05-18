@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+sort_order: 20
 redirect_from:
   - /publications/
 ---
