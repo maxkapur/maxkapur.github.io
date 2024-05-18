@@ -77,6 +77,8 @@
           </xsl:attribute>
           <xsl:value-of select="atom:title" />
         </a>
+        <!-- &nbsp; -->
+        &#160;
         <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
         <!--
           Uncomment below to incorporate post excerpts into the styled preview.

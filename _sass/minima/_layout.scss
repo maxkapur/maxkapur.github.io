@@ -251,13 +251,20 @@ p.excerpt-warning {
 
 /**
  * Atom feed preview
+ * Same styling is used on the "Browse" page
  */
-/* Sample rule that aligns the dates to the right: */
-/*
-.feed {
-  ul.atom-post-list li .atom-post-list-entry {
-    display: flex; 
-    justify-content: space-between; 
+ul.atom-post-list {
+  li .atom-post-list-entry {
+    display: flex;
+    flex-direction: row;
+    // Align dates to the right:
+    // justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    a,
+    span {
+      display: block;
+    }
   }
 }
-*/
