@@ -37,8 +37,7 @@
             </svg>
           </span>
         </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About me</a><a class="page-link" href="/projects/">Projects</a></div>
+        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
       </nav></div>
 </header>
 <main class="page-content">
@@ -109,6 +108,8 @@
           </xsl:attribute>
           <xsl:value-of select="atom:title" />
         </a>
+        <!-- &nbsp; -->
+        &#160;
         <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
         <!--
           Uncomment below to incorporate post excerpts into the styled preview.
