@@ -14,5 +14,5 @@ clamp the maximum time at eight hours, out of respect for the athletes’
 work-life balance.
 
 I ran (ha) this idea by a friend who is a competitive marathoner and he said,
-“That sounds like hell,” which makes me think I am really onto something,
-because most popular sports sound like hell to those who are not good at them.
+“That sounds like hell.” This makes me think I am really onto something, because
+many popular sports sound like hell to those who are not yet good at them.
