@@ -8,7 +8,7 @@ One of my current projects involves editing several hours’ worth of subtitle f
 decided exactly how we want to break up the videos, I needed an efficient way to delay
 or advance all the subtitles in time, so I wrote a small Python program called `srt_delay.py` today to help me with this task.
 
-Usage examples below the cut, or you can just go straight to the readme in the [GitHub repository](https://github.com/maxkapur/srt_delay).<!--more-->
+Usage examples below the cut, or you can just go straight to the `README` in the [GitHub repository](https://github.com/maxkapur/srt_delay).<!--more-->
 
 ## Usage
 

@@ -24,5 +24,5 @@ I set `fortune korean` (with some gentle text styling) as my fish greeting, so I
 
 ![A screenshot of a fish prompt preceded by the output of the `fish_greeting.fish` script. The idiom is “한 번 엎지른 물은 다시 주워 담지 못한다” and its explanation is 한 번 지나간 일은 다시 돌이켜 회복할 수 없다는 말.](./assets/fish-fortune-greeter.png)
 
-You can find my database and `fish_greeter.fish` script on [Github](https://github.com/maxkapur/korean-fortunes).
+You can find my database and `fish_greeter.fish` script on [GitHub](https://github.com/maxkapur/korean-fortunes).
 

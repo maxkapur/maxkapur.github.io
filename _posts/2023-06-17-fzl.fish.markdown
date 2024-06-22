@@ -3,7 +3,7 @@ layout:     post
 title:      "fzl.fish"
 ---
 
-I’ve been using the following fish alias `fzl` (“fuzzy list”) to run `fzf` (“fuzzy find”) in the current directory with a `bat` preview. It’s just a couple of light tweaks to the examples listed in the `fzf` [readme](https://github.com/junegunn/fzf#preview-window).
+I’ve been using the following fish alias `fzl` (“fuzzy list”) to run `fzf` (“fuzzy find”) in the current directory with a `bat` preview. It’s just a couple of light tweaks to the examples listed in the [`fzf README`](https://github.com/junegunn/fzf#preview-window).
 
 `~/.config/fish/functions/fzl.fish`:
 

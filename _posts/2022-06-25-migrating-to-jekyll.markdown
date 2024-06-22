@@ -34,7 +34,7 @@ browser extensions to nerf these devices when another site deploys them on me, i
 readers—both of them—to the same surveillance.
 
 Finally, since Jekyll builds everything to static HTML on the server side,
-the load times should be faster. And later on, if I want to switch hosting providers or set up my own webserver in my
+the load times should be faster. And later on, if I want to switch hosting providers or set up my own web server in my
 basement, future migrations should be much easier than this one.
 
 # Pain points
