@@ -42,9 +42,9 @@ cell phone use, and so on, fall squarely into the “blame the driver” categor
 But others are better understood as symptoms of inexperience, reasonable
 reactions to *other* drivers’ unsafe actions, or simply the inevitable
 consequences of poor signage. (Here I have deleted two paragraphs complaining
-about the placement of the `ONE WAY` signs in my 0.) The blame belongs to
-multiple parties, and punishing only one yields only a marginal improvement in
-safety.
+about the placement of the `ONE WAY` signs in my neighborhood.) The blame
+belongs to multiple parties, and punishing only one yields only a marginal
+improvement in safety.
 
 Another example we often see in city traffic is drivers who get stuck in the
 middle of an intersection when the light turns red. Of course, the driver’s
