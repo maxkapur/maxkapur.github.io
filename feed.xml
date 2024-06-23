@@ -9,13 +9,106 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-06-22T16:06:16+00:00</updated>
+  <updated>2024-06-23T16:21:26+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
     <email></email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <entry>
+    <title>Driver’s ed should teach error recovery</title>
+    <link rel="alternate" href="https://maxkapur.com/2024/06/23/drivers-ed-error-recovery.html" />
+    <updated>2024-06-23T00:00:00+00:00</updated><updated-readable>Jun 23, 2024</updated-readable>
+    <id>https://maxkapur.com/2024/06/23/drivers-ed-error-recovery</id>
+    <summary><p>I live near a one-way street, and drivers keep turning into it the wrong way by
+mistake. Most react by getting flustered and backing dangerously into the
+arterial, perhaps following an instinct to “undo” the error. The safer solution
+(in my eyes) is to park the car, wait for traffic to clear, then use a driveway
+to point yourself in the right direction.</p>
+
+<p>Unfortunately, driver’s ed doesn’t teach you how to recover from mistakes like
+this—at least, mine didn’t. Instead, driver’s ed teaches the rules of the
+road and how to follow them. Once you have violated the law, even if by
+accident, you are in undefined territory. Hence, drivers develop a strong
+impulse to immediately “reverse” errors rather than identify a safe course of
+action.</p>
+</summary>
+    <content type="html">&lt;p&gt;I live near a one-way street, and drivers keep turning into it the wrong way by
+mistake. Most react by getting flustered and backing dangerously into the
+arterial, perhaps following an instinct to “undo” the error. The safer solution
+(in my eyes) is to park the car, wait for traffic to clear, then use a driveway
+to point yourself in the right direction.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, driver’s ed doesn’t teach you how to recover from mistakes like
+this—at least, mine didn’t. Instead, driver’s ed teaches the rules of the
+road and how to follow them. Once you have violated the law, even if by
+accident, you are in undefined territory. Hence, drivers develop a strong
+impulse to immediately “reverse” errors rather than identify a safe course of
+action.&lt;!--more--&gt;&lt;sup id=&quot;fnref:errors&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:errors&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;The Federal Aviation Association has invested considerable effort into
+identifying the root causes of safety incidents and increasing safety baselines.
+They promote an idea called “just culture” as the alternative to a &lt;em&gt;punitive&lt;/em&gt;
+culture that addresses each safety violation with swift discipline. Instead,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Safety inspectors must understand the difference between accountability, which
+accepts responsibility and looks forward, and blame, which focuses on
+punishment for what has already occurred. The key to a just safety culture is
+the ability to determine where the line should be drawn between unsafe acts
+that can be effectively addressed by using compliance tools (accountability)
+and unacceptable behavior that requires the use of enforcement action
+(blame).&lt;sup id=&quot;fnref:faa&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:faa&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the car world, many safety violations, such as drunk driving, street racing,
+cell phone use, and so on, fall squarely into the “blame the driver” category.
+But others are better understood as symptoms of inexperience, reasonable
+reactions to &lt;em&gt;other&lt;/em&gt; drivers’ unsafe actions, or simply the inevitable
+consequences of poor signage. (Here I have deleted two paragraphs complaining
+about the placement of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ONE WAY&lt;/code&gt; signs in my neighborhood.) The blame
+belongs to multiple parties, and punishing only one yields only a marginal
+improvement in safety.&lt;/p&gt;
+
+&lt;p&gt;Another example we often see in city traffic is drivers who get stuck in the
+middle of an intersection when the light turns red. Of course, the driver’s
+manual says plainly that you should never enter an intersection unless you have
+the time and space to clear it. But this open-and-shut perspective doesn’t
+account for the real-world practice that drivers need to hone the timing
+instinct. Nor the pressure received from other drivers (sometimes imagined,
+other times real honking and yelling) to advance into an unsafe position. Nor
+how the previous factors interact with the frequent anxiety new drivers
+experience on the road. I am not saying that we should legalize running red
+lights, only pointing out that the &lt;em&gt;perception&lt;/em&gt; that every unsafe situation
+flows from an individual’s culpable act makes it harder to identify safety
+improvements that require coordinated action.&lt;/p&gt;
+
+&lt;p&gt;I &lt;em&gt;still&lt;/em&gt; don’t know the safe way to get out of the red light situation, nor how
+best to react (e.g. as a pedestrian crossing the street) when I see someone make
+that mistake. So, yeah, as the title suggests, I wish that driver’s ed taught
+strategies for dealing from these common errors, even a simple suggestion such
+as “Try to focus on how to make the situation safe &lt;em&gt;now&lt;/em&gt; rather than what you
+&lt;em&gt;shouldn’t have&lt;/em&gt; done.“&lt;/p&gt;
+
+&lt;p&gt;Generalizations to corporate governance, cybersecurity, academia, and so on are
+left to the reader.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:errors&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Well, my driver’s ed course did talk about what to do after you get
+in a &lt;em&gt;collision:&lt;/em&gt; Exchange phone numbers, take lots of pictures, call the
+police, and get clear documentation of who was at fault. &lt;a href=&quot;#fnref:errors&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:faa&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;LeRoy Stromenger, “Understanding the Compliance Program: One Bite at a
+Time!” &lt;em&gt;FAA Safety Briefing,&lt;/em&gt; January/February 2024, 7,
+&lt;a href=&quot;https://www.faa.gov/sites/faa.gov/files/JanFeb2024.pdf&quot;&gt;https://www.faa.gov/sites/faa.gov/files/JanFeb2024.pdf&lt;/a&gt;. &lt;a href=&quot;#fnref:faa&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>Sports idea</title>
     <link rel="alternate" href="https://maxkapur.com/2024/06/07/sports-idea.html" />
