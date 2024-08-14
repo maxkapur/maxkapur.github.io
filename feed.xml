@@ -9,13 +9,51 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-08-11T14:38:04+00:00</updated>
+  <updated>2024-08-14T00:00:33+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
     <email></email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <entry>
+    <title>Advanced café techniques</title>
+    <link rel="alternate" href="https://maxkapur.com/2024/08/13/advanced-cafe.html" />
+    <updated>2024-08-13T00:00:00+00:00</updated><updated-readable>Aug 13, 2024</updated-readable>
+    <id>https://maxkapur.com/2024/08/13/advanced-cafe</id>
+    <summary><p>Most cafés have separate lines for placing your order and picking it up. After
+you order, you move to the next line, and since drinks come out in more or less
+the order they were requested, the barista usually announces your drink around
+the time you get to the front of the second line.</p>
+
+<p>However, for simple drinks like drip coffee, all the barista has to do is fill
+the cup, so they can often hand it to you right at the order counter. This also
+applies to pastries. If you are a rule-follower and immediately move to the
+second queue after ordering one of these items, it can actually slow things
+down, because your drink will typically be ready <em>before</em> those of the people
+ahead of you in line, and you’ll need to elbow your way to the front.</p>
+
+<p>Advanced combinations such as “coffee and a hot croissant” are marginal. This
+could be a one- or a two-queue order. Such situations require careful planning
+and deft execution.</p>
+</summary>
+    <content type="html">&lt;p&gt;Most cafés have separate lines for placing your order and picking it up. After
+you order, you move to the next line, and since drinks come out in more or less
+the order they were requested, the barista usually announces your drink around
+the time you get to the front of the second line.&lt;/p&gt;
+
+&lt;p&gt;However, for simple drinks like drip coffee, all the barista has to do is fill
+the cup, so they can often hand it to you right at the order counter. This also
+applies to pastries. If you are a rule-follower and immediately move to the
+second queue after ordering one of these items, it can actually slow things
+down, because your drink will typically be ready &lt;em&gt;before&lt;/em&gt; those of the people
+ahead of you in line, and you’ll need to elbow your way to the front.&lt;/p&gt;
+
+&lt;p&gt;Advanced combinations such as “coffee and a hot croissant” are marginal. This
+could be a one- or a two-queue order. Such situations require careful planning
+and deft execution.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Driver’s ed should teach error recovery</title>
     <link rel="alternate" href="https://maxkapur.com/2024/06/23/drivers-ed-error-recovery.html" />
