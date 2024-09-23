@@ -173,7 +173,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .site-he
  * Blockquotes
  */
 blockquote {
-  color: #3e4853;
+  color: rgb(61.9285714286, 72.25, 82.5714285714);
   border-left: 3px solid #b7ccb7;
   padding-left: 10px;
 }
@@ -210,7 +210,7 @@ kbd {
   font-family: "Rubik", sans-serif;
   font-weight: 450;
   font-size: 0.875rem;
-  border: 1px solid #3e4853;
+  border: 1px solid rgb(61.9285714286, 72.25, 82.5714285714);
   border-radius: 3px;
   padding: 3px 5px 2px 5px;
 }
@@ -261,17 +261,17 @@ kbd {
  */
 table {
   text-align: left;
-  background-color: #fffff5;
-  border: 0.5px solid #3e4853;
+  background-color: rgb(255, 255, 245.2);
+  border: 0.5px solid rgb(61.9285714286, 72.25, 82.5714285714);
   border-collapse: collapse;
 }
 table th,
 table td {
   padding: 8px 12px;
-  border: 0.5px solid #3e4853;
+  border: 0.5px solid rgb(61.9285714286, 72.25, 82.5714285714);
 }
 table th {
-  background-color: #d5e1d5;
+  background-color: rgb(212.8536585366, 225.1463414634, 212.8536585366);
   font-weight: 450;
   border-bottom-width: 2px;
 }
@@ -358,7 +358,7 @@ details {
     text-align: center;
   }
   .site-nav .menu-icon > svg {
-    fill: #3e4853;
+    fill: rgb(61.9285714286, 72.25, 82.5714285714);
   }
   .site-nav input ~ .trigger {
     clear: both;
@@ -477,7 +477,7 @@ details {
 }
 .post-content h2 {
   font-size: 1.2rem;
-  color: #3e4853;
+  color: rgb(61.9285714286, 72.25, 82.5714285714);
   margin-bottom: 7.5px;
 }
 .post-content h3 {
@@ -525,7 +525,7 @@ ul.atom-post-list li .atom-post-list-entry span {
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fffff5;
+  background: rgb(255, 255, 245.2);
 }
 .highlight .c {
   color: #998;
