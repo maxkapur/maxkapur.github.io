@@ -9,13 +9,122 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-09-23T23:52:10+00:00</updated>
+  <updated>2024-09-25T20:10:09+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
     <email></email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+  <entry>
+    <title>Bimatrix game equilibrium via nonlinear programming</title>
+    <link rel="alternate" href="https://maxkapur.com/2024/09/24/bimatrix-game-equilibrium.html" />
+    <updated>2024-09-24T00:00:00+00:00</updated><updated-readable>Sep 24, 2024</updated-readable>
+    <id>https://maxkapur.com/2024/09/24/bimatrix-game-equilibrium</id>
+    <summary><p><a href="https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/9cca6ef4a5399a4e05891f471d667441_MIT6_254S10_lec09.pdf">These lecture notes
+(PDF)</a>
+from Asu Ozdaglar give a bilinear program whose solution is the mixed-strategy
+equilibrium for a two-player, non-zero-sum game with finite action spaces—also
+known as a bimatrix game. I wanted to reproduce this highly practical result in
+a more accessible format and offer some implementation notes.</p>
+</summary>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/9cca6ef4a5399a4e05891f471d667441_MIT6_254S10_lec09.pdf&quot;&gt;These lecture notes
+(PDF)&lt;/a&gt;
+from Asu Ozdaglar give a bilinear program whose solution is the mixed-strategy
+equilibrium for a two-player, non-zero-sum game with finite action spaces—also
+known as a bimatrix game. I wanted to reproduce this highly practical result in
+a more accessible format and offer some implementation notes.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;definitions&quot;&gt;Definitions&lt;/h1&gt;
+
+&lt;p&gt;A &lt;em&gt;bimatrix game&lt;/em&gt; is characterized by two matrices \(A, B \in \mathbb{R}^{n
+\times m}.\) When Alice chooses strategy \(i\) and Bob chooses strategy \(j\),
+their payoffs are \(A_{ij}\) and \(B_{ij},\) respectively. Mixed-strategy
+probability vectors \(x\) and \(y\) yield expected payoffs of \(x^T A y\) and
+\(x^T B y,\) respectively.&lt;/p&gt;
+
+&lt;p&gt;\((x^*, y^*)\) is an &lt;em&gt;equilibrium&lt;/em&gt; if \(x^T A y^* \leq x^{*T} A y^*\) and
+\(x^{*T} A y \leq x^{*T} A y^*\) for all probability vectors \(x\) and \(y.\)&lt;/p&gt;
+
+&lt;h1 id=&quot;result&quot;&gt;Result&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; \((\implies)\) If \((x^*, y^*)\) is an equilibrium, then there
+exist \(p^*\) and \(q^*\) such that \((x^*, y^*, p^*, q^*)\) is the optimal
+solution to the following bilinear program:&lt;/p&gt;
+
+\[\begin{aligned}
+    \text{maximize} \quad   &amp;amp; f(x, y, p, q) = x^T A y + x^T B y - p - q    \\
+    \text{subject to} \quad &amp;amp; A y \leq p \mathbf{1} &amp;amp; \text{(OptA)} \\
+                            &amp;amp; B^T x \leq q \mathbf{1} &amp;amp; \text{(OptB)} \\
+                            &amp;amp; \sum x_i = \sum y_i = 1 &amp;amp; \text{(ProbVec1)} \\
+                            &amp;amp; x \geq \mathbf{0}, y \geq \mathbf{0} &amp;amp; \text{(ProbVec2)}
+\end{aligned}\]
+
+&lt;p&gt;\((\impliedby)\) Conversely, the optimal solution of the bilinear program is an
+equilibrium for the game.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof:&lt;/strong&gt; \((\implies)\) For any feasible solution to the bilinear program,
+each element of \(x\) is nonnegative (by ProbVec2), so we can use \(x\) to
+combine the rows of the condition OptA to obtain a new valid inequality \(x^T A
+y \leq x^T p \mathbf{1} = p \sum x_i = p\) (by ProbVec1). Applying the same
+logic to \(y\) and \(q,\) we find that \(f(x, y, p, q) \leq 0.\)&lt;/p&gt;
+
+&lt;p&gt;Now consider the equilibrium probability vectors \((x^*, y^*)\) and set \(p^* =
+x^{*T} A y^*\) and \(q^* = x^{*T} B y^{*}.\) Then \(f(x^*, y^*, p^*, q^*) = 0,\)
+and we have only to show that this solution is feasible. To be an equilibrium,
+\(x^*\) must earn Alice a better payoff against \(y^{*}\) than does the \(i\)th
+pure strategy: \(p^* = x^{*T} A y^* \geq (A y^*)_i.\) This is precisely the
+\(i\)th row of OptA. OptB follows similarly.&lt;/p&gt;
+
+&lt;p&gt;\((\impliedby)\) The bilinear program is clearly feasible and bounded (as shown
+a moment ago). Let \((\bar x, \bar y, \bar p, \bar q)\) denote the optimal
+solution. By Nash’s theorem on the existence of mixed-strategy equilibria, we
+know that an equilibrium exists, and from the first part of the proof, we know
+how to use this equilibrium to produce a feasible solution to the bilinear
+program with an objective value of zero. Thus, \(f(\bar x, \bar y, \bar p, \bar
+q) \geq 0,\) which rearranges to&lt;/p&gt;
+
+\[(\bar x^T B \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.\]
+
+&lt;p&gt;By the constraints OptA and OptB, each of the terms in parentheses is less than
+or equal to zero; thus, the inequality on \(f(\bar x, \bar y, \bar p, \bar q)\)
+can hold only when each of these terms &lt;em&gt;equals&lt;/em&gt; zero exactly.&lt;/p&gt;
+
+&lt;p&gt;Now consider any probability vector \(x\) and use it to combine the rows of
+OptA: We have \(x^T A \bar y \leq x^T \bar p \mathbf{1} = \bar p = \bar x^T A
+\bar y,\) which says that \(\bar x\) is a best response to \(\bar y\). Applying
+the same logic to \(\bar y\) and \(\bar q\) completes the proof. ◼&lt;/p&gt;
+
+&lt;h1 id=&quot;remarks&quot;&gt;Remarks&lt;/h1&gt;
+
+&lt;p&gt;Solving the bilinear program is not necessarily easy. If merely solving a
+bimatrix game of this form is your goal, then mitigations against local optima
+such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Iterated_local_search&quot;&gt;iterated local
+search&lt;/a&gt; are essential. You
+can check whether a solution is local or global by comparing the objective value
+to zero, which is the global optimum guaranteed by Nash’s theorem.&lt;/p&gt;
+
+&lt;p&gt;In practice, I have used the bilinear program above when implementing the
+&lt;a href=&quot;https://arxiv.org/abs/2009.12185&quot;&gt;double oracle algorithm&lt;/a&gt; for games with
+complex action spaces. For example, in a modeling problem I am working on, pure
+strategies are subsets of \(\mathbb{R}^n\) with additional inequality and
+integrality constraints.&lt;/p&gt;
+
+&lt;p&gt;The “first oracle” in the double-oracle algorithm has you compute the
+equilibrium of a subgame with discrete action sets and uses the bilinear program
+above. In the second oracle (typically the hard part), you then augment these
+action sets by computing a pure-strategy best response for each player against
+the mixed-strategy equilibrium obtained from the first oracle. You can use the
+double oracle algorithm to approximate either pure- &lt;em&gt;or&lt;/em&gt; mixed-strategy
+equilibria by checking convergence and terminating after either the first or
+second oracle, respectively.&lt;/p&gt;
+
+&lt;p&gt;In my use case, the open-source solver &lt;a href=&quot;https://github.com/coin-or/Ipopt&quot;&gt;Ipopt&lt;/a&gt;
+gives acceptable results for the first oracle. I also learned about
+&lt;a href=&quot;https://github.com/mechmotum/cyipopt&quot;&gt;cyipopt&lt;/a&gt;, a nice set of Python bindings
+for Ipopt that lets you &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@jit&lt;/code&gt; your functions with Numba or Jax for performance.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Advanced café techniques</title>
     <link rel="alternate" href="https://maxkapur.com/2024/08/13/advanced-cafe.html" />
