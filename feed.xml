@@ -9,7 +9,7 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-09-25T20:10:09+00:00</updated>
+  <updated>2024-09-25T22:57:23+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
@@ -84,7 +84,7 @@ how to use this equilibrium to produce a feasible solution to the bilinear
 program with an objective value of zero. Thus, \(f(\bar x, \bar y, \bar p, \bar
 q) \geq 0,\) which rearranges to&lt;/p&gt;
 
-\[(\bar x^T B \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.\]
+\[(\bar x^T A \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.\]
 
 &lt;p&gt;By the constraints OptA and OptB, each of the terms in parentheses is less than
 or equal to zero; thus, the inequality on \(f(\bar x, \bar y, \bar p, \bar q)\)
