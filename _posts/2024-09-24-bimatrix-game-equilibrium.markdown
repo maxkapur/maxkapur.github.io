@@ -62,7 +62,7 @@ how to use this equilibrium to produce a feasible solution to the bilinear
 program with an objective value of zero. Thus, $$f(\bar x, \bar y, \bar p, \bar
 q) \geq 0,$$ which rearranges to
 
-$$(\bar x^T B \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.$$
+$$(\bar x^T A \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.$$
 
 By the constraints OptA and OptB, each of the terms in parentheses is less than
 or equal to zero; thus, the inequality on $$f(\bar x, \bar y, \bar p, \bar q)$$
