@@ -16,10 +16,7 @@ All posts by date:
     {%- endif -%}
     <li>
       <div class="atom-post-list-entry">
-        <a target="_blank" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-        &nbsp;
+        <a target="_blank" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         <span class="post-meta">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           ({{ post.date | date: date_format }})

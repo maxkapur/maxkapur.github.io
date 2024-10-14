@@ -75,10 +75,7 @@
           <xsl:attribute name="href">
             <xsl:value-of select="atom:id" />
           </xsl:attribute>
-          <xsl:value-of select="atom:title" />
-        </a>
-        <!-- &nbsp; -->
-        &#160;
+          <xsl:value-of select="atom:title" /></a>
         <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
         <!--
           Uncomment below to incorporate post excerpts into the styled preview.
