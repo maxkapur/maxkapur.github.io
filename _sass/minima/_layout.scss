@@ -254,17 +254,7 @@ p.excerpt-warning {
  * Same styling is used on the "Browse" page
  */
 ul.atom-post-list {
-  li .atom-post-list-entry {
-    display: flex;
-    flex-direction: row;
-    // Align dates to the right:
-    // justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: baseline;
-
-    a,
-    span {
-      display: block;
-    }
+  li .atom-post-list-entry span {
+    white-space: nowrap;
   }
 }
