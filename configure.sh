@@ -8,6 +8,6 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y rbenv ruby-build
 eval "$(rbenv init -)"
-rbenv install
+rbenv install --skip-existing
 bundle install
 # bundle exec jekyll serve
