@@ -13,6 +13,10 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types: [opened, reopened, review_requested]
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
