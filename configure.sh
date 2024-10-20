@@ -4,9 +4,14 @@
 # Ubuntu release.
 
 set -x
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install -y rbenv ruby-build
+if command -v git > /dev/null
+then
+    sudo apt update -y
+    sudo apt upgrade -y
+    sudo apt install -y rbenv ruby-build
+else
+    warn "OS is not Debian-based; skipped installing rbenv and ruby-build"
+fi
 eval "$(rbenv init -)"
 rbenv install --skip-existing
 bundle install
