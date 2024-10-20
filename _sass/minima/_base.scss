@@ -1,3 +1,4 @@
+@use "sass:color";
 @use 'sass:math';
 
 /**
@@ -168,7 +169,7 @@ a {
   @include subtle-underline;
 
   &:visited {
-    color: desaturate($brand-color, 50%);
+    color: color.adjust($brand-color, $saturation: -50%);
   }
 
   &:hover {
@@ -340,7 +341,7 @@ table {
   }
 
   th {
-    background-color: lighten($green-color-light, 10%);
+    background-color: color.adjust($green-color-light, $lightness: 10%);
     font-weight: $base-font-strong-weight;
     border-bottom-width: 2px;
   }
