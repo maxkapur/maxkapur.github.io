@@ -5,18 +5,18 @@ title:      "Learning Korean idioms with UNIX fortune"
 
 [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) is a classic UNIX program that displays random fortunes, pithy quotes, and the like:
 
-````text
+```text
 $ fortune
 If you think last Tuesday was a drag, wait till you see what happens tomorrow!
-````
+```
 
 Today, I repurposed fortune (really [fortune-mod](https://github.com/shlomif/fortune-mod)) as a language study tool by scraping some [Korean idioms from Wikiquote](https://github.com/maxkapur/korean-fortunes) from Wikiquote):
 
-````text
+```text
 $ fortune korean
 “쇠귀에 경 읽기.”
     아무리 좋은 말을 하면서 가르치려고 하여도 그 뜻을 제대로 헤아리지 못하는 사람을 두고 하는 말.
-````
+```
 
 This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”
 
