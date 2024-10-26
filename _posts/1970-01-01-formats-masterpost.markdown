@@ -70,7 +70,7 @@ I’ve been using the following fish alias `fzl` (“fuzzy list”) to run `fzf`
 
 `~/.config/fish/functions/fzl.fish`:
 
-````julia
+```shell
 function fzl
     # `bat` is aliased to `batcat` on Debian
     if type -q batcat
@@ -96,9 +96,7 @@ function fzl
         --preview "$bat_command {}" \
         --preview-window right,$bat_width,nowrap
 end
-````
-
-<!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
+```
 
 Example below.
 
