@@ -9,7 +9,7 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-10-20T18:29:50+00:00</updated>
+  <updated>2024-11-02T05:24:33+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
@@ -1040,34 +1040,32 @@ take over the next time the application is launched.&lt;/p&gt;
 
 <p><code class="language-plaintext highlighter-rouge">~/.config/fish/functions/fzl.fish</code>:</p>
 
-<div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span><span class="nf"> fzl</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>fzl
     <span class="c"># `bat` is aliased to `batcat` on Debian</span>
-    <span class="k">if</span> <span class="n">type</span> <span class="o">-</span><span class="n">q</span> <span class="n">batcat</span>
-        <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="s">"batcat"</span>
-    <span class="k">else</span>
-        <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="s">"bat"</span>
-    <span class="k">end</span>
+    <span class="k">if </span><span class="nb">type</span> <span class="nt">-q</span> batcat
+        <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"batcat"</span>
+    <span class="k">else
+        </span><span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"bat"</span>
+    end
 
     <span class="c"># Set the overall width of the `bat` preview to</span>
     <span class="c"># 50% the width of the current terminal</span>
-    <span class="n">set</span> <span class="o">-</span><span class="n">l</span> <span class="n">bat_width</span> <span class="o">$</span><span class="x">(</span><span class="n">math</span> <span class="n">ceil</span> <span class="o">$</span><span class="n">COLUMNS</span> <span class="n">x</span> <span class="mf">0.5</span><span class="x">)</span>
+    <span class="nb">set</span> <span class="nt">-l</span> bat_width <span class="si">$(</span>math ceil <span class="nv">$COLUMNS</span> x 0.5<span class="si">)</span>
 
     <span class="c"># My preferred `bat` options</span>
-    <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="o">\</span>
-        <span class="o">$</span><span class="n">bat_command</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">style</span> <span class="n">numbers</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">color</span> <span class="n">always</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">italic</span><span class="o">-</span><span class="n">text</span> <span class="n">always</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">wrap</span> <span class="n">auto</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">terminal</span><span class="o">-</span><span class="n">width</span> <span class="o">$</span><span class="n">bat_width</span>
+    <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="se">\</span>
+        <span class="nv">$bat_command</span> <span class="se">\</span>
+        <span class="nt">--style</span> numbers <span class="se">\</span>
+        <span class="nt">--color</span> always <span class="se">\</span>
+        <span class="nt">--italic-text</span> always <span class="se">\</span>
+        <span class="nt">--wrap</span> auto <span class="se">\</span>
+        <span class="nt">--terminal-width</span> <span class="nv">$bat_width</span>
 
-    <span class="n">fzf</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">preview</span> <span class="s">"</span><span class="si">$</span><span class="s">bat_command {}"</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">preview</span><span class="o">-</span><span class="n">window</span> <span class="n">right</span><span class="x">,</span><span class="o">$</span><span class="n">bat_width</span><span class="x">,</span><span class="n">nowrap</span>
-<span class="k">end</span>
+    fzf <span class="se">\</span>
+        <span class="nt">--preview</span> <span class="s2">"</span><span class="nv">$bat_command</span><span class="s2"> {}"</span> <span class="se">\</span>
+        <span class="nt">--preview-window</span> right,<span class="nv">$bat_width</span>,nowrap
+end
 </code></pre></div></div>
-
-<!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
 <p>Example below.</p>
 </summary>
@@ -1075,34 +1073,32 @@ take over the next time the application is launched.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/fish/functions/fzl.fish&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-julia highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt; fzl&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;fzl
     &lt;span class=&quot;c&quot;&gt;# `bat` is aliased to `batcat` on Debian&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batcat&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bat_command&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;batcat&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bat_command&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;bat&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; batcat
+        &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; bat_command &lt;span class=&quot;s2&quot;&gt;&quot;batcat&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; bat_command &lt;span class=&quot;s2&quot;&gt;&quot;bat&quot;&lt;/span&gt;
+    end
 
     &lt;span class=&quot;c&quot;&gt;# Set the overall width of the `bat` preview to&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;# 50% the width of the current terminal&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bat_width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;COLUMNS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; bat_width &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;math ceil &lt;span class=&quot;nv&quot;&gt;$COLUMNS&lt;/span&gt; x 0.5&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;c&quot;&gt;# My preferred `bat` options&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bat_command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bat_command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;always&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;italic&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;always&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wrap&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;terminal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bat_width&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; bat_command &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$bat_command&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--style&lt;/span&gt; numbers &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--color&lt;/span&gt; always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--italic-text&lt;/span&gt; always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--wrap&lt;/span&gt; auto &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--terminal-width&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$bat_width&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;fzf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preview&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;bat_command {}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;window&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bat_width&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nowrap&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    fzf &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--preview&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$bat_command&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; {}&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;--preview-window&lt;/span&gt; right,&lt;span class=&quot;nv&quot;&gt;$bat_width&lt;/span&gt;,nowrap
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll --&gt;
 
 &lt;p&gt;Example below.&lt;!--more--&gt;&lt;/p&gt;
 

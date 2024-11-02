@@ -422,34 +422,32 @@ take over the next time the application is launched.</p>
 
 <p><code class="language-plaintext highlighter-rouge">~/.config/fish/functions/fzl.fish</code>:</p>
 
-<div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span><span class="nf"> fzl</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>fzl
     <span class="c"># `bat` is aliased to `batcat` on Debian</span>
-    <span class="k">if</span> <span class="n">type</span> <span class="o">-</span><span class="n">q</span> <span class="n">batcat</span>
-        <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="s">"batcat"</span>
-    <span class="k">else</span>
-        <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="s">"bat"</span>
-    <span class="k">end</span>
+    <span class="k">if </span><span class="nb">type</span> <span class="nt">-q</span> batcat
+        <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"batcat"</span>
+    <span class="k">else
+        </span><span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"bat"</span>
+    end
 
     <span class="c"># Set the overall width of the `bat` preview to</span>
     <span class="c"># 50% the width of the current terminal</span>
-    <span class="n">set</span> <span class="o">-</span><span class="n">l</span> <span class="n">bat_width</span> <span class="o">$</span><span class="x">(</span><span class="n">math</span> <span class="n">ceil</span> <span class="o">$</span><span class="n">COLUMNS</span> <span class="n">x</span> <span class="mf">0.5</span><span class="x">)</span>
+    <span class="nb">set</span> <span class="nt">-l</span> bat_width <span class="si">$(</span>math ceil <span class="nv">$COLUMNS</span> x 0.5<span class="si">)</span>
 
     <span class="c"># My preferred `bat` options</span>
-    <span class="n">set</span> <span class="o">-</span><span class="n">f</span> <span class="n">bat_command</span> <span class="o">\</span>
-        <span class="o">$</span><span class="n">bat_command</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">style</span> <span class="n">numbers</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">color</span> <span class="n">always</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">italic</span><span class="o">-</span><span class="n">text</span> <span class="n">always</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">wrap</span> <span class="n">auto</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">terminal</span><span class="o">-</span><span class="n">width</span> <span class="o">$</span><span class="n">bat_width</span>
+    <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="se">\</span>
+        <span class="nv">$bat_command</span> <span class="se">\</span>
+        <span class="nt">--style</span> numbers <span class="se">\</span>
+        <span class="nt">--color</span> always <span class="se">\</span>
+        <span class="nt">--italic-text</span> always <span class="se">\</span>
+        <span class="nt">--wrap</span> auto <span class="se">\</span>
+        <span class="nt">--terminal-width</span> <span class="nv">$bat_width</span>
 
-    <span class="n">fzf</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">preview</span> <span class="s">"</span><span class="si">$</span><span class="s">bat_command {}"</span> <span class="o">\</span>
-        <span class="o">--</span><span class="n">preview</span><span class="o">-</span><span class="n">window</span> <span class="n">right</span><span class="x">,</span><span class="o">$</span><span class="n">bat_width</span><span class="x">,</span><span class="n">nowrap</span>
-<span class="k">end</span>
+    fzf <span class="se">\</span>
+        <span class="nt">--preview</span> <span class="s2">"</span><span class="nv">$bat_command</span><span class="s2"> {}"</span> <span class="se">\</span>
+        <span class="nt">--preview-window</span> right,<span class="nv">$bat_width</span>,nowrap
+end
 </code></pre></div></div>
-
-<!-- note: used julia syntax highlighting above because it *kind of* works and (unlike fish) is supported by jekyll -->
 
 <p>Example below.</p>
 <p class="excerpt-warning">
