@@ -21,26 +21,28 @@ site of the 5/18 (1980) independence movement, in which hundreds of activists
 
 As we learned, throughout the 1980s, citizen journalists played a pivotal role
 in resisting media censorship and spreading the true narrative of 5/18 via
-informal publications; their efforts were arguably a key factor in the eventual
-success of the 1987 democracy movement. I was encouraged to hear from a panel of
-CNU student journalists about their efforts to document important issues in the
-community and carry forward CNU’s tradition of advocacy through journalism.
+informal publications; their contributions were arguably a key factor in the
+eventual success of the 1987 democracy movement. I was encouraged to hear from a
+panel of CNU student journalists about their efforts to document important
+issues in the community and carry forward CNU’s tradition of advocacy through
+journalism.
 
-I also reflected on the important role that art plays in shaping and sustaining
-the collective narratives that energize a democratic society. Today is another
-special moment in Gwangju’s history as the city celebrates Han Kang’s receipt of
-the Nobel Prize in Literature. Han Kang was born in Gwangju, and one of her
-novels, *Human Acts* (소년이 온다), memorializes the 5/18 independence movement.
-I have to add this book to the stack, as I have only read *The Vegetarian*
-(채식주의자), and only in translation. We also saw, at the [Gwangju Museum of
-Art]( https://artmuse.gwangju.go.kr/ ), a pair of paintings by a student
-activist who is now a senior citizen who began to paint in his retirement so
-that he could preserve his memory of the movement. (Unfortunately, I can’t find
-this artist’s name on the website.) Such images create a relationship between
-the viewer and the events of 5/18 that rings “true” in a way that journalistic
-accounts cannot.
+Our discussions during the seminar also reminded me of the important role that
+art plays in shaping the collective narratives that energize and sustain a
+democratic society. Today is another special moment in Gwangju’s history as the
+city celebrates the author Han Kang’s receipt of the Nobel Prize in Literature.
+Han Kang was born in Gwangju, and one of her novels, *Human Acts* (소년이 온다),
+memorializes the 5/18 independence movement. I have to add this book to the
+stack, as I have only read *The Vegetarian* (채식주의자), and only in
+translation. Our group also viewed, at the [Gwangju Museum of Art](
+https://artmuse.gwangju.go.kr/ ), a pair of paintings by a then student
+activist, now senior citizen who began in retirement to paint scenes from the
+the 5/18 movement to preserve his memory and perspective. (Unfortunately, I
+can’t find this artist’s name on the website.) Such images create a relationship
+between the viewer and the events of 5/18 that rings “true” in a way that
+journalistic accounts cannot.
 
-As for me, participating in this seminar meant that I got to return to the exact
+As for me: Participating in this seminar meant that I got to return to the exact
 institution where I did [CLS in 2016]( {% post_url 2016-03-12-cls-korea %} )—my
 first visit to Korea—with the added perspective of eight more years of Korean
 study and four years of living in the country. It was a delight to show the
@@ -51,4 +53,4 @@ the only limiting factor was time. After the seminar, I took a day to walk all
 around the Asian Cultural Center, an endless arts complex. My highlight was
 *Delivery Dancer’s Arc: Inverse,* a massive video installation from the studio
 of science fiction creator Ayoung Kim (김아영). I also enjoyed the ACC’s library,
-which has a really slick reference area with art magazines and comfy chairs.
+which has a slick reference area with art magazines and comfy chairs.
