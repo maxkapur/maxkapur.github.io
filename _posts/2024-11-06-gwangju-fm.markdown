@@ -24,16 +24,16 @@ will upload an MP3 instead.)
 
 After our group disbanded in Gwangju, I got to spend a few days in Naju, my
 “second hometown” where I taught English for two years as a Fulbright grantee. I
-tried a new (to me) gomtang place called 사매기 곰탕, which has a cool aquarium,
-a garden, and even birds! A few pics below.<!--more-->
+tried a new (to me) gomtang place called 나주곰탕사매기, which has a cool
+aquarium, a garden, and even birds! A few pics below.<!--more-->
 
 Here is their garden:
 
 <figure>
 <img
-  src="/assets/naju-samaegi-gomtang-garden.jpg"
+  src="/assets/naju-gomtang-samaegi-garden.jpg"
   class="compact"
-  alt="The garden at samaegi gomtang (사매기 곰탕)."
+  alt="The garden at gomtang samaegi (나주곰탕사매기)."
 />
 </figure>
 
@@ -41,8 +41,8 @@ And here is the soup:
 
 <figure>
 <img
-  src="/assets/naju-samaegi-gomtang-soup.jpg"
+  src="/assets/naju-gomtang-samaegi-soup.jpg"
   class="compact"
-  alt="The soup at samaegi gomtang (사매기 곰탕)."
+  alt="The soup at gomtang samaegi (나주곰탕사매기)."
 />
 </figure>
