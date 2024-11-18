@@ -1,17 +1,17 @@
 @use "sass:color";
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+KR&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-$base-font-family: "Rubik", sans-serif;
+$base-font-family: "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
 $base-font-size: 1rem;
 $base-font-weight: 400;
-// Default bold weight (700) is too intense in Rubik
-$base-font-strong-weight: 450;
+// Default bold weight (700) is too intense
+$base-font-strong-weight: 500;
 $base-line-height: 1.5;
 
-$monospace-font-family: "Noto Sans Mono", monospace;
+$monospace-font-family: "IBM Plex Mono", monospace;
 $monospace-font-size: $base-font-size * 0.9;
-$monospace-font-strong-weight: 600;
+$monospace-font-strong-weight: 500;
 
 @mixin monospace-strong {
   font-family: $monospace-font-family;
