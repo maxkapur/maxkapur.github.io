@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
   <title>
     {%- if page.title -%}
@@ -11,13 +12,11 @@
     {%- endif -%}
   </title>
 
-  {%- include easter_egg.html -%}
-
   {%- if page.katex -%}
     {%- include katex.html -%}
   {%- endif -%}
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- include easter_egg.html -%}
 
   {%- seo -%}
   {%- feed_meta -%}
