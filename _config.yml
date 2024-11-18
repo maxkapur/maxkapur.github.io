@@ -47,6 +47,11 @@ excerpt_separator: "<!--more-->"
 # Select markdown processor. kramdown is the default
 markdown: "kramdown"
 
+# Silence Sass migration warnings as no fix is planned in Minima:
+# https://github.com/jekyll/minima/issues/815#issuecomment-2440028795
+sass:
+  quiet_deps: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
