@@ -57,7 +57,7 @@
             </svg>
           </span>
         </label>
-        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
+        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -80,7 +80,7 @@ revision date is all but meaningless because modern software modifies files on
 disk in all kinds of spurious ways. I put an ISO date in my filenames
 to assign them a <em>canonical</em> date. The canonical date means something like “the
 last date at which this file underwent a significant change,” and I alone (not
-software) can determine what that means.<!--more--><sup id="fnref:spurious" role="doc-noteref"><a href="#fn:spurious" class="footnote" rel="footnote">1</a></sup></p>
+software) can determine what that means.<!--more--><sup id="fnref:spurious"><a href="#fn:spurious" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 
 <p>Another reprehensible habit of mine is that I often duplicate files (creating
 a new, ISO-datestamped copy) before making big changes despite knowing I can
@@ -91,7 +91,7 @@ practice is not just a matter of personal preference; it’s also a crucial
 mitigation against the version-control issues wrought by the collaboration
 features of the “modern office tech stack.” See, I have colleagues who, at the
 end of their work day, leave their computer on with all their Office files
-open.<sup id="fnref:logoff" role="doc-noteref"><a href="#fn:logoff" class="footnote" rel="footnote">2</a></sup> A few hours later, their VPN session expires, which disconnects
+open.<sup id="fnref:logoff"><a href="#fn:logoff" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> A few hours later, their VPN session expires, which disconnects
 OneDrive. So, if I log in before them in the morning and make some edits, their
 version of the file goes out of date, but their OneDrive is powerless to detect
 it or show them my changes. This results in an instant version conflict when
@@ -109,12 +109,12 @@ instead of the original—which is exactly what I already do, manually, now that
 I’ve learned never to trust software.</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:spurious" role="doc-endnote">
+    <li id="fn:spurious">
       <p>An example of the spurious ways in which modern software modifies files on disk: If you open a Microsoft Excel worksheet, adjust the zoom, and try to close Excel, it will issue a “Do you want to save your changes?” warning. I’m not sure why the zoom level is stored in the <code class="language-plaintext highlighter-rouge">.xlsx</code> file at all. In Word (as far as I can tell), the zoom level, like scroll position, belongs to your <em>session</em> state and will thus be remembered separately for different viewers of the document.</p>
 
       <p>I have had some funny moments in client meetings where I pulled up an Excel sheet and it loaded at an illegible 50% because my last edit was to finalize the layout. 100% is the default for a reason! <a href="#fnref:spurious" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:logoff" role="doc-endnote">
+    <li id="fn:logoff">
       <p>When I sign off for the day, I like to shut my computer all the way down to purge <a href="https://en.wikipedia.org/wiki/Daemon_(computing)">the demons</a>. But I can’t fault others for not doing so, because cold-booting Windows with all the bloat, reopening all your files and email, and logging into Workday and so on is a fifteen-minute process <em>at best.</em> <a href="#fnref:logoff" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>

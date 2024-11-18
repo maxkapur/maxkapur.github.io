@@ -76,7 +76,7 @@
             </svg>
           </span>
         </label>
-        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
+        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -116,10 +116,10 @@ form of diminishing marginal returns (for set functions) that is analogous to
 concavity (for continuous functions).</p>
 
 <p>Submodular functions have a number of desirable traits. A famous result of
-Nemhauser et al. (1978) holds that when maximizing a monotone<sup id="fnref:monotone" role="doc-noteref"><a href="#fn:monotone" class="footnote" rel="footnote">1</a></sup>
+Nemhauser et al. (1978) holds that when maximizing a monotone<sup id="fnref:monotone"><a href="#fn:monotone" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>
 submodular function over a cardinality constraint, the greedy algorithm that
 iteratively adds to \(X\) the element that yields the greatest increase in
-\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.<sup id="fnref:optimal" role="doc-noteref"><a href="#fn:optimal" class="footnote" rel="footnote">2</a></sup> Efficient algorithms
+\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.<sup id="fnref:optimal"><a href="#fn:optimal" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> Efficient algorithms
 that provide the same approximation ratio for more complex constraint structures
 have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
 Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
@@ -198,7 +198,7 @@ between an arbitrary origin and destination. Let \(\Omega\) provide a set of
 possible <em>steps</em> that we can take toward our destination. Each step’s size
 is \(s_i \in [0, 1],\) which means that if you choose to take step \(i,\)
 you get \(100 s_i\) percent of the way from your current location to the
-destination.<sup id="fnref:zeno" role="doc-noteref"><a href="#fn:zeno" class="footnote" rel="footnote">3</a></sup> If \(X\) is the set of steps you choose to take,
+destination.<sup id="fnref:zeno"><a href="#fn:zeno" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> If \(X\) is the set of steps you choose to take,
 you will make it</p>
 
 \[g(X) = 1 - \prod_{i \in X} (1 - s_i)\]
@@ -212,7 +212,7 @@ as well as a set \(\Omega\) (indexed by \(i\)) of <em>tasks</em> we can complete
 in service of the goals. Tasks can advance multiple goals at once. Let
 \(v_{ij}\) denote the <em>effectiveness</em> of task \(i\) against goal \(j,\)
 meaning that if you engage in task \(i,\) then \(v_{ij}\) of (whatever
-remains of)<sup id="fnref:whatever" role="doc-noteref"><a href="#fn:whatever" class="footnote" rel="footnote">4</a></sup> goal \(j\) will be completed. Each goal is
+remains of)<sup id="fnref:whatever"><a href="#fn:whatever" class="footnote" rel="footnote" role="doc-noteref">4</a></sup> goal \(j\) will be completed. Each goal is
 worth \(t_j \geq 0\)
 <em><a href="https://en.wikipedia.org/wiki/Burndown_chart">story points</a>,</em>
 and goals can be completed fractionally.</p>
@@ -233,7 +233,7 @@ advance many different goals, or those that have high effectiveness
 against the most important goals? Well, the \(j\)th term of \(h(X)\)
 is just \(t_j g(X)\) where \(s\) is the \(j\)th column of \(v\). Thus,
 \(h(X),\) as a conic combination of submodular functions, is itself
-submodular,<sup id="fnref:conic" role="doc-noteref"><a href="#fn:conic" class="footnote" rel="footnote">5</a></sup> and we can compute the optimal velocity using
+submodular,<sup id="fnref:conic"><a href="#fn:conic" class="footnote" rel="footnote" role="doc-noteref">5</a></sup> and we can compute the optimal velocity using
 any of the well-known techniques for submodular maximization.</p>
 
 <p>Returning to Zeno’s paradox, the business process described above is
@@ -247,10 +247,10 @@ target.</p>
 
 <p><strong>Linearization:</strong> To maximize \(f(X)\) as written, in typical cases, it
 will be simplest to minimize \(1 - f(X),\) which is a <em>modular</em> function
-after taking the logarithm.<sup id="fnref:modular" role="doc-noteref"><a href="#fn:modular" class="footnote" rel="footnote">6</a></sup> The logarithm trick doesn’t work,
+after taking the logarithm.<sup id="fnref:modular"><a href="#fn:modular" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> The logarithm trick doesn’t work,
 however, for conic combinations of \(f(X)\); the best we can do is introduce
 helper variables and reformulate the problem as an integer convex
-program.<sup id="fnref:integerconvex" role="doc-noteref"><a href="#fn:integerconvex" class="footnote" rel="footnote">7</a></sup> Thus, recognizing the submodularity of \(f(X)\)
+program.<sup id="fnref:integerconvex"><a href="#fn:integerconvex" class="footnote" rel="footnote" role="doc-noteref">7</a></sup> Thus, recognizing the submodularity of \(f(X)\)
 (and the strong approximation results implied) is worthwhile.</p>
 
 <p><strong>Serial processes:</strong> It is not difficult to show, using a similar proof
@@ -291,25 +291,25 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:monotone" role="doc-endnote">
+    <li id="fn:monotone">
       <p>A set function is called <em>monotone</em> if \(X \subseteq Y\) implies \(f(X) \leq f(Y)\). <a href="#fnref:monotone" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:optimal" role="doc-endnote">
+    <li id="fn:optimal">
       <p>This means that if \(X^*\) is the set that maximizes \(f(X)\) and \(\tilde X\) is the set produced by the greedy algorithm, we are guaranteed to have \(f(\tilde X) \geq 0.632\,f(X^*)\). In practice, the optimality gap is often much narrower. <a href="#fnref:optimal" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:zeno" role="doc-endnote">
+    <li id="fn:zeno">
       <p>In the original Zeno walk, each \(s_i = \frac{1}{2},\) and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it. <a href="#fnref:zeno" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:whatever" role="doc-endnote">
+    <li id="fn:whatever">
       <p>Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than \(k\) units of joy” may separately elicit a 50 percent reduction in the total junk, but doing <em>both</em> tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations. <a href="#fnref:whatever" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:conic" role="doc-endnote">
+    <li id="fn:conic">
       <p>The fact that a conic combination of submodular functions is submodular isn’t mentioned on the <a href="https://en.wikipedia.org/wiki/Submodular_set_function">Wikipedia article</a>, but it falls right out of the second definition. <a href="#fnref:conic" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:modular" role="doc-endnote">
+    <li id="fn:modular">
       <p>A set function is <em>modular</em> if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to <em>linear</em> functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function. <a href="#fnref:modular" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:integerconvex" role="doc-endnote">
+    <li id="fn:integerconvex">
       <p><a href="mailto:max@maxkapur.com">Email me</a> if you would be interested in a follow-up post explaining how to do this. <a href="#fnref:integerconvex" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>

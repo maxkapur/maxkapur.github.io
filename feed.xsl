@@ -37,7 +37,7 @@
             </svg>
           </span>
         </label>
-        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
+        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
       </nav></div>
 </header>
 <main class="page-content">

@@ -9,7 +9,7 @@
   <link href="https://maxkapur.com/feed.xml" rel="self" />
   <link href="https://maxkapur.com/" rel="alternate" />
   <subtitle>I am an operations research analyst at the consulting firm Booz Allen Hamilton. All opinions are my own.</subtitle>
-  <updated>2024-11-07T02:04:15+00:00</updated>
+  <updated>2024-11-18T21:19:04+00:00</updated>
   <id>https://maxkapur.com/</id>
   <author>
     <name></name>
@@ -358,7 +358,7 @@ this—at least, mine didn’t. Instead, driver’s ed teaches the rules of the
 road and how to follow them. Once you have violated the law, even if by
 accident, you are in undefined territory. Hence, drivers develop a strong
 impulse to immediately “reverse” errors rather than identify a safe course of
-action.&lt;!--more--&gt;&lt;sup id=&quot;fnref:errors&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:errors&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+action.&lt;!--more--&gt;&lt;sup id=&quot;fnref:errors&quot;&gt;&lt;a href=&quot;#fn:errors&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;The Federal Aviation Association has invested considerable effort into
 identifying the root causes of safety incidents and increasing safety baselines.
@@ -372,7 +372,7 @@ punishment for what has already occurred. The key to a just safety culture is
 the ability to determine where the line should be drawn between unsafe acts
 that can be effectively addressed by using compliance tools (accountability)
 and unacceptable behavior that requires the use of enforcement action
-(blame).&lt;sup id=&quot;fnref:faa&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:faa&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+(blame).&lt;sup id=&quot;fnref:faa&quot;&gt;&lt;a href=&quot;#fn:faa&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In the car world, many safety violations, such as drunk driving, street racing,
@@ -408,12 +408,12 @@ as “Try to focus on how to make the situation safe &lt;em&gt;now&lt;/em&gt; ra
 left to the reader.&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:errors&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:errors&quot;&gt;
       &lt;p&gt;Well, my driver’s ed course did talk about what to do after you get
 in a &lt;em&gt;collision:&lt;/em&gt; Exchange phone numbers, take lots of pictures, call the
 police, and get clear documentation of who was at fault. &lt;a href=&quot;#fnref:errors&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:faa&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:faa&quot;&gt;
       &lt;p&gt;LeRoy Stromenger, “Understanding the Compliance Program: One Bite at a
 Time!” &lt;em&gt;FAA Safety Briefing,&lt;/em&gt; January/February 2024, 7,
 &lt;a href=&quot;https://www.faa.gov/sites/faa.gov/files/JanFeb2024.pdf&quot;&gt;https://www.faa.gov/sites/faa.gov/files/JanFeb2024.pdf&lt;/a&gt;. &lt;a href=&quot;#fnref:faa&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
@@ -585,7 +585,7 @@ revision date is all but meaningless because modern software modifies files on
 disk in all kinds of spurious ways. I put an ISO date in my filenames
 to assign them a &lt;em&gt;canonical&lt;/em&gt; date. The canonical date means something like “the
 last date at which this file underwent a significant change,” and I alone (not
-software) can determine what that means.&lt;!--more--&gt;&lt;sup id=&quot;fnref:spurious&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:spurious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+software) can determine what that means.&lt;!--more--&gt;&lt;sup id=&quot;fnref:spurious&quot;&gt;&lt;a href=&quot;#fn:spurious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Another reprehensible habit of mine is that I often duplicate files (creating
 a new, ISO-datestamped copy) before making big changes despite knowing I can
@@ -596,7 +596,7 @@ practice is not just a matter of personal preference; it’s also a crucial
 mitigation against the version-control issues wrought by the collaboration
 features of the “modern office tech stack.” See, I have colleagues who, at the
 end of their work day, leave their computer on with all their Office files
-open.&lt;sup id=&quot;fnref:logoff&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:logoff&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; A few hours later, their VPN session expires, which disconnects
+open.&lt;sup id=&quot;fnref:logoff&quot;&gt;&lt;a href=&quot;#fn:logoff&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; A few hours later, their VPN session expires, which disconnects
 OneDrive. So, if I log in before them in the morning and make some edits, their
 version of the file goes out of date, but their OneDrive is powerless to detect
 it or show them my changes. This results in an instant version conflict when
@@ -614,12 +614,12 @@ instead of the original—which is exactly what I already do, manually, now that
 I’ve learned never to trust software.&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:spurious&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:spurious&quot;&gt;
       &lt;p&gt;An example of the spurious ways in which modern software modifies files on disk: If you open a Microsoft Excel worksheet, adjust the zoom, and try to close Excel, it will issue a “Do you want to save your changes?” warning. I’m not sure why the zoom level is stored in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.xlsx&lt;/code&gt; file at all. In Word (as far as I can tell), the zoom level, like scroll position, belongs to your &lt;em&gt;session&lt;/em&gt; state and will thus be remembered separately for different viewers of the document.&lt;/p&gt;
 
       &lt;p&gt;I have had some funny moments in client meetings where I pulled up an Excel sheet and it loaded at an illegible 50% because my last edit was to finalize the layout. 100% is the default for a reason! &lt;a href=&quot;#fnref:spurious&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:logoff&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:logoff&quot;&gt;
       &lt;p&gt;When I sign off for the day, I like to shut my computer all the way down to purge &lt;a href=&quot;https://en.wikipedia.org/wiki/Daemon_(computing)&quot;&gt;the demons&lt;/a&gt;. But I can’t fault others for not doing so, because cold-booting Windows with all the bloat, reopening all your files and email, and logging into Workday and so on is a fifteen-minute process &lt;em&gt;at best.&lt;/em&gt; &lt;a href=&quot;#fnref:logoff&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -666,10 +666,10 @@ the early iPods) and provides a wide range of features and customization options
 beyond the stock firmware—things like support for the FLAC audio format, a
 dynamic equalizer, and better tools for managing playlist and the “now playing”
 queue. There are additional plugins for games, translations, font selection, and
-image viewing.&lt;sup id=&quot;fnref:imageview&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:imageview&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+image viewing.&lt;sup id=&quot;fnref:imageview&quot;&gt;&lt;a href=&quot;#fn:imageview&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Rockbox distributes an installation wizard for Linux platforms, but I couldn’t
-get it to work (it 404’d trying to download the fonts package&lt;sup id=&quot;fnref:404&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:404&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;). Fortunately,
+get it to work (it 404’d trying to download the fonts package&lt;sup id=&quot;fnref:404&quot;&gt;&lt;a href=&quot;#fn:404&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;). Fortunately,
 the “manual” installation isn’t hard. You just download one of the official
 firmware updates from Sandisk, then apply Rockbox’s patch and transfer the
 result to the device’s root directory. By design, the Clip attempts to execute
@@ -687,10 +687,10 @@ interface for me at a formative age. Nothing else feels quite as flexible or
 obvious.&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:imageview&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:imageview&quot;&gt;
       &lt;p&gt;Image viewing works even on the Clip’s simple two-color display. It uses random &lt;a href=&quot;https://en.wikipedia.org/wiki/Dither&quot;&gt;dithering&lt;/a&gt; to represent fractional lightness values, and rerolls the randomness with each screen refresh to produce a nice composition effect. This kills the battery in short time. &lt;a href=&quot;#fnref:imageview&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:404&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:404&quot;&gt;
       &lt;p&gt;I wasn’t sure how best to spell &lt;em&gt;404’d,&lt;/em&gt; and couldn’t find the verb form in any of the dictionaries I checked, but I settled on this spelling by comparison with a reference to &lt;em&gt;86’d&lt;/em&gt; in this &lt;a href=&quot;https://www.merriam-webster.com/wordplay/eighty-six-meaning-origin&quot;&gt;Merriam-Webster article&lt;/a&gt;. The more you know. &lt;a href=&quot;#fnref:404&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -917,10 +917,10 @@ form of diminishing marginal returns (for set functions) that is analogous to
 concavity (for continuous functions).&lt;/p&gt;
 
 &lt;p&gt;Submodular functions have a number of desirable traits. A famous result of
-Nemhauser et al. (1978) holds that when maximizing a monotone&lt;sup id=&quot;fnref:monotone&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:monotone&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+Nemhauser et al. (1978) holds that when maximizing a monotone&lt;sup id=&quot;fnref:monotone&quot;&gt;&lt;a href=&quot;#fn:monotone&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
 submodular function over a cardinality constraint, the greedy algorithm that
 iteratively adds to \(X\) the element that yields the greatest increase in
-\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.&lt;sup id=&quot;fnref:optimal&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:optimal&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Efficient algorithms
+\(f(X)\) is \(1 - \frac{1}{e} \approx 63.2\%\) optimal.&lt;sup id=&quot;fnref:optimal&quot;&gt;&lt;a href=&quot;#fn:optimal&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Efficient algorithms
 that provide the same approximation ratio for more complex constraint structures
 have also been identified (Badanidiyuru et al. 2014, Chekuri et al. 2014,
 Kulik et al. 2013). See Vondrák (2017) for an introduction to submodular functions
@@ -999,7 +999,7 @@ between an arbitrary origin and destination. Let \(\Omega\) provide a set of
 possible &lt;em&gt;steps&lt;/em&gt; that we can take toward our destination. Each step’s size
 is \(s_i \in [0, 1],\) which means that if you choose to take step \(i,\)
 you get \(100 s_i\) percent of the way from your current location to the
-destination.&lt;sup id=&quot;fnref:zeno&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:zeno&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; If \(X\) is the set of steps you choose to take,
+destination.&lt;sup id=&quot;fnref:zeno&quot;&gt;&lt;a href=&quot;#fn:zeno&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; If \(X\) is the set of steps you choose to take,
 you will make it&lt;/p&gt;
 
 \[g(X) = 1 - \prod_{i \in X} (1 - s_i)\]
@@ -1013,7 +1013,7 @@ as well as a set \(\Omega\) (indexed by \(i\)) of &lt;em&gt;tasks&lt;/em&gt; we 
 in service of the goals. Tasks can advance multiple goals at once. Let
 \(v_{ij}\) denote the &lt;em&gt;effectiveness&lt;/em&gt; of task \(i\) against goal \(j,\)
 meaning that if you engage in task \(i,\) then \(v_{ij}\) of (whatever
-remains of)&lt;sup id=&quot;fnref:whatever&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:whatever&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; goal \(j\) will be completed. Each goal is
+remains of)&lt;sup id=&quot;fnref:whatever&quot;&gt;&lt;a href=&quot;#fn:whatever&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; goal \(j\) will be completed. Each goal is
 worth \(t_j \geq 0\)
 &lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Burndown_chart&quot;&gt;story points&lt;/a&gt;,&lt;/em&gt;
 and goals can be completed fractionally.&lt;/p&gt;
@@ -1034,7 +1034,7 @@ advance many different goals, or those that have high effectiveness
 against the most important goals? Well, the \(j\)th term of \(h(X)\)
 is just \(t_j g(X)\) where \(s\) is the \(j\)th column of \(v\). Thus,
 \(h(X),\) as a conic combination of submodular functions, is itself
-submodular,&lt;sup id=&quot;fnref:conic&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:conic&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; and we can compute the optimal velocity using
+submodular,&lt;sup id=&quot;fnref:conic&quot;&gt;&lt;a href=&quot;#fn:conic&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; and we can compute the optimal velocity using
 any of the well-known techniques for submodular maximization.&lt;/p&gt;
 
 &lt;p&gt;Returning to Zeno’s paradox, the business process described above is
@@ -1048,10 +1048,10 @@ target.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Linearization:&lt;/strong&gt; To maximize \(f(X)\) as written, in typical cases, it
 will be simplest to minimize \(1 - f(X),\) which is a &lt;em&gt;modular&lt;/em&gt; function
-after taking the logarithm.&lt;sup id=&quot;fnref:modular&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:modular&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; The logarithm trick doesn’t work,
+after taking the logarithm.&lt;sup id=&quot;fnref:modular&quot;&gt;&lt;a href=&quot;#fn:modular&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; The logarithm trick doesn’t work,
 however, for conic combinations of \(f(X)\); the best we can do is introduce
 helper variables and reformulate the problem as an integer convex
-program.&lt;sup id=&quot;fnref:integerconvex&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:integerconvex&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; Thus, recognizing the submodularity of \(f(X)\)
+program.&lt;sup id=&quot;fnref:integerconvex&quot;&gt;&lt;a href=&quot;#fn:integerconvex&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; Thus, recognizing the submodularity of \(f(X)\)
 (and the strong approximation results implied) is worthwhile.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Serial processes:&lt;/strong&gt; It is not difficult to show, using a similar proof
@@ -1092,25 +1092,25 @@ if you interchange the roles of \(X\) and \(\Omega \setminus X\).&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:monotone&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:monotone&quot;&gt;
       &lt;p&gt;A set function is called &lt;em&gt;monotone&lt;/em&gt; if \(X \subseteq Y\) implies \(f(X) \leq f(Y)\). &lt;a href=&quot;#fnref:monotone&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:optimal&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:optimal&quot;&gt;
       &lt;p&gt;This means that if \(X^*\) is the set that maximizes \(f(X)\) and \(\tilde X\) is the set produced by the greedy algorithm, we are guaranteed to have \(f(\tilde X) \geq 0.632\,f(X^*)\). In practice, the optimality gap is often much narrower. &lt;a href=&quot;#fnref:optimal&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:zeno&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:zeno&quot;&gt;
       &lt;p&gt;In the original Zeno walk, each \(s_i = \frac{1}{2},\) and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it. &lt;a href=&quot;#fnref:zeno&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:whatever&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:whatever&quot;&gt;
       &lt;p&gt;Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than \(k\) units of joy” may separately elicit a 50 percent reduction in the total junk, but doing &lt;em&gt;both&lt;/em&gt; tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations. &lt;a href=&quot;#fnref:whatever&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:conic&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:conic&quot;&gt;
       &lt;p&gt;The fact that a conic combination of submodular functions is submodular isn’t mentioned on the &lt;a href=&quot;https://en.wikipedia.org/wiki/Submodular_set_function&quot;&gt;Wikipedia article&lt;/a&gt;, but it falls right out of the second definition. &lt;a href=&quot;#fnref:conic&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:modular&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:modular&quot;&gt;
       &lt;p&gt;A set function is &lt;em&gt;modular&lt;/em&gt; if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to &lt;em&gt;linear&lt;/em&gt; functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function. &lt;a href=&quot;#fnref:modular&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:integerconvex&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:integerconvex&quot;&gt;
       &lt;p&gt;&lt;a href=&quot;mailto:max@maxkapur.com&quot;&gt;Email me&lt;/a&gt; if you would be interested in a follow-up post explaining how to do this. &lt;a href=&quot;#fnref:integerconvex&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -1583,7 +1583,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
     <id>https://maxkapur.com/2022/09/01/apply-fifty-colleges</id>
     <summary><p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.</p>
 </summary>
-    <content type="html">&lt;p&gt;In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.&lt;!--more--&gt;&lt;sup id=&quot;fnref:obvious&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:obvious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.&lt;!--more--&gt;&lt;sup id=&quot;fnref:obvious&quot;&gt;&lt;a href=&quot;#fn:obvious&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;fake-numbers-and-a-simplified-model&quot;&gt;Fake numbers and a simplified model&lt;/h2&gt;
 
@@ -1597,7 +1597,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Let’s assume, for simplicity, that all the reach schools are equally competitive, and let \(p\) denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick \(p = 0.1\), which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to \(x\) reach schools, the probability of getting into &lt;em&gt;at least&lt;/em&gt; one is \(1 - (1 - p)^x\), in which case you receive \(t\) units of utility.&lt;/p&gt;
 
-&lt;p&gt;However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:&lt;sup id=&quot;fnref:sublinear&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:sublinear&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:&lt;sup id=&quot;fnref:sublinear&quot;&gt;&lt;a href=&quot;#fn:sublinear&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 \[f(x) = t\bigl(1 - (1 - p)^x\bigr) - cx.\]
 
@@ -1619,7 +1619,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 \[x^* = \frac{\ln c - \ln t - \ln \bigl(- \ln\left(1-p\right)\bigr)}{\ln\left(1-p\right)}.\]
 
-&lt;p&gt;(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.&lt;sup id=&quot;fnref:exact&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:exact&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.&lt;sup id=&quot;fnref:exact&quot;&gt;&lt;a href=&quot;#fn:exact&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;checking-our-work-with-comparative-statics&quot;&gt;Checking our work with comparative statics&lt;/h2&gt;
 
@@ -1645,7 +1645,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 \[p &amp;lt; 1 - \exp(-ce / t).\]
 
-&lt;p&gt;But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).&lt;sup id=&quot;fnref:exceptionalregime&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:exceptionalregime&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).&lt;sup id=&quot;fnref:exceptionalregime&quot;&gt;&lt;a href=&quot;#fn:exceptionalregime&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;oops-apply-to-thirty-colleges&quot;&gt;Oops, apply to thirty colleges&lt;/h2&gt;
 
@@ -1668,7 +1668,7 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount \(t\) to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack \(t\) all the way down to $200k, take \(p = 0.2\), and \(c = 200\), we &lt;em&gt;still&lt;/em&gt; get a hefty \(x^* = 24\).&lt;/p&gt;
 
-&lt;p&gt;Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.&lt;sup id=&quot;fnref:idw&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:idw&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; The psychological costs of college application are &lt;em&gt;really large,&lt;/em&gt; because they include not only the exhaustion of composing and submitting applications, but also the cost of &lt;em&gt;imagining&lt;/em&gt; the disappointment of being rejected from a dream school.&lt;/p&gt;
+&lt;p&gt;Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.&lt;sup id=&quot;fnref:idw&quot;&gt;&lt;a href=&quot;#fn:idw&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; The psychological costs of college application are &lt;em&gt;really large,&lt;/em&gt; because they include not only the exhaustion of composing and submitting applications, but also the cost of &lt;em&gt;imagining&lt;/em&gt; the disappointment of being rejected from a dream school.&lt;/p&gt;
 
 &lt;h2 id=&quot;revealed-cost-of-college-application&quot;&gt;Revealed cost of college application&lt;/h2&gt;
 
@@ -1693,19 +1693,19 @@ interpretations.&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:obvious&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:obvious&quot;&gt;
       &lt;p&gt;We will avoid the obvious argument that goes, “If you are willing to spend six figures on an a college education, then what’s a few hundred extra in application fees?” This argument is incorrect, because it assumes that each additional application is worth the value of attending that college times the probability of getting in. In actuality, you can only attend &lt;em&gt;one&lt;/em&gt; of the colleges you get into; thus additional applications make a sublinear contribution to the overall expected utility. Our model will account for this. &lt;a href=&quot;#fnref:obvious&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:sublinear&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:sublinear&quot;&gt;
       &lt;p&gt;Note that our assumption that the cost is linear in \(x\) is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as \(x\) increases; a function like \(c \ln x\) or \(c \sqrt{x}\) is arguably more realistic. &lt;a href=&quot;#fnref:sublinear&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:exact&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:exact&quot;&gt;
       &lt;p&gt;The exact answer is \(x^* = 55.39\), but you can only apply to a whole number of colleges. Since \(f(x)\) is a concave, univariate function, the optimal integer solution has to be either 55 or 56, and you can verify that \(f(55) &amp;gt; f(56)\). We’ll use the same approach for the rest of the post. &lt;a href=&quot;#fnref:exact&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:exceptionalregime&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:exceptionalregime&quot;&gt;
       &lt;p&gt;For example, to see a regime where \(x^*\) is increasing in \(p\), try setting \(t = 10000\) and \(c = 1000\) in the Desmos box, and vary \(p\) between 0.1 and 0.2. &lt;a href=&quot;#fnref:exceptionalregime&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:idw&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:idw&quot;&gt;
       &lt;p&gt;It didn’t work. &lt;a href=&quot;#fnref:idw&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -1951,7 +1951,7 @@ students to modulate their risk allocation after observing some of the random va
 both problems: In the fall, students solve the static problem, send out a batch of
 applications, and pray for a good outcome. Then, after observing their first-round
 admissions outcomes in March, they use the Pandora strategy to pursue additional opportunities
-by negotiating their financial aid offers&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+by negotiating their financial aid offers&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
 and applying to schools that offer rolling admissions.&lt;/p&gt;
 
 &lt;h2 id=&quot;static-models-arent-necessarily-simpler&quot;&gt;Static models aren’t necessarily simpler&lt;/h2&gt;
@@ -1981,7 +1981,7 @@ objective function misbehave.&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
       &lt;p&gt;For the uninitiated—yes, you can &lt;a href=&quot;https://www.forbes.com/sites/markkantrowitz/2021/04/19/how-to-negotiate-a-better-college-financial-aid-offer/?sh=361cdbb61420&quot;&gt;negotiate college financial aid offers&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
@@ -2274,7 +2274,7 @@ And, as many have probably heard, a signature feature of the Korean admissions p
     <id>https://maxkapur.com/2020/04/16/accidental-signals</id>
     <summary><p>It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.</p>
 </summary>
-    <content type="html">&lt;p&gt;It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.&lt;!--more--&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.&lt;!--more--&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Hiring managers’ preference for specialists is widely known. So, smart people, who tend to be good at estimating job-market incentives (thanks to the correlation between domains of intelligence), gravitate toward programs that award narrow, in-demand credentials—even when the credentials are nominally equivalent (a BA in linguistics vs. a BA in English). This can create a feedback loop in which fields that are perceived as “challenging,” like computer science, attract challenge-seeking entrants, raising the standards of proficiency within the field and making it more difficult for a newcomer to rise above average. On the other hand, majors that are perceived as relatively easy, like sociology, may attract less-ambitious students, leading to deflated expectations and dissuading hard workers. (I have met a few people who told me that they majored in the liberal arts because they were “bad at math.” I have never met a STEM major who chose their field because they were “bad at writing.”)&lt;/p&gt;
 
@@ -2300,7 +2300,7 @@ And, as many have probably heard, a signature feature of the Korean admissions p
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
       &lt;p&gt;You may have heard that the instruments we use to measure “intelligence” are biased toward people from dominant cultural backgrounds and people of financial means. This is a good argument against the use of standardized testing in college admissions, but it does not contradict the claim that I am using here, namely, that intelligence &lt;em&gt;between&lt;/em&gt; domains (and &lt;em&gt;within&lt;/em&gt; an individual) is correlated. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;

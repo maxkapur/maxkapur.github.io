@@ -76,7 +76,7 @@
             </svg>
           </span>
         </label>
-        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
+        <div class="trigger"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><a class="page-link" href="/about/">About</a><!----><a class="page-link" href="/projects/">Projects</a><!----><a class="page-link" href="/browse/">Browse</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -91,7 +91,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more--><sup id="fnref:obvious" role="doc-noteref"><a href="#fn:obvious" class="footnote" rel="footnote">1</a></sup></p>
+    <p>In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more--><sup id="fnref:obvious"><a href="#fn:obvious" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 
 <h2 id="fake-numbers-and-a-simplified-model">Fake numbers and a simplified model</h2>
 
@@ -105,7 +105,7 @@
 
 <p>Let’s assume, for simplicity, that all the reach schools are equally competitive, and let \(p\) denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick \(p = 0.1\), which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to \(x\) reach schools, the probability of getting into <em>at least</em> one is \(1 - (1 - p)^x\), in which case you receive \(t\) units of utility.</p>
 
-<p>However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:<sup id="fnref:sublinear" role="doc-noteref"><a href="#fn:sublinear" class="footnote" rel="footnote">2</a></sup></p>
+<p>However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let \(c\) denote the cost of applying to a reach school, so the cost of applying to \(x\) schools is \(cx\), and the expected utility of the entire college application process can be written as follows:<sup id="fnref:sublinear"><a href="#fn:sublinear" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
 
 \[f(x) = t\bigl(1 - (1 - p)^x\bigr) - cx.\]
 
@@ -127,7 +127,7 @@
 
 \[x^* = \frac{\ln c - \ln t - \ln \bigl(- \ln\left(1-p\right)\bigr)}{\ln\left(1-p\right)}.\]
 
-<p>(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.<sup id="fnref:exact" role="doc-noteref"><a href="#fn:exact" class="footnote" rel="footnote">3</a></sup></p>
+<p>(It’s a pleasant surprise to encounter a nested logarithm somewhere other than computer science.) Plug in \(t\), \(p\), and \(c\) to obtain \(x^* = 55\), as promised.<sup id="fnref:exact"><a href="#fn:exact" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
 
 <h2 id="checking-our-work-with-comparative-statics">Checking our work with comparative statics</h2>
 
@@ -153,7 +153,7 @@
 
 \[p &lt; 1 - \exp(-ce / t).\]
 
-<p>But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).<sup id="fnref:exceptionalregime" role="doc-noteref"><a href="#fn:exceptionalregime" class="footnote" rel="footnote">4</a></sup></p>
+<p>But in college admissions, this is seldom the case: Typically, \(t\) is much larger than \(c\), meaning that \(1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0\), breaking the condition. Lowballing \(p\) is only conservative if \(p\) is very small in the first place, and \(c\) is large relative to \(t\).<sup id="fnref:exceptionalregime"><a href="#fn:exceptionalregime" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
 
 <h2 id="oops-apply-to-thirty-colleges">Oops, apply to thirty colleges</h2>
 
@@ -176,7 +176,7 @@
 
 <p>The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount \(t\) to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack \(t\) all the way down to $200k, take \(p = 0.2\), and \(c = 200\), we <em>still</em> get a hefty \(x^* = 24\).</p>
 
-<p>Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.<sup id="fnref:idw" role="doc-noteref"><a href="#fn:idw" class="footnote" rel="footnote">5</a></sup> The psychological costs of college application are <em>really large,</em> because they include not only the exhaustion of composing and submitting applications, but also the cost of <em>imagining</em> the disappointment of being rejected from a dream school.</p>
+<p>Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.<sup id="fnref:idw"><a href="#fn:idw" class="footnote" rel="footnote" role="doc-noteref">5</a></sup> The psychological costs of college application are <em>really large,</em> because they include not only the exhaustion of composing and submitting applications, but also the cost of <em>imagining</em> the disappointment of being rejected from a dream school.</p>
 
 <h2 id="revealed-cost-of-college-application">Revealed cost of college application</h2>
 
@@ -201,19 +201,19 @@
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:obvious" role="doc-endnote">
+    <li id="fn:obvious">
       <p>We will avoid the obvious argument that goes, “If you are willing to spend six figures on an a college education, then what’s a few hundred extra in application fees?” This argument is incorrect, because it assumes that each additional application is worth the value of attending that college times the probability of getting in. In actuality, you can only attend <em>one</em> of the colleges you get into; thus additional applications make a sublinear contribution to the overall expected utility. Our model will account for this. <a href="#fnref:obvious" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:sublinear" role="doc-endnote">
+    <li id="fn:sublinear">
       <p>Note that our assumption that the cost is linear in \(x\) is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as \(x\) increases; a function like \(c \ln x\) or \(c \sqrt{x}\) is arguably more realistic. <a href="#fnref:sublinear" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:exact" role="doc-endnote">
+    <li id="fn:exact">
       <p>The exact answer is \(x^* = 55.39\), but you can only apply to a whole number of colleges. Since \(f(x)\) is a concave, univariate function, the optimal integer solution has to be either 55 or 56, and you can verify that \(f(55) &gt; f(56)\). We’ll use the same approach for the rest of the post. <a href="#fnref:exact" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:exceptionalregime" role="doc-endnote">
+    <li id="fn:exceptionalregime">
       <p>For example, to see a regime where \(x^*\) is increasing in \(p\), try setting \(t = 10000\) and \(c = 1000\) in the Desmos box, and vary \(p\) between 0.1 and 0.2. <a href="#fnref:exceptionalregime" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:idw" role="doc-endnote">
+    <li id="fn:idw">
       <p>It didn’t work. <a href="#fnref:idw" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
