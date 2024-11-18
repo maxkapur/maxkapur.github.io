@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+KR&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 /**
  * Reset some basic elements
  */
@@ -31,7 +31,7 @@ html {
  * Basic styling
  */
 body {
-  font: 400 1rem/1.5 "Rubik", sans-serif;
+  font: 400 1rem/1.5 "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
   color: #111;
   background-color: #ffffeb;
   -webkit-text-size-adjust: 100%;
@@ -46,7 +46,7 @@ body {
 }
 
 strong {
-  font-weight: 450;
+  font-weight: 500;
 }
 
 sub,
@@ -185,9 +185,9 @@ blockquote > :last-child {
  * Code
  */
 code {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0 0.1em;
 }
 
@@ -207,8 +207,8 @@ pre > code {
  * Keyboard
  */
 kbd {
-  font-family: "Rubik", sans-serif;
-  font-weight: 450;
+  font-family: "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
+  font-weight: 500;
   font-size: 0.875rem;
   border: 1px solid rgb(61.9285714286, 72.25, 82.5714285714);
   border-radius: 3px;
@@ -272,7 +272,7 @@ table td {
 }
 table th {
   background-color: rgb(212.8536585366, 225.1463414634, 212.8536585366);
-  font-weight: 450;
+  font-weight: 500;
   border-bottom-width: 2px;
 }
 
@@ -482,7 +482,7 @@ details {
 }
 .post-content h3 {
   font-size: 1rem;
-  font-weight: 450;
+  font-weight: 500;
 }
 @supports (display: run-in) {
   .post-content h3 {
@@ -529,14 +529,14 @@ ul.atom-post-list li .atom-post-list-entry span {
   background-color: #e3d2d2;
 }
 .highlight .k {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .o {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .cm {
   color: #998;
@@ -544,9 +544,9 @@ ul.atom-post-list li .atom-post-list-entry span {
 }
 .highlight .cp {
   color: #999;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .c1 {
   color: #998;
@@ -554,9 +554,9 @@ ul.atom-post-list li .atom-post-list-entry span {
 }
 .highlight .cs {
   color: #999;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
 }
 .highlight .gd {
@@ -591,9 +591,9 @@ ul.atom-post-list li .atom-post-list-entry span {
   color: #555;
 }
 .highlight .gs {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .gu {
   color: #aaa;
@@ -602,30 +602,30 @@ ul.atom-post-list li .atom-post-list-entry span {
   color: #a00;
 }
 .highlight .kc {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .kd {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .kp {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .kr {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .kt {
   color: #458;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .m {
   color: #099;
@@ -641,9 +641,9 @@ ul.atom-post-list li .atom-post-list-entry span {
 }
 .highlight .nc {
   color: #458;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .no {
   color: #008080;
@@ -653,15 +653,15 @@ ul.atom-post-list li .atom-post-list-entry span {
 }
 .highlight .ne {
   color: #900;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .nf {
   color: #900;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .nn {
   color: #555;
@@ -673,9 +673,9 @@ ul.atom-post-list li .atom-post-list-entry span {
   color: #008080;
 }
 .highlight .ow {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .highlight .w {
   color: #bbb;

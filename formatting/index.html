@@ -3,20 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/main.css">
 
-  <title>Formats masterpost | Illusion Slopes</title><!-- Randomly replace a small number of "read more" links with "read moar" -->
-<script defer>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    for (const p of document.getElementsByClassName("excerpt-warning")) {
-      for (const a of p.getElementsByTagName("a")) {
-        if (Math.random() < 0.05) {
-          a.innerText = a.innerText.replace("more", "moar");
-        };
-      };
-    };
-  });
-</script>
-<!--
+  <title>Formats masterpost | Illusion Slopes</title><!--
   KaTeX block to insert into <head> on pages that require it.
 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
@@ -35,7 +24,19 @@
     });
   });
 </script>
-<link rel="stylesheet" href="/assets/main.css"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<!-- Randomly replace a small number of "read more" links with "read moar" -->
+<script defer>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    for (const p of document.getElementsByClassName("excerpt-warning")) {
+      for (const a of p.getElementsByTagName("a")) {
+        if (Math.random() < 0.05) {
+          a.innerText = a.innerText.replace("more", "moar");
+        };
+      };
+    };
+  });
+</script>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Formats masterpost | Illusion Slopes</title>
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Formats masterpost" />
