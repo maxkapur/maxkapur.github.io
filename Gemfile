@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
-# Use .ruby-version instead
+gem "base64", "~> 0.2"
+gem "bigdecimal", "~> 3.1"
+gem "csv", "~> 3.3"
+gem "logger", "~> 1.6"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -22,6 +25,8 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-redirect-from", "~> 0.16"
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
 end
 
 # This should be pulled in as a Jekyll dependency, but sometimes that doesn't
