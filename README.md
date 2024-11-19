@@ -20,11 +20,7 @@ install Ruby because, in my tests, it provided the most reliable way to install
 a fixed Ruby version across platforms without requiring you to build Ruby from
 source (as with `rbenv`).
 
-You can then preview the site with the following command:
-
-```bash
-conda activate ./.conda && bundle exec jekyll serve
-```
+You can then preview the site by running `./serve.sh`.
 
 To reinstall dependencies, use `yes | ./configure.sh`, which will automatically
 delete the old conda environment.
