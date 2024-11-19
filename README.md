@@ -14,13 +14,14 @@ My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
 
 ## Workstation setup
 
-On Ubuntu, `source configure.sh` installs all dependencies and sets up `rbenv`
-for local site development. You can then preview the site with the following
-command:
+`./configure.sh` installs all dependencies using `conda` (to install Ruby) then
+`bundler` (to install Jekyll and other Ruby dependencies). I use `conda` to
+install Ruby because, in my tests, it provided the most reliable way to install
+a fixed Ruby version across platforms without requiring you to build Ruby from
+source (as with `rbenv`).
+
+You can then preview the site with the following command:
 
 ```bash
-bundle exec jekyll serve
+conda activate ./.conda && bundle exec jekyll serve
 ```
-
-(If you restart the shell, you’ll need to `source configure.sh` again, or add
-`eval "$(rbenv init -)"` to `.bashrc`.)
