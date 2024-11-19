@@ -1,0 +1,50 @@
+# Based on
+# https://www.moncefbelyamani.com/making-github-pages-work-with-latest-jekyll/
+
+name: build-deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Miniconda and Mamba
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          mamba-version: "*"
+          activate-environment: ""
+          auto-activate-base: true
+
+      - name: Configure toolchain (configure.sh)
+        shell: bash -el {0}
+        run: yes | ./configure.sh
+
+      - name: Show package info (info.sh)
+        shell: bash -el {0}
+        run: ./info.sh
+
+      - name: Lint (check.sh)
+        shell: bash -el {0}
+        run: ./check.sh
+
+      - name: Build site (build.sh)
+        shell: bash -el {0}
+        run: ./build.sh
+
+      - name: Deploy GitHub pages site
+        uses: peaceiris/actions-gh-pages@v4
+        # Skip this step if running from somewhere other than master
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          # if the repo you are deploying to is <username>.github.io, uncomment the line below.
+          # if you are including the line below, make sure your source files are NOT in the "main" branch:
+          publish_branch: gh-pages
