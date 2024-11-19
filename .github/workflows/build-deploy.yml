@@ -27,20 +27,19 @@ jobs:
 
       - name: Configure toolchain (configure.sh)
         shell: bash -el {0}
-        run: |
-          yes | ./configure.sh
+        run: ./configure.sh
 
       - name: Show package info (info.sh)
         shell: bash -el {0}
         run: ./info.sh
 
-      - name: Lint (check.sh)
-        shell: bash -el {0}
-        run: ./check.sh
-
       - name: Build site (build.sh)
         shell: bash -el {0}
         run: ./build.sh
+
+      - name: Lint (check.sh)
+        shell: bash -el {0}
+        run: ./check.sh
 
       - name: Deploy GitHub pages site
         uses: peaceiris/actions-gh-pages@v4
