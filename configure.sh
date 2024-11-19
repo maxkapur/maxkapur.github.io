@@ -1,18 +1,27 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-# Configure a workstation to build/develop the static site. Tested on latest
-# Ubuntu release.
+# Configure a workstation to build/develop the static site. Tested on Ubuntu
+# 22.04.
 
 set -x
-if command -v git > /dev/null
-then
-    sudo apt update -y
-    sudo apt upgrade -y
-    sudo apt install -y rbenv ruby-build
-else
-    warn "OS is not Debian-based; skipped installing rbenv and ruby-build"
-fi
-eval "$(rbenv init -)"
-rbenv install --skip-existing
-bundle install
-# bundle exec jekyll serve
+set -e
+
+TMP_CONDA_PREFIX=$(realpath "./.conda")
+if [ -d "$TMP_CONDA_PREFIX" ]; then rm -ri "$TMP_CONDA_PREFIX"; fi
+
+# CI=True to prevent weird progress bar
+# https://github.com/mamba-org/mamba/issues/1478
+CI="True" mamba create \
+    --yes \
+    --prefix "$TMP_CONDA_PREFIX" \
+    --no-default-packages \
+    "conda-forge::compilers=1.8.*" \
+    "conda-forge::make=4.*" \
+    "conda-forge::ruby=3.2.*" \
+    "conda-forge::shellcheck=0.10.*"
+
+# Fixes issue where bundle looks for ruby3.2 instead of ruby
+ln -s "$TMP_CONDA_PREFIX/bin/ruby" "$TMP_CONDA_PREFIX/bin/ruby3.2"
+
+# Install Ruby/Bundler deps
+mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output bundle install
