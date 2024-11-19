@@ -4,10 +4,10 @@
 name: build-deploy
 
 on:
+  pull_request:
   push:
     branches:
       - master
-      - conda-self-contained-build
   workflow_dispatch:
 
 jobs:
