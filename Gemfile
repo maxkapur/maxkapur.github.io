@@ -5,6 +5,9 @@ gem "bigdecimal", "~> 3.1"
 gem "csv", "~> 3.3"
 gem "logger", "~> 1.6"
 
+# Too many false positives
+# gem "html-proofer"
+
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
