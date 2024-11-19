@@ -7,20 +7,21 @@ set -x
 set -e
 
 TMP_CONDA_PREFIX=$(realpath "./.conda")
-
-# https://github.com/mamba-org/mamba/issues/1478
-CI="True"
-
-mkdir -p ./vendor/
 if [ -d "$TMP_CONDA_PREFIX" ]; then rm -ri "$TMP_CONDA_PREFIX"; fi
-mamba create \
+
+# CI=True to prevent weird progress bar
+# https://github.com/mamba-org/mamba/issues/1478
+CI="True" mamba create \
     --yes \
     --prefix "$TMP_CONDA_PREFIX" \
     --no-default-packages \
     "conda-forge::compilers=1.8.*" \
     "conda-forge::make=4.*" \
-    "conda-forge::ruby=3.2.*"
+    "conda-forge::ruby=3.2.*" \
+    "conda-forge::shellcheck=0.10.*"
+
 # Fixes issue where bundle looks for ruby3.2 instead of ruby
 ln -s "$TMP_CONDA_PREFIX/bin/ruby" "$TMP_CONDA_PREFIX/bin/ruby3.2"
+
+# Install Ruby/Bundler deps
 mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output bundle install
-# mamba run --prefix ./vendor/conda bundle exec jekyll serve
