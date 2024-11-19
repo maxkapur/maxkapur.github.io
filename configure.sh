@@ -12,7 +12,7 @@ TMP_CONDA_PREFIX=$(realpath "./.conda")
 CI="True"
 
 mkdir -p ./vendor/
-if [ -d "$TMP_CONDA_PREFIX" ]; then rm -ri $TMP_CONDA_PREFIX; fi
+if [ -d "$TMP_CONDA_PREFIX" ]; then rm -ri "$TMP_CONDA_PREFIX"; fi
 mamba create \
     --yes \
     --prefix "$TMP_CONDA_PREFIX" \
