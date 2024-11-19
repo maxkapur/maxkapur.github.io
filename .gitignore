@@ -15,3 +15,6 @@ log.txt
 # `bundle install` produces a slightly different lockfile on different Linux
 # distributions
 Gemfile.lock
+
+# conda environment prefix
+.conda
