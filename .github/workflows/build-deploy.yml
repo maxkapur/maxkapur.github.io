@@ -19,9 +19,11 @@ jobs:
       - name: Set up Miniconda and Mamba
         uses: conda-incubator/setup-miniconda@v3
         with:
-          mamba-version: "*"
           activate-environment: ""
           auto-activate-base: true
+          channels: conda-forge,defaults
+          channel-priority: true
+          mamba-version: "*"
 
       - name: Configure toolchain (configure.sh)
         shell: bash -el {0}
