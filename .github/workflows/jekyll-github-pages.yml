@@ -24,8 +24,7 @@ jobs:
       - name: 💎 setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          # Just use ruby version from .ruby-version
-          # ruby-version: "3.2"
+          ruby-version: "3.2"
           bundler-cache: true
 
       - name: 🔨 install dependencies & build site
