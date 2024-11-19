@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - conda-self-contained-build
   workflow_dispatch:
 
 jobs:
