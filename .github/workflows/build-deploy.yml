@@ -27,7 +27,8 @@ jobs:
 
       - name: Configure toolchain (configure.sh)
         shell: bash -el {0}
-        run: yes | ./configure.sh
+        run: |
+          yes | ./configure.sh
 
       - name: Show package info (info.sh)
         shell: bash -el {0}
