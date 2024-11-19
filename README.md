@@ -25,3 +25,6 @@ You can then preview the site with the following command:
 ```bash
 conda activate ./.conda && bundle exec jekyll serve
 ```
+
+To reinstall dependencies, use `yes | ./configure.sh`, which will automatically
+delete the old conda environment.
