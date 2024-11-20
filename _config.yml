@@ -73,4 +73,8 @@ sass:
 #   - vendor/ruby/
 
 exclude:
-  - .conda/
+  - ".conda/"
+  - "README.md"
+  - "**/README.md"
+  - "*.sh"
+  - "**/*.sh"
