@@ -16,14 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Miniconda and Mamba
+      - name: Set up Miniforge and Mamba
         uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: ""
           auto-activate-base: true
           channels: conda-forge
-          channel-priority: true
           mamba-version: "*"
+          miniforge-version: "latest"
 
       - name: Configure toolchain (configure.sh)
         shell: bash -el {0}
