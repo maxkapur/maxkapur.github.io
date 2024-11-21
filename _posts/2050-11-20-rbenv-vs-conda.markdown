@@ -3,6 +3,9 @@ layout: post
 title: Replacing rbenv with conda
 ---
 
+Too-long post in which I explain why I am using conda instead of rbenv to
+install Ruby inside of the CI job that builds this static site.
+
 **The problem:** I wanted to make the GitHub Action that builds this static site
 more portable by replacing the
 [parade of third-party GitHub Actions](https://github.com/maxkapur/maxkapur.github.io/actions/runs/11923415581/workflow)
@@ -75,8 +78,8 @@ or 30 seconds).
 
 Alas, my GitHub Action workflow still has one third-party dependency: The
 [Setup Miniconda](https://github.com/marketplace/actions/setup-miniconda)
-action, which is just a little easier to configure than Miniforge’s interactive
-installer script.
+action. Despite the name, it can set up either Miniconda or Miniforge, and it is
+a little easier to work with than Miniforge’s interactive installer script.
 
 I *think* this is a sustainable solution, although those are probably bold words
 from the guy who just set all this up yesterday.
