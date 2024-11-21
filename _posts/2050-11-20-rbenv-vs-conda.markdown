@@ -4,10 +4,12 @@ title: Replacing rbenv with conda
 ---
 
 Too-long post in which I explain why I am using conda instead of rbenv to
-install Ruby inside of the CI job that builds this static site.
+install Ruby inside of the CI job that builds this static site.<!--more-->
 
-**The problem:** I wanted to make the GitHub Action that builds this static site
-more portable by replacing the
+# The problem
+
+I wanted to make the GitHub Action that builds this static site more portable by
+replacing the
 [parade of third-party GitHub Actions](https://github.com/maxkapur/maxkapur.github.io/actions/runs/11923415581/workflow)
 with simple shell scripts.
 
@@ -21,7 +23,9 @@ However, in my previous attempts to make a portable build script, I kept having
 difficulty with what should be the easiest step: Installing a Ruby version of my
 choice (currently v3.2) and pulling in all of Jekyll’s dependencies.
 
-**The normal solution:** Most of the sources I consulted recommend
+# The normal solution
+
+Most of the guides I consulted recommend
 [rbenv](https://github.com/rbenv/rbenv), which is a Ruby version manager that
 lets you specify your desired Ruby version in a `.ruby-version` file and install
 it with `rbenv install`.
@@ -48,12 +52,13 @@ For those who have the time and computational resources to compile from source,
 rbenv is a great tool, but for me, what I really needed was a precompiled
 binary.
 
-**The conda solution:** Enter
-[`conda-forge::ruby`](https://github.com/conda-forge/ruby-feedstock). Conda is a
-cross-platform package management and virtual environment system that is
-generally associated with the Python world (because it is written in Python) but
-supports generic binary packages. I used to be skeptical of conda because the
-most popular distributions (Anaconda and Miniconda) are proprietary, but
+# The conda solution
+
+Enter [`conda-forge::ruby`](https://github.com/conda-forge/ruby-feedstock).
+Conda is a cross-platform package management and virtual environment system that
+is generally associated with the Python world (because it is written in Python)
+but supports generic binary packages. I used to be skeptical of conda because
+the most popular distributions (Anaconda and Miniconda) are proprietary, but
 [Miniforge](https://github.com/conda-forge/miniforge) is an open-source
 alternative that covers all my use cases.
 
@@ -75,6 +80,8 @@ runners, which makes it *faster,* on average, than the parade of GitHub Actions
 I had before, which took about three minutes (except when running the workflow
 several times in a row, in which case caching would bring the runtime down to 20
 or 30 seconds).
+
+# Alas
 
 Alas, my GitHub Action workflow still has one third-party dependency: The
 [Setup Miniconda](https://github.com/marketplace/actions/setup-miniconda)
