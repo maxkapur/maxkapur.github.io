@@ -21,6 +21,7 @@ jobs:
           activate-environment: ""
           auto-activate-base: true
           channels: conda-forge
+          conda-remove-defaults: true
           mamba-version: "*"
           miniforge-version: "latest"
 

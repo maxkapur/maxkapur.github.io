@@ -15,10 +15,12 @@ CI="True" mamba create \
     --yes \
     --prefix "$TMP_CONDA_PREFIX" \
     --no-default-packages \
-    "conda-forge::compilers=1.8.*" \
-    "conda-forge::make=4.*" \
-    "conda-forge::ruby=3.2.*" \
-    "conda-forge::shellcheck=0.10.*"
+    --override-channels \
+    --channel conda-forge \
+    "compilers=1.8.*" \
+    "make=4.*" \
+    "ruby=3.2.*" \
+    "shellcheck=0.10.*"
 
 # Fixes issue where bundle looks for ruby3.2 instead of ruby
 ln -s "$TMP_CONDA_PREFIX/bin/ruby" "$TMP_CONDA_PREFIX/bin/ruby3.2"
