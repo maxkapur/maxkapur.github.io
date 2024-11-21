@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Configure a workstation to build/develop the static site. Tested on Ubuntu
-# 22.04.
+# Configure a workstation to build/develop the static site. Tested on Fedora
+# Silverblue 40 and Ubuntu 22.04 (via GitHub Actions runner) with Miniforge.
 
 set -x
 set -e
@@ -19,11 +19,8 @@ CI="True" mamba create \
     --channel conda-forge \
     "compilers=1.8.*" \
     "make=4.*" \
-    "ruby=3.2.*" \
+    "ruby=3.3.*" \
     "shellcheck=0.10.*"
-
-# Fixes issue where bundle looks for ruby3.2 instead of ruby
-ln -s "$TMP_CONDA_PREFIX/bin/ruby" "$TMP_CONDA_PREFIX/bin/ruby3.2"
 
 # Install Ruby/Bundler deps
 mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output bundle install
