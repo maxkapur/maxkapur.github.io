@@ -45,5 +45,16 @@ else
         ${TMP_CONDA_DEPS[@]}
 fi
 
-# Install Ruby/Bundler deps
-mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output bundle install
+# Update/install Ruby/Bundler deps. Just as with the conda dependencies above,
+# we do *not* force exact dependency resolution by checking Gemfile.lock into
+# version control, and instead pin packages only to their minor versions in the
+# Gemfile.
+if [ -f "./Gemfile.lock" ]
+then
+    # Thus, if Gemfile.lock is present, bundle update --all to re-resolve deps.
+    mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output \
+        bundle update --all
+else
+    mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output \
+        bundle install
+fi
