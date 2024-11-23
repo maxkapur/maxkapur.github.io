@@ -3,23 +3,47 @@
 # Configure a workstation to build/develop the static site. Tested on Fedora
 # Silverblue 40 and Ubuntu 22.04 (via GitHub Actions runner) with Miniforge.
 
-# Remove existing .conda/ environment if it exists. Pipe yes to this script to
-# automatically confirm.
-TMP_CONDA_PREFIX=$(realpath "./.conda")
-if [ -d "$TMP_CONDA_PREFIX" ]; then rm -ri "$TMP_CONDA_PREFIX"; fi
+# Ensure mamba installed
+if ! [ -x "$(command -v mamba)" ]
+then
+    echo 'E: mamba not installed' >&2
+    exit 1
+fi
 
-# Create conda environment. Set CI=True to prevent weird progress bar:
-# https://github.com/mamba-org/mamba/issues/1478
-CI="True" mamba create \
-    --yes \
-    --prefix "$TMP_CONDA_PREFIX" \
-    --no-default-packages \
-    --override-channels \
-    --channel conda-forge \
-    "compilers=1.8.*" \
-    "make=4.*" \
-    "ruby=3.3.*" \
+# Poor man's environment.yml to avoid cluttering the root directory
+TMP_CONDA_DEPS=(
+    "compilers=1.8.*"
+    "make=4.*"
+    "ruby=3.3.*"
     "shellcheck=0.10.*"
+)
 
-# Install Ruby/Bundler deps.
+# Location of the conda environment
+TMP_CONDA_PREFIX=$(realpath "./.conda")
+
+# Set CI=True to prevent weird progress bar in mamba update/create:
+# https://github.com/mamba-org/mamba/issues/1478
+export CI="True"
+
+# Check if we already have a ./.conda environment and update/create accordingly
+if [ -d "$TMP_CONDA_PREFIX" ]
+then
+    # shellcheck disable=SC2068  # splitting intended
+    mamba update \
+        --yes \
+        --prune \
+        --prefix "$TMP_CONDA_PREFIX" \
+        ${TMP_CONDA_DEPS[@]}
+else
+    # shellcheck disable=SC2068  # splitting intended
+    mamba create \
+        --yes \
+        --prefix "$TMP_CONDA_PREFIX" \
+        --no-default-packages \
+        --override-channels \
+        --channel conda-forge \
+        ${TMP_CONDA_DEPS[@]}
+fi
+
+# Install Ruby/Bundler deps
 mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output bundle install
