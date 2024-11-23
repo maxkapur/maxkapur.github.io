@@ -14,13 +14,19 @@ My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
 
 ## Workstation setup
 
-`./configure.sh` installs all dependencies using `conda` (to install Ruby) then
-`bundler` (to install Jekyll and other Ruby dependencies). I use `conda` to
-install Ruby because, in my tests, it provided the most reliable way to install
-a fixed Ruby version across platforms without requiring you to build Ruby from
-source (as with `rbenv`).
+`./configure.sh` installs all dependencies using `mamba` (to install Ruby) then
+`bundler` (to install Jekyll and other Ruby dependencies). On first run, the
+script creates a conda environment (`mamba create`); on subsequent runs, it
+updates the environment in place (`mamba update`). Just `rm -rf ./.conda` and
+re-run `./configure.sh` if you think your environment is corrupt.
 
-You can then preview the site by running `./serve.sh`.
+I use `conda` to install Ruby because, in my tests, it provided the most
+reliable way to install a fixed Ruby version across platforms without requiring
+you to build Ruby from source (as with `rbenv`).
 
-To reinstall dependencies, use `yes | ./configure.sh`, which will automatically
-delete the old conda environment.
+You preview the site by running `./serve.sh`, or just build it to the `_site/`
+directory with `./build.sh`.
+
+`./check.sh` runs ShellCheck on the build scripts.
+
+`./info.sh` logs package versions.
