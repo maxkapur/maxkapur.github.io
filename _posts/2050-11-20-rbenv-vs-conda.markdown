@@ -50,7 +50,8 @@ working, only to have the build fail because I ran out of memory.
 
 For those who have the time and computational resources to compile from source,
 rbenv is a great tool, but for me, what I really needed was a precompiled
-binary.
+binary. (Thus, I also ruled out [RVM](https://rvm.io/), another popular
+recommendation.)
 
 # The conda solution
 
@@ -72,7 +73,7 @@ is now basically just this:
 ./configure.sh  # Create the conda environment and run bundle install
 ./info.sh       # Log package versions
 ./build.sh      # Build the site
-./check.sh      # Lint scripts with Shellcheck; might add more checks
+./check.sh      # Lint scripts with ShellCheck; might add more checks
 ```
 
 This workflow takes an average of two minutes to run on the GitHub cloud
@@ -89,4 +90,4 @@ action. Despite the name, it can set up either Miniconda or Miniforge, and it is
 a little easier to work with than Miniforge’s interactive installer script.
 
 I *think* this is a sustainable solution, although those are probably bold words
-from the guy who just set all this up yesterday.
+from the guy who just set all this up last week.
