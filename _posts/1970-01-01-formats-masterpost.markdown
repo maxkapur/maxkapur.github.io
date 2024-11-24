@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus la
 
 <figure>
   <img
-    src="/assets/number-of-degrees.png"
+    src="/assets/images/number-of-degrees.png"
     class="squareborder"
     alt="A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop."
   />
@@ -100,7 +100,7 @@ end
 
 Example below.
 
-![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/fish-fzl-example.png)
+![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/images/fish-fzl-example.png)
 
 # Math
 

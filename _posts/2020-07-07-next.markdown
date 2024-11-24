@@ -11,7 +11,7 @@ I am leaving Naju, after having grown accustomed to this routine, this commute, 
 
 <figure>
 <img
-  src="assets/gsms-farewell.jpg"
+  src="assets/images/gsms-farewell.jpg"
   class="compact"
   alt="A picture of the school I taught at in Naju on a sunny day. The bleachers feature a newly painted mural in spring colors."
 />
