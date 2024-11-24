@@ -8,7 +8,7 @@ I have been measuring the leaves of my houseplants.
 
 <figure>
   <img class="compact squareborder"
-    src="/assets/houseplants-1-length-width.png"
+    src="/assets/images/houseplants-1-length-width.png"
     alt="alt"
   />
 </figure>
@@ -18,14 +18,14 @@ It <em>is</em> surprising how normal these distributions are.
 
 <figure>
   <img class="compact squareborder"
-    src="/assets/houseplants-2-area-qq.png"
+    src="/assets/images/houseplants-2-area-qq.png"
     alt="alt"
   />
 </figure>
 
 <figure>
   <img class="compact squareborder"
-    src="/assets/houseplants-3-ratio-qq.png"
+    src="/assets/images/houseplants-3-ratio-qq.png"
     alt="alt"
   />
 </figure>

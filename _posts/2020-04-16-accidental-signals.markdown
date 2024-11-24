@@ -9,7 +9,7 @@ Hiring managers’ preference for specialists is widely known. So, smart people,
 
 <figure>
   <img
-    src="/assets/number-of-degrees.png"
+    src="/assets/images/number-of-degrees.png"
     class="squareborder"
     alt="A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop."
   />

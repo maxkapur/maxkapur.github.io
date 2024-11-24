@@ -31,7 +31,7 @@ Here is their garden:
 
 <figure>
 <img
-  src="/assets/naju-gomtang-samaegi-garden.jpg"
+  src="/assets/images/naju-gomtang-samaegi-garden.jpg"
   class="compact"
   alt="The garden at gomtang samaegi (나주곰탕사매기)."
 />
@@ -41,7 +41,7 @@ And here is the soup:
 
 <figure>
 <img
-  src="/assets/naju-gomtang-samaegi-soup.jpg"
+  src="/assets/images/naju-gomtang-samaegi-soup.jpg"
   class="compact"
   alt="The soup at gomtang samaegi (나주곰탕사매기)."
 />

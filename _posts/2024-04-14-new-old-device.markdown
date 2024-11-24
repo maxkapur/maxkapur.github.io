@@ -9,7 +9,7 @@ out of a box.
 
 <figure>
 <img
-  src="/assets/rockbox-sansa-clip.jpg"
+  src="/assets/images/rockbox-sansa-clip.jpg"
   class="compact"
   alt="An image of an Obama-era Sansa clip (released in late 2007, probably manufactured later) running the Rockbox custom firmware"
 />

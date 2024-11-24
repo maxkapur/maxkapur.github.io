@@ -11,7 +11,7 @@ I also was able to give a brief presentation about my research at a conference i
 
 <figure>
 <img
-  src="/assets/jeju-conference.jpg"
+  src="/assets/images/jeju-conference.jpg"
   class="compact"
   alt="Max giving a presentation about the college application problem at a conference in Jeju"
 />
