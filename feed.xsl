@@ -18,14 +18,14 @@
       <link rel="stylesheet" href="/assets/main.css" />
 
       <!-- Favicon -->
-      <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
-      <link rel="manifest" href="/assets/images/site.webmanifest" />
-      <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#008000" />
-      <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+      <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+      <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#008000" />
+      <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#ffc40d" />
-      <meta name="msapplication-config" content="/assets/images/browserconfig.xml" />
+      <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#ffffff" />
     </head>
 

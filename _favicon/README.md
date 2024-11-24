@@ -1,8 +1,8 @@
 # Favicon development area
 
-`favicon.svg` is the source file from which the rasterized variants
-`assets/images/favicon*` are generated. I used the following website to generate
-the rasterized variants:
+`favicon.svg` is the source file from which the rasterized variants in
+`assets/favicon/` are generated. I used the following website to generate the
+rasterized variants:
 
 <https://simplefavicons.netlify.app/>
 
