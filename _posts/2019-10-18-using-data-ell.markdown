@@ -15,5 +15,5 @@ about that project at Fulbright Korea&rsquo;s fall conference in
 Gyeongju. Here&rsquo;s
 [a digital version of the talk](https://www.youtube.com/watch?v=jgAhgY3TVEc).
 
-And here&rsquo;s <a href="https://maxkapur.com/esl-data/">a detailed
+And here&rsquo;s <a href="{{ site.url }}/esl-data/">a detailed
 write-up of my survey design and results</a>.

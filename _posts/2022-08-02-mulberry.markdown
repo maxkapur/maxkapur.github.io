@@ -3,7 +3,7 @@ layout:     post
 title:      "Mulberry: A college application strategist"
 ---
 
-I recently created [Mulberry](https://maxkapur.com/mulberry), a web app students
+I recently created [Mulberry]({{ site.url }}/mulberry), a web app students
 can use to compute their optimal college application strategy. It is a free,
 open-source, user-friendly interface to Algorithm 1 from my
 [MS thesis](https://github.com/maxkapur/CollegeApplication).
@@ -23,5 +23,5 @@ each school and the amount of utility you associate with going there,
 and Mulberry sorts the schools in the order you should apply
 to them to maximize your expected utility.
 
-The interface is at [maxkapur.com/mulberry](https://maxkapur.com/mulberry), 
+The interface is at [maxkapur.com/mulberry]({{ site.url }}/mulberry), 
 and the code is on [GitHub](https://github.com/maxkapur/mulberry).
