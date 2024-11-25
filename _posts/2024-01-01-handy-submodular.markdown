@@ -220,4 +220,4 @@ Paywall:
 
 [^modular]: A set function is *modular* if it is both submodular and supermodular. This means that each item’s marginal value is constant—and thus modular functions are equivalent to *linear* functions of the characteristic vector. The knapsack objective function is an example of a monotone modular function.
 
-[^integerconvex]: [Email me](mailto:max@maxkapur.com) if you would be interested in a follow-up post explaining how to do this.
+[^integerconvex]: [Email me](mailto:{{ site.email }}) if you would be interested in a follow-up post explaining how to do this.
