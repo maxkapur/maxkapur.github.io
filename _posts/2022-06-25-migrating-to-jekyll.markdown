@@ -51,4 +51,4 @@ Jekyll offers some tools for automatically importing past posts from other blogg
 
 # New license
 
-The previous instance of Illusion Slopes featured a prominent copyright notice in the footer. Going forward, this blog will be licensed under CC BY-SA 4.0, a copyleft license that grants you the right to remix and reuse these materials without asking for permission as long as you credit me (preferably by linking to [maxkapur.com](https://maxkapur.com)) and release your work under a similar open license.
+The previous instance of Illusion Slopes featured a prominent copyright notice in the footer. Going forward, this blog will be licensed under CC BY-SA 4.0, a copyleft license that grants you the right to remix and reuse these materials without asking for permission as long as you credit me (preferably by linking to [maxkapur.com]({{ site.url }})) and release your work under a similar open license.

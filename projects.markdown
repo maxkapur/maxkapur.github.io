@@ -24,7 +24,7 @@ See my pins on [GitHub](https://github.com/maxkapur).
 
 [“Characterizing Nonatomic Admissions Markets,”](https://arxiv.org/abs/2107.01340) arXiv, July 2021. A parametric model of a college admissions market that has attractive numerical properties. I estimate the model using an open dataset and produce an intuitive ranking of American universities.
 
-[“Cyborgs, Cyphers, and Feminist Compromise in Contemporary South Korean Science Fiction,”](https://maxkapur.com/cyborgs-and-ciphers/) *Emory Journal of East Asian Studies,* 2020. I examine two contemporary South Korean science fiction authors and situate their complex relationship to the SF genre in the context of a longer history of &ldquo;bargains&rdquo; that Korean feminist writers have made in search of a literary platform.
+[“Cyborgs, Cyphers, and Feminist Compromise in Contemporary South Korean Science Fiction,”]({{ site.url }}/cyborgs-and-ciphers/) *Emory Journal of East Asian Studies,* 2020. I examine two contemporary South Korean science fiction authors and situate their complex relationship to the SF genre in the context of a longer history of &ldquo;bargains&rdquo; that Korean feminist writers have made in search of a literary platform.
 
 <a href="mailto:max@maxkapur.com?subject=Can you send me a copy of your undergraduate thesis&body=I heard that it has many embedded images and is hard to host online">
 “&#x202F;‘The Shoes of the Trees’: How Trees Find Their Footing in Contemporary Korean Poetry,”
@@ -35,9 +35,9 @@ BA honors thesis, May 2018. A study of the symbolic and discursive role of trees
 
 # Essays
 
-[“Using Data to Understand ELL Students,”](https://maxkapur.com/esl-data/) August 2019. A tour of some rudimentary data analysis techniques that ELL teachers can use to better understand their students.
+[“Using Data to Understand ELL Students,”]({{ site.url }}/esl-data/) August 2019. A tour of some rudimentary data analysis techniques that ELL teachers can use to better understand their students.
 
-[“How Do We Learn What’s True? Narrative Fluency and the Pedagogy of Information,”](https://maxkapur.com/how-do-we/) February 2019. I created this digital essay in response to what I saw as an unquestioning embrace of trendy information-literacy pedagogies.
+[“How Do We Learn What’s True? Narrative Fluency and the Pedagogy of Information,”]({{ site.url }}/how-do-we/) February 2019. I created this digital essay in response to what I saw as an unquestioning embrace of trendy information-literacy pedagogies.
 
 # Presentation videos
 
