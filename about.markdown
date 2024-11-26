@@ -5,7 +5,11 @@ sort_order: 10
 permalink: /about/
 ---
 
-![Picture of Max drinking a wintry Starbucks beverage](/assets/images/winter-mug.jpg)
+<img
+    class="compact"
+    alt="Profile picture of me reading a book"
+    src="/assets/images/profile.jpg"
+/>
 
 I am an operations research analyst at the consulting firm Booz Allen Hamilton,
 where I use modeling, simulation, numerical optimization, and algorithmic game
