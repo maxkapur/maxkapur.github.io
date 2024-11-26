@@ -47,6 +47,9 @@ excerpt_separator: "<!--more-->"
 # Select markdown processor. kramdown is the default
 markdown: "kramdown"
 
+kramdown:
+  math_engine: "katex"
+
 # Silence Sass migration warnings as no fix is planned in Minima:
 # https://github.com/jekyll/minima/issues/815#issuecomment-2440028795
 sass:

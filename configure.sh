@@ -14,6 +14,8 @@ fi
 TMP_CONDA_DEPS=(
     "compilers=1.8.*"
     "make=4.*"
+    # Required by kramdown-math-katex for KaTeX server-side rendering
+    "nodejs=22.11.*"
     "ruby=3.3.*"
     "shellcheck=0.10.*"
 )
@@ -58,3 +60,28 @@ else
     mamba run --prefix "$TMP_CONDA_PREFIX" --no-capture-output \
         bundle install
 fi
+
+echo "Populating assets/"
+
+# Find katex.css and associated fonts installed to the vendor/ directory (by gem
+# katex). Hardlink into the assets/ directory so that these files are included
+# in the site build. Remove existing files to ensure clean update.
+KATEX_CSS_SRC="$(find vendor/ -ipath "*/vendor/katex/stylesheets/katex.css")"
+KATEX_CSS_DEST="./assets/katex.css"
+rm "$KATEX_CSS_DEST" 2> /dev/null
+if [ ! -f "$KATEX_CSS_SRC" ]
+then
+    echo "E: Failed to locate source katex.css" >&2
+    exit 1
+fi
+ln -v "$KATEX_CSS_SRC" "$KATEX_CSS_DEST"
+
+KATEX_FONTS_SRC=$(find vendor/ -ipath "*/vendor/katex/fonts/*.woff2")
+KATEX_FONTS_DEST="./assets/fonts"
+rm "$KATEX_FONTS_DEST"/*.woff2 2> /dev/null
+# shellcheck disable=SC2068  # splitting intended
+for f in ${KATEX_FONTS_SRC[@]}
+do
+    BASENAME=$(basename "$f")
+    ln -v "$f" "$KATEX_FONTS_DEST"/"$BASENAME"
+done
