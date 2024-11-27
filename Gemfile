@@ -17,15 +17,16 @@ end
 
 group :jekyll_deps do
     # Dependencies of Jekyll that we version explicitly
-    gem "kramdown", "~> 2.5"
     gem "json", "~> 2.7"
+    gem "kramdown", "~> 2.5"
 end
 
 # kramdown-math-katex (enables server-side KaTeX rendering) and its deps
 group :kramdown_math_katex do
-    gem "kramdown-math-katex", "~> 1.0"
-    gem "katex", "~> 0.10"
     gem "execjs", "~> 2.9"
+    gem "duktape", "~> 2.7"
+    gem "katex", "~> 0.10"
+    gem "kramdown-math-katex", "~> 1.0"
 end
 
 # Jekyll theme

@@ -14,8 +14,6 @@ fi
 TMP_CONDA_DEPS=(
     "compilers=1.8.*"
     "make=4.*"
-    # Required by kramdown-math-katex for KaTeX server-side rendering
-    "nodejs=22.11.*"
     "ruby=3.3.*"
     "shellcheck=0.10.*"
 )
