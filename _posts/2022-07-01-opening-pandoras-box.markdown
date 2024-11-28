@@ -11,8 +11,8 @@ attention because it used different terminology or notation.
 That *almost* happened to me this week, but mercy was on my side. The paper linked above, Martin Weitzman’s
 “Optimal Search for the Best Alternative,” considers a problem called the Pandora’s
 Box problem that resembles my college application problem except for one crucial
-difference: The Pandora’s Box problem has a time dimension, whereas the college application 
-problem is static. 
+difference: The Pandora’s Box problem has a time dimension, whereas the college application
+problem is static.
 
 The unusual thing is that the static problem appears more difficult.
 <!--more-->
@@ -25,7 +25,7 @@ she can either submit a new college application (which costs money),
 in which case she will observe her admissions outcome after a time delay,
 or she can enroll at one of the schools she has already gotten into (and receive a payoff).
 The problem is to determine an optimal *stopping rule* for when Pandora should halt her
-search and accept the payoff she has on hand. Weitzman showed how to calculate a 
+search and accept the payoff she has on hand. Weitzman showed how to calculate a
 *reservation price*—roughly, the expected value of application—for
 each of the colleges. The optimal policy is to halt the search when
 the value of the current best offer exceeds the reservation price of all the colleges
@@ -65,9 +65,9 @@ you are only asking two questions:
 
 To answer correctly, you only ever need to compute the marginal utility of *individual*
 college applications relative to the offers you already have on hand, which is not terribly
-difficult. But in the static college application problem, the expected payoff depends on the 
+difficult. But in the static college application problem, the expected payoff depends on the
 *combination* of schools in the application portfolio. This yields a larger array of choices,
-and a more challenging decision problem. 
+and a more challenging decision problem.
 
 In my thesis, I prove that the college application problem is hard in a mathematical sense
 called NP–completeness, which means that barring an unprecedented computational breakthrough,

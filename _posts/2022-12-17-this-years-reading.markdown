@@ -4,7 +4,7 @@ title:      "This year’s reading"
 ---
 
 A subset of the books I enjoyed this year:
-- Barbara Kingsolver, *The Poisonwood Bible,* a novel about evangelical Christianity and cultural arrogance. 
+- Barbara Kingsolver, *The Poisonwood Bible,* a novel about evangelical Christianity and cultural arrogance.
 - 손원평, «아몬드», a novel debating whether or not emotions are a distraction.
 - Walter Isaacson, *The Codebreaker,* a biography of biochemist Jennifer Doudna.
 - Michael Lewis, *The Undoing Project,* a biography of behavioral economists Daniel Kahneman and Amos Tversky.
@@ -14,5 +14,5 @@ A subset of the books I enjoyed this year:
 - Jia Tolentino, *Trick Mirror,* essays about identity, authenticity, and social media.
 
 In progress:
-- 김금희, «너무 한낮의 연애», short stories about people at the margins of society. 
+- 김금희, «너무 한낮의 연애», short stories about people at the margins of society.
 - David Foster Wallace, *Infinite Jest.*

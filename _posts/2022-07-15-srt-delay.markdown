@@ -3,8 +3,8 @@ layout:     post
 title:      Python utility for manipulating subtitle timings
 ---
 
-One of my current projects involves editing several hours’ worth of subtitle files in the 
-`.srt` format to accompany an online course in numerical optimization. Because we haven’t 
+One of my current projects involves editing several hours’ worth of subtitle files in the
+`.srt` format to accompany an online course in numerical optimization. Because we haven’t
 decided exactly how we want to break up the videos, I needed an efficient way to delay
 or advance all the subtitles in time, so I wrote a small Python program called `srt_delay.py` today to help me with this task.
 
@@ -13,11 +13,11 @@ Usage examples below the cut, or you can just go straight to the `README` in the
 ## Usage
 
 We will demonstrate `srt_delay.py` using the subtitles for the open-source movie
-[*Elephants Dream*](https://en.wikipedia.org/wiki/Elephants_Dream). The file can 
+[*Elephants Dream*](https://en.wikipedia.org/wiki/Elephants_Dream). The file can
 be downloaded from the repo linked above (`sample_input.srt`) or from
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/TimedText:Elephants_Dream.ogv.en.srt).
 
-Here is what the input file looks like: 
+Here is what the input file looks like:
 
 ```bash
 $ head sample_input.srt

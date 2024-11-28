@@ -7,7 +7,7 @@ title:  "Migrating to Jekyll"
 After reflecting on my unsustainable dependency on Google services, I have decided to bite
 the bullet and migrate my blog from Blogger to the open-source [Jekyll](https://github.com/jekyll/jekyll),
 with hosting provided by GitHub. In the full version of this post,
-I explain some of the technical reasons for making this change. 
+I explain some of the technical reasons for making this change.
 
 <!--more-->
 
@@ -24,9 +24,9 @@ sliders in Blogger’s config GUI that let me indirectly modify the underlying t
 By contrast,
 the Markdown/Jekyll workflow creates a clear distinction between writing and typesetting tasks. I can compose
 my posts in Markdown with minimal distraction from all those HTML tags, and format everything from above by tweaking
-the well-organized stylesheets from Jekyll’s templates. For readers, I hope this means I will be able to maintain 
+the well-organized stylesheets from Jekyll’s templates. For readers, I hope this means I will be able to maintain
 a more consistent voice in my writing, and because the formatting, typesetting, and layout will be stable from post to
-post, you can expect less visual “noise” from the website itself. 
+post, you can expect less visual “noise” from the website itself.
 
 Because I have total control over every bit of code on this new website, I also can ensure that it is free of the
 cookies, UA sniffers, and other tracking devices that were embedded in Blogger. As someone who aggressively uses
@@ -43,7 +43,7 @@ If you are reading this post shortly after it went up, chances are that I am sti
 For example, [old.maxkapur.com](https://old.maxkapur.com/) should take you to an archive of the old blog,
 but the links embedded on that blog may 404.
 
-Another difficulty with this migration is that to host a Jekyll blog using GitHub pages, you have to create a GitHub project named `maxkapur.github.io` (or whatever your GitHub username is). But I already had a project with that name, which I used to host various one-off essays and coding projects at the URL [misc.maxkapur.com](https://misc.maxkapur.com). Now, I have overwritten the `maxkapur.github.io` repository with the code for this site and created separate GitHub repositories for the projects that felt worth preserving. If I set things up correctly, then the old links should forward to correctly to their new homes. Of course, you can also 
+Another difficulty with this migration is that to host a Jekyll blog using GitHub pages, you have to create a GitHub project named `maxkapur.github.io` (or whatever your GitHub username is). But I already had a project with that name, which I used to host various one-off essays and coding projects at the URL [misc.maxkapur.com](https://misc.maxkapur.com). Now, I have overwritten the `maxkapur.github.io` repository with the code for this site and created separate GitHub repositories for the projects that felt worth preserving. If I set things up correctly, then the old links should forward to correctly to their new homes. Of course, you can also
 dig into the [commit history](https://github.com/maxkapur/maxkapur.github.io/commits/master) for `maxkapur.github.io` and find the source code for those
 pages that way. But this will probably break some of the links on the old blog that used absolute paths instead of relative ones.
 

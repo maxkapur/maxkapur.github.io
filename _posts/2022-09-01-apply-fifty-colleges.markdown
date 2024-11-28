@@ -10,7 +10,7 @@ In this post, we’ll use fake numbers and a simplified model to argue that the 
 
 ## Fake numbers and a simplified model
 
-We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of *understating* the value of applying to college, thereby arriving at an *underestimate* of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we *nonetheless* draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement applies to the actual numbers, too. 
+We’ll start by making a few simplifying, conservative assumptions about the college admissions process. Here “conservative” means that we will err on the side of *understating* the value of applying to college, thereby arriving at an *underestimate* of the optimal number of college applications. Thus, our choices make it challenging to arrive at this post’s headline conclusion, such that if we *nonetheless* draw the conclusion that students should apply to more colleges, we have some degree of confidence that this statement applies to the actual numbers, too.
 
 First, let’s assume that you always have the option of attending a “safety school.” The safety school could also represent a community college or entering the workforce directly after high school. In addition, there are many “reach schools,” or elite universities, with competitive admissions. It is better to attend a reach school than the safety school, but applying to a reach school takes time and effort.
 
@@ -18,11 +18,11 @@ Let $$t$$ denote the utility of attending an elite university, measured in monet
 
 $$t = 40 \times 20000 - 5 \times 30000  = 650000.$$
 
-Let’s assume, for simplicity, that all the reach schools are equally competitive, and let $$p$$ denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick $$p = 0.1$$, which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to $$x$$ reach schools, the probability of getting into *at least* one is $$1 - (1 - p)^x$$, in which case you receive $$t$$ units of utility. 
+Let’s assume, for simplicity, that all the reach schools are equally competitive, and let $$p$$ denote the probability of getting into an elite university. Assume that admissions at each school are probabilistically independent. Let’s pick $$p = 0.1$$, which is near the acceptance rate (and therefore, the average admissions probability across all applicants) at many elite US universities. If you apply to $$x$$ reach schools, the probability of getting into *at least* one is $$1 - (1 - p)^x$$, in which case you receive $$t$$ units of utility.
 
 However, applying to college is not free: You have to pay an application fee, various clerical fees for submitting transcripts and test scores, and then there are time costs associated with writing essays, requesting recommendation letters, and filling out the online form. Let $$c$$ denote the cost of applying to a reach school, so the cost of applying to $$x$$ schools is $$cx$$, and the expected utility of the entire college application process can be written as follows:[^sublinear]
 
-[^sublinear]: Note that our assumption that the cost is linear in $$x$$ is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as $$x$$ increases; a function like $$c \ln x$$ or $$c \sqrt{x}$$ is arguably more realistic. 
+[^sublinear]: Note that our assumption that the cost is linear in $$x$$ is conservative: In reality, since you can recycle essays and recommendation letters, the marginal costs diminish as $$x$$ increases; a function like $$c \ln x$$ or $$c \sqrt{x}$$ is arguably more realistic.
 
 $$f(x) = t\bigl(1 - (1 - p)^x\bigr) - cx.$$
 
@@ -34,13 +34,13 @@ With these values of $$t$$, $$p$$, and $$c$$, here’s the graph of $$f(x)$$. As
 
 ![A graph showing the number of applications and the utility.](/assets/images/app-count-utility.svg)
 
-We can solve for the maximum analytically using a method you might have learned in high school calculus: $$x^*$$ represents the point where $$f(x)$$ stops increasing and starts decreasing. That is, the point where its slope $$f'(x)$$ is zero. 
+We can solve for the maximum analytically using a method you might have learned in high school calculus: $$x^*$$ represents the point where $$f(x)$$ stops increasing and starts decreasing. That is, the point where its slope $$f'(x)$$ is zero.
 
 With a little bit of legwork, you can check that the derivative of $$f(x)$$ is
 
 $$f'(x) = -t (1-p)^m \ln(1-p) - c$$
 
-and setting this equal to zero and solving for $$x$$ yields 
+and setting this equal to zero and solving for $$x$$ yields
 
 $$x^* = \frac{\ln c - \ln t - \ln \bigl(- \ln\left(1-p\right)\bigr)}{\ln\left(1-p\right)}.$$
 
@@ -74,7 +74,7 @@ $$p < 1 - \exp(-ce / t).$$
 
 But in college admissions, this is seldom the case: Typically, $$t$$ is much larger than $$c$$, meaning that $$1 - \exp(-ce / t) \approx 1 -  \exp(0) = 0$$, breaking the condition. Lowballing $$p$$ is only conservative if $$p$$ is very small in the first place, and $$c$$ is large relative to $$t$$.[^exceptionalregime]
 
-[^exceptionalregime]: For example, to see a regime where $$x^*$$ is increasing in $$p$$, try setting $$t = 10000$$ and $$c = 1000$$ in the Desmos box, and vary $$p$$ between 0.1 and 0.2. 
+[^exceptionalregime]: For example, to see a regime where $$x^*$$ is increasing in $$p$$, try setting $$t = 10000$$ and $$c = 1000$$ in the Desmos box, and vary $$p$$ between 0.1 and 0.2.
 
 ## Oops, apply to thirty colleges
 
@@ -95,7 +95,7 @@ One idea that might come to mind if you’ve played with [Mulberry]({{ site.url 
 
 The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount $$t$$ to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack $$t$$ all the way down to \$200k, take $$p = 0.2$$, and $$c = 200$$, we *still* get a hefty $$x^* = 24$$.
 
-Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.[^idw] The psychological costs of college application are *really large,* because they include not only the exhaustion of composing and submitting applications, but also the cost of *imagining* the disappointment of being rejected from a dream school. 
+Here’s what I think is really going on: Students don’t apply to zillions of colleges because they aren’t optimization machines. When I was a senior in high school, I categorically refused to apply to more than five colleges because I didn’t want to look like a tryhard.[^idw] The psychological costs of college application are *really large,* because they include not only the exhaustion of composing and submitting applications, but also the cost of *imagining* the disappointment of being rejected from a dream school.
 
 [^idw]: It didn’t work.
 
@@ -103,18 +103,18 @@ Here’s what I think is really going on: Students don’t apply to zillions of 
 
 What, in dollar terms, is the value of the subjective cost students associate with college application, after taking into account this risk aversion? Let’s stick with our conservative $$t = 200000$$ and $$p = 0.2$$ scenario, and turn the question around: Given that most students apply to about a dozen colleges, what application cost $$c$$ makes this number of applications optimal?
 
-To figure this out, we just need to solve our $$x^*$$ equation for $$c$$. The answer is 
+To figure this out, we just need to solve our $$x^*$$ equation for $$c$$. The answer is
 
 $$c = - t (1 - p)^x \log{\left(1 - p \right)}$$
 
-and plugging in the numbers yields $$c = 3067$$ dollars per application. 
+and plugging in the numbers yields $$c = 3067$$ dollars per application.
 
 Remember: These numbers are fake. But we have made a plausible argument that the majority of the costs incurred in the college application process are psychological, rather than material. If you can overcome the psychological costs, then by applying to thirty or fifty colleges, you may be able to reap significant material rewards.
 
 ## Reader exercises
 
 - Repeat the calculations above for another situation, such as job application. How many jobs should you apply to? Is the model a good choice?
-- Identify a regime in which $$\partial x^* / \partial p$$ is positive and explain, in qualitative terms, why this is the case. 
+- Identify a regime in which $$\partial x^* / \partial p$$ is positive and explain, in qualitative terms, why this is the case.
 - If every student adopts the optimal application strategy, then everyone might apply to twice as many schools. But then each school will become twice as competitive, changing the admissions odds and therefore the optimal strategies. Can you sketch the equilibrium criteria for this market? What other information would you need? [(Paywalled academic paper about this.)](https://www.journals.uchicago.edu/doi/10.1086/675503)
 - Suppose that the admissions probabilities and utility values for the reach schools are all different. What is the utility expression in this case? *Hint:* Replace $$x$$ with a set indicating which colleges you apply to. You can find the answer [here]({{ site.url }}/mulberry/) or in my [master’s thesis](https://github.com/maxkapur/CollegeApplication).
 

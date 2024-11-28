@@ -31,6 +31,6 @@ Similar completions work for the options of most command-line programs, and itâ€
 
 <!--
   Ref: https://fishshell.com/docs/current/completions.html
-  
+
   Ref: https://github.com/fish-shell/fish-shell/blob/c209e6b5fbaae8cd54c9554ec790860550595b43/src/complete.rs#L1500
 -->

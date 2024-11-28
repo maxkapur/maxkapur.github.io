@@ -80,7 +80,7 @@ bimatrix game of this form is your goal, then mitigations against local optima
 such as [iterated local
 search](https://en.wikipedia.org/wiki/Iterated_local_search) are essential. You
 can check whether a solution is local or global by comparing the objective value
-to zero, which is the global optimum guaranteed by Nash’s theorem. 
+to zero, which is the global optimum guaranteed by Nash’s theorem.
 
 In practice, I have used the bilinear program above when implementing the
 [double oracle algorithm](https://arxiv.org/abs/2009.12185) for games with
