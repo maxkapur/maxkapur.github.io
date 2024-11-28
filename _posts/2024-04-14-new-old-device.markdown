@@ -4,7 +4,7 @@ title:      "New old device"
 ---
 
 On a recent visit home, I dug this 2007
-[Sansa Clip](https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip) 
+[Sansa Clip](https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip)
 out of a box.
 
 <figure>

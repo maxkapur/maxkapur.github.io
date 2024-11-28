@@ -16,5 +16,5 @@ cp -r ~/.config/guitarix.backup/banks ~/.config/guitarix/banks
 ```
 
 These commands backup your amp/effects presets from `~/.config/guitarix/banks`
-(which are the hard part to restore manually), and let the default settings 
+(which are the hard part to restore manually), and let the default settings
 take over the next time the application is launched.
