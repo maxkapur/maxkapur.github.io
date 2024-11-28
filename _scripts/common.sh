@@ -32,3 +32,4 @@ verify_working_directory || exit $?
 
 # Source additional common functions here
 source ./_scripts/activate_conda_environment.sh
+source ./_scripts/check_trailing_whitespace.sh
