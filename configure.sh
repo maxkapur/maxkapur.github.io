@@ -10,16 +10,7 @@
 # from becoming stale.
 
 
-# Print a header in blue
-function header () {
-    printf '\033[96m%s\033[0m\n' "$1" 1>&2
-}
-
-
-# Print an error in red
-function error () {
-    printf '\033[91mE: %s\033[0m\n' "$1" 1>&2
-}
+source ./_scripts/common.sh || exit $?
 
 
 header "Check that mamba is available"
@@ -73,6 +64,10 @@ header "Configure conda environment (mamba install/update)"
 configure_conda_environment || exit $?
 
 
+header "Activate conda environment"
+activate_conda_environment || exit $?
+
+
 # Update/install Ruby/Bundler deps. Just as with the conda dependencies above,
 # we do *not* force exact dependency resolution by checking Gemfile.lock into
 # version control, and instead pin packages only to their minor versions in the
@@ -81,11 +76,9 @@ function configure_ruby_bundle () {
     if [ -f "./Gemfile.lock" ]
     then
         # Thus, if Gemfile.lock is present, bundle update --all to re-resolve deps.
-        mamba run --prefix "$CONDA_PREFIX" --no-capture-output \
-            bundle update --all
+        bundle update --all
     else
-        mamba run --prefix "$CONDA_PREFIX" --no-capture-output \
-            bundle install
+        bundle install
     fi
 }
 
