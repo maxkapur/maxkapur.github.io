@@ -31,6 +31,7 @@ function configure_conda_environment () {
         "make=4.*"
         "ruby=3.3.*"
         "shellcheck=0.10.*"
+        "unzip=6.0.*"
     )
 
     # Location of the conda environment
