@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
-conda run --prefix ./.conda --no-capture-output conda info
-conda run --prefix ./.conda --no-capture-output conda list
-conda run --prefix ./.conda --no-capture-output bundle list
+
+source ./_scripts/common.sh
+activate_conda_environment
+
+header "conda info"
+conda info
+header "conda list"
+conda list
+header "bundle list"
+bundle list

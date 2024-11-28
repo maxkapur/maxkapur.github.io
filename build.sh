@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-conda run --prefix ./.conda --no-capture-output \
-    bundle exec jekyll build "$@"
+
+source ./_scripts/common.sh
+activate_conda_environment
+bundle exec jekyll build "$@"
