@@ -3,6 +3,11 @@
 # Configure a workstation to build/develop the static site. Tested on Fedora
 # Silverblue 40 and Ubuntu 22.04 (via GitHub Actions runner) with Miniforge.
 
+# This script is designed to minimize reduntant network requests by checking if
+# downloaded files (such as those in assets/) already exist, but it is worth
+# running git -fidx and then rerunning this script periodically to prevent local
+# resources from becoming stale.
+
 # Ensure mamba installed
 if ! [ -x "$(command -v mamba)" ]
 then
@@ -60,6 +65,52 @@ else
 fi
 
 echo "Populating assets/"
+
+# Install IBM Plex fonts from GitHub releases
+
+# IBM Plex uses a dual-versioning release scheme where they occasionally update
+# a big monorepo with all the variants, and release more often updates to the
+# individual variants. We only want the invididual variants specified below. To
+# update the versions, go to https://github.com/IBM/plex/releases, search for
+# the slug name (e.g. "plex-sans"), and select the release .zip from the assets
+# associated with the newest version. (There are some slight inconsistencies
+# with the exact tags and URLs.)
+IBM_PLEX_MONO_SRC="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip"
+IBM_PLEX_SANS_SRC="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip"
+IBM_PLEX_SANS_KR_SRC="https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
+IBM_PLEX_DEST="./assets/fonts"
+
+function install_ibm_plex () {
+    TEMPD=$(mktemp -d)
+    curl -L -o "$TEMPD/ibm-plex-mono.zip" "$IBM_PLEX_SANS_SRC"
+    curl -L -o "$TEMPD/ibm-plex-sans.zip" "$IBM_PLEX_SANS_KR_SRC"
+    curl -L -o "$TEMPD/ibm-plex-sans-kr.zip" "$IBM_PLEX_MONO_SRC"
+
+    ZIPS=$(ls "$TEMPD"/*.zip)
+    # shellcheck disable=SC2068  # splitting intended
+    for f in ${ZIPS[@]}
+    do
+        unzip -uoq "$f" -d "$IBM_PLEX_DEST"
+    done
+
+    # Remove SCSS source files from IBM, as they inflate the size of the build
+    # for no reason: They are ignored by Jekyll's build pipeline, and we use the
+    # compiled CSS files instead.
+    echo "Removing IBM SCSS source files"
+    rm -v "$IBM_PLEX_DEST"/ibm*/**/*.scss
+}
+
+if [ -d "$IBM_PLEX_DEST"/ibm-plex-mono ] \
+    && [ -d "$IBM_PLEX_DEST"/ibm-plex-sans ] \
+    && [ -d "$IBM_PLEX_DEST"/ibm-plex-sans-kr ]
+then
+    echo "IBM Plex fonts already present; use git clean to force reinstall"
+else
+    echo "Installing IBM Plex fonts"
+    install_ibm_plex
+fi
+
+# Install KaTeX CSS and fonts
 
 # Find katex.css and associated fonts installed to the vendor/ directory (by gem
 # katex). Hardlink into the assets/ directory so that these files are included
