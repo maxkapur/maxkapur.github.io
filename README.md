@@ -17,8 +17,8 @@ My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
 `./configure.sh` installs all dependencies using `mamba` (to install Ruby) then
 `bundler` (to install Jekyll and other Ruby dependencies). On first run, the
 script creates a conda environment (`mamba create`); on subsequent runs, it
-updates the environment in place (`mamba update`). Just `rm -rf ./.conda` and
-re-run `./configure.sh` if you think your environment is corrupt.
+updates the environment in place (`mamba update`). If you think your environment
+is corrupt, run `git stash; git clean -fidx` then rerun `./configure.sh`.
 
 I use `conda` to install Ruby because, in my tests, it provided the most
 reliable way to install a fixed Ruby version across platforms without requiring
