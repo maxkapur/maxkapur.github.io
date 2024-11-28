@@ -7,10 +7,13 @@ header "Check shell scripts with ShellCheck"
 SHELL_SCRIPTS=$(find . -maxdepth 2 -iname "*.sh")
 echo "${SHELL_SCRIPTS[@]}" 1>&2
 # shellcheck disable=2068  # splitting intended
-shellcheck ${SHELL_SCRIPTS[@]}
+shellcheck ${SHELL_SCRIPTS[@]} || exit $?
+
+header "Check source files for trailing whitespace"
+check_trailing_whitespace || exit $?
 
 header "Check _site/ with HTML-Proofer"
 echo "You may need to run ./build.sh first" 1>&2
 HTMLPROOFER_OPTIONS=("--disable-external")
 # shellcheck disable=2068  # splitting intended
-bundle exec htmlproofer ${HTMLPROOFER_OPTIONS[@]} _site
+bundle exec htmlproofer ${HTMLPROOFER_OPTIONS[@]} _site || exit $?
