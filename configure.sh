@@ -146,7 +146,7 @@ function install_katex_resources () {
     if [ ! -f "$KATEX_CSS_SRC" ]
     then
         echo "E: Failed to locate source katex.css" >&2
-        exit 1
+        return 1
     fi
     ln -v "$KATEX_CSS_SRC" "$KATEX_CSS_DEST"
 
