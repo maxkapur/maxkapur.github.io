@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+
+# TODO: Monitor https://github.com/dependabot/dependabot-core/issues/2227 and
+# add configuration for conda if/when it becomes available.
