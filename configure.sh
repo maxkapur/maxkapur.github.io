@@ -131,10 +131,15 @@ function install_ibm_plex () {
     echo "Remove IBM SCSS source files" 1>&2
     rm -v "$IBM_PLEX_DEST"/ibm*/**/*.scss
 
-    # Remove these versions of fonts as they are not references in the CSS
+    # Remove these versions of fonts as they are not referenced in the CSS.
     echo "Remove EOT and OTF font versions" 1>&2
     rm -v "$IBM_PLEX_DEST"/ibm*/**/*.eot
     rm -v "$IBM_PLEX_DEST"/ibm*/**/*.otf
+
+    # IBM font LICENSE files are marked executable (probably compiled on
+    # Windows); undo this.
+    # shellcheck disable=SC2046  # splitting intended
+    chmod a-x $(find "$IBM_PLEX_DEST" -type f)
 }
 
 header "Populate assets/: Verify/install IBM Plex fonts"
