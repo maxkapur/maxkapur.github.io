@@ -25,15 +25,8 @@ fi
 # NOTE: --prune flag to mamba update does not actually do anything; to remove a
 # dependency from the installed environment, git clean then rerun the script.
 function configure_conda_environment () {
-    # Poor man's environment.yml to avoid cluttering the root directory
-    CONDA_DEPS=(
-        "compilers=1.8.*"
-        "curl=8.10.*"
-        "make=4.*"
-        "ruby=3.3.*"
-        "shellcheck=0.10.*"
-        "unzip=6.0.*"
-    )
+    # Location of the .yml environment definition
+    CONDA_ENV_YML=$(realpath "./_conda_environment.yml")
 
     # Location of the conda environment
     CONDA_PREFIX=$(realpath "./.conda")
@@ -45,20 +38,17 @@ function configure_conda_environment () {
     if [ -d "$CONDA_PREFIX" ]
     then
         # shellcheck disable=SC2068  # splitting intended
-        mamba update \
-            --yes \
-            --prune \
+        mamba env update \
             --prefix "$CONDA_PREFIX" \
-            ${CONDA_DEPS[@]}
+            --file "$CONDA_ENV_YML" \
+            --prune
     else
         # shellcheck disable=SC2068  # splitting intended
-        mamba create \
-            --yes \
+        mamba env create \
             --prefix "$CONDA_PREFIX" \
-            --no-default-packages \
-            --override-channels \
-            --channel conda-forge \
-            ${CONDA_DEPS[@]}
+            --file "$CONDA_ENV_YML" \
+            --yes \
+            --no-default-packages
     fi
 }
 

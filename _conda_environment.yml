@@ -1,0 +1,10 @@
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - compilers=1.8.*
+  - curl=8.10.*
+  - make=4.*
+  - ruby=3.3.*
+  - shellcheck=0.10.*
+  - unzip=6.0.*
