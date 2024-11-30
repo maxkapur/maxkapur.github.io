@@ -130,6 +130,11 @@ function install_ibm_plex () {
     # compiled CSS files instead.
     echo "Remove IBM SCSS source files" 1>&2
     rm -v "$IBM_PLEX_DEST"/ibm*/**/*.scss
+
+    # Remove these versions of fonts as they are not references in the CSS
+    echo "Remove EOT and OTF font versions" 1>&2
+    rm -v "$IBM_PLEX_DEST"/ibm*/**/*.eot
+    rm -v "$IBM_PLEX_DEST"/ibm*/**/*.otf
 }
 
 header "Populate assets/: Verify/install IBM Plex fonts"
