@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Global options
+shopt -s globstar
+
 
 # Print a header in blue
 function header () {
