@@ -3,8 +3,8 @@ layout: post
 title: Replacing rbenv with conda
 ---
 
-Too-long post in which I explain why I am using conda instead of rbenv to
-install Ruby inside of the CI job that builds this static site.<!--more-->
+Why I am using conda instead of rbenv to install Ruby inside of the CI job that
+builds this static site.<!--more-->
 
 # The problem
 
