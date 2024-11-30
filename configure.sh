@@ -28,6 +28,7 @@ function configure_conda_environment () {
     # Poor man's environment.yml to avoid cluttering the root directory
     CONDA_DEPS=(
         "compilers=1.8.*"
+        "curl=8.10.*"
         "make=4.*"
         "ruby=3.3.*"
         "shellcheck=0.10.*"
