@@ -6,16 +6,25 @@ katex: true
 
 KaTeX is a math typesetting library that lets you render nice-looking math
 equations like $$f(x) = e^{rt}$$ inside of an HTML document. As the [KaTeX
-documentation describes](TODO:), the easiest way to use KaTeX is to import their
-CSS and JavaScript from your website’s `<head>` element. With this client-side
-setup, visitors to your site only receive the KaTeX “source” (something like
-`$$f(x) = e^{rt}$$`) from your server, and then their computer runs code (KaTeX)
-that transforms this into MathML and tells the browser how to style and arrange
-the individual symbols.
+documentation describes](https://katex.org/docs/autorender), the easiest way to
+use KaTeX is to import their CSS and JavaScript from your website’s `<head>`
+element by adding these three lines:
 
-However, by running KaTeX on the server instead of the client, you can send
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+```
+
+With this client-side setup, visitors to your site only receive the KaTeX
+“source” (something like `$$f(x) = e^{rt}$$`) from your server, and then their
+computer runs the code (KaTeX) that transforms this into MathML and tells the
+browser how to style and arrange the individual symbols.
+
+However, by running KaTeX on the *server* instead of the client, you can send
 readers the MathML code directly, which removes the need for redundant
-computations and queries to the KaTeX website. [Source
+computations and queries to the KaTeX CDN. [Source
 1](https://gendignoux.com/blog/2020/05/23/katex.html) and [source
 2](https://www.xuningyang.com/blog/2021-01-11-katex-with-jekyll/) explain how to
 achieve this setup using Jekyll, the static site generator I use. In summary:
@@ -37,16 +46,17 @@ achieve this setup using Jekyll, the static site generator I use. In summary:
     <link rel="stylesheet" href="{{ "/assets/katex.css" | relative_url }}">
     ```
 
- 4. Download `katex.css` and the KaTeX fonts from `TODO:` and save them to your
-    source repo’s `assets/` directory.
+ 4. Download a KaTeX release [from
+    GitHub](https://github.com/KaTeX/KaTeX/releases) and extract `katex.css` and
+    `fonts/` to your source repo’s `assets/` directory.
 
 The last step left me unsatisfied. As I described in a [previous post]({%
 post_url 2050-11-29-self-host-fonts %}), I want to avoid introducing a
 third-party code dependency to my source tree—especially one like the KaTeX CSS
 that I’d have to keep manually in sync with the version of KaTeX installed by
-the Ruby `katex` gem. To eliminate that maintenance burden, I instead tweaked my
-`configure.sh` script to automatically retrieve the KaTeX fonts and CSS from
-within the `katex` gem after installing it with Bundler:
+the Ruby `katex` gem. Instead, I tweaked my `configure.sh` script to
+automatically retrieve the KaTeX fonts and CSS from within the `katex` gem after
+installing it with Bundler:
 
 ```shell
 function install_katex_resources () {
@@ -73,8 +83,9 @@ function install_katex_resources () {
 ```
 
 This puts the files in the `assets/` directory—right where they need to be—but
-keeps Bundler in control of their versions. Using a hardlink (`ln a b`) instead
+keeps Bundler in control of their versions. Using a hard link (`ln a b`) instead
 of copying (`cp a b`) the files spares a few unnecessary disk operations when
 rerunning `configure.sh`.
 
-<!-- spelling: hardlink vs. hard link -->
+I admit that the maintenance burden this eliminates isn’t large, but in a
+project with many dependencies, the little things add up.
