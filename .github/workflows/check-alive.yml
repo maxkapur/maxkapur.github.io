@@ -1,0 +1,24 @@
+# Check that the site is alive every few days. If the workflow fails, I get an
+# email.
+
+name: check-alive
+
+on:
+  schedule:
+    - cron: '49 15 * * 3'  # One hour after the weekly build-deploy
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify curl installed
+        run: |
+          sudo apt-get update -y
+          sudo apt-get upgrade -y
+          sudo apt-get install curl -y
+
+      - name: curl maxkapur.com and check contents
+        run: |
+          curl https://maxkapur.com -o tmp.html
+          grep 'Illusion Slopes' tmp.html
