@@ -12,12 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Verify curl installed
-        run: |
-          sudo apt-get update -y
-          sudo apt-get upgrade -y
-          sudo apt-get install curl -y
-
       - name: curl maxkapur.com and check contents
         run: |
           curl https://maxkapur.com -o tmp.html
