@@ -12,6 +12,12 @@ shellcheck ${SHELL_SCRIPTS[@]} || exit $?
 header "Check source files for trailing whitespace"
 check_trailing_whitespace || exit $?
 
+header "Check if packages up to date: conda"
+check_conda_updated || exit $?
+
+header "Check if packages up to date: bundler"
+check_bundler_updated || exit $?
+
 header "Check _site/ with HTML-Proofer"
 echo "You may need to run ./build.sh first" 1>&2
 HTMLPROOFER_OPTIONS=("--disable-external")
