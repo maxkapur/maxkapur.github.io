@@ -24,10 +24,10 @@ browser how to style and arrange the individual symbols.
 
 However, by running KaTeX on the *server* instead of the client, you can send
 readers the MathML code directly, which removes the need for redundant
-computations and queries to the KaTeX CDN. [Source
-1](https://gendignoux.com/blog/2020/05/23/katex.html) and [source
-2](https://www.xuningyang.com/blog/2021-01-11-katex-with-jekyll/) explain how to
-achieve this setup using Jekyll, the static site generator I use. In summary:
+computations and queries to the KaTeX CDN. [Guillaume
+Endignoux](https://gendignoux.com/blog/2020/05/23/katex.html) and [Xuning
+Yang](https://www.xuningyang.com/blog/2021-01-11-katex-with-jekyll/) explain how
+to achieve this setup using Jekyll, the static site generator I use. In summary:
 
  1. Add the `duktape`, `execjs`, `katex`, and `kramdown-math-katex` gems to your
     `Gemfile`. (You can leave out `duktape` if you already have Node.js on your
