@@ -47,8 +47,7 @@ function configure_conda_environment () {
         mamba env create \
             --prefix "$CONDA_PREFIX" \
             --file "$CONDA_ENV_YML" \
-            --yes \
-            --no-default-packages
+            --yes
     fi
 }
 
