@@ -4,6 +4,7 @@ channels:
 dependencies:
   - compilers=1.8.*
   - curl=8.10.*
+  - jq=1.7.*
   - make=4.*
   - ruby=3.3.*
   - shellcheck=0.10.*
