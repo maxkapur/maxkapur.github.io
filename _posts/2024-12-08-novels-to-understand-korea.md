@@ -5,8 +5,8 @@ title: Two novels to understand Korea’s political turmoil
 
 On Tuesday night, South Korean President Yoon Suk Yeol imposed martial law
 across the country for six hours. He retracted his declaration only after the
-National Assembly passed a emergency resolution ordering him to back down. As of
-this writing, the Assembly has drafted but failed to vote on articles of
+National Assembly passed an emergency resolution ordering him to back down. As
+of this writing, the Assembly has drafted but failed to vote on articles of
 impeachment. Instead, Yoon’s party has announced a plan for the president’s
 [“orderly resignation.”](https://www.koreaherald.com/view.php?ud=20241208050033)
 Many details remain up in the air.
