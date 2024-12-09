@@ -51,7 +51,7 @@ to achieve this setup using Jekyll, the static site generator I use. In summary:
     `fonts/` to your source repo’s `assets/` directory.
 
 The last step left me unsatisfied. As I described in a [previous post]({%
-post_url 2050-11-29-self-host-fonts %}), I want to avoid introducing a
+post_url 2024-12-06-self-host-fonts %}), I want to avoid introducing a
 third-party code dependency to my source tree—especially one like the KaTeX CSS
 that I’d have to keep manually in sync with the version of KaTeX installed by
 the Ruby `katex` gem. Instead, I tweaked my `configure.sh` script to
