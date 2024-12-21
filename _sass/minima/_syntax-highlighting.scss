@@ -3,7 +3,9 @@
  */
 $literal-string-color: $brand-color-desaturated;
 $literal-number-color: #009999;
+$literal-special-color: #990073;
 $name-color: #445588;
+$error-color: #a61717;
 
 .highlight {
   background: $highlight-color;
@@ -17,8 +19,7 @@ $name-color: #445588;
 
   // Error
   .err {
-    color: #a61717;
-    background-color: #e3d2d2
+    color: $error-color;
   }
 
   // Keyword
@@ -34,7 +35,7 @@ $name-color: #445588;
   // Comment.Multiline
   .cm {
     color: $grey-color;
-    font-style: italic
+    font-style: italic;
   }
 
   // Comment.Preproc
@@ -46,14 +47,14 @@ $name-color: #445588;
   // Comment.Single
   .c1 {
     color: $grey-color;
-    font-style: italic
+    font-style: italic;
   }
 
   // Comment.Special
   .cs {
     color: $grey-color;
-    font-weight: $monospace-font-strong-weight;;
-    font-style: italic
+    font-weight: $monospace-font-strong-weight;
+    font-style: italic;
   }
 
   // Generic.Deleted
@@ -75,12 +76,12 @@ $name-color: #445588;
 
   // Generic.Error
   .gr {
-    color: #a00
+    color: $error-color;
   }
 
   // Generic.Heading
   .gh {
-    color: #999
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Generic.Inserted
@@ -97,12 +98,12 @@ $name-color: #445588;
 
   // Generic.Output
   .go {
-    color: #888
+    color: $grey-color;
   }
 
   // Generic.Prompt
   .gp {
-    color: #555
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Generic.Strong
@@ -112,12 +113,11 @@ $name-color: #445588;
 
   // Generic.Subheading
   .gu {
-    color: #aaa
   }
 
   // Generic.Traceback
   .gt {
-    color: #a00
+    color: $error-color;
   }
 
   // Keyword.Constant
@@ -142,7 +142,7 @@ $name-color: #445588;
 
   // Keyword.Type
   .kt {
-    color: #458;
+    color: $name-color;
     font-weight: $monospace-font-strong-weight;
   }
 
@@ -159,12 +159,12 @@ $name-color: #445588;
 
   // Name.Attribute
   .na {
-    color: #008080
+    color: $name-color;
   }
 
   // Name.Builtin
   .nb {
-    color: #0086B3
+    color: $name-color;
   }
 
   // Name.Class
@@ -217,7 +217,7 @@ $name-color: #445588;
 
   // Text.Whitespace
   .w {
-    color: #bbb
+    color: #bbb;
   }
 
   // Literal.Number.Float
@@ -282,7 +282,7 @@ $name-color: #445588;
 
   // Literal.String.Regex
   .sr {
-    color: #009926
+    color: $literal-special-color;
   }
 
   // Literal.String.Single
@@ -292,31 +292,31 @@ $name-color: #445588;
 
   // Literal.String.Symbol
   .ss {
-    color: #990073
+    color: $literal-special-color;
   }
 
   // Name.Builtin.Pseudo
   .bp {
-    color: #999
+    color: $name-color;
   }
 
   // Name.Variable.Class
   .vc {
-    color: #008080
+    color: $name-color;
   }
 
   // Name.Variable.Global
   .vg {
-    color: #008080
+    color: $name-color;
   }
 
   // Name.Variable.Instance
   .vi {
-    color: #008080
+    color: $name-color;
   }
 
   // Literal.Number.Integer.Long
   .il {
-    color: #099
+    color: $literal-number-color;
   }
 }
