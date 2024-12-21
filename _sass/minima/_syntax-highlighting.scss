@@ -1,12 +1,14 @@
 /**
  * Syntax highlighting styles
  */
+$literal-color: $brand-color-desaturated;
+
 .highlight {
   background: $highlight-color;
   @extend %vertical-rhythm;
 
   .c {
-    color: #998;
+    color: $grey-color;
     font-style: italic
   }
 
@@ -28,25 +30,25 @@
 
   // Operator
   .cm {
-    color: #998;
+    color: $grey-color;
     font-style: italic
   }
 
   // Comment.Multiline
   .cp {
-    color: #999;
+    color: $grey-color;
     font-weight: $monospace-font-strong-weight;
   }
 
   // Comment.Preproc
   .c1 {
-    color: #998;
+    color: $grey-color;
     font-style: italic
   }
 
   // Comment.Single
   .cs {
-    color: #999;
+    color: $grey-color;
     font-weight: $monospace-font-strong-weight;;
     font-style: italic
   }
@@ -148,7 +150,7 @@
 
   // Literal.Number
   .s {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String
@@ -236,42 +238,42 @@
 
   // Literal.Number.Oct
   .sb {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Backtick
   .sc {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Char
   .sd {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Doc
   .s2 {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Double
   .se {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Escape
   .sh {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Heredoc
   .si {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Interpol
   .sx {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Other
@@ -281,7 +283,7 @@
 
   // Literal.String.Regex
   .s1 {
-    color: #d14
+    color: $literal-color;
   }
 
   // Literal.String.Single
