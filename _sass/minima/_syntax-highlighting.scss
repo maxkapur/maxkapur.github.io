@@ -1,7 +1,9 @@
 /**
  * Syntax highlighting styles
  */
-$literal-color: $brand-color-desaturated;
+$literal-string-color: $brand-color-desaturated;
+$literal-number-color: #009999;
+$name-color: #445588;
 
 .highlight {
   background: $highlight-color;
@@ -9,7 +11,7 @@ $literal-color: $brand-color-desaturated;
 
   .c {
     color: $grey-color;
-    font-style: italic
+    font-style: italic;
   }
 
   // Comment
@@ -145,12 +147,13 @@ $literal-color: $brand-color-desaturated;
 
   // Keyword.Type
   .m {
-    color: #099
+    color: $literal-number-color;
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Literal.Number
   .s {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String
@@ -165,45 +168,45 @@ $literal-color: $brand-color-desaturated;
 
   // Name.Builtin
   .nc {
-    color: #458;
+    color: $name-color;
     font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Class
   .no {
-    color: #008080
+    color: $name-color;
   }
 
   // Name.Constant
   .ni {
-    color: #800080
+    color: $name-color;
   }
 
   // Name.Entity
   .ne {
-    color: #900;
+    color: $name-color;
     font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Exception
   .nf {
-    color: #900;
+    color: $name-color;
     font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Function
   .nn {
-    color: #555
+    color: $name-color;
   }
 
   // Name.Namespace
   .nt {
-    color: #000080
+    color: $name-color;
   }
 
   // Name.Tag
   .nv {
-    color: #008080
+    color: $name-color;
   }
 
   // Name.Variable
@@ -218,62 +221,62 @@ $literal-color: $brand-color-desaturated;
 
   // Text.Whitespace
   .mf {
-    color: #099
+    color: $literal-number-color;
   }
 
   // Literal.Number.Float
   .mh {
-    color: #099
+    color: $literal-number-color;
   }
 
   // Literal.Number.Hex
   .mi {
-    color: #099
+    color: $literal-number-color;
   }
 
   // Literal.Number.Integer
   .mo {
-    color: #099
+    color: $literal-number-color;
   }
 
   // Literal.Number.Oct
   .sb {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Backtick
   .sc {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Char
   .sd {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Doc
   .s2 {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Double
   .se {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Escape
   .sh {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Heredoc
   .si {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Interpol
   .sx {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Other
@@ -283,7 +286,7 @@ $literal-color: $brand-color-desaturated;
 
   // Literal.String.Regex
   .s1 {
-    color: $literal-color;
+    color: $literal-string-color;
   }
 
   // Literal.String.Single
