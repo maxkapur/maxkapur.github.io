@@ -231,31 +231,22 @@ blockquote {
  * Code
  */
 
-//  Inline code gets bold styling
+// Inline code
 code {
-  @include monospace-strong;
+  font-size: $monospace-font-size;
   padding: 0 0.1em;
 }
 
 // Code blocks
 pre {
+  font-size: $monospace-font-size;
   border: 1px solid $green-color-light;
   border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
 
-  // Ensures correct line height calculation
-  font-size: $monospace-font-size;
-
   >code {
     padding: 0;
-
-    // Syntax highlighter will make some elements strong, others not;
-    // we want to respect this, so reset the font weight to normal.
-    font-weight: normal;
-
-    // NOTE: In _syntax-highlighting.scss, we include monospace-strong
-    // back into the styles that the syntax highlighter wants to bold
   }
 }
 

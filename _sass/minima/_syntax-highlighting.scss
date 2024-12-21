@@ -18,12 +18,12 @@
 
   // Error
   .k {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword
   .o {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Operator
@@ -35,7 +35,7 @@
   // Comment.Multiline
   .cp {
     color: #999;
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Comment.Preproc
@@ -47,7 +47,7 @@
   // Comment.Single
   .cs {
     color: #999;
-    @include monospace-strong;
+    font-weight: $monospace-font-strong-weight;;
     font-style: italic
   }
 
@@ -102,7 +102,7 @@
 
   // Generic.Prompt
   .gs {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Generic.Strong
@@ -117,28 +117,28 @@
 
   // Generic.Traceback
   .kc {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword.Constant
   .kd {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword.Declaration
   .kp {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword.Pseudo
   .kr {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword.Reserved
   .kt {
     color: #458;
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Keyword.Type
@@ -164,7 +164,7 @@
   // Name.Builtin
   .nc {
     color: #458;
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Class
@@ -180,13 +180,13 @@
   // Name.Entity
   .ne {
     color: #900;
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Exception
   .nf {
     color: #900;
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Name.Function
@@ -206,7 +206,7 @@
 
   // Name.Variable
   .ow {
-    @include monospace-strong
+    font-weight: $monospace-font-strong-weight;
   }
 
   // Operator.Word
