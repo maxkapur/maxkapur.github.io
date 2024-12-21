@@ -102,6 +102,65 @@ Example below.
 
 ![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/images/fish-fzl-example.png)
 
+## Python example
+
+<https://github.com/maxkapur/cronjobs/blob/main/backup_nextcloud_contacts.py>
+
+```python
+def get_connection_parameters():
+    parser = ArgumentParser(
+        description="Create backups of Nextcloud calendar and contacts files"
+    )
+    parser.add_argument(
+        "url", help="Nextcloud base URL (https://nextcloud.example.com)"
+    )
+    parser.add_argument("username", help="Nextcloud username (admin)")
+    parser.add_argument(
+        "keyfile", help="Path to file containing password (~/nextcloud_key)"
+    )
+    args = parser.parse_args()
+
+    # Enforce HTTPS and allow some typical variants
+    url = "https://" + args.url.rstrip("/").lstrip("http://").lstrip("https://")
+    username = args.username
+
+    with open(args.keyfile) as file:
+        password = file.read()
+        file.close()
+
+    return url, username, password
+
+def raise_an_error():
+    x = 5
+    if x > 4:
+        raise ValueError(f"{x = } > 4")
+
+class ClassExample:
+    """A docstring.
+
+    Has multiple lines.
+    """
+
+    def some_method(self, x: int) -> None:
+        "Docstring."
+
+        # Print it
+        print(x)
+```
+
+Julia example
+
+```julia
+# Main purpose of creating this was to see "special" strings (symbol, regex) in
+# action, but rouge doesn't parse them as anything special :(
+
+if 5 < 6
+    @assert match(r"\d", "hello2")
+end
+
+(string(:hello) == "hello" ? 5 : 6) |> sqrt
+```
+
 # Math
 
 In this post, we will show that functions of the form

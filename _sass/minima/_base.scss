@@ -169,7 +169,7 @@ a {
   @include subtle-underline;
 
   &:visited {
-    color: color.adjust($brand-color, $saturation: -50%);
+    color: $brand-color-desaturated;
   }
 
   &:hover {

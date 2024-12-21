@@ -37,6 +37,7 @@ $brand-color: #008000;
 
 $grey-color: #778899;
 $green-color-light: #b7ccb7;
+$brand-color-desaturated: color.adjust($brand-color, $saturation: -50%);
 $grey-color-dark: color.adjust($grey-color, $lightness: -25%);
 
 $table-text-align: left;
