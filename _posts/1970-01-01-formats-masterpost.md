@@ -148,6 +148,19 @@ class ClassExample:
         print(x)
 ```
 
+Julia example
+
+```julia
+# Main purpose of creating this was to see "special" strings (symbol, regex) in
+# action, but rouge doesn't parse them as anything special :(
+
+if 5 < 6
+    @assert match(r"\d", "hello2")
+end
+
+(string(:hello) == "hello" ? 5 : 6) |> sqrt
+```
+
 # Math
 
 In this post, we will show that functions of the form
