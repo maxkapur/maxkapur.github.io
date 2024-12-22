@@ -48,7 +48,7 @@ body {
 }
 
 strong {
-  font-weight: $base-font-strong-weight;
+  font-weight: $base-font-weight-strong;
 }
 
 // This keeps sup elements from making their lines awkwardly higher than others
@@ -125,6 +125,7 @@ figure {
 
 figcaption {
   font-size: $small-font-size;
+  color: $text-color-light;
 }
 
 
@@ -216,8 +217,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color-dark;
-  border-left: 3px solid $green-color-light;
+  color: $text-color-light;
+  border-left: 3px solid $brand-color-light;
   padding-left: math.div($spacing-unit, 3);
 
   > :last-child {
@@ -238,14 +239,15 @@ code {
 }
 
 // Code blocks
-pre {
+pre:has(code) {
   font-size: $monospace-font-size;
-  border: 1px solid $green-color-light;
+  border: 1px solid $brand-color-light;
   border-radius: 3px;
   padding: 8px 12px;
   overflow-x: auto;
+  background: $background-color-light;
 
-  >code {
+  code {
     padding: 0;
   }
 }
@@ -257,9 +259,8 @@ pre {
  */
 kbd {
   font-family: $base-font-family;
-  font-weight: $base-font-strong-weight;
   font-size: $small-font-size;
-  border: 1px solid $grey-color-dark;
+  border: 1px solid $text-color-light;
   border-radius: 3px;
   padding: 3px 5px 2px 5px;
 }
@@ -306,7 +307,7 @@ kbd {
   width: 16px;
   height: 16px;
   display: inline-block;
-  fill: #{$grey-color};
+  fill: $text-color-light;
 
   padding-right: 5px;
   vertical-align: text-top;
@@ -318,22 +319,21 @@ kbd {
  * Tables
  */
 table {
-  text-align: $table-text-align;
-  background-color: $highlight-color;
-
-  border: 0.5px solid $grey-color-dark;
+  background-color: $background-color-light;
+  text-align: left;
+  border: 0.5px solid $text-color-light;
   border-collapse: collapse;
 
   th,
   td {
     // NOTE: Padding matches <pre>
     padding: 8px 12px;
-    border: 0.5px solid $grey-color-dark;
+    border: 0.5px solid $text-color-light;
   }
 
   th {
-    background-color: color.adjust($green-color-light, $lightness: 10%);
-    font-weight: $base-font-strong-weight;
+    background-color: $brand-color-light;
+    font-weight: $base-font-weight-strong;
     border-bottom-width: 2px;
   }
 }
@@ -341,7 +341,7 @@ table {
 
 // Add a separator at top of footnotes
 div.footnotes {
-  border-top: 1px solid $green-color-light;
+  border-top: 1px solid $brand-color-light;
   padding-top: math.div($spacing-unit, 2);
 }
 

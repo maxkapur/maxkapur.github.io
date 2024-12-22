@@ -4,9 +4,8 @@
  * Site header
  */
 .site-header {
-  /* border-top: 5px solid $grey-color-dark; */
   border-top: 0;
-  border-bottom: 1px solid $green-color-light;
+  border-bottom: 1px solid $brand-color-light;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -54,7 +53,7 @@
     top: 9px;
     right: math.div($spacing-unit, 2);
     background-color: $background-color;
-    border: 1px solid $green-color-light;
+    border: 1px solid $brand-color-light;
     border-radius: 5px;
     text-align: right;
 
@@ -77,7 +76,7 @@
       text-align: center;
 
       >svg {
-        fill: $grey-color-dark;
+        fill: $text-color-light;
       }
     }
 
@@ -110,7 +109,7 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $green-color-light;
+  border-top: 1px solid $brand-color-light;
   padding: $spacing-unit 0;
 }
 
@@ -127,7 +126,7 @@
 
 .footer-col-wrapper {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $text-color-light;
   display: grid;
   grid-template-columns: auto auto 1fr;
   justify-content: space-between;
@@ -180,7 +179,7 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $text-color-light;
 }
 
 .post-link {
@@ -211,30 +210,21 @@
 
   h1 {
     font-size: 1.5rem;
+    font-weight: $base-font-weight;
+    color: $text-color-light;
   }
 
   h2 {
     font-size: 1.2rem;
-    color: $grey-color-dark;
+    font-weight: $base-font-weight;
+    color: $text-color-light;
     margin-bottom: math.div($spacing-unit, 4);
   }
 
   h3 {
     font-size: 1rem;
-    font-weight: $base-font-strong-weight;
-
-    @supports (display: run-in) {
-      display: run-in;
-
-      &::after {
-        content: ": ";
-      }
-    }
-
-    // E.g. Firefox
-    @supports not (display: run-in) {
-      margin-bottom: math.div($spacing-unit, 4);
-    }
+    font-weight: $base-font-weight-strong;
+    margin-bottom: math.div($spacing-unit, 4);
   }
 
   // Others unused

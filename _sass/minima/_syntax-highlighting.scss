@@ -2,18 +2,17 @@
  * Syntax highlighting styles
  */
 $literal-string-color: $brand-color-desaturated;
-$literal-number-color: #009999;
+$literal-number-color: #008080;
 $literal-special-color: #990073;
-$name-color: #445588;
+$name-color: #051e61;
 $error-color: #a61717;
 
 .highlight {
-  background: $highlight-color;
   @extend %vertical-rhythm;
 
   // Comment
   .c {
-    color: $grey-color;
+    color: $text-color-light;
     font-style: italic;
   }
 
@@ -34,25 +33,25 @@ $error-color: #a61717;
 
   // Comment.Multiline
   .cm {
-    color: $grey-color;
+    color: $text-color-light;
     font-style: italic;
   }
 
   // Comment.Preproc
   .cp {
-    color: $grey-color;
+    color: $text-color-light;
     font-weight: $monospace-font-strong-weight;
   }
 
   // Comment.Single
   .c1 {
-    color: $grey-color;
+    color: $text-color-light;
     font-style: italic;
   }
 
   // Comment.Special
   .cs {
-    color: $grey-color;
+    color: $text-color-light;
     font-weight: $monospace-font-strong-weight;
     font-style: italic;
   }
@@ -98,7 +97,7 @@ $error-color: #a61717;
 
   // Generic.Output
   .go {
-    color: $grey-color;
+    color: $text-color-light;
   }
 
   // Generic.Prompt

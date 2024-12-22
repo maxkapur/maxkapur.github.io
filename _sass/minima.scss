@@ -1,16 +1,46 @@
-@use "sass:color";
 @charset "utf-8";
+@use "sass:color";
+
+// Base and monospace font
+$base-line-height: 1.5;
 
 $base-font-family: "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
 $base-font-size: 1rem;
 $base-font-weight: 400;
-// Default bold weight (700) is too intense
-$base-font-strong-weight: 500;
-$base-line-height: 1.5;
+$base-font-weight-strong: 600; // 700 is too intense
 
 $monospace-font-family: "IBM Plex Mono", monospace;
 $monospace-font-size: $base-font-size * 0.9;
 $monospace-font-strong-weight: 600;
+
+// Used in figcaption, footer
+$small-font-size: $base-font-size * 0.875;
+
+// Used by minima layout
+$spacing-unit: 30px;
+
+// Obligatory black text. Muted variant for post titles, blockquote text, code
+// comments.
+$text-color: black;
+$text-color-light: #546270;
+
+// Primary background color, and a brighter alternate background color for code
+// blocks and table body
+$background-color: #ffffeb;
+$background-color-light: color.adjust($background-color, $lightness: 2%);
+
+// Plain brand color is used for links (there are plenty of them). Desaturated
+// variant is more legible, for visited links and strings in syntax
+// highlighting. Light variant is for secondary design elements: horizontal
+// rules, vertical rule left of blockquotes, table header background.
+$brand-color: #008000;
+$brand-color-desaturated: color.adjust($brand-color, $saturation: -50%);
+$brand-color-light: #b7ccb7;
+
+// Width of the content area
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
 // These two mixins are intended to differentiate normal links
 // from hovered links:
@@ -21,31 +51,12 @@ $monospace-font-strong-weight: 600;
 @mixin heavy-underline {
   text-decoration: underline solid currentColor 1.5px;
 }
+
 // For completeness' sake, this mixin undoes the other two in
 // case one of those styles was inherited:
 @mixin no-underline {
   text-decoration: none;
 }
-
-$small-font-size: $base-font-size * 0.875;
-$spacing-unit: 30px;
-
-$text-color: #111;
-$background-color: #ffffeb;
-$highlight-color: color.adjust($background-color, $lightness: 2%);
-$brand-color: #008000;
-
-$grey-color: #778899;
-$green-color-light: #b7ccb7;
-$brand-color-desaturated: color.adjust($brand-color, $saturation: -50%);
-$grey-color-dark: color.adjust($grey-color, $lightness: -25%);
-
-$table-text-align: left;
-
-// Width of the content area
-$content-width: 800px;
-$on-palm: 600px;
-$on-laptop: 800px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
