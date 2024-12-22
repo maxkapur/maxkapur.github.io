@@ -70,9 +70,3 @@ $on-laptop: 800px;
     @content;
   }
 }
-
-// Import partials
-@import "minima/base",
-"minima/layout",
-"minima/syntax-highlighting"
-;

@@ -1,6 +1,9 @@
 /**
  * Syntax highlighting styles
  */
+@use "minima" as *;
+@use "minima/base" as *;
+
 $literal-string-color: $brand-color-desaturated;
 $literal-number-color: #008080;
 $literal-special-color: #990073;
