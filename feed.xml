@@ -1,37 +1,74 @@
 ---
 ---
 
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+
 <!--
-  Based on
-  https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
+  References:
+    https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
+    https://www.roboleary.net/webdev/2022/06/14/how-i-fixed-the-atom-web-feed-on-my-website.html
 -->
+
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.title }}</title>
+
+  <title type="text">
+    {{- site.title | strip_html | normalize_whitespace | xml_escape -}}
+  </title>
   <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" />
   <link href="{{ site.url }}{{ site.baseurl }}/" rel="alternate" />
-  <subtitle>{{ site.description }}</subtitle>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <subtitle type="text">
+    {{- site.description | strip_html | normalize_whitespace | xml_escape -}}
+  </subtitle>
+  <updated>
+    {{- site.time | date_to_xmlschema -}}
+  </updated>
   <id>{{ site.url }}/</id>
   <author>
-    <name>{{ site.author.name }}</name>
-    <email>{{ site.author.email }}</email>
+    <name>
+      {{- site.author | strip_html | normalize_whitespace | xml_escape -}}
+    </name>
+    <email>
+      {{- site.email | strip_html | normalize_whitespace | xml_escape -}}
+    </email>
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+
   {% for post in site.posts %}
     {%- if post.unlisted -%}
-      {% continue %}
+      {%- continue -%}
     {%- endif -%}
   <entry>
-    <title>{{ post.title }}</title>
+    <title type="text">{{ post.title | strip_html | normalize_whitespace }}</title>
     <link rel="alternate" href="{{ site.url }}{{ post.url }}" />
+
+    <!--
+      Use post.date as both the updated and published date. Currently, we don't
+      keep separate track of when a post was updated.
+    -->
     <updated>{{ post.date | date_to_xmlschema }}</updated>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    <updated-readable>{{ post.date | date: date_format }}</updated-readable>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+
+    <!--
+      An RFC 4287 Simple Extension element: human-readable representation of the
+      publication date. We use this in the stylesheet to show a concise date
+      instead of the dense ISO format string.
+    -->
+    <readableDate>
+      {{- post.date | date: date_format | xml_escape -}}
+    </readableDate>
+
     <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
-    <summary>{{ post.excerpt }}</summary>
-    <content type="html">{{ post.content | xml_escape }}</content>
+    <summary type="html">
+      {{- post.excerpt | strip | normalize_whitespace | xml_escape -}}
+    </summary>
+    <content type="html">
+      {{- post.content | strip | normalize_whitespace | xml_escape -}}
+    </content>
   </entry>
+
   {% endfor %}
+
 </feed>

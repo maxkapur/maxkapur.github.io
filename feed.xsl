@@ -17,16 +17,7 @@
       <title><xsl:value-of select="atom:feed/atom:title" /> | RSS</title>
       <link rel="stylesheet" href="/assets/main.css" />
 
-      <!-- Favicon -->
-      <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
-      <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-      <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#008000" />
-      <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#ffc40d" />
-      <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#ffffff" />
+      {%- include favicon.html -%}
     </head>
 
     <body>
@@ -76,7 +67,7 @@
             <xsl:value-of select="atom:id" />
           </xsl:attribute>
           <xsl:value-of select="atom:title" /></a>
-        <span class="post-meta"> (<xsl:value-of select="atom:updated-readable" />)</span>
+        <span class="post-meta"> (<xsl:value-of select="atom:readableDate" />)</span>
         <!--
           Uncomment below to incorporate post excerpts into the styled preview.
           Note that the excerpts are included in the *feed itself* in either
