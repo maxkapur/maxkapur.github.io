@@ -4,22 +4,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/fonts.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+
   {%- if page.katex -%}
     <link rel="stylesheet" href="{{ "/assets/katex.css" | relative_url }}">
   {%- endif -%}
 
   <title>
     {%- if page.title -%}
-      {{page.title}} | {{site.title}}
+      {{- page.title -}} | {{- site.title -}}
     {%- else -%}
-      {{site.title}}
+      {{- site.title -}}
     {%- endif -%}
   </title>
 
   {%- seo -%}
+
+  <!--
+    TODO: Current feed header isn't picked up by https://validator.w3.org/feed/
+    or by some RSS reader apps.
+  -->
   {%- feed_meta -%}
+
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+
   {%- include favicon.html -%}
 </head>
