@@ -32,7 +32,8 @@ $background-color-light: color.adjust($background-color, $lightness: 2%);
 // Plain brand color is used for links (there are plenty of them). Desaturated
 // variant is more legible, for visited links and strings in syntax
 // highlighting. Light variant is for secondary design elements: horizontal
-// rules, vertical rule left of blockquotes, table header background.
+// rules, vertical rule left of blockquotes, table header background. Should
+// mainly be referenced via border-heavy to ensure consistent width.
 $brand-color: #008000;
 $brand-color-desaturated: color.adjust($brand-color, $saturation: -50%);
 $brand-color-light: #b7ccb7;
