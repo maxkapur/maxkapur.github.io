@@ -17,14 +17,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: $spacing-unit;
+    gap: 0 $spacing-unit;
     align-items: baseline;
   }
 }
 
 .site-title {
   font-size: 1.625rem;
-  font-weight: 400;
+  font-weight: lighter;
   letter-spacing: -0.5px;
 
   &,
@@ -37,7 +37,7 @@
   .page-links {
     display: flex;
     flex-wrap: wrap;
-    gap: math.div($spacing-unit, 2);
+    gap: 0 math.div($spacing-unit, 2);
 
     .page-link {
       color: $text-color;
