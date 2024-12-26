@@ -36,6 +36,7 @@ $background-color-light: color.adjust($background-color, $lightness: 2%);
 $brand-color: #008000;
 $brand-color-desaturated: color.adjust($brand-color, $saturation: -50%);
 $brand-color-light: #b7ccb7;
+$border-heavy: 2px solid $brand-color-light;
 
 // Width of the content area
 $content-width: 800px;

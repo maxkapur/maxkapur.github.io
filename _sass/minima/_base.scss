@@ -152,14 +152,13 @@ li {
 /**
  * Headings
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: $base-font-weight;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// }
 
 
 
@@ -219,7 +218,7 @@ a {
  */
 blockquote {
   color: $text-color-light;
-  border-left: 2px solid $brand-color-light;
+  border-left: $border-heavy;
   padding-left: math.div($spacing-unit, 3);
 
   > :last-child {
@@ -242,7 +241,7 @@ code {
 // Code blocks
 pre:has(code) {
   font-size: $monospace-font-size;
-  border: 2px solid $brand-color-light;
+  border: $border-heavy;
   padding: 8px 12px;
   overflow-x: auto;
   background: $background-color-light;
@@ -341,7 +340,7 @@ table {
 
 // Add a separator at top of footnotes
 div.footnotes {
-  border-top: 2px solid $brand-color-light;
+  border-top: $border-heavy;
   padding-top: math.div($spacing-unit, 2);
 }
 

@@ -8,7 +8,7 @@
 .site-header {
   background: $background-color-light;
   border-top: 0;
-  border-bottom: 2px solid $brand-color-light;
+  border-bottom: $border-heavy;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -55,7 +55,6 @@
     position: absolute;
     top: 9px;
     right: math.div($spacing-unit, 2);
-    background-color: $background-color;
     border: 1px solid $text-color-light;
     border-radius: 3px;
     text-align: right;
@@ -113,7 +112,7 @@
  */
 .site-footer {
   background: $background-color-light;
-  border-top: 2px solid $brand-color-light;
+  border-top: $border-heavy;
   padding: $spacing-unit 0;
 }
 
@@ -214,14 +213,10 @@
 
   h1 {
     font-size: 1.5rem;
-    font-weight: $base-font-weight;
-    color: $text-color-light;
   }
 
   h2 {
     font-size: 1.2rem;
-    font-weight: $base-font-weight;
-    color: $text-color-light;
     margin-bottom: math.div($spacing-unit, 4);
   }
 
