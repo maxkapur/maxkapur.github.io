@@ -12,6 +12,8 @@ Here is a post with all kinds of crazy formatting so that I can test out my CSS.
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
 
+Make sure the keyboard element <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd> doesn’t mess up the spacing.
+
 ## Heading bravo
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
