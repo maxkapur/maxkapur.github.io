@@ -23,9 +23,8 @@
 }
 
 .site-title {
-  font-size: 1.625rem;
-  font-weight: lighter;
-  letter-spacing: -0.5px;
+  font-weight: $base-font-weight-strong;
+  font-size: 1.2rem;
 
   &,
   &:visited {
