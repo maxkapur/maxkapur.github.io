@@ -4,6 +4,9 @@ title: Server-side KaTeX rendering with Jekyll
 katex: true
 ---
 
+This post explains how I set up server-side KaTeX rendering to improve the load
+time on pages that include mathematical notation.<!--more-->
+
 KaTeX is a math typesetting library that lets you render nice-looking math
 equations like $$f(x) = e^{rt}$$ inside of an HTML document. As the [KaTeX
 documentation describes](https://katex.org/docs/autorender), the easiest way to
