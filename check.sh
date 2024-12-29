@@ -23,3 +23,6 @@ echo "You may need to run ./build.sh first" 1>&2
 HTMLPROOFER_OPTIONS=("--disable-external")
 # shellcheck disable=2068  # splitting intended
 bundle exec htmlproofer ${HTMLPROOFER_OPTIONS[@]} _site || exit $?
+
+header "Check for deprecation warnings with Jekyll doctor"
+bundle exec jekyll doctor || exit $?
