@@ -17,7 +17,7 @@
       <title><xsl:value-of select="atom:feed/atom:title" /> | RSS</title>
       <link rel="stylesheet" href="/assets/main.css" />
 
-      {%- include favicon.html -%}
+      {%- favicon -%}
     </head>
 
     <body>
