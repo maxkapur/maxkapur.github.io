@@ -5,8 +5,8 @@ layout: post
 
 I wanted to follow up on my [previous post]( {% post_url
 2024-11-02-gwangju-again %} ) about the CLS alumni seminar in Gwangju to
-spotlight **my favorite excursion of the week: our visit to the [88.9 Gwangju
-FM]( https://kjfm.communityradio.kr/ )** community radio station. Gwangju FM has
+spotlight my favorite excursion of the week: our visit to the [88.9 Gwangju
+FM]( https://kjfm.communityradio.kr/ ) community radio station. Gwangju FM has
 no particular theme, but they dedicate part of their schedule each week to
 programming related to the Gwangju international community. When our group of
 twenty-five showed up, the staff divided us into five groups and gave us two
