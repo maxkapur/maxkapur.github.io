@@ -4,7 +4,7 @@ title: Centering students as creators
 ---
 
 In an influential article
-<a href="http://www.tandfonline.com/doi/pdf/10.1080/00043125.2007.11651621" alt="Olivia Gude, &quot;Principles of Possibility,&quot; Art Education, Jan. 2007, 6&ndash;17">reimagining
+<a href="https://www.tandfonline.com/doi/pdf/10.1080/00043125.2007.11651621" alt="Olivia Gude, &quot;Principles of Possibility,&quot; Art Education, Jan. 2007, 6&ndash;17">reimagining
 how we teach art in the modern classroom</a>, Olivia Gude observes that when
 students set about “looking for and developing images from inkblots, smoke
 marks, or wax drippings,” even the artistically checked-out ones begin to
@@ -21,7 +21,7 @@ recognize themselves as creators:
 > with images and ideas as they emerge.
 
 We would do well to follow Gude’s lead in other fields of art education, too.
-When I interned at <a href="http://fearlessideas.org/">The Greater Seattle
+When I interned at <a href="https://fearlessideas.org/">The Greater Seattle
 Bureau of Fearless Ideas</a> this summer, I noticed the staff was well prepared
 for students who would claim, “I’m really not the creative type.” In our
 workshops, we sometimes had students brainstorm on paper as a warm-up activity,
