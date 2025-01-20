@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
     # First plot showing what the data looks like
     plt.scatter(x, y)
-    plt.savefig("cyclical-data-before.svg", transparent=True)
+    plt.savefig("cyclical-data-before.svg", transparent=True, bbox_inches="tight")
 
     # Transform x to its cos and sin, then solve
     #   y = x_transformed @ beta
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     x_pred = np.linspace(x.min(), x.max(), 500)
     y_pred = A_pred * np.sin(x_pred + phi_pred)
     plt.plot(x_pred, y_pred)
-    plt.savefig("cyclical-data-with-fit.svg", transparent=True)
+    plt.savefig("cyclical-data-with-fit.svg", transparent=True, bbox_inches="tight")
 ```
 
 Here is what the predicted model looks like:
