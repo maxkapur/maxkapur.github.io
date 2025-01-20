@@ -122,25 +122,25 @@ well.](/assets/images/cyclical-data-with-fit.svg)
 
 # Notes
 
-**Retaining the linearized parameterization:** In the Python code above, we
-compute $$\phi$$ and $$A$$ just to demonstrate that the technique actually
+**When to retain the linearized parameterization:** In the Python code above, we
+computed $$\phi$$ and $$A$$ just to demonstrate that the technique actually
 works. But the code will throw a zero-division error at the computation of
 `A_pred` if $$\phi$$ is a multiple of $$\pi / 2$$ (which happens when one of the
-$$\beta_j = 0$$). In practice, I recommend the $$\beta_j$$ values and running
-predictions using the $$y_i = \beta_0 \cos x + \beta_1 \sin x$$ model.
-Experienced data scientists will recognize this transformation, but you could
-add a comment along the lines of “this is a linear reparamaterization of $$A
-\sin( x + \phi )$$.”
+$$\beta_j = 0$$). In practice, I recommend discarding the $$A$$ and $$\phi$$
+values and running predictions using the
+$$y_i = \beta_0 \cos x + \beta_1 \sin x$$ model instead. Experienced data
+scientists will recognize this transformation, but you could add a comment along
+the lines of “this is a linear reparamaterization of $$A \sin( x + \phi )$$.”
 
-**Composition of sinusoids:** You can also use this technique if your $$y$$
-variable is a linear combination of sine waves of known periods. For example, if
-$$x$$ is “minute of day” and $$y$$ is “volume of emails,” you might expect an
-overall daily trend (period of 24 hours) with smaller variations within each
-hour (due to scheduled emails going out at the top of each hour). Then you can
-set $$w_i = 2 \pi x_i / (24 \cdot 60)$$, $$z_i = 2 \pi x_i / 60$$, and estimate
-the model
+**Linear combination of sinusoids:** You can also use this technique if your
+$$y$$ variable is a linear combination of sine waves of known periods. For
+example, if $$x$$ is “minute of day” and $$y$$ is “volume of emails,” you might
+expect an overall daily trend (period of 24 hours) with smaller variations
+within each hour (due to scheduled emails going out at the top of each hour).
+Then you can set $$w_i = 2 \pi x_i / (24 \cdot 60)$$, $$z_i = 2 \pi x_i / 60$$,
+and minimize the error in
 
-$$y = A_w \sin( w_i + \phi_w ) + A_z \sin( z_i + \phi_z )$$
+$$y_i = A_w \sin( w_i + \phi_w ) + A_z \sin( z_i + \phi_z )$$
 
 using the transformation above.
 
