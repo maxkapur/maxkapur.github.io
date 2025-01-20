@@ -1,11 +1,16 @@
 ---
 layout: post
 katex: true
-title: Linear regression with a cyclical predictor of known period
+title: Circular regression when you already know the period
 ---
 
 This [Stack Exchange](https://stats.stackexchange.com/a/660199) answer reminded
-me of a data science trick that may be new to some.
+me of a data science trick that may be new to some. In short, if you try to
+model $$y$$ as a sinusoidal function of $$x$$, you obtain a regression formula
+that is nonlinear in the parameters. However, if you know the period, you can
+linearize the formula and compute an exact least-squares fit.<!--more-->
+
+# Background
 
 Suppose you are trying to create a regression model for data that looks like
 this:
@@ -28,7 +33,7 @@ would have collected exact dates). Thus, $$T = 365.25$$ (or however you want to
 handle leap years), and we have only to estimate the amplitude and phase that
 best fit the data.
 
-# The problem
+# Problem statement
 
 Without loss of generality, we can assume that $$T = 2 \pi$$ (if not, multiply
 each $$x_i$$ by $$2 \pi / T$$). Then our objective is to minimize the error in
@@ -92,7 +97,7 @@ if __name__ == "__main__":
     plt.savefig("cyclical-data-before.svg", transparent=True)
 
     # Transform x to its cos and sin, then solve
-    #   y = x_transformed @ a
+    #   y = x_transformed @ beta
     # by least squares.
     x_transformed = np.stack([np.cos(x), np.sin(x)]).T
     (beta0, beta1), *_ = np.linalg.lstsq(x_transformed, y)  # Discard other outputs
