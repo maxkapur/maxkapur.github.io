@@ -5,10 +5,10 @@ title: Circular regression when you already know the period
 ---
 
 This [Stack Exchange](https://stats.stackexchange.com/a/660199) answer reminded
-me of a data science trick that may be new to some. In short, if you try to
-model $$y$$ as a sinusoidal function of $$x$$, you obtain a regression formula
-that is nonlinear in the parameters. However, if you know the period, you can
-linearize the formula and compute an exact least-squares fit.<!--more-->
+me of a useful data science trick. In short, if you try to model $$y$$ as a
+sinusoidal function of $$x$$, you obtain a regression formula that is nonlinear
+in the parameters. However, if you know the period, you can use a trig identity
+to linearize the formula and compute an exact least-squares fit.<!--more-->
 
 # Background
 
@@ -26,7 +26,7 @@ parameters we need to estimate:
 2. The amplitude $$A$$ (height of the peaks)
 3. The phase $$\phi$$ (where in the cycle the peaks occur)
 
-But for some data, there’s really only one value for the period that makes
+For some data, there’s really only one value for the period that makes
 sense. For example, if $$x$$ represents “day of the year” (as in the Stack
 Exchange question), then we are clearly expecting a yearly cycle (or else we
 would have collected exact dates). Thus, $$T = 365.25$$ (or however you want to
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 Here is what the predicted model looks like:
 
 ![The same scatter plot as above, this time with the estimated sine wave drawn
-on top. The estimated wave fits the data
+on top. The estimated function fits the data
 well.](/assets/images/cyclical-data-with-fit.svg)
 
 # Notes
