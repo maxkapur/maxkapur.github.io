@@ -6,7 +6,7 @@ gem "csv", "~> 3.3"
 gem "html-proofer", "~> 5.0"
 gem "logger", "~> 1.6"
 
-gem "jekyll", "~> 4.3"
+gem "jekyll", "~> 4.4"
 
 group :jekyll_plugins do
     # gem "jekyll-paginate", "~> 1.1"
