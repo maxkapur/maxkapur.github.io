@@ -16,6 +16,9 @@
       <div class="page-links">
         {%- assign sorted_pages = site.pages | sort: "sort_order" -%}
         {%- for my_page in sorted_pages -%}
+          {%- if my_page.unlisted -%}
+            {%- continue -%}
+          {%- endif -%}
           {%- unless my_page.title -%}
             {%- continue -%}
           {%- endunless -%}
