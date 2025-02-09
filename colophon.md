@@ -30,11 +30,12 @@ katex: true
 - Conda ([Miniforge](https://github.com/conda-forge/miniforge)) for environment
   management (<a href="{% post_url 2024-11-29-rbenv-vs-conda %}">why</a>)
 - [Jekyll](https://jekyllrb.com/) to build the HTML
+- GitHub Actions (wrapping Bash scripts) for orchestration
 
 # Hosting
 
 - Web hosting: GitHub Pages free tier
-- Domain: Automatically migrated from Google Domains to Squarespace
+- Domain: Squarespace (automatically migrated from Google Domains)
 
 # AI
 
