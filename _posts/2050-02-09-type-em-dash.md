@@ -9,5 +9,5 @@ title: How to type an em dash
 - Work computer (Windows):
   - If in Word or Office: Type two hyphens and let it autocorrect
   - If Markdown: Use the HTML character entity `&mdash;`
-  - Otherwise: <kbd>Win</kbd> + <kbd>.</kbd> character chooser, or just Google
+  - Otherwise: <kbd>⊞ Win</kbd> + <kbd>.</kbd> character chooser, or just Google
     “em dash” and copy/paste
