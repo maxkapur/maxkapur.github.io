@@ -1,19 +1,21 @@
 ---
 layout: default
 katex: true
+pagination:
+  enabled: true
+  per_page: 5
+  sort_field: date
+  sort_reverse: true
+  title: ':title (page :num)'
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
   {%- if site.posts.size > 0 -%}
     {%- if page.list_title -%}
     <h2>{{ page.list_title }}</h2>
     {%- endif %}
     <div class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in paginator.posts -%}
         {%- if post.unlisted -%}
           {% continue %}
         {%- endif -%}
@@ -40,6 +42,22 @@ katex: true
       </div>
       {%- endfor -%}
     </div>
-  {%- endif -%}
+
+    {% if paginator.total_pages > 1 -%}
+    <div class="page-switcher">
+      <div>
+      {%- if paginator.previous_page -%}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Previous page</a>
+      {%- endif -%}
+      </div>
+
+      <div>
+      {%- if paginator.next_page -%}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next page</a>
+      {%- endif -%}
+      </div>
+    </div>
+    {%- endif %}
+  {%- endif %}
 </div>
 
