@@ -24,6 +24,8 @@ katex: true
 
 - [IBM Plex](https://github.com/IBM/plex) family
 - Default $$\KaTeX$$ font
+- I have a <a href="{% post_url 1970-01-01-formats-masterpost %}">stylesheet
+  demo post</a>
 
 # Site build
 
