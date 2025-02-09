@@ -97,7 +97,7 @@
  * Page content
  */
 .page-content {
-  padding: ($spacing-unit * 2) 0;
+  padding: ($spacing-unit * 3) 0;
   flex: 1;
 }
 
@@ -128,6 +128,14 @@
 }
 
 
+
+/**
+ * Prev/next page switcher
+ */
+.page-switcher {
+  display: flex;
+  justify-content: space-between;
+}
 
 /**
  * Posts
