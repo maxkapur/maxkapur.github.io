@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Apply to fifty colleges"
-katex:      True
+katex:      true
 ---
 
 In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more-->[^obvious]

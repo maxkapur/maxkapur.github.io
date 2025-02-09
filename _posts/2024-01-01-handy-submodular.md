@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "A handy class of submodular functions"
-katex:      True
+katex:      true
 ---
 
 In this post, we will show that functions of the form
