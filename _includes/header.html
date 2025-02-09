@@ -12,28 +12,41 @@
         </div>
       </div>
 
-      {%- if page_paths -%}
-      <nav class="site-nav">
-        <div class="page-links">
-          {%- assign sorted_pages = site.pages | sort: "sort_order" -%}
-          {%- for my_page in sorted_pages -%}
-            {%- if my_page.autogen -%}
-              {%- continue -%}
-            {%- endif -%}
-            {%- if my_page.unlisted -%}
-              {%- continue -%}
-            {%- endif -%}
-            {%- unless my_page.title -%}
-              {%- continue -%}
-            {%- endunless -%}
-          <div>
-            <a class="page-link" href="{{ my_page.url | relative_url }}">
-              {{- my_page.title | escape -}}
-            </a>
-          </div>
-          {%- endfor -%}
+    {%- if page_paths -%}
+    <nav class="site-nav">
+      <div class="page-links">
+        {%- assign sorted_pages = site.pages | sort: "sort_order" -%}
+        {%- for my_page in sorted_pages -%}
+
+          {%- comment -%}
+          Skip several kinds of pages in the nav bar:
+
+          - Index page (gets marked as a page by jekyll-paginate-v2 plugin)
+          - Autogen'd pages (created by jekyll-paginate-v2 plugin)
+          - Unlisted pages (TODO: See if unlisted can be hidden)
+          - Pages with no title
+          {%- endcomment -%}
+
+          {%- if my_page.url == "/index.html" -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- if my_page.autogen -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- if my_page.unlisted -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- unless my_page.title -%}
+            {%- continue -%}
+          {%- endunless -%}
+        <div>
+          <a class="page-link" href="{{ my_page.url | relative_url }}">
+            {{- my_page.title | escape -}}
+          </a>
         </div>
-      </nav>
-      {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
+    {%- endif -%}
   </div>
 </header>
