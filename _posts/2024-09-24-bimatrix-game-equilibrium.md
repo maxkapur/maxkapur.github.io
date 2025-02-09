@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Bimatrix game equilibrium via nonlinear programming"
-katex:      True
+katex:      true
 ---
 
 [These lecture notes
