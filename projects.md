@@ -7,10 +7,10 @@ redirect_from:
   - /publications/
 ---
 
-<!--
-Redirect above is because I used to have separate pages for
-projects and publications.
--->
+{%- comment -%}
+  Redirect above is because I used to have separate pages for projects and
+  publications.
+{%- endcomment -%}
 
 # Coding projects
 
@@ -41,9 +41,7 @@ authors and situate their complex relationship to the SF genre in the context of
 a longer history of “bargains” that Korean feminist writers have made in search
 of a literary platform.
 
-<a href="mailto:{{ site.email }}?subject=Can you send me a copy of your undergraduate thesis&body=I heard that it has many embedded images and is hard to host online">
-“&#x202F;‘The Shoes of the Trees’: How Trees Find Their Footing in Contemporary Korean Poetry,”
-</a>
+<a href="mailto:{{ site.email }}?subject=Can you send me a copy of your undergraduate thesis&body=I heard that it has many embedded images and is hard to host online">“&#x202F;‘The Shoes of the Trees’: How Trees Find Their Footing in Contemporary Korean Poetry,”</a>
 BA honors thesis, May 2018. A study of the symbolic and discursive role of trees in Korean lyric poetry and ecocriticism.
 
 [“The Making of the Kim Ku Mystique,”](https://www.scribd.com/document/364446649/OAPS-2016-2017)
