@@ -10,14 +10,29 @@ permalink: /browse/
 <h1>Pages</h1>
 
 <ul>
-  {%- for other_page in site.pages -%}
-    {%- unless other_page.title -%}
+  {%- for my_page in site.pages -%}
+
+    {%- comment -%}
+      Skip several kinds of pages in the nav bar:
+
+      - Index page (gets marked as a page by jekyll-paginate-v2 plugin)
+      - Autogen'd pages (created by jekyll-paginate-v2 plugin)
+      - Pages with no title
+    {%- endcomment -%}
+
+    {%- if my_page.url == "/index.html" -%}
+      {%- continue -%}
+    {%- endif -%}
+    {%- if my_page.autogen -%}
+      {%- continue -%}
+    {%- endif -%}
+    {%- unless my_page.title -%}
       {%- continue -%}
     {%- endunless -%}
 
   <li>
-    <a target="_blank" href="{{ other_page.url | relative_url }}">
-      {{- other_page.title | escape -}}
+    <a target="_blank" href="{{ my_page.url | relative_url }}">
+      {{- my_page.title | escape -}}
     </a>
   </li>
   {%- endfor -%}
