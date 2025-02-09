@@ -55,7 +55,7 @@
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
 
   {% for post in site.posts %}
-    {%- if post.unlisted -%}
+    {%- if post.hidden -%}
       {%- continue -%}
     {%- endif -%}
   <entry>

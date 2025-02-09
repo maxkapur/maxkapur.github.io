@@ -2,7 +2,7 @@
 layout: page
 title: Chipotle
 sort_order: 999
-unlisted: true
+hidden: true
 permalink: /chipotle/
 ---
 

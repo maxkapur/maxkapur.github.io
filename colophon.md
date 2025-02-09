@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Colophon
-unlisted: true
+hidden: true
 permalink: /colophon/
 ---
 

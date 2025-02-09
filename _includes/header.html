@@ -21,10 +21,10 @@
           {%- comment -%}
           Skip several kinds of pages in the nav bar:
 
-          - Index page (gets marked as a page by jekyll-paginate-v2 plugin)
-          - Autogen'd pages (created by jekyll-paginate-v2 plugin)
-          - Unlisted pages (TODO: See if unlisted can be hidden)
-          - Pages with no title
+            - Index page (gets marked as a page by jekyll-paginate-v2 plugin)
+            - Autogen'd pages (created by jekyll-paginate-v2 plugin)
+            - Hidden pages
+            - Pages with no title
           {%- endcomment -%}
 
           {%- if my_page.url == "/index.html" -%}
@@ -33,7 +33,7 @@
           {%- if my_page.autogen -%}
             {%- continue -%}
           {%- endif -%}
-          {%- if my_page.unlisted -%}
+          {%- if my_page.hidden -%}
             {%- continue -%}
           {%- endif -%}
           {%- unless my_page.title -%}

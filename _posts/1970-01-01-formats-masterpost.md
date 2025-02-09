@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Formats masterpost"
-unlisted:   true
+hidden:     true
 permalink:  /formatting/
 ---
 

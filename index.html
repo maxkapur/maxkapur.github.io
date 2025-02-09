@@ -7,6 +7,7 @@ pagination:
   sort_field: date
   sort_reverse: true
   title: ':title (page :num)'
+  permalink: '/page/:num/'
 ---
 
 <div class="home">
@@ -16,7 +17,7 @@ pagination:
     {%- endif %}
     <div class="post-list">
       {%- for post in paginator.posts -%}
-        {%- if post.unlisted -%}
+        {%- if post.hidden -%}
           {% continue %}
         {%- endif -%}
       <div class="post-list-item">
