@@ -17,7 +17,18 @@ permalink: /chipotle/
 OK, so I have only actually been to Chipotle a few times and can’t remember what
 I like.
 
-# Panera (to-do)
+# Panera
+
+Sandwich
+
+- Toasted Italiano
+- Half size
+- Defaults
+
+Drink
+
+- Signature hot chocolate
+- Regular size
 
 # Starbucks
 
