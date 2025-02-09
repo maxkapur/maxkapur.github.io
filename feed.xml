@@ -6,11 +6,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 
-<!--
+{%- comment -%}
+
   References:
+
     https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
     https://www.roboleary.net/webdev/2022/06/14/how-i-fixed-the-atom-web-feed-on-my-website.html
--->
+
+{%- endcomment -%}
 
 <feed xmlns="http://www.w3.org/2005/Atom">
 

@@ -30,11 +30,12 @@
           </ul>
         </div>
       </main>
-      <!--
+
+      {%- comment -%}
         TODO: Cannot include footer because it uses XML namespaces internally
         that cause the styled XML feed to fail to render.
         {%- include footer.html -%}
-      -->
+      {%- endcomment %}
     </body>
 
     </html>
