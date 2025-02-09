@@ -16,11 +16,11 @@ excerpt_separator: "<!--more-->"
 future: false  # Don't publish posts dated in future
 show_excerpts: true  # on homepage
 
+gems: [jekyll-paginate-v2]
+
 plugins:
   - "jekyll-redirect-from"
-  # - "jekyll-paginate"
-# paginate: 2
-# paginate_path: "blog/page:num"
+  - "jekyll-paginate-v2"
 
 theme: "minima"
 
@@ -28,6 +28,9 @@ theme: "minima"
 markdown: "kramdown"
 kramdown:
   math_engine: "katex"  # Let kramdown render KaTeX during build process
+
+pagination:
+  enabled: true
 
 # Exclude from processing (and therefore from _site/)
 exclude:
