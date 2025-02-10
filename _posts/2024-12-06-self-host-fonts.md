@@ -21,7 +21,7 @@ automating the process of downloading and installing a dependency *without*
 using a package manager like conda or apt.[^packagemanager]
 
 My source repo already has a `configure.sh` script that installs Ruby, Jekyll
-and so on to the local workstation so that it can build and preview the static
+and friends to the local workstation so that it can build and preview the static
 site. To this script, I added `curl` and `unzip` commands to
 [automatically download the latest IBM Plex release and extract](https://github.com/maxkapur/maxkapur.github.io/blob/f6521d7800c2e8a3111de226767e808f97f50572/configure.sh#L99-L132)
 the fonts to the `assets/` directory (where they are `.gitignore`d).

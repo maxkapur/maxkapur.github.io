@@ -35,7 +35,7 @@ they come back online, make an edit, and reflexively press
 each file and advancing the ISO date before making edits so that everyone can
 see that my version is the newest.
 
-[^logoff]: When I sign off for the day, I like to shut my computer all the way down to purge <a href="https://en.wikipedia.org/wiki/Daemon_(computing)">the demons</a>. But I can’t fault others for not doing so, because cold-booting Windows with all the bloat, reopening all your files and email, and logging into Workday and so on is a fifteen-minute process *at best.*
+[^logoff]: When I sign off for the day, I like to shut my computer all the way down to purge <a href="https://en.wikipedia.org/wiki/Daemon_(computing)">the demons</a>. But I can’t fault others for not doing so, because cold-booting Windows with all the bloat, reopening all your files and email, and logging into Workday is a fifteen-minute process *at best.*
 
 Ironically, the VPN vs. OneDrive fight would never arise on an old-school NAS or
 “`S://` drive,” because (assuming the shared drive is behind the VPN), when the
