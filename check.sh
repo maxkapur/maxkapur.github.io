@@ -24,5 +24,8 @@ HTMLPROOFER_OPTIONS=("--disable-external")
 # shellcheck disable=2068  # splitting intended
 bundle exec htmlproofer ${HTMLPROOFER_OPTIONS[@]} _site || exit $?
 
+header "Check URL schema"
+[[ -f "./_site/2022/06/25/migrating-to-jekyll.html" ]] || exit 1
+
 header "Check for deprecation warnings with Jekyll doctor"
 bundle exec jekyll doctor || exit $?
