@@ -3,7 +3,6 @@ layout: page
 title: Colophon
 unlisted: true
 permalink: /colophon/
-katex: true
 ---
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)

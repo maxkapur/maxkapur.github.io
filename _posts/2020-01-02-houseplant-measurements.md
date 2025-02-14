@@ -1,6 +1,5 @@
 ---
 layout:     post
-katex:      true
 title:      "Houseplant measurements"
 ---
 

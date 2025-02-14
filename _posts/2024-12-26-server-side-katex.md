@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Server-side KaTeX rendering with Jekyll
-katex: true
 ---
 
 This post explains how I set up server-side KaTeX rendering to improve the load
