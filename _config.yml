@@ -2,9 +2,9 @@ title: "Illusion Slopes"
 author: "Max Kapur"
 email: "max@maxkapur.com"
 description: >-
-  I blog about culture, numerical optimization, and software. I work at the
-  consulting firm Booz Allen Hamilton as an operations research analyst. All
-  opinions are my own.
+  I blog about culture, numerical optimization, and software. I work at a
+  consulting firm as an operations research and numerical modeling specialist.
+  All opinions are my own.
 baseurl: ""  # Site subpath, e.g. /blog
 url: "https://maxkapur.com"  # Hostname & protocol, e.g. https://example.com
 github_username: "maxkapur"
