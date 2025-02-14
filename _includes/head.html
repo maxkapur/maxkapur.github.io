@@ -1,17 +1,15 @@
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ "/assets/fonts.css" | relative_url }}" />
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
-  {% if page.katex %}
-  <!-- KaTeX styles -->
-  <link rel="stylesheet" href="{{ "/assets/katex.css" | relative_url }}" />
-  {% endif %}
+
   <!-- Atom feed -->
   {% feed_meta %}
+
   {% include favicon.html %}
+
   <title>
     {%- if page.title -%}
       {{ page.title }} | {{ site.title }}

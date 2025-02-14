@@ -5,3 +5,8 @@
 @use "minima/base";
 @use "minima/layout";
 @use "minima/syntax-highlighting";
+
+// Include these normal CSS files as part of the Sass compilation process so
+// we only have include to main.css in the HTML <head> element to get all three.
+@use "katex";
+@use "fonts";
