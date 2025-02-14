@@ -32,12 +32,17 @@ some “dumb” analytics about post views by IP geolocation, but now that I use
 I don’t even know which posts are more or less popular. I like it that way; it
 ensures I am writing for myself.
 
-Putting this all together, I realized that the Illusion Slopes AI policy is
+Putting this all together, I realize that the Illusion Slopes AI policy is
 really a non-policy. I’m neither for nor against AI; it’s just “there,” a
-technology that doesn’t have much to do with what this site is about.
+technology that doesn’t have much to do with what this site is about. That could
+change in the future, as the technology becomes more pervasive and harder to opt
+out of (and hopefully more useful). But for now, I am happy with the incidental
+benefits of failing to reposition my website for the AI era:
 
-But my failure to reposition my site for the AI era has incidental benefits,
-too: The site loads quickly (I hope?) because it doesn’t have filler AI images
-or heavy JavaScript analytics. And I don’t have to worry about adopting an
-aggressive anti-scraping filter that accidentally
-[blocks legitimate users]({% post_url 2050-02-10-check-prove-human %}).
+- Without AI-generated filler images or heavy JavaScript analytics, the site
+  loads quickly (I hope?).
+- Everyone who wants to read the site, can. I don’t have to worry about an
+  aggressive anti-scraping filter that accidentally
+  [blocks legitimate users]({% post_url 2050-02-10-check-prove-human %}).
+- If I write something wrong, then won’t have to issue shallow excuses about
+  how “the model told me so.” For better or worse, I own my errors.
