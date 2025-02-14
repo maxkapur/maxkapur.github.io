@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      The school location problem
-katex:      true
 ---
 
 I’ve spent a few days thinking about a facility location problem that

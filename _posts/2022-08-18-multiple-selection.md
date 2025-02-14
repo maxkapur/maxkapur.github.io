@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Grading multiple-selection questions"
-katex:      true
 ---
 
 Consider the following test question:

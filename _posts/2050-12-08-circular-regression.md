@@ -1,6 +1,5 @@
 ---
 layout: post
-katex: true
 title: Circular regression when you already know the period
 ---
 
