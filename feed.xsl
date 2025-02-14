@@ -16,9 +16,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <title><xsl:value-of select="atom:feed/atom:title" /> | RSS</title>
 
-      <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
-
-      {% include favicon.html %}
+      <!-- Styling -->
+      {% include styling.html %}
     </head>
 
     <body>

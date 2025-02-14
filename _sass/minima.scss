@@ -27,7 +27,7 @@ $text-color-light: #546270;
 // Primary background color, and a brighter alternate background color for code
 // blocks and table body
 $background-color: #ffffeb;
-$background-color-light: color.adjust($background-color, $lightness: 2%);
+$background-color-light: #fffff5;
 
 // Plain brand color is used for links (there are plenty of them). Desaturated
 // variant is more legible, for visited links and strings in syntax
