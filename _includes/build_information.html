@@ -1,0 +1,10 @@
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- capture datetime_format -%}
+{{ site.minima.time_format | default: "%r" }} on {{ date_format }}
+{%- endcapture -%}
+
+Site built with <a href="https://jekyllrb.com/">Jekyll v{{ jekyll.version }}</a>
+at
+<time datetime="{{- site.time | date_to_xmlschema -}}">
+{{- site.time | date: datetime_format -}}
+</time>.
