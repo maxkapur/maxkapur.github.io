@@ -30,7 +30,7 @@ permalink: /colophon/
 
 - Conda ([Miniforge](https://github.com/conda-forge/miniforge)) for environment
   management (<a href="{% post_url 2024-11-29-rbenv-vs-conda %}">why</a>)
-- [Jekyll](https://jekyllrb.com/) to build the HTML
+- [Jekyll](https://jekyllrb.com/) v{{ jekyll.version }} to build the HTML
 - GitHub Actions (wrapping Bash scripts) for orchestration
 
 # Hosting
