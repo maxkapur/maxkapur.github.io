@@ -37,6 +37,7 @@ permalink: /browse/
       <a target="_blank" href="{{ post.url | relative_url }}">
         {{- post.title | escape -}}
       </a>
+      &ZeroWidthSpace;
       <span class="post-meta">
         (<time datetime="{{ post.date | date_to_xmlschema }}">
         {{- post.date | date: date_format -}}

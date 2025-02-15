@@ -63,18 +63,33 @@
   <xsl:template match="atom:entry">
     <li>
       <div class="atom-post-list-entry">
+
         <a target="_blank">
           <xsl:attribute name="href">
             <xsl:value-of select="atom:id" />
           </xsl:attribute>
-          <xsl:value-of select="atom:title" /></a>
-        <span class="post-meta"> (<xsl:value-of select="atom:readableDate" />)</span>
-        <!--
+          <xsl:value-of select="atom:title" />
+        </a>
+        &#8203; <!-- == &ZeroWidthSpace; -->
+        <span class="post-meta">
+          <time>
+            <xsl:attribute name="datetime">
+              <xsl:value-of select="atom:published" />
+            </xsl:attribute>
+            (<xsl:value-of select="atom:readableDate" />)
+          </time>
+        </span>
+
+        {%- comment -%}
           Uncomment below to incorporate post excerpts into the styled preview.
           Note that the excerpts are included in the *feed itself* in either
           case, as defined in feed.xml.
+
+        <!--
+          <xsl:value-of select="atom:summary" disable-output-escaping="no" />
         -->
-        <!-- <xsl:value-of select="atom:summary" disable-output-escaping="no" /> -->
+        {%- endcomment %}
+
       </div>
     </li>
   </xsl:template>
