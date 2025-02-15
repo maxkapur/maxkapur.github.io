@@ -38,7 +38,9 @@ permalink: /browse/
         {{- post.title | escape -}}
       </a>
       <span class="post-meta">
-        ({{ post.date | date: date_format }})
+        (<time datetime="{{ post.date | date_to_xmlschema }}">
+        {{- post.date | date: date_format -}}
+        </time>)
       </span>
     </div>
   </li>
