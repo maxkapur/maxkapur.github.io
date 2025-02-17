@@ -41,8 +41,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus la
 
 | Here is | an example | of a | table |
 |-|-|-|-|
-| I am | testing what happens | when there's | text in it |
-| testing what happens | when there's | no text in it | |
+| I am | testing what happens | when there’s | text in it |
+| testing what happens | when there’s | no text in it | |
 | another | | line for | good measure. |
 
 A blockquote:
