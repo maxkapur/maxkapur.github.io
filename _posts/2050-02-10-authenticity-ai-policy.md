@@ -7,12 +7,12 @@ I attached my real name to this site. That means that above all, this site must
 represent me *authentically.*
 
 Authenticity is why I don’t use any generative AI tools in authoring or editing
-my posts. Heck, I barely even use spellcheck. As
-[Tracy Durnell writes](https://tracydurnell.com/2025/01/27/the-open-web-as-gift-economy-part-4/),
-
-> Human taste, even if it doesn’t match mine, is more interesting than
-> artificial taste—because it’s *real.* It comes from someone particular, not an
-> averaged amalgam.
+my posts. Heck, I barely even use spellcheck. The
+[2006 Adam Sandler movie *Click*](https://en.wikipedia.org/wiki/Click_(2006_film)
+pretty clearly spelled out the risks of letting an AI autopilot your life: Such
+technology promises to augment the self, but dilutes it instead. I would rather
+document my ideas, even if they aren’t very good, than some
+[weird average](https://tracydurnell.com/2025/01/27/the-open-web-as-gift-economy-part-4/#:~:text=averaged%20amalgam) of my thoughts and every Reddit comment GPT has ingested. 
 
 Authenticity also requires that I abandon any pretenses about what happens after
 I inject my thoughts into the world. I don’t use AI, but I don’t use any
@@ -20,8 +20,8 @@ countermeasures against AI scrapers either, such as blocking OpenAI’s domains 
 `robots.txt`. If the scrapers don’t get the text from here, they’ll get it from
 GitHub, or from someone quoting me on another blog. Although I do not welcome
 plagiarism, it’s a risk I accept as the price of participating in an
-interconnected society. (If you want to reuse text from Illusion Slopes, see
-[`LICENSE.txt`](/LICENSE.txt) for the terms.)
+interconnected society. (If you want to reuse text from Illusion Slopes,
+[`LICENSE.txt`](/LICENSE.txt) gives the terms.)
 
 Finally, on the internet, it appears difficult to combine authenticity with
 marketing. So, I don’t use Illusion Slopes to try to sell anything, nor do I
