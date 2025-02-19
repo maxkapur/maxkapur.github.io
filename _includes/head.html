@@ -7,7 +7,7 @@
   {% include styling.html %}
 
   <!-- Atom feed -->
-  {% feed_meta %}
+  <link type="application/atom+xml" rel="alternate" href="{{ site.url }}{{ site.baseurl }}/feed.xml" title="{{ site.title }}" />
 
   <title>
     {%- if page.title -%}
