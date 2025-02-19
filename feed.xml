@@ -1,25 +1,40 @@
 ---
 ---
 
+{%- comment -%}
+
+  This custom XML file replaces that produced by the built-in jekyll-feed
+  plugin. You may still see the jekyll-feed plugin do its thing during site
+  build because it is part of the minima theme, but the feed rendered by this
+  file is the one that gets included in the end.
+
+  References:
+
+  - https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
+  - https://www.roboleary.net/webdev/2022/06/14/how-i-fixed-the-atom-web-feed-on-my-website.html
+
+{%- endcomment -%}
+
+{%- comment -%}
+  Date format used in the <readableDate> field below
+{%- endcomment -%}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 
-{%- comment -%}
+<!--
+  This XML template is based on one by Andrew Stiefel:
 
-  References:
-
-    https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
-    https://www.roboleary.net/webdev/2022/06/14/how-i-fixed-the-atom-web-feed-on-my-website.html
-
-{%- endcomment -%}
+  https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f
+-->
 
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title type="text">
     {{- site.title | strip_html | normalize_whitespace | xml_escape -}}
   </title>
+
   <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" />
   <link href="{{ site.url }}{{ site.baseurl }}/" rel="alternate" />
   <subtitle type="text">
