@@ -29,11 +29,6 @@ markdown: "kramdown"
 kramdown:
   math_engine: "katex"  # Let kramdown render KaTeX during build process
 
-# Silence Sass migration warnings as no fix is planned in Minima:
-# https://github.com/jekyll/minima/issues/815#issuecomment-2440028795
-sass:
-  quiet_deps: true
-
 # Exclude from processing (and therefore from _site/)
 exclude:
   - ".conda/"
