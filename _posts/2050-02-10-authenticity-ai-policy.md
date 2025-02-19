@@ -12,7 +12,7 @@ my posts. Heck, I barely even use spellcheck. The
 pretty clearly spelled out the risks of letting an AI autopilot your life: Such
 technology promises to augment the self, but dilutes it instead. I would rather
 document my ideas, even if they aren’t very good, than some
-[weird average](https://tracydurnell.com/2025/01/27/the-open-web-as-gift-economy-part-4/#:~:text=averaged%20amalgam) of my thoughts and every Reddit comment GPT has ingested. 
+[weird average](https://tracydurnell.com/2025/01/27/the-open-web-as-gift-economy-part-4/#:~:text=averaged%20amalgam) of my thoughts and every Reddit comment GPT has ingested.
 
 Authenticity also requires that I abandon any pretenses about what happens after
 I inject my thoughts into the world. I don’t use AI, but I don’t use any
