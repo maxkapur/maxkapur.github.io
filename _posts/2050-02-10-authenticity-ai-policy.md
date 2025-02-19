@@ -8,7 +8,7 @@ represent me *authentically.*
 
 Authenticity is why I don’t use any generative AI tools in authoring or editing
 my posts. Heck, I barely even use spellcheck. The
-[2006 Adam Sandler movie *Click*](https://en.wikipedia.org/wiki/Click_(2006_film)
+[2006 Adam Sandler movie *Click*](https://en.wikipedia.org/wiki/Click_(2006_film))
 pretty clearly spelled out the risks of letting an AI autopilot your life: Such
 technology promises to augment the self, but dilutes it instead. I would rather
 document my ideas, even if they aren’t very good, than some
