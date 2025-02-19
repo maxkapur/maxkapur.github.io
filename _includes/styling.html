@@ -1,4 +1,11 @@
+{%- comment -%}
+  Styling all in one: includes necessary stylesheets as well as style-adjacent
+  things like theme color and (recursively) the favicon definitions.
+{%- endcomment %}
+
+  <!-- Styling -->
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
-  {% include favicon.html %}
+
+  {%- include favicon.html -%}

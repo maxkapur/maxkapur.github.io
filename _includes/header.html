@@ -1,35 +1,36 @@
-<header class="site-header" role="banner">
-  <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
 
-    <div class="site-title-wrapper">
-      <div>
-        <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-          {{- site.title | escape -}}
-        </a>
-      </div>
-    </div>
+  <header class="site-header" role="banner">
+    <div class="wrapper">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
 
-    {%- if page_paths -%}
-    <nav class="site-nav">
-      <div class="page-links">
-        {%- assign sorted_pages = site.pages | sort: "sort_order" -%}
-        {%- for my_page in sorted_pages -%}
-          {%- if my_page.unlisted -%}
-            {%- continue -%}
-          {%- endif -%}
-          {%- unless my_page.title -%}
-            {%- continue -%}
-          {%- endunless -%}
+      <div class="site-title-wrapper">
         <div>
-          <a class="page-link" href="{{ my_page.url | relative_url }}">
-            {{- my_page.title | escape -}}
+          <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+            {{- site.title | escape -}}
           </a>
         </div>
-        {%- endfor -%}
       </div>
-    </nav>
-    {%- endif -%}
-  </div>
-</header>
+
+      {%- if page_paths -%}
+      <nav class="site-nav">
+        <div class="page-links">
+          {%- assign sorted_pages = site.pages | sort: "sort_order" -%}
+          {%- for my_page in sorted_pages -%}
+            {%- if my_page.unlisted -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- unless my_page.title -%}
+              {%- continue -%}
+            {%- endunless -%}
+          <div>
+            <a class="page-link" href="{{ my_page.url | relative_url }}">
+              {{- my_page.title | escape -}}
+            </a>
+          </div>
+          {%- endfor -%}
+        </div>
+      </nav>
+      {%- endif -%}
+    </div>
+  </header>
