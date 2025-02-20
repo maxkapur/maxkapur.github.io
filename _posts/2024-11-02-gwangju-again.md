@@ -4,9 +4,9 @@ layout: post
 ---
 
 I had the honor this week of participating in the first ever [Critical Language
-Scholarship Alumni Seminar](
-    https://clscholarship.org/news/2024/cls-international-alumni-seminars ) at
-Chonnam National University in Gwangju, South Korea. The seminar focused on
+Scholarship Alumni Seminar](https://clscholarship.org/news/2024/cls-international-alumni-seminars)
+([archive.org mirror](https://web.archive.org/web/20241015125209/https://clscholarship.org/news/2024/cls-international-alumni-seminars))
+at Chonnam National University in Gwangju, South Korea. The seminar focused on
 media literacy and democracy, and I can’t think of a better time or place to
 study the topic.
 
