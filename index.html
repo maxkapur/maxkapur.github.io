@@ -48,13 +48,13 @@ pagination:
     <div class="page-switcher">
       <div>
       {%- if paginator.previous_page -%}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Previous page</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}">Previous page</a>
       {%- endif -%}
       </div>
 
       <div>
       {%- if paginator.next_page -%}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next page</a>
+        <a href="{{ paginator.next_page_path | relative_url }}">Next page</a>
       {%- endif -%}
       </div>
     </div>
