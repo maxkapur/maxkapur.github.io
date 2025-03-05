@@ -8,6 +8,8 @@ on:
     - cron: '49 15 * * 3'  # One hour after the weekly build-deploy
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
