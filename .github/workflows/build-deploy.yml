@@ -11,11 +11,15 @@ on:
     - cron: '49 14 * * 3'
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Miniforge and Mamba
         uses: conda-incubator/setup-miniconda@v3
