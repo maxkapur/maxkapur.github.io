@@ -20,9 +20,11 @@ If you maintain a Rust project, it looks pretty easy to enable this installation
 method using [Maturin](https://www.maturin.rs/bindings.html#bin).
 
 Speaking of Topgrade: Topgrade is a helpful command-line tool that automatically
-updates everything it can on your system (think `sudo apt update && sudo apt
-upgrade && flatpak update && ...`). I recently got a [PR accepted](https://github.com/topgrade-rs/topgrade/pull/1047) that enables
-Topgrade to run `conda clean`, which can free up gigabytes of space on a well-used
-conda installation. I also have an [open PR](https://github.com/topgrade-rs/topgrade/pull/1048) (perhaps merged or rejected
-by the time you read this) that lets you configure additional conda environments
-to upgrade besides `base`.
+updates everything it can on your system (think
+`sudo apt update && sudo apt upgrade && flatpak update && ...`). I recently got
+a [PR accepted](https://github.com/topgrade-rs/topgrade/pull/1047) that enables
+Topgrade to run `conda clean`, which can free up gigabytes of space on a
+well-used conda installation. I also have an
+[open PR](https://github.com/topgrade-rs/topgrade/pull/1048) (perhaps merged or
+rejected by the time you read this) that lets you configure additional conda
+environments to upgrade besides `base`.
