@@ -28,7 +28,7 @@ marketing. So, I don’t use Illusion Slopes to try to sell anything, nor do I
 employ any marketing cookies or user fingerprinting tech to collect statistics
 about the people who visit the site. Back when I used Blogger, I used to get
 some “dumb” analytics about post views by IP geolocation, but now that I use a
-[static site]({% post_url 2022-06-25-migrating-to-jekyll %}),
+[static site generator]({% post_url 2022-06-25-migrating-to-jekyll %}),
 I don’t even know which posts are more or less popular. I like it that way; it
 ensures I am writing for myself.
 
@@ -36,8 +36,10 @@ Putting this all together, I realize that the Illusion Slopes AI policy is
 really a non-policy. I’m neither for nor against AI; it’s just “there,” a
 technology that doesn’t have much to do with what this site is about. That could
 change in the future, as the technology becomes more pervasive and harder to opt
-out of (and hopefully more useful). But for now, I am happy with the incidental
-benefits of failing to reposition my website for the AI era:
+out of (and hopefully
+[more useful](https://clarkesworldmagazine.com/kritzer_05_23/)). But for now, I
+am happy with the incidental benefits of failing to reposition my website for
+the AI era:
 
 - Without AI-generated filler images or heavy JavaScript analytics, the site
   loads quickly (I hope?).
