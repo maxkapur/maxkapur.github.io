@@ -43,6 +43,6 @@ benefits of failing to reposition my website for the AI era:
   loads quickly (I hope?).
 - Everyone who wants to read the site, can. I don’t have to worry about an
   aggressive anti-scraping filter that accidentally
-  [blocks legitimate users]({% post_url 2050-02-10-check-prove-human %}).
+  [blocks legitimate users]({% post_url 2025-03-04-check-prove-human %}).
 - If I write something wrong, then won’t have to issue shallow excuses about
   how “the model told me so.” For better or worse, I own my errors.
