@@ -6,7 +6,7 @@ layout: post
 Reasons (excuses?) that I cannot
 [downgrade to a dumbphone](https://www.nytimes.com/2025/02/01/opinion/how-quit-smartphone-addiction.html):
 
-- 2FA apps. You can set up a generic TOTP program on your computer, but that's
+- 2FA apps. You can set up a generic TOTP program on your computer, but that’s
   not very convenient, and some organizations explicitly require you to use
   Microsoft or Google Authenticator. (I don’t know how they enforce this given
   that the algorithm for generating TOTP codes from the secret is an open
@@ -22,10 +22,10 @@ Reasons (excuses?) that I cannot
 - Concert tickets from dice.fm. They have an exclusive deal with many venues
   that makes them the only place you can buy tickets, and their system requires
   you to store your tickets in their app, for anti-fraud reasons or whatever.
-  (At smaller venues, if you don't have the app, they can manually verify your
+  (At smaller venues, if you don’t have the app, they can manually verify your
   name on the guest list.)
 
-I don't like that a smartphone has become a de facto requirement participation
+I don’t like that a smartphone has become a de facto requirement participation
 in society. Smartphones have only *existed* for a few years. The main purpose of
 the “prove you own a (smart)phone” tests that most commercial and government
 services put you through these days seems to be to combat spam: Acquiring and
