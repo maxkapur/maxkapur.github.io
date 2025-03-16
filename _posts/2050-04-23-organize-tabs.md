@@ -3,7 +3,7 @@ title: How I organize browser tabs
 layout: post
 ---
 
-I didn't realize I had a system for this until I did.
+I didn’t realize I had a system for this until I did.
 
 My system: I only ever open one browser window (OK, two on my work computer
 where I use MS Edge profiles for different Microsoft accounts).
