@@ -12,7 +12,34 @@ redirect_from:
   publications.
 {%- endcomment -%}
 
-# Coding projects
+# Professional projects
+
+I’ve given a lot of thought to how to organize this projects page now that I
+work for a private company. The truth is that I do my *best work* for my
+employer, because my employer gives me the two resources I need to produce good
+stuff: awesome colleages, and time (in that order). But rattling off a list of
+all my clients and work projects here on Illusion Slopes would undermine my goal
+of maintaining a healthy separation between my personal and professional
+identities. As a compromise, I hope this spiel from my [People and Blogs
+interview](https://manuelmoreale.com/pb-max-kapur) will suffice as a
+introduction:
+
+> At work, I build numerical modeling tools (picture something like [Universal
+> Paperclips](https://www.decisionproblem.com/paperclips/)) for clients who are
+> sometimes skeptical of analyzing their data quantitatively. That’s because
+> they’ve been disappointed by past attempts that failed to account for the
+> right variables, or that offered too much technical flourish with too little
+> explanation. So, in my role, equally important to getting the math right is my
+> ability to tell a convincing story about why I modeled the problem a certain
+> way. That’s where I draw on my teaching background, the performance skills I
+> learned in music school, and my ability to translate specialized concepts into
+> accessible terms.
+
+If you are interested in professional collaboration, please [email me](mailto:{{ site.email }})
+or reach out on
+[LinkedIn](https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}).
+
+# Public coding projects
 
 See my pins on [GitHub](https://github.com/maxkapur).
 
