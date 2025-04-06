@@ -6,7 +6,7 @@ title: People and Blogs interview
 Manuel Moreale, a tireless indie web advocate, recently
 [had me as a guest on his People and Blogs series](https://manuelmoreale.com/pb-max-kapur).
 Welcome to anyone visiting this site via Manu’s feed! Take a look around and
-[let me know](mailto:max@maxkapur.com) what you think.
+[let me know](mailto:{{ site.email }}) what you think.
 
 I was super excited to be interviewed by Manu, as many of his writings have
 sharpened my thinking around why I prefer blogging, email, and group chats to
