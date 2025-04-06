@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - compilers=1.9.*
-  - curl=8.12.*
+  - curl=8.13.*
   - jq=1.7.*
   - make=4.*
   - ruby=3.4.*
