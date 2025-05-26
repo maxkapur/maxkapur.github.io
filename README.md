@@ -10,7 +10,7 @@ to separate repos, namely
 [how-do-we](https://github.com/maxkapur/how-do-we).
 
 My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
-[email](mailto:{{ site.email }}) or GitHub pull request.
+[email](mailto:git@maxkapur.com) or GitHub pull request.
 
 ## Workstation setup
 
