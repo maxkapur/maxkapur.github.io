@@ -17,7 +17,7 @@ redirect_from:
 I’ve given a lot of thought to how to organize this projects page now that I
 work for a private company. The truth is that I do my *best work* for my
 employer, because my employer gives me the two resources I need to produce good
-stuff: awesome colleages, and time (in that order). But rattling off a list of
+stuff: awesome colleagues, and time (in that order). But rattling off a list of
 all my clients and work projects here on Illusion Slopes would undermine my goal
 of maintaining a healthy separation between my personal and professional
 identities. As a compromise, I hope this spiel from my [People and Blogs
@@ -46,7 +46,7 @@ See my pins on [GitHub](https://github.com/maxkapur).
 # Selected publications
 
 [“The College Application Problem,”](https://arxiv.org/abs/2205.01869) arXiv,
-May 2022. A rollup of the main results from my master’s thesis, which examines a
+May 2022. A roll-up of the main results from my master’s thesis, which examines a
 novel submodular maximization problem involving the expected maximum value of a
 portfolio of random variables.
 
