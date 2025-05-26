@@ -12,8 +12,8 @@ opportunities for automation.<!--more-->
 00. **Install Kubuntu the usual way.** Configure LUKS disk encryption and user
     account. `sudo apt update -y && sudo apt upgrade -y`.
 
-    🎨 Difficult to automate because I make different partitioning and filesystem
-    choices for every device.
+    🎨 Difficult to automate because I make different partitioning and file
+    system choices for every device.
 
 01. **Copy password vault** manually via USB drive. Installed KeePassXC via
     `apt` because I will need it for basically everything that follows.
