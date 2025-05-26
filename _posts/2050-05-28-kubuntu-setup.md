@@ -27,7 +27,6 @@ opportunities for automation.<!--more-->
 
     ```
     Host github.com
-        User maxkapur
         IdentityFile ~/.ssh/id_just_generated
     ```
 
