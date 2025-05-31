@@ -61,23 +61,25 @@ task configure_ruby_bundle: [:"configure_conda:all"] do
 end
 
 namespace :configure_fonts do
-  namespace :ibm_plex do
-    plex_fonts_dest_dir = Dir.new("./assets/fonts/")
-    outputs = FileList["./assets/fonts/ibm*/**/*"]
+  font_assets_dir = Dir.new("./assets/fonts/")
+  directory font_assets_dir.path
 
-    file outputs => [:"configure_conda:all"] do
+  namespace :ibm_plex do
+    outputs = FileList["#{font_assets_dir.path}/ibm*/**/*"]
+
+    file outputs => [:"configure_conda:all", font_assets_dir.path] do
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
         ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
         ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
       }
       # Download font zips from GitHub to temporary directory, then extract to
-      # plex_fonts_dest_dir
+      # font_assets_dir
       Dir.mktmpdir do |tempd|
         commands = []
-        sources.each_pair.each do |_, _|
-          commands.append("curl -L '${url}' -o '${zipfile}'")
-          commands.append("unzip -uoq '${zipfile}' -d '${plex_fonts_dest_dir.path}'")
+        sources.each_pair do |basename, url|
+          commands.append("curl -L '#{url}' -o '#{basename}.zip'")
+          commands.append("unzip -uoq '#{basename}.zip' -d '#{font_assets_dir.path}'")
         end
         conda_run(*commands)
       end
@@ -88,22 +90,47 @@ namespace :configure_fonts do
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
         # we use the compiled CSS files instead.
-        "${plex_fonts_dest_dir.path}/ibm*/**/*.scss",
+        "#{font_assets_dir.path}/ibm*/**/*.scss",
         # Remove unnecessary IBM SCSS source files
-        "${plex_fonts_dest_dir.path}/ibm*/**/*.eot",
+        "#{font_assets_dir.path}/ibm*/**/*.eot",
         # Remove OTF versions of fonts (not referenced in the CSS)
-        "${plex_fonts_dest_dir.path}/ibm*/**/*.otf"
+        "#{font_assets_dir.path}/ibm*/**/*.otf"
       ].each(Dir.glob(pattern)).each(File.unlink)
     end
 
     task fix_ibm_plex_permissions: outputs do
       # IBM font LICENSE files are marked executable (probably compiled on
       # Windows); undo this.
-      common_run("chmod a-x $(find '${plex_fonts_dest_dir.path}' -type f)")
+      common_run("chmod a-x $(find '#{font_assets_dir.path}' -type f)")
     end
 
-    desc "Download/install IBM Plex fonts to #{plex_fonts_dest_dir.path}"
+    desc "Download/install IBM Plex fonts to #{font_assets_dir.path}"
     task all: [outputs, :clean_unused_ibm_plex_files, :fix_ibm_plex_permissions] do
+    end
+  end
+
+  namespace :katex do
+    katex_css_src = begin
+      candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
+      candidates.length == 1 || raise
+      candidates[0]
+    end
+
+    katex_css_output = "./assets/katex.css"
+    file katex_css_output => [:configure_ruby_bundle] do
+      FileUtils.cp(katex_css_src, katex_css_output)
+    end
+
+    katex_fonts_outputs = FileList["#{font_assets_dir.path}/*.woff2"]
+    file katex_fonts_outputs => [:configure_ruby_bundle, font_assets_dir.path] do
+      katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
+      katex_fonts_src.each do |src|
+        FileUtils.cp(src, font_assets_dir)
+      end
+    end
+
+    desc "Copy KaTeX CSS & font assets to #{font_assets_dir.path}"
+    task all: [katex_css_output, katex_fonts_outputs] do
     end
   end
 end
