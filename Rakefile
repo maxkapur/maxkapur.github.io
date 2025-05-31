@@ -78,7 +78,7 @@ namespace :configure_fonts do
       "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
     ]
 
-    task :download_extract => [:"configure_conda:all", font_assets_dir] do
+    task download_extract: [:"configure_conda:all", font_assets_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -98,7 +98,7 @@ namespace :configure_fonts do
       end
     end
 
-    sentinel_files.to_a.each do |file| 
+    sentinel_files.to_a.each do |file|
       task file => [:download_extract]
     end
 
@@ -126,11 +126,11 @@ namespace :configure_fonts do
     end
 
     desc "Download/install IBM Plex fonts to #{font_assets_dir}"
-    task :all => [sentinel_files, :remove_unused, :fix_permissions]
+    task all: [sentinel_files, :remove_unused, :fix_permissions]
   end
 
   namespace :katex do
-    def katex_css_src()
+    def katex_css_src
       candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
       unless candidates.length == 1
         puts candidates
@@ -148,10 +148,10 @@ namespace :configure_fonts do
     # KaTeX provides many font files; use these as sentinels
     sentinel_files = FileList[
       "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
-      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2",
+      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
     ]
-  
-    task :copy_woff2s => [:configure_ruby_bundle, font_assets_dir] do
+
+    task copy_woff2s: [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
