@@ -31,10 +31,7 @@ namespace :configure_conda do
 
   # List of files used to indicate presence of conda environment and whether it
   # is updated
-  outputs = FileList[
-    "./.conda/conda-meta/*.json",
-    "./.conda/conda-meta/history"
-  ]
+  outputs = FileList["./.conda/conda-meta/*.json", "./.conda/conda-meta/history"]
 
   file outputs => [:ensure_mamba] do
     commands = [
@@ -51,8 +48,7 @@ namespace :configure_conda do
   end
 
   desc "Create conda environment (mamba env create)"
-  task all: outputs do
-  end
+  task all: outputs
 end
 
 desc "Install Ruby dependencies (bundle install/update)"
@@ -61,13 +57,13 @@ task configure_ruby_bundle: [:"configure_conda:all"] do
 end
 
 namespace :configure_fonts do
-  font_assets_dir = Dir.new("./assets/fonts/")
-  directory font_assets_dir.path
+  font_assets_dir = "./assets/fonts"
+  directory font_assets_dir
 
   namespace :ibm_plex do
-    outputs = FileList["#{font_assets_dir.path}/ibm*/**/*"]
+    outputs = FileList["#{font_assets_dir}/ibm*/**/*"]
 
-    file outputs => [:"configure_conda:all", font_assets_dir.path] do
+    file outputs => [:"configure_conda:all", font_assets_dir] do
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
         ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
@@ -79,34 +75,37 @@ namespace :configure_fonts do
         commands = []
         sources.each_pair do |basename, url|
           commands.append("curl -L '#{url}' -o '#{basename}.zip'")
-          commands.append("unzip -uoq '#{basename}.zip' -d '#{font_assets_dir.path}'")
+          commands.append("unzip -uoq '#{basename}.zip' -d '#{font_assets_dir}'")
         end
         conda_run(*commands)
       end
     end
 
     task clean_unused_ibm_plex_files: outputs do
-      [
+      for pattern in [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
         # we use the compiled CSS files instead.
-        "#{font_assets_dir.path}/ibm*/**/*.scss",
+        "#{font_assets_dir}/ibm*/**/*.scss",
         # Remove unnecessary IBM SCSS source files
-        "#{font_assets_dir.path}/ibm*/**/*.eot",
+        "#{font_assets_dir}/ibm*/**/*.eot",
         # Remove OTF versions of fonts (not referenced in the CSS)
-        "#{font_assets_dir.path}/ibm*/**/*.otf"
-      ].each(Dir.glob(pattern)).each(File.unlink)
+        "#{font_assets_dir}/ibm*/**/*.otf"
+      ]
+        for file in Dir.glob(pattern)
+          File.unlink(file)
+        end
+      end
     end
 
     task fix_ibm_plex_permissions: outputs do
       # IBM font LICENSE files are marked executable (probably compiled on
       # Windows); undo this.
-      common_run("chmod a-x $(find '#{font_assets_dir.path}' -type f)")
+      common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
-    desc "Download/install IBM Plex fonts to #{font_assets_dir.path}"
-    task all: [outputs, :clean_unused_ibm_plex_files, :fix_ibm_plex_permissions] do
-    end
+    desc "Download/install IBM Plex fonts to #{font_assets_dir}"
+    task all: [outputs, :clean_unused_ibm_plex_files, :fix_ibm_plex_permissions]
   end
 
   namespace :katex do
@@ -121,20 +120,17 @@ namespace :configure_fonts do
       FileUtils.cp(katex_css_src, katex_css_output)
     end
 
-    katex_fonts_outputs = FileList["#{font_assets_dir.path}/*.woff2"]
-    file katex_fonts_outputs => [:configure_ruby_bundle, font_assets_dir.path] do
+    katex_fonts_outputs = FileList["#{font_assets_dir}/*.woff2"]
+    file katex_fonts_outputs => [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
       end
     end
 
-    desc "Copy KaTeX CSS & font assets to #{font_assets_dir.path}"
-    task all: [katex_css_output, katex_fonts_outputs] do
-    end
+    desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
+    task all: [katex_css_output, katex_fonts_outputs]
   end
-
-  "Install all font assets to #{font_assets_dir.path}"
   task all: [:"ibm_plex:all", :"katex:all"]
 end
 
@@ -218,11 +214,10 @@ namespace :check_build do
 end
 
 desc "Check various source and build issues"
-task check: [:"check_source:all", :"check_build:all"] do
-end
+task check: [:"check_source:all", :"check_build:all"]
 
 desc "Format source files"
-task format: [:configure] do
+task format: [:configure_ruby_bundle] do
   # Currently all it does is check the formatting of this Rakefile; haven't
   # found a formatter for other filetypes that works for me yet.
   bundle_exec("standardrb --fix")
