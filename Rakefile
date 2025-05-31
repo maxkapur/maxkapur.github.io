@@ -133,12 +133,13 @@ namespace :configure_fonts do
     task all: [katex_css_output, katex_fonts_outputs] do
     end
   end
+
+  "Install all font assets to #{font_assets_dir.path}"
+  task all: [:"ibm_plex:all", :"katex:all"]
 end
 
 desc "Install dependencies"
-task :configure do
-  # TODO
-end
+task configure: [:"configure_conda:all", :configure_ruby_bundle, :"configure_fonts:all"]
 
 desc "Print environment and package information"
 task info: [:configure] do
