@@ -1,7 +1,7 @@
 require "tmpdir"
 
 def bash(*commands)
-  sh "bash -c '#{commands.join(" && ")}'"
+  sh "bash -c '#{commands.join(" &&\n")}'"
 end
 
 def common_run(*commands)
@@ -12,9 +12,11 @@ def conda_run(*commands)
   bash('source "./_scripts/common.sh"', "activate_conda_environment", *commands)
 end
 
-def bundle_exec(command)
-  # TODO: splat
-  conda_run("bundle exec #{command}")
+def bundle_exec(*commands)
+  commands.map! do |command|
+    "bundle exec #{command}"
+  end
+  conda_run(*commands)
 end
 
 desc "Ensure mamba command is available"
