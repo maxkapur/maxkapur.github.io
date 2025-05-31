@@ -40,9 +40,9 @@ namespace :configure_conda do
 
   # List of files used to indicate presence of conda environment and whether it
   # is updated
-  outputs = FileList["./.conda/conda-meta/*.json", "./.conda/conda-meta/history"]
+  sentinel_files = FileList["./.conda/conda-meta/history"]
 
-  file outputs => [:ensure_mamba] do
+  file sentinel_files => [:ensure_mamba] do
     commands = [
       # Location of the conda environment definition YML
       'CONDA_ENV_YML=$(realpath "./_conda_environment.yml")',
@@ -57,7 +57,7 @@ namespace :configure_conda do
   end
 
   desc "Create conda environment (mamba env create)"
-  task all: outputs
+  task all: sentinel_files
 end
 
 desc "Install Ruby dependencies (bundle install/update)"
