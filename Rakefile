@@ -1,4 +1,13 @@
 require "tmpdir"
+require "rake/clean"
+
+begin
+  CLEAN.include "./_site"
+  CLEAN.include "./.conda"
+  CLEAN.include "./.jekyll-cache"
+  CLEAN.include "./Gemfile.lock"
+  CLEAN.include "./vendor"
+end
 
 # Run a series of commands in bash
 def bash(*commands)
@@ -58,6 +67,7 @@ end
 
 namespace :configure_fonts do
   font_assets_dir = "./assets/fonts"
+  CLEAN.include font_assets_dir
   directory font_assets_dir
 
   namespace :ibm_plex do
@@ -82,7 +92,7 @@ namespace :configure_fonts do
       end
     end
 
-    task clean_unused: [:download] do
+    task remove_unused: [:download] do
       [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
@@ -105,20 +115,24 @@ namespace :configure_fonts do
       common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
-    file outputs => [:download, :clean_unused, :fix_permissions]
+    file outputs => [:download, :remove_unused, :fix_permissions]
 
     desc "Download/install IBM Plex fonts to #{font_assets_dir}"
     task all: [outputs]
   end
 
   namespace :katex do
-    katex_css_src = begin
+    def katex_css_src()
       candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
-      candidates.length == 1 || raise
+      unless candidates.length == 1
+        puts candidates
+        raise "Found #{candidates.length} katex.css files, expected 1"
+      end
       candidates[0]
     end
 
     katex_css_output = "./assets/katex.css"
+    CLEAN.include katex_css_output
     file katex_css_output => [:configure_ruby_bundle] do
       FileUtils.cp(katex_css_src, katex_css_output)
     end
