@@ -15,6 +15,44 @@ def bundle_exec(command)
     conda_run("bundle exec #{command}")
 end
 
+
+desc "Ensure mamba command is available"
+task :ensure_mamba do
+    common_run("command -v mamba")
+end
+
+begin
+    # List of files used to indicate presence of conda environment and whether
+    # it is updated
+    conda_env_files = FileList[
+        "./.conda/conda-meta/*.json",
+        "./.conda/conda-meta/history",
+    ]
+
+    file conda_env_files => [:ensure_mamba] do
+        commands=[
+            # Location of the conda environment definition YML
+            'CONDA_ENV_YML=$(realpath "./_conda_environment.yml")',
+            # Install destination for the conda environment
+            'CONDA_PREFIX=$(realpath "./.conda")',
+            # Set CI=True to prevent weird progress bar in mamba update/create:
+            # https://github.com/mamba-org/mamba/issues/1478
+            'export CI="True"',
+            'mamba env create --prefix "$CONDA_PREFIX" --file "$CONDA_ENV_YML" --yes',
+        ]
+        common_run(commands)
+    end
+
+    desc "Create conda environment (mamba env create)"
+    file configure_conda_environment: conda_env_files do
+    end
+end
+
+desc "Install Ruby dependencies (bundle install/update)"
+task configure_ruby_bundle: [:configure_conda_environment] do
+    conda_run("bundle install")
+end
+
 desc "Install dependencies"
 task :configure do
     # TODO
