@@ -1,17 +1,21 @@
 require "tmpdir"
 
+# Run a series of commands in bash
 def bash(*commands)
   sh "bash -c '#{commands.join(" &&\n")}'"
 end
 
+# Run a series of commands after sourcing common functions
 def common_run(*commands)
   bash('source "./_scripts/common.sh"', *commands)
 end
 
+# Run a series of commands with the conda environment active
 def conda_run(*commands)
   bash('source "./_scripts/common.sh"', "activate_conda_environment", *commands)
 end
 
+# Run a series of commands via bundle exec (within the conda environment)
 def bundle_exec(*commands)
   commands.map! do |command|
     "bundle exec #{command}"
@@ -19,14 +23,14 @@ def bundle_exec(*commands)
   conda_run(*commands)
 end
 
-desc "Ensure mamba command is available"
-task :ensure_mamba do
-  common_run("command -v mamba")
-end
-
 namespace :configure_conda do
-  # List of files used to indicate presence of conda environment and whether
-  # it is updated
+  desc "Ensure mamba command is available"
+  task :ensure_mamba do
+    common_run("command -v mamba")
+  end
+
+  # List of files used to indicate presence of conda environment and whether it
+  # is updated
   outputs = FileList[
     "./.conda/conda-meta/*.json",
     "./.conda/conda-meta/history"
@@ -67,8 +71,8 @@ namespace :configure_fonts do
         ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
         ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
       }
-      # Download font zips from GitHub to temporary directory, then
-      # extract to plex_fonts_dest_dir
+      # Download font zips from GitHub to temporary directory, then extract to
+      # plex_fonts_dest_dir
       Dir.mktmpdir do |tempd|
         commands = []
         sources.each_pair.each do |_, _|
@@ -81,9 +85,9 @@ namespace :configure_fonts do
 
     task clean_unused_ibm_plex_files: outputs do
       [
-        # Remove SCSS source files from IBM, as they inflate the size of
-        # the build for no reason: They are ignored by Jekyll's build
-        # pipeline, and we use the compiled CSS files instead.
+        # Remove SCSS source files from IBM, as they inflate the size of the
+        # build for no reason: They are ignored by Jekyll's build pipeline, and
+        # we use the compiled CSS files instead.
         "${plex_fonts_dest_dir.path}/ibm*/**/*.scss",
         # Remove unnecessary IBM SCSS source files
         "${plex_fonts_dest_dir.path}/ibm*/**/*.eot",
