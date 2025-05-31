@@ -136,6 +136,14 @@ namespace :check_source do
     )
   end
 
+  # NOTE: Need to bundle exec this (instead of using standard/rake) because the
+  # Rakefile itself is designed to use only stdlib ruby (and then install
+  # standardrb locally)
+  desc "Check formatting with standardrb"
+  task standard: [:configure] do
+    bundle_exec("standardrb")
+  end
+
   desc "Ensure no source files contain trailing whitespace"
   task trailing_whitespace: [:configure] do
     common_run("check_trailing_whitespace")
@@ -151,7 +159,7 @@ namespace :check_source do
     common_run("check_bundler_updated")
   end
 
-  multitask all: [:shellcheck, :trailing_whitespace, :conda_updated]
+  multitask all: [:shellcheck, :standard, :trailing_whitespace, :conda_updated]
 end
 
 desc "Lint site build"
@@ -180,7 +188,7 @@ task check: [:"check_source:all", :"check_build:all"] do
 end
 
 desc "Format source files"
-task :format [:configure] do
+task format: [:configure] do
   # Currently all it does is check the formatting of this Rakefile; haven't
   # found a formatter for other filetypes that works for me yet.
   bundle_exec("standardrb --fix")
