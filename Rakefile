@@ -63,7 +63,7 @@ namespace :configure_fonts do
   namespace :ibm_plex do
     outputs = FileList["#{font_assets_dir}/ibm*/**/*"]
 
-    file outputs => [:"configure_conda:all", font_assets_dir] do
+    task download: [:"configure_conda:all", font_assets_dir] do
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
         ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
@@ -74,18 +74,19 @@ namespace :configure_fonts do
       Dir.mktmpdir do |tempd|
         commands = []
         sources.each_pair do |basename, url|
-          commands.append("curl -L '#{url}' -o '#{basename}.zip'")
-          commands.append("unzip -uoq '#{basename}.zip' -d '#{font_assets_dir}'")
+          zipfile = "#{tempd}/#{basename}.zip"
+          commands.append("curl -L '#{url}' -o '#{zipfile}'")
+          commands.append("unzip -uoq '#{zipfile}' -d '#{font_assets_dir}'")
         end
         conda_run(*commands)
       end
     end
 
-    task clean_unused_ibm_plex_files: outputs do
+    task clean_unused: [:download] do
       for pattern in [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
-        # we use the compiled CSS files instead.
+        # we use the compiled CSS files instead
         "#{font_assets_dir}/ibm*/**/*.scss",
         # Remove unnecessary IBM SCSS source files
         "#{font_assets_dir}/ibm*/**/*.eot",
@@ -98,14 +99,16 @@ namespace :configure_fonts do
       end
     end
 
-    task fix_ibm_plex_permissions: outputs do
+    task fix_permissions: [:download] do
       # IBM font LICENSE files are marked executable (probably compiled on
       # Windows); undo this.
       common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
+    file outputs => [:download, :clean_unused, :fix_permissions]
+
     desc "Download/install IBM Plex fonts to #{font_assets_dir}"
-    task all: [outputs, :clean_unused_ibm_plex_files, :fix_ibm_plex_permissions]
+    task all: [outputs]
   end
 
   namespace :katex do
