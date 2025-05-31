@@ -71,9 +71,15 @@ namespace :configure_fonts do
   directory font_assets_dir
 
   namespace :ibm_plex do
-    outputs = FileList["#{font_assets_dir}/ibm*/**/*"]
+    # Plex provides many more files than we can enumerate; use these as sentinels
+    # so rake can see what was updated
+    sentinel_files = FileList[
+      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
+      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
+    ]
 
-    task download: [:"configure_conda:all", font_assets_dir] do
+    task :download_extract => [:"configure_conda:all", font_assets_dir] do
+      # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
         ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
@@ -92,7 +98,11 @@ namespace :configure_fonts do
       end
     end
 
-    task remove_unused: [:download] do
+    sentinel_files.to_a.each do |file| 
+      task file => [:download_extract]
+    end
+
+    task remove_unused: [sentinel_files] do
       [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
@@ -109,16 +119,14 @@ namespace :configure_fonts do
       end
     end
 
-    task fix_permissions: [:download] do
+    task fix_permissions: [sentinel_files] do
       # IBM font LICENSE files are marked executable (probably compiled on
       # Windows); undo this.
       common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
-    file outputs => [:download, :remove_unused, :fix_permissions]
-
     desc "Download/install IBM Plex fonts to #{font_assets_dir}"
-    task all: [outputs]
+    task :all => [sentinel_files, :remove_unused, :fix_permissions]
   end
 
   namespace :katex do
@@ -131,22 +139,31 @@ namespace :configure_fonts do
       candidates[0]
     end
 
-    katex_css_output = "./assets/katex.css"
-    CLEAN.include katex_css_output
-    file katex_css_output => [:configure_ruby_bundle] do
-      FileUtils.cp(katex_css_src, katex_css_output)
+    css = "./assets/katex.css"
+    CLEAN.include css
+    file css => [:configure_ruby_bundle] do
+      FileUtils.cp(katex_css_src, css)
     end
 
-    katex_fonts_outputs = FileList["#{font_assets_dir}/*.woff2"]
-    file katex_fonts_outputs => [:configure_ruby_bundle, font_assets_dir] do
+    # KaTeX provides many font files; use these as sentinels
+    sentinel_files = FileList[
+      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
+      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2",
+    ]
+  
+    task :copy_woff2s => [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
       end
     end
 
+    sentinel_files.to_a.each do |file|
+      task file => :copy_woff2s
+    end
+
     desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
-    task all: [katex_css_output, katex_fonts_outputs]
+    task all: [sentinel_files, css]
   end
   task all: [:"ibm_plex:all", :"katex:all"]
 end
