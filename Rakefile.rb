@@ -1,3 +1,5 @@
+require 'tmpdir'
+
 def bash(*commands)
     sh "bash -c '#{commands.join(' && ')}'"
 end
@@ -21,15 +23,15 @@ task :ensure_mamba do
     common_run("command -v mamba")
 end
 
-begin
+namespace :configure_conda do
     # List of files used to indicate presence of conda environment and whether
     # it is updated
-    conda_env_files = FileList[
+    outputs = FileList[
         "./.conda/conda-meta/*.json",
         "./.conda/conda-meta/history",
     ]
 
-    file conda_env_files => [:ensure_mamba] do
+    file outputs => [:ensure_mamba] do
         commands=[
             # Location of the conda environment definition YML
             'CONDA_ENV_YML=$(realpath "./_conda_environment.yml")',
@@ -40,18 +42,72 @@ begin
             'export CI="True"',
             'mamba env create --prefix "$CONDA_PREFIX" --file "$CONDA_ENV_YML" --yes',
         ]
-        common_run(commands)
+        common_run(*commands)
     end
 
     desc "Create conda environment (mamba env create)"
-    file configure_conda_environment: conda_env_files do
+    task all: outputs do
     end
 end
 
 desc "Install Ruby dependencies (bundle install/update)"
-task configure_ruby_bundle: [:configure_conda_environment] do
+task configure_ruby_bundle: [:"configure_conda:all"] do
     conda_run("bundle install")
 end
+
+namespace :configure_fonts do
+    namespace :ibm_plex do
+        PLEX_FONTS_DEST_DIR = Dir.new("./assets/fonts/")
+        outputs = FileList["./assets/fonts/ibm*/**/*"]
+
+        file outputs => [:"configure_conda:all"] do
+            sources = {
+                ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
+                ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
+                ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip",
+            }
+            # Download font zips from GitHub to temporary directory, then
+            # extract to PLEX_FONTS_DEST_DIR
+            Dir.mktmpdir do |tempd|
+                commands = []
+                for key, url in sources.each_pair
+                    zipfile = "${tempd}/${key}.zip"
+                    commands.append("curl -L '${url}' -o '${zipfile}'")
+                    commands.append("unzip -uoq '${zipfile}' -d '${PLEX_FONTS_DEST_DIR.path}'")
+                end
+                conda_run(*commands)
+            end
+        end
+
+        task clean_unused_ibm_plex_files: outputs do
+            for pattern in [
+                # Remove SCSS source files from IBM, as they inflate the size of
+                # the build for no reason: They are ignored by Jekyll's build
+                # pipeline, and we use the compiled CSS files instead.
+                "${PLEX_FONTS_DEST_DIR.path}/ibm*/**/*.scss",
+                # Remove unnecessary IBM SCSS source files
+                "${PLEX_FONTS_DEST_DIR.path}/ibm*/**/*.eot",
+                # Remove OTF versions of fonts (not referenced in the CSS)
+                "${PLEX_FONTS_DEST_DIR.path}/ibm*/**/*.otf",
+            ]
+                for file in Dir.glob(pattern)
+                    File.unlink(file)
+                end
+            end
+        end
+
+        task fix_ibm_plex_permissions: outputs do
+            # IBM font LICENSE files are marked executable (probably compiled on
+            # Windows); undo this.
+            common_run("chmod a-x $(find '${PLEX_FONTS_DEST_DIR.path}' -type f)")
+        end
+
+        desc "Download/install IBM Plex fonts to #{PLEX_FONTS_DEST_DIR.path}"
+        task all: [outputs, :clean_unused_ibm_plex_files, :fix_ibm_plex_permissions] do 
+        end
+    end
+end
+
 
 desc "Install dependencies"
 task :configure do
