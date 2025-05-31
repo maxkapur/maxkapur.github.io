@@ -83,7 +83,7 @@ namespace :configure_fonts do
     end
 
     task clean_unused: [:download] do
-      for pattern in [
+      [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
         # we use the compiled CSS files instead
@@ -92,8 +92,8 @@ namespace :configure_fonts do
         "#{font_assets_dir}/ibm*/**/*.eot",
         # Remove OTF versions of fonts (not referenced in the CSS)
         "#{font_assets_dir}/ibm*/**/*.otf"
-      ]
-        for file in Dir.glob(pattern)
+      ].each do |pattern|
+        Dir.glob(pattern).each do |file|
           File.unlink(file)
         end
       end
