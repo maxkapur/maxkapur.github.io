@@ -2,17 +2,14 @@ require "tmpdir"
 require "rake/clean"
 
 directory(FONT_ASSETS_DIR = "./assets/fonts")
-directory(CACHE_DIR = "#{Dir.home}/.cache/#{Dir.pwd.split("/")[-1]}")
 
-# Files used to mark completion of various tasks below. In some cases (e.g.
-# conda env create), the file is created directly by the underlying build step;
-# in other cases (IBM Plex fonts), it's a dummy file that we create manually
-# since the actual step involves lots of files with unpredictable names.
+# Files used to mark completion of tasks like `conda env create`, where the
+# underlying build step creates a lot of different files
 TASK_SENTINELS = {
   conda_env_create: "./.conda/conda-meta/history",
   bundle_install: "./Gemfile.lock",
-  ibm_plex_download_extract: "#{CACHE_DIR}/ibm_plex_download_extract.done",
-  katex_woff2s_copy: "#{CACHE_DIR}/katex_woff2s_copy.done"
+  ibm_plex_download_extract: "#{FONT_ASSETS_DIR}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css",
+  katex_woff2s_copy: "#{FONT_ASSETS_DIR}/KaTeX_AMS-Regular.woff2"
 }
 
 begin
@@ -23,7 +20,6 @@ begin
   CLEAN.include "./vendor"
   CLEAN.include "./assets/katex.css"
   CLEAN.include FONT_ASSETS_DIR
-  CLEAN.include CACHE_DIR
   TASK_SENTINELS.values.each { |f| CLEAN.include f }
 end
 
@@ -81,8 +77,8 @@ begin
 end
 
 namespace :configure_fonts do
-  namespace :ibm_plex do
-    file TASK_SENTINELS[:ibm_plex_download_extract] => [TASK_SENTINELS[:conda_env_create], FONT_ASSETS_DIR, CACHE_DIR] do
+  begin
+    file TASK_SENTINELS[:ibm_plex_download_extract] => [TASK_SENTINELS[:conda_env_create], FONT_ASSETS_DIR] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -99,21 +95,22 @@ namespace :configure_fonts do
           commands.append "unzip -uoq '#{zipfile}' -d '#{FONT_ASSETS_DIR}'"
         end
         conda_run(*commands)
-        # Spot check
-        File.file?("#{FONT_ASSETS_DIR}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css") || fail
-        FileUtils.touch(TASK_SENTINELS[:ibm_plex_download_extract])
+        # Check that this actually created the file
+        File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
       end
+
+      remove_unused
+      fix_permissions
     end
 
-    task remove_unused: [TASK_SENTINELS[:ibm_plex_download_extract]] do
+    # Remove unused files from the extracted IBM Plex font dirs
+    def remove_unused
       [
-        # Remove SCSS source files from IBM, as they inflate the size of the
-        # build for no reason: They are ignored by Jekyll's build pipeline, and
-        # we use the compiled CSS files instead
+        # Remove SCSS source files (they are ignored by Jekyll's build pipeline,
+        # and we use the compiled CSS files instead)
         "#{FONT_ASSETS_DIR}/ibm*/**/*.scss",
-        # Remove unnecessary IBM SCSS source files
+        # Remove unused EOT and OTF font versions (not referenced in the CSS)
         "#{FONT_ASSETS_DIR}/ibm*/**/*.eot",
-        # Remove OTF versions of fonts (not referenced in the CSS)
         "#{FONT_ASSETS_DIR}/ibm*/**/*.otf"
       ].each do |pattern|
         Dir.glob(pattern).each do |file|
@@ -122,17 +119,17 @@ namespace :configure_fonts do
       end
     end
 
-    task fix_permissions: [TASK_SENTINELS[:ibm_plex_download_extract]] do
-      # IBM font LICENSE files are marked executable (probably compiled on
-      # Windows); undo this.
+    # IBM font LICENSE files are marked executable (probably compiled on
+    # Windows); undo this.
+    def fix_permissions
       common_run("chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)")
     end
 
     desc "Download & extract IBM Plex fonts to #{FONT_ASSETS_DIR}"
-    task all: [TASK_SENTINELS[:ibm_plex_download_extract], :remove_unused, :fix_permissions]
+    task ibm_plex: [TASK_SENTINELS[:ibm_plex_download_extract]]
   end
 
-  namespace :katex do
+  begin
     def css_src
       candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
       unless candidates.length == 1
@@ -147,20 +144,19 @@ namespace :configure_fonts do
       FileUtils.cp(css_src, "./assets/katex.css")
     end
 
-    file TASK_SENTINELS[:katex_woff2s_copy] => [TASK_SENTINELS[:bundle_install], FONT_ASSETS_DIR, CACHE_DIR] do
+    file TASK_SENTINELS[:katex_woff2s_copy] => [TASK_SENTINELS[:bundle_install], FONT_ASSETS_DIR] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, FONT_ASSETS_DIR)
       end
-      # Spot check
-      File.file?("#{FONT_ASSETS_DIR}/KaTeX_AMS-Regular.woff2") || fail
-      FileUtils.touch(TASK_SENTINELS[:katex_woff2s_copy])
+      # Check that this actually created the file
+      File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
     end
 
     desc "Copy KaTeX CSS & font assets to #{FONT_ASSETS_DIR}"
-    task all: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
+    task katex: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
   end
-  task all: [:"ibm_plex:all", :"katex:all"]
+  task all: [:ibm_plex, :katex]
 end
 
 desc "Install dependencies"
