@@ -32,14 +32,12 @@ def bundle_exec(*commands)
   conda_run(*commands)
 end
 
-namespace :configure_conda do
-  desc "Ensure mamba command is available"
-  task :ensure_mamba do
-    common_run("command -v mamba")
-  end
-
-  task create_env: [:ensure_mamba] do
+begin
+  conda_env_sentinel = "./.conda/conda-meta/history"
+  file conda_env_sentinel => ["./_conda_environment.yml"] do
     commands = [
+      # Fail early if mamba unavailable
+      "command -v mamba",
       # Location of the conda environment definition YML
       'CONDA_ENV_YML=$(realpath "./_conda_environment.yml")',
       # Install destination for the conda environment
@@ -52,18 +50,18 @@ namespace :configure_conda do
     common_run(*commands)
   end
 
-  # List of files used to indicate presence of conda environment and whether it
-  # is updated
-  sentinel_files = ["./.conda/conda-meta/history"]
-  file sentinel_files => [:create_env]
-
   desc "Create conda environment (mamba env create)"
-  task all: [sentinel_files]
+  task configure_conda_env: conda_env_sentinel
 end
 
-desc "Install Ruby dependencies (bundle install/update)"
-task configure_ruby_bundle: [:"configure_conda:all"] do
-  conda_run("bundle install")
+begin
+  bundle_install_sentinel = "./Gemfile.lock"
+  file bundle_install_sentinel => ["./Gemfile"] do
+    conda_run("bundle install")
+  end
+
+  desc "Install Ruby dependencies (bundle install/update)"
+  task configure_ruby_bundle: [bundle_install_sentinel, :configure_conda_env]
 end
 
 namespace :configure_fonts do
@@ -73,7 +71,7 @@ namespace :configure_fonts do
 
   namespace :ibm_plex do
     desc "Download & extract IBM Plex assets to #{font_assets_dir}"
-    task download_extract: [:"configure_conda:all", font_assets_dir] do
+    task download_extract: [:configure_conda_env, font_assets_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -167,7 +165,7 @@ namespace :configure_fonts do
 end
 
 desc "Install dependencies"
-task configure: [:"configure_conda:all", :configure_ruby_bundle, :"configure_fonts:all"]
+task configure: [:configure_conda_env, :configure_ruby_bundle, :"configure_fonts:all"]
 
 desc "Print environment and package information"
 task info: [:configure] do
@@ -212,7 +210,7 @@ namespace :check_source do
   end
 
   desc "Ensure conda dependencies are updated"
-  task conda_updated: [:"configure_conda:all"] do
+  task conda_updated: [:configure_conda_env] do
     common_run("check_conda_updated")
   end
 
