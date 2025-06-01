@@ -92,7 +92,9 @@ namespace :configure_fonts do
         sources.each_pair do |basename, url|
           zipfile = "#{tempd}/#{basename}.zip"
           commands.append "curl -L '#{url}' -o '#{zipfile}'"
-          commands.append "unzip -uoq '#{zipfile}' -d '#{FONT_ASSETS_DIR}'"
+          # -o: overwrite existing without prompting
+          # -DD: force current timestamp (else Rake keeps rerunning this task)
+          commands.append "unzip -oDD '#{zipfile}' -d '#{FONT_ASSETS_DIR}'"
         end
         conda_run(*commands)
         # Check that this actually created the file
