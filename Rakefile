@@ -189,12 +189,12 @@ namespace :check_source do
 
   desc "Ensure conda dependencies are updated"
   task conda_updated: [:configure_conda_env] do
-    common_run("check_conda_updated")
+    conda_run("check_conda_updated")
   end
 
   desc "Ensure bundler dependencies are updated"
   task bundler_updated: [:configure_ruby_bundle] do
-    common_run("check_bundler_updated")
+    conda_run("check_bundler_updated")
   end
 
   multitask all: [:shellcheck, :standard, :trailing_whitespace, :conda_updated]
