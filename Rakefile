@@ -52,16 +52,14 @@ begin
 
   desc "Create conda environment (mamba env create)"
   task configure_conda_env: conda_env_sentinel
-end
 
-begin
   bundle_install_sentinel = "./Gemfile.lock"
-  file bundle_install_sentinel => ["./Gemfile"] do
+  file bundle_install_sentinel => ["./Gemfile", conda_env_sentinel] do
     conda_run("bundle install")
   end
 
   desc "Install Ruby dependencies (bundle install/update)"
-  task configure_ruby_bundle: [bundle_install_sentinel, :configure_conda_env]
+  task configure_ruby_bundle: [bundle_install_sentinel]
 end
 
 namespace :configure_fonts do
@@ -69,12 +67,13 @@ namespace :configure_fonts do
   CLEAN.include font_assets_dir
   directory font_assets_dir
 
+  cache_dir = "#{Dir.home}/.cache/#{Dir.pwd.split("/")[-1]}"
+  CLEAN.include cache_dir
+  directory cache_dir
+
   namespace :ibm_plex do
-    sentinel_files = [
-      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
-      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
-    ]
-    file sentinel_files => [:configure_conda_env, font_assets_dir] do
+    ibm_vendored_files = "#{cache_dir}/ibm_plex_download_extract.done"
+    file ibm_vendored_files => [:configure_conda_env, font_assets_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -94,7 +93,7 @@ namespace :configure_fonts do
       end
     end
 
-    task remove_unused: [sentinel_files] do
+    task remove_unused: [ibm_vendored_files] do
       [
         # Remove SCSS source files from IBM, as they inflate the size of the
         # build for no reason: They are ignored by Jekyll's build pipeline, and
@@ -111,14 +110,14 @@ namespace :configure_fonts do
       end
     end
 
-    task fix_permissions: [sentinel_files] do
+    task fix_permissions: [ibm_vendored_files] do
       # IBM font LICENSE files are marked executable (probably compiled on
       # Windows); undo this.
       common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
     desc "Download & extract IBM Plex fonts to #{font_assets_dir}"
-    task all: [sentinel_files, :remove_unused, :fix_permissions]
+    task all: [ibm_vendored_files, :remove_unused, :fix_permissions]
   end
 
   namespace :katex do
@@ -139,11 +138,8 @@ namespace :configure_fonts do
       FileUtils.cp(css_src, katex_css)
     end
 
-    woff2_sentinel_files = [
-      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
-      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
-    ]
-    file woff2_sentinel_files => [:configure_ruby_bundle, font_assets_dir] do
+    woff2_files = "#{cache_dir}/ibm_plex_download_extract.done"
+    file woff2_files => [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
@@ -151,7 +147,7 @@ namespace :configure_fonts do
     end
 
     desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
-    task all: [katex_css, woff2_sentinel_files]
+    task all: [katex_css, woff2_files]
   end
   task all: [:"ibm_plex:all", :"katex:all"]
 end
