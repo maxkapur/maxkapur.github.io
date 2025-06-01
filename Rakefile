@@ -73,7 +73,7 @@ namespace :configure_fonts do
 
   namespace :ibm_plex do
     ibm_vendored_files = "#{cache_dir}/ibm_plex_download_extract.done"
-    file ibm_vendored_files => [:configure_conda_env, font_assets_dir] do
+    file ibm_vendored_files => [:configure_conda_env, font_assets_dir, cache_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -86,10 +86,13 @@ namespace :configure_fonts do
         commands = []
         sources.each_pair do |basename, url|
           zipfile = "#{tempd}/#{basename}.zip"
-          commands.append("curl -L '#{url}' -o '#{zipfile}'")
-          commands.append("unzip -uoq '#{zipfile}' -d '#{font_assets_dir}'")
+          commands.append "curl -L '#{url}' -o '#{zipfile}'"
+          commands.append "unzip -uoq '#{zipfile}' -d '#{font_assets_dir}'"
         end
         conda_run(*commands)
+        # Spot check
+        File.file?("#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css") || fail
+        FileUtils.touch(ibm_vendored_files)
       end
     end
 
@@ -138,12 +141,15 @@ namespace :configure_fonts do
       FileUtils.cp(css_src, katex_css)
     end
 
-    woff2_files = "#{cache_dir}/ibm_plex_download_extract.done"
-    file woff2_files => [:configure_ruby_bundle, font_assets_dir] do
+    woff2_files = "#{cache_dir}/katex_woff2_files.done"
+    file woff2_files => [:configure_ruby_bundle, font_assets_dir, cache_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
       end
+      # Spot check
+      File.file?("#{font_assets_dir}/KaTeX_AMS-Regular.woff2") || fail
+      FileUtils.touch(woff2_files)
     end
 
     desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
