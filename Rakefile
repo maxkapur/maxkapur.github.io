@@ -70,8 +70,11 @@ namespace :configure_fonts do
   directory font_assets_dir
 
   namespace :ibm_plex do
-    desc "Download & extract IBM Plex assets to #{font_assets_dir}"
-    task download_extract: [:configure_conda_env, font_assets_dir] do
+    sentinel_files = [
+      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
+      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
+    ]
+    file sentinel_files => [:configure_conda_env, font_assets_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -90,14 +93,6 @@ namespace :configure_fonts do
         conda_run(*commands)
       end
     end
-
-    # Plex provides many more files than we can enumerate; use these as
-    # sentinels so rake can see what was updated
-    sentinel_files = [
-      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
-      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
-    ]
-    file sentinel_files => [:download_extract]
 
     task remove_unused: [sentinel_files] do
       [
@@ -122,7 +117,7 @@ namespace :configure_fonts do
       common_run("chmod a-x $(find '#{font_assets_dir}' -type f)")
     end
 
-    desc "Download/install IBM Plex fonts to #{font_assets_dir}"
+    desc "Download & extract IBM Plex fonts to #{font_assets_dir}"
     task all: [sentinel_files, :remove_unused, :fix_permissions]
   end
 
@@ -144,22 +139,19 @@ namespace :configure_fonts do
       FileUtils.cp(css_src, katex_css)
     end
 
-    task copy_woff2s: [:configure_ruby_bundle, font_assets_dir] do
+    woff2_sentinel_files = [
+      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
+      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
+    ]
+    file woff2_sentinel_files => [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
         FileUtils.cp(src, font_assets_dir)
       end
     end
 
-    # KaTeX provides many font files; use these as sentinels
-    woff2_sentinel_files = [
-      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
-      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
-    ]
-    file woff2_sentinel_files => [:copy_woff2s]
-
     desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
-    task all: [woff2_sentinel_files, katex_css]
+    task all: [katex_css, woff2_sentinel_files]
   end
   task all: [:"ibm_plex:all", :"katex:all"]
 end
