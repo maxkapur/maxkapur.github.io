@@ -31,21 +31,17 @@ jobs:
           mamba-version: "*"
           miniforge-version: "latest"
 
-      - name: Configure toolchain (configure.sh)
+      - name: Configure toolchain (rake configure)
         shell: bash -el {0}
-        run: ./configure.sh
+        run: rake configure
 
-      - name: Show package info (info.sh)
+      - name: Show package info (rake info)
         shell: bash -el {0}
-        run: ./info.sh
+        run: rake info
 
-      - name: Build site (build.sh)
+      - name: Build site (rake)
         shell: bash -el {0}
-        run: ./build.sh
-
-      - name: Lint (check.sh)
-        shell: bash -el {0}
-        run: ./check.sh
+        run: rake
 
       - name: Upload static files as artifact
         id: deployment

@@ -1,3 +1,0 @@
-# Ignore all files unless added with -f. This directory is intentionally left
-# empty as a target for font files injected by configure.sh.
-*
