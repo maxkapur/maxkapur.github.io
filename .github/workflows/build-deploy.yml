@@ -39,11 +39,9 @@ jobs:
         shell: bash -el {0}
         run: rake info
 
-      # Combine these steps to avoid building twice; by design, rake check is
-      # paranoid and always forces a rebuild
-      - name: Build site (rake build check)
+      - name: Build site (rake)
         shell: bash -el {0}
-        run: rake build check
+        run: rake
 
       - name: Upload static files as artifact
         id: deployment
