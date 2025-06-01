@@ -1,6 +1,17 @@
 require "tmpdir"
 require "rake/clean"
 
+BUNDLE_COMMAND = if system("snap run ruby -v")
+  "snap run ruby.bundle"
+else "bundle" end
+
+# Run a series of commands via bundle exec (within the conda environment)
+def bundle_exec(*commands)
+  commands.each do |command|
+    sh "#{BUNDLE_COMMAND} exec #{command}"
+  end
+end
+
 directory(FONT_ASSETS_DIR = "./assets/fonts")
 
 # Files used to mark completion of tasks like `conda env create`, where the
@@ -38,13 +49,6 @@ def conda_run(*commands)
   bash('source "./_scripts/common.sh"', "activate_conda_environment", *commands)
 end
 
-# Run a series of commands via bundle exec (within the conda environment)
-def bundle_exec(*commands)
-  commands.map! do |command|
-    "bundle exec #{command}"
-  end
-  conda_run(*commands)
-end
 
 begin
   file TASK_SENTINELS[:conda_env_create] => ["./_conda_environment.yml"] do

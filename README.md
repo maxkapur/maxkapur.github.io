@@ -14,8 +14,12 @@ My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
 
 ## Workstation setup
 
-Prerequisites: Any version of Ruby (we'll install our own in an isolated of
-environment) with `rake`; any version of Miniforge.
+Prerequisites:
+
+- Ruby v3.4 or better. Ubuntu currently ships an older version; you can install
+a newer version with `snap install --classic ruby`.
+- `ruby-full build-essential libpthreadpool-dev` (for Ubuntu/Debian, or whatever it's called
+  in your distro packages) to compile Ruby extension modules.
 
 `rake configure` installs all dependencies using `mamba` (to install Ruby) then
 `bundler` (to install Jekyll and other Ruby dependencies). On first run, the
