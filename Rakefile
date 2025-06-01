@@ -230,3 +230,6 @@ task format: [:configure_ruby_bundle] do
   # found a formatter for other filetypes that works for me yet.
   bundle_exec("standardrb --fix")
 end
+
+desc "Lint input, cleanly build, and lint output"
+task default: [:build, :check]
