@@ -50,9 +50,9 @@ opportunities for automation.<!--more-->
     install various tools, do some basic configuration, and clone a few git
     repos.
 
-    💻 Automated. I created this script for the first as part of this setup. In
-    the past, I just installed packages as I thought of them. Eventually I want
-    to integrate `setup.sh` with my dotfiles.
+    💻 Automated. I created this script for the first time as part of this setup.
+    In the past, I just installed packages as I thought of them. Eventually I
+    want to integrate `setup.sh` with my dotfiles.
 
 05. **Set up Nextcloud** using the desktop client (installed in `setup.sh`).
     Configure offline folders.
