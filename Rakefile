@@ -94,36 +94,14 @@ namespace :configure_fonts do
           commands.append "curl -L '#{url}' -o '#{zipfile}'"
           # -o: overwrite existing without prompting
           # -DD: force current timestamp (else Rake keeps rerunning this task)
-          commands.append "unzip -oDD '#{zipfile}' -d '#{FONT_ASSETS_DIR}'"
+          commands.append "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
         end
         conda_run(*commands)
         # Check that this actually created the file
         File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
       end
 
-      remove_unused
-      fix_permissions
-    end
-
-    # Remove unused files from the extracted IBM Plex font dirs
-    def remove_unused
-      [
-        # Remove SCSS source files (they are ignored by Jekyll's build pipeline,
-        # and we use the compiled CSS files instead)
-        "#{FONT_ASSETS_DIR}/ibm*/**/*.scss",
-        # Remove unused EOT and OTF font versions (not referenced in the CSS)
-        "#{FONT_ASSETS_DIR}/ibm*/**/*.eot",
-        "#{FONT_ASSETS_DIR}/ibm*/**/*.otf"
-      ].each do |pattern|
-        Dir.glob(pattern).each do |file|
-          File.unlink(file)
-        end
-      end
-    end
-
-    # IBM font LICENSE files are marked executable (probably compiled on
-    # Windows); undo this.
-    def fix_permissions
+      # Some files are errantly marked executable (probably compiled on Windows)
       common_run("chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)")
     end
 
