@@ -151,7 +151,10 @@ end
 
 desc "Preview site locally"
 task preview: [:configure] do
-  bundle_exec "jekyll serve -o --future"
+  # Use a temp dir to distinguish preview from production build in _site/
+  Dir.mktmpdir do |tempd|
+    bundle_exec "jekyll serve --destination #{tempd} --open-url --future"
+  end
 end
 
 desc "Build site for publication"
