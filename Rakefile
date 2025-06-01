@@ -38,11 +38,7 @@ namespace :configure_conda do
     common_run("command -v mamba")
   end
 
-  # List of files used to indicate presence of conda environment and whether it
-  # is updated
-  sentinel_files = FileList["./.conda/conda-meta/history"]
-
-  file sentinel_files => [:ensure_mamba] do
+  task create_env: [:ensure_mamba] do
     commands = [
       # Location of the conda environment definition YML
       'CONDA_ENV_YML=$(realpath "./_conda_environment.yml")',
@@ -56,8 +52,13 @@ namespace :configure_conda do
     common_run(*commands)
   end
 
+  # List of files used to indicate presence of conda environment and whether it
+  # is updated
+  sentinel_files = ["./.conda/conda-meta/history"]
+  file sentinel_files => [:create_env]
+
   desc "Create conda environment (mamba env create)"
-  task all: sentinel_files
+  task all: [sentinel_files]
 end
 
 desc "Install Ruby dependencies (bundle install/update)"
@@ -71,13 +72,7 @@ namespace :configure_fonts do
   directory font_assets_dir
 
   namespace :ibm_plex do
-    # Plex provides many more files than we can enumerate; use these as sentinels
-    # so rake can see what was updated
-    sentinel_files = FileList[
-      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
-      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
-    ]
-
+    desc "Download & extract IBM Plex assets to #{font_assets_dir}"
     task download_extract: [:"configure_conda:all", font_assets_dir] do
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
@@ -98,9 +93,13 @@ namespace :configure_fonts do
       end
     end
 
-    sentinel_files.to_a.each do |file|
-      task file => [:download_extract]
-    end
+    # Plex provides many more files than we can enumerate; use these as
+    # sentinels so rake can see what was updated
+    sentinel_files = [
+      "#{font_assets_dir}/ibm-plex-sans/fonts/complete/ttf/IBMPlexSans-Regular.ttf",
+      "#{font_assets_dir}/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css"
+    ]
+    file sentinel_files => [:download_extract]
 
     task remove_unused: [sentinel_files] do
       [
@@ -130,7 +129,7 @@ namespace :configure_fonts do
   end
 
   namespace :katex do
-    def katex_css_src
+    def css_src
       candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
       unless candidates.length == 1
         puts candidates
@@ -139,17 +138,13 @@ namespace :configure_fonts do
       candidates[0]
     end
 
-    css = "./assets/katex.css"
-    CLEAN.include css
-    file css => [:configure_ruby_bundle] do
-      FileUtils.cp(katex_css_src, css)
-    end
+    katex_css = "./assets/katex.css"
+    CLEAN.include katex_css
 
-    # KaTeX provides many font files; use these as sentinels
-    sentinel_files = FileList[
-      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
-      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
-    ]
+    # Copy KaTeX CSS from ./vendor/... to ./assets
+    file katex_css => [:configure_ruby_bundle] do
+      FileUtils.cp(css_src, katex_css)
+    end
 
     task copy_woff2s: [:configure_ruby_bundle, font_assets_dir] do
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
@@ -158,12 +153,15 @@ namespace :configure_fonts do
       end
     end
 
-    sentinel_files.to_a.each do |file|
-      task file => :copy_woff2s
-    end
+    # KaTeX provides many font files; use these as sentinels
+    woff2_sentinel_files = [
+      "#{font_assets_dir}/KaTeX_Main-Italic.woff2",
+      "#{font_assets_dir}/KaTeX_SansSerif-Bold.woff2"
+    ]
+    file woff2_sentinel_files => [:copy_woff2s]
 
     desc "Copy KaTeX CSS & font assets to #{font_assets_dir}"
-    task all: [sentinel_files, css]
+    task all: [woff2_sentinel_files, katex_css]
   end
   task all: [:"ibm_plex:all", :"katex:all"]
 end
@@ -204,22 +202,22 @@ namespace :check_source do
   # Rakefile itself is designed to use only stdlib ruby (and then install
   # standardrb locally)
   desc "Check formatting with standardrb"
-  task standard: [:configure] do
+  task standard: [:configure_ruby_bundle] do
     bundle_exec("standardrb")
   end
 
   desc "Ensure no source files contain trailing whitespace"
-  task trailing_whitespace: [:configure] do
+  task :trailing_whitespace do
     common_run("check_trailing_whitespace")
   end
 
   desc "Ensure conda dependencies are updated"
-  task conda_updated: [:configure] do
+  task conda_updated: [:"configure_conda:all"] do
     common_run("check_conda_updated")
   end
 
   desc "Ensure bundler dependencies are updated"
-  task bundler_updated: [:configure] do
+  task bundler_updated: [:configure_ruby_bundle] do
     common_run("check_bundler_updated")
   end
 
