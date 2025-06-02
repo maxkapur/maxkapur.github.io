@@ -12,8 +12,9 @@ end
 
 desc "Format source files"
 task format: [:configure_ruby_bundle] do
-  # Currently all it does is check the formatting of this Rakefile; haven't
-  # found a formatter for other filetypes that works for me yet.
+  # Currently all does is format this Rakefile; haven't found a formatter for
+  # other filetypes that works for me yet.
+  puts "# Format Ruby files"
   sh "bundle exec standardrb --fix"
 end
 
@@ -69,24 +70,25 @@ end
 begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
     try_install_apt_dependencies
+    puts "# Install Ruby dependencies"
     sh "bundle install"
   end
 
-  # Attempt to install apt dependencies if they are not present
   def try_install_apt_dependencies
-    joined = APT_DEPENDENCIES.join(" ")
-
     unless system "apt-get", "--version", out: File::NULL
-      puts "Unable to check for apt dependencies as system is not Debian-like, but here's what I would have tried to install in case it's useful: #{joined}"
+      joined = APT_DEPENDENCIES.join(" ")
+      warn "Unable to check for apt dependencies as system is not Debian-like, but here's what I would have tried to install in case it's useful: #{joined}"
       return
     end
 
+    print "# Check if apt dependencies are present: "
     if system "dpkg-query", "-s", *APT_DEPENDENCIES, out: File::NULL
-      puts "apt dependencies already present: #{joined}"
+      puts "OK"
       return
     end
 
-    puts "Missing apt dependencies; attempting sudo install (you may be prompted for password)"
+    puts "Not yet"
+    puts "# Attempting sudo install (you may be prompted for password)"
     sh "sudo", "apt-get", "install", "--yes", "--no-upgrade", *APT_DEPENDENCIES
   end
 
@@ -97,6 +99,7 @@ end
 namespace :configure_fonts do
   begin
     file TASK_SENTINELS[:ibm_plex_download_extract] => [FONT_ASSETS_DIR] do
+      puts "# Download & extract IBM Plex fonts"
       # TODO: Concurrent downloads using native Ruby requests
       sources = {
         ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
@@ -108,7 +111,9 @@ namespace :configure_fonts do
       Dir.mktmpdir do |tempd|
         sources.each_pair do |basename, url|
           zipfile = "#{tempd}/#{basename}.zip"
+          puts "# Download #{url}"
           sh "curl -L '#{url}' -o '#{zipfile}'"
+          puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
           # -o: overwrite existing without prompting
           # -DD: force current timestamp (else Rake keeps rerunning this task)
           sh "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
@@ -121,7 +126,6 @@ namespace :configure_fonts do
       sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
     end
 
-    # Download & extract IBM Plex fonts to FONT_ASSETS_DIR
     task ibm_plex: [TASK_SENTINELS[:ibm_plex_download_extract]]
   end
 
@@ -135,21 +139,24 @@ namespace :configure_fonts do
       candidates[0]
     end
 
-    # Copy KaTeX CSS from ./vendor/... to ./assets
     file "./assets/katex.css" => [TASK_SENTINELS[:bundle_install]] do
+      print "# Copy #{css_src} to ./assets/: "
       FileUtils.cp(css_src, "./assets/katex.css")
+      puts "OK"
     end
 
     file TASK_SENTINELS[:katex_woff2s_copy] => [TASK_SENTINELS[:bundle_install], FONT_ASSETS_DIR] do
+      puts "# Copy KaTeX fonts to #{FONT_ASSETS_DIR}"
       katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
       katex_fonts_src.each do |src|
+        print "# Copy #{src} to #{FONT_ASSETS_DIR}: "
         FileUtils.cp(src, FONT_ASSETS_DIR)
+        puts "OK"
       end
       # Check that this actually created the file
       File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
     end
 
-    # Copy KaTeX CSS & font assets to FONT_ASSETS_DIR
     task katex: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
   end
   task all: [:ibm_plex, :katex]
@@ -157,21 +164,20 @@ end
 
 # Lint source files
 namespace :check_source do
-  # Check formatting with standardrb
   task standard: [:configure_ruby_bundle] do
+    puts "# Check formatting with standardrb"
     # NOTE: Need to bundle exec this (instead of using standard/rake) because
-    # the Rakefile itself is designed to use only stdlib ruby (and then install
-    # standardrb locally)
+    # the standardrb gem may not have been installed yet
     sh "bundle exec standardrb"
   end
 
-  # Ensure no source files contain trailing whitespace
   task :trailing_whitespace do
+    puts "# Ensure no source files contain trailing whitespace"
     sh "! git grep -IEl '\\s$'"
   end
 
-  # Ensure bundler dependencies are updated
   task bundler_updated: [:configure_ruby_bundle] do
+    puts "# Ensure bundler dependencies are updated"
     sh "bundle outdated --only-explicit"
   end
 
@@ -180,19 +186,19 @@ end
 
 # Lint site build
 namespace :check_build do
-  # Check build with HTML-Proofer
   task html_proofer: [:build] do
+    puts "# Check build with HTML-Proofer"
     options = ["--disable-external"].join(" ")
     sh "bundle exec htmlproofer #{options} ./_site"
   end
 
-  # Check stability of URL schema
   task url_schema: [:build] do
+    puts "# Check stability of URL schema"
     File.file?("./_site/2022/06/25/migrating-to-jekyll.html") || fail
   end
 
-  # Check for deprecation warnings with Jekyll doctor
   task jekyll_doctor: [:build] do
+    puts "# Check for deprecation warnings with Jekyll doctor"
     sh "bundle exec jekyll doctor"
   end
 
