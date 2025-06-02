@@ -1,7 +1,42 @@
 require "tmpdir"
 require "rake/clean"
 
-directory(FONT_ASSETS_DIR = "./assets/fonts")
+desc "Install dependencies"
+task configure: [:configure_ruby_bundle, :"configure_fonts:all"]
+
+desc "Print environment and package information"
+task info: [:configure] do
+  sh "ruby --version"
+  sh "bundle list"
+end
+desc "Format source files"
+task format: [:configure_ruby_bundle] do
+  # Currently all it does is check the formatting of this Rakefile; haven't
+  # found a formatter for other filetypes that works for me yet.
+  sh "bundle exec standardrb --fix"
+end
+
+desc "Preview site locally"
+task preview: [:configure] do
+  # Use a temp dir to distinguish preview from production build in _site/
+  Dir.mktmpdir do |tempd|
+    sh "bundle exec jekyll serve --destination #{tempd} --open-url --future"
+  end
+end
+
+desc "Build site for publication"
+task build: [:configure] do
+  sh "bundle exec jekyll build"
+end
+
+desc "Check various source and build issues"
+task check: [:"check_source:all", :"check_build:all"]
+
+desc "Lint input, build, and lint output"
+task default: [:build, :check]
+
+FONT_ASSETS_DIR = "./assets/fonts"
+directory FONT_ASSETS_DIR
 
 # Files used to mark completion of tasks where the underlying build step creates
 # a lot of different files
@@ -54,7 +89,7 @@ begin
     sh "sudo", "apt-get", "install", "--yes", "--no-upgrade", *APT_DEPENDENCIES
   end
 
-  desc "Install Ruby dependencies (bundle install)"
+  # Wrap as a normal task
   task configure_ruby_bundle: [TASK_SENTINELS[:bundle_install]]
 end
 
@@ -119,28 +154,6 @@ namespace :configure_fonts do
   task all: [:ibm_plex, :katex]
 end
 
-desc "Install dependencies"
-task configure: [:configure_ruby_bundle, :"configure_fonts:all"]
-
-desc "Print environment and package information"
-task info: [:configure] do
-  sh "ruby --version"
-  sh "bundle list"
-end
-
-desc "Preview site locally"
-task preview: [:configure] do
-  # Use a temp dir to distinguish preview from production build in _site/
-  Dir.mktmpdir do |tempd|
-    sh "bundle exec jekyll serve --destination #{tempd} --open-url --future"
-  end
-end
-
-desc "Build site for publication"
-task build: [:configure] do
-  sh "bundle exec jekyll build"
-end
-
 desc "Lint source files"
 namespace :check_source do
   # NOTE: Need to bundle exec this (instead of using standard/rake) because the
@@ -184,16 +197,3 @@ namespace :check_build do
 
   multitask all: [:html_proofer, :url_schema, :jekyll_doctor]
 end
-
-desc "Check various source and build issues"
-task check: [:"check_source:all", :"check_build:all"]
-
-desc "Format source files"
-task format: [:configure_ruby_bundle] do
-  # Currently all it does is check the formatting of this Rakefile; haven't
-  # found a formatter for other filetypes that works for me yet.
-  sh "bundle exec standardrb --fix"
-end
-
-desc "Lint input, cleanly build, and lint output"
-task default: [:build, :check]
