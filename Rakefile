@@ -2,7 +2,7 @@ require "tmpdir"
 require "rake/clean"
 
 desc "Install dependencies"
-task configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
+multitask configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
 
 desc "Print environment and package information"
 task info: [:configure] do
