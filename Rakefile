@@ -11,6 +11,15 @@ TASK_SENTINELS = {
   katex_woff2s_copy: "#{FONT_ASSETS_DIR}/KaTeX_AMS-Regular.woff2"
 }
 
+APT_DEPENDENCIES = [
+  "build-essential",
+  "curl",
+  "ruby-bundler",
+  "ruby-full",
+  "unzip",
+  "zlib1g-dev" # or ruby-build
+]
+
 begin
   CLEAN.include "./_site"
   CLEAN.include "./.jekyll-cache"
@@ -23,26 +32,29 @@ end
 
 begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
-    apt_dependencies = [
-      "build-essential",
-      "curl",
-      "ruby-bundler",
-      "ruby-full",
-      "unzip",
-      "zlib1g-dev"
-    ]
-    if system "apt-get --version"
-      sh "sudo apt-get install --yes --no-upgrade #{apt_dependencies.join(" ")}"
-    else
-      puts "Unable to check for build dependencies as system is not Debian-like"
-      puts "But here's what I would have tried to install in case it's useful:"
-      puts apt_dependencies
-    end
-
+    try_install_apt_dependencies
     sh "bundle install"
   end
 
-  desc "Install Ruby dependencies (bundle install/update)"
+  # Attempt to install apt dependencies if they are not present
+  def try_install_apt_dependencies
+    joined = APT_DEPENDENCIES.join(" ")
+
+    unless system "apt-get", "--version", out: File::NULL
+      puts "Unable to check for apt dependencies as system is not Debian-like, but here's what I would have tried to install in case it's useful: #{joined}"
+      return
+    end
+
+    if system "dpkg-query", "-s", *APT_DEPENDENCIES, out: File::NULL
+      puts "apt dependencies already present: #{joined}"
+      return
+    end
+
+    puts "Missing apt dependencies; attempting sudo install (you may be prompted for password)"
+    sh "sudo", "apt-get", "install", "--yes", "--no-upgrade", *APT_DEPENDENCIES
+  end
+
+  desc "Install Ruby dependencies (bundle install)"
   task configure_ruby_bundle: [TASK_SENTINELS[:bundle_install]]
 end
 
