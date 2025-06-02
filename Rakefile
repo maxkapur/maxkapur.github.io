@@ -23,7 +23,7 @@ end
 
 begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
-    command = "sudo apt-get install --yes --no-upgrade ruby-full build-essential zlib1g-dev"
+    command = "sudo apt-get install --yes --no-upgrade ruby-full build-essential zlib1g-dev curl unzip"
     if system "apt-get --version"
       sh command
     else
