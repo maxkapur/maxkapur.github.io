@@ -102,14 +102,11 @@ begin
 
   file TASK_SENTINELS[:ibm_plex_download_extract] => [FONT_ASSETS_DIR] do
     puts "# Download & extract IBM Plex fonts"
-    # TODO: Concurrent downloads using native Ruby requests
     sources = {
       ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
       ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
       ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
     }
-    # Download font zips from GitHub to temporary directory, then extract to
-    # FONT_ASSETS_DIR
     Dir.mktmpdir do |tempd|
       sources.each_pair do |basename, url|
         zipfile = "#{tempd}/#{basename}.zip"
@@ -120,10 +117,9 @@ begin
         # -DD: force current timestamp (else Rake keeps rerunning this task)
         sh "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
       end
-      # Check that this actually created the sentinel file
-      File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
     end
-
+    # Check that this actually created the sentinel file
+    File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
     # Some files are errantly marked executable (probably compiled on Windows)
     sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
   end
