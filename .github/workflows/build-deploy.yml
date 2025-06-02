@@ -21,26 +21,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Miniforge and Mamba
-        uses: conda-incubator/setup-miniconda@v3
-        with:
-          activate-environment: ""
-          auto-activate-base: true
-          channels: conda-forge
-          conda-remove-defaults: true
-          mamba-version: "*"
-          miniforge-version: "latest"
-
       - name: Configure toolchain (rake configure)
-        shell: bash -el {0}
         run: rake configure
 
       - name: Show package info (rake info)
-        shell: bash -el {0}
         run: rake info
 
       - name: Build site (rake)
-        shell: bash -el {0}
         run: rake
 
       - name: Upload static files as artifact
