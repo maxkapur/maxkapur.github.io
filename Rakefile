@@ -23,13 +23,20 @@ end
 
 begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
-    command = "sudo apt-get install --yes --no-upgrade ruby-full build-essential zlib1g-dev curl unzip"
+    apt_dependencies = [
+      "build-essential",
+      "curl",
+      "ruby-bundler",
+      "ruby-full",
+      "unzip",
+      "zlib1g-dev"
+    ]
     if system "apt-get --version"
-      sh command
+      sh "sudo apt-get install --yes --no-upgrade #{apt_dependencies.join(" ")}"
     else
       puts "Unable to check for build dependencies as system is not Debian-like"
-      puts "But here's what I would have run in case it's useful:"
-      puts "  #{command}"
+      puts "But here's what I would have tried to install in case it's useful:"
+      puts apt_dependencies
     end
 
     sh "bundle install"
