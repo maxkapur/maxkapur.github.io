@@ -32,7 +32,7 @@ task build: [:configure] do
 end
 
 desc "Check various source and build issues"
-task check: [:"check_source:all", :"check_build:all"]
+multitask check: [:check_source, :check_build]
 
 desc "Lint input, build, and lint output"
 task default: [:build, :check]
@@ -127,7 +127,6 @@ begin
     # Some files are errantly marked executable (probably compiled on Windows)
     sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
   end
-
 end
 
 # KaTeX CSS and fonts
@@ -163,7 +162,9 @@ begin
 end
 
 # Lint source files
-namespace :check_source do
+begin
+  multitask check_source: [:standard, :trailing_whitespace, :bundle_outdated]
+
   task standard: [:bundle_install] do
     puts "# Check formatting with standardrb"
     # NOTE: Need to bundle exec this (instead of using standard/rake) because
@@ -176,16 +177,16 @@ namespace :check_source do
     sh "! git grep -IEl '\\s$'"
   end
 
-  task bundler_updated: [:bundle_install] do
+  task bundle_outdated: [:bundle_install] do
     puts "# Ensure bundler dependencies are updated"
     sh "bundle outdated --only-explicit"
   end
-
-  multitask all: [:standard, :trailing_whitespace]
 end
 
 # Lint site build
-namespace :check_build do
+begin
+  multitask check_build: [:html_proofer, :url_schema, :jekyll_doctor]
+
   task html_proofer: [:build] do
     puts "# Check build with HTML-Proofer"
     options = ["--disable-external"].join(" ")
@@ -193,14 +194,14 @@ namespace :check_build do
   end
 
   task url_schema: [:build] do
-    puts "# Check stability of URL schema"
-    File.file?("./_site/2022/06/25/migrating-to-jekyll.html") || fail
+    print "# Check stability of URL schema: "
+    f = "./_site/2022/06/25/migrating-to-jekyll.html"
+    File.file?(f) || fail
+    puts "#{f} exists"
   end
 
   task jekyll_doctor: [:build] do
     puts "# Check for deprecation warnings with Jekyll doctor"
     sh "bundle exec jekyll doctor"
   end
-
-  multitask all: [:html_proofer, :url_schema, :jekyll_doctor]
 end
