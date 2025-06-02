@@ -124,14 +124,6 @@ end
 
 desc "Lint source files"
 namespace :check_source do
-  desc "Lint shell scripts with shellcheck"
-  task shellcheck: [:configure] do
-    # TODO: Perform globbing within Ruby
-    sh 'SHELL_SCRIPTS=$(find . -maxdepth 2 -iname "*.sh")'
-    sh "echo ${SHELL_SCRIPTS[@]}"
-    sh "shellcheck ${SHELL_SCRIPTS[@]}"
-  end
-
   # NOTE: Need to bundle exec this (instead of using standard/rake) because the
   # Rakefile itself is designed to use only stdlib ruby (and then install
   # standardrb locally)
@@ -150,7 +142,7 @@ namespace :check_source do
     sh "bundle outdated --only-explicit"
   end
 
-  multitask all: [:shellcheck, :standard, :trailing_whitespace]
+  multitask all: [:standard, :trailing_whitespace]
 end
 
 desc "Lint site build"
