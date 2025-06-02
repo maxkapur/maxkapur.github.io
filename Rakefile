@@ -9,6 +9,7 @@ task info: [:configure] do
   sh "ruby --version"
   sh "bundle list"
 end
+
 desc "Format source files"
 task format: [:configure_ruby_bundle] do
   # Currently all it does is check the formatting of this Rakefile; haven't
@@ -120,7 +121,7 @@ namespace :configure_fonts do
       sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
     end
 
-    desc "Download & extract IBM Plex fonts to #{FONT_ASSETS_DIR}"
+    # Download & extract IBM Plex fonts to FONT_ASSETS_DIR
     task ibm_plex: [TASK_SENTINELS[:ibm_plex_download_extract]]
   end
 
@@ -148,28 +149,28 @@ namespace :configure_fonts do
       File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
     end
 
-    desc "Copy KaTeX CSS & font assets to #{FONT_ASSETS_DIR}"
+    # Copy KaTeX CSS & font assets to FONT_ASSETS_DIR
     task katex: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
   end
   task all: [:ibm_plex, :katex]
 end
 
-desc "Lint source files"
+# Lint source files
 namespace :check_source do
-  # NOTE: Need to bundle exec this (instead of using standard/rake) because the
-  # Rakefile itself is designed to use only stdlib ruby (and then install
-  # standardrb locally)
-  desc "Check formatting with standardrb"
+  # Check formatting with standardrb
   task standard: [:configure_ruby_bundle] do
+    # NOTE: Need to bundle exec this (instead of using standard/rake) because
+    # the Rakefile itself is designed to use only stdlib ruby (and then install
+    # standardrb locally)
     sh "bundle exec standardrb"
   end
 
-  desc "Ensure no source files contain trailing whitespace"
+  # Ensure no source files contain trailing whitespace
   task :trailing_whitespace do
     sh "! git grep -IEl '\\s$'"
   end
 
-  desc "Ensure bundler dependencies are updated"
+  # Ensure bundler dependencies are updated
   task bundler_updated: [:configure_ruby_bundle] do
     sh "bundle outdated --only-explicit"
   end
@@ -177,20 +178,20 @@ namespace :check_source do
   multitask all: [:standard, :trailing_whitespace]
 end
 
-desc "Lint site build"
+# Lint site build
 namespace :check_build do
-  desc "Check build with HTML-Proofer"
+  # Check build with HTML-Proofer
   task html_proofer: [:build] do
     options = ["--disable-external"].join(" ")
     sh "bundle exec htmlproofer #{options} ./_site"
   end
 
-  desc "Check stability of URL schema"
+  # Check stability of URL schema
   task url_schema: [:build] do
     File.file?("./_site/2022/06/25/migrating-to-jekyll.html") || fail
   end
 
-  desc "Check for deprecation warnings with Jekyll doctor"
+  # Check for deprecation warnings with Jekyll doctor
   task jekyll_doctor: [:build] do
     sh "bundle exec jekyll doctor"
   end
