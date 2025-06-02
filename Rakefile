@@ -108,14 +108,20 @@ begin
       ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
     }
     Dir.mktmpdir do |tempd|
-      sources.each_pair do |basename, url|
+      sources.map do |basename, url|
+        puts "# Download #{url.split("/")[-1]}"
         zipfile = "#{tempd}/#{basename}.zip"
-        puts "# Download #{url}"
-        sh "curl -L '#{url}' -o '#{zipfile}'"
+        # -s: silent mode
+        # -S: but show errors
+        # -L: follow redirect
+        sh "curl -sSL '#{url}' -o '#{zipfile}'"
+        return zipfile
+      end.each do |zipfile|
         puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
+        # -q: quiet mode
         # -o: overwrite existing without prompting
         # -DD: force current timestamp (else Rake keeps rerunning this task)
-        sh "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
+        sh "unzip -qoDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
       end
     end
     # Check that this actually created the sentinel file
