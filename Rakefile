@@ -2,7 +2,7 @@ require "tmpdir"
 require "rake/clean"
 
 desc "Install dependencies"
-task configure: [:configure_ruby_bundle, :"configure_fonts:all"]
+task configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
 
 desc "Print environment and package information"
 task info: [:configure] do
@@ -11,7 +11,7 @@ task info: [:configure] do
 end
 
 desc "Format source files"
-task format: [:configure_ruby_bundle] do
+task format: [:bundle_install] do
   # Currently all does is format this Rakefile; haven't found a formatter for
   # other filetypes that works for me yet.
   puts "# Format Ruby files"
@@ -67,7 +67,10 @@ begin
   TASK_SENTINELS.values.each { |f| CLEAN.include f }
 end
 
+# Bundle/Ruby dependency installation
 begin
+  task bundle_install: [TASK_SENTINELS[:bundle_install]]
+
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
     try_install_apt_dependencies
     puts "# Install Ruby dependencies"
@@ -91,80 +94,77 @@ begin
     puts "# Attempting sudo install (you may be prompted for password)"
     sh "sudo", "apt-get", "install", "--yes", "--no-upgrade", *APT_DEPENDENCIES
   end
-
-  # Wrap as a normal task
-  task configure_ruby_bundle: [TASK_SENTINELS[:bundle_install]]
 end
 
-namespace :configure_fonts do
-  begin
-    file TASK_SENTINELS[:ibm_plex_download_extract] => [FONT_ASSETS_DIR] do
-      puts "# Download & extract IBM Plex fonts"
-      # TODO: Concurrent downloads using native Ruby requests
-      sources = {
-        ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
-        ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
-        ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
-      }
-      # Download font zips from GitHub to temporary directory, then extract to
-      # FONT_ASSETS_DIR
-      Dir.mktmpdir do |tempd|
-        sources.each_pair do |basename, url|
-          zipfile = "#{tempd}/#{basename}.zip"
-          puts "# Download #{url}"
-          sh "curl -L '#{url}' -o '#{zipfile}'"
-          puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
-          # -o: overwrite existing without prompting
-          # -DD: force current timestamp (else Rake keeps rerunning this task)
-          sh "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
-        end
-        # Check that this actually created the sentinel file
-        File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
-      end
+# IBM Plex fonts
+begin
+  task ibm_plex_fonts: [TASK_SENTINELS[:ibm_plex_download_extract]]
 
-      # Some files are errantly marked executable (probably compiled on Windows)
-      sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
+  file TASK_SENTINELS[:ibm_plex_download_extract] => [FONT_ASSETS_DIR] do
+    puts "# Download & extract IBM Plex fonts"
+    # TODO: Concurrent downloads using native Ruby requests
+    sources = {
+      ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
+      ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
+      ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
+    }
+    # Download font zips from GitHub to temporary directory, then extract to
+    # FONT_ASSETS_DIR
+    Dir.mktmpdir do |tempd|
+      sources.each_pair do |basename, url|
+        zipfile = "#{tempd}/#{basename}.zip"
+        puts "# Download #{url}"
+        sh "curl -L '#{url}' -o '#{zipfile}'"
+        puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
+        # -o: overwrite existing without prompting
+        # -DD: force current timestamp (else Rake keeps rerunning this task)
+        sh "unzip -oDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
+      end
+      # Check that this actually created the sentinel file
+      File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
     end
 
-    task ibm_plex: [TASK_SENTINELS[:ibm_plex_download_extract]]
+    # Some files are errantly marked executable (probably compiled on Windows)
+    sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
   end
 
-  begin
-    def css_src
-      candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
-      unless candidates.length == 1
-        puts candidates
-        raise "Found #{candidates.length} katex.css files, expected 1"
-      end
-      candidates[0]
-    end
+end
 
-    file "./assets/katex.css" => [TASK_SENTINELS[:bundle_install]] do
-      print "# Copy #{css_src} to ./assets/: "
-      FileUtils.cp(css_src, "./assets/katex.css")
+# KaTeX CSS and fonts
+begin
+  task katex_files: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
+
+  def css_src
+    candidates = Dir.glob("./vendor/**/vendor/katex/stylesheets/katex.css")
+    unless candidates.length == 1
+      puts candidates
+      raise "Found #{candidates.length} katex.css files, expected 1"
+    end
+    candidates[0]
+  end
+
+  file "./assets/katex.css" => [TASK_SENTINELS[:bundle_install]] do
+    print "# Copy #{css_src} to ./assets/: "
+    FileUtils.cp(css_src, "./assets/katex.css")
+    puts "OK"
+  end
+
+  file TASK_SENTINELS[:katex_woff2s_copy] => [TASK_SENTINELS[:bundle_install], FONT_ASSETS_DIR] do
+    puts "# Copy KaTeX fonts to #{FONT_ASSETS_DIR}"
+    katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
+    katex_fonts_src.each do |src|
+      print "# Copy #{src} to #{FONT_ASSETS_DIR}: "
+      FileUtils.cp(src, FONT_ASSETS_DIR)
       puts "OK"
     end
-
-    file TASK_SENTINELS[:katex_woff2s_copy] => [TASK_SENTINELS[:bundle_install], FONT_ASSETS_DIR] do
-      puts "# Copy KaTeX fonts to #{FONT_ASSETS_DIR}"
-      katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
-      katex_fonts_src.each do |src|
-        print "# Copy #{src} to #{FONT_ASSETS_DIR}: "
-        FileUtils.cp(src, FONT_ASSETS_DIR)
-        puts "OK"
-      end
-      # Check that this actually created the file
-      File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
-    end
-
-    task katex: ["./assets/katex.css", TASK_SENTINELS[:katex_woff2s_copy]]
+    # Check that this actually created the file
+    File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
   end
-  task all: [:ibm_plex, :katex]
 end
 
 # Lint source files
 namespace :check_source do
-  task standard: [:configure_ruby_bundle] do
+  task standard: [:bundle_install] do
     puts "# Check formatting with standardrb"
     # NOTE: Need to bundle exec this (instead of using standard/rake) because
     # the standardrb gem may not have been installed yet
@@ -176,7 +176,7 @@ namespace :check_source do
     sh "! git grep -IEl '\\s$'"
   end
 
-  task bundler_updated: [:configure_ruby_bundle] do
+  task bundler_updated: [:bundle_install] do
     puts "# Ensure bundler dependencies are updated"
     sh "bundle outdated --only-explicit"
   end
