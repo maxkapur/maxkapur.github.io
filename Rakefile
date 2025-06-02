@@ -143,7 +143,7 @@ begin
   end
 
   file "./assets/katex.css" => [TASK_SENTINELS[:bundle_install]] do
-    print "# Copy #{css_src} to ./assets/: "
+    print "# Copy #{File.basename(css_src)} to ./assets/: "
     FileUtils.cp(css_src, "./assets/katex.css")
     puts "OK"
   end
@@ -152,7 +152,7 @@ begin
     puts "# Copy KaTeX fonts to #{FONT_ASSETS_DIR}"
     katex_fonts_src = Dir.glob("./vendor/**/vendor/katex/fonts/*.woff2")
     katex_fonts_src.each do |src|
-      print "# Copy #{src} to #{FONT_ASSETS_DIR}: "
+      print "# Copy #{File.basename(src)} to #{FONT_ASSETS_DIR}: "
       FileUtils.cp(src, FONT_ASSETS_DIR)
       puts "OK"
     end
