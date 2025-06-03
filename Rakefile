@@ -74,7 +74,7 @@ begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
     try_install_apt_dependencies
     puts "# Install Ruby dependencies"
-    sh(*"bundle install".split)
+    sh(*"bundle install --jobs 4".split)
   end
 
   def try_install_apt_dependencies
