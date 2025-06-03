@@ -125,7 +125,7 @@ begin
       end
     end
     # Check that this actually created the sentinel file
-    File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
+    fail unless File.file?(TASK_SENTINELS[:ibm_plex_download_extract])
     # Some files are errantly marked executable (probably compiled on Windows)
     puts "# Unset executable bit on extracted files"
     targets = Dir.glob("#{FONT_ASSETS_DIR}/**/*").filter do |f|
@@ -164,7 +164,7 @@ begin
       puts "OK"
     end
     # Check that this actually created the file
-    File.file?(TASK_SENTINELS[:katex_woff2s_copy]) || fail
+    fail unless File.file?(TASK_SENTINELS[:katex_woff2s_copy])
   end
 end
 
@@ -181,7 +181,7 @@ begin
 
   task :trailing_whitespace do
     puts "# Ensure no source files contain trailing whitespace"
-    system(*"git grep -IE \\s$".split) && fail
+    fail if system(*"git grep -IE \\s$".split)
   end
 
   task bundle_outdated: [:bundle_install] do
@@ -203,7 +203,7 @@ begin
   task url_schema: [:build] do
     print "# Check stability of URL schema: "
     f = "./_site/2022/06/25/migrating-to-jekyll.html"
-    File.file?(f) || fail
+    fail unless File.file?(f)
     puts "#{f} exists"
   end
 
