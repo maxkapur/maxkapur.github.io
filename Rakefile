@@ -115,7 +115,7 @@ begin
         # -S: but show errors
         # -L: follow redirect
         sh "curl -sSL '#{url}' -o '#{zipfile}'"
-        return zipfile
+        zipfile
       end.each do |zipfile|
         puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
         # -q: quiet mode
