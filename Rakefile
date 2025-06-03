@@ -126,13 +126,6 @@ begin
     end
     # Check that this actually created the sentinel file
     fail unless File.file?(TASK_SENTINELS[:ibm_plex_download_extract])
-    # Some files are errantly marked executable (probably compiled on Windows)
-    puts "# Unset executable bit on extracted files"
-    targets = Dir.glob("#{FONT_ASSETS_DIR}/**/*").filter do |f|
-      File.executable?(f) && File.file?(f)
-    end
-    warn "Nothing to do" if targets.empty?
-    sh "chmod", "a-x", *targets
   end
 end
 
