@@ -2,7 +2,7 @@ require "tmpdir"
 require "rake/clean"
 
 desc "Install dependencies"
-multitask configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
+task configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
 
 desc "Print environment and package information"
 task info: [:configure] do
@@ -33,7 +33,7 @@ task build: [:configure] do
 end
 
 desc "Check various source and build issues"
-multitask check: [:check_source, :check_build]
+task check: [:check_source, :check_build]
 
 desc "Lint input, build, and lint output"
 task default: [:build, :check]
@@ -167,7 +167,7 @@ end
 
 # Lint source files
 begin
-  multitask check_source: [:standard, :trailing_whitespace, :bundle_outdated]
+  task check_source: [:standard, :trailing_whitespace, :bundle_outdated]
 
   task standard: [:bundle_install] do
     puts "# Check formatting with standardrb"
@@ -189,7 +189,7 @@ end
 
 # Lint site build
 begin
-  multitask check_build: [:html_proofer, :url_schema, :jekyll_doctor]
+  task check_build: [:html_proofer, :url_schema, :jekyll_doctor]
 
   task html_proofer: [:build] do
     puts "# Check build with HTML-Proofer"
