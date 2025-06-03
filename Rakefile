@@ -6,8 +6,9 @@ multitask configure: [:bundle_install, :ibm_plex_fonts, :katex_files]
 
 desc "Print environment and package information"
 task info: [:configure] do
-  sh "ruby --version"
-  sh "bundle list"
+  sh(*"which ruby bundle".split)
+  sh(*"ruby --version".split)
+  sh(*"bundle list".split)
 end
 
 desc "Format source files"
@@ -15,20 +16,20 @@ task format: [:bundle_install] do
   # Currently all does is format this Rakefile; haven't found a formatter for
   # other filetypes that works for me yet.
   puts "# Format Ruby files"
-  sh "bundle exec standardrb --fix"
+  sh(*"bundle exec standardrb --fix".split)
 end
 
 desc "Preview site locally"
 task preview: [:configure] do
   # Use a temp dir to distinguish preview from production build in _site/
   Dir.mktmpdir do |tempd|
-    sh "bundle exec jekyll serve --destination #{tempd} --open-url --future"
+    sh(*"bundle exec jekyll serve --open-url --future --destination".split, tempd)
   end
 end
 
 desc "Build site for publication"
 task build: [:configure] do
-  sh "bundle exec jekyll build"
+  sh(*"bundle exec jekyll build".split)
 end
 
 desc "Check various source and build issues"
@@ -74,7 +75,7 @@ begin
   file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
     try_install_apt_dependencies
     puts "# Install Ruby dependencies"
-    sh "bundle install"
+    sh(*"bundle install".split)
   end
 
   def try_install_apt_dependencies
@@ -92,7 +93,7 @@ begin
 
     puts "Not yet"
     puts "# Attempting sudo install (you may be prompted for password)"
-    sh "sudo", "apt-get", "install", "--yes", "--no-upgrade", *APT_DEPENDENCIES
+    sh(*"sudo apt-get install --yes --no-upgrade".split, *APT_DEPENDENCIES)
   end
 end
 
@@ -114,19 +115,20 @@ begin
         # -s: silent mode
         # -S: but show errors
         # -L: follow redirect
-        sh "curl -sSL '#{url}' -o '#{zipfile}'"
+        sh "curl", "-sSL", url, "-o", zipfile
         zipfile
       end.each do |zipfile|
         puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
         # -q: quiet mode
         # -o: overwrite existing without prompting
         # -DD: force current timestamp (else Rake keeps rerunning this task)
-        sh "unzip -qoDD '#{zipfile}' '*.css' '*.woff2' -d '#{FONT_ASSETS_DIR}'"
+        sh "unzip", "-qoDD", zipfile, "*.css", "*.woff2", "-d", FONT_ASSETS_DIR
       end
     end
     # Check that this actually created the sentinel file
     File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
     # Some files are errantly marked executable (probably compiled on Windows)
+    # TODO: glob inside ruby
     sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
   end
 end
@@ -171,17 +173,17 @@ begin
     puts "# Check formatting with standardrb"
     # NOTE: Need to bundle exec this (instead of using standard/rake) because
     # the standardrb gem may not have been installed yet
-    sh "bundle exec standardrb"
+    sh(*"bundle exec standardrb".split)
   end
 
   task :trailing_whitespace do
     puts "# Ensure no source files contain trailing whitespace"
-    sh "! git grep -IEl '\\s$'"
+    system(*"git grep -IE \\s$".split) && fail
   end
 
   task bundle_outdated: [:bundle_install] do
     puts "# Ensure bundler dependencies are updated"
-    sh "bundle outdated --only-explicit"
+    sh(*"bundle outdated --only-explicit".split)
   end
 end
 
@@ -191,8 +193,8 @@ begin
 
   task html_proofer: [:build] do
     puts "# Check build with HTML-Proofer"
-    options = ["--disable-external"].join(" ")
-    sh "bundle exec htmlproofer #{options} ./_site"
+    options = ["--disable-external"]
+    sh(*"bundle exec htmlproofer ./_site/".split, *options)
   end
 
   task url_schema: [:build] do
@@ -204,6 +206,6 @@ begin
 
   task jekyll_doctor: [:build] do
     puts "# Check for deprecation warnings with Jekyll doctor"
-    sh "bundle exec jekyll doctor"
+    sh(*"bundle exec jekyll doctor".split)
   end
 end
