@@ -127,8 +127,8 @@ begin
     # Check that this actually created the sentinel file
     File.file?(TASK_SENTINELS[:ibm_plex_download_extract]) || fail
     # Some files are errantly marked executable (probably compiled on Windows)
-    # TODO: glob inside ruby
-    sh "chmod a-x $(find '#{FONT_ASSETS_DIR}' -type f)"
+    targets = Dir.glob("#{FONT_ASSETS_DIR}/**/*").filter { |f| File.file? f }
+    sh "chmod", "a-x", *targets
   end
 end
 
