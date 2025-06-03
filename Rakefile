@@ -59,13 +59,12 @@ APT_DEPENDENCIES = [
 ]
 
 begin
-  CLEAN.include "./_site"
-  CLEAN.include "./.jekyll-cache"
+  CLEAN.include "./.jekyll-cache/"
   CLEAN.include "./Gemfile.lock"
-  CLEAN.include "./vendor"
+  CLEAN.include "./vendor/"
   CLEAN.include "./assets/katex.css"
   CLEAN.include FONT_ASSETS_DIR
-  TASK_SENTINELS.values.each { |f| CLEAN.include f }
+  CLOBBER.include "./_site/"
 end
 
 # Bundle/Ruby dependency installation
