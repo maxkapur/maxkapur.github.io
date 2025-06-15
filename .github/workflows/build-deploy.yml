@@ -42,6 +42,8 @@ jobs:
         # if running from somewhere other than master.
         if: github.ref == 'refs/heads/master'
         run: |
+          git config --local user.name 'Max Kapur (GitHub Action runner)'
+          git config --local user.email 'maxkapur@users.noreply.github.com'
           git config --local push.autoSetupRemote true
           git switch -C static
           git reset --hard origin/master
