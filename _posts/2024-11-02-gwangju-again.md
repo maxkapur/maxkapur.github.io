@@ -37,8 +37,8 @@ stack, as I have only read *The Vegetarian* (채식주의자), and only in
 translation. Our group also viewed, at the [Gwangju Museum of Art](
 https://artmuse.gwangju.go.kr/ ), a pair of paintings by a then student
 activist, now senior citizen who began in retirement to paint scenes from the
-the 5/18 movement to preserve his memory and perspective. (Unfortunately, I
-can’t find this artist’s name on the website.) Such images create a relationship
+5/18 movement to preserve his memory and perspective. (Unfortunately, I can’t
+find this artist’s name on the website.) Such images create a relationship
 between the viewer and the events of 5/18 that rings “true” in a way that
 journalistic accounts cannot.
 
