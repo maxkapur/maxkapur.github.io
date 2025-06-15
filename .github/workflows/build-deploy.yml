@@ -36,6 +36,20 @@ jobs:
         with:
           path: _site/
 
+      - name: Push site build to static branch
+        # For portability, maintain a static branch with the site build checked
+        # in. This eases deployment to other hosting platforms. Skip this step
+        # if running from somewhere other than master.
+        if: github.ref == 'refs/heads/master'
+        run: |
+          git config --local push.autoSetupRemote true
+          git switch -C static
+          git reset --hard origin/main
+          git add -f _site/
+          git status
+          git commit -m "Automatic site build: $(date)"
+          git push --force
+
   deploy:
     environment:
       name: github-pages
