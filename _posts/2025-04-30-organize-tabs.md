@@ -17,9 +17,9 @@ like, how annoyed would I be if I closed this by accident?
 - Low priority: Random ephemera, landing pages from clicking a confirmation
   email, article I already read but just need to copy a quote from, etc.
 
-Whenever I start to have more than 15 or 20 tabs, I get an instinctual, cramped
-feeling and start axing tabs from right to left until I arrive at one that I
-still want open. Usually, this leaves two or three tabs.
+Whenever I start to have more than 15 or 20 tabs, I get a cramped feeling and
+start axing tabs from right to left until I arrive at one that I still want
+open. Usually, this leaves two or three tabs.
 
 Sometimes I accidentally close things that I still needed, but I tell myself
 that the time wasted reopening them is offset by the time saved searching
