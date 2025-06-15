@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "base64", "~> 0.2"
-gem "bigdecimal", "~> 3.1"
+gem "bigdecimal", "~> 3.2"
 gem "csv", "~> 3.3"
 gem "html-proofer", "~> 5.0"
 gem "logger", "~> 1.6"
