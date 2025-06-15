@@ -44,11 +44,11 @@ jobs:
         run: |
           git config --local push.autoSetupRemote true
           git switch -C static
-          git reset --hard origin/main
+          git reset --hard origin/master
           git add -f _site/
           git status
-          git commit -m "Automatic site build: $(date)"
-          git push --force
+          git commit -m "Automatic site build"
+          git push -f
 
   deploy:
     environment:
