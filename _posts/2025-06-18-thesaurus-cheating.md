@@ -5,9 +5,9 @@ title: Is using a thesaurus cheating?
 
 I remember taking mild offense when my middle school language arts teacher
 introduced our class to the thesaurus. I thought, if I let the thesaurus choose
-my words for me, then is it even *my* writing any more? This seems like a flaw
-in my temperament: I always regard technology with suspicion when it threatens
-to supplant human creativity.
+my words for me, then is it even *my* writing anymore? This seems like a flaw in
+my temperament: I always regard technology with suspicion when it threatens to
+supplant human creativity.
 
 Inevitably, as I progressed through high school and college, I made peace with
 the thesaurus, and now I rely on it. A typical use case would be: “What’s that
@@ -21,9 +21,8 @@ OK, so this post had to be about generative AI, right? After a few years of
 watching the world use and abuse large language models, I’m beginning to find
 ways to accept an LLM’s assistance without feeling like I’ve outsourced my
 creative process.
-
 Mostly, I use LLM chat as a better search engine. For example, one of my first
-questions (a few weeks ago) was “Is there a NumPy built-in that does this?” with
+questions was “Is there a NumPy built-in that does this?” with
 a quick example. The machine pointed me immediately to `numpy.unravel_index()`,
 which was
 [exactly](https://numpy.org/doc/2.2/reference/generated/numpy.unravel_index.html)
@@ -45,9 +44,8 @@ down as much code or text as I can in a fixed amount of time. This value
 judgment (and it really is just that) precludes more aggressive uses of LLM tech
 that, yes, might make me more productive in the short term. I’ll own that
 tradeoff.
-
 When it comes to new technology, we often speak of “early” and “late”
-adopters—as though tech literacy means no more than riding the correct part of a
+adopters—as though tech literacy means no more than finding the smooth part of a
 hype wave. My goal is to adopt tools not on the basis of urgent marketing or the
 fear of being left behind, but because I can use that tool to make myself
 smarter.
