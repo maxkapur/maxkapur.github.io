@@ -7,13 +7,14 @@ module Related
       end
 
       site.posts.docs.each do |current_post|
-        similarity_scores = related_data.map do |related_post, length|
+        current_post.data["related"] = related_data.filter do |related_post, _|
+          related_post != current_post
+        end.map do |related_post, length|
           {
             "post" => related_post,
             "score" => -(current_post.content.length - length).abs
           }
         end.sort_by { |item| -item["score"] }
-        current_post.data["related"] = similarity_scores
       end
     end
   end
