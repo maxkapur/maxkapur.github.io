@@ -31,7 +31,7 @@ permalink: /browse/
     {%- endunless -%}
 
   <li>
-    <a target="_blank" href="{{ my_page.url | relative_url }}">
+    <a href="{{ my_page.url | relative_url }}">
       {{- my_page.title | escape -}}
     </a>
   </li>
@@ -49,7 +49,7 @@ permalink: /browse/
   {%- for post in site.posts -%}
   <li>
     <div class="concise-post-list-entry">
-      <a target="_blank" href="{{ post.url | relative_url }}">
+      <a href="{{ post.url | relative_url }}">
         {{- post.title | escape -}}
       </a>
       &ZeroWidthSpace;
