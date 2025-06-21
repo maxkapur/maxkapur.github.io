@@ -25,6 +25,7 @@ kramdown:
 # Plugin settings
 related:
   count: 2
+  factor: 10.0
 
 pagination:
   enabled: true
