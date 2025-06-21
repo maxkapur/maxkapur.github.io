@@ -311,10 +311,18 @@ table {
 }
 
 
-// Add a separator at top of footnotes
-div.footnotes {
+/* Footnotes and related pages blocks */
+.footnotes,
+.related-posts {
   border-top: $border-heavy;
   padding-top: math.div($spacing-unit, 2);
+}
+
+.related-posts {
+  // Prevent extra margin, as the related-posts div is outside of the
+  // post-content. Moving related-posts inside of post-contents is another
+  // solution.
+  margin-top: math.div(-$spacing-unit, 2);
 }
 
 // Change to a pointer cursor so users know they can click the summary text
