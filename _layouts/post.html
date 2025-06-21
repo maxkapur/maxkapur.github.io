@@ -23,9 +23,20 @@ layout: default
   <div class="related-posts">
     <p>
     Related posts:
-      {%- for post in page.related -%}
-      {{ post }}
-      {%- endfor -%}
+    <ul>
+      {%- comment -%}
+        Need to compare .hidden != true as default (not hidden) value is nil
+      {%- endcomment -%}
+      {%- assign related = page.related | where_exp: "item", "item.post.hidden != true" -%}
+      {%- for item in related limit: 2 %}
+      <li>
+        {{ item.post.url }}
+        {{ item.post.title }}
+        {{ item.post.date }}
+        {{ item.score }}
+        {%- endfor -%}
+      </li>
+    </ul>
     </p>
   </div>
   {%- endif %}
