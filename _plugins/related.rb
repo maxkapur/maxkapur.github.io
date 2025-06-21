@@ -10,9 +10,9 @@ module Related
         similarity_scores = related_data.map do |related_post, length|
           {
             "post" => related_post,
-            "score" => (current_post.content.length - length).abs
+            "score" => -(current_post.content.length - length).abs
           }
-        end.sort_by { |item| item["score"] }
+        end.sort_by { |item| -item["score"] }
         current_post.data["related"] = similarity_scores
       end
     end
