@@ -31,7 +31,7 @@
       <main class="page-content">
         <div class="wrapper">
           <xsl:apply-templates select="atom:feed" />
-          <ul class="atom-post-list">
+          <ul class="concise-post-list">
             <xsl:apply-templates select="atom:feed/atom:entry" />
           </ul>
         </div>
@@ -68,7 +68,7 @@
 
   <xsl:template match="atom:entry">
     <li>
-      <div class="atom-post-list-entry">
+      <div class="concise-post-list-entry">
 
         <a target="_blank">
           <xsl:attribute name="href">

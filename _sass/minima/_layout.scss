@@ -185,11 +185,11 @@ p.excerpt-warning {
 }
 
 /**
- * Atom feed preview
- * Same styling is used on the "Browse" page
+ * Concise bulleted list of posts
+ * Used e.g. in Atom feed preview and on the "Browse" page
  */
-ul.atom-post-list {
-  li .atom-post-list-entry span {
+ul.concise-post-list {
+  li .concise-post-list-entry span {
     white-space: nowrap;
   }
 }
