@@ -32,7 +32,7 @@ layout: default
       <li>
         <div class="concise-post-list-entry">
           <a href="{{ item.post.url | relative_url }}"
-            title="Similarity score: {{ item.score }}"
+            title="Similarity score: {{ item.score | times: 1000 | round }}"
           >
             {{- item.post.title | escape -}}
           </a>
