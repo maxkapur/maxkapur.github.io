@@ -22,6 +22,10 @@ markdown: "kramdown"
 kramdown:
   math_engine: "katex"  # Let kramdown render KaTeX during build process
 
+# Plugin settings
+related:
+  count: 2
+
 pagination:
   enabled: true
 
