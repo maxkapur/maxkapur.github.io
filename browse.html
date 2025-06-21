@@ -45,10 +45,10 @@ permalink: /browse/
 <h1>Posts</h1>
 
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-<ul class="atom-post-list">
+<ul class="concise-post-list">
   {%- for post in site.posts -%}
   <li>
-    <div class="atom-post-list-entry">
+    <div class="concise-post-list-entry">
       <a target="_blank" href="{{ post.url | relative_url }}">
         {{- post.title | escape -}}
       </a>
