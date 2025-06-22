@@ -19,40 +19,13 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if page.related %}
-  <div class="related-posts">
-    <p>
-    Related posts:
-    <ul class="concise-post-list">
-      {%- comment -%}
-        Need to compare .hidden != true as default (not hidden) value is nil
-      {%- endcomment -%}
-      {%- assign related = page.related | where_exp: "item", "item.post.hidden != true" -%}
-      {%- for item in related limit: site.related.count %}
-      <li>
-        <div class="concise-post-list-entry">
-          <a href="{{ item.post.url | relative_url }}"
-            title="Similarity score: {{ item.score | times: 1000 | round }}"
-          >
-            {{- item.post.title | escape -}}
-          </a>
-          &ZeroWidthSpace;
-          <span class="post-meta">
-            (<time datetime="{{ item.post.date | date_to_xmlschema }}">
-            {{- item.post.date | date: date_format -}}
-            </time>)
-          </span>
-        </div>
-        {%- endfor -%}
-      </li>
-    </ul>
-    </p>
-  </div>
+  {%- if site.related and site.related.count > 0 -%}
+    {%- include related.html -%}
   {%- endif %}
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
-  {%- endif -%}
+  {%- endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
