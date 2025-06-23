@@ -15,13 +15,6 @@ rss: "via RSS"
 excerpt_separator: "<!--more-->"
 future: false  # Don't publish posts dated in future
 show_excerpts: true  # on homepage
-
-gems: [jekyll-paginate-v2]
-
-plugins:
-  - "jekyll-redirect-from"
-  - "jekyll-paginate-v2"
-
 theme: "minima"
 
 # Select markdown processor. kramdown is the default
