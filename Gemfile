@@ -12,11 +12,9 @@ gem "jekyll", "~> 4.4"
 group :jekyll_plugins do
   gem "jekyll-paginate-v2", "~> 3.0"
   gem "jekyll-redirect-from", "~> 0.16"
+  gem "jekyll-related", git: "https://github.com/maxkapur/jekyll-related"
   gem "jekyll-seo-tag", "~> 2.8"
   gem "jekyll-sitemap", "~> 1.4"
-
-  # For related posts plugin
-  gem "tokenizer", "~> 0.3.0"
 end
 
 group :jekyll_deps do
