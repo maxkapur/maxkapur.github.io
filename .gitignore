@@ -9,15 +9,6 @@ vendor
 # Managed by Rakefile
 .bundle/config
 
-# From micro editor
-log.txt
-
-# Larger versions of favicons, images
-*-large.jpg
-
 # `bundle install` produces a slightly different lockfile on different Linux
 # distributions
 Gemfile.lock
-
-# conda environment prefix
-.conda
