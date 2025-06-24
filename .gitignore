@@ -6,6 +6,9 @@ _site
 # bundle install local targets
 vendor
 
+# Managed by Rakefile
+.bundle/config
+
 # From micro editor
 log.txt
 
