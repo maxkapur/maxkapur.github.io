@@ -27,11 +27,8 @@ pagination:
 
 # Exclude from processing (and therefore from _site/)
 exclude:
-  - ".conda/"
   - "README.md"
   - "**/README.md"
-  - "*.sh"
-  - "**/*.sh"
 
 # Jekyll also automatically excludes files with a leading underscore in their
 # name, as well as the following default excludes:
