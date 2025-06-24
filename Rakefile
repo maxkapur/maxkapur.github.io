@@ -71,8 +71,19 @@ end
 begin
   task bundle_install: [TASK_SENTINELS[:bundle_install]]
 
-  file TASK_SENTINELS[:bundle_install] => ["./Gemfile"] do
+  file "./.bundle/config" do
     try_install_apt_dependencies
+    puts "# Configure bundle"
+    sh(*"bundle config set --local path ./vendor".split)
+
+    # If this bundle exists locally, depend on it locally to ease development
+    devdir = File.absolute_path("../jekyll-related")
+    if File.directory?(devdir)
+      sh "bundle", "config", "set", "local.jekyll-related", devdir
+    end
+  end
+
+  file TASK_SENTINELS[:bundle_install] => ["./Gemfile", "./.bundle/config"] do
     puts "# Install Ruby dependencies"
     sh(*"bundle install --jobs 4".split)
   end
