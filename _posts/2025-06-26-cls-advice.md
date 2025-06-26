@@ -7,8 +7,8 @@ Awesome people occasionally reach out to ask me about the US State Department’
 [Critical Language Scholarship](https://clscholarship.org/) (CLS) program.
 I participated in CLS Korean in
 2016, and I *still* find myself learning from the experiences I had in Gwangju
-all those years ago—and that's with four additional years of living in Korea
-and several visits in between.
+all those years ago (and that's with four additional years of living in Korea
+and several visits in between).
 
 This year’s CLS cohort is getting started now or so, so I thought I would
 write up a couple of tips for making the most of the program that I’ve
@@ -31,9 +31,8 @@ collected and shared over the years.
    especially true for “elder” CLS participants (grad students and up), whom
    younger participants tend to see as role models in adapting to unforeseen
    challenges.
-4. Buy an umbrella in Korea.
-   [Read the reviews of your average American umbrella](https://www.cvs.com/shop/weather-station-folding-automatic-oversize-umbrella-assorted-colors-prodid-457782-reviews)
-   if you need a reminder of why.
+4. Buy an umbrella in Korea and
+   [thank me later](https://www.cvs.com/shop/weather-station-folding-automatic-oversize-umbrella-assorted-colors-prodid-457782-reviews).
 
 And please <a href="mailto:{{site.email}}">email me</a> if you are on CLS this
 year and have any stories to share! I still have a
