@@ -19,8 +19,11 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.related and site.related.count > 0 -%}
-    {%- include related.html -%}
+  {%- if site.related -%}
+  <div class="related-posts">
+    <p>Related posts:</p>
+    {% related %}
+  </div>
   {%- endif %}
 
   {%- if site.disqus.shortname -%}
