@@ -13,8 +13,8 @@ isn’t enough (I burned through the free 100 searches in a week), and for
 unlimited searches, you have to pay \$10 for a bundle deal that also includes AI
 stuff I don’t care about. Kagi wants to become an everything app (probably
 [adding email soon](https://olly.pagecord.com/some-thoughts-on-kagi-search-after-two-months)),
-which is tough to sell while claiming to be a privacy-focused company. (Same
-issue with Proton, by the way.)
+which a tough sell while claiming to be a privacy-focused company. (Same issue
+with Proton, by the way.)
 
 [Fender Studio:](https://www.fender.com/pages/fender-studio) Fender, the guitar
 company, just kind of threw this over the fence in May. It’s a free (but not
@@ -33,4 +33,4 @@ like an automated style guide than a chatty editor. But my homegrown
 `typography.py` script (I need to upload this to GitHub sometime) enforces a few
 lesser irks, such as
 [en dashes in numerical ranges](https://editorsmanual.com/articles/number-ranges/),
-that Proselint lets be, so I’m using both.
+that Proselint lets be, so I’m still using both.
