@@ -103,6 +103,7 @@ begin
 
     puts "Not yet"
     puts "# Attempting sudo install (you may be prompted for password)"
+    sh(*"sudo apt-get update --yes".split)
     sh(*"sudo apt-get install --yes --no-upgrade".split, *APT_DEPENDENCIES)
   end
 end
