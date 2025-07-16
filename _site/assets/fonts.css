@@ -1,0 +1,11 @@
+/*
+    These imports point to CSS files from IBM installed from ./configure.sh. To
+    help regenerate this file after an IBM Plex update, run:
+
+    find assets/fonts/ -iname '*default.min.css'
+
+    This excludes the '*all.min.css' variants, which have more glyphs.
+*/
+@import url("/assets/fonts/ibm-plex-sans/css/ibm-plex-sans-default.min.css");
+@import url("/assets/fonts/ibm-plex-mono/css/ibm-plex-mono-default.min.css");
+@import url("/assets/fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css");
