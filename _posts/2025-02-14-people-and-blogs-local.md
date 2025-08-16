@@ -182,7 +182,7 @@ and anecdotes about the role of storytelling in the modern workplace.
 I’ve followed [Futility Closet](https://www.futilitycloset.com/) since I learned
 how to work the internet.
 
-I love [Airplane on a Treadmill](http://www.airplaneonatreadmill.com/),
+I love <a href="http://www.airplaneonatreadmill.com/" data-proofer-ignore>Airplane on a Treadmill</a>,
 specifically for this opening line:
 
 > I created this blog specifically to make this post. It may be the only post I
