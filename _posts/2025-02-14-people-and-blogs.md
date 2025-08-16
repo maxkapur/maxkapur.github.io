@@ -1,10 +1,12 @@
 ---
 layout: post
 title: People and Blogs interview
+date: 2025-02-14T13:00:00
 ---
 
 Manuel Moreale, a tireless indie web advocate, recently
-[had me as a guest on his People and Blogs series](https://manuelmoreale.com/pb-max-kapur).
+[had me as a guest on his People and Blogs series](https://manuelmoreale.com/pb-max-kapur)
+([local mirror]({% post_url 2025-02-14-people-and-blogs-local %})).
 Welcome to anyone visiting this site via Manu’s feed! Take a look around and
 [let me know](mailto:{{ site.email }}) what you think.
 
