@@ -19,7 +19,7 @@ end
 
 group :jekyll_deps do
   # Dependencies of Jekyll that we version explicitly
-  gem "json", "~> 2.9"
+  gem "json", "~> 2.13"
   gem "kramdown", "~> 2.5"
 end
 
