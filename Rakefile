@@ -1,3 +1,4 @@
+require "curb"
 require "tmpdir"
 require "rake/clean"
 
@@ -51,7 +52,7 @@ TASK_SENTINELS = {
 
 APT_DEPENDENCIES = [
   "build-essential",
-  "curl",
+  "libcurl4-openssl-dev",
   "ruby-bundler",
   "ruby-full",
   "unzip",
@@ -114,21 +115,21 @@ begin
 
   file TASK_SENTINELS[:ibm_plex_download_extract] => [FONT_ASSETS_DIR] do
     puts "# Download & extract IBM Plex fonts"
-    sources = {
-      ibm_plex_mono: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
-      ibm_plex_sans: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
-      ibm_plex_sans_kr: "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
+    urls = [
+      "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
+      "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
+      "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip"
+    ]
+    options = {
+      timeout: 30,
+      on_success: proc { |easy| puts "Downloaded #{easy.url} to #{easy.output}" },
+      on_failure: proc { |easy, code| puts "Failed to download #{easy.url} (#{code})" }
     }
+
     Dir.mktmpdir do |tempd|
-      sources.map do |basename, url|
-        puts "# Download #{url.split("/")[-1]}"
-        zipfile = "#{tempd}/#{basename}.zip"
-        # -s: silent mode
-        # -S: but show errors
-        # -L: follow redirect
-        sh "curl", "-sSL", url, "-o", zipfile
-        zipfile
-      end.each do |zipfile|
+      download_paths = urls.map { |url| (url.split "/").last }.map { |basename| "#{tempd}/#{basename}" }
+      Curl::Multi.download(urls, easy_options=options,multi_options= {}, download_paths= download_paths)
+      download_paths.each do |zipfile|
         puts "# Unzip #{zipfile} to #{FONT_ASSETS_DIR}"
         # -q: quiet mode
         # -o: overwrite existing without prompting
