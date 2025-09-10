@@ -209,6 +209,7 @@ begin
     print "# Check stability of URL schema: "
     f = "./_site/2022/06/25/migrating-to-jekyll.html"
     fail unless File.file?(f)
+
     puts "#{f} exists"
   end
 
