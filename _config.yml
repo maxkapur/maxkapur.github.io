@@ -32,6 +32,7 @@ pagination:
 
 # Exclude from processing (and therefore from _site/)
 exclude:
+  - "Rakefile"
   - "README.md"
   - "**/README.md"
 
