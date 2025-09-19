@@ -47,7 +47,7 @@ Luckily, Ipopt/cyipopt is the only such case I could find in
 [anyone(ish)](https://pypi.org/account/register/) can post packages on PyPI, so
 the current behavior of Dependabot creates new opportunities for typo-squatting
 attacks on conda users. As
-[Jannis Leidel](github.com/dependabot/dependabot-core/issues/2227#issuecomment-3307935405)
+[Jannis Leidel](https://github.com/dependabot/dependabot-core/issues/2227#issuecomment-3307935405)
 (a conda maintainer) put it, “This premature rollout makes the conda ecosystem
 less secure and shouldn't have occurred.”
 
