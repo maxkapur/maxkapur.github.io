@@ -5,7 +5,7 @@ gem "bigdecimal", "~> 3.2"
 gem "csv", "~> 3.3"
 gem "html-proofer", "~> 5.0"
 gem "logger", "~> 1.6"
-gem "standard", "~> 1.31"
+gem "standard", "~> 1.51"
 
 gem "jekyll", "~> 4.4"
 
@@ -19,7 +19,7 @@ end
 
 group :jekyll_deps do
   # Dependencies of Jekyll that we version explicitly
-  gem "json", "~> 2.13"
+  gem "json", "~> 2.14"
   gem "kramdown", "~> 2.5"
 end
 
