@@ -7,7 +7,7 @@ This post explains how I set up server-side KaTeX rendering to improve the load
 time on pages that include mathematical notation.<!--more-->
 
 KaTeX is a math typesetting library that lets you render nice-looking math
-equations like $$f(x) = e^{rt}$$ inside of an HTML document. As the [KaTeX
+equations like $$f(t) = e^{rt}$$ inside of an HTML document. As the [KaTeX
 documentation describes](https://katex.org/docs/autorender), the easiest way to
 use KaTeX is to import their CSS and JavaScript from your website’s `<head>`
 element by adding these three lines:
@@ -20,7 +20,7 @@ element by adding these three lines:
 ```
 
 With this client-side setup, visitors to your site only receive the KaTeX
-“source” (something like `$$f(x) = e^{rt}$$`) from your server, and then their
+“source” (something like `$$f(t) = e^{rt}$$`) from your server, and then their
 computer runs the code (KaTeX) that transforms this into MathML and tells the
 browser how to style and arrange the individual symbols.
 
