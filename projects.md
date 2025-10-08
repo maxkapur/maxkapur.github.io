@@ -40,7 +40,7 @@ If you are interested in professional collaboration, please [email me](mailto:{{
 or reach out on
 [LinkedIn](https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}).
 
-# Public coding projects
+# Open source contributions
 
 See my pins on [GitHub](https://github.com/maxkapur).
 
