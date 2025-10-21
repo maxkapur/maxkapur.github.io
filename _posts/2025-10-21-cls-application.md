@@ -15,7 +15,7 @@ languages require prior language study; others accept beginners.
 *Feel free to <a href="mailto:{{site.email}}">email me</a>* if you are
 considering the CLS program or have questions about the experience. I completed
 CLS Korean in 2016 and have kept in touch with participants from lots of cohorts
-since then. Here is my [advice post](%- post_url 2025-06-26-cls-advice -%}).
+since then. Here is my [advice post]({%- post_url 2025-06-26-cls-advice -%}).
 
 Good CLS blogs:
 
