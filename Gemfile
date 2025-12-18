@@ -1,11 +1,11 @@
 source "https://rubygems.org"
 
 gem "base64", "~> 0.2"
-gem "bigdecimal", "~> 3.3"
+gem "bigdecimal", "~> 4.0"
 gem "csv", "~> 3.3"
 gem "html-proofer", "~> 5.0"
 gem "logger", "~> 1.6"
-gem "standard", "~> 1.51"
+gem "standard", "~> 1.52"
 
 gem "jekyll", "~> 4.4"
 
@@ -19,7 +19,7 @@ end
 
 group :jekyll_deps do
   # Dependencies of Jekyll that we version explicitly
-  gem "json", "~> 2.15"
+  gem "json", "~> 2.18"
   gem "kramdown", "~> 2.5"
 end
 
