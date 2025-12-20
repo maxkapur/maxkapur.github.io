@@ -199,7 +199,7 @@ Among the remaining couples, even without a Truth Booth result, we may know
 *implicitly* that they go together, because all matchings in which they don't
 are contradicted by the sum of our clues. To detect if $$(i, j)$$ from the best
 matching is an implicit perfect match, we can solve another IP, which consists
-of the best matching IP with the additional constraint $$x_{ij} == 0$$. If this
+of the best matching IP with the additional constraint $$x_{ij} = 0$$. If this
 adjusted IP is *infeasible,* then $$(i, j)$$ is an implicit perfect match, so
 we shouldn't submit that couple to the truth booth.
 
