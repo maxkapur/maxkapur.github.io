@@ -317,7 +317,7 @@ prove that certain strategies strike an ideal (in a technical sense) balance bet
 exploration and exploitation.
 
 I doubt that my algorithm attains the optimal probability of winning for
-my problem setup, even in special case of experiment&nbsp;3 (where the 100% figure
+my problem setup, even in the special case of experiment&nbsp;3 (where the 100% figure
 is merely empirical; if you keep running my script, you'll see losses here and there).
 The information-theoretic concepts introduced in Owen's blog post can be applied to arbitrary, not just
 uniform, distributions over matchings, including the conditional distribution of
