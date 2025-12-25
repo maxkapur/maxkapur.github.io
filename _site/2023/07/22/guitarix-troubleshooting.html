@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Guitarix troubleshooting | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Guitarix troubleshooting | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Guitarix troubleshooting" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="For the past few updates of Guitarix, I have been having issues where changing the JACK server latency causes the audio output to go crazy. This seems to stem from changes that the developer has been making to the config files, because the following commands usually get things working again: mv ~/.config/guitarix ~/.config/guitarix.backup mkdir ~/.config/guitarix cp -r ~/.config/guitarix.backup/banks ~/.config/guitarix/banks These commands backup your amp/effects presets from ~/.config/guitarix/banks (which are the hard part to restore manually), and let the default settings take over the next time the application is launched." />
+<meta property="og:description" content="For the past few updates of Guitarix, I have been having issues where changing the JACK server latency causes the audio output to go crazy. This seems to stem from changes that the developer has been making to the config files, because the following commands usually get things working again: mv ~/.config/guitarix ~/.config/guitarix.backup mkdir ~/.config/guitarix cp -r ~/.config/guitarix.backup/banks ~/.config/guitarix/banks These commands backup your amp/effects presets from ~/.config/guitarix/banks (which are the hard part to restore manually), and let the default settings take over the next time the application is launched." />
+<link rel="canonical" href="https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html" />
+<meta property="og:url" content="https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Guitarix troubleshooting" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2023-07-22T00:00:00+00:00","datePublished":"2023-07-22T00:00:00+00:00","description":"For the past few updates of Guitarix, I have been having issues where changing the JACK server latency causes the audio output to go crazy. This seems to stem from changes that the developer has been making to the config files, because the following commands usually get things working again: mv ~/.config/guitarix ~/.config/guitarix.backup mkdir ~/.config/guitarix cp -r ~/.config/guitarix.backup/banks ~/.config/guitarix/banks These commands backup your amp/effects presets from ~/.config/guitarix/banks (which are the hard part to restore manually), and let the default settings take over the next time the application is launched.","headline":"Guitarix troubleshooting","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html"},"url":"https://maxkapur.com/2023/07/22/guitarix-troubleshooting.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Guitarix troubleshooting</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-07-22T00:00:00+00:00" itemprop="datePublished">
+        Jul 22, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>For the past few updates of <a href="https://guitarix.org/">Guitarix</a>, I have been
+having issues where changing the JACK server latency causes the audio output
+to go crazy. This seems to stem from changes that the developer has been
+making to the config files, because the following commands usually get things
+working again:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> ~/.config/guitarix ~/.config/guitarix.backup
+<span class="nb">mkdir</span> ~/.config/guitarix
+<span class="nb">cp</span> <span class="nt">-r</span> ~/.config/guitarix.backup/banks ~/.config/guitarix/banks
+</code></pre></div></div>
+
+<p>These commands backup your amp/effects presets from <code class="language-plaintext highlighter-rouge">~/.config/guitarix/banks</code>
+(which are the hard part to restore manually), and let the default settings
+take over the next time the application is launched.</p>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2025/06/04/kubuntu-setup.html"
+        title="Similarity score: 245"
+      >My poorly automated Kubuntu setup</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2025-06-04T00:00:00+00:00">Jun 4, 2025</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2025/09/18/tension-condaverse.html"
+        title="Similarity score: 212"
+      >Tensions rise in the condaverse</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2025-09-18T00:00:00+00:00">Sep 18, 2025</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2023/07/22/guitarix-troubleshooting.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

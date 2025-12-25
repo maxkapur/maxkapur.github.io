@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Illusion Slopes (page 13) | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Page 13 of 16 for Illusion Slopes (page 13) | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Illusion Slopes (page 13)" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<meta property="og:description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<link rel="canonical" href="https://maxkapur.com/page/13/" />
+<meta property="og:url" content="https://maxkapur.com/page/13/" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="website" />
+<link rel="prev" href="https://maxkapur.com/page/12/" />
+<link rel="next" href="https://maxkapur.com/page/14/" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Illusion Slopes (page 13)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Max Kapur"},"description":"I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.","headline":"Illusion Slopes (page 13)","url":"https://maxkapur.com/page/13/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+    <div class="post-list"><div class="post-list-item"><span class="post-meta">
+          <time datetime="2022-05-04T00:00:00+00:00">May 4, 2022</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2022/05/04/college-application-on-arxiv.html">
+            “College Application” on arXiv
+          </a>
+        </h2><p>In advance of a conference I will be attending with my labmates next month in Jeju, my thesis advisor and I have posted a preliminary version of <a href="https://arxiv.org/abs/2205.01869">“The College Application Problem” on arXiv</a>. Here’s the abstract:</p>
+
+<blockquote>
+  <p>This paper considers the maximization of the expected maximum value of a portfolio of random variables subject to a budget constraint. We refer to this as the optimal college application problem. When each variable’s cost, or each college’s application fee, is identical, we show that the optimal portfolios are nested in the budget constraint, yielding an exact polynomial-time algorithm. When colleges differ in their application fees, we show that the problem is NP-complete. We provide four algorithms for this more general setup: a branch-and-bound routine, a dynamic program that produces an exact solution in pseudopolynomial time, a different dynamic program that yields a fully polynomial-time approximation scheme, and a simulated-annealing heuristic. Numerical experiments demonstrate the algorithms’ accuracy and efficiency.</p>
+</blockquote>
+
+<p>Rolling updates to the paper as well as various slideshows presenting the research are <a href="https://github.com/maxkapur/CollegeApplication">available on GitHub</a>.</p>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2022-04-14T00:00:00+00:00">Apr 14, 2022</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2022/04/14/school-location-problem.html">
+            The school location problem
+          </a>
+        </h2><p>I’ve spent a few days thinking about a facility location problem that
+we might call the <em>school location problem.</em> The goal is to place <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>
+schools to serve <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> families, such that the <em>furthest</em> distance
+between any family and their <em>nearest</em> school is <em>minimized.</em> This
+problem is almost a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-means or ellipsoid fitting problem, but its
+unusual “minimin” form makes it computationally challenging.</p>
+
+<p>In the video below, and associated Jupyter notebook (<a href="https://gist.github.com/maxkapur/e907289b457ebee8e3a191cbda7f7381">GitHub</a>, <a href="https://nbviewer.org/urls/gist.githubusercontent.com/maxkapur/e907289b457ebee8e3a191cbda7f7381/raw/37cd78433076b0f880ef3d645a93ef278abce33d/SchoolLocation.ipynb">HTML viewer</a>), I discuss the formulation of this problem, show to express it as a mixed-integer second-order convex program, and then solve a small instance using the Julia/JuMP/Juniper/SCS stack.</p>
+
+<p>Here’s the <a href="https://www.youtube.com/watch?v=/bjreiQRHerU">video link</a>.</p>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2021-10-21T00:00:00+00:00">Oct 21, 2021</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2021/10/21/administrative-allocative-efficiency.html">
+            Administrative vs. allocative efficiency
+          </a>
+        </h2><p>This fall marks my final semester of coursework, and penultimate semester overall, of the master’s course in industrial engineering here at Seoul National University. I’m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.</p>
+
+<p>Recently, I have been focusing on risk-averse behavior in college applications. In an ideal universe, college applications are completely standardized and there are no constraints on students’ ability to apply to many schools or on schools’ ability to assess a large number of applicants. In reality, many highly qualified students fail to apply to top schools because they doubt their ability to get in or receive a sufficient financial-aid package. For these students, the time and money required to submit an additional application to a so-called reach school takes away from time that could be spent refining an application to a target school. This opportunity cost is not trivial, because modern admissions offices strongly prefer students who tailor their personal statement to the characteristics and interests of the target school or program.</p>
+
+<p class="excerpt-warning">
+	        <a href="/2021/10/21/administrative-allocative-efficiency.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2021-05-16T00:00:00+00:00">May 16, 2021</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2021/05/16/economic-view-korean-admissions.html">
+            An economic view of the Korean college admissions market
+          </a>
+        </h2><p>Existing computational models of admissions markets tend to fall at one of two extremes: Either they envision a <em>centralized</em> admissions process in which the school board runs an algorithm that says which students go where, or a <em>decentralized</em> process in which colleges compete for the best students. But the Korean college admissions process cannot be adequately described in either of these terms.</p>
+
+<p class="excerpt-warning">
+	        <a href="/2021/05/16/economic-view-korean-admissions.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2021-03-07T00:00:00+00:00">Mar 7, 2021</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2021/03/07/stable-matching-planet-money.html">
+            Stable matching on Planet Money
+          </a>
+        </h2><p><em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled “The Marriage Pact”</a> that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.</p>
+
+<p>The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that <em>Planet Money</em> leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.</p>
+
+<p class="excerpt-warning">
+	        <a href="/2021/03/07/stable-matching-planet-money.html">Read more →</a>
+          </p></div></div>
+
+    <div class="page-switcher">
+      <div><a href="/page/12/">Previous page</a></div>
+
+      <div><a href="/page/14/">Next page</a></div>
+    </div>
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

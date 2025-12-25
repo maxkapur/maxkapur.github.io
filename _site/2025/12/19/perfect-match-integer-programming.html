@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Find your perfect match with integer programming | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Find your perfect match with integer programming | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Find your perfect match with integer programming" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Owen Lacey blogged about a reality game show called Are You the One? in which contestants win a prize by guessing the soulmate ordained for them by the show’s producers. Specifically, there are nnn men and nnn women, and each one has an unknown “perfect” match; to win the prize, the contestants (as a group) must pair everyone up correctly. During each episode, the contestants get two kinds of clues: Truth Booth, where the contestants submit a single couple and learn whether that couple is a perfect match. Match Up, where the contestants submit a matching (assigning everyone to a couple) and learn the number (but not the identity) of perfect matches present in their matching. The game ends after Match Up if all nnn couples in the matching are correct. Definitely check out Owen’s post, which has a better (and illustrated!) explanation of the rules. Below, I present an efficient algorithm for playing Are You the One. It exploits both the informational clues and contestants’ intuitions to find perfect matches quickly. With modest assumptions on the quality of players’ intuitions, my algorithm wins by episode 10 in 100% of simulated seasons." />
+<meta property="og:description" content="Owen Lacey blogged about a reality game show called Are You the One? in which contestants win a prize by guessing the soulmate ordained for them by the show’s producers. Specifically, there are nnn men and nnn women, and each one has an unknown “perfect” match; to win the prize, the contestants (as a group) must pair everyone up correctly. During each episode, the contestants get two kinds of clues: Truth Booth, where the contestants submit a single couple and learn whether that couple is a perfect match. Match Up, where the contestants submit a matching (assigning everyone to a couple) and learn the number (but not the identity) of perfect matches present in their matching. The game ends after Match Up if all nnn couples in the matching are correct. Definitely check out Owen’s post, which has a better (and illustrated!) explanation of the rules. Below, I present an efficient algorithm for playing Are You the One. It exploits both the informational clues and contestants’ intuitions to find perfect matches quickly. With modest assumptions on the quality of players’ intuitions, my algorithm wins by episode 10 in 100% of simulated seasons." />
+<link rel="canonical" href="https://maxkapur.com/2025/12/19/perfect-match-integer-programming.html" />
+<meta property="og:url" content="https://maxkapur.com/2025/12/19/perfect-match-integer-programming.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-19T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Find your perfect match with integer programming" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2025-12-19T00:00:00+00:00","datePublished":"2025-12-19T00:00:00+00:00","description":"Owen Lacey blogged about a reality game show called Are You the One? in which contestants win a prize by guessing the soulmate ordained for them by the show’s producers. Specifically, there are nnn men and nnn women, and each one has an unknown “perfect” match; to win the prize, the contestants (as a group) must pair everyone up correctly. During each episode, the contestants get two kinds of clues: Truth Booth, where the contestants submit a single couple and learn whether that couple is a perfect match. Match Up, where the contestants submit a matching (assigning everyone to a couple) and learn the number (but not the identity) of perfect matches present in their matching. The game ends after Match Up if all nnn couples in the matching are correct. Definitely check out Owen’s post, which has a better (and illustrated!) explanation of the rules. Below, I present an efficient algorithm for playing Are You the One. It exploits both the informational clues and contestants’ intuitions to find perfect matches quickly. With modest assumptions on the quality of players’ intuitions, my algorithm wins by episode 10 in 100% of simulated seasons.","headline":"Find your perfect match with integer programming","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2025/12/19/perfect-match-integer-programming.html"},"url":"https://maxkapur.com/2025/12/19/perfect-match-integer-programming.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Find your perfect match with integer programming</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-12-19T00:00:00+00:00" itemprop="datePublished">
+        Dec 19, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Owen Lacey
+<a href="https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/">blogged</a> about
+a reality game show called <em>Are You the One?</em> in which contestants win a
+prize by guessing the soulmate ordained for them by the show’s producers.
+Specifically, there are <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> men and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> women, and each one has an unknown
+“perfect” match; to win the prize, the contestants (as a group) must pair
+everyone up correctly.</p>
+
+<p>During each episode, the contestants get two kinds of clues:</p>
+
+<ol>
+  <li>Truth Booth, where the contestants submit a single <em>couple</em> and learn whether
+that couple is a perfect match.</li>
+  <li>Match Up, where the contestants submit a <em>matching</em> (assigning everyone to a
+couple) and learn the number (but not the identity) of perfect matches
+present in their matching.</li>
+</ol>
+
+<p>The game ends after Match Up if all <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> couples in the matching are correct.
+Definitely check out Owen’s post, which has a better (and illustrated!)
+explanation of the rules.</p>
+
+<p>Below, I present an efficient algorithm for playing Are You the One.
+It exploits both the informational clues and contestants’ intuitions to find
+perfect matches quickly. With modest assumptions on the quality of
+players’ intuitions, my algorithm wins by episode 10 in 100% of simulated
+seasons.<!--more--></p>
+
+<p>(I will style the name of the show as <em>Are You the One?</em> and the name of the
+underlying game as just Are You the One.)</p>
+
+<h1 id="owens-algorithm-eliminate-alternatives-with-information-theory">Owen’s algorithm: Eliminate alternatives with information theory</h1>
+
+<p>To set the stage, let me summarize Owen’s approach. In short, he chooses Truth
+Booth and Match Up submissions on the basis of the expected information to be gained.</p>
+
+<p>Imagine writing down a list of all <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span></span></span></span> possible matchings at the beginning of
+the season. If, in the episode 1 Truth Booth, we learn that Alice and
+Bob <em>aren’t</em> a perfect match, we can cross off all <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n! / n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span> matchings that
+include this couple. That’s progress.</p>
+
+<p>Similarly, after we get our Match Up score
+at the end of the episode, we can examine each possible matching and ask, “If this
+were the ground truth, what would have been our guess’s Match Up score?” If the
+observed score differs, then that rules out that matching.</p>
+
+<p>As the season evolves,
+Owen’s goal is to narrow things down as quickly as possible by submitting the guesses
+that eliminate the most matchings. Thus, in both subgames, his algorithm has us
+simulate each potential guess against each potential matching. We count up the
+average number of matchings that each guess would cross out. The logarithm of this value
+is called the guess’s <em>entropy.</em> We play the guess with the highest entropy.</p>
+
+<p>This algorithm won the game by episode 10 in 98% of Owen’s simulations—convincing
+evidence that <em>Are You the One?</em> is “pretty much free money.”</p>
+
+<h1 id="my-design-objectives">My design objectives</h1>
+
+<p>Owen’s post left me with two questions.</p>
+
+<p>First, the information-theoretic algorithm is
+pessimistic. It assumes zero intuition about which couples belong together;
+every matching is equally likely. But what if we <em>do</em> have some
+intuition about compatibility—can we exploit this knowledge to
+win sooner, or more consistently?</p>
+
+<ul>
+  <li><strong>Objective 1:</strong> Exploit both clues <em>and</em> contestant intuition to
+maximize the win rate.</li>
+</ul>
+
+<p>Second, computing entropies entails a lot of math. In Truth Booth and Match Up
+alike, to count the number of eliminations, we have little choice but to scan
+the full, long list of potential matchings. There’s no shortcut, because previous
+eliminations interact with new clues in complicated ways. And we have to run that
+scan for <em>every</em> possible guess. Owen
+applied a few clever optimizations to avoid provably wrong guesses, but it’s
+hard to salvage factorial time complexity:</p>
+
+<blockquote>
+  <p>I ran this information theory simulation 41 times (for no other reason than I
+got bored waiting)</p>
+</blockquote>
+
+<p>Can we make our algorithm computationally efficient? Here’s an arbitrary benchmark
+that I totally didn’t come up with until after testing my code.</p>
+
+<ul>
+  <li><strong>Objective 2:</strong> Simulate 100 seasons in under 1 minute on an unremarkable
+desktop (AMD Ryzen 5 4600G processor, 16GB of RAM).</li>
+</ul>
+
+<p>Point of emphasis: With these objectives, my algorithm and Owen’s aren’t really
+in competition. My problem setup is more generous (players have additional
+information at the outset), and my goals (win more, simulate faster) are
+therefore more ambitious.</p>
+
+<h1 id="my-algorithm-balance-intuition-and-informational-constraints">My algorithm: Balance intuition and informational constraints</h1>
+
+<p>My model of Are You the One includes three components:</p>
+
+<ol>
+  <li>A statistical model of the “vibes” that contestants get about each couple’s compatibility</li>
+  <li>An algorithm for choosing which couple to guess for Truth Booth</li>
+  <li>An algorithm for choosing which matching to guess for Match Up</li>
+</ol>
+
+<p>The statistical model lets us slide the strength of contestants’ intuition
+up and down to experiment with how it affects the win rate.
+The guessing algorithms are based on integer programming (IP), an operations research
+technique that lets us optimize for a goal (my guess reflects my intuition)
+while applying logical constraints (my guess doesn’t contradict any clues).
+IP solvers don’t need to iterate every possible solution or matching, because they
+leverage the problem’s mathematical structure to prune whole families of suboptimal
+solutions from the search space.</p>
+
+<h2 id="statistical-model-of-contestant-intuitions">Statistical model of contestant intuitions</h2>
+
+<p>To generate random instances, my model first assigns each couple a compatibility score
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> drawn from a standard normal distribution. These values represent
+the “true” compatibility of man <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> with woman <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> (according to the
+show’s producers). We then solve the
+<a href="https://en.wikipedia.org/wiki/Assignment_problem">maximum-weight bipartite matching</a>
+problem to obtain the ground-truth perfect matching.</p>
+
+<p>This computation sounds fancier than
+it is; the idea is to match everyone up in a way that maximizes the overall
+sum of compatibility scores. <a href="/2021/03/07/stable-matching-planet-money.html">More sophisticated matching algorithms</a>
+exist, but the maximum-weight procedure suits our purposes well.
+It generates each of the possible <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span></span></span></span> matchings with equal probability, and
+it comes with extra data <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> that we can use to drive intuitions.</p>
+
+<p>Contestants don’t get to see <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>, but instead observe
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>, which is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> plus a normal variate with mean zero and
+standard deviation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">s</span></span></span></span></span></span></span></span></span></span></span></span>. Here <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> represents the strength of
+contestants’ intuition. If <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≪</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s \ll 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, then their intuitions are essentially
+random noise; if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≫</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s \gg 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≫</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> then their intuitions are spot-on.</p>
+
+<p>The strength parameter <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> enables us to test how bad players’ intuitions
+can get before a pessimistic algorithm like Owen’s has better odds of
+winning than one based on vibes. I chose to scale <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> exponentially on the
+hunch that this would yield a roughly linear relationship between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> and the
+number of turns to win (which turned out to be true).</p>
+
+<h2 id="match-up-algorithm">Match Up algorithm</h2>
+
+<p>I’ll present my algorithm for Match Up first, because the Truth Booth algorithm
+builds on it.</p>
+
+<p>In my algorithm, we pick the guess for Match Up that best resonates with our
+vibes without contradicting any of the clues we’ve gathered. Formally, we compute
+the maximum-weight bipartite matching using the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> values as the weights,
+while applying logical constraints generated by previous rounds of Truth Booth
+and Match Up.</p>
+
+<p>Let the binary decision variable <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> equal one if man
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> matches with woman <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> in our Match Up submission, and zero if not.</p>
+
+<p>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> denote the set of couples <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> known (from the Truth Booth) to be
+perfect matches, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><menclose notation="updiagonalstrike"><mi>P</mi></menclose></mrow><annotation encoding="application/x-tex">\cancel{P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3.0833em;"><span class="pstrut" style="height:3.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span><span class="svg-align" style="top:-2.8833em;"><span class="pstrut" style="height:3.0833em;"></span><span style="height:1.0833em;"><svg xmlns="http://www.w3.org/2000/svg" width='100%' height='1.0833em'><line x1='0' y1='100%' x2='100%' y2='0' stroke-width='0.046em'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2em;"><span></span></span></span></span></span></span></span></span> the set of couples known <em>not</em> to be perfect
+matches.</p>
+
+<p>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathcal">M</span></span></span></span> denote the set of Match Up results. The elements of
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathcal">M</span></span></span></span> are tuples <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>M</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(M, k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> is the set of couples <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i,
+j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> submitted, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> is the score.</p>
+
+<p>The solution to the following IP is called the <em>best matching:</em></p>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>maximize</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>subject to</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mi>j</mi><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>P</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><menclose notation="updiagonalstrike"><mi>P</mi></menclose></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munder><mo>∑</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>M</mi></mrow></munder><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mi>k</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>M</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="script">M</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mtext> binary</mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><msup><mo stretchy="false">}</mo><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+  \text{maximize} \quad     &amp; \sum_{i=1}^n \sum_{j=1}^n v_{ij} x_{ij} \\
+  \text{subject to} \quad   &amp; \sum_{j=1}^n x_{ij} = 1 &amp; \forall i \in \{1 \dots n\} \\
+                            &amp; \sum_{i=1}^n x_{ij} = 1 &amp; \forall j \in \{1 \dots n\} \\
+                            &amp; x_{ij} = 1 &amp; \forall (i, j) \in P \\
+                            &amp; x_{ij} = 0 &amp; \forall (i, j) \in \cancel{P} \\
+                            &amp; \sum_{(i, j) \in M} x_{ij} = k &amp; \forall (M, k) \in \mathcal{M} \\
+                            &amp; x_{ij} \text{ binary} &amp; \forall (i, j) \in \{1 \dots n\}^2
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:17.3495em;vertical-align:-8.4248em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:8.9248em;"><span style="top:-10.9248em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord text"><span class="mord">maximize</span></span><span class="mspace" style="margin-right:1em;"></span></span></span><span style="top:-7.5596em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord text"><span class="mord">subject to</span></span><span class="mspace" style="margin-right:1em;"></span></span></span><span style="top:-4.1944em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"></span></span><span style="top:-1.7767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"></span></span><span style="top:-0.2767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"></span></span><span style="top:1.4333em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"></span></span><span style="top:4.1134em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:8.4248em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:8.9248em;"><span style="top:-10.9248em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4138em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-7.5596em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4138em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span><span style="top:-4.1944em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span><span style="top:-1.7767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span><span style="top:-0.2767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span></span></span><span style="top:1.4333em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.809em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mclose mtight">)</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.516em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span><span style="top:4.1134em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord"> binary</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:8.4248em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:5.5596em;"><span style="top:-7.5596em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">}</span></span></span><span style="top:-4.1944em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">}</span></span></span><span style="top:-1.7767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.2767em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833em;"><span style="top:-3.0833em;"><span class="pstrut" style="height:3.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span><span class="svg-align" style="top:-2.8833em;"><span class="pstrut" style="height:3.0833em;"></span><span style="height:1.0833em;"><svg xmlns="http://www.w3.org/2000/svg" width='100%' height='1.0833em'><line x1='0' y1='100%' x2='100%' y2='0' stroke-width='0.046em'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2em;"><span></span></span></span></span></span></span></span><span style="top:1.4333em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathcal">M</span></span></span><span style="top:4.1134em;"><span class="pstrut" style="height:3.6514em;"></span><span class="mord"><span class="mord">∀</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose"><span class="mclose">}</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:8.4248em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+
+<p>The first two constraints define the
+<a href="https://en.wikipedia.org/wiki/Assignment_problem#Solution_by_linear_programming">bipartite matching polytope</a>.
+The following three constraints require that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> agree with our clues.
+The final constraint just says that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> is binary (not a fraction).</p>
+
+<h2 id="truth-booth-algorithm">Truth Booth algorithm</h2>
+
+<p>The Truth Booth is purely informational; we don’t win anything with a correct
+guess. However, in the absence of other clues, a correct guess in Truth
+Booth rules out more matchings than an incorrect guess. So, for the Truth Booth, my
+algorithm tries to make a guess that is <em>not certain,</em> but still <em>likely</em> to be
+correct.</p>
+
+<p>First, we compute the best matching using the IP above. Any of the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span>
+pairs in the best matching is a <em>valid</em> guess for truth booth. But some of them
+are <em>silly</em> guesses, because we already know they are a perfect match; we
+should filter these out (hence the “not certain” criterion above).</p>
+
+<p>The easiest couples to filter out are those that were already revealed as a
+perfect match in a past Truth Booth. No sense submitting them again.</p>
+
+<p>Among the remaining couples, even without a Truth Booth result, we may know
+<em>implicitly</em> that they go together, because all matchings in which they don’t
+are contradicted by the sum of our clues. To detect if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> from the best
+matching is an implicit perfect match, we can solve another IP, which consists
+of the best matching IP with the additional constraint <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_{ij} = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. If this
+adjusted IP is <em>infeasible,</em> then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> is an implicit perfect match, so
+we shouldn’t submit that couple to the truth booth.</p>
+
+<p>The couples that survive these filters are <em>flexible couples,</em>
+i.e. we can identify a matching, compatible with our clues, in which they pair
+with someone else. Among the flexible couples, my heuristic is to guess the
+couple with the <em>highest</em> vibes. This satisfies the “likely” criterion above.</p>
+
+<p>(I experimented with choosing the flexible couple with the <em>poorest</em> vibes.
+There isn’t much of an impact to the bottom-line win rate, but the
+script spends longer solving the integer programs.)</p>
+
+<h1 id="implementation-and-experiments">Implementation and experiments</h1>
+
+<p>I implemented the algorithm in Julia using the JuMP.jl modeling language and
+SCIP solver. You can find all the source code <a href="https://github.com/maxkapur/AreYouTheOne.jl">here on
+GitHub</a>.</p>
+
+<p>I ran three experiments to verify that my algorithm fulfills the design objectives.</p>
+
+<h2 id="experiment-1-intuition-strength-vs-turns-to-win">Experiment 1: Intuition strength vs. turns to win</h2>
+
+<p>For this experiment, we sample <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> uniformly between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">5</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span>. These
+endpoints represent signal-to-noise ratios of 1:32 and 32:1, respectively, so
+the x-axis in the plot below runs the <a href="https://www.etymonline.com/word/gamut">gamut</a>
+from “virtually no intuition” to “spot-on intuition.”</p>
+
+<p>Each point in the scatter plot below corresponds to one full game (one season).
+The y-axis represents how many turns contestants took to make a correct
+guess in Match Up.</p>
+
+<figure>
+  <img class="compact squareborder" alt="Scatter plot showing negative correlation between strength of intuition and turns to win" src="/assets/images/are-you-the-one/strength-vs-nturns.svg" />
+</figure>
+
+<p>We see a roughly linear, negative relationship between intuition strength and
+turns taken. We win by episode 10 most of the time, even on the noisy side
+of the plot.</p>
+
+<h2 id="experiment-2-no-intuition">Experiment 2: No intuition</h2>
+
+<p>To stress-test my algorithm, let’s focus on the left edge of the experiment 1
+plot and slide the intuition strength all the way down to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">s = -\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">∞</span></span></span></span>. (What I actually do is
+delete <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> entirely from the expression for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> and sample
+the vibes as pure Gaussian noise.)</p>
+
+<p>This case is similar to Owen’s setup. Participants have no intuition about which
+couples are perfect matches, and their vibes <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> serve only to give the IP
+solver something to optimize.</p>
+
+<p>The histogram below shows how many episodes contestants typically need to win.</p>
+
+<figure>
+  <img class="compact squareborder" alt="Histogram showing number of turns to win with intuition fixed to negative infinity. A bell curve centered around 8 or 9" src="/assets/images/are-you-the-one/no-intuition.svg" />
+</figure>
+
+<p>In the challenging environment of experiment 2, my algorithm wins by
+episode 10 only 93% of the time, compared to Owen’s 98%. However, 93% is
+still appreciably better than the 74% and 71% accuracy obtained, respectively,
+by random guessing and actual <em>Are You the One?</em> contestants (according to
+Owen’s post). And it takes just under two minutes to run all 500 simulations
+reflected in the plot above.</p>
+
+<h2 id="experiment-3-weak-intuition">Experiment 3: Weak intuition</h2>
+
+<p>The conditions of experiment 3 cater best to my algorithm’s objectives.
+Here, we fix <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s = -1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span> (a signal-to-noise ratio of 1:2),
+meaning that contestants have some intuition, but it’s not particularly strong.</p>
+
+<figure>
+  <img class="compact squareborder" alt="Histogram showing number of turns to win with intuition fixed to negative one. A bell curve centered around 6 or 7" src="/assets/images/are-you-the-one/weak-intuition.svg" />
+</figure>
+
+<p>In this case, we eke out a win 100% of the time! And again, running all 500
+simulations takes less than two minutes.</p>
+
+<h1 id="best-we-can-do">Best we can do?</h1>
+
+<p>Above, we devised an algorithm for Are You the One that balances competing
+objectives:</p>
+
+<ul>
+  <li>Exploit clues from Truth Booth and Match Up</li>
+  <li>Capitalize on contestants’ intuition about compatibility</li>
+  <li>Compute efficiently</li>
+</ul>
+
+<p>Under favorable conditions, the algorithm wins 100% of simulated games. Under
+unfavorable conditions with scrambled contestant intuitions,
+the algorithm still wins 93% of the time. In every case, it’s fast enough to
+simulate many seasons without getting bored.</p>
+
+<p>Like Owen, I find Are You the One to have charming similarities
+to Wordle. In Wordle, you must balance the information gained by <em>exploring</em>
+unused letters against the win potential of <em>exploiting</em> clues already provided.
+In the <em>New York Times</em> version of Wordle, a pessimistic strategy informed
+by information theory is the only way to guarantee a win. But in two-player
+Wordle, where an opponent chooses the word, you can leverage intuition about the
+opponent’s favorite words to guess the answer more quickly.</p>
+
+<p>Many numerical optimization problems feature such an explore/exploit tradeoff.
+In classic cases of the <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit
+problem</a>, for example, we can
+prove that certain strategies strike an ideal (in a technical sense) balance between
+exploration and exploitation.</p>
+
+<p>I doubt that my algorithm attains the optimal probability of winning for
+my problem setup, even in the special case of experiment 3 (where the 100% figure
+is merely empirical; if you keep running my script, you’ll see losses here and there).
+The information-theoretic concepts introduced in Owen’s blog post can be applied to arbitrary, not just
+uniform, distributions over matchings, including the conditional distribution of
+the ground-truth matching on the vibes <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>. If you can estimate that
+distribution (more simulations …), then you
+can compute the entropies in Owen’s algorithm as weighted averages over
+matchings. That algorithm would be, you know, <em>optimal</em> optimal. And <em>very</em> slow.</p>
+
+<h1 id="further-reading">Further reading</h1>
+
+<ul>
+  <li><a href="https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/">Owen Lacey’s blog post</a>
+analyzing Are You the One from an information theory perspective</li>
+  <li><a href="https://www.3blue1brown.com/lessons/wordle">3blue1brown video</a> solving Wordle
+with information theory</li>
+  <li><a href="https://absurdleonline.github.io/">Adversarial Wordle</a>, where the word keeps
+changing to prolong the game—imagine an analogous variant of Are You the One,
+where the perfect matches change to confound the contestants</li>
+  <li><a href="https://github.com/maxkapur/AreYouTheOne.jl">Source code</a> for my algorithm
+and plots</li>
+</ul>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2025/09/03/abc-smc-evolutionary-algorithm.html"
+        title="Similarity score: 487"
+      >Is ABC-SMC just an evolutionary algorithm?</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2025-09-03T00:00:00+00:00">Sep 3, 2025</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2016/08/07/sorites.html"
+        title="Similarity score: 465"
+      >Sorites</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2016-08-07T00:00:00+00:00">Aug 7, 2016</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2025/12/19/perfect-match-integer-programming.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

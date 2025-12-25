@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>My poorly automated Kubuntu setup | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>My poorly automated Kubuntu setup | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="My poorly automated Kubuntu setup" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The target audience for this post is myself. I recently set up a new (old) laptop and tried to bring it to parity with my main Kubuntu workstation in as few steps as possible, which turned out to be … a lot of steps, most of them manual. I wanted to document the full process and see if I can find worthwhile opportunities for automation." />
+<meta property="og:description" content="The target audience for this post is myself. I recently set up a new (old) laptop and tried to bring it to parity with my main Kubuntu workstation in as few steps as possible, which turned out to be … a lot of steps, most of them manual. I wanted to document the full process and see if I can find worthwhile opportunities for automation." />
+<link rel="canonical" href="https://maxkapur.com/2025/06/04/kubuntu-setup.html" />
+<meta property="og:url" content="https://maxkapur.com/2025/06/04/kubuntu-setup.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="My poorly automated Kubuntu setup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2025-06-04T00:00:00+00:00","datePublished":"2025-06-04T00:00:00+00:00","description":"The target audience for this post is myself. I recently set up a new (old) laptop and tried to bring it to parity with my main Kubuntu workstation in as few steps as possible, which turned out to be … a lot of steps, most of them manual. I wanted to document the full process and see if I can find worthwhile opportunities for automation.","headline":"My poorly automated Kubuntu setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2025/06/04/kubuntu-setup.html"},"url":"https://maxkapur.com/2025/06/04/kubuntu-setup.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My poorly automated Kubuntu setup</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-06-04T00:00:00+00:00" itemprop="datePublished">
+        Jun 4, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>The target audience for this post is myself. I recently set up a new (old)
+laptop and tried to bring it to parity with my main Kubuntu workstation in as
+few steps as possible, which turned out to be … a lot of steps, most of them
+manual. I wanted to document the full process and see if I can find worthwhile
+opportunities for automation.<!--more--></p>
+
+<ol>
+  <li>
+    <p><strong>Install Kubuntu the usual way.</strong> Configure LUKS disk encryption and user
+account. <code class="language-plaintext highlighter-rouge">sudo apt update -y &amp;&amp; sudo apt upgrade -y</code>.</p>
+
+    <p>🎨 Difficult to automate because I make different partitioning and file
+system choices for every device.</p>
+  </li>
+  <li>
+    <p><strong>Copy password vault</strong> manually via USB drive. Installed KeePassXC via
+<code class="language-plaintext highlighter-rouge">apt</code> because I will need it for basically everything that follows.</p>
+
+    <p>🔐 Won’t automate. If you trust the KeePass security model, then in theory
+you should be willing to put your KeePass vault on a public URL and download
+it automatically … but I don’t think anyone’s that bold.</p>
+  </li>
+  <li>
+    <p><strong>Generate SSH keys</strong> (<code class="language-plaintext highlighter-rouge">ssh-keygen</code>) for various Git hosts. Add entries like
+this in <code class="language-plaintext highlighter-rouge">~/.ssh/config</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
+    IdentityFile ~/.ssh/id_just_generated
+</code></pre></div>    </div>
+
+    <p>Log into GitHub and others in Firefox and add the new SSH keys manually.</p>
+
+    <p>🔐 Won’t automate. I guess I could script this a little more with the GitHub
+CLI, but at some point I would still have to manually enter the MFA token,
+so the benefit would be marginal. (Some people choose to use the same SSH
+key for every client, which would simplify this step greatly, but I like the
+ability to scope and revoke keys individually for different workstations.)</p>
+  </li>
+  <li>
+    <p><strong>Install Syncthing</strong> (<code class="language-plaintext highlighter-rouge">apt install syncthing</code>). Run Syncthing manually (we
+will configure autostart in step 8) and set up folder connections with other
+devices.</p>
+
+    <p>🧪 Hope to automate via a script that automatically finds my main Syncthing
+server and prompts for authentication.
+<a href="https://docs.syncthing.net/dev/rest.html">For later reference.</a></p>
+  </li>
+  <li>
+    <p><strong>Run a configuration script</strong> <code class="language-plaintext highlighter-rouge">setup.sh</code> (see below) to automatically
+install various tools, do some basic configuration, and clone a few git
+repos.</p>
+
+    <p>💻 Automated. I created this script for the first time as part of this setup.
+In the past, I just installed packages as I thought of them. Eventually I
+want to integrate <code class="language-plaintext highlighter-rouge">setup.sh</code> with my dotfiles.</p>
+  </li>
+  <li>
+    <p><strong>Set up Nextcloud</strong> using the desktop client (installed in <code class="language-plaintext highlighter-rouge">setup.sh</code>).
+Configure offline folders.</p>
+
+    <p>🎨 Difficult to automate. You can
+<a href="https://docs.nextcloud.com/desktop/latest/advancedusage.html#mass-deployment-and-account-creation">kind of</a>
+predefine the Nextcloud server connection parameters, but there’s no getting
+around the MFA step, and I choose different offline folders for each device.</p>
+  </li>
+  <li>
+    <p><strong>Install dotfiles:</strong> I have a private git repo (cloned in <code class="language-plaintext highlighter-rouge">setup.sh</code>) with
+a custom shell script that does this. It’s basically three steps:</p>
+
+    <ol>
+      <li>Apply fish shell configuration: aliases, universal variables, a few
+custom functions.</li>
+      <li>Copy dotfiles for some command-line programs:
+<a href="https://github.com/topgrade-rs/topgrade">topgrade</a>,
+<a href="https://github.com/zyedidia/micro">micro</a>.</li>
+      <li>Apply git configuration: <code class="language-plaintext highlighter-rouge">git config --global user.name</code>, etc.</li>
+      <li>Copy some utility scripts:
+<a href="https://borgbackup.readthedocs.io/">Borg backup</a> with preferred options,
+a primitive Markdown linter (I should clean this up and post it
+sometime).</li>
+    </ol>
+
+    <p>My dotfiles repo is private because it hardcodes a bunch of parameters like
+my name and email address that would only cause confusion for someone else.</p>
+
+    <p>💻 Automated enough for me.</p>
+  </li>
+  <li>
+    <p><strong>Configure Korean keyboard input</strong> with <code class="language-plaintext highlighter-rouge">fcitx5</code>. This is always the
+hardest step when I try a new Linux distro. For Kubuntu, <code class="language-plaintext highlighter-rouge">setup.sh</code> installs
+all the necessary packages, but a few additional setup steps are needed to
+get Korean input working with KDE under Wayland. Basically, the trick is to
+repeatedly log out and back in again and follow the instructions in the
+notification that automatically pops up from the automatic diagnostic tool.</p>
+
+    <p>These are the changes I had to make this time around:</p>
+
+    <ol>
+      <li>Set the <code class="language-plaintext highlighter-rouge">XMODIFIERS</code>, <code class="language-plaintext highlighter-rouge">GTK_IM_MODULE</code>, and <code class="language-plaintext highlighter-rouge">QT_IM_MODULE</code> variables
+according to the latest recommendations in the
+<a href="https://www.fcitx-im.org/wiki/Setup_Fcitx_5">Fcitx wiki</a>.</li>
+      <li>In KDE’s settings, under Virtual Keyboard, choose Fcitx5 Wayland Launcher
+(Experimental).</li>
+      <li>Run the <code class="language-plaintext highlighter-rouge">im-config</code> GUI, let it run its diagnostic, and follow the
+prompts.</li>
+      <li>Open the <code class="language-plaintext highlighter-rouge">fcitx5</code> settings by clicking the system tray icon and set up
+preferred keybindings for switching between Korean and English input.</li>
+    </ol>
+
+    <p>After doing all this, I still got a notification upon login saying that I
+should unset the <code class="language-plaintext highlighter-rouge">GTK_IM_MODULE</code> and <code class="language-plaintext highlighter-rouge">QT_IM_MODULE</code> environment variables.
+But it seems like this was a false positive, because I can verify from the
+shell that these variables are empty (as recommended). Anyway, Korean typing
+works fine everywhere I’ve tried.</p>
+
+    <p>🧪 Hope to automate.</p>
+  </li>
+  <li>
+    <p><strong>Configure Syncthing (again):</strong> Run Syncthing Tray (installed in
+<code class="language-plaintext highlighter-rouge">setup.sh</code>) manually and follow prompts to let it autostart itself and
+Syncthing.</p>
+
+    <p>🧪 Hope to automate.</p>
+  </li>
+  <li>
+    <p><strong>Generate SSH keys (again):</strong> This time for shell access to remote servers.
+Add <code class="language-plaintext highlighter-rouge">HostName</code>, <code class="language-plaintext highlighter-rouge">User</code>, and <code class="language-plaintext highlighter-rouge">IdentityFile</code> entries for each host to
+<code class="language-plaintext highlighter-rouge">~/.ssh/config</code>.</p>
+
+    <p>All the servers I use allow <em>only</em> key-based access, so I used Nextcloud
+(hence waiting until now) to copy the public keys over to a client that
+already had access, then ran
+<code class="language-plaintext highlighter-rouge">ssh-copy-id -f -i path/to/id_whatever.pub server-hostname</code> on that client
+to vouch for the new one.</p>
+
+    <p>🧪 Hope to automate. I could write a script to prepare the keys on the client
+that already had access, then run this script prior to setting up the new
+machine and transfer the keys as part of step 1.</p>
+  </li>
+  <li>
+    <p><strong>Install <a href="https://github.com/conda-forge/miniforge">Miniforge</a>:</strong> <code class="language-plaintext highlighter-rouge">curl</code>
+then <code class="language-plaintext highlighter-rouge">bash</code> and follow interactive prompt. I install it to
+<code class="language-plaintext highlighter-rouge">~/.local/miniforge3</code> instead of the default <code class="language-plaintext highlighter-rouge">~/miniforge3</code>. Say yes when
+asked to update shell profile. This seems to only affect <code class="language-plaintext highlighter-rouge">bash</code> so I went
+ahead and ran <code class="language-plaintext highlighter-rouge">~/.local/miniforge3/bin/conda init --all</code>. Make sure I can
+configure and build
+<a href="/2024/11/29/rbenv-vs-conda.html">my website</a>.</p>
+
+    <p>🧪 Hope to automate in <code class="language-plaintext highlighter-rouge">setup.sh</code>. If
+<a href="https://github.com/conda-forge/setup-miniforge">setup-miniforge</a> can do it,
+then presumably I can too.</p>
+  </li>
+  <li>
+    <p><strong>Set some weird keyboard preferences:</strong> <kbd>Menu</kbd> key (if
+unavailable, right <kbd>Alt</kbd> instead) as compose key, swap
+<kbd>Esc</kbd> and <kbd>Caps Lock</kbd>, a few other keyboard shortcuts for
+window management. I do this in the KDE settings GUI.</p>
+
+    <p>🧪 Hope to automate.</p>
+  </li>
+</ol>
+
+<p>These steps are in a woefully illogical order. But I think that the dependencies
+among these actions simply necessitate some jumping around between manual and
+automated configuration, GUI and command line, and different physical computers.</p>
+
+<p>I gaze in awe upon setup guides like
+<a href="https://briantruong777.github.io/2025/01/01/my-arch-linux-setup-2.0.html">Brian’s</a>
+that proceed monotonically from bottom (disk partitioning) to top (configuring
+backups). I have to admit, I doubt that his real process is as clean as his
+guide suggests: Surely Brian must backtrack and make some changes to his desktop
+environment config after installing all those bespoke fonts, right? Anyway, it’s
+an ideal to strive toward.</p>
+
+<h2 id="setup-script">Setup script</h2>
+
+<p>Contents of <code class="language-plaintext highlighter-rouge">setup.sh</code>, slightly redacted to make myself look better:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Cache sudo credentials</span>
+<span class="nb">sudo</span> <span class="nt">-v</span>
+
+<span class="c"># apt packages</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\</span>
+    keepassxc fzf curl pipx git fish <span class="se">\</span>
+    nextcloud-desktop dolphin-nextcloud <span class="se">\</span>
+    fcitx5 fcitx5-hangul fcitx5-config-qt <span class="se">\</span>
+    syncthing syncthingtray syncthingtray-kde-plasma
+
+<span class="c"># snap packages</span>
+snap <span class="nb">install</span> <span class="nt">--classic</span> codium
+<span class="c"># ...</span>
+
+<span class="c"># pipx packages</span>
+pipx ensurepath
+pipx <span class="nb">install </span>topgrade
+<span class="c"># ...</span>
+
+<span class="c"># Configure/enable firewall</span>
+<span class="nb">sudo </span>ufw default deny incoming
+<span class="nb">sudo </span>ufw allow syncthing
+<span class="nb">sudo </span>ufw <span class="nb">enable
+sudo </span>ufw reload
+
+<span class="c"># Change shell to fish</span>
+chsh <span class="nt">-s</span> /usr/bin/fish
+
+<span class="c"># Git repos (assumes SSH keys already set up)</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/gits"</span>
+<span class="nb">pushd</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/gits"</span> <span class="o">||</span> <span class="nb">exit </span>1
+git clone <span class="s1">'git@github.com:maxkapur/maxkapur.github.io.git'</span>
+<span class="c"># ...</span>
+</code></pre></div></div>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2024/11/29/rbenv-vs-conda.html"
+        title="Similarity score: 531"
+      >Replacing rbenv with conda</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2024-11-29T00:00:00+00:00">Nov 29, 2024</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2022/06/25/migrating-to-jekyll.html"
+        title="Similarity score: 496"
+      >Migrating to Jekyll</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2022-06-25T00:00:00+00:00">Jun 25, 2022</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2025/06/04/kubuntu-setup.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

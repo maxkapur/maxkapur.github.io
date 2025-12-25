@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Tensions rise in the condaverse | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tensions rise in the condaverse | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Tensions rise in the condaverse" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GitHub has a tool called Dependabot that automatically finds outdated package versions pinned in project configuration files and issues a pull request to update them. Support for conda environment.yml files has long been one of the most requested features in the Dependabot repo. At long last, GitHub has now added partial support for conda to Dependabot, first as a beta announced last week, and now generally available. But there have been some issues with the rollout. The main appeal of conda over something like Poetry, uv, or just plain-old requirements.txt is that conda can manage arbitrary dependencies, not just Python packages. You can conda create --no-default-packages git micro compilers to set up a Fortran dev environment if you want. Dependabot’s conda support includes only Python packages. A few folks grumbled about this limitation in the GitHub issue comments, but it’s understandable: The space of “all conda installable packages” is vast indeed, and the Dependabot devs had to start somewhere. A more compelling criticism of the new feature stems from the fact that Dependabot determines the latest versions of Python packages by looking up the names given in environment.yml on PyPI. This is a problem because PyPI is an entirely different package ecosystem from conda. Some package versions are released on PyPI well before they appear in conda repos, and some packages have different names between the two. For a nasty example, Ipopt is a nonlinear programming solver written in C, and cyipopt provides Python bindings. conda install ipopt installs the C library, and conda install cyipopt installs the Python wrapper. But pip install ipopt actually refers to cyipopt. The upshot, if I understand correctly, is that if you pin ipopt in your environment.yml, then Dependabot will check its version number against that of the latest version of cyipopt, a flawed comparison. Luckily, Ipopt/cyipopt is the only such case I could find in this Rosetta stone (the fact that this exists …) mapping package names across ecosystems. But anyone(ish) can post packages on PyPI, so the current behavior of Dependabot creates new opportunities for typo-squatting attacks on conda users. As Jannis Leidel (a conda maintainer) put it, “This premature rollout makes the conda ecosystem less secure and shouldn’t have occurred.” I’m not sure what the right move is for Dependabot. For a start, they could use the Rosetta stone to map conda packages to the correct PyPI names, but this would only solve the naming issue, and not the possibility of different versions between the two repositories." />
+<meta property="og:description" content="GitHub has a tool called Dependabot that automatically finds outdated package versions pinned in project configuration files and issues a pull request to update them. Support for conda environment.yml files has long been one of the most requested features in the Dependabot repo. At long last, GitHub has now added partial support for conda to Dependabot, first as a beta announced last week, and now generally available. But there have been some issues with the rollout. The main appeal of conda over something like Poetry, uv, or just plain-old requirements.txt is that conda can manage arbitrary dependencies, not just Python packages. You can conda create --no-default-packages git micro compilers to set up a Fortran dev environment if you want. Dependabot’s conda support includes only Python packages. A few folks grumbled about this limitation in the GitHub issue comments, but it’s understandable: The space of “all conda installable packages” is vast indeed, and the Dependabot devs had to start somewhere. A more compelling criticism of the new feature stems from the fact that Dependabot determines the latest versions of Python packages by looking up the names given in environment.yml on PyPI. This is a problem because PyPI is an entirely different package ecosystem from conda. Some package versions are released on PyPI well before they appear in conda repos, and some packages have different names between the two. For a nasty example, Ipopt is a nonlinear programming solver written in C, and cyipopt provides Python bindings. conda install ipopt installs the C library, and conda install cyipopt installs the Python wrapper. But pip install ipopt actually refers to cyipopt. The upshot, if I understand correctly, is that if you pin ipopt in your environment.yml, then Dependabot will check its version number against that of the latest version of cyipopt, a flawed comparison. Luckily, Ipopt/cyipopt is the only such case I could find in this Rosetta stone (the fact that this exists …) mapping package names across ecosystems. But anyone(ish) can post packages on PyPI, so the current behavior of Dependabot creates new opportunities for typo-squatting attacks on conda users. As Jannis Leidel (a conda maintainer) put it, “This premature rollout makes the conda ecosystem less secure and shouldn’t have occurred.” I’m not sure what the right move is for Dependabot. For a start, they could use the Rosetta stone to map conda packages to the correct PyPI names, but this would only solve the naming issue, and not the possibility of different versions between the two repositories." />
+<link rel="canonical" href="https://maxkapur.com/2025/09/18/tension-condaverse.html" />
+<meta property="og:url" content="https://maxkapur.com/2025/09/18/tension-condaverse.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tensions rise in the condaverse" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2025-09-18T00:00:00+00:00","datePublished":"2025-09-18T00:00:00+00:00","description":"GitHub has a tool called Dependabot that automatically finds outdated package versions pinned in project configuration files and issues a pull request to update them. Support for conda environment.yml files has long been one of the most requested features in the Dependabot repo. At long last, GitHub has now added partial support for conda to Dependabot, first as a beta announced last week, and now generally available. But there have been some issues with the rollout. The main appeal of conda over something like Poetry, uv, or just plain-old requirements.txt is that conda can manage arbitrary dependencies, not just Python packages. You can conda create --no-default-packages git micro compilers to set up a Fortran dev environment if you want. Dependabot’s conda support includes only Python packages. A few folks grumbled about this limitation in the GitHub issue comments, but it’s understandable: The space of “all conda installable packages” is vast indeed, and the Dependabot devs had to start somewhere. A more compelling criticism of the new feature stems from the fact that Dependabot determines the latest versions of Python packages by looking up the names given in environment.yml on PyPI. This is a problem because PyPI is an entirely different package ecosystem from conda. Some package versions are released on PyPI well before they appear in conda repos, and some packages have different names between the two. For a nasty example, Ipopt is a nonlinear programming solver written in C, and cyipopt provides Python bindings. conda install ipopt installs the C library, and conda install cyipopt installs the Python wrapper. But pip install ipopt actually refers to cyipopt. The upshot, if I understand correctly, is that if you pin ipopt in your environment.yml, then Dependabot will check its version number against that of the latest version of cyipopt, a flawed comparison. Luckily, Ipopt/cyipopt is the only such case I could find in this Rosetta stone (the fact that this exists …) mapping package names across ecosystems. But anyone(ish) can post packages on PyPI, so the current behavior of Dependabot creates new opportunities for typo-squatting attacks on conda users. As Jannis Leidel (a conda maintainer) put it, “This premature rollout makes the conda ecosystem less secure and shouldn’t have occurred.” I’m not sure what the right move is for Dependabot. For a start, they could use the Rosetta stone to map conda packages to the correct PyPI names, but this would only solve the naming issue, and not the possibility of different versions between the two repositories.","headline":"Tensions rise in the condaverse","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2025/09/18/tension-condaverse.html"},"url":"https://maxkapur.com/2025/09/18/tension-condaverse.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tensions rise in the condaverse</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-18T00:00:00+00:00" itemprop="datePublished">
+        Sep 18, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>GitHub has a tool called Dependabot that automatically finds outdated package
+versions pinned in project configuration files and issues a pull request to
+update them. Support for conda <code class="language-plaintext highlighter-rouge">environment.yml</code> files has long been one of the
+<a href="https://github.com/dependabot/dependabot-core/issues/2227">most requested</a>
+features in the Dependabot repo. At long last, GitHub has now added partial
+support for conda to Dependabot, first as a
+<a href="https://github.com/dependabot/dependabot-core/issues/2227#issuecomment-3274344175">beta announced last week</a>,
+and now
+<a href="https://github.blog/changelog/2025-09-16-conda-ecosystem-support-for-dependabot-now-generally-available/">generally available</a>.
+But there have been some issues with the rollout.</p>
+
+<p>The main appeal of conda over something like
+<a href="https://python-poetry.org/">Poetry</a>, <a href="https://docs.astral.sh/uv/">uv</a>, or just
+plain-old <code class="language-plaintext highlighter-rouge">requirements.txt</code> is that conda can manage arbitrary dependencies,
+not just Python packages. You can
+<code class="language-plaintext highlighter-rouge">conda create --no-default-packages git micro compilers</code> to set up a Fortran dev
+environment if you want. Dependabot’s conda support includes only Python
+packages. A few folks grumbled about this limitation in the GitHub issue
+comments, but it’s understandable: The space of “all conda installable packages”
+is vast indeed, and the Dependabot devs had to start somewhere.</p>
+
+<p>A more compelling criticism of the new feature stems from the fact that
+Dependabot determines the latest versions of Python packages by looking up the
+names given in <code class="language-plaintext highlighter-rouge">environment.yml</code> on PyPI. This is a problem because PyPI is an
+entirely different package ecosystem from conda. Some package versions are
+released on PyPI well before they appear in conda repos, and some packages have
+different names between the two.</p>
+
+<p>For a nasty example, <a href="https://coin-or.github.io/Ipopt/">Ipopt</a> is a nonlinear
+programming solver written in C, and
+<a href="https://cyipopt.readthedocs.io/en/stable/index.html">cyipopt</a> provides Python
+bindings. <code class="language-plaintext highlighter-rouge">conda install ipopt</code> installs the C library, and
+<code class="language-plaintext highlighter-rouge">conda install cyipopt</code> installs the Python wrapper. But <code class="language-plaintext highlighter-rouge">pip install ipopt</code>
+actually refers to <a href="https://pypi.org/project/ipopt/">cyipopt</a>. The upshot, if I
+understand correctly, is that if you pin <code class="language-plaintext highlighter-rouge">ipopt</code> in your <code class="language-plaintext highlighter-rouge">environment.yml</code>, then
+Dependabot will check its version number against that of the latest version of
+cyipopt, a flawed comparison.</p>
+
+<p>Luckily, Ipopt/cyipopt is the only such case I could find in
+<a href="https://github.com/regro/cf-graph-countyfair/blob/fd3061b427cc4b605d783ab40a115ff17e3dc1a7/mappings/pypi/grayskull_pypi_mapping.yaml">this Rosetta stone</a>
+(the fact that this exists …) mapping package names across ecosystems. But
+<a href="https://pypi.org/account/register/">anyone(ish)</a> can post packages on PyPI, so
+the current behavior of Dependabot creates new opportunities for typo-squatting
+attacks on conda users. As
+<a href="https://github.com/dependabot/dependabot-core/issues/2227#issuecomment-3307935405">Jannis Leidel</a>
+(a conda maintainer) put it, “This premature rollout makes the conda ecosystem
+less secure and shouldn’t have occurred.”</p>
+
+<p>I’m not sure what the right move is for Dependabot. For a start, they could use
+the Rosetta stone to map conda packages to the correct PyPI names, but this
+would only solve the naming issue, and not the possibility of different versions
+between the two repositories.</p>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2024/11/29/rbenv-vs-conda.html"
+        title="Similarity score: 508"
+      >Replacing rbenv with conda</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2024-11-29T00:00:00+00:00">Nov 29, 2024</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2024/12/06/self-host-fonts.html"
+        title="Similarity score: 485"
+      >How I self-host fonts on this blog</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2024-12-06T00:00:00+00:00">Dec 6, 2024</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2025/09/18/tension-condaverse.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Illusion Slopes (page 10) | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Page 10 of 16 for Illusion Slopes (page 10) | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Illusion Slopes (page 10)" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<meta property="og:description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<link rel="canonical" href="https://maxkapur.com/page/10/" />
+<meta property="og:url" content="https://maxkapur.com/page/10/" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="website" />
+<link rel="prev" href="https://maxkapur.com/page/9/" />
+<link rel="next" href="https://maxkapur.com/page/11/" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Illusion Slopes (page 10)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Max Kapur"},"description":"I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.","headline":"Illusion Slopes (page 10)","url":"https://maxkapur.com/page/10/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+    <div class="post-list"><div class="post-list-item"><span class="post-meta">
+          <time datetime="2023-07-22T00:00:00+00:00">Jul 22, 2023</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2023/07/22/guitarix-troubleshooting.html">
+            Guitarix troubleshooting
+          </a>
+        </h2><p>For the past few updates of <a href="https://guitarix.org/">Guitarix</a>, I have been
+having issues where changing the JACK server latency causes the audio output
+to go crazy. This seems to stem from changes that the developer has been
+making to the config files, because the following commands usually get things
+working again:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> ~/.config/guitarix ~/.config/guitarix.backup
+<span class="nb">mkdir</span> ~/.config/guitarix
+<span class="nb">cp</span> <span class="nt">-r</span> ~/.config/guitarix.backup/banks ~/.config/guitarix/banks
+</code></pre></div></div>
+
+<p>These commands backup your amp/effects presets from <code class="language-plaintext highlighter-rouge">~/.config/guitarix/banks</code>
+(which are the hard part to restore manually), and let the default settings
+take over the next time the application is launched.</p>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2023-06-17T00:00:00+00:00">Jun 17, 2023</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2023/06/17/fzl.fish.html">
+            fzl.fish
+          </a>
+        </h2><p>I’ve been using the following fish alias <code class="language-plaintext highlighter-rouge">fzl</code> (“fuzzy list”) to run <code class="language-plaintext highlighter-rouge">fzf</code> (“fuzzy find”) in the current directory with a <code class="language-plaintext highlighter-rouge">bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <a href="https://github.com/junegunn/fzf#preview-window"><code class="language-plaintext highlighter-rouge">fzf README</code></a>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">~/.config/fish/functions/fzl.fish</code>:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>fzl
+    <span class="c"># `bat` is aliased to `batcat` on Debian</span>
+    <span class="k">if </span><span class="nb">type</span> <span class="nt">-q</span> batcat
+        <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"batcat"</span>
+    <span class="k">else
+        </span><span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="s2">"bat"</span>
+    end
+
+    <span class="c"># Set the overall width of the `bat` preview to</span>
+    <span class="c"># 50% the width of the current terminal</span>
+    <span class="nb">set</span> <span class="nt">-l</span> bat_width <span class="si">$(</span>math ceil <span class="nv">$COLUMNS</span> x 0.5<span class="si">)</span>
+
+    <span class="c"># My preferred `bat` options</span>
+    <span class="nb">set</span> <span class="nt">-f</span> bat_command <span class="se">\</span>
+        <span class="nv">$bat_command</span> <span class="se">\</span>
+        <span class="nt">--style</span> numbers <span class="se">\</span>
+        <span class="nt">--color</span> always <span class="se">\</span>
+        <span class="nt">--italic-text</span> always <span class="se">\</span>
+        <span class="nt">--wrap</span> auto <span class="se">\</span>
+        <span class="nt">--terminal-width</span> <span class="nv">$bat_width</span>
+
+    fzf <span class="se">\</span>
+        <span class="nt">--preview</span> <span class="s2">"</span><span class="nv">$bat_command</span><span class="s2"> {}"</span> <span class="se">\</span>
+        <span class="nt">--preview-window</span> right,<span class="nv">$bat_width</span>,nowrap
+end
+</code></pre></div></div>
+
+<p>Example below.</p>
+<p class="excerpt-warning">
+	        <a href="/2023/06/17/fzl.fish.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2023-02-05T00:00:00+00:00">Feb 5, 2023</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2023/02/05/korean-idioms-fortunes.html">
+            Learning Korean idioms with UNIX fortune
+          </a>
+        </h2><p><a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a> is a classic UNIX program that displays random fortunes, pithy quotes, and the like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fortune
+If you think last Tuesday was a drag, wait till you see what happens tomorrow!
+</code></pre></div></div>
+
+<p>Today, I repurposed fortune (really <a href="https://github.com/shlomif/fortune-mod">fortune-mod</a>) as a language study tool by scraping some <a href="https://github.com/maxkapur/korean-fortunes">Korean idioms from Wikiquote</a> from Wikiquote):</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fortune korean
+“쇠귀에 경 읽기.”
+    아무리 좋은 말을 하면서 가르치려고 하여도 그 뜻을 제대로 헤아리지 못하는 사람을 두고 하는 말.
+</code></pre></div></div>
+
+<p>This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”</p>
+
+<p>I set <code class="language-plaintext highlighter-rouge">fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal—see below.</p>
+<p class="excerpt-warning">
+	        <a href="/2023/02/05/korean-idioms-fortunes.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2023-01-27T00:00:00+00:00">Jan 27, 2023</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2023/01/27/kiss-guitar-modeling.html">
+            Applying the KISS principle to amp modeling
+          </a>
+        </h2><p>I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
+I started out with Garageband and Mainstage, then briefly experimented with <a href="https://www.kuassa.com/products/amplifikation-vermilion/">Amplifikation Vermilion</a>, and for the last year and half have turned to a free, open-source package called <a href="https://guitarix.org/">Guitarix</a> and a small collection of impulse response files culled from guitar forums.
+In my experience, a good impulse response file fed into a basic convolver does a lot more for your sound than trying to optimize the countless parameters on an expensive simulator.</p>
+
+<p class="excerpt-warning">
+	        <a href="/2023/01/27/kiss-guitar-modeling.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2022-12-17T00:00:00+00:00">Dec 17, 2022</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2022/12/17/this-years-reading.html">
+            This year’s reading
+          </a>
+        </h2><p>A subset of the books I enjoyed this year:</p>
+<ul>
+  <li>Barbara Kingsolver, <em>The Poisonwood Bible,</em> a novel about evangelical Christianity and cultural arrogance.</li>
+  <li>손원평, «아몬드», a novel debating whether or not emotions are a distraction.</li>
+  <li>Walter Isaacson, <em>The Codebreaker,</em> a biography of biochemist Jennifer Doudna.</li>
+  <li>Michael Lewis, <em>The Undoing Project,</em> a biography of behavioral economists Daniel Kahneman and Amos Tversky.</li>
+  <li>황보름, «어서 오세요, 휴남동 서점입니다», a slice-of-life novel about a bookstore owner overcoming the loneliness of urban life.</li>
+  <li>Ayoko Sono, <em>Ningen no Bunzai,</em> a “collection of writings” (according to <a href="https://en.wikipedia.org/wiki/Ayako_Sono#Works">Wikipedia</a>, and I cannot come up with a better description). I read the Korean translation «약간의 거리를 둔다» by 김욱.</li>
+  <li>김애란, «달려라, 아비», short stories about the legacy of childhood experience.</li>
+  <li>Jia Tolentino, <em>Trick Mirror,</em> essays about identity, authenticity, and social media.</li>
+</ul>
+
+<p>In progress:</p>
+<ul>
+  <li>김금희, «너무 한낮의 연애», short stories about people at the margins of society.</li>
+  <li>David Foster Wallace, <em>Infinite Jest.</em></li>
+</ul>
+</div></div>
+
+    <div class="page-switcher">
+      <div><a href="/page/9/">Previous page</a></div>
+
+      <div><a href="/page/11/">Next page</a></div>
+    </div>
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

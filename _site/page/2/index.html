@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Illusion Slopes (page 2) | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Page 2 of 16 for Illusion Slopes (page 2) | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Illusion Slopes (page 2)" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<meta property="og:description" content="I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own." />
+<link rel="canonical" href="https://maxkapur.com/page/2/" />
+<meta property="og:url" content="https://maxkapur.com/page/2/" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="website" />
+<link rel="prev" href="https://maxkapur.com/" />
+<link rel="next" href="https://maxkapur.com/page/3/" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Illusion Slopes (page 2)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Max Kapur"},"description":"I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.","headline":"Illusion Slopes (page 2)","url":"https://maxkapur.com/page/2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+    <div class="post-list"><div class="post-list-item"><span class="post-meta">
+          <time datetime="2025-09-24T00:00:00+00:00">Sep 24, 2025</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2025/09/24/python-scripts.html">
+            Python scripts
+          </a>
+        </h2><p>I cleaned up a few utility Python scripts for the GitHub:</p>
+
+<ul>
+  <li><a href="https://github.com/maxkapur/fetch_python_docs.py">fetch_python_docs.py</a> sets
+up a local mirror of <a href="https://docs.python.org/">docs.python.org</a> on
+<code class="language-plaintext highlighter-rouge">http://localhost:8004</code> for offline reference. It can also provide and enable
+a systemd unit file, so you can run the script once, bookmark the local URL,
+and forget about it.</li>
+  <li><a href="https://github.com/maxkapur/typography.py">typography.py</a> (which I mentioned
+<a href="/2025/07/02/tried-recently.html">here</a>) checks for ASCII typography
+that can be better rendered as Unicode. For example, it recommends changing
+the hyphen in the page range <code class="language-plaintext highlighter-rouge">278-81</code> to an en dash.</li>
+  <li><a href="https://github.com/maxkapur/dated.py">dated.py</a> applies my <a href="/2024/04/26/iso-dates-filenames.html">obnoxious
+filename convention</a> to create
+a dated working copy of a file—useful when collaborating with people who
+aren’t comfortable with version control systems.</li>
+</ul>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2025-09-18T00:00:00+00:00">Sep 18, 2025</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2025/09/18/tension-condaverse.html">
+            Tensions rise in the condaverse
+          </a>
+        </h2><p>GitHub has a tool called Dependabot that automatically finds outdated package
+versions pinned in project configuration files and issues a pull request to
+update them. Support for conda <code class="language-plaintext highlighter-rouge">environment.yml</code> files has long been one of the
+<a href="https://github.com/dependabot/dependabot-core/issues/2227">most requested</a>
+features in the Dependabot repo. At long last, GitHub has now added partial
+support for conda to Dependabot, first as a
+<a href="https://github.com/dependabot/dependabot-core/issues/2227#issuecomment-3274344175">beta announced last week</a>,
+and now
+<a href="https://github.blog/changelog/2025-09-16-conda-ecosystem-support-for-dependabot-now-generally-available/">generally available</a>.
+But there have been some issues with the rollout.</p>
+
+<p>The main appeal of conda over something like
+<a href="https://python-poetry.org/">Poetry</a>, <a href="https://docs.astral.sh/uv/">uv</a>, or just
+plain-old <code class="language-plaintext highlighter-rouge">requirements.txt</code> is that conda can manage arbitrary dependencies,
+not just Python packages. You can
+<code class="language-plaintext highlighter-rouge">conda create --no-default-packages git micro compilers</code> to set up a Fortran dev
+environment if you want. Dependabot’s conda support includes only Python
+packages. A few folks grumbled about this limitation in the GitHub issue
+comments, but it’s understandable: The space of “all conda installable packages”
+is vast indeed, and the Dependabot devs had to start somewhere.</p>
+
+<p>A more compelling criticism of the new feature stems from the fact that
+Dependabot determines the latest versions of Python packages by looking up the
+names given in <code class="language-plaintext highlighter-rouge">environment.yml</code> on PyPI. This is a problem because PyPI is an
+entirely different package ecosystem from conda. Some package versions are
+released on PyPI well before they appear in conda repos, and some packages have
+different names between the two.</p>
+
+<p>For a nasty example, <a href="https://coin-or.github.io/Ipopt/">Ipopt</a> is a nonlinear
+programming solver written in C, and
+<a href="https://cyipopt.readthedocs.io/en/stable/index.html">cyipopt</a> provides Python
+bindings. <code class="language-plaintext highlighter-rouge">conda install ipopt</code> installs the C library, and
+<code class="language-plaintext highlighter-rouge">conda install cyipopt</code> installs the Python wrapper. But <code class="language-plaintext highlighter-rouge">pip install ipopt</code>
+actually refers to <a href="https://pypi.org/project/ipopt/">cyipopt</a>. The upshot, if I
+understand correctly, is that if you pin <code class="language-plaintext highlighter-rouge">ipopt</code> in your <code class="language-plaintext highlighter-rouge">environment.yml</code>, then
+Dependabot will check its version number against that of the latest version of
+cyipopt, a flawed comparison.</p>
+
+<p>Luckily, Ipopt/cyipopt is the only such case I could find in
+<a href="https://github.com/regro/cf-graph-countyfair/blob/fd3061b427cc4b605d783ab40a115ff17e3dc1a7/mappings/pypi/grayskull_pypi_mapping.yaml">this Rosetta stone</a>
+(the fact that this exists …) mapping package names across ecosystems. But
+<a href="https://pypi.org/account/register/">anyone(ish)</a> can post packages on PyPI, so
+the current behavior of Dependabot creates new opportunities for typo-squatting
+attacks on conda users. As
+<a href="https://github.com/dependabot/dependabot-core/issues/2227#issuecomment-3307935405">Jannis Leidel</a>
+(a conda maintainer) put it, “This premature rollout makes the conda ecosystem
+less secure and shouldn’t have occurred.”</p>
+
+<p>I’m not sure what the right move is for Dependabot. For a start, they could use
+the Rosetta stone to map conda packages to the correct PyPI names, but this
+would only solve the naming issue, and not the possibility of different versions
+between the two repositories.</p>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2025-09-03T00:00:00+00:00">Sep 3, 2025</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2025/09/03/abc-smc-evolutionary-algorithm.html">
+            Is ABC-SMC just an evolutionary algorithm?
+          </a>
+        </h2><p>Suppose we have data <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> and a model that expresses <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> as a noisy function
+of a parameter vector <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>. We want to determine a value of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>
+that fits the data. For the purposes of this post, we’re concerned with models
+that are “difficult,” meaning we cannot write down a simple expression for the
+likelihood function and maximize it, whether analytically (as in ordinary least
+squares) or numerically (as in nonlinear regression). In fact, all we really
+know how to do is sample data from the model when given an arbitrary <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>.
+(We’ll get a different <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> every time, because the model is nondeterministic.)</p>
+
+<p>If you enjoy Bayesian statistics, then you may have already pattern-matched this
+problem statement to the ABC-SMC algorithm. But if you are like me and view
+parameter estimation as an optimization problem (there is no reason to privilege
+this view; it’s just how I turned out), then you might instead apply an
+evolutionary algorithm. Below, I describe such an algorithm, then argue that
+ABC-SMC is a special case. This insight suggests improvements to the
+implementation and usage of both evolution and ABC-SMC.</p>
+
+<p class="excerpt-warning">
+	        <a href="/2025/09/03/abc-smc-evolutionary-algorithm.html">Read more →</a>
+          </p></div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2025-08-20T00:00:00+00:00">Aug 20, 2025</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2025/08/20/full-of-types.html">
+            Full of types
+          </a>
+        </h2><p>I’m obsessed with this essay
+<a href="https://theoutline.com/post/8627/raising-a-teen-personality-types-growth-mindset">“Raising a person in a culture full of types”</a>
+by Dan Brooks. Before we get to the author’s message, let’s take a moment to
+appreciate his sense of comedic timing, e.g.:</p>
+
+<blockquote>
+  <p>My son talks incessantly about VSCO girls and Karens and other categories of
+people he has learned about from YouTube. He described a classmate as “the
+kind of person who borrows your pencil and doesn’t give it back,” i.e. she
+borrowed his pencil and didn’t give it back. For a while he tried to propagate
+a type of his own invention, “the Suzan,” whose behavior was ill-defined but
+tracked closely with that of my mother of the same name. It did not catch on,
+and eventually he concluded that he was not the kind of person who could come
+up with memes.</p>
+</blockquote>
+
+<p>Is it just me, or is this a highly clever paragraph?</p>
+
+<p>Brooks’s point, expressed better there than I will here, is that our culture’s
+emphasis on “being“ over “doing” prevents us from separating people’s actions
+from their destiny. At best, the idea that people belong to fixed, inescapable
+categories is merely the antithesis of the growth mindset; it saps motivation
+from our desire to try new things (why learn programming if I am not a “math
+person”?). At worst, as Brooks points out, “The illusion of a fixed nature gives
+us an excuse to repeat bad behavior,” because every mistake is like a movie
+trailer for the rest of your life. And like a TV commercial, the fixed mindset
+is an illusion with a <em>slope</em> (sorry): it inclines us toward the most automatic
+decision instead of assessing the alternatives on their merits.</p>
+
+<p>I will not pretend to be a paragon of the growth mindset. I talk myself out of
+good ideas, such as learning how to actually cook, all the time. But if I could
+choose to have one impact on the world, it would be to motivate those around me
+to reject limiting beliefs and embrace challenge—even at the risk of failure.
+And if linking you
+<a href="https://theoutline.com/post/8627/raising-a-teen-personality-types-growth-mindset">again</a>
+to this essay, which has a wonderful subplot about fatherhood, is the way to do
+it, then, OK.</p>
+</div><div class="post-list-item"><span class="post-meta">
+          <time datetime="2025-07-09T00:00:00+00:00">Jul 9, 2025</time>
+        </span>
+        <h2>
+          <a class="post-link" href="/2025/07/09/related-posts.html">
+            Jekyll plugin to recommend related posts
+          </a>
+        </h2><p>I wrote my first plugin for the Jekyll static website builder: <a href="https://github.com/maxkapur/jekyll-related">a tool that
+recommends related posts</a>
+at the end of each page. It determines the similarity between post pairs using
+a fairly unremarkable token-counting algorithm, so it’s fast enough to rerun on
+every site build. You can configure the number of posts to recommend and a
+parameter <code class="language-plaintext highlighter-rouge">factor</code> which determines the algorithm’s sensitivity to rare vs.
+common words.</p>
+
+<p>I made a little <a href="https://maxkapur.com/jekyll-related/">demo of the plugin</a> with a fake
+blog whose posts are the articles of the UN Universal Declaration of Human
+Rights. You can also see a demo on the current version of this site if you click
+the “read more” link below to go to this post’s individual page. I think it
+works pretty well!</p>
+<p class="excerpt-warning">
+	        <a href="/2025/07/09/related-posts.html">Read more →</a>
+          </p></div></div>
+
+    <div class="page-switcher">
+      <div><a href="/">Previous page</a></div>
+
+      <div><a href="/page/3/">Next page</a></div>
+    </div>
+</div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Replacing rbenv with conda | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Replacing rbenv with conda | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Replacing rbenv with conda" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Why I am using conda instead of rbenv to install Ruby inside of the CI job that builds this static site." />
+<meta property="og:description" content="Why I am using conda instead of rbenv to install Ruby inside of the CI job that builds this static site." />
+<link rel="canonical" href="https://maxkapur.com/2024/11/29/rbenv-vs-conda.html" />
+<meta property="og:url" content="https://maxkapur.com/2024/11/29/rbenv-vs-conda.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-11-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Replacing rbenv with conda" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2024-11-29T00:00:00+00:00","datePublished":"2024-11-29T00:00:00+00:00","description":"Why I am using conda instead of rbenv to install Ruby inside of the CI job that builds this static site.","headline":"Replacing rbenv with conda","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2024/11/29/rbenv-vs-conda.html"},"url":"https://maxkapur.com/2024/11/29/rbenv-vs-conda.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Replacing rbenv with conda</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2024-11-29T00:00:00+00:00" itemprop="datePublished">
+        Nov 29, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Why I am using conda instead of rbenv to install Ruby inside of the CI job that
+builds this static site.<!--more--></p>
+
+<h1 id="the-problem">The problem</h1>
+
+<p>I wanted to make the GitHub Action that builds this static site more portable by
+replacing the
+<a href="https://github.com/maxkapur/maxkapur.github.io/actions/runs/11923415581/workflow">parade of third-party GitHub Actions</a>
+with simple shell scripts.</p>
+
+<p>With a self-contained build process, I can match my local build workflow to the
+one used to deploy the site from GitHub without going to (IMO) extremes like
+<a href="https://github.com/nektos/act">running the GitHub Actions Docker image locally</a>.
+It also makes it easier to migrate my hosting away from GitHub Pages if I ever
+should desire to.</p>
+
+<p>However, in my previous attempts to make a portable build script, I kept having
+difficulty with what should be the easiest step: Installing a Ruby version of my
+choice (currently v3.2) and pulling in all of Jekyll’s dependencies.</p>
+
+<h1 id="the-normal-solution">The normal solution</h1>
+
+<p>Most of the guides I consulted recommend
+<a href="https://github.com/rbenv/rbenv">rbenv</a>, which is a Ruby version manager that
+lets you specify your desired Ruby version in a <code class="language-plaintext highlighter-rouge">.ruby-version</code> file and install
+it with <code class="language-plaintext highlighter-rouge">rbenv install</code>.</p>
+
+<p>Unfortunately, installing rbenv itself is not that simple: On Debian stable and
+Ubuntu 22.04 (which is currently <code class="language-plaintext highlighter-rouge">ubuntu-latest</code> in GitHub Actions), the version
+of rbenv in the repos is too far out of date to install the version of Ruby I
+want. The rbenv developers recommend using the
+<a href="https://github.com/rbenv/rbenv-installer">rbenv-installer</a> script to install
+the latest rbenv from Git instead, but then the rbenv-installer README advises
+against usage in a CI pipeline, which is exactly what I want to do:</p>
+
+<blockquote>
+  <p>For automating installation across machines it’s better to <em>avoid</em> using this
+script in favor of fine-tuning rbenv &amp; ruby-build installation manually.</p>
+</blockquote>
+
+<p>This gets at another difficulty with rbenv, which is that it builds Ruby <em>from
+source</em> when you <code class="language-plaintext highlighter-rouge">rbenv install</code> a version that isn’t in your local cache. This
+means installing <code class="language-plaintext highlighter-rouge">ruby-build</code> in addition to a bunch of dynamically linked
+development libraries. On some of my workstations, I struggled and failed to put
+together a functional <code class="language-plaintext highlighter-rouge">ruby-build</code> toolchain; on my laptop, I finally got it
+working, only to have the build fail because I ran out of memory.</p>
+
+<p>For those who have the time and computational resources to compile from source,
+rbenv is a great tool, but for me, what I really needed was a precompiled
+binary. (Thus, I also ruled out <a href="https://rvm.io/">RVM</a>, another popular
+recommendation.)</p>
+
+<h1 id="the-conda-solution">The conda solution</h1>
+
+<p>Enter <a href="https://github.com/conda-forge/ruby-feedstock"><code class="language-plaintext highlighter-rouge">conda-forge::ruby</code></a>.
+Conda is a cross-platform package management and virtual environment system that
+is generally associated with the Python world (because it is written in Python)
+but supports generic binary packages. I used to be skeptical of conda because
+the most popular distributions (Anaconda and Miniconda) are proprietary, but
+<a href="https://github.com/conda-forge/miniforge">Miniforge</a> is an open-source
+alternative that covers all my use cases.</p>
+
+<p>After installing conda (and <a href="https://github.com/mamba-org/mamba">mamba</a> because
+why not), I created build scripts <code class="language-plaintext highlighter-rouge">configure.sh</code>, <code class="language-plaintext highlighter-rouge">build.sh</code>, and so on that
+simply wrap <code class="language-plaintext highlighter-rouge">mamba create</code> and <code class="language-plaintext highlighter-rouge">mamba run</code>. The
+<a href="https://github.com/maxkapur/maxkapur.github.io/actions/runs/11923546983/workflow">GitHub Action that builds the site</a>
+is now basically just this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure.sh  <span class="c"># Create the conda environment and run bundle install</span>
+./info.sh       <span class="c"># Log package versions</span>
+./build.sh      <span class="c"># Build the site</span>
+./check.sh      <span class="c"># Lint scripts with ShellCheck; might add more checks</span>
+</code></pre></div></div>
+
+<p>This workflow takes an average of two minutes to run on the GitHub cloud
+runners, which makes it <em>faster,</em> on average, than the parade of GitHub Actions
+I had before, which took about three minutes (except when running the workflow
+several times in a row, in which case caching would bring the runtime down to 20
+or 30 seconds).</p>
+
+<h1 id="alas">Alas</h1>
+
+<p>Alas, my GitHub Action workflow still has one third-party dependency: The
+<a href="https://github.com/marketplace/actions/setup-miniconda">Setup Miniconda</a>
+action. Despite the name, it can set up either Miniconda or Miniforge, and it is
+a little easier to work with than Miniforge’s interactive installer script.</p>
+
+<p>I <em>think</em> this is a sustainable solution, although those are probably bold words
+from the guy who just set all this up last week.</p>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2024/03/10/housekeeping.html"
+        title="Similarity score: 539"
+      >Housekeeping</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2024-03-10T00:00:00+00:00">Mar 10, 2024</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2024/12/06/self-host-fonts.html"
+        title="Similarity score: 532"
+      >How I self-host fonts on this blog</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2024-12-06T00:00:00+00:00">Dec 6, 2024</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2024/11/29/rbenv-vs-conda.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="/assets/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fffff5" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#546270" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon/favicon_180.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- Atom feed -->
+  <link type="application/atom+xml" rel="alternate" href="https://maxkapur.com/feed.xml" title="Illusion Slopes" />
+
+  <title>Stable matching on Planet Money | Illusion Slopes</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Stable matching on Planet Money | Illusion Slopes</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Stable matching on Planet Money" />
+<meta name="author" content="Max Kapur" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Planet Money, an NPR show about economics, recently ran an episode entitled “The Marriage Pact” that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice. The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that Planet Money leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic." />
+<meta property="og:description" content="Planet Money, an NPR show about economics, recently ran an episode entitled “The Marriage Pact” that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice. The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that Planet Money leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic." />
+<link rel="canonical" href="https://maxkapur.com/2021/03/07/stable-matching-planet-money.html" />
+<meta property="og:url" content="https://maxkapur.com/2021/03/07/stable-matching-planet-money.html" />
+<meta property="og:site_name" content="Illusion Slopes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Stable matching on Planet Money" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Max Kapur"},"dateModified":"2021-03-07T00:00:00+00:00","datePublished":"2021-03-07T00:00:00+00:00","description":"Planet Money, an NPR show about economics, recently ran an episode entitled “The Marriage Pact” that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice. The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that Planet Money leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.","headline":"Stable matching on Planet Money","mainEntityOfPage":{"@type":"WebPage","@id":"https://maxkapur.com/2021/03/07/stable-matching-planet-money.html"},"url":"https://maxkapur.com/2021/03/07/stable-matching-planet-money.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrapper"><div class="site-title-wrapper">
+        <div>
+          <a class="site-title" rel="author" href="/">Illusion Slopes</a>
+        </div>
+      </div><nav class="site-nav">
+      <div class="page-links"><div>
+          <a class="page-link" href="/about/">About</a>
+        </div><div>
+          <a class="page-link" href="/projects/">Projects</a>
+        </div><div>
+          <a class="page-link" href="/browse/">Browse</a>
+        </div></div>
+    </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Stable matching on Planet Money</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-03-07T00:00:00+00:00" itemprop="datePublished">
+        Mar 7, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled “The Marriage Pact”</a> that deals precisely with my research topic. It’s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.</p>
+
+<p>The episode begins with an interview with a Stanford econ student who designed a marriage market for his peers and managed to get 4111 of them to sign up for it. What a cool project! The student makes a few minor misstatements about the Gale–Shapley proposal algorithm that <em>Planet Money</em> leaves uncorrected. In this post, I want to offer a few corrections, not just because I can, but because in my opinion these marginal details are what make stable assignment an interesting and profitable research topic.</p>
+
+<!--more-->
+
+<p>The interviewee says that because the proposal algorithm produces a stable matching, it is guaranteed to provide participants with their “best” match. But it turns out that even when the participants in the proposal algorithm have strict preferences, there can actually be more than one set of stable matchings, and which stable matching you get depends on which form of the algorithm you use.</p>
+
+<p>If you run the algorithm in the male-proposing form, you get a match that is simultaneously male-optimal and female-pessimal. This means that among all of the women Fido could be stably matched with, the male-proposing algorithm is guaranteed to pair Fido with his first choice, and to pair Fido’s mate with the male she likes <em>least</em> among the males she could stably match with.</p>
+
+<p>Likewise, if you run the algorithm in the female-proposing form, you get a match that is female-optimal and male-pessimal.</p>
+
+<p>In the episode, the hosts mention that the algorithm provides the participants with no incentive to lie about their preference order (notwithstanding misrepresenting basic facts about <em>themselves</em> like height). But an important corollary of the result above is that the male-proposing algorithm is actually <em>not</em> strategy-proof for the <em>female</em> participants—by lying, they may end up with a male better than their worst match.</p>
+
+<p>I don’t know how the Stanford match works, but it’s likely that (for the straight participants) they used an extension of the Gale–Shapley algorithm developed in the 1980s that finds the “male–female optimal stable match”—a sort of compromise between the male- and female-proposing forms. This extended algorithm, while egalitarian, isn’t strategy proof for <em>either</em> group of participants, precisely because it gives both groups a slightly suboptimal match.</p>
+
+<p>The good news it that in the one-to-one matching case with strict preferences, the differences between the male- and female-optimal matches are quite minimal (usually just a shuffling a few pairs around at the edges, if any), and the “strategy” you need to use to beat the market is not at all obvious.</p>
+
+<p>But when we relax the assumption of strict preferences and start to work with many-to-one matching, as is the case in school choice, the set of stable matches becomes very large, and coming up with a good way to maximize participants’ outcomes while maintaining incentive compatibility is an interesting challenge. The dominant contenders in this space are randomized “tiebreaking” (lottery) mechanisms, including those used in school markets in New York, Boston, and elsewhere. I’ve run a bunch of computational experiments on these mechanisms, and you can see some fun graphs on the <a href="https://github.com/maxkapur/DeferredAcceptance">GitHub page for my Julia package DeferredAcceptance</a>.</p>
+
+<p>(I sent a version of this to the <em>Planet Money</em> team, but I’m not betting on a response.)</p>
+
+  </div><div class="related-posts">
+    <p>Related posts:</p>
+    <ol class="related-post-list">
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2020/01/19/what-you-learn-humanities.html"
+        title="Similarity score: 563"
+      >What you learn in a humanities degree</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2020-01-19T00:00:00+00:00">Jan 19, 2020</time>)
+      </span>
+    </div>
+  <li>
+    <div class="related-post-list-entry">
+      <a href="/2021/05/16/economic-view-korean-admissions.html"
+        title="Similarity score: 556"
+      >An economic view of the Korean college admissions market</a>
+      &ZeroWidthSpace;
+      <span class="post-meta">
+        (<time datetime="2021-05-16T00:00:00+00:00">May 16, 2021</time>)
+      </span>
+    </div></li>
+</ol>
+  </div>
+
+  <a class="u-url" href="/2021/03/07/stable-matching-planet-money.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Illusion Slopes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Max Kapur</li><li><a class="u-email" href="mailto:max@maxkapur.com">max@maxkapur.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span class="rss-link">via RSS</span></a></li><li><a href="https://github.com/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">maxkapur</span></a></li><li><a href="https://www.linkedin.com/in/maxkapur"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">maxkapur</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
