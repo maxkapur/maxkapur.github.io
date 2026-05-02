@@ -18,11 +18,11 @@ asks interviewees to recommend other blogs, then he uses these recommendations
 to pick subsequent interviewees. This means the graph is well connected despite
 its small size.
 
-I was going to share the results here, but ranking blogs by
-popularity seems against the spirit of the indie web ethos, so you'll have to run the program yourself. (But to make it clear I'm not covering anything up, let me
-acknowledge that [my interview](https://manuelmoreale.com/interview/max-kapur)
-is in a 61-way tie for last place, with all the other blogs that had no links to
-them.)
+I was going to share the results here, but ranking blogs by popularity seems
+against the spirit of the indie web ethos, so you'll have to run the program
+yourself. (But to make it clear I'm not covering anything up, let me acknowledge
+that [my interview](https://manuelmoreale.com/interview/max-kapur) is in a
+61-way tie for last place, with all the other blogs that had no links to them.)
 
 A few observations from this exercise below.<!--more-->
 
@@ -49,4 +49,6 @@ projects like this. That's especially true when, as here, I'm exercising a
 language or concept that I'm still learning—my PageRank implementation is
 neither performant nor educational. But as I told Manu in the P&B interview, I
 use my blog and GitHub more for accountability than publicity: The goal is to
-simply keep myself writing and coding. Publish post.
+simply keep myself writing and coding.
+
+Publish post.
