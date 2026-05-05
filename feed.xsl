@@ -76,7 +76,9 @@
           </xsl:attribute>
           <xsl:value-of select="atom:title" />
         </a>
-        &#8203; <!-- == &ZeroWidthSpace; -->
+
+        {%- comment -%} Intentional whitespace {%- endcomment %}
+
         <span class="post-meta">
           <time>
             <xsl:attribute name="datetime">
