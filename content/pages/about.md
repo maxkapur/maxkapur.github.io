@@ -1,9 +1,10 @@
----
-layout: page
-title: About
-sort_order: 10
-permalink: /about/
----
++++
+title = "About"
+aliases = ["/about/"]
+
+[extra]
+sort_order = 10
++++
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal
 is to document my thoughts and gain perspective on how they have evolved since

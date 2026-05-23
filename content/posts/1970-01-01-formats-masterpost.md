@@ -1,9 +1,10 @@
----
-layout:     post
-title:      "Formats masterpost"
-hidden:     true
-permalink:  /formatting/
----
++++
+title = "Formats masterpost"
+aliases = ["/formatting/"]
+
+[extra]
+hidden = true
++++
 
 Here is a post with all kinds of crazy formatting so that I can test out my CSS.<!--more-->
 
