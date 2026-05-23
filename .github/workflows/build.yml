@@ -16,7 +16,7 @@ permissions: {}
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: alpine:edge
+    # container: alpine:edge
     permissions:
       contents: write
     steps:
@@ -25,12 +25,11 @@ jobs:
           persist-credentials: true
 
       - name: Install dependencies
-        run: apk add zola
-
-      # TODO: This may become a wrapper scriptin order to do KaTeX or create
-      # page aliases
+        run: snap install zola
 
       - name: Build site
+        # TODO: This may become a wrapper scriptin order to do KaTeX or create
+        # page aliases
         run: |
           zola build && tree public/
 
