@@ -49,9 +49,8 @@ video](https://www.youtube.com/playlist?list=PL06yMQdXWrp9VsynaPe2mg2gjHfr45VZO)
 
 # Contact
 
-The best way to reach me is by emailing me at [{{ site.email }}](mailto:{{ site.email }}).
-You can also find me on
-[GitHub](https://github.com/{{ site.github_username }}),
+The best way to reach me is by emailing me at {{ mailto() }}. You can also find
+me on [GitHub](https://github.com/{{ site.github_username }}),
 [LinkedIn](https://www.linkedin.com/in/{{ site.linkedin_username }}), and
 [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw).
 

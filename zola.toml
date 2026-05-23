@@ -17,5 +17,6 @@ exclude_paginated_pages_in_sitemap = "all"
 theme = "catppuccin-mocha"
 
 [extra]
-homepage_n_posts = 5
 # Put all your custom variables here
+homepage_n_posts = 5
+email = "max@maxkapur.com"
