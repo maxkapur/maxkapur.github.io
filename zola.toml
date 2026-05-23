@@ -1,5 +1,7 @@
 # The URL the site will be built for
 base_url = "https://maxkapur.com"
+title = "Illusion Slopes"
+description = "Max Kapur’s blog"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
