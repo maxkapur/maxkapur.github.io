@@ -1,0 +1,75 @@
+# Based on https://github.com/actions/upload-pages-artifact
+
+name: build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "49 14 * * 3"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # container: alpine:edge
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install dependencies
+        run: sudo snap install --edge zola
+
+      - name: Build site
+        # TODO: This may become a wrapper scriptin order to do KaTeX or create
+        # page aliases
+        run: |
+          zola build && tree public/
+
+      # TODO: Steps below are loosely copied from Jekyll version; paths may need
+      # changing
+
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
+      - name: Push site build to static branch
+        # For portability, maintain a static branch with the site build checked
+        # in. This eases deployment to other hosting platforms. Skip this step
+        # if running from somewhere other than master.
+        if: github.ref == 'refs/heads/master'
+        run: |
+          git config --local user.name 'Max Kapur (GitHub Action runner)'
+          git config --local user.email 'maxkapur@users.noreply.github.com'
+          git config --local push.autoSetupRemote true
+          git switch -C static
+          git reset --hard origin/master
+          git add -f public/
+          git status
+          git commit -m "Automatic site build"
+          git push -f
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

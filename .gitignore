@@ -1,14 +1,1 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-
-# bundle install local targets
-vendor
-
-# Managed by Rakefile
-.bundle/config
-
-# `bundle install` produces a slightly different lockfile on different Linux
-# distributions
-Gemfile.lock
+public/
