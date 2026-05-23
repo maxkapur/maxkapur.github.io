@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PageRanking People and Blogs interviews
-latex: true
+katex: true
 ---
 
 I recently learned about [PageRank](https://en.wikipedia.org/wiki/PageRank), the
