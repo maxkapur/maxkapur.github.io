@@ -25,7 +25,7 @@ jobs:
           persist-credentials: true
 
       - name: Install dependencies
-        run: sudo snap install zola
+        run: sudo snap install --edge zola
 
       - name: Build site
         # TODO: This may become a wrapper scriptin order to do KaTeX or create
