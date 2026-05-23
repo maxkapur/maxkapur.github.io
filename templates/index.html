@@ -1,3 +1,11 @@
+{% extends "base.html" %}
+
 {% block main %}
-Hello, world!
+{% set posts_section = get_section(path="posts/_index.md") %}
+{% set recent_posts = posts_section.pages | slice(end=config.extra.homepage_n_posts) %}
+
+{% for page in recent_posts %}
+  {% include "posts/_snippet.html" %}
+{% endfor %}
+
 {% endblock main %}
