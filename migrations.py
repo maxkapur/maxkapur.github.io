@@ -1,3 +1,4 @@
+import warnings
 from datetime import date
 from pathlib import Path
 
@@ -6,7 +7,8 @@ import toml
 import tomllib
 
 
-def process(path: Path):
+def process(path: Path) -> bool:
+    """Migrate a page or post. Return whether anything changed."""
     if path.parts[1] == "pages":
         page_type = "page"
     elif path.parts[1] == "posts":
@@ -16,7 +18,7 @@ def process(path: Path):
 
     if path.name == "_index.md":
         print(f"Skipping {path}")
-        return
+        return False
 
     print(f"Processing {path}")
     original_text = path.read_text()
@@ -83,11 +85,18 @@ def process(path: Path):
     output = f"+++\n{frontmatter}+++\n\n{body}"
     if output != original_text:
         path.write_text(output)
+        return True
+    return False
 
 
 if __name__ == "__main__":
+    change_detected = False
     pages = list(Path("./content/pages/").glob("**.md")) + list(
         Path("./content/posts/").glob("**.md")
     )
     for page in pages:
-        process(page)
+        change_detected |= process(page)
+
+    if change_detected:
+        warnings.warn("Migrations needed; see diff")
+        exit(1)
