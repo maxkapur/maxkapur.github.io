@@ -8,10 +8,10 @@ import requests
 output_dir = Path(__file__).parent / "static" / "fonts"
 
 urls = {
-    "ibm_plex_mono": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
-    "ibm_plex_math": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-math%401.1.0/ibm-plex-math.zip",
-    "ibm_plex_sans": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
-    "ibm_plex_sans_kr": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip",
+    "ibm-plex-mono": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
+    "ibm-plex-math": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-math%401.1.0/ibm-plex-math.zip",
+    "ibm-plex-sans": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip",
+    "ibm-plex-sans-kr": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip",
 }
 
 
@@ -27,12 +27,18 @@ def main():
     """Download/extract IBM Plex fonts from GitHub releases."""
 
     for font_name, url in urls.items():
-        outdir = output_dir / font_name
+        # Plex .zips have a top-level directory; we extract into just output_dir
+        # to prevent double nesting but need the font name here to make sure we check
+        # against the right font
+        expected_outdir = output_dir / font_name
 
-        if list(outdir.glob("**/*.css")) and list(outdir.glob("**/*.woff2")):
-            relpath = outdir.relative_to(Path().absolute())
+        if list(expected_outdir.glob("**/*.css")) and list(
+            expected_outdir.glob("**/*.woff2")
+        ):
+            relpath = expected_outdir.relative_to(Path().absolute())
             print(f"{relpath} already looks good, skipping download")
             continue
+        del expected_outdir  # Avoid misuse
 
         response = requests.get(url)
         assert response.ok
@@ -46,11 +52,11 @@ def main():
                 if not fnames:
                     raise ValueError(f"No files to extract. {zipfile.namelist()=}")
 
-                outdir.mkdir(exist_ok=True, parents=True)
-                zipfile.extractall(outdir, fnames)
+                output_dir.mkdir(exist_ok=True, parents=True)
+                zipfile.extractall(output_dir, fnames)
 
         for fname in fnames:
-            outfile = outdir / fname
+            outfile = output_dir / fname
             assert outfile.is_file()
             print(f"Extracted {outfile}")
 
