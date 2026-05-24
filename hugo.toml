@@ -11,5 +11,10 @@ date = ["date", ":filename", ":default"]
 lastmod = ["lastmod", ":filename", ":default"]
 publishDate = ["publishdate", ":filename", ":default"]
 
+[permalinks]
+# For posts (only), include the date in the URL to disambiguate recurring posts
+# with the same title (like "recent reading")
+posts = "/posts/:year-:month-:day-:slug"
+
 [markup.goldmark]
 renderer.unsafe = true
