@@ -1,17 +1,21 @@
 body {
-    color: #222;
-    font-family: var(--base-font-family);
-    line-height: 1.5;
-    margin: 1rem;
-    max-width: 768px;
+  color: #222;
+  font-family: var(--base-font-family);
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
 }
 
 a {
-    color: #00e;
-    text-decoration: none;
+  color: #00e;
+  text-decoration: none;
 }
 
 footer {
-    border-top: 1px solid #222;
-    margin-top: 1rem;
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+.katex math {
+  font-family: var(--math-font-family);
 }
