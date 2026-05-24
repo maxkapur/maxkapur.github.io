@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from io import BytesIO
-from operator import truediv
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -31,7 +30,8 @@ def main():
         outdir = output_dir / font_name
 
         if list(outdir.glob("**/*.css")) and list(outdir.glob("**/*.woff2")):
-            print(f"{outdir} already looks good, skipping download")
+            relpath = outdir.relative_to(Path().absolute())
+            print(f"{relpath} already looks good, skipping download")
             continue
 
         response = requests.get(url)
