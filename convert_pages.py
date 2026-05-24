@@ -56,6 +56,28 @@ def process(path: Path):
         d["aliases"].extend(redirects)
         del d["redirect_from"]
 
+    if "layout" in d:
+        # Tech debt in Jekyll where I manually had to say every post was a post
+        del d["layout"]
+
+    # Move custom keys into params
+    if "katex" in d:
+        # Sanity check assumption that I only included this key if it was true
+        assert d["katex"]
+
+        # Indicates whether the page has math on it. Idea was that you could
+        # get faster page loads by skipping the KaTeX CSS on pages that don't
+        # need it. But the *homepage* needs it, so there is a good change it's
+        # cached and this doesn't really matter
+        d["params"] = d.get("params", {}) | {"katex": True}
+        del d["katex"]
+
+    if "hidden" in d:
+        # Sanity check assumption that I only included this key if it was true
+        assert d["hidden"]
+        d["params"] = d.get("params", {}) | {"hidden": True}
+        del d["hidden"]
+
     frontmatter = toml.dumps(d)
     body = body.strip()
     output = f"+++\n{frontmatter}+++\n\n{body}"
