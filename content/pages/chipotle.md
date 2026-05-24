@@ -1,10 +1,10 @@
----
-layout: page
-title: Chipotle
-sort_order: 999
-hidden: true
-permalink: /chipotle/
----
++++
+layout = "page"
+title = "Chipotle"
+sort_order = "999"
+hidden = true
+permalink = "/chipotle/"
++++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)
 

@@ -1,9 +1,9 @@
----
-layout: page
-title: Colophon
-hidden: true
-permalink: /colophon/
----
++++
+layout = "page"
+title = "Colophon"
+hidden = true
+permalink = "/colophon/"
++++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)
 

@@ -1,11 +1,10 @@
----
-layout: page
-title: Projects
-permalink: /projects/
-sort_order: 20
-redirect_from:
-  - /publications/
----
++++
+layout = "page"
+title = "Projects"
+permalink = "/projects/"
+sort_order = "20"
+redirect_from = [ "/publications/",]
++++
 
 {%- comment -%}
   Redirect above is because I used to have separate pages for projects and
