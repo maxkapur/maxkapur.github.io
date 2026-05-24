@@ -39,8 +39,9 @@ def process(page: Path):
 
     frontmatter = toml.dumps(d)
     body = body.strip()
-
-    page.write_text(f"+++\n{frontmatter}+++\n\n{body}")
+    output = f"+++\n{frontmatter}+++\n\n{body}"
+    if output != original_text:
+        page.write_text(output)
 
 
 if __name__ == "__main__":
