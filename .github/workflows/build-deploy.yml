@@ -23,20 +23,21 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Configure toolchain (rake configure)
-        run: rake configure
+      - name: Install dependencies
+        run: ./configure.sh
 
-      - name: Show package info (rake info)
-        run: rake info
+      - name: Build site
+        run: |
+          hugo build && tree public/
 
-      - name: Build site (rake)
-        run: rake
+      # TODO: Steps below are loosely copied from Jekyll version; paths may need
+      # changing
 
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v5
         with:
-          path: _site/
+          path: public/
 
       - name: Push site build to static branch
         # For portability, maintain a static branch with the site build checked
@@ -49,7 +50,7 @@ jobs:
           git config --local push.autoSetupRemote true
           git switch -C static
           git reset --hard origin/master
-          git add -f _site/
+          git add -f public/
           git status
           git commit -m "Automatic site build"
           git push -f
