@@ -16,10 +16,11 @@ urls = {
 
 
 def should_extract(fname: str) -> bool:
-    if fname.endswith(".min.css"):
-        return True
-    if fname.endswith(".woff2"):
-        return True
+    """Determine whether a file from the zip archive should be extracted."""
+    # Plex CSS references both the .woff2 and .woff version of each font
+    for suffix in [".min.css", ".woff2", ".woff"]:
+        if fname.endswith(suffix):
+            return True
     return False
 
 
@@ -40,8 +41,10 @@ def main():
             continue
         del expected_outdir  # Avoid misuse
 
+        print(f"Downloading {font_name}.zip ...", end="")
         response = requests.get(url)
         assert response.ok
+        print("OK")
 
         with BytesIO() as buffer:
             buffer.write(response.content)
