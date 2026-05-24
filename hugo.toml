@@ -10,3 +10,6 @@ enableGitInfo = true
 date = ["date", ":filename", ":default"]
 lastmod = ["lastmod", ":filename", ":default"]
 publishDate = ["publishdate", ":filename", ":default"]
+
+[markup.goldmark]
+renderer.unsafe = true
