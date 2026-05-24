@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Authenticity and the Illusion Slopes AI policy"
 aliases = [ "/2025/03/12/authenticity-ai-policy.html",]
 +++

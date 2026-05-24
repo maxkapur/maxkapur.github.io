@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "CLS advice nobody asked for"
 aliases = [ "/2025/06/26/cls-advice.html",]
 +++

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "The college application problem, presented in Korean"
 aliases = [ "/2022/05/13/college-application-presentation-korean.html",]
 +++

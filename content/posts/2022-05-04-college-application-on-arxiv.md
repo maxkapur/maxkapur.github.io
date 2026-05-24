@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "“College Application” on arXiv"
 aliases = [ "/2022/05/04/college-application-on-arxiv.html",]
 +++

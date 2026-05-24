@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Systems for making systems"
 aliases = [ "/2026/06/03/metasystems.html",]
 +++

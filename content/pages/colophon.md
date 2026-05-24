@@ -1,8 +1,9 @@
 +++
-layout = "page"
 title = "Colophon"
-hidden = true
 aliases = [ "/colophon/",]
+
+[params]
+hidden = true
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)

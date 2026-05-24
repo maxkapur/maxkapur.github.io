@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Driver’s ed should teach error recovery"
 aliases = [ "/2024/06/23/drivers-ed-error-recovery.html",]
 +++

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Recent reading"
 aliases = [ "/2024/03/18/recent-reading.html",]
 +++

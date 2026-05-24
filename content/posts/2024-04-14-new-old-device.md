@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "New old device"
 aliases = [ "/2024/04/14/new-old-device.html",]
 +++

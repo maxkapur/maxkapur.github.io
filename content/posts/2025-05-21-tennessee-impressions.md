@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "First impressions after moving to Tennessee"
 aliases = [ "/2025/05/21/tennessee-impressions.html",]
 +++

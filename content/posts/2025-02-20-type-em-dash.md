@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "How to type an em dash"
 aliases = [ "/2025/02/20/type-em-dash.html",]
 +++

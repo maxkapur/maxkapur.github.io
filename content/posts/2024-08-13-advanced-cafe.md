@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Advanced café techniques"
 aliases = [ "/2024/08/13/advanced-cafe.html",]
 +++

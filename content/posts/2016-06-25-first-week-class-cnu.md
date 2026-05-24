@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "First week of class at CNU"
 aliases = [ "/2016/06/25/first-week-class-cnu.html",]
 +++

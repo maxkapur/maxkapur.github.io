@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "How I self-host fonts on this blog"
 aliases = [ "/2024/12/06/self-host-fonts.html",]
 +++

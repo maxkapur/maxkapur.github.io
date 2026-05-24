@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "The best thing about fish"
 aliases = [ "/2024/05/03/best-thing-about-fish.html",]
 +++

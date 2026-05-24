@@ -1,5 +1,4 @@
 +++
-layout = "page"
 title = "About"
 sort_order = "10"
 aliases = [ "/about/",]

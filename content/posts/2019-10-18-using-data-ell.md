@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Using data to understand ELL students"
 aliases = [ "/2019/10/18/using-data-ell.html",]
 +++

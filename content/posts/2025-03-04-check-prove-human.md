@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Check this box to prove you are a human"
 aliases = [ "/2025/03/04/check-prove-human.html",]
 +++

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Stable matching on Planet Money"
 aliases = [ "/2021/03/07/stable-matching-planet-money.html",]
 +++

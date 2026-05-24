@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Conda updated?"
 aliases = [ "/2025/02/12/conda-updated.html",]
 +++

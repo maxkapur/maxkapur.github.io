@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "People and Blogs interview"
 date = "2025-02-14T13:00:00"
 aliases = [ "/2025/02/14/people-and-blogs.html",]

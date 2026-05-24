@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "My poorly automated Kubuntu setup"
 aliases = [ "/2025/06/04/kubuntu-setup.html",]
 +++

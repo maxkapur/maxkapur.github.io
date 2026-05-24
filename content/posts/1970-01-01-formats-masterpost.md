@@ -1,8 +1,9 @@
 +++
-layout = "post"
 title = "Formats masterpost"
-hidden = true
 aliases = [ "/formatting/",]
+
+[params]
+hidden = true
 +++
 
 Here is a post with all kinds of crazy formatting so that I can test out my CSS.<!--more-->

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Two novels to understand Korea’s political turmoil"
 aliases = [ "/2024/12/08/novels-to-understand-korea.html",]
 +++

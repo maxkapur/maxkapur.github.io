@@ -1,6 +1,5 @@
 +++
 title = "Python scripts"
-layout = "post"
 aliases = [ "/2025/09/24/python-scripts.html",]
 +++
 

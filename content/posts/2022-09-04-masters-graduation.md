@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Master’s graduation and two free optimization courses"
 aliases = [ "/2022/09/04/masters-graduation.html",]
 +++

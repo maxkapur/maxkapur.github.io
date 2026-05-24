@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Is using a thesaurus cheating?"
 aliases = [ "/2025/06/18/thesaurus-cheating.html",]
 +++

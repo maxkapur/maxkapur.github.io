@@ -1,6 +1,5 @@
 +++
 title = "Music videos"
-layout = "post"
 aliases = [ "/2025/04/23/music-videos.html",]
 +++
 

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "pipx install topgrade"
 aliases = [ "/2025/03/19/pipx-install-topgrade.html",]
 +++

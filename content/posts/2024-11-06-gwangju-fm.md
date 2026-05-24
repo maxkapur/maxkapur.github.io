@@ -1,6 +1,5 @@
 +++
 title = "Media literacy chat at 88.9 Gwangju FM"
-layout = "post"
 aliases = [ "/2024/11/06/gwangju-fm.html",]
 +++
 

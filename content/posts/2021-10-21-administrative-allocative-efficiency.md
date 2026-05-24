@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Administrative vs. allocative efficiency"
 aliases = [ "/2021/10/21/administrative-allocative-efficiency.html",]
 +++

@@ -1,6 +1,5 @@
 +++
 title = "Urban Arts Career Pathways Takeover"
-layout = "post"
 aliases = [ "/2025/11/23/urban-arts.html",]
 +++
 

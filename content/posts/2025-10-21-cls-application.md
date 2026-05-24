@@ -1,6 +1,5 @@
 +++
 title = "Apply for CLS"
-layout = "post"
 aliases = [ "/2025/10/21/cls-application.html",]
 +++
 

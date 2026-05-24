@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "An economic view of the Korean college admissions market"
 aliases = [ "/2021/05/16/economic-view-korean-admissions.html",]
 +++

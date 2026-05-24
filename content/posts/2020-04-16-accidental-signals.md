@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Accidental signals"
 aliases = [ "/2020/04/16/accidental-signals.html",]
 +++

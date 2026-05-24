@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Why I put ISO dates in filenames"
 aliases = [ "/2024/04/26/iso-dates-filenames.html",]
 +++

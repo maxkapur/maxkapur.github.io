@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Learning Korean idioms with UNIX fortune"
 aliases = [ "/2023/02/05/korean-idioms-fortunes.html",]
 +++

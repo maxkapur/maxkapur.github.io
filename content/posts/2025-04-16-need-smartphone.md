@@ -1,6 +1,5 @@
 +++
 title = "Reasons it’s hard to abandon a smartphone"
-layout = "post"
 aliases = [ "/2025/04/16/need-smartphone.html",]
 +++
 

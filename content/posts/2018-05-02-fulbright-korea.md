@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Fulbright"
 aliases = [ "/2018/05/02/fulbright-korea.html",]
 +++

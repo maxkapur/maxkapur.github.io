@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "The benefits of a nonnative teacher"
 aliases = [ "/2020/05/06/nonnative-teacher.html",]
 +++

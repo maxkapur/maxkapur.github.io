@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Centering students as creators"
 aliases = [ "/2017/08/31/students-as-creators.html",]
 +++

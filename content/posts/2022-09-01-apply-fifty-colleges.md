@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Apply to fifty colleges"
 aliases = [ "/2022/09/01/apply-fifty-colleges.html",]
 +++

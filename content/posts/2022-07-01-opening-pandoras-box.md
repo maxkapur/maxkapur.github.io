@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Opening Pandora’s Box"
 aliases = [ "/2022/07/01/opening-pandoras-box.html",]
 +++

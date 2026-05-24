@@ -1,6 +1,5 @@
 +++
 title = "Pytest + Ruff + Mypy"
-layout = "post"
 aliases = [ "/2025/12/10/pytest-ruff-mypy.html",]
 +++
 

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Newly excavated posts about teaching"
 aliases = [ "/2025/01/11/newly-excavated-posts.html",]
 +++

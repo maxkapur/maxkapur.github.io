@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Migrating to Jekyll"
 aliases = [ "/2022/06/25/migrating-to-jekyll.html",]
 +++

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Houseplant measurements"
 aliases = [ "/2020/01/02/houseplant-measurements.html",]
 +++

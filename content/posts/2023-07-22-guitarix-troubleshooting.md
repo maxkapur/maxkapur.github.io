@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Guitarix troubleshooting"
 aliases = [ "/2023/07/22/guitarix-troubleshooting.html",]
 +++

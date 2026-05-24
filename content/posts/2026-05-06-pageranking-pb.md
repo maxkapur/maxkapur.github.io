@@ -1,8 +1,9 @@
 +++
-layout = "post"
 title = "PageRanking People and Blogs interviews"
-katex = true
 aliases = [ "/2026/05/06/pageranking-pb.html",]
+
+[params]
+katex = true
 +++
 
 I recently learned about [PageRank](https://en.wikipedia.org/wiki/PageRank), the

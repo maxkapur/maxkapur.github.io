@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "This year’s reading"
 aliases = [ "/2022/12/17/this-years-reading.html",]
 +++

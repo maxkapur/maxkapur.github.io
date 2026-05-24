@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Circular regression when you already know the period"
 aliases = [ "/2025/04/06/circular-regression.html",]
 +++

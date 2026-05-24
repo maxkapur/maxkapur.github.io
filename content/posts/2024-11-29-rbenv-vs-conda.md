@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Replacing rbenv with conda"
 aliases = [ "/2024/11/29/rbenv-vs-conda.html",]
 +++

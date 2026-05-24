@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Server-side KaTeX rendering with Jekyll"
 aliases = [ "/2024/12/26/server-side-katex.html",]
 +++

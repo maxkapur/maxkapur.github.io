@@ -1,6 +1,5 @@
 +++
 title = "Still playing guitar like piano"
-layout = "post"
 aliases = [ "/2025/05/28/guitar-like-piano.html",]
 +++
 

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Tensions rise in the condaverse"
 aliases = [ "/2025/09/18/tension-condaverse.html",]
 +++

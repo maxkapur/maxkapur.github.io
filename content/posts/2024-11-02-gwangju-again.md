@@ -1,6 +1,5 @@
 +++
 title = "Gwangju again: CLS Media Literacy and Democracy seminar"
-layout = "post"
 aliases = [ "/2024/11/02/gwangju-again.html",]
 +++
 

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "A handy class of submodular functions"
 aliases = [ "/2024/01/01/handy-submodular.html",]
 +++

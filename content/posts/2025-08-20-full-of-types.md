@@ -1,6 +1,5 @@
 +++
 title = "Full of types"
-layout = "post"
 aliases = [ "/2025/08/20/full-of-types.html",]
 +++
 

@@ -1,9 +1,10 @@
 +++
-layout = "page"
 title = "Chipotle"
 sort_order = "999"
-hidden = true
 aliases = [ "/chipotle/",]
+
+[params]
+hidden = true
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

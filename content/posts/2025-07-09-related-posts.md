@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Jekyll plugin to recommend related posts"
 aliases = [ "/2025/07/09/related-posts.html",]
 +++

@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Applying the KISS principle to amp modeling"
 aliases = [ "/2023/01/27/kiss-guitar-modeling.html",]
 +++
