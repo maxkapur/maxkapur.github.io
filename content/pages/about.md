@@ -2,7 +2,7 @@
 layout: page
 title: About
 sort_order: 10
-permalink: /about/
+aliases: ["/about/"]
 ---
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal
