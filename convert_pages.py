@@ -26,6 +26,17 @@ def process(page: Path):
         body = original_text
         d = {}
 
+    # Every page in the Jekyll site had a permalink so there's no default path
+    # to alias
+    d["aliases"] = d.get("aliases", [])
+    if permalink := d.get("permalink"):
+        # Jekyll permalink
+        d["aliases"].append(permalink)
+        del d["permalink"]
+    if redirects := d.get("redirect_from"):
+        d["aliases"].extend(redirects)
+        del d["redirect_from"]
+
     frontmatter = toml.dumps(d)
     body = body.strip()
 

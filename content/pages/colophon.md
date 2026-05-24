@@ -2,7 +2,7 @@
 layout = "page"
 title = "Colophon"
 hidden = true
-permalink = "/colophon/"
+aliases = [ "/colophon/",]
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)

@@ -3,7 +3,7 @@ layout = "page"
 title = "Chipotle"
 sort_order = "999"
 hidden = true
-permalink = "/chipotle/"
+aliases = [ "/chipotle/",]
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)
