@@ -1,7 +1,8 @@
----
-title: Pytest + Ruff + Mypy
-layout: post
----
++++
+title = "Pytest + Ruff + Mypy"
+layout = "post"
+aliases = [ "/2025/12/10/pytest-ruff-mypy.html",]
++++
 
 There is a [pytest-ruff](https://pypi.org/project/pytest-ruff/) plugin for
 Pytest (a Python testing framework) that will automatically run

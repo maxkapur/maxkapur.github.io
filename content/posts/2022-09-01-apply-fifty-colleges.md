@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Apply to fifty colleges"
----
++++
+layout = "post"
+title = "Apply to fifty colleges"
+aliases = [ "/2022/09/01/apply-fifty-colleges.html",]
++++
 
 In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more-->[^obvious]
 
@@ -116,5 +117,3 @@ Remember: These numbers are fake. But we have made a plausible argument that the
 - Identify a regime in which $$\partial x^* / \partial p$$ is positive and explain, in qualitative terms, why this is the case.
 - If every student adopts the optimal application strategy, then everyone might apply to twice as many schools. But then each school will become twice as competitive, changing the admissions odds and therefore the optimal strategies. Can you sketch the equilibrium criteria for this market? What other information would you need? [(Paywalled academic paper about this.)](https://www.journals.uchicago.edu/doi/10.1086/675503)
 - Suppose that the admissions probabilities and utility values for the reach schools are all different. What is the utility expression in this case? *Hint:* Replace $$x$$ with a set indicating which colleges you apply to. You can find the answer [here]({{ site.url }}/mulberry/) or in my [master’s thesis](https://github.com/maxkapur/CollegeApplication).
-
-

@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Why I put ISO dates in filenames"
----
++++
+layout = "post"
+title = "Why I put ISO dates in filenames"
+aliases = [ "/2024/04/26/iso-dates-filenames.html",]
++++
 
 I am one of those obnoxious people who begins his filenames with an ISO date,
 like `2024-03-06_blog_post_idea.md`. I know that file metadata already tracks

@@ -1,7 +1,8 @@
----
-title: How I organize browser tabs
-layout: post
----
++++
+title = "How I organize browser tabs"
+layout = "post"
+aliases = [ "/2025/04/30/organize-tabs.html",]
++++
 
 I didn’t realize I had a system for this until I did.
 

@@ -1,7 +1,8 @@
----
-layout: post
-title: How to type an em dash
----
++++
+layout = "post"
+title = "How to type an em dash"
+aliases = [ "/2025/02/20/type-em-dash.html",]
++++
 
 - Phone (Android): Long press the hyphen button
 - Desktop (Linux): [Compose key](https://en.wikipedia.org/wiki/Compose_key)

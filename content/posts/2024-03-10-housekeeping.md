@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Housekeeping"
----
++++
+layout = "post"
+title = "Housekeeping"
+aliases = [ "/2024/03/10/housekeeping.html",]
++++
 
 Completed some overdue site maintenance over the past few weeks:
 

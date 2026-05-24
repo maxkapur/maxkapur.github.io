@@ -1,7 +1,8 @@
----
-layout: post
-title: Server-side KaTeX rendering with Jekyll
----
++++
+layout = "post"
+title = "Server-side KaTeX rendering with Jekyll"
+aliases = [ "/2024/12/26/server-side-katex.html",]
++++
 
 This post explains how I set up server-side KaTeX rendering to improve the load
 time on pages that include mathematical notation.<!--more-->

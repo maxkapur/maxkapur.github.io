@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Applying the KISS principle to amp modeling"
----
++++
+layout = "post"
+title = "Applying the KISS principle to amp modeling"
+aliases = [ "/2023/01/27/kiss-guitar-modeling.html",]
++++
 
 I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
 I started out with Garageband and Mainstage, then briefly experimented with [Amplifikation Vermilion](https://www.kuassa.com/products/amplifikation-vermilion/), and for the last year and half have turned to a free, open-source package called [Guitarix](https://guitarix.org/) and a small collection of impulse response files culled from guitar forums.

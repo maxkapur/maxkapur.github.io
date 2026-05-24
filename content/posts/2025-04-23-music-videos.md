@@ -1,7 +1,8 @@
----
-title: Music videos
-layout: post
----
++++
+title = "Music videos"
+layout = "post"
+aliases = [ "/2025/04/23/music-videos.html",]
++++
 
 A side effect of my refusal to subscribe to Spotify (I just buy albums on
 Bandcamp or used CDs) is that when someone sends me a song to listen to, I

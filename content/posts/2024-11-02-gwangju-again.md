@@ -1,7 +1,8 @@
----
-title: 'Gwangju again: CLS Media Literacy and Democracy seminar'
-layout: post
----
++++
+title = "Gwangju again: CLS Media Literacy and Democracy seminar"
+layout = "post"
+aliases = [ "/2024/11/02/gwangju-again.html",]
++++
 
 I had the honor this week of participating in the first ever [Critical Language
 Scholarship Alumni Seminar](https://clscholarship.org/news/2024/cls-international-alumni-seminars)

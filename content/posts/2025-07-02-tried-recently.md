@@ -1,7 +1,8 @@
----
-layout: post
-title: Some things I tried recently
----
++++
+layout = "post"
+title = "Some things I tried recently"
+aliases = [ "/2025/07/02/tried-recently.html",]
++++
 
 [Kagi Search:](https://kagi.com/) It’s a paid search engine that promises to
 give better results than Google and friends. Indeed, the search results are a

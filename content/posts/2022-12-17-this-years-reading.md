@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "This year’s reading"
----
++++
+layout = "post"
+title = "This year’s reading"
+aliases = [ "/2022/12/17/this-years-reading.html",]
++++
 
 A subset of the books I enjoyed this year:
 - Barbara Kingsolver, *The Poisonwood Bible,* a novel about evangelical Christianity and cultural arrogance.

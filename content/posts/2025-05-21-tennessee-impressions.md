@@ -1,7 +1,8 @@
----
-layout: post
-title: First impressions after moving to Tennessee
----
++++
+layout = "post"
+title = "First impressions after moving to Tennessee"
+aliases = [ "/2025/05/21/tennessee-impressions.html",]
++++
 
 - *Honey, baby,* etc.
 - Even young people have the accent. This surprised me because I thought that

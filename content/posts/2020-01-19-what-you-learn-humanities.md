@@ -1,7 +1,8 @@
----
-layout:     post
-title:      What you learn in a humanities degree
----
++++
+layout = "post"
+title = "What you learn in a humanities degree"
+aliases = [ "/2020/01/19/what-you-learn-humanities.html",]
++++
 
 The more I learn, I find myself with fewer and fewer things to say.
 

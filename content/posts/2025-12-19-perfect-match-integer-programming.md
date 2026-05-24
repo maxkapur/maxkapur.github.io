@@ -1,8 +1,9 @@
----
-layout: post
-katex: true
-title: Find your perfect match with integer programming
----
++++
+layout = "post"
+katex = true
+title = "Find your perfect match with integer programming"
+aliases = [ "/2025/12/19/perfect-match-integer-programming.html",]
++++
 
 Owen Lacey
 [blogged](https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/) about

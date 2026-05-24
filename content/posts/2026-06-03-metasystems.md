@@ -1,7 +1,8 @@
----
-layout: post
-title: Systems for making systems
----
++++
+layout = "post"
+title = "Systems for making systems"
+aliases = [ "/2026/06/03/metasystems.html",]
++++
 
 I read a comment stating that git (a tool programmers use to collaborate on
 code, sort of like Word's Track Changes) is not a version control system but a

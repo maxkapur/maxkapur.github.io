@@ -1,7 +1,8 @@
----
-layout: post
-title: How I self-host fonts on this blog
----
++++
+layout = "post"
+title = "How I self-host fonts on this blog"
+aliases = [ "/2024/12/06/self-host-fonts.html",]
++++
 
 I recently transitioned this blog to self-host its fonts (IBM Plex Sans, Sans
 KR, and Mono) from within the GitHub Pages artifact instead of calling the

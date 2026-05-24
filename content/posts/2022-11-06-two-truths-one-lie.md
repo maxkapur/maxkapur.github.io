@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Two truths and one lie"
----
++++
+layout = "post"
+title = "Two truths and one lie"
+aliases = [ "/2022/11/06/two-truths-one-lie.html",]
++++
 
 A puzzle based on the icebreaker game.
 

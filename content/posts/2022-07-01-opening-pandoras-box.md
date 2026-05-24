@@ -1,7 +1,8 @@
----
-layout:     post
-title:      Opening Pandora’s Box
----
++++
+layout = "post"
+title = "Opening Pandora’s Box"
+aliases = [ "/2022/07/01/opening-pandoras-box.html",]
++++
 
 A harrowing thing that happens in research is that occasionally, you stumble upon a
 [paper from 1979 (paywall)](https://doi.org/10.2307/1910412) that appears to solve

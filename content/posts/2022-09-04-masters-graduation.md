@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Master’s graduation and two free optimization courses"
----
++++
+layout = "post"
+title = "Master’s graduation and two free optimization courses"
+aliases = [ "/2022/09/04/masters-graduation.html",]
++++
 
 On September 29, I received my master’s degree in industrial engineering from Seoul National University!
 

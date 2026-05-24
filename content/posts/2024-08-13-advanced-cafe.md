@@ -1,7 +1,8 @@
----
-layout: post
-title: "Advanced café techniques"
----
++++
+layout = "post"
+title = "Advanced café techniques"
+aliases = [ "/2024/08/13/advanced-cafe.html",]
++++
 
 Most cafés have separate lines for placing your order and picking it up. After
 you order, you move to the next line, and since drinks come out in more or less

@@ -1,7 +1,8 @@
----
-title: Apply for CLS
-layout: post
----
++++
+title = "Apply for CLS"
+layout = "post"
+aliases = [ "/2025/10/21/cls-application.html",]
++++
 
 This year's application for Critical Language Scholarship from the US State
 Department is now [open](https://clscholarship.org/apply). (Thanks, group chat!)

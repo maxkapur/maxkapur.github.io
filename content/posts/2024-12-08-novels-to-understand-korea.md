@@ -1,7 +1,8 @@
----
-layout: post
-title: Two novels to understand Korea’s political turmoil
----
++++
+layout = "post"
+title = "Two novels to understand Korea’s political turmoil"
+aliases = [ "/2024/12/08/novels-to-understand-korea.html",]
++++
 
 On Tuesday night, South Korean President Yoon Suk Yeol imposed martial law
 across the country for six hours. He retracted his declaration only after the

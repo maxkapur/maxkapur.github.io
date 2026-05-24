@@ -1,7 +1,8 @@
----
-layout: post
-title: Replacing rbenv with conda
----
++++
+layout = "post"
+title = "Replacing rbenv with conda"
+aliases = [ "/2024/11/29/rbenv-vs-conda.html",]
++++
 
 Why I am using conda instead of rbenv to install Ruby inside of the CI job that
 builds this static site.<!--more-->

@@ -1,8 +1,9 @@
----
-layout: post
-title: People and Blogs interview
-date: 2025-02-14T13:00:00
----
++++
+layout = "post"
+title = "People and Blogs interview"
+date = "2025-02-14T13:00:00"
+aliases = [ "/2025/02/14/people-and-blogs.html",]
++++
 
 Manuel Moreale, a tireless indie web advocate, recently
 [had me as a guest on his People and Blogs series](https://manuelmoreale.com/pb-max-kapur)

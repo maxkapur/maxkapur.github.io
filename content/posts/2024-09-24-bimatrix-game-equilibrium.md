@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Bimatrix game equilibrium via nonlinear programming"
----
++++
+layout = "post"
+title = "Bimatrix game equilibrium via nonlinear programming"
+aliases = [ "/2024/09/24/bimatrix-game-equilibrium.html",]
++++
 
 [These lecture notes
 (PDF)](https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/9cca6ef4a5399a4e05891f471d667441_MIT6_254S10_lec09.pdf)

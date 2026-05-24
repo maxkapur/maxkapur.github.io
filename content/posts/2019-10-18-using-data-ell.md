@@ -1,7 +1,8 @@
----
-layout:     post
-title:      Using data to understand ELL students
----
++++
+layout = "post"
+title = "Using data to understand ELL students"
+aliases = [ "/2019/10/18/using-data-ell.html",]
++++
 
 In August, I surveyed my students about their motivation for learning
 English, their opinions about our class and my teaching style, and

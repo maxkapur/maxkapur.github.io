@@ -1,7 +1,8 @@
----
-layout: post
-title: "Jekyll plugin to recommend related posts"
----
++++
+layout = "post"
+title = "Jekyll plugin to recommend related posts"
+aliases = [ "/2025/07/09/related-posts.html",]
++++
 
 I wrote my first plugin for the Jekyll static website builder: [a tool that
 recommends related posts](https://github.com/maxkapur/jekyll-related)

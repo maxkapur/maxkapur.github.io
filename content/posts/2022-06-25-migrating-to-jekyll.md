@@ -1,8 +1,8 @@
----
-layout: post
-title:  "Migrating to Jekyll"
----
-
++++
+layout = "post"
+title = "Migrating to Jekyll"
+aliases = [ "/2022/06/25/migrating-to-jekyll.html",]
++++
 
 After reflecting on my unsustainable dependency on Google services, I have decided to bite
 the bullet and migrate my blog from Blogger to the open-source [Jekyll](https://github.com/jekyll/jekyll),

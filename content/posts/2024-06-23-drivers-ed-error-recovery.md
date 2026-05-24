@@ -1,7 +1,8 @@
----
-layout: post
-title: "Driver’s ed should teach error recovery"
----
++++
+layout = "post"
+title = "Driver’s ed should teach error recovery"
+aliases = [ "/2024/06/23/drivers-ed-error-recovery.html",]
++++
 
 I live near a one-way street, and drivers keep turning into it the wrong way by
 mistake. Most react by getting flustered and backing dangerously into the

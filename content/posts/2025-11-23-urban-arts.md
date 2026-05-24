@@ -1,7 +1,8 @@
----
-title: Urban Arts Career Pathways Takeover
-layout: post
----
++++
+title = "Urban Arts Career Pathways Takeover"
+layout = "post"
+aliases = [ "/2025/11/23/urban-arts.html",]
++++
 
 My team at work recently got to host a Career Pathways Takeover at
 [Urban Arts](https://urbanarts.org/), a nonprofit based in New York that teaches

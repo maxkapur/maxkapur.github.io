@@ -1,8 +1,9 @@
----
-title: Is ABC-SMC just an evolutionary algorithm?
-layout: post
-katex: true
----
++++
+title = "Is ABC-SMC just an evolutionary algorithm?"
+layout = "post"
+katex = true
+aliases = [ "/2025/09/03/abc-smc-evolutionary-algorithm.html",]
++++
 
 Suppose we have data $$D$$ and a model that expresses $$D$$ as a noisy function
 of a parameter vector $$\theta$$. We want to determine a value of $$\theta$$

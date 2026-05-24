@@ -1,7 +1,8 @@
----
-title: Full of types
-layout: post
----
++++
+title = "Full of types"
+layout = "post"
+aliases = [ "/2025/08/20/full-of-types.html",]
++++
 
 I’m obsessed with this essay
 ["Raising a person in a culture full of types"](https://theoutline.com/post/8627/raising-a-teen-personality-types-growth-mindset)

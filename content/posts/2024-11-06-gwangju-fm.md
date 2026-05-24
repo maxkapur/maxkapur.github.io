@@ -1,7 +1,8 @@
----
-title: 'Media literacy chat at 88.9 Gwangju FM'
-layout: post
----
++++
+title = "Media literacy chat at 88.9 Gwangju FM"
+layout = "post"
+aliases = [ "/2024/11/06/gwangju-fm.html",]
++++
 
 I wanted to follow up on my [previous post]( {% post_url
 2024-11-02-gwangju-again %} ) about the CLS alumni seminar in Gwangju to

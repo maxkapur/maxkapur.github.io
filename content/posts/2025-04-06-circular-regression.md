@@ -1,7 +1,8 @@
----
-layout: post
-title: Circular regression when you already know the period
----
++++
+layout = "post"
+title = "Circular regression when you already know the period"
+aliases = [ "/2025/04/06/circular-regression.html",]
++++
 
 This [Stack Exchange](https://stats.stackexchange.com/a/660199) answer reminded
 me of a useful data science trick. In short, if you try to model $$y$$ as a

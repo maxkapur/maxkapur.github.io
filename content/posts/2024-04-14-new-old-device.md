@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "New old device"
----
++++
+layout = "post"
+title = "New old device"
+aliases = [ "/2024/04/14/new-old-device.html",]
++++
 
 On a recent visit home, I dug this 2007
 [Sansa Clip](https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip)

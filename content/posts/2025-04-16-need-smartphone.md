@@ -1,7 +1,8 @@
----
-title: Reasons it’s hard to abandon a smartphone
-layout: post
----
++++
+title = "Reasons it’s hard to abandon a smartphone"
+layout = "post"
+aliases = [ "/2025/04/16/need-smartphone.html",]
++++
 
 Reasons (excuses?) that I cannot
 [downgrade to a dumbphone](https://www.nytimes.com/2025/02/01/opinion/how-quit-smartphone-addiction.html):

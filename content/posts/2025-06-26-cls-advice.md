@@ -1,7 +1,8 @@
----
-layout: post
-title: CLS advice nobody asked for
----
++++
+layout = "post"
+title = "CLS advice nobody asked for"
+aliases = [ "/2025/06/26/cls-advice.html",]
++++
 
 Awesome people occasionally reach out to ask me about the US State Department’s
 [Critical Language Scholarship](https://clscholarship.org/) (CLS) program.

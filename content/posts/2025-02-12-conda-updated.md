@@ -1,7 +1,8 @@
----
-layout: post
-title: Conda updated?
----
++++
+layout = "post"
+title = "Conda updated?"
+aliases = [ "/2025/02/12/conda-updated.html",]
++++
 
 Using a tip from
 [Travis Hathaway](https://github.com/conda/conda/issues/14418#issuecomment-2513806325),

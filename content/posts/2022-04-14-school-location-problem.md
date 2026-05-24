@@ -1,7 +1,8 @@
----
-layout:     post
-title:      The school location problem
----
++++
+layout = "post"
+title = "The school location problem"
+aliases = [ "/2022/04/14/school-location-problem.html",]
++++
 
 I’ve spent a few days thinking about a facility location problem that
 we might call the *school location problem.* The goal is to place $$n$$

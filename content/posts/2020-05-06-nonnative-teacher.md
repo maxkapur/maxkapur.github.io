@@ -1,7 +1,8 @@
----
-layout: post
-title: The benefits of a nonnative teacher
----
++++
+layout = "post"
+title = "The benefits of a nonnative teacher"
+aliases = [ "/2020/05/06/nonnative-teacher.html",]
++++
 
 In addition to the myth that it’s impossible for adults to “really” learn a
 foreign language, a widely held misconception about language learning is the

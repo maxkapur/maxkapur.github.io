@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Recent reading"
----
++++
+layout = "post"
+title = "Recent reading"
+aliases = [ "/2023/11/05/recent-reading.html",]
++++
 
 Finished reading, but still thinking about:
 

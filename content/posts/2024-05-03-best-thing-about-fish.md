@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "The best thing about fish"
----
++++
+layout = "post"
+title = "The best thing about fish"
+aliases = [ "/2024/05/03/best-thing-about-fish.html",]
++++
 
 The best thing about fish is probably the
 [lateral line](https://en.wikipedia.org/wiki/Lateral_line),

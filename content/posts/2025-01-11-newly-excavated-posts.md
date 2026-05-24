@@ -1,7 +1,8 @@
----
-layout: post
-title: Newly excavated posts about teaching
----
++++
+layout = "post"
+title = "Newly excavated posts about teaching"
+aliases = [ "/2025/01/11/newly-excavated-posts.html",]
++++
 
 When I migrated from Blogger to Jekyll a few years ago, I left a bunch of posts
 behind, with the vague resolution of importing them at some point. Today, I

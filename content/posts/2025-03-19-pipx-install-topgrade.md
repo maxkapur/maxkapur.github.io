@@ -1,7 +1,8 @@
----
-layout: post
-title: pipx install topgrade
----
++++
+layout = "post"
+title = "pipx install topgrade"
+aliases = [ "/2025/03/19/pipx-install-topgrade.html",]
++++
 
 Many Rust projects, such as [Topgrade](https://github.com/topgrade-rs/topgrade),
 also publish themselves on PyPI. This means you can install them using `pip` or

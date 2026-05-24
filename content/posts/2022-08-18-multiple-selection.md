@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Grading multiple-selection questions"
----
++++
+layout = "post"
+title = "Grading multiple-selection questions"
+aliases = [ "/2022/08/18/multiple-selection.html",]
++++
 
 Consider the following test question:
 

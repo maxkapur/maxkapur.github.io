@@ -1,7 +1,8 @@
----
-title: Still playing guitar like piano
-layout: post
----
++++
+title = "Still playing guitar like piano"
+layout = "post"
+aliases = [ "/2025/05/28/guitar-like-piano.html",]
++++
 
 I still play the guitar like a piano. It’s most obvious when I try to play along
 with the lead guitar part in a recording of a two-guitar band. Often, the lead

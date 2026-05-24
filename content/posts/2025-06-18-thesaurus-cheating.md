@@ -1,7 +1,8 @@
----
-layout: post
-title: Is using a thesaurus cheating?
----
++++
+layout = "post"
+title = "Is using a thesaurus cheating?"
+aliases = [ "/2025/06/18/thesaurus-cheating.html",]
++++
 
 I remember taking mild offense when my middle school language arts teacher
 introduced our class to the thesaurus. I thought, if I let the thesaurus choose

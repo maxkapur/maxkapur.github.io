@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Houseplant measurements"
----
++++
+layout = "post"
+title = "Houseplant measurements"
+aliases = [ "/2020/01/02/houseplant-measurements.html",]
++++
 
 I have been measuring the leaves of my houseplants.
 

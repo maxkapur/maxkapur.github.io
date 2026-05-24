@@ -1,7 +1,8 @@
----
-layout: post
-title: Centering students as creators
----
++++
+layout = "post"
+title = "Centering students as creators"
+aliases = [ "/2017/08/31/students-as-creators.html",]
++++
 
 In an influential article
 <a href="https://www.tandfonline.com/doi/pdf/10.1080/00043125.2007.11651621" alt="Olivia Gude, &quot;Principles of Possibility,&quot; Art Education, Jan. 2007, 6&ndash;17">reimagining

@@ -1,7 +1,8 @@
----
-layout: post
-title: Things that are a thing here
----
++++
+layout = "post"
+title = "Things that are a thing here"
+aliases = [ "/2018/08/25/a-thing-here.html",]
++++
 
 They say that major lifestyle changes—even positive ones, like starting a new
 job or moving—are one of the biggest stressors out there. By that measure, it’s

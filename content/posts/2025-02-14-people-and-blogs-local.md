@@ -1,9 +1,10 @@
----
-title: People and Blogs interview (local mirror)
-layout: post
-hidden: true
-date: 2025-02-14T12:00:00
----
++++
+title = "People and Blogs interview (local mirror)"
+layout = "post"
+hidden = true
+date = "2025-02-14T12:00:00"
+aliases = [ "/2025/02/14/people-and-blogs-local.html",]
++++
 
 Here is a local mirror of my interview on Manuel Moreale's
 [People and Blogs](https://manuelmoreale.com/pb-max-kapur) series.

@@ -1,7 +1,8 @@
----
-layout:     post
-title:      "Guitarix troubleshooting"
----
++++
+layout = "post"
+title = "Guitarix troubleshooting"
+aliases = [ "/2023/07/22/guitarix-troubleshooting.html",]
++++
 
 For the past few updates of [Guitarix](https://guitarix.org/), I have been
 having issues where changing the JACK server latency causes the audio output

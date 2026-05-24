@@ -1,7 +1,8 @@
----
-title: Python scripts
-layout: post
----
++++
+title = "Python scripts"
+layout = "post"
+aliases = [ "/2025/09/24/python-scripts.html",]
++++
 
 I cleaned up a few utility Python scripts for the GitHub:
 

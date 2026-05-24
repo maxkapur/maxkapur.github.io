@@ -1,7 +1,8 @@
----
-layout:     post
-title:      Stable matching on Planet Money
----
++++
+layout = "post"
+title = "Stable matching on Planet Money"
+aliases = [ "/2021/03/07/stable-matching-planet-money.html",]
++++
 
 <em>Planet Money,</em> an NPR show about economics, recently ran an <a href="https://www.npr.org/2021/03/02/972943944/the-marriage-pact">episode entitled &ldquo;The Marriage Pact&rdquo;</a> that deals precisely with my research topic. It&rsquo;s a great episode that discusses both the basic ideas behind stable assignment as well as its applications in organ donation, job placement, and (my area of focus) school choice.
 

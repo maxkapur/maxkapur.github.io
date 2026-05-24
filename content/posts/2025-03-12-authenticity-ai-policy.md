@@ -1,7 +1,8 @@
----
-layout: post
-title: Authenticity and the Illusion Slopes AI policy
----
++++
+layout = "post"
+title = "Authenticity and the Illusion Slopes AI policy"
+aliases = [ "/2025/03/12/authenticity-ai-policy.html",]
++++
 
 I attached my real name to this site. That means that above all, this site must
 represent me *authentically.*
