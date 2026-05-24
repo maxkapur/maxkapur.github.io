@@ -1,9 +1,14 @@
+# Site metadata
 baseURL = "https://maxkapur.com"
 locale = "en-us"
 title = "Illusion Slopes"
 theme = "illusion-slopes"
 
+# Metadata extraction hints
 enableGitInfo = true
+
+# Build settings
+cleanDestinationDir = true
 
 [frontmatter]
 # Extract dates from filenames if possible
