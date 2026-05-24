@@ -166,13 +166,13 @@ end
 
 In this post, we will show that functions of the form
 
-$$
+{{< math >}}
 f(X) = 1 -
 \prod_{i \in \Omega \setminus X} (1 - p_i)
 \prod_{i \in X} (1 - q_i)
-$$
+{{< /math >}}
 
-are submodular for $$p_i, q_i \in [0, 1]$$ where each $$p_i \leq q_i,$$
+are submodular for {{< math "p_i, q_i \in [0, 1]" />}} where each {{< math "p_i \leq q_i" />}},
 and examine an application of this small result that demonstrates its
 practical value.[^footnote]
 
