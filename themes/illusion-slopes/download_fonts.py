@@ -5,7 +5,7 @@ from zipfile import ZipFile
 
 import requests
 
-output_dir = Path(__file__).parent / "static" / "fonts"
+output_dir = Path(__file__).parent / "assets" / "fonts"
 
 urls = {
     "ibm-plex-mono": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip",
