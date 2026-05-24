@@ -7,8 +7,12 @@ import toml
 import tomllib
 
 
-def process(path: Path) -> bool:
-    """Migrate a page or post. Return whether anything changed."""
+def process(path: Path) -> tuple[bool, bool]:
+    """Migrate a page or post.
+
+    Return whether anything changed and whether manual attention needed.
+    """
+    attention_needed = False
     if path.parts[1] == "pages":
         page_type = "page"
     elif path.parts[1] == "posts":
@@ -18,7 +22,7 @@ def process(path: Path) -> bool:
 
     if path.name == "_index.md":
         print(f"Skipping {path}")
-        return False
+        return False, attention_needed
 
     print(f"Processing {path}")
     original_text = path.read_text()
@@ -82,21 +86,31 @@ def process(path: Path) -> bool:
 
     frontmatter = toml.dumps(d)
     body = body.strip()
+
+    katex_detected = "$$" in body
+    assert katex_detected == d.get("params", {}).get("katex", False)
+    if katex_detected:
+        warnings.warn(f"{path} has unmigrated KaTeX delimiters")
+        attention_needed = True
+
     output = f"+++\n{frontmatter}+++\n\n{body}"
     if output != original_text:
         path.write_text(output)
-        return True
-    return False
+        return True, attention_needed
+    return False, attention_needed
 
 
 if __name__ == "__main__":
     change_detected = False
+    attention_needed = False
     pages = list(Path("./content/pages/").glob("**.md")) + list(
         Path("./content/posts/").glob("**.md")
     )
     for page in pages:
-        change_detected |= process(page)
+        change_detected_page, attention_needed_page = process(page)
+        change_detected |= change_detected_page
+        attention_needed |= attention_needed_page
 
-    if change_detected:
+    if change_detected or attention_needed:
         warnings.warn("Migrations needed; see diff")
         exit(1)
