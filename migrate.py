@@ -46,7 +46,6 @@ def process(path: Path) -> tuple[bool, bool]:
     body = body.strip()
 
     if "$$" in body:
-        assert d["params"]["katex"]
         body = migrate_katex(body)
         assert "$$" not in body
 
@@ -109,22 +108,26 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         del d["layout"]
 
     # Move custom keys into params
-    if "katex" in d:
-        # Sanity check assumption that I only included this key if it was true
-        assert d["katex"]
 
-        # Indicates whether the page has math on it. Idea was that you could
-        # get faster page loads by skipping the KaTeX CSS on pages that don't
-        # need it. But the *homepage* needs it, so there is a good change it's
-        # cached and this doesn't really matter
-        d["params"] = d.get("params", {}) | {"katex": True}
+    # Used to have a KaTeX indicator to indicate whether the page has math on
+    # it. Idea was that you could get faster page loads by skipping the KaTeX
+    # CSS on pages that don't need it. But the *homepage* needs it, so there is
+    # a good chance it's cached. Moreover, the key wasn't consistently, so just
+    # drop it.
+    if "katex" in d:
         del d["katex"]
+    if "katex" in d.get("params", {}):
+        del d["params"]["katex"]
 
     if "hidden" in d:
         # Sanity check assumption that I only included this key if it was true
         assert d["hidden"]
         d["params"] = d.get("params", {}) | {"hidden": True}
         del d["hidden"]
+
+    # Drop empty params dict that may linger from above operations
+    if "params" in d and d["params"] == {}:
+        del d["params"]
 
 
 display_math = re.compile(
