@@ -36,6 +36,6 @@ collected and shared over the years.
 
 And please <a href="mailto:{{site.email}}">email me</a> if you are on CLS this
 year and have any stories to share! I still have a
-[few posts]({% post_url 2016-03-12-cls-korea %}) around
-[from my CLS days]({% post_url 2016-06-25-first-week-class-cnu %}), but nothing
+[few posts](/posts/2016-03-12-cls-korea/) around
+[from my CLS days](/posts/2016-06-25-first-week-class-cnu/), but nothing
 profound.

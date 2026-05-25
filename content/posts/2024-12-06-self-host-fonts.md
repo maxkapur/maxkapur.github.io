@@ -40,7 +40,7 @@ IBM_PLEX_SANS_KR_SRC="https://github.com/IBM/plex/releases/download/%40ibm%2Fple
 [pull the latest release](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)
 instead of pinning a version.)
 
-[^packagemanager]: I [already use conda]( {% post_url 2024-11-29-rbenv-vs-conda %} ) as part
+[^packagemanager]: I [already use conda](/posts/2024-11-29-rbenv-vs-conda/) as part
     of my `configure.sh` script, so installing a font with conda wouldn’t be a
     heavy lift, but only the Sans variant of IBM Plex is
     [available in conda-forge](https://anaconda.org/conda-forge/font-ttf-ibm-plex-sans),

@@ -19,7 +19,7 @@ all my clients and work projects here on Illusion Slopes would undermine my goal
 of maintaining a healthy separation between my personal and professional
 identities. As a compromise, I hope this spiel from my [People and Blogs
 interview](https://manuelmoreale.com/pb-max-kapur) ([local
-mirror]({% post_url 2025-02-14-people-and-blogs-local %})) will suffice as an
+mirror](/posts/2025-02-14-people-and-blogs-local/)) will suffice as an
 introduction:
 
 > At work, I build numerical modeling tools (picture something like [Universal

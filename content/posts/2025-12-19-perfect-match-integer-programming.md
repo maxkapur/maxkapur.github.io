@@ -123,7 +123,7 @@ problem to obtain the ground-truth perfect matching.
 
 This computation sounds fancier than
 it is; the idea is to match everyone up in a way that maximizes the overall
-sum of compatibility scores. [More sophisticated matching algorithms]({%- post_url 2021-03-07-stable-matching-planet-money -%})
+sum of compatibility scores. [More sophisticated matching algorithms](/posts/2021-03-07-stable-matching-planet-money/)
 exist, but the maximum-weight procedure suits our purposes well.
 It generates each of the possible {{< math "n!" />}} matchings with equal probability, and
 it comes with extra data {{< math "c_{ij}" />}} that we can use to drive intuitions.

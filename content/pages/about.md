@@ -13,7 +13,7 @@ viewpoints.
 I’m enthusiastic about the indie web and the possibilities the internet holds as
 a platform for personal expression and human connection—you know, what social
 media was supposed to be. I try, on this site, to be maximally
-[authentic]({% post_url 2025-03-12-authenticity-ai-policy %}), which means no
+[authentic](/posts/2025-03-12-authenticity-ai-policy/), which means no
 AI and no marketing.
 
 Here’s what I look like:

@@ -38,7 +38,7 @@ find highly annoying.)
 
 “We use tools to embody their virtues,” writes
 [Fernando Borretti](https://borretti.me/article/you-can-choose-tools-that-make-you-happy).
-I guess I value [authenticity]({% post_url 2025-03-12-authenticity-ai-policy %})
+I guess I value [authenticity](/posts/2025-03-12-authenticity-ai-policy/)
 or craftsmanship—my fingerprints on the finished product—more highly than laying
 down as much code or text as I can in a fixed amount of time. This value
 judgment (and it really is just that) precludes more aggressive uses of LLM tech

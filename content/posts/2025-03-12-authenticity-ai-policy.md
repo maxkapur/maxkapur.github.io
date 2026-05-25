@@ -28,7 +28,7 @@ marketing. So, I don’t use Illusion Slopes to try to sell anything, nor do I
 employ any marketing cookies or user fingerprinting tech to collect statistics
 about the people who visit the site. Back when I used Blogger, I used to get
 some “dumb” analytics about post views by IP geolocation, but now that I use a
-[static site generator]({% post_url 2022-06-25-migrating-to-jekyll %}),
+[static site generator](/posts/2022-06-25-migrating-to-jekyll/),
 I don’t even know which posts are more or less popular. I like it that way; it
 ensures I am writing for myself.
 
@@ -45,6 +45,6 @@ the AI era:
   loads quickly (I hope?).
 - Everyone who wants to read the site, can. I don’t have to worry about an
   aggressive anti-scraping filter that accidentally
-  [blocks legitimate users]({% post_url 2025-03-04-check-prove-human %}).
+  [blocks legitimate users](/posts/2025-03-04-check-prove-human/).
 - If I write something wrong, then won’t have to issue shallow excuses about
   how “the model told me so.” For better or worse, I own my errors.

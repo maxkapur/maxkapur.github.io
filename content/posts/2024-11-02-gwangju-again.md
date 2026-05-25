@@ -43,7 +43,7 @@ between the viewer and the events of 5/18 that rings “true” in a way that
 journalistic accounts cannot.
 
 As for me: Participating in this seminar meant that I got to return to the exact
-institution where I did [CLS in 2016]( {% post_url 2016-03-12-cls-korea %} )—my
+institution where I did [CLS in 2016](/posts/2016-03-12-cls-korea/)—my
 first visit to Korea—with the added perspective of eight more years of Korean
 study and four years of living in the country. It was a delight to show the
 other participants around and see Korea again through the eyes of a newcomer.

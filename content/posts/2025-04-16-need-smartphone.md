@@ -31,6 +31,6 @@ the “prove you own a (smart)phone” tests that most commercial and government
 services put you through these days seems to be to combat spam: Acquiring and
 maintaining a non-VOIP phone number that can receive SMS messages is too
 expensive for most spammers to do at scale. But
-[again]({% post_url 2025-03-04-check-prove-human %}),
+[again](/posts/2025-03-04-check-prove-human/),
 I resent that the burden of proof is on me to prove I’m not a spammer instead of
 on the service to prove I am.

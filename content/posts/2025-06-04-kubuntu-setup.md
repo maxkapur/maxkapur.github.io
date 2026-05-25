@@ -134,7 +134,7 @@ opportunities for automation.<!--more-->
     asked to update shell profile. This seems to only affect `bash` so I went
     ahead and ran `~/.local/miniforge3/bin/conda init --all`. Make sure I can
     configure and build
-    [my website]({% post_url 2024-11-29-rbenv-vs-conda %}).
+    [my website](/posts/2024-11-29-rbenv-vs-conda/).
 
     🧪 Hope to automate in `setup.sh`. If
     [setup-miniforge](https://github.com/conda-forge/setup-miniforge) can do it,

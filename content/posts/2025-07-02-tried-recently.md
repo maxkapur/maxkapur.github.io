@@ -28,7 +28,7 @@ backing tracks are a bit cheesy but well engineered.
 you feed it your draft blog post and it complains about vague wording and common
 typography problems like curly vs. straight quotes. I like that Proselint uses
 regex instead of an LLM, so there’s no
-[creative interference]({% post_url 2025-06-18-thesaurus-cheating %}); it’s more
+[creative interference](/posts/2025-06-18-thesaurus-cheating/); it’s more
 like an automated style guide than a chatty editor. But my homegrown
 `typography.py` script (I need to upload this to GitHub sometime) enforces a few
 lesser irks, such as

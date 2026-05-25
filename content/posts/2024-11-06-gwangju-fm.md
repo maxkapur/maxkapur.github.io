@@ -3,8 +3,7 @@ title = "Media literacy chat at 88.9 Gwangju FM"
 aliases = [ "/2024/11/06/gwangju-fm.html",]
 +++
 
-I wanted to follow up on my [previous post]( {% post_url
-2024-11-02-gwangju-again %} ) about the CLS alumni seminar in Gwangju to
+I wanted to follow up on my [previous post](/posts/2024-11-02-gwangju-again/) about the CLS alumni seminar in Gwangju to
 spotlight my favorite excursion of the week: our visit to the [88.9 Gwangju
 FM]( https://kjfm.communityradio.kr/ ) community radio station. Gwangju FM has
 no particular theme, but they dedicate part of their schedule each week to
