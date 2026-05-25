@@ -30,7 +30,7 @@ A few observations from this exercise below.<!--more-->
 
 - I computed the stationary distribution explicitly using `ndarray_linalg::eig`
   because that's one of the libraries I was fiddling with, but for a graph with
-  a large number of nodes, storing the $$O(n^2)$$ Markov array in memory is
+  a large number of nodes, storing the {{< math "O(n^2)" />}} Markov array in memory is
   impractical; you'd be better off just simulating the random jumps instead.
 - A Monte Carlo simulation would yield cleaner code than my solution, too. Most
   of the bugs I had to fix in my implementation had to do with constructing the

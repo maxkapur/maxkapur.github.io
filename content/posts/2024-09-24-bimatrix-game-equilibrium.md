@@ -15,22 +15,22 @@ a more accessible format and offer some implementation notes.<!--more-->
 
 # Definitions
 
-A *bimatrix game* is characterized by two matrices $$A, B \in \mathbb{R}^{n
-\times m}.$$ When Alice chooses strategy $$i$$ and Bob chooses strategy $$j$$,
-their payoffs are $$A_{ij}$$ and $$B_{ij},$$ respectively. Mixed-strategy
-probability vectors $$x$$ and $$y$$ yield expected payoffs of $$x^T A y$$ and
-$$x^T B y,$$ respectively.
+A *bimatrix game* is characterized by two matrices {{< math "A, B \in \mathbb{R}^{n \times m}." />}} When Alice chooses strategy {{< math "i" />}} and Bob chooses strategy {{< math "j" />}},
+their payoffs are {{< math "A_{ij}" />}} and {{< math "B_{ij}," />}} respectively. Mixed-strategy
+probability vectors {{< math "x" />}} and {{< math "y" />}} yield expected payoffs of {{< math "x^T A y" />}} and
+{{< math "x^T B y," />}} respectively.
 
-$$(x^*, y^*)$$ is an *equilibrium* if $$x^T A y^* \leq x^{*T} A y^*$$ and
-$$x^{*T} A y \leq x^{*T} A y^*$$ for all probability vectors $$x$$ and $$y.$$
+{{< math >}}
+(x^*, y^*){{< math "is an *equilibrium* if" />}}x^T A y^* \leq x^{*T} A y^*{{< math "and" />}}x^{*T} A y \leq x^{*T} A y^*{{< math "for all probability vectors" />}}x{{< math "and" />}}y.
+{{< /math >}}
 
 # Result
 
-**Theorem:** $$(\implies)$$ If $$(x^*, y^*)$$ is an equilibrium, then there
-exist $$p^*$$ and $$q^*$$ such that $$(x^*, y^*, p^*, q^*)$$ is the optimal
+**Theorem:** {{< math "(\implies)" />}} If {{< math "(x^*, y^*)" />}} is an equilibrium, then there
+exist {{< math "p^*" />}} and {{< math "q^*" />}} such that {{< math "(x^*, y^*, p^*, q^*)" />}} is the optimal
 solution to the following bilinear program:
 
-$$
+{{< math >}}
 \begin{aligned}
     \text{maximize} \quad   & f(x, y, p, q) = x^T A y + x^T B y - p - q    \\
     \text{subject to} \quad & A y \leq p \mathbf{1} & \text{(OptA)} \\
@@ -38,42 +38,40 @@ $$
                             & \sum x_i = \sum y_i = 1 & \text{(ProbVec1)} \\
                             & x \geq \mathbf{0}, y \geq \mathbf{0} & \text{(ProbVec2)}
 \end{aligned}
-$$
+{{< /math >}}
 
-$$(\impliedby)$$ Conversely, the optimal solution of the bilinear program is an
+{{< math "(\impliedby)" />}} Conversely, the optimal solution of the bilinear program is an
 equilibrium for the game.
 
-**Proof:** $$(\implies)$$ For any feasible solution to the bilinear program,
-each element of $$x$$ is nonnegative (by ProbVec2), so we can use $$x$$ to
-combine the rows of the condition OptA to obtain a new valid inequality $$x^T A
-y \leq x^T p \mathbf{1} = p \sum x_i = p$$ (by ProbVec1). Applying the same
-logic to $$y$$ and $$q,$$ we find that $$f(x, y, p, q) \leq 0.$$
+**Proof:** {{< math "(\implies)" />}} For any feasible solution to the bilinear program,
+each element of {{< math "x" />}} is nonnegative (by ProbVec2), so we can use {{< math "x" />}} to
+combine the rows of the condition OptA to obtain a new valid inequality {{< math "x^T A y \leq x^T p \mathbf{1} = p \sum x_i = p" />}} (by ProbVec1). Applying the same
+logic to {{< math "y" />}} and {{< math "q," />}} we find that {{< math "f(x, y, p, q) \leq 0." />}}
 
-Now consider the equilibrium probability vectors $$(x^*, y^*)$$ and set $$p^* =
-x^{*T} A y^*$$ and $$q^* = x^{*T} B y^{*}.$$ Then $$f(x^*, y^*, p^*, q^*) = 0,$$
+Now consider the equilibrium probability vectors {{< math "(x^*, y^*)" />}} and set {{< math "p^* = x^{*T} A y^*" />}} and {{< math "q^* = x^{*T} B y^{*}." />}} Then {{< math "f(x^*, y^*, p^*, q^*) = 0," />}}
 and we have only to show that this solution is feasible. To be an equilibrium,
-$$x^*$$ must earn Alice a better payoff against $$y^{*}$$ than does the $$i$$th
-pure strategy: $$p^* = x^{*T} A y^* \geq (A y^*)_i.$$ This is precisely the
-$$i$$th row of OptA. OptB follows similarly.
+{{< math "x^*" />}} must earn Alice a better payoff against {{< math "y^{*}" />}} than does the {{< math "i" />}}th
+pure strategy: {{< math "p^* = x^{*T} A y^* \geq (A y^*)_i." />}} This is precisely the
+{{< math "i" />}}th row of OptA. OptB follows similarly.
 
-$$(\impliedby)$$ The bilinear program is clearly feasible and bounded (as shown
-a moment ago). Let $$(\bar x, \bar y, \bar p, \bar q)$$ denote the optimal
+{{< math "(\impliedby)" />}} The bilinear program is clearly feasible and bounded (as shown
+a moment ago). Let {{< math "(\bar x, \bar y, \bar p, \bar q)" />}} denote the optimal
 solution. By Nash’s theorem on the existence of mixed-strategy equilibria, we
 know that an equilibrium exists, and from the first part of the proof, we know
 how to use this equilibrium to produce a feasible solution to the bilinear
-program with an objective value of zero. Thus, $$f(\bar x, \bar y, \bar p, \bar
-q) \geq 0,$$ which rearranges to
+program with an objective value of zero. Thus, {{< math "f(\bar x, \bar y, \bar p, \bar q) \geq 0," />}} which rearranges to
 
-$$(\bar x^T A \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.$$
+{{< math >}}
+(\bar x^T A \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.
+{{< /math >}}
 
 By the constraints OptA and OptB, each of the terms in parentheses is less than
-or equal to zero; thus, the inequality on $$f(\bar x, \bar y, \bar p, \bar q)$$
+or equal to zero; thus, the inequality on {{< math "f(\bar x, \bar y, \bar p, \bar q)" />}}
 can hold only when each of these terms *equals* zero exactly.
 
-Now consider any probability vector $$x$$ and use it to combine the rows of
-OptA: We have $$x^T A \bar y \leq x^T \bar p \mathbf{1} = \bar p = \bar x^T A
-\bar y,$$ which says that $$\bar x$$ is a best response to $$\bar y$$. Applying
-the same logic to $$\bar y$$ and $$\bar q$$ completes the proof. ◼
+Now consider any probability vector {{< math "x" />}} and use it to combine the rows of
+OptA: We have {{< math "x^T A \bar y \leq x^T \bar p \mathbf{1} = \bar p = \bar x^T A \bar y," />}} which says that {{< math "\bar x" />}} is a best response to {{< math "\bar y" />}}. Applying
+the same logic to {{< math "\bar y" />}} and {{< math "\bar q" />}} completes the proof. ◼
 
 # Remarks
 
@@ -87,7 +85,7 @@ to zero, which is the global optimum guaranteed by Nash’s theorem.
 In practice, I have used the bilinear program above when implementing the
 [double oracle algorithm](https://arxiv.org/abs/2009.12185) for games with
 complex action spaces. For example, in a modeling problem I am working on, pure
-strategies are subsets of $$\mathbb{R}^n$$ with additional inequality and
+strategies are subsets of {{< math "\mathbb{R}^n" />}} with additional inequality and
 integrality constraints.
 
 The “first oracle” in the double-oracle algorithm has you compute the

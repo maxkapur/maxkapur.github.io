@@ -39,4 +39,4 @@ I’m putting my stats notes
 >
 > I’ve updated the “my stats notes” link to point to the latest version of that Jupyter notebook in GitHub’s view of the Git source tree for this site, in the unlikely event that it is useful to anyone.
 >
-> With four years of additional perspective, I would be remiss not to point out that leaf geometry in which both the area $$XY$$ and the aspect ratio $$X/Y$$ are both normally distributed would be serendipitous indeed—and that the plots above don’t look particularly linear to me anymore.
+> With four years of additional perspective, I would be remiss not to point out that leaf geometry in which both the area {{< math "XY" />}} and the aspect ratio {{< math "X/Y" />}} are both normally distributed would be serendipitous indeed—and that the plots above don’t look particularly linear to me anymore.

@@ -34,9 +34,9 @@ A student who answers `a` is clearly *more correct* than a student who answers `
 
 ## An alternative to all-or-nothing grading
 
-I propose grading multiple-selection problems as $$n$$ true-or-false questions, each weighted $$1/n$$ points. In this example, a response of `a` is correct with respect to questions a, c, and d, and receives 0.75 points. A response of `c` and `d` is correct with respect to none of the items and receives zero points.
+I propose grading multiple-selection problems as {{< math "n" />}} true-or-false questions, each weighted {{< math "1/n" />}} points. In this example, a response of `a` is correct with respect to questions a, c, and d, and receives 0.75 points. A response of `c` and `d` is correct with respect to none of the items and receives zero points.
 
-What about students who guess randomly? A student who guesses randomly receives, in expectation, 0.5 points under my proposal and $$1/ 2^n$$ points under the all-or-nothing method. Therefore, one objection to my proposal is that it provides students with a strong incentive to guess. I contend that this is not a real problem, because
+What about students who guess randomly? A student who guesses randomly receives, in expectation, 0.5 points under my proposal and {{< math "1/ 2^n" />}} points under the all-or-nothing method. Therefore, one objection to my proposal is that it provides students with a strong incentive to guess. I contend that this is not a real problem, because
 
  - The incentive for students to guess is still positive under all-or-nothing grading,
  - In creating examinations, there is no objective reason to make “discourage students from guessing” a design goal,
@@ -48,4 +48,4 @@ Wrong-answer penalties, however, are a [potential source of bias (open-access ar
 
 Multiple-selection questions are not very user friendly to begin with. Some students fail to realize that they are allowed to choose more than one answer and agonize over technicalities (*Maybe he means Washington, DC?*). Others (mistakenly) *assume* that they will be graded all or nothing, recognize the slim chances of success, and just skip the question to pursue lower-hanging fruit.
 
-Therefore, as long as you accept my argument that multiple-selection questions should be regarded as $$n$$ true-or-false questions for grading purposes, why not simply write them out that way on the test sheet? Then there is no way to misread the question as a single selection, and the grading scheme is obvious.
+Therefore, as long as you accept my argument that multiple-selection questions should be regarded as {{< math "n" />}} true-or-false questions for grading purposes, why not simply write them out that way on the test sheet? Then there is no way to misread the question as a single selection, and the grading scheme is obvious.
