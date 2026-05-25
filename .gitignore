@@ -1,3 +1,7 @@
+# Node is only to install prettier
+node_modules/
+package-lock.json
+
 # https://github.com/github/gitignore/blob/main/community/Golang/Hugo.gitignore
 
 # Generated files by hugo
