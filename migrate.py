@@ -49,7 +49,12 @@ def process(path: Path) -> tuple[bool, bool]:
         body = migrate_katex(body)
         assert "$$" not in body
 
-    if ("post_url" in body) or ("relative_url" in body):
+    if (
+        ("post_url" in body)
+        or ("relative_url" in body)
+        # False positive: meta post with relative_url in a code block/example
+        and (path.name != "2024-12-26-server-side-katex.md")
+    ):
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
         body = migrate_hrefs(body)
 
