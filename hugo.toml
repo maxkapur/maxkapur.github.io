@@ -3,6 +3,7 @@ baseURL = "https://maxkapur.com"
 locale = "en-us"
 title = "Illusion Slopes"
 theme = "illusion-slopes"
+params.description = "I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own."
 
 # Metadata extraction hints
 enableGitInfo = true
