@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import warnings
 from datetime import date
 from pathlib import Path
