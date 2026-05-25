@@ -27,6 +27,28 @@ def process(path: Path) -> tuple[bool, bool]:
     print(f"Processing {path}")
     original_text = path.read_text()
 
+    d, body = extract_parts(original_text)
+    migrate_frontmatter_keys(path, page_type, d)
+
+    frontmatter = toml.dumps(d)
+    body = body.strip()
+
+    katex_detected = "$$" in body
+    assert katex_detected == d.get("params", {}).get("katex", False)
+    if katex_detected:
+        warnings.warn(f"{path} has unmigrated KaTeX delimiters")
+        attention_needed = True
+
+    output = f"+++\n{frontmatter}+++\n\n{body}"
+    if output != original_text:
+        path.write_text(output)
+        return True, attention_needed
+    return False, attention_needed
+
+
+def extract_parts(original_text: str) -> tuple[dict, str]:
+    """Extract the dictionary of frontmatter data and the body."""
+
     if original_text.strip().startswith("---"):
         print("yaml frontmatter")
         _, frontmatter, body = original_text.split("---", maxsplit=2)
@@ -40,6 +62,11 @@ def process(path: Path) -> tuple[bool, bool]:
         body = original_text
         d = {}
 
+    return d, body
+
+
+def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
+    """Migrate the frontmatter keys dictionary `d`, in place."""
     # Construct aliases to maintain paths from Jekyll site
     if page_type == "page":
         # Every page in the Jekyll site had a permalink so there's no default
@@ -83,21 +110,6 @@ def process(path: Path) -> tuple[bool, bool]:
         assert d["hidden"]
         d["params"] = d.get("params", {}) | {"hidden": True}
         del d["hidden"]
-
-    frontmatter = toml.dumps(d)
-    body = body.strip()
-
-    katex_detected = "$$" in body
-    assert katex_detected == d.get("params", {}).get("katex", False)
-    if katex_detected:
-        warnings.warn(f"{path} has unmigrated KaTeX delimiters")
-        attention_needed = True
-
-    output = f"+++\n{frontmatter}+++\n\n{body}"
-    if output != original_text:
-        path.write_text(output)
-        return True, attention_needed
-    return False, attention_needed
 
 
 if __name__ == "__main__":
