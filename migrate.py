@@ -133,7 +133,9 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     # New site.Menus.main is autopopulated with a link to browse posts (and a
     # few others, see hugo.toml in the theme), then you add "main" to the menu
     # list for any content item that should be added to this menu.
-    if page_type == "page":
+    if page_type == "page" and (
+        "menus" not in d  # Ensures idempotency
+    ):
         was_hidden = False
         if "hidden" in d:
             assert d["hidden"]
@@ -144,10 +146,10 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
             was_hidden = True
             del d["params"]["hidden"]
 
-        if not was_hidden:
-            d["menus"] = d.get("menus", [])
-            if "main" not in d["menus"]:
-                d["menus"].append("main")
+        if was_hidden:
+            d["menus"] = []
+        else:
+            d["menus"] = ["main"]
 
     # Drop empty params dict that may linger from above operations
     if "params" in d and d["params"] == {}:
