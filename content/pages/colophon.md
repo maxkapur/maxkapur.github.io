@@ -25,13 +25,13 @@ katex = true
 
 - [IBM Plex](https://github.com/IBM/plex) family
 - Default {{< math "\KaTeX" />}} font
-- I have a <a href="{% post_url 1970-01-01-formats-masterpost %}">stylesheet
-  demo post</a>
+- I have a [stylesheet
+  demo post](/posts/1970-01-01-formats-masterpost/)
 
 # Site build
 
 - Conda ([Miniforge](https://github.com/conda-forge/miniforge)) for environment
-  management (<a href="{% post_url 2024-11-29-rbenv-vs-conda %}">why</a>)
+  management ([why](/posts/2024-11-29-rbenv-vs-conda/))
 - [Jekyll](https://jekyllrb.com/) v{{ jekyll.version }} to build the HTML
 - GitHub Actions (wrapping Bash scripts) for orchestration
 
