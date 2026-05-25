@@ -9,8 +9,13 @@ to separate repos, namely
 [esl-data](https://github.com/maxkapur/esl-data), and
 [how-do-we](https://github.com/maxkapur/how-do-we).
 
-My blog is on a CC BY-SA 4.0 license. Comments and suggestions are welcome via
-[email](mailto:git@maxkapur.com) or GitHub pull request.
+Comments and suggestions are welcome via [email](mailto:git@maxkapur.com) or
+GitHub pull request.
+
+## License
+
+- Blog content is licensed under CC BY-SA 4.0 (see `LICENSE.txt`).
+- The theme is licensed under Apache (see `themes/illusion-slopes/LICENSE.txt`).
 
 ## Workstation setup
 
