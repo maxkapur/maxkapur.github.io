@@ -173,8 +173,16 @@ def migrate_katex(body: str) -> str:
 # <a href="{% post_url 2018-08-25-a-thing-here %}">Things that are a thing
 # here</a>
 jekyll_href = re.compile(
-    # r'<a\s+href="(?P<slug>.*?)">(?P<disp>.*?)</a>',
     r'<a\s+href="\{%\-?\s+post_url\s+(?P<slug>[0-9a-z\-]+?)\s+\-?%\}">(?P<disp>.*?)</a>',
+    re.MULTILINE | re.DOTALL,
+)
+
+# example:
+#
+# [More sophisticated matching algorithms]({%- post_url 2021-03-07-stable-matching-planet-money -%})
+jekyll_mdref = re.compile(
+    # r"\[\s+(?P<disp>.*?)\s+\]\(\s+\{%\-?\s+post_url\s+(?P<slug>[0-9a-z\-]+?)\s+\-?%\}\s+\)",
+    r"\[\s*(?P<disp>.*?)\s*\]\(\s*\{%\-?\s+post_url\s+(?P<slug>[0-9a-z\-]+?)\s+\-?%\}\s*\)",
     re.MULTILINE | re.DOTALL,
 )
 
@@ -186,6 +194,9 @@ def hugo_post_href(slug: str, disp: str) -> str:
 
 def migrate_hrefs(body: str) -> str:
     body, _ = jekyll_href.subn(
+        lambda m: hugo_post_href(m.group("slug"), m.group("disp")), body
+    )
+    body, _ = jekyll_mdref.subn(
         lambda m: hugo_post_href(m.group("slug"), m.group("disp")), body
     )
     return body
