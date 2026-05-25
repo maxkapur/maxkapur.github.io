@@ -10,7 +10,8 @@
     "overrides": [
       {
         "files": [
-          "*.html"
+          "*.html",
+          "*.xml"
         ],
         "options": {
           "parser": "go-template"

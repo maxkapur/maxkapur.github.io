@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Illusion Slopes</title>
+
+  <link href="https://maxkapur.com/feed.xml" rel="self" />
+  <link href="https://maxkapur.com/" rel="alternate" />
+  <subtitle type="text"
+    >I blog about culture, numerical optimization, and software. I work at a
+    consulting firm as an operations research and numerical modeling specialist.
+    All opinions are my own.</subtitle
+  >
+  <updated>2026-05-25T13:51:25-05:00</updated>
+  <id>https://maxkapur.com/</id>
+  <author>
+    <name>Max Kapur</name>
+    <email>max@maxkapur.com</email>
+  </author>
+  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+
+  <entry>
+    <title type="text">PageRanking People and Blogs interviews</title>
+    <link
+      rel="alternate"
+      href="https://maxkapur.com/2026/05/06/pageranking-pb.html"
+    />
+
+    <!--
+      Use post.date as both the updated and published date. Currently, we don't
+      keep separate track of when a post was updated.
+    -->
+    <updated>2026-05-06T00:00:00-05:00</updated>
+    <published>2026-05-06T00:00:00-05:00</published>
+
+    <!--
+      An RFC 4287 Simple Extension element: human-readable representation of the
+      publication date. We use this in the stylesheet to show a concise date
+      instead of the dense ISO format string.
+    -->
+    <readableDate>May 6, 2026</readableDate>
+
+    <id>https://maxkapur.com/2026/05/06/pageranking-pb</id>
+    <summary type="html">Summary example</summary>
+    <content type="html">Content example</content>
+  </entry>
+</feed>
