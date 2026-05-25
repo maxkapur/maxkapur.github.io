@@ -3,10 +3,10 @@ locale = 'en-US'
 title = 'My New Hugo Project'
 
 [menus]
-  [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
+  # [[menus.main]]
+  #   name = 'Home'
+  #   pageRef = '/'
+  #   weight = 10
 
   [[menus.main]]
     name = 'Posts'
