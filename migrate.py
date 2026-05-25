@@ -52,7 +52,7 @@ def process(path: Path) -> tuple[bool, bool]:
         body = migrate_katex(body)
         assert "$$" not in body
 
-    output = f"+++\n{frontmatter}+++\n\n{body}"
+    output = f"+++\n{frontmatter}+++\n\n{body}\n"
     if output != original_text:
         path.write_text(output)
         return True, attention_needed
