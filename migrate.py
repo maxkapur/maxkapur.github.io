@@ -156,6 +156,10 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         else:
             d["menus"] = ["main"]
 
+    if sort_order := d.get("sort_order"):
+        d["weight"] = int(sort_order)
+        del d["sort_order"]
+
     # Drop empty params dict that may linger from above operations
     if "params" in d and d["params"] == {}:
         del d["params"]
