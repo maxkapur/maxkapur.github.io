@@ -1,7 +1,7 @@
 +++
 title = "About"
 sort_order = "10"
-menus = ["main"]
+menus = [ "main",]
 aliases = [ "/about/",]
 +++
 

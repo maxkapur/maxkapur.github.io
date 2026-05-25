@@ -2,9 +2,7 @@
 title = "Chipotle"
 sort_order = "999"
 aliases = [ "/chipotle/",]
-
-[params]
-hidden = true
+menus = []
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

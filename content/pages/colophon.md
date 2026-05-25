@@ -1,9 +1,7 @@
 +++
 title = "Colophon"
 aliases = [ "/colophon/",]
-
-[params]
-hidden = true
+menus = []
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)
