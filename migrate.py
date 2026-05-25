@@ -52,6 +52,7 @@ def process(path: Path) -> tuple[bool, bool]:
 
     if "post_url" or "relative_url" in body:
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
+        body = migrate_hrefs(body)
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
     if output != original_text:
@@ -165,6 +166,28 @@ def migrate_katex(body: str) -> str:
             continue
 
         return after
+
+
+# example:
+#
+# <a href="{% post_url 2018-08-25-a-thing-here %}">Things that are a thing
+# here</a>
+jekyll_href = re.compile(
+    # r'<a\s+href="(?P<slug>.*?)">(?P<disp>.*?)</a>',
+    r'<a\s+href="\{%\-?\s+post_url\s+(?P<slug>[0-9a-z\-]+?)\s+\-?%\}">(?P<disp>.*?)</a>',
+    re.MULTILINE | re.DOTALL,
+)
+
+
+def hugo_post_href(slug: str, disp: str) -> str:
+    return f"[{disp.strip()}]({slug.strip()})"
+
+
+def migrate_hrefs(body: str) -> str:
+    body, _ = jekyll_href.subn(
+        lambda m: hugo_post_href(m.group("slug"), m.group("disp")), body
+    )
+    return body
 
 
 if __name__ == "__main__":
