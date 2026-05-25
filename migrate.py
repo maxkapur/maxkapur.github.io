@@ -118,11 +118,11 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
 
 
 display_math = re.compile(
-    r"(\r?\n)+\r?\n\$\$(?P<expr>.*?)\$\$(\r?\n)+\r?\n",
+    r"(\r?\n)+\r?\n\$\$(?P<expr>(?:(?!\r?\n\r?\n).)*?)\$\$(\r?\n)+\r?\n",
     re.MULTILINE | re.DOTALL,
 )
 inline_math = re.compile(
-    r"\$\$(?P<expr>.*?)\$\$",
+    r"\$\$(?P<expr>(?:(?!\r?\n\r?\n).)*?)\$\$",
     re.MULTILINE | re.DOTALL,  # Even inline needs DOTALL due to line wrapping
 )
 
