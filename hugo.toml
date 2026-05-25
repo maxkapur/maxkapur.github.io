@@ -10,6 +10,12 @@ enableGitInfo = true
 # Build settings
 cleanDestinationDir = true
 
+[outputs]
+  home = ['html', 'atom']
+  section = ['html', 'atom']
+  taxonomy = ['html', 'atom']
+  term = ['html', 'atom']
+
 [frontmatter]
 # Extract dates from filenames if possible
 date = ["date", ":filename", ":default"]
