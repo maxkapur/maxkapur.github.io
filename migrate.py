@@ -1,4 +1,13 @@
 #!/usr/bin/env python
+"""Jekyll migration script.
+
+This script tries to automate the migration of posts from the Jekyll version
+of the site, flagging areas that need manual attention manually.
+
+Workflow is to manually copy all the top level pages (`about.md` etc.) from
+Jekyll into `content/pages/`, and all the posts (`_posts/*.md`) into
+`content/posts/`, commit, then run this script and examine the diff.
+"""
 
 import re
 import warnings
