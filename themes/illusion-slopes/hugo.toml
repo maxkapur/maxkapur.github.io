@@ -4,7 +4,7 @@ title = 'My New Hugo Project'
 
 [mediaTypes]
   [mediaTypes.'application/atom+xml']
-    suffixes = ['atom']
+    suffixes = ['xml']
 
 [outputFormats]
   [outputFormats.atom]
