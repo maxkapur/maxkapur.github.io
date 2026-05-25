@@ -21,5 +21,12 @@ publishDate = ["publishdate", ":filename", ":default"]
 # with the same title (like "recent reading")
 posts = "/posts/:year-:month-:day-:slug"
 
+# Shadow the [menus] key from the theme's hugo.toml to suppress "Tags" link, as
+# I don't use tags
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
 [markup.goldmark]
 renderer.unsafe = true
