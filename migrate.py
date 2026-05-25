@@ -127,6 +127,16 @@ inline_math = re.compile(
 )
 
 
+def display_shortcode(expr: str) -> str:
+    return "\n\n{{< math >}}\n" + expr.strip() + "\n{{< /math >}}\n\n"
+
+
+def inline_shortcode(expr: str) -> str:
+    # For inline math (only), collapse whitespace since Hugo shortcodes
+    # don't support multiline strings
+    return '{{< math "' + re.subn(r"\n+", " ", expr.strip())[0] + '" />}}'
+
+
 def migrate_katex(body: str) -> str:
     """Replace old KaTeX delimiters with new shortcode."""
 
@@ -137,19 +147,11 @@ def migrate_katex(body: str) -> str:
         before = after
 
         # Eagerly match display math since its pattern is a superset of inline
-        after = display_math.sub(
-            lambda m: (
-                "\n\n{{< math >}}\n" + m.group("expr").strip() + "\n{{< /math >}}\n\n"
-            ),
-            before,
-        )
+        after = display_math.sub(lambda m: display_shortcode(m.group("expr")), before)
         if after != before:
             continue
 
-        after = inline_math.sub(
-            lambda m: '{{< math "' + m.group("expr").strip() + '" />}}',
-            before,
-        )
+        after = inline_math.sub(lambda m: inline_shortcode(m.group("expr")), before)
         if after != before:
             continue
 
