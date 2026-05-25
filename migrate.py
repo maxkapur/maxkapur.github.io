@@ -40,9 +40,8 @@ def process(path: Path) -> tuple[bool, bool]:
     assert katex_detected == d.get("params", {}).get("katex", False)
 
     if katex_detected:
-        katex_migrated = migrate_katex(body)
-        assert katex_migrated != body
-        body = katex_migrated
+        body = migrate_katex(body)
+        assert "$$" not in body
 
     output = f"+++\n{frontmatter}+++\n\n{body}"
     if output != original_text:
