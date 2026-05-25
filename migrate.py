@@ -45,12 +45,13 @@ def process(path: Path) -> tuple[bool, bool]:
     frontmatter = toml.dumps(d)
     body = body.strip()
 
-    katex_detected = "$$" in body
-
-    if katex_detected:
+    if "$$" in body:
         assert d["params"]["katex"]
         body = migrate_katex(body)
         assert "$$" not in body
+
+    if "post_url" or "relative_url" in body:
+        warnings.warn(f"{path} contains unmigrated Jekyll URL references")
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
     if output != original_text:
