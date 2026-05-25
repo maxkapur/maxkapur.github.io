@@ -1,9 +1,6 @@
 +++
 title = "Find your perfect match with integer programming"
 aliases = [ "/2025/12/19/perfect-match-integer-programming.html",]
-
-[params]
-katex = true
 +++
 
 Owen Lacey

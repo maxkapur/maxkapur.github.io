@@ -1,9 +1,6 @@
 +++
 title = "The school location problem"
 aliases = [ "/2022/04/14/school-location-problem.html",]
-
-[params]
-katex = true
 +++
 
 I’ve spent a few days thinking about a facility location problem that

@@ -4,7 +4,6 @@ aliases = [ "/colophon/",]
 
 [params]
 hidden = true
-katex = true
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)
