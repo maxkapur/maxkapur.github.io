@@ -180,7 +180,8 @@ jekyll_href = re.compile(
 
 
 def hugo_post_href(slug: str, disp: str) -> str:
-    return f"[{disp.strip()}]({slug.strip()})"
+    # All post_urls point to posts as opposed to pages
+    return f"[{disp.strip()}](/posts/{slug.strip()}/)"
 
 
 def migrate_hrefs(body: str) -> str:
