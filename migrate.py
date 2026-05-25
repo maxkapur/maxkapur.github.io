@@ -107,7 +107,7 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         # Tech debt in Jekyll where I manually had to say every post was a post
         del d["layout"]
 
-    # Move custom keys into params
+    # Handle custom keys
 
     # Used to have a KaTeX indicator to indicate whether the page has math on
     # it. Idea was that you could get faster page loads by skipping the KaTeX
@@ -119,11 +119,35 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     if "katex" in d.get("params", {}):
         del d["params"]["katex"]
 
-    if "hidden" in d:
+    # Jekyll side used hidden key in a sort of overloaded way. For *posts,*
+    # hidden suppressed inclusion on the homepage (but the post would still land
+    # in Browse). Haven't decide how to implement this but for now, just move it
+    # into params.
+    if page_type == "post" and "hidden" in d:
         # Sanity check assumption that I only included this key if it was true
         assert d["hidden"]
         d["params"] = d.get("params", {}) | {"hidden": True}
         del d["hidden"]
+    # For pages, hidden would suppress them from the top navigation. Hugo works
+    # a little differently here: Inclusion is the marked case, not exclusion.
+    # New site.Menus.main is autopopulated with a link to browse posts (and a
+    # few others, see hugo.toml in the theme), then you add "main" to the menu
+    # list for any content item that should be added to this menu.
+    if page_type == "page":
+        was_hidden = False
+        if "hidden" in d:
+            assert d["hidden"]
+            was_hidden = True
+            del d["hidden"]
+        if d.get("params", {}).get("hidden"):
+            # Previous migration moved hidden key into params, before I understood hugo menus
+            was_hidden = True
+            del d["params"]["hidden"]
+
+        if not was_hidden:
+            d["menus"] = d.get("menus", [])
+            if "main" not in d["menus"]:
+                d["menus"].append("main")
 
     # Drop empty params dict that may linger from above operations
     if "params" in d and d["params"] == {}:
