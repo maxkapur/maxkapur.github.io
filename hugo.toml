@@ -26,7 +26,7 @@ posts = "/posts/:year-:month-:day-:slug"
 [[menus.main]]
 name = 'Posts'
 pageRef = '/posts'
-weight = 20
+weight = 999
 
 [markup.goldmark]
 renderer.unsafe = true
