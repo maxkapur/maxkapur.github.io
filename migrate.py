@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import re
 import warnings
 from datetime import date
 from pathlib import Path
@@ -37,9 +38,11 @@ def process(path: Path) -> tuple[bool, bool]:
 
     katex_detected = "$$" in body
     assert katex_detected == d.get("params", {}).get("katex", False)
+
     if katex_detected:
-        warnings.warn(f"{path} has unmigrated KaTeX delimiters")
-        attention_needed = True
+        katex_migrated = migrate_katex(body)
+        assert katex_migrated != body
+        body = katex_migrated
 
     output = f"+++\n{frontmatter}+++\n\n{body}"
     if output != original_text:
@@ -112,6 +115,45 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         assert d["hidden"]
         d["params"] = d.get("params", {}) | {"hidden": True}
         del d["hidden"]
+
+
+display_math = re.compile(
+    r"(\r?\n)+\r?\n\$\$(?P<expr>.*?)\$\$(\r?\n)+\r?\n",
+    re.MULTILINE | re.DOTALL,
+)
+inline_math = re.compile(
+    r"\$\$(?P<expr>.*?)\$\$",
+    re.MULTILINE | re.DOTALL,  # Even inline needs DOTALL due to line wrapping
+)
+
+
+def migrate_katex(body: str) -> str:
+    """Replace old KaTeX delimiters with new shortcode."""
+
+    after = body
+    while True:
+        # Make replacements one at a time to prevent overlap since delims are
+        # symmetric
+        before = after
+
+        # Eagerly match display math since its pattern is a superset of inline
+        after = display_math.sub(
+            lambda m: (
+                "\n\n{{< math >}}\n" + m.group("expr").strip() + "\n{{< /math >}}\n\n"
+            ),
+            before,
+        )
+        if after != before:
+            continue
+
+        after = inline_math.sub(
+            lambda m: '{{< math "' + m.group("expr").strip() + '" />}}',
+            before,
+        )
+        if after != before:
+            continue
+
+        return after
 
 
 if __name__ == "__main__":
