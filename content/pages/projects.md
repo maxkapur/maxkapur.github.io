@@ -1,8 +1,8 @@
 +++
 title = "Projects"
-sort_order = "20"
 aliases = [ "/projects/", "/publications/",]
 menus = [ "main",]
+weight = 20
 +++
 
 {%- comment -%}

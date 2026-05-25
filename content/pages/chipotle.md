@@ -1,8 +1,8 @@
 +++
 title = "Chipotle"
-sort_order = "999"
 aliases = [ "/chipotle/",]
 menus = []
+weight = 999
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

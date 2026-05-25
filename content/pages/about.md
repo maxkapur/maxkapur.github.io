@@ -1,8 +1,8 @@
 +++
 title = "About"
-sort_order = "10"
 menus = [ "main",]
 aliases = [ "/about/",]
+weight = 10
 +++
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal
