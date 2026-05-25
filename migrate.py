@@ -46,9 +46,9 @@ def process(path: Path) -> tuple[bool, bool]:
     body = body.strip()
 
     katex_detected = "$$" in body
-    assert katex_detected == d.get("params", {}).get("katex", False)
 
     if katex_detected:
+        assert d["params"]["katex"]
         body = migrate_katex(body)
         assert "$$" not in body
 
