@@ -56,6 +56,7 @@
     </author>
   {{- end }}
 
+
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
 
   {{- range $pages }}
@@ -64,15 +65,13 @@
       <link rel="alternate" href="{{ .Permalink }}" />
       <updated>{{ .Lastmod.Format $dateFormat | safeHTML }}</updated>
       <published>{{ .PublishDate.Format $dateFormat | safeHTML }}</published>
+      <id>{{ or .Params.id .Permalink }}</id>
 
       {{- /* An RFC 4287 Simple Extension element: human-readable representation
         of the publication date. We use this in the stylesheet to show a concise
         date instead of the dense ISO format string.
       */}}
       <readableDate>{{ .PublishDate.Format "Jan 2, 2006" }}</readableDate>
-
-      {{- /* TODO: Migration */}}
-      <id>https://maxkapur.com/2026/05/06/pageranking-pb</id>
 
       <summary type="html">
         {{ .Summary | transform.XMLEscape | safeHTML }}
