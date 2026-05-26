@@ -12,10 +12,10 @@ enableGitInfo = true
 cleanDestinationDir = true
 
 [outputs]
-  home = ['html', 'atom']
-  section = ['html', 'atom']
-  taxonomy = ['html', 'atom']
-  term = ['html', 'atom']
+  home = ["html", "atom"]
+  section = ["html", "atom"]
+  taxonomy = ["html", "atom"]
+  term = ["html", "atom"]
 
 [frontmatter]
 # Extract dates from filenames if possible
