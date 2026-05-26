@@ -57,6 +57,7 @@ def process(path: Path) -> tuple[bool, bool]:
     ):
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
         body = migrate_hrefs(body)
+        assert ("post_url" not in body) and ("relative_url" not in body)
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
     if output != original_text:
