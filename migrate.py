@@ -21,8 +21,8 @@ import tomllib
 # Eager indicators that a page contains unmigrated Jekyll syntax. Exclude "{{%"
 # and "{{<", which are Hugo markdown and standard shortcodes, respectively:
 # https://gohugo.io/content-management/shortcodes/
-jekyll_object_start = re.compile("{{[^%<]", re.MULTILINE)
-jekyll_tag_start = re.compile("[^{]{%", re.MULTILINE)
+jekyll_object_start = re.compile(r"{{[^%<]", re.MULTILINE)
+jekyll_tag_start = re.compile(r"[^{]{%", re.MULTILINE)
 
 
 def process(path: Path) -> tuple[bool, bool]:
@@ -67,6 +67,7 @@ def process(path: Path) -> tuple[bool, bool]:
 
     if jekyll_object_start.search(body) or jekyll_tag_start.search(body):
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
+        body = migrate_jekyll_syntax(body)
         attention_needed = True
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
@@ -257,6 +258,22 @@ def migrate_hrefs(body: str) -> str:
     body, _ = jekyll_mdref.subn(
         lambda m: hugo_post_href(m.group("slug"), m.group("disp")), body
     )
+    return body
+
+
+jekyll_site_url = re.compile(r"\{\{\s+site\.url\s+\}\}")
+jekyll_site_email = re.compile(r"\{\{\s+site\.email\s+\}\}")
+jekyll_site_github = re.compile(r"\{\{\s+site\.github\s+\}\}")
+jekyll_site_linkedin_username = re.compile(r"\{\{\s+site\.linkedin_username\s+\}\}")
+
+
+def migrate_jekyll_syntax(body: str) -> str:
+    # Hardcode these for now. TODO: Develop shortcodes
+    body, _ = jekyll_site_url.subn("https://maxkapur.com/", body)
+    body, _ = jekyll_site_email.subn("max@maxkapur.com", body)
+    body, _ = jekyll_site_github.subn("maxkapur", body)
+    body, _ = jekyll_site_linkedin_username.subn("maxkapur", body)
+
     return body
 
 
