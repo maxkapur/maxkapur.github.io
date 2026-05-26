@@ -96,7 +96,8 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         # Every page in the Jekyll site had a permalink so there's no default
         # path to alias
         default_aliases = []
-        id = str(uuid.uuid4())
+        # https://www.taguri.org/, note same form used in archetype
+        id = f"tag:max@maxkapur.com,{date.today().isoformat()},pages:{d['title']}"
     elif page_type == "post":
         date_str = path.name[:10]
         slug = path.name[11:-3]  # strip date and ".md"
@@ -104,7 +105,7 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         old_relpath = f"/{date_str.replace('-', '/')}/{slug}.html"
         default_aliases = [old_relpath]
         # This is the exact ID used in the old Atom feed: Absolute URL minus the
-        # trailing .html. Not sure why but we might as well keep it
+        # trailing .html. Bad, but we have to keep it
         id = f"https://maxkapur.com{old_relpath[:-5]}"
     else:
         raise ValueError
