@@ -53,7 +53,7 @@ video](https://www.youtube.com/playlist?list=PL06yMQdXWrp9VsynaPe2mg2gjHfr45VZO)
 
 The best way to reach me is by emailing me at [max@maxkapur.com](mailto:max@maxkapur.com).
 You can also find me on
-[GitHub](https://github.com/{{ site.github_username }}),
+[GitHub](https://github.com/maxkapur),
 [LinkedIn](https://www.linkedin.com/in/maxkapur), and
 [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw).
 
