@@ -17,15 +17,12 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  {{/* TODO: This doesn't seem to pick up the correct .Title for the pages and
-    posts feeds
-  */}}
-  {{ $feedTitle := .Site.Title }}
-  {{ if and .Title (ne .Title .Site.Title) }}
-    {{ $feedTitle = add .Title " | " $feedTitle }}
-  {{ end }}
   <title type="text">
-    {{ $feedTitle }}
+    {{ if or .IsHome (not .Title) }}
+      {{ .Site.Title }}
+    {{ else }}
+      {{ printf "%s | %s" .Title .Site.Title }}
+    {{ end }}
   </title>
 
   {{ with .OutputFormats.Get "atom" }}
