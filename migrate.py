@@ -269,7 +269,10 @@ jekyll_site_linkedin_username = re.compile(r"\{\{\s+site\.linkedin_username\s+\}
 
 def migrate_jekyll_syntax(body: str) -> str:
     # Hardcode these for now. TODO: Develop shortcodes
-    body, _ = jekyll_site_url.subn("https://maxkapur.com/", body)
+    body, _ = jekyll_site_url.subn(
+        "https://maxkapur.com",  # Lack of trailing slash intentional
+        body,
+    )
     body, _ = jekyll_site_email.subn("max@maxkapur.com", body)
     body, _ = jekyll_site_github.subn("maxkapur", body)
     body, _ = jekyll_site_linkedin_username.subn("maxkapur", body)
