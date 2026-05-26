@@ -4,5 +4,5 @@ draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 
 [params]
-id = "{{ now.UnixNano }}"
+id = "{{ sha256 now.UnixNano }}"
 +++
