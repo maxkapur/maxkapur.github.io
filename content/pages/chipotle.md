@@ -3,6 +3,8 @@ title = "Chipotle"
 aliases = [ "/chipotle/",]
 menus = []
 weight = 999
+date = 2025-02-03T18:41:46-05:00
+lastmod = 2025-02-09T12:29:26-06:00
 
 [params]
 id = "tag:max@maxkapur.com,2026-05-26,pages:Chipotle"

@@ -3,6 +3,8 @@ title = "About"
 menus = [ "main",]
 aliases = [ "/about/",]
 weight = 10
+date = 2024-12-01T11:22:03-06:00
+lastmod = 2025-03-16T13:21:35-04:00
 
 [params]
 id = "tag:max@maxkapur.com,2026-05-26,pages:About"
