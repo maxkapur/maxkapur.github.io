@@ -263,7 +263,7 @@ def migrate_hrefs(body: str) -> str:
 
 jekyll_site_url = re.compile(r"\{\{\s+site\.url\s+\}\}")
 jekyll_site_email = re.compile(r"\{\{\s+site\.email\s+\}\}")
-jekyll_site_github = re.compile(r"\{\{\s+site\.github\s+\}\}")
+jekyll_site_github_username = re.compile(r"\{\{\s+site\.github_username\s+\}\}")
 jekyll_site_linkedin_username = re.compile(r"\{\{\s+site\.linkedin_username\s+\}\}")
 
 
@@ -274,7 +274,7 @@ def migrate_jekyll_syntax(body: str) -> str:
         body,
     )
     body, _ = jekyll_site_email.subn("max@maxkapur.com", body)
-    body, _ = jekyll_site_github.subn("maxkapur", body)
+    body, _ = jekyll_site_github_username.subn("maxkapur", body)
     body, _ = jekyll_site_linkedin_username.subn("maxkapur", body)
 
     return body
