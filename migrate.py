@@ -10,7 +10,6 @@ Jekyll into `content/pages/`, and all the posts (`_posts/*.md`) into
 """
 
 import re
-import uuid
 import warnings
 from datetime import date
 from pathlib import Path
