@@ -18,6 +18,12 @@ import saneyaml
 import toml
 import tomllib
 
+# Eager indicators that a page contains unmigrated Jekyll syntax. Exclude "{{%"
+# and "{{<", which are Hugo markdown and standard shortcodes, respectively:
+# https://gohugo.io/content-management/shortcodes/
+jekyll_object_start = re.compile("{{[^%<]", re.MULTILINE)
+jekyll_tag_start = re.compile("[^{]{%", re.MULTILINE)
+
 
 def process(path: Path) -> tuple[bool, bool]:
     """Migrate a page or post.
@@ -58,6 +64,10 @@ def process(path: Path) -> tuple[bool, bool]:
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
         body = migrate_hrefs(body)
         assert ("post_url" not in body) and ("relative_url" not in body)
+
+    if jekyll_object_start.search(body) or jekyll_tag_start.search(body):
+        warnings.warn(f"{path} contains unmigrated Jekyll URL references")
+        attention_needed = True
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
     if output != original_text:
