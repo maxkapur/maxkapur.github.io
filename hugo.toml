@@ -7,9 +7,6 @@ params.description = "I blog about culture, numerical optimization, and software
 params.author.name = "Max Kapur"
 params.author.email = "max@maxkapur.com"
 
-# Metadata extraction hints
-enableGitInfo = true
-
 # Build settings
 cleanDestinationDir = true
 
@@ -22,8 +19,8 @@ cleanDestinationDir = true
 [frontmatter]
 # Extract dates from filenames if possible
 date = ["date", ":filename", ":default"]
-lastmod = ["lastmod", ":filename", ":default"]
-publishDate = ["publishdate", ":filename", ":default"]
+lastmod = ["lastmod", "date", ":filename", ":default"]
+publishDate = ["publishdate", "date", ":filename", ":default"]
 
 [permalinks]
 # For posts (only), include the date in the URL to disambiguate recurring posts
