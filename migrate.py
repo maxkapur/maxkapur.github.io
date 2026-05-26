@@ -10,6 +10,7 @@ Jekyll into `content/pages/`, and all the posts (`_posts/*.md`) into
 """
 
 import re
+import uuid
 import warnings
 from datetime import date
 from pathlib import Path
@@ -86,16 +87,25 @@ def extract_parts(original_text: str) -> tuple[dict, str]:
 
 def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     """Migrate the frontmatter keys dictionary `d`, in place."""
+    if "params" not in d:
+        # Every post should have a params key to provide the id field
+        d["params"] = {}
+
     # Construct aliases to maintain paths from Jekyll site
     if page_type == "page":
         # Every page in the Jekyll site had a permalink so there's no default
         # path to alias
         default_aliases = []
+        id = str(uuid.uuid4())
     elif page_type == "post":
         date_str = path.name[:10]
         slug = path.name[11:-3]  # strip date and ".md"
         assert date.fromisoformat(date_str)  # check format
-        default_aliases = [f"/{date_str.replace('-', '/')}/{slug}.html"]
+        old_relpath = f"/{date_str.replace('-', '/')}/{slug}.html"
+        default_aliases = [old_relpath]
+        # This is the exact ID used in the old Atom feed: Absolute URL minus the
+        # trailing .html. Not sure why but we might as well keep it
+        id = f"https://maxkapur.com{old_relpath[:-5]}"
     else:
         raise ValueError
 
@@ -107,6 +117,9 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     if redirects := d.get("redirect_from"):
         d["aliases"].extend(redirects)
         del d["redirect_from"]
+
+    if not d["params"].get("id"):
+        d["params"]["id"] = id
 
     if "layout" in d:
         # Tech debt in Jekyll where I manually had to say every post was a post
@@ -159,10 +172,6 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     if sort_order := d.get("sort_order"):
         d["weight"] = int(sort_order)
         del d["sort_order"]
-
-    # Drop empty params dict that may linger from above operations
-    if "params" in d and d["params"] == {}:
-        del d["params"]
 
 
 display_math = re.compile(
