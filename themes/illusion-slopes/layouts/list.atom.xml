@@ -15,6 +15,8 @@
   {{- $pages = $pctx.Pages.ByDate.Reverse }}
 {{- end }}
 
+{{- $dateFormat := "2006-01-02T15:04:05-07:00" }}
+
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">
@@ -35,7 +37,7 @@
   {{ end }}
 
   {{ with (collections.Index $pages.ByLastmod.Reverse 0) }}
-    <updated>{{ time.Format "2006-01-02T15:04:05-07:00" .Lastmod }}</updated>
+    <updated>{{ time.Format $dateFormat .Lastmod }}</updated>
   {{ end }}
 
 
@@ -43,34 +45,38 @@
 
   {{/* TODO: continue applying template */}}
   <author>
-    <name>Max Kapur</name>
-    <email>max@maxkapur.com</email>
+    {{ with .Site.Params.author.name }}
+      <name>{{ . }}</name>
+    {{ end }}
+    {{ with .Site.Params.author.email }}
+      <email>{{ . }}</email>
+    {{ end }}
   </author>
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
 
-  <entry>
-    <title type="text">PageRanking People and Blogs interviews</title>
-    <link
-      rel="alternate"
-      href="https://maxkapur.com/2026/05/06/pageranking-pb.html"
-    />
+  {{- range $pages }}
+    <entry>
+      <title type="text">{{ .Title }}</title>
+      <link rel="alternate" href="{{ .Permalink }}" />
 
-    <!--
-      Use post.date as both the updated and published date. Currently, we don't
-      keep separate track of when a post was updated.
-    -->
-    <updated>2026-05-06T00:00:00-05:00</updated>
-    <published>2026-05-06T00:00:00-05:00</published>
+      <updated>{{ .Lastmod.Format $dateFormat | safeHTML }}</updated>
+      <published>{{ .PublishDate.Format $dateFormat | safeHTML }}</published>
 
-    <!--
-      An RFC 4287 Simple Extension element: human-readable representation of the
-      publication date. We use this in the stylesheet to show a concise date
-      instead of the dense ISO format string.
-    -->
-    <readableDate>May 6, 2026</readableDate>
+      {{/* An RFC 4287 Simple Extension element: human-readable representation of
+        the publication date. We use this in the stylesheet to show a concise date
+        instead of the dense ISO format string.
+      */}}
+      <readableDate>{{ .PublishDate.Format "Jan 2, 2006" }}</readableDate>
 
-    <id>https://maxkapur.com/2026/05/06/pageranking-pb</id>
-    <summary type="html">Summary example</summary>
-    <content type="html">Content example</content>
-  </entry>
+      {{/* TODO: Migration */}}
+      <id>https://maxkapur.com/2026/05/06/pageranking-pb</id>
+      <summary type="html">
+        {{ .Summary | transform.XMLEscape | safeHTML }}
+      </summary>
+      <content type="html"
+        >{{ .Content | transform.XMLEscape | safeHTML }}</content
+      >
+    </entry>
+  {{- end }}
+
 </feed>
