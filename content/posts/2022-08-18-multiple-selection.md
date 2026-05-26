@@ -1,9 +1,6 @@
 +++
 title = "Grading multiple-selection questions"
 aliases = [ "/2022/08/18/multiple-selection.html",]
-
-[params]
-id = "https://maxkapur.com/2022/08/18/multiple-selection"
 +++
 
 Consider the following test question:

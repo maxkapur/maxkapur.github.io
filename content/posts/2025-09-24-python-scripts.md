@@ -1,9 +1,6 @@
 +++
 title = "Python scripts"
 aliases = [ "/2025/09/24/python-scripts.html",]
-
-[params]
-id = "https://maxkapur.com/2025/09/24/python-scripts"
 +++
 
 I cleaned up a few utility Python scripts for the GitHub:

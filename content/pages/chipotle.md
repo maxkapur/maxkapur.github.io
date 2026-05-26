@@ -3,9 +3,6 @@ title = "Chipotle"
 aliases = [ "/chipotle/",]
 menus = []
 weight = 999
-
-[params]
-id = "61d564f4-6115-4cb6-b565-8d7cb45c554e"
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

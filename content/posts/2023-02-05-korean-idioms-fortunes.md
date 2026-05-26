@@ -1,9 +1,6 @@
 +++
 title = "Learning Korean idioms with UNIX fortune"
 aliases = [ "/2023/02/05/korean-idioms-fortunes.html",]
-
-[params]
-id = "https://maxkapur.com/2023/02/05/korean-idioms-fortunes"
 +++
 
 [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) is a classic UNIX program that displays random fortunes, pithy quotes, and the like:

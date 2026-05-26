@@ -1,9 +1,6 @@
 +++
 title = "New old device"
 aliases = [ "/2024/04/14/new-old-device.html",]
-
-[params]
-id = "https://maxkapur.com/2024/04/14/new-old-device"
 +++
 
 On a recent visit home, I dug this 2007

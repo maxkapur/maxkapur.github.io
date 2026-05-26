@@ -1,9 +1,6 @@
 +++
 title = "Opening Pandora’s Box"
 aliases = [ "/2022/07/01/opening-pandoras-box.html",]
-
-[params]
-id = "https://maxkapur.com/2022/07/01/opening-pandoras-box"
 +++
 
 A harrowing thing that happens in research is that occasionally, you stumble upon a

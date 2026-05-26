@@ -1,9 +1,6 @@
 +++
 title = "Master’s graduation and two free optimization courses"
 aliases = [ "/2022/09/04/masters-graduation.html",]
-
-[params]
-id = "https://maxkapur.com/2022/09/04/masters-graduation"
 +++
 
 On September 29, I received my master’s degree in industrial engineering from Seoul National University!

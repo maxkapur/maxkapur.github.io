@@ -1,9 +1,6 @@
 +++
 title = "This year’s reading"
 aliases = [ "/2022/12/17/this-years-reading.html",]
-
-[params]
-id = "https://maxkapur.com/2022/12/17/this-years-reading"
 +++
 
 A subset of the books I enjoyed this year:

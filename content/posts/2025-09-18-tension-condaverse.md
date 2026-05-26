@@ -1,9 +1,6 @@
 +++
 title = "Tensions rise in the condaverse"
 aliases = [ "/2025/09/18/tension-condaverse.html",]
-
-[params]
-id = "https://maxkapur.com/2025/09/18/tension-condaverse"
 +++
 
 GitHub has a tool called Dependabot that automatically finds outdated package

@@ -3,9 +3,6 @@ title = "About"
 menus = [ "main",]
 aliases = [ "/about/",]
 weight = 10
-
-[params]
-id = "65fff9ad-af1a-45bc-99d6-42524c92a976"
 +++
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal

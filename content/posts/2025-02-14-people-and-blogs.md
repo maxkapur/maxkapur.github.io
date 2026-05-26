@@ -2,9 +2,6 @@
 title = "People and Blogs interview"
 date = "2025-02-14T13:00:00"
 aliases = [ "/2025/02/14/people-and-blogs.html",]
-
-[params]
-id = "https://maxkapur.com/2025/02/14/people-and-blogs"
 +++
 
 Manuel Moreale, a tireless indie web advocate, recently

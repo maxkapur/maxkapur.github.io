@@ -1,9 +1,6 @@
 +++
 title = "Housekeeping"
 aliases = [ "/2024/03/10/housekeeping.html",]
-
-[params]
-id = "https://maxkapur.com/2024/03/10/housekeeping"
 +++
 
 Completed some overdue site maintenance over the past few weeks:

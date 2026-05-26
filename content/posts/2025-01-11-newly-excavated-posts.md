@@ -1,9 +1,6 @@
 +++
 title = "Newly excavated posts about teaching"
 aliases = [ "/2025/01/11/newly-excavated-posts.html",]
-
-[params]
-id = "https://maxkapur.com/2025/01/11/newly-excavated-posts"
 +++
 
 When I migrated from Blogger to Jekyll a few years ago, I left a bunch of posts

@@ -1,9 +1,6 @@
 +++
 title = "Pytest + Ruff + Mypy"
 aliases = [ "/2025/12/10/pytest-ruff-mypy.html",]
-
-[params]
-id = "https://maxkapur.com/2025/12/10/pytest-ruff-mypy"
 +++
 
 There is a [pytest-ruff](https://pypi.org/project/pytest-ruff/) plugin for

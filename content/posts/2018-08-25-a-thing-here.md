@@ -1,9 +1,6 @@
 +++
 title = "Things that are a thing here"
 aliases = [ "/2018/08/25/a-thing-here.html",]
-
-[params]
-id = "https://maxkapur.com/2018/08/25/a-thing-here"
 +++
 
 They say that major lifestyle changes—even positive ones, like starting a new

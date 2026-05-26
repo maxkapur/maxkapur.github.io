@@ -1,9 +1,6 @@
 +++
 title = "Administrative vs. allocative efficiency"
 aliases = [ "/2021/10/21/administrative-allocative-efficiency.html",]
-
-[params]
-id = "https://maxkapur.com/2021/10/21/administrative-allocative-efficiency"
 +++
 
 This fall marks my final semester of coursework, and penultimate semester overall, of the master&rsquo;s course in industrial engineering here at Seoul National University. I&rsquo;m taking courses in combinatorial optimization and advanced microeconomics, as well as continuing my study of college admissions markets as a research assistant in the  Management Science/Optimization Lab.

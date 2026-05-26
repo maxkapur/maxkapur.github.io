@@ -1,9 +1,6 @@
 +++
 title = "Reasons it’s hard to abandon a smartphone"
 aliases = [ "/2025/04/16/need-smartphone.html",]
-
-[params]
-id = "https://maxkapur.com/2025/04/16/need-smartphone"
 +++
 
 Reasons (excuses?) that I cannot

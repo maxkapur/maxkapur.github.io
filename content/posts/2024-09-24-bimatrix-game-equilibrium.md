@@ -1,9 +1,6 @@
 +++
 title = "Bimatrix game equilibrium via nonlinear programming"
 aliases = [ "/2024/09/24/bimatrix-game-equilibrium.html",]
-
-[params]
-id = "https://maxkapur.com/2024/09/24/bimatrix-game-equilibrium"
 +++
 
 [These lecture notes

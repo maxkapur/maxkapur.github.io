@@ -1,9 +1,6 @@
 +++
 title = "pipx install topgrade"
 aliases = [ "/2025/03/19/pipx-install-topgrade.html",]
-
-[params]
-id = "https://maxkapur.com/2025/03/19/pipx-install-topgrade"
 +++
 
 Many Rust projects, such as [Topgrade](https://github.com/topgrade-rs/topgrade),

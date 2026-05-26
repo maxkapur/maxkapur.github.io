@@ -1,9 +1,6 @@
 +++
 title = "First week of class at CNU"
 aliases = [ "/2016/06/25/first-week-class-cnu.html",]
-
-[params]
-id = "https://maxkapur.com/2016/06/25/first-week-class-cnu"
 +++
 
 I’ve just finished my first week of class at Chonnam National Universty here in Gwangju with CLS and everything is amazing! I am staying with a host family in a suburb about 40 minutes from school by bus, so I get to practice my Korean 24/7.

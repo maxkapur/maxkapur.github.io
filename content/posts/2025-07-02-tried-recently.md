@@ -1,9 +1,6 @@
 +++
 title = "Some things I tried recently"
 aliases = [ "/2025/07/02/tried-recently.html",]
-
-[params]
-id = "https://maxkapur.com/2025/07/02/tried-recently"
 +++
 
 [Kagi Search:](https://kagi.com/) It’s a paid search engine that promises to

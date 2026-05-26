@@ -1,9 +1,6 @@
 +++
 title = "First impressions after moving to Tennessee"
 aliases = [ "/2025/05/21/tennessee-impressions.html",]
-
-[params]
-id = "https://maxkapur.com/2025/05/21/tennessee-impressions"
 +++
 
 - *Honey, baby,* etc.

@@ -1,9 +1,6 @@
 +++
 title = "What you learn in a humanities degree"
 aliases = [ "/2020/01/19/what-you-learn-humanities.html",]
-
-[params]
-id = "https://maxkapur.com/2020/01/19/what-you-learn-humanities"
 +++
 
 The more I learn, I find myself with fewer and fewer things to say.

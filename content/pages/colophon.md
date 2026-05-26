@@ -2,9 +2,6 @@
 title = "Colophon"
 aliases = [ "/colophon/",]
 menus = []
-
-[params]
-id = "2f18b561-ae5a-436d-b84a-ae533f8f3aec"
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)

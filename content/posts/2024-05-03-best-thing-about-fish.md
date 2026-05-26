@@ -1,9 +1,6 @@
 +++
 title = "The best thing about fish"
 aliases = [ "/2024/05/03/best-thing-about-fish.html",]
-
-[params]
-id = "https://maxkapur.com/2024/05/03/best-thing-about-fish"
 +++
 
 The best thing about fish is probably the

@@ -1,9 +1,6 @@
 +++
 title = "Gwangju again: CLS Media Literacy and Democracy seminar"
 aliases = [ "/2024/11/02/gwangju-again.html",]
-
-[params]
-id = "https://maxkapur.com/2024/11/02/gwangju-again"
 +++
 
 I had the honor this week of participating in the first ever [Critical Language

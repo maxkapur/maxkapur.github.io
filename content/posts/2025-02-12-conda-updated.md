@@ -1,9 +1,6 @@
 +++
 title = "Conda updated?"
 aliases = [ "/2025/02/12/conda-updated.html",]
-
-[params]
-id = "https://maxkapur.com/2025/02/12/conda-updated"
 +++
 
 Using a tip from

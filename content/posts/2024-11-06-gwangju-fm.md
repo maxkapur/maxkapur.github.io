@@ -1,9 +1,6 @@
 +++
 title = "Media literacy chat at 88.9 Gwangju FM"
 aliases = [ "/2024/11/06/gwangju-fm.html",]
-
-[params]
-id = "https://maxkapur.com/2024/11/06/gwangju-fm"
 +++
 
 I wanted to follow up on my [previous post](/posts/2024-11-02-gwangju-again/) about the CLS alumni seminar in Gwangju to

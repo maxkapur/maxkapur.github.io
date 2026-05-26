@@ -5,7 +5,6 @@ aliases = [ "/2025/02/14/people-and-blogs-local.html",]
 
 [params]
 hidden = true
-id = "https://maxkapur.com/2025/02/14/people-and-blogs-local"
 +++
 
 Here is a local mirror of my interview on Manuel Moreale's

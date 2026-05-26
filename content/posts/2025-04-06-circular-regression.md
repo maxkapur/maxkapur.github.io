@@ -1,9 +1,6 @@
 +++
 title = "Circular regression when you already know the period"
 aliases = [ "/2025/04/06/circular-regression.html",]
-
-[params]
-id = "https://maxkapur.com/2025/04/06/circular-regression"
 +++
 
 This [Stack Exchange](https://stats.stackexchange.com/a/660199) answer reminded

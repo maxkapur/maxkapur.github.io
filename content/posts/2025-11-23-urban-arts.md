@@ -1,9 +1,6 @@
 +++
 title = "Urban Arts Career Pathways Takeover"
 aliases = [ "/2025/11/23/urban-arts.html",]
-
-[params]
-id = "https://maxkapur.com/2025/11/23/urban-arts"
 +++
 
 My team at work recently got to host a Career Pathways Takeover at

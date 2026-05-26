@@ -1,9 +1,6 @@
 +++
 title = "Houseplant measurements"
 aliases = [ "/2020/01/02/houseplant-measurements.html",]
-
-[params]
-id = "https://maxkapur.com/2020/01/02/houseplant-measurements"
 +++
 
 I have been measuring the leaves of my houseplants.

@@ -1,9 +1,6 @@
 +++
 title = "My poorly automated Kubuntu setup"
 aliases = [ "/2025/06/04/kubuntu-setup.html",]
-
-[params]
-id = "https://maxkapur.com/2025/06/04/kubuntu-setup"
 +++
 
 The target audience for this post is myself. I recently set up a new (old)

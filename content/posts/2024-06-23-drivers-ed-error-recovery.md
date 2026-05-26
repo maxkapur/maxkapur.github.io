@@ -1,9 +1,6 @@
 +++
 title = "Driver’s ed should teach error recovery"
 aliases = [ "/2024/06/23/drivers-ed-error-recovery.html",]
-
-[params]
-id = "https://maxkapur.com/2024/06/23/drivers-ed-error-recovery"
 +++
 
 I live near a one-way street, and drivers keep turning into it the wrong way by

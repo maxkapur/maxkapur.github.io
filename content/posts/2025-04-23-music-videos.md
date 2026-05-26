@@ -1,9 +1,6 @@
 +++
 title = "Music videos"
 aliases = [ "/2025/04/23/music-videos.html",]
-
-[params]
-id = "https://maxkapur.com/2025/04/23/music-videos"
 +++
 
 A side effect of my refusal to subscribe to Spotify (I just buy albums on

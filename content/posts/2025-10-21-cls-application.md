@@ -1,9 +1,6 @@
 +++
 title = "Apply for CLS"
 aliases = [ "/2025/10/21/cls-application.html",]
-
-[params]
-id = "https://maxkapur.com/2025/10/21/cls-application"
 +++
 
 This year's application for Critical Language Scholarship from the US State
