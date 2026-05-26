@@ -14,7 +14,7 @@ every site build. You can configure the number of posts to recommend and a
 parameter `factor` which determines the algorithm's sensitivity to rare vs.
 common words.
 
-I made a little [demo of the plugin]({{ site.url }}/jekyll-related/) with a fake
+I made a little [demo of the plugin](https://maxkapur.com/jekyll-related/) with a fake
 blog whose posts are the articles of the UN Universal Declaration of Human
 Rights. You can also see a demo on the current version of this site if you click
 the "read more" link below to go to this post's individual page. I think it
