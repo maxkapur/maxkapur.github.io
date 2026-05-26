@@ -3,6 +3,9 @@ title = "Projects"
 aliases = [ "/projects/", "/publications/",]
 menus = [ "main",]
 weight = 20
+
+[params]
+id = "ce4de373-2631-4f13-a7f8-c319e98f3f37"
 +++
 
 {%- comment -%}

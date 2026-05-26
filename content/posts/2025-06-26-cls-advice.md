@@ -1,6 +1,9 @@
 +++
 title = "CLS advice nobody asked for"
 aliases = [ "/2025/06/26/cls-advice.html",]
+
+[params]
+id = "https://maxkapur.com/2025/06/26/cls-advice"
 +++
 
 Awesome people occasionally reach out to ask me about the US State Department’s

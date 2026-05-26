@@ -1,6 +1,9 @@
 +++
 title = "The benefits of a nonnative teacher"
 aliases = [ "/2020/05/06/nonnative-teacher.html",]
+
+[params]
+id = "https://maxkapur.com/2020/05/06/nonnative-teacher"
 +++
 
 In addition to the myth that it’s impossible for adults to “really” learn a

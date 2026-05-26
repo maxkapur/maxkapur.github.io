@@ -1,6 +1,9 @@
 +++
 title = "Fulbright"
 aliases = [ "/2018/05/02/fulbright-korea.html",]
+
+[params]
+id = "https://maxkapur.com/2018/05/02/fulbright-korea"
 +++
 
 Fun fact: the most-viewed post on this blog, by a long shot, is the one where [I shared that I’d received a Critical Language Scholarship](/posts/2016-03-12-cls-korea/) from the US Department of State to study Korean in Gwangju. Today, I’m pleased to announce there will soon be another addition to the State Department&ndash;mandated disclaimer at the bottom of this blog.

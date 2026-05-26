@@ -1,6 +1,9 @@
 +++
 title = "How I organize browser tabs"
 aliases = [ "/2025/04/30/organize-tabs.html",]
+
+[params]
+id = "https://maxkapur.com/2025/04/30/organize-tabs"
 +++
 
 I didn’t realize I had a system for this until I did.

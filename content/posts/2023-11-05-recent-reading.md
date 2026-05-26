@@ -1,6 +1,9 @@
 +++
 title = "Recent reading"
 aliases = [ "/2023/11/05/recent-reading.html",]
+
+[params]
+id = "https://maxkapur.com/2023/11/05/recent-reading"
 +++
 
 Finished reading, but still thinking about:

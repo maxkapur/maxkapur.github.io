@@ -1,6 +1,9 @@
 +++
 title = "Migrating to Jekyll"
 aliases = [ "/2022/06/25/migrating-to-jekyll.html",]
+
+[params]
+id = "https://maxkapur.com/2022/06/25/migrating-to-jekyll"
 +++
 
 After reflecting on my unsustainable dependency on Google services, I have decided to bite

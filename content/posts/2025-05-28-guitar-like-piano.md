@@ -1,6 +1,9 @@
 +++
 title = "Still playing guitar like piano"
 aliases = [ "/2025/05/28/guitar-like-piano.html",]
+
+[params]
+id = "https://maxkapur.com/2025/05/28/guitar-like-piano"
 +++
 
 I still play the guitar like a piano. It’s most obvious when I try to play along

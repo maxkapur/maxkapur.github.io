@@ -1,6 +1,9 @@
 +++
 title = "Is ABC-SMC just an evolutionary algorithm?"
 aliases = [ "/2025/09/03/abc-smc-evolutionary-algorithm.html",]
+
+[params]
+id = "https://maxkapur.com/2025/09/03/abc-smc-evolutionary-algorithm"
 +++
 
 Suppose we have data {{< math "D" />}} and a model that expresses {{< math "D" />}} as a noisy function

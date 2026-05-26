@@ -1,6 +1,9 @@
 +++
 title = "Advanced café techniques"
 aliases = [ "/2024/08/13/advanced-cafe.html",]
+
+[params]
+id = "https://maxkapur.com/2024/08/13/advanced-cafe"
 +++
 
 Most cafés have separate lines for placing your order and picking it up. After

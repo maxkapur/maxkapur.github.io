@@ -1,6 +1,9 @@
 +++
 title = "Two novels to understand Korea’s political turmoil"
 aliases = [ "/2024/12/08/novels-to-understand-korea.html",]
+
+[params]
+id = "https://maxkapur.com/2024/12/08/novels-to-understand-korea"
 +++
 
 On Tuesday night, South Korean President Yoon Suk Yeol imposed martial law

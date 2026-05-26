@@ -1,6 +1,9 @@
 +++
 title = "Applying the KISS principle to amp modeling"
 aliases = [ "/2023/01/27/kiss-guitar-modeling.html",]
+
+[params]
+id = "https://maxkapur.com/2023/01/27/kiss-guitar-modeling"
 +++
 
 I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.

@@ -1,6 +1,9 @@
 +++
 title = "PageRanking People and Blogs interviews"
 aliases = [ "/2026/05/06/pageranking-pb.html",]
+
+[params]
+id = "https://maxkapur.com/2026/05/06/pageranking-pb"
 +++
 
 I recently learned about [PageRank](https://en.wikipedia.org/wiki/PageRank), the

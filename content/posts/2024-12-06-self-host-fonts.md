@@ -1,6 +1,9 @@
 +++
 title = "How I self-host fonts on this blog"
 aliases = [ "/2024/12/06/self-host-fonts.html",]
+
+[params]
+id = "https://maxkapur.com/2024/12/06/self-host-fonts"
 +++
 
 I recently transitioned this blog to self-host its fonts (IBM Plex Sans, Sans
