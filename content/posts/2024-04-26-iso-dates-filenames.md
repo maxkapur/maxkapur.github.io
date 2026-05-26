@@ -1,6 +1,9 @@
 +++
 title = "Why I put ISO dates in filenames"
 aliases = [ "/2024/04/26/iso-dates-filenames.html",]
+
+[params]
+id = "https://maxkapur.com/2024/04/26/iso-dates-filenames"
 +++
 
 I am one of those obnoxious people who begins his filenames with an ISO date,

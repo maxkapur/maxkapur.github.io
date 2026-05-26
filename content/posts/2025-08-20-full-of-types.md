@@ -1,6 +1,9 @@
 +++
 title = "Full of types"
 aliases = [ "/2025/08/20/full-of-types.html",]
+
+[params]
+id = "https://maxkapur.com/2025/08/20/full-of-types"
 +++
 
 I’m obsessed with this essay

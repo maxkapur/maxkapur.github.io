@@ -1,6 +1,9 @@
 +++
 title = "Two truths and one lie"
 aliases = [ "/2022/11/06/two-truths-one-lie.html",]
+
+[params]
+id = "https://maxkapur.com/2022/11/06/two-truths-one-lie"
 +++
 
 A puzzle based on the icebreaker game.

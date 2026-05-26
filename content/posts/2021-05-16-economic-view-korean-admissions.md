@@ -1,6 +1,9 @@
 +++
 title = "An economic view of the Korean college admissions market"
 aliases = [ "/2021/05/16/economic-view-korean-admissions.html",]
+
+[params]
+id = "https://maxkapur.com/2021/05/16/economic-view-korean-admissions"
 +++
 
 Existing computational models of admissions markets tend to fall at one of two extremes: Either they envision a <em>centralized</em> admissions process in which the school board runs an algorithm that says which students go where, or a <em>decentralized</em> process in which colleges compete for the best students. But the Korean college admissions process cannot be adequately described in either of these terms.

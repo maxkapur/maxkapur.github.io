@@ -3,6 +3,9 @@ title = "About"
 menus = [ "main",]
 aliases = [ "/about/",]
 weight = 10
+
+[params]
+id = "tag:max@maxkapur.com,2026-05-26,pages:About"
 +++
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal

@@ -1,6 +1,9 @@
 +++
 title = "Jekyll plugin to recommend related posts"
 aliases = [ "/2025/07/09/related-posts.html",]
+
+[params]
+id = "https://maxkapur.com/2025/07/09/related-posts"
 +++
 
 I wrote my first plugin for the Jekyll static website builder: [a tool that

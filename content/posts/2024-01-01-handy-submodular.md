@@ -1,6 +1,9 @@
 +++
 title = "A handy class of submodular functions"
 aliases = [ "/2024/01/01/handy-submodular.html",]
+
+[params]
+id = "https://maxkapur.com/2024/01/01/handy-submodular"
 +++
 
 In this post, we will show that functions of the form

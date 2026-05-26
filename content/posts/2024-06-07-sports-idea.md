@@ -1,6 +1,9 @@
 +++
 title = "Sports idea"
 aliases = [ "/2024/06/07/sports-idea.html",]
+
+[params]
+id = "https://maxkapur.com/2024/06/07/sports-idea"
 +++
 
 A footrace, but the objective is to run as far as possible in a fixed amount of

@@ -1,6 +1,9 @@
 +++
 title = "Authenticity and the Illusion Slopes AI policy"
 aliases = [ "/2025/03/12/authenticity-ai-policy.html",]
+
+[params]
+id = "https://maxkapur.com/2025/03/12/authenticity-ai-policy"
 +++
 
 I attached my real name to this site. That means that above all, this site must

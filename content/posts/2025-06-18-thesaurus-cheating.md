@@ -1,6 +1,9 @@
 +++
 title = "Is using a thesaurus cheating?"
 aliases = [ "/2025/06/18/thesaurus-cheating.html",]
+
+[params]
+id = "https://maxkapur.com/2025/06/18/thesaurus-cheating"
 +++
 
 I remember taking mild offense when my middle school language arts teacher

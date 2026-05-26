@@ -1,6 +1,9 @@
 +++
 title = "Systems for making systems"
 aliases = [ "/2026/06/03/metasystems.html",]
+
+[params]
+id = "https://maxkapur.com/2026/06/03/metasystems"
 +++
 
 I read a comment stating that git (a tool programmers use to collaborate on

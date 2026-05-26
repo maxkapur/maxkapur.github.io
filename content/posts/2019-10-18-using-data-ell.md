@@ -1,6 +1,9 @@
 +++
 title = "Using data to understand ELL students"
 aliases = [ "/2019/10/18/using-data-ell.html",]
+
+[params]
+id = "https://maxkapur.com/2019/10/18/using-data-ell"
 +++
 
 In August, I surveyed my students about their motivation for learning

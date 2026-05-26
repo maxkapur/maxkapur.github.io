@@ -1,6 +1,9 @@
 +++
 title = "How to type an em dash"
 aliases = [ "/2025/02/20/type-em-dash.html",]
+
+[params]
+id = "https://maxkapur.com/2025/02/20/type-em-dash"
 +++
 
 - Phone (Android): Long press the hyphen button

@@ -1,6 +1,9 @@
 +++
 title = "Guitarix troubleshooting"
 aliases = [ "/2023/07/22/guitarix-troubleshooting.html",]
+
+[params]
+id = "https://maxkapur.com/2023/07/22/guitarix-troubleshooting"
 +++
 
 For the past few updates of [Guitarix](https://guitarix.org/), I have been

@@ -2,6 +2,9 @@
 title = "Colophon"
 aliases = [ "/colophon/",]
 menus = []
+
+[params]
+id = "tag:max@maxkapur.com,2026-05-26,pages:Colophon"
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/colophon)

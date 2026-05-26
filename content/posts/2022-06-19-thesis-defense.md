@@ -1,6 +1,9 @@
 +++
 title = "Thesis defense"
 aliases = [ "/2022/06/19/thesis-defense.html",]
+
+[params]
+id = "https://maxkapur.com/2022/06/19/thesis-defense"
 +++
 
 This week, I defended my master’s thesis at Seoul National University. My thesis concerns an NP-hard portfolio optimization problem that I call the college application problem. My slides, presentation script, and the thesis itself live on [this GitHub repository](https://github.com/maxkapur/CollegeApplication), and all are provided in both English and Korean versions. I also have a very brief deck of [reveal.js slides]({{ site.url }}/CollegeApplication/) introducing the problem, and I recently wrote some [documentation for OptimalApplication.jl]({{ site.url }}/OptimalApplication.jl/stable/), the Julia implementation of my solution algorithms.

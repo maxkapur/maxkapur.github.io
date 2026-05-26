@@ -3,6 +3,9 @@ title = "Chipotle"
 aliases = [ "/chipotle/",]
 menus = []
 weight = 999
+
+[params]
+id = "tag:max@maxkapur.com,2026-05-26,pages:Chipotle"
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

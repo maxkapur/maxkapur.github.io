@@ -3,6 +3,9 @@ title = "Projects"
 aliases = [ "/projects/", "/publications/",]
 menus = [ "main",]
 weight = 20
+
+[params]
+id = "tag:max@maxkapur.com,2026-05-26,pages:Projects"
 +++
 
 {%- comment -%}
