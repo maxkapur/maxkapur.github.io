@@ -37,7 +37,7 @@ collected and shared over the years.
 4. Buy an umbrella in Korea and
    [thank me later](https://www.cvs.com/shop/weather-station-folding-automatic-oversize-umbrella-assorted-colors-prodid-457782-reviews).
 
-And please <a href="mailto:{{site.email}}">email me</a> if you are on CLS this
+And please <a href="mailto:max@maxkapur.com">email me</a> if you are on CLS this
 year and have any stories to share! I still have a
 [few posts](/posts/2016-03-12-cls-korea/) around
 [from my CLS days](/posts/2016-06-25-first-week-class-cnu/), but nothing
