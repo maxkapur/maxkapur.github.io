@@ -20,9 +20,15 @@ their payoffs are {{< math "A_{ij}" />}} and {{< math "B_{ij}," />}} respectivel
 probability vectors {{< math "x" />}} and {{< math "y" />}} yield expected payoffs of {{< math "x^T A y" />}} and
 {{< math "x^T B y," />}} respectively.
 
-{{< math >}}
-(x^*, y^*){{< math "is an *equilibrium* if" />}}x^T A y^* \leq x^{*T} A y^*{{< math "and" />}}x^{*T} A y \leq x^{*T} A y^*{{< math "for all probability vectors" />}}x{{< math "and" />}}y.
-{{< /math >}}
+{{< math "(x^*, y^*)" />}}
+is an *equilibrium* if
+{{< math "x^T A y^* \leq x^{*T} A y^*" />}}
+and
+{{< math "x^{*T} A y \leq x^{*T} A y^*" />}}
+for all probability vectors
+{{< math "x" />}}
+and
+{{< math "y" />}}.
 
 # Result
 
