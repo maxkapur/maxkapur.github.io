@@ -1,6 +1,7 @@
 +++
 title = "What you learn in a humanities degree"
 aliases = [ "/2020/01/19/what-you-learn-humanities.html",]
+lastmod = 2026-05-27
 
 [params]
 id = "https://maxkapur.com/2020/01/19/what-you-learn-humanities"
