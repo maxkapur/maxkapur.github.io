@@ -34,7 +34,7 @@ id = "tag:max@maxkapur.com,2026-05-26,pages:Colophon"
 
 - Conda ([Miniforge](https://github.com/conda-forge/miniforge)) for environment
   management ([why](/posts/2024-11-29-rbenv-vs-conda/))
-- [Jekyll](https://jekyllrb.com/) v{{ jekyll.version }} to build the HTML
+- [Hugo](https://gohugo.io/) to build the HTML
 - GitHub Actions (wrapping Bash scripts) for orchestration
 
 # Hosting

@@ -10,11 +10,6 @@ lastmod = 2025-10-07T19:07:29-05:00
 id = "tag:max@maxkapur.com,2026-05-26,pages:Projects"
 +++
 
-{%- comment -%}
-  Redirect above is because I used to have separate pages for projects and
-  publications.
-{%- endcomment -%}
-
 # Professional projects
 
 I’ve given a lot of thought to how to organize this projects page now that I

@@ -72,6 +72,6 @@ including but not limited to the CLS Program, the US Department of State,
 American Councils for International Education, the Fulbright program, Seoul
 National University, and their partners.
 
+<!-- TODO: 
 # Build information
-
-{% include build_information.html %}
+-->
