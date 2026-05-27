@@ -3,6 +3,15 @@ baseURL = "https://maxkapur.com"
 locale = "en-us"
 title = "Illusion Slopes"
 theme = "illusion-slopes"
+
+# Summary is shown instead of full content on homepage and used in feeds. Hugo
+# generates an automatic summary from first n words if a manual summary isn't
+# defined using a <!--more--> slice. But if I don't supply the slice manually,
+# it's because I want the whole post to show on the homepage (i.e. it is its own
+# summary). Hence
+summaryLength = 99999
+
+# Custom
 params.description = "I blog about culture, numerical optimization, and software. I work at a consulting firm as an operations research and numerical modeling specialist. All opinions are my own."
 params.author.name = "Max Kapur"
 params.author.email = "max@maxkapur.com"
