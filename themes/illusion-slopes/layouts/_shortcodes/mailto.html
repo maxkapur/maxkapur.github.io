@@ -1,4 +1,4 @@
-{{- $displayText := (.Get 0) -}} {{- with $email := .Site.Params.author.email
--}}
-<a href="mailto:{{ $email }}">{{ or $displayText $email }}</a>
+{{- $displayText := (.Get 0) -}}
+{{- with $email := site.Params.author.email -}}
+  <a href="mailto:{{ $email }}">{{ or $displayText $email }}</a>
 {{- end -}}
