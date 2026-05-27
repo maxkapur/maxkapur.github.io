@@ -236,7 +236,7 @@ guess in Match Up.
   <img
     class="compact squareborder"
     alt="Scatter plot showing negative correlation between strength of intuition and turns to win"
-    src="{{ site.baseurl }}/assets/images/are-you-the-one/strength-vs-nturns.svg"
+    src="/assets/images/are-you-the-one/strength-vs-nturns.svg"
   />
 </figure>
 
@@ -261,7 +261,7 @@ The histogram below shows how many episodes contestants typically need to win.
   <img
     class="compact squareborder"
     alt="Histogram showing number of turns to win with intuition fixed to negative infinity. A bell curve centered around 8 or 9"
-    src="{{ site.baseurl }}/assets/images/are-you-the-one/no-intuition.svg"
+    src="/assets/images/are-you-the-one/no-intuition.svg"
   />
 </figure>
 
@@ -282,7 +282,7 @@ meaning that contestants have some intuition, but it's not particularly strong.
   <img
     class="compact squareborder"
     alt="Histogram showing number of turns to win with intuition fixed to negative one. A bell curve centered around 6 or 7"
-    src="{{ site.baseurl }}/assets/images/are-you-the-one/weak-intuition.svg"
+    src="/assets/images/are-you-the-one/weak-intuition.svg"
   />
 </figure>
 
