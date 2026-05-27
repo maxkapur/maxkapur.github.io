@@ -261,10 +261,14 @@ def migrate_hrefs(body: str) -> str:
     return body
 
 
-jekyll_site_url = re.compile(r"\{\{\s+site\.url\s+\}\}")
-jekyll_site_email = re.compile(r"\{\{\s+site\.email\s+\}\}")
-jekyll_site_github_username = re.compile(r"\{\{\s+site\.github_username\s+\}\}")
-jekyll_site_linkedin_username = re.compile(r"\{\{\s+site\.linkedin_username\s+\}\}")
+jekyll_site_url = re.compile(r"\{\{\s*?site\.url\s*?\}\}", re.MULTILINE)
+jekyll_site_email = re.compile(r"\{\{\s*?site\.email\s*?\}\}", re.MULTILINE)
+jekyll_site_github_username = re.compile(
+    r"\{\{\s*?site\.github_username\s*?\}\}", re.MULTILINE
+)
+jekyll_site_linkedin_username = re.compile(
+    r"\{\{\s*?site\.linkedin_username\s*?\}\}", re.MULTILINE
+)
 
 
 def migrate_jekyll_syntax(body: str) -> str:
