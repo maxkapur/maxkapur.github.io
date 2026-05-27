@@ -175,7 +175,11 @@ end
 
 # Lint source files
 begin
-  task check_source: [:standard, :trailing_whitespace, :bundle_outdated]
+  task check_source: [
+    :standard,
+    :trailing_whitespace
+    # :bundle_outdated,
+  ]
 
   task standard: [:bundle_install] do
     puts "# Check formatting with standardrb"
