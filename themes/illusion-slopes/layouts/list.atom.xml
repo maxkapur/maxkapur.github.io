@@ -45,6 +45,10 @@
     <id>{{ . }}</id>
   {{- end }}
 
+  {{- with resources.Get "favicon/favicon.png" }}
+    <icon>{{ .Permalink }}</icon>
+  {{- end }}
+
   {{- if or .Site.Params.author.name  .Site.Params.author.email }}
     <author>
       {{- with .Site.Params.author.name }}
