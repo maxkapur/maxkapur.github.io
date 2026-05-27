@@ -7,7 +7,7 @@ date = 2025-02-03T18:41:46-05:00
 lastmod = 2025-02-09T12:29:26-06:00
 
 [params]
-id = "tag:max@maxkapur.com,2026-05-26,pages:Chipotle"
+id = "tag:max@maxkapur.com,2026-05-27:pages/Chipotle"
 +++
 
 [IndieWebCamp wiki:](https://indieweb.org/chipotle)

@@ -7,7 +7,7 @@ date = 2024-12-01T11:22:03-06:00
 lastmod = 2025-03-16T13:21:35-04:00
 
 [params]
-id = "tag:max@maxkapur.com,2026-05-26,pages:About"
+id = "tag:max@maxkapur.com,2026-05-27:pages/About"
 +++
 
 Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal
