@@ -41,7 +41,7 @@
     <updated>{{ time.Format $dateFormat .Lastmod }}</updated>
   {{- end }}
 
-  {{- with .Site.BaseURL }}
+  {{- with .Permalink }}
     <id>{{ . }}</id>
   {{- end }}
 
