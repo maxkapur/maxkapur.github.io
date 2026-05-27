@@ -36,7 +36,7 @@ introduction:
 
 If you are interested in professional collaboration, please [email me](mailto:max@maxkapur.com)
 or reach out on
-[LinkedIn](https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}).
+[LinkedIn](https://www.linkedin.com/in/maxkapur).
 
 # Open source contributions
 
