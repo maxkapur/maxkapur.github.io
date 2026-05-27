@@ -65,7 +65,12 @@ def process(path: Path) -> tuple[bool, bool]:
         body = migrate_hrefs(body)
         assert ("post_url" not in body) and ("relative_url" not in body)
 
-    if jekyll_object_start.search(body) or jekyll_tag_start.search(body):
+    if (
+        jekyll_object_start.search(body)
+        or jekyll_tag_start.search(body)
+        # False positive: meta post with relative_url in a code block/example
+        and path.name != "2024-12-26-server-side-katex.md"
+    ):
         warnings.warn(f"{path} contains unmigrated Jekyll URL references")
         body = migrate_jekyll_syntax(body)
         attention_needed = True
