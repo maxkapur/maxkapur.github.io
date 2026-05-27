@@ -66,10 +66,10 @@ def process(path: Path) -> tuple[bool, bool]:
 
     if (
         (jekyll_object_start.search(body) or jekyll_tag_start.search(body))
-        # False positive: meta post with relative_url in a code block/example
+        # False positive: meta post with Jekyll syntax examples
         and path.name != "2024-12-26-server-side-katex.md"
     ):
-        warnings.warn(f"{path} contains unmigrated Jekyll URL references")
+        warnings.warn(f"{path} contains unmigrated Jekyll syntax")
         body = migrate_jekyll_syntax(body)
         attention_needed = True
 
