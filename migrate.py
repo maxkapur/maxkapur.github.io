@@ -56,8 +56,7 @@ def process(path: Path) -> tuple[bool, bool]:
         assert "$$" not in body
 
     if (
-        ("post_url" in body)
-        or ("relative_url" in body)
+        (("post_url" in body) or ("relative_url" in body))
         # False positive: meta post with relative_url in a code block/example
         and (path.name != "2024-12-26-server-side-katex.md")
     ):
@@ -66,8 +65,7 @@ def process(path: Path) -> tuple[bool, bool]:
         assert ("post_url" not in body) and ("relative_url" not in body)
 
     if (
-        jekyll_object_start.search(body)
-        or jekyll_tag_start.search(body)
+        (jekyll_object_start.search(body) or jekyll_tag_start.search(body))
         # False positive: meta post with relative_url in a code block/example
         and path.name != "2024-12-26-server-side-katex.md"
     ):
