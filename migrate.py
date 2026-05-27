@@ -13,6 +13,7 @@ import re
 import warnings
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 import saneyaml
 import toml
@@ -111,7 +112,7 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         # path to alias
         default_aliases = []
         # https://www.taguri.org/, note same form used in archetype
-        id = f"tag:max@maxkapur.com,{date.today().isoformat()},pages:{d['title']}"
+        id = f"tag:max@maxkapur.com,2026-05-27:pages/{quote(d['title'])}"
     elif page_type == "post":
         date_str = path.name[:10]
         slug = path.name[11:-3]  # strip date and ".md"
@@ -133,8 +134,7 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
         d["aliases"].extend(redirects)
         del d["redirect_from"]
 
-    if not d["params"].get("id"):
-        d["params"]["id"] = id
+    d["params"]["id"] = id
 
     if "layout" in d:
         # Tech debt in Jekyll where I manually had to say every post was a post
