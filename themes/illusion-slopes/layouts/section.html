@@ -3,20 +3,19 @@
   {{ .Content }}
   {{ range .Pages }}
     <article class="section-item">
-      <details>
-        <summary>
-          <header class="article-header">
-            <h1>
-              <a href="{{ .RelPermalink }}">
-                {{- .LinkTitle -}}
-              </a>
-            </h1>
-          </header>
-        </summary>
-        <div class="article-content">
-          {{ .Summary }}
-        </div>
-      </details>
+      <header class="article-header">
+        <h1>
+          <a href="{{ .RelPermalink }}">
+            {{- .LinkTitle -}}
+          </a>
+        </h1>
+        <p class="subtitle">
+          {{- partial "time.html" . -}}
+        </p>
+      </header>
+      <div class="article-content">
+        {{ .Summary }}
+      </div>
     </article>
   {{ end }}
 {{ end }}

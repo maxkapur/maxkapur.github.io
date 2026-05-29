@@ -1,0 +1,14 @@
+{{/* span element describing post/mod timefor the current context item */ -}}
+
+
+<span>
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+  {{ $dateHuman := .Date | time.Format ":date_long" -}}
+  Posted <time datetime="{{ $dateMachine }}">{{- $dateHuman -}}</time>
+
+  {{ if (lt .Date .Lastmod) -}}
+    {{ $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" -}}
+    {{ $dateHuman := .Lastmod | time.Format ":date_long" -}}
+    · Modified <time datetime="{{ $dateMachine }}">{{- $dateHuman -}}</time>
+  {{ end -}}
+</span>
