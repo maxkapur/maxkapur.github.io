@@ -1,19 +1,52 @@
 body {
-  color: #222;
-  font-family: var(--base-font-family);
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+header,
+footer {
+  background-color: var(--background-highlight);
+  border: var(--line-a);
+
+  h1 {
+    font-size: var(--font-size-1);
+  }
+}
+
+/* Headers within page/post content slide a notch down the font-size scale */
+h1:not(header h1) {
+  font-size: var(--font-size-2);
+}
+h2:not(header h2) {
+  font-size: var(--font-size-3);
+}
+h3:not(header h3) {
+  font-size: var(--font-size-4);
 }
 
 a {
-  color: #00e;
-  text-decoration: none;
+  &,
+  &:active,
+  &:hover {
+    color: var(--brand-color-3);
+  }
+  &:visited {
+    color: var(--brand-color-2);
+  }
 }
 
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+table {
+  background-color: var(--background-highlight);
+  border-collapse: collapse;
+  border: var(--line-b1);
+  thead {
+    border-bottom: var(--line-b2);
+    background-color: var(--background-secondary);
+  }
+  th,
+  td {
+    border: var(--line-b1);
+  }
 }
 
 .katex math {

@@ -1,4 +1,19 @@
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+body {
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+}
+
+/* TODO: Some images are p img, others are figure with img and figcaption inside */
+p:has(> img),
+figure {
+  display: flex;
+  flex-direction: column;
+
+  /* No effect when body has smaller max-width but we will change that;*/
+  max-width: var(--content-width-3);
+
+  & > * {
+    max-width: 100%;
+  }
 }
