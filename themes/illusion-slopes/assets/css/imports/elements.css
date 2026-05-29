@@ -1,6 +1,7 @@
 body {
   color: var(--text-primary);
   background-color: var(--background-primary);
+  font-family: var(--base-font-family);
 }
 
 header,
