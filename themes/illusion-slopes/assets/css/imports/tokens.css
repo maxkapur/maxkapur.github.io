@@ -21,6 +21,7 @@
   --font-size-4: 1rem; /* Article h3 */
   --font-size-5: 0.9rem; /* Smaller/caption text */
 
+  --padding-unit: 0.5rem; /* E.g. blockquote padding-left */
   --spacing-unit: 32px;
 
   --text-primary: #000000;

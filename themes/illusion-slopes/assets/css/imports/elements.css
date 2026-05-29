@@ -24,6 +24,12 @@ h3:not(header h3) {
   font-size: var(--font-size-4);
 }
 
+blockquote {
+  margin-left: var(--padding-unit);
+  padding-left: var(--padding-unit);
+  border-left: var(--line-a);
+}
+
 a {
   &,
   &:active,
@@ -46,7 +52,13 @@ table {
   th,
   td {
     border: var(--line-b1);
+    padding: var(--padding-unit);
   }
+}
+
+hr {
+  border: none;
+  border-top: var(--line-a);
 }
 
 .katex math {
