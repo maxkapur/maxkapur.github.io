@@ -7,4 +7,4 @@ else
     sudo snap install hugo
 fi
 
-./themes/illusion-slopes/download_fonts.py
+./themes/illusion-slopes/download_assets.py
