@@ -15,7 +15,7 @@ else
     sudo apt-get install "${APT_PACKAGES[@]}" --yes --quiet
 fi
 
-if npm ci --dry-run >/dev/null
+if [[ -d node_modules ]]
 then
     echo "npm packages already installed"
 else
