@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: ./configure.sh
 
+      - name: Lint
+        run: ./lint.sh
+
       - name: Build site
         run: |
           hugo build && tree public/
