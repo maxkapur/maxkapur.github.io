@@ -19,7 +19,7 @@ if npm ci --dry-run >/dev/null
 then
     echo "npm packages already installed"
 else
-    npm ci
+    npm install
 fi
 
 ./themes/illusion-slopes/download_assets.py
