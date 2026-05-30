@@ -4,6 +4,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 import requests
+import tinycss2
 
 assets_dir = Path(__file__).parent / "assets"
 
@@ -71,16 +72,26 @@ def ibm_plex_fonts():
 
 
 def katex_css():
-    """Download/extract `katex.css` from GitHub release.
+    """Download/extract `katex.css` and `katex-stripped.css` from GitHub.
 
     We only want the CSS: No JS because Hugo converts KaTeX to MathML as part of
     the site build, and no fonts because we replace them (in our CSS) with IBM
-    Plex Math anyway.
+    Plex Math anyway. Thus, we postprocess `katex.css` into `katex-stripped.css`
+    to remove all font declarations, which prevents a build error when Hugo
+    cannot follow the path URLs pointing to KaTeX fonts.
     """
     url = "https://github.com/KaTeX/KaTeX/releases/download/v0.17.0/katex.zip"
-    p = assets_dir / "katex" / "katex.css"
-    if p.is_file():
-        print(f"{p} already exists, nothing to do")
+
+    # katex.css as extracted from download
+    katex_css_path = assets_dir / "katex" / "katex.css"
+
+    # Postprocessed version with font declarations removed. If merged, https://github.com/KaTeX/KaTeX/issues/4119 will eliminate the need for this
+    katex_stripped_css_path = assets_dir / "katex" / "katex-stripped.css"
+
+    if katex_css_path.is_file() and katex_stripped_css_path.is_file():
+        print(
+            f"{katex_css_path.name} and {katex_stripped_css_path.name} already exist, nothing to do"
+        )
         return
     print(f"Downloading {url} ...", end="")
     response = requests.get(url)
@@ -93,8 +104,15 @@ def katex_css():
             # assets.mkdir(exist_ok=True, parents=True)
             zipfile.extractall(assets_dir, ["katex/katex.css"])
 
-    assert p.is_file()
-    print(f"Extracted {p}")
+    assert katex_css_path.is_file()
+    print(f"Extracted {katex_css_path}")
+
+    rules = tinycss2.parse_stylesheet(katex_css_path.read_text())
+    rules = [
+        rule for rule in rules if not getattr(rule, "at_keyword", None) == "font-face"
+    ]
+    katex_stripped_css_path.write_text(tinycss2.serialize(rules))
+    print(f"Extracted {katex_stripped_css_path}")
 
 
 if __name__ == "__main__":
