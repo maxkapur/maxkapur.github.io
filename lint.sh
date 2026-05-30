@@ -4,3 +4,5 @@ set -ex
 
 shellcheck ./*.sh
 npx prettier . --check
+ruff format --check
+ruff check
