@@ -12,8 +12,11 @@
 @import "../fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css";
 @import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.min.css";
 
-/* Similar idea but for KaTeX */
-@import "../katex/katex.css";
+/*
+  Similar idea but for KaTeX. We don't use the KaTeX fonts, but the styles make
+  math look a LOT better.
+*/
+@import "../katex/katex-stripped.css";
 
 /* https://jacobb.nyc/writing/how-i-write-css-in-2024 */
 
