@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import re
 from io import BytesIO
 from pathlib import Path
 from zipfile import ZipFile
@@ -29,7 +30,7 @@ def ibm_plex_fonts():
     def should_extract(fname: str) -> bool:
         """Determine whether a file from the zip archive should be extracted."""
         # Plex CSS references both the .woff2 and .woff version of each font
-        for suffix in [".min.css", ".woff2", ".woff"]:
+        for suffix in [".css", ".woff2", ".woff"]:
             if fname.endswith(suffix):
                 return True
         return False

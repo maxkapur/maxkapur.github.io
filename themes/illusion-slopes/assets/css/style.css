@@ -7,10 +7,10 @@
   This excludes the '*all.min.css' variants, which have more glyphs.
 */
 
-@import "../fonts/ibm-plex-mono/css/ibm-plex-mono-default.min.css";
-@import "../fonts/ibm-plex-math/css/ibm-plex-math-default.min.css";
-@import "../fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.min.css";
-@import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.min.css";
+@import "../fonts/ibm-plex-mono/css/ibm-plex-mono-default.css";
+@import "../fonts/ibm-plex-math/css/ibm-plex-math-default.css";
+@import "../fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.css";
+@import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.css";
 
 /*
   Similar idea but for KaTeX. We don't use the KaTeX fonts, but the styles make
