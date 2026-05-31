@@ -41,10 +41,8 @@ def process(path: Path) -> tuple[bool, bool]:
         raise ValueError
 
     if path.name == "_index.md":
-        print(f"Skipping {path}")
         return False, attention_needed
 
-    print(f"Processing {path}")
     original_text = path.read_text()
 
     d, body = extract_parts(original_text)
@@ -92,15 +90,12 @@ def extract_parts(original_text: str) -> tuple[dict, str]:
     """Extract the dictionary of frontmatter data and the body."""
 
     if original_text.strip().startswith("---"):
-        print("yaml frontmatter")
         _, frontmatter, body = original_text.split("---", maxsplit=2)
         d = saneyaml.load(frontmatter)
     elif original_text.strip().startswith("+++"):
-        print("toml frontmatter")
         _, frontmatter, body = original_text.split("+++", maxsplit=2)
         d = tomllib.loads(frontmatter)
     else:
-        print("no frontmatter")
         body = original_text
         d = {}
 
