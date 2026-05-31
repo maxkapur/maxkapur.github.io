@@ -79,6 +79,11 @@ a {
   &:visited {
     color: var(--brand-color-2);
   }
+  /* <a> without href used for paginator button for current page */
+  &:disabled,
+  &:not([href]) {
+    color: inherit;
+  }
 }
 
 table {
@@ -103,4 +108,11 @@ hr {
 
 .katex math {
   font-family: var(--math-font-family);
+}
+
+ul.pagination {
+  display: flex;
+  list-style-type: none;
+  gap: calc(2 * var(--padding-unit));
+  justify-content: center;
 }

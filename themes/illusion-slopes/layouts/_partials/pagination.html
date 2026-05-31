@@ -6,7 +6,7 @@
 {{- $msg2 := "The 'format' specified in the map passed to the internal pagination template is invalid. Valid choices are: %s." }}
 
 {{- $page := . }}
-{{- $format := "default" }}
+{{- $format := "terse" }}
 
 {{- if reflect.IsMap . }}
   {{- with .page }}
@@ -172,7 +172,7 @@
             aria-label="First"
             class="page-link"
             role="button"
-            ><span aria-hidden="true">&laquo;&laquo;</span></a
+            ><span aria-hidden="true">First</span></a
           >
         </li>
       {{- end }}
@@ -185,7 +185,7 @@
           aria-label="Previous"
           class="page-link"
           role="button"
-          ><span aria-hidden="true">&laquo;</span></a
+          ><span aria-hidden="true">Previous</span></a
         >
       </li>
     {{- end }}
@@ -205,8 +205,8 @@
             aria-label="Page {{ $k }}"
             class="page-link"
             role="button"
-            >{{ $k }}</a
-          >
+            ><strong>Page {{ $k }}</strong>
+          </a>
         </li>
       {{- else }}
         <li class="page-item">
@@ -224,7 +224,7 @@
     {{- with .Next }}
       <li class="page-item">
         <a href="{{ .URL }}" aria-label="Next" class="page-link" role="button"
-          ><span aria-hidden="true">&raquo;</span></a
+          ><span aria-hidden="true">Next</span></a
         >
       </li>
     {{- end }}
@@ -233,7 +233,7 @@
       {{- if ne $currentPageNumber .PageNumber }}
         <li class="page-item">
           <a href="{{ .URL }}" aria-label="Last" class="page-link" role="button"
-            ><span aria-hidden="true">&raquo;&raquo;</span></a
+            ><span aria-hidden="true">Last</span></a
           >
         </li>
       {{- end }}
