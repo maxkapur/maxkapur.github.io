@@ -24,6 +24,7 @@ import tomllib
 # https://gohugo.io/content-management/shortcodes/
 jekyll_object_start = re.compile(r"{{[^%<]", re.MULTILINE)
 jekyll_tag_start = re.compile(r"[^{]{%", re.MULTILINE)
+
 isodate = re.compile(r"\d{4}\-\d{2}\-\d{2}")
 
 
