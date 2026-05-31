@@ -78,23 +78,40 @@ def katex_css():
     Plex Math anyway.
     """
     url = "https://github.com/KaTeX/KaTeX/releases/download/v0.17.0/katex.zip"
-    p = assets_dir / "katex" / "katex.css"
-    if p.is_file():
-        print(f"{p} already exists, nothing to do")
+
+    if (
+        list(assets_dir.glob("katex/katex.css"))
+        and list(assets_dir.glob("katex/fonts/*.ttf"))
+        and list(assets_dir.glob("katex/fonts/*.woff2"))
+        and list(assets_dir.glob("katex/fonts/*.woff"))
+    ):
+        print("KaTeX files already look good, skipping download")
         return
+
     print(f"Downloading {url} ...", end="")
     response = requests.get(url)
     assert response.ok
     print("OK")
 
+    def should_extract(fname: str) -> bool:
+        """Determine whether a file from the zip archive should be extracted."""
+        # Plex CSS references both the .woff2 and .woff version of each font
+        for suffix in [".ttf", ".woff2", ".woff"]:
+            if fname.endswith(suffix):
+                return True
+        if fname == "katex/katex.css":
+            return True
+        return False
+
     with BytesIO() as buffer:
         buffer.write(response.content)
         with ZipFile(buffer) as zipfile:
-            # assets.mkdir(exist_ok=True, parents=True)
-            zipfile.extractall(assets_dir, ["katex/katex.css"])
+            fnames = [fname for fname in zipfile.namelist() if should_extract(fname)]
+            if not fnames:
+                raise ValueError(f"No files to extract. {zipfile.namelist()=}")
+            zipfile.extractall(assets_dir, fnames)
 
-    assert p.is_file()
-    print(f"Extracted {p}")
+    print("Extracted KaTeX CSS and fonts")
 
 
 if __name__ == "__main__":
