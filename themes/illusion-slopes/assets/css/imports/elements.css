@@ -100,3 +100,7 @@ hr {
   border: none;
   border-top: var(--line-a);
 }
+
+.katex math {
+  font-family: var(--math-font-family);
+}

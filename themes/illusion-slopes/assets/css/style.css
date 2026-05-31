@@ -8,14 +8,9 @@
 */
 
 @import "../fonts/ibm-plex-mono/css/ibm-plex-mono-default.css";
-@import "../fonts/ibm-plex-math/css/ibm-plex-math-default.css";
+/*@import "../fonts/ibm-plex-math/css/ibm-plex-math-default.css";*/
 @import "../fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.css";
 @import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.css";
-
-/*
-  Similar idea but for KaTeX
-*/
-@import "../katex/katex.css";
 
 /* https://jacobb.nyc/writing/how-i-write-css-in-2024 */
 

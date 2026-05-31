@@ -1,6 +1,6 @@
 :root {
   --base-font-family: "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
-  --math-font-family: "IBM Plex Math", serif;
+  --math-font-family: "IBM Plex Math", math, sans-serif;
   --monospace-font-family: "IBM Plex Mono", monospace;
 
   --content-width-1: 512px;

@@ -10,7 +10,6 @@ assets_dir = Path(__file__).parent / "assets"
 
 def main():
     ibm_plex_fonts()
-    katex_css()
 
 
 def ibm_plex_fonts():
@@ -68,50 +67,6 @@ def ibm_plex_fonts():
             outfile = output_dir / fname
             assert outfile.is_file()
             print(f"Extracted {outfile}")
-
-
-def katex_css():
-    """Download/extract `katex.css` from GitHub release.
-
-    We only want the CSS: No JS because Hugo converts KaTeX to MathML as part of
-    the site build, and no fonts because we replace them (in our CSS) with IBM
-    Plex Math anyway.
-    """
-    url = "https://github.com/KaTeX/KaTeX/releases/download/v0.17.0/katex.zip"
-
-    if (
-        list(assets_dir.glob("katex/katex.css"))
-        and list(assets_dir.glob("katex/fonts/*.ttf"))
-        and list(assets_dir.glob("katex/fonts/*.woff2"))
-        and list(assets_dir.glob("katex/fonts/*.woff"))
-    ):
-        print("KaTeX files already look good, skipping download")
-        return
-
-    print(f"Downloading {url} ...", end="")
-    response = requests.get(url)
-    assert response.ok
-    print("OK")
-
-    def should_extract(fname: str) -> bool:
-        """Determine whether a file from the zip archive should be extracted."""
-        # Plex CSS references both the .woff2 and .woff version of each font
-        for suffix in [".ttf", ".woff2", ".woff"]:
-            if fname.endswith(suffix):
-                return True
-        if fname == "katex/katex.css":
-            return True
-        return False
-
-    with BytesIO() as buffer:
-        buffer.write(response.content)
-        with ZipFile(buffer) as zipfile:
-            fnames = [fname for fname in zipfile.namelist() if should_extract(fname)]
-            if not fnames:
-                raise ValueError(f"No files to extract. {zipfile.namelist()=}")
-            zipfile.extractall(assets_dir, fnames)
-
-    print("Extracted KaTeX CSS and fonts")
 
 
 if __name__ == "__main__":
