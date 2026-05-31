@@ -53,6 +53,19 @@ article {
   }
 }
 
+h1,
+h2,
+h3,
+h4 {
+  &:not(&:first-child) {
+    margin-top: calc(2 * var(--vertical-spacing-unit));
+  }
+  &:not(&:last-child) {
+    margin-bottom: var(--vertical-spacing-unit);
+  }
+  font-weight: var(--strongest-font-weight);
+}
+
 /* Headers within page/post content slide a notch down the font-size scale. */
 .article-content h1 {
   font-size: var(--font-size-2);
@@ -65,8 +78,8 @@ article {
 }
 
 blockquote {
-  margin-left: var(--padding-unit);
-  padding-left: var(--padding-unit);
+  margin-left: var(--horizontal-spacing-unit);
+  padding-left: var(--horizontal-spacing-unit);
   border-left: var(--line-a);
 }
 
@@ -96,7 +109,7 @@ table {
   th,
   td {
     border: var(--line-b1);
-    padding: var(--padding-unit);
+    padding: var(--horizontal-spacing-unit);
   }
 }
 
@@ -112,12 +125,12 @@ hr {
 ul.pagination {
   display: flex;
   list-style-type: none;
-  gap: calc(2 * var(--padding-unit));
+  gap: calc(2 * var(--horizontal-spacing-unit));
   justify-content: center;
 }
 
 /* Inline code */
-code:not(pre code){
+code:not(pre code) {
   font-size: var(--font-size-5);
 }
 

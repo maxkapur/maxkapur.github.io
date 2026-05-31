@@ -11,9 +11,6 @@
   --stronger-font-weight: 550;
   --strongest-font-weight: 700;
 
-  /* TODO: Make monospace text a little smaller: Do we still want this? */
-  /*--monospace-font-size: 0.9em;*/
-
   /* Font scale */
   --font-size-1: 2rem; /* Standalone h1 */
   --font-size-2: 1.5rem; /* Article h1 */
@@ -21,8 +18,9 @@
   --font-size-4: 1rem; /* Article h3 */
   --font-size-5: 0.9rem; /* Smaller/caption text */
 
-  --padding-unit: 0.5rem; /* E.g. blockquote padding-left */
-  --spacing-unit: 32px;
+  --vertical-spacing-unit: 0.5em; /* Determines spacing of paragraphs, headers in prose */
+  --horizontal-spacing-unit: 0.5rem; /* E.g. blockquote padding-left */
+  --layout-spacing-unit: 32px; /* For layout of structural elements of the page as a whole*/
 
   --text-primary: #000000;
   --text-secondary: #546270;
