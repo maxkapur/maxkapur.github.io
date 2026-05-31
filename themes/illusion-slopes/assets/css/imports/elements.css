@@ -88,7 +88,6 @@ a {
 
 table {
   background-color: var(--background-highlight);
-  border-collapse: collapse;
   border: var(--line-b1);
   thead {
     border-bottom: var(--line-b2);
