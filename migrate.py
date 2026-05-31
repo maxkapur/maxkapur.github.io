@@ -24,6 +24,7 @@ import tomllib
 # https://gohugo.io/content-management/shortcodes/
 jekyll_object_start = re.compile(r"{{[^%<]", re.MULTILINE)
 jekyll_tag_start = re.compile(r"[^{]{%", re.MULTILINE)
+isodate = re.compile(r"\d{4}\-\d{2}\-\d{2}")
 
 
 def process(path: Path) -> tuple[bool, bool]:
@@ -55,6 +56,12 @@ def process(path: Path) -> tuple[bool, bool]:
     if "$$" in body:
         body = migrate_katex(body)
         assert "$$" not in body
+
+    if isodate.match(path.name) and "date" in d:
+        warnings.warn(
+            f"{path} has date in both filename and frontmatter; see https://github.com/gohugoio/hugo/issues/14971"
+        )
+        attention_needed = True
 
     if (
         (("post_url" in body) or ("relative_url" in body))
@@ -105,6 +112,8 @@ def migrate_frontmatter_keys(path: Path, page_type: str, d: dict):
     if "params" not in d:
         # Every post should have a params key to provide the id field
         d["params"] = {}
+
+    date_str = None
 
     # Construct aliases to maintain paths from Jekyll site
     if page_type == "page":
