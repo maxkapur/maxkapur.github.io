@@ -24,14 +24,6 @@ def ibm_plex_fonts():
         "ibm-plex-sans-kr": "https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip",
     }
 
-    def should_extract(fname: str) -> bool:
-        """Determine whether a file from the zip archive should be extracted."""
-        # Plex CSS references both the .woff2 and .woff version of each font
-        for suffix in [".css", ".woff2", ".woff"]:
-            if fname.endswith(suffix):
-                return True
-        return False
-
     for font_name, url in urls.items():
         # Plex .zips have a top-level directory; we extract into just output_dir
         # to prevent double nesting but need the font name here to make sure we check
@@ -54,19 +46,10 @@ def ibm_plex_fonts():
         with BytesIO() as buffer:
             buffer.write(response.content)
             with ZipFile(buffer) as zipfile:
-                fnames = [
-                    fname for fname in zipfile.namelist() if should_extract(fname)
-                ]
-                if not fnames:
-                    raise ValueError(f"No files to extract. {zipfile.namelist()=}")
-
                 output_dir.mkdir(exist_ok=True, parents=True)
-                zipfile.extractall(output_dir, fnames)
+                zipfile.extractall(output_dir)
 
-        for fname in fnames:
-            outfile = output_dir / fname
-            assert outfile.is_file()
-            print(f"Extracted {outfile}")
+        print(f"Extracted {font_name}.zip")
 
 
 if __name__ == "__main__":
