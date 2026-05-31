@@ -1,7 +1,11 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages.ByDate.Reverse }}
+
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ $paginator := .Paginate $pages 5 }}
+
+  {{ range $paginator.Pages }}
     <article class="section-item">
       <header class="article-header">
         <h1>
@@ -18,4 +22,6 @@
       </div>
     </article>
   {{ end }}
+
+  {{ partial "pagination.html" . }}
 {{ end }}
