@@ -1,7 +1,7 @@
 +++
 title = "People and Blogs interview (local mirror)"
-date = "2025-02-14T12:00:00"
 aliases = [ "/2025/02/14/people-and-blogs-local.html",]
+weight = 10
 
 [params]
 hidden = true
