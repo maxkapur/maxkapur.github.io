@@ -7,8 +7,8 @@
   --content-width-2: 768px;
   --content-width-3: 1024px;
 
-  --base-font-weight: 600;
-  --stronger-font-weight: 600;
+  --base-font-weight: 400;
+  --stronger-font-weight: 550;
   --strongest-font-weight: 700;
 
   /* TODO: Make monospace text a little smaller: Do we still want this? */

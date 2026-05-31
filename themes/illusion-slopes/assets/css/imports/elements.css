@@ -115,3 +115,15 @@ ul.pagination {
   gap: calc(2 * var(--padding-unit));
   justify-content: center;
 }
+
+/* Inline code */
+code:not(pre code){
+  font-size: var(--font-size-5);
+}
+
+/* Syntax-highlighted code blocks */
+pre code {
+  font-size: var(--font-size-5);
+  display: block;
+  overflow-x: scroll;
+}
