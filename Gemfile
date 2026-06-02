@@ -28,7 +28,7 @@ group :kramdown_math_katex do
   gem "execjs", "~> 2.9"
   gem "duktape", "~> 2.7"
   # v0.11.0 broken by https://github.com/KaTeX/KaTeX/issues/4224
-  gem "katex", "= 0.10.0"
+  gem "katex", "0.11.0"
   gem "kramdown-math-katex", "~> 1.0"
 end
 
