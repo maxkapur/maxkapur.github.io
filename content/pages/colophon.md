@@ -26,21 +26,18 @@ id = "tag:max@maxkapur.com,2026-05-27:pages/Colophon"
 # Fonts
 
 - [IBM Plex](https://github.com/IBM/plex) family
-- Default {{< math "\KaTeX" />}} font
-- I have a [stylesheet
-  demo post](/posts/1970-01-01-formats-masterpost/)
+- I have a [stylesheet demo post](/posts/1970-01-01-formats-masterpost/)
 
 # Site build
 
-- Conda ([Miniforge](https://github.com/conda-forge/miniforge)) for environment
-  management ([why](/posts/2024-11-29-rbenv-vs-conda/))
 - [Hugo](https://gohugo.io/) to build the HTML
-- GitHub Actions (wrapping Bash scripts) for orchestration
+- Python for maintenance scripts
+- Ubuntu
 
 # Hosting
 
-- Web hosting: GitHub Pages free tier
-- Domain: Squarespace (automatically migrated from Google Domains)
+- Web hosting: GitHub Pages
+- Domain: Porkbun
 
 # AI
 
