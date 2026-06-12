@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="vertical-spacing">
+  <div class="layout-spacing">
     <header>
       <h1>{{ .Title }}</h1>
       {{ .Content }}
@@ -9,7 +9,7 @@
     {{ $paginator := .Paginate $pages 5 }}
 
     {{ range $paginator.Pages }}
-      <article class="section-item layout-spacing">
+      <article class="section-item vertical-spacing">
         <header class="article-header">
           <h1>
             <a href="{{ .RelPermalink }}">
