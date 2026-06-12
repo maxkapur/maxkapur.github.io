@@ -24,44 +24,6 @@ ul.menu {
   gap: calc(2 * var(--horizontal-spacing-unit));
 }
 
-/* Standalone post content looks like:
-
-article.section-item>(header.article-header+div.article-content)
-
-  Post content in a section (list of posts or pages) looks like:
-
-article.page-item>details>((summary>header)+div.article-content)
-
-Header looks like header.article-header>(h1+div.subtitle)
-*/
-article {
-  & > header,
-  & > details > summary > header {
-    /* Placeholder */
-  }
-
-  & > .content,
-  & > details > .content {
-    /* Placeholder */
-  }
-
-  /* Tweaks to move the open/closed indicator inside of the header */
-  details summary:has(> header) {
-    display: flex;
-
-    > header {
-      display: flex;
-    }
-  }
-
-  details summary > header h1::before {
-    content: "+ ";
-  }
-  details[open] summary > header h1::before {
-    content: "– ";
-  }
-}
-
 h1,
 h2,
 h3,
