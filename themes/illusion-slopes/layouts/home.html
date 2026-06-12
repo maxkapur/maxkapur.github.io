@@ -1,13 +1,22 @@
 {{ define "main" }}
-  <div class="layout-spacing">
+  <div class="vertical-spacing">
     <header>
       {{ .Content }}
     </header>
-    {{ range site.RegularPages.ByDate.Reverse }}
-      <section>
-        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-        {{ .Summary }}
-      </section>
-    {{ end }}
+    <section>
+      <p>Recent posts:</p>
+      <ul>
+        {{ range site.RegularPages.ByDate.Reverse | first 5 }}
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+          {{ $dateHuman := .Date | time.Format ":date_long" -}}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <span class="smaller">
+              (<time datetime="{{ $dateMachine }}">{{- $dateHuman -}}</time>)
+            </span>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
   </div>
 {{ end }}
