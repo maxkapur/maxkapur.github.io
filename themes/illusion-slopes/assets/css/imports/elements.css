@@ -9,10 +9,19 @@ body > header,
 body > footer {
   background-color: var(--background-highlight);
   border: var(--line-a);
+  padding: var(--horizontal-spacing-unit);
 
   h1 {
     font-size: var(--font-size-1);
   }
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: calc(2 * var(--horizontal-spacing-unit));
 }
 
 /* Standalone post content looks like:

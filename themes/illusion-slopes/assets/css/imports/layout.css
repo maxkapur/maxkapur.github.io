@@ -1,5 +1,6 @@
 body {
   max-width: 768px;
+  margin: var(--layout-spacing-unit);
 }
 
 .layout-spacing {
@@ -12,6 +13,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--vertical-spacing-unit);
+
+  &.centered {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* TODO: Some images are p img, others are figure with img and figcaption inside */
