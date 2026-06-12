@@ -66,6 +66,15 @@ h4 {
   font-weight: var(--strongest-font-weight);
 }
 
+p {
+  &:not(&:first-child) {
+    margin-top: var(--vertical-spacing-unit);
+  }
+  &:not(&:last-child) {
+    margin-bottom: var(--vertical-spacing-unit);
+  }
+}
+
 /* Headers within page/post content slide a notch down the font-size scale. */
 .article-content h1 {
   font-size: var(--font-size-2);

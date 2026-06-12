@@ -1,12 +1,12 @@
 {{ define "main" }}
-  <article class="page-item">
+  <article class="page-item layout-spacing">
     <header class="article-header">
       <h1>
         <a class="subtle" href="{{ .RelPermalink }}">
           {{- .Title -}}
         </a>
       </h1>
-      <p class="subtitle">
+      <p class="subtitle smaller">
         {{- partial "time.html" . -}}
       </p>
     </header>
