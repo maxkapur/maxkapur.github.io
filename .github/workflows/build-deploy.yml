@@ -25,12 +25,17 @@ jobs:
         with:
           persist-credentials: true
 
+      - name: Initialize dev shell
+        shell: nix develop
+        run: echo "Hello"
+
       - name: Lint
+        shell: nix develop
         run: ./lint.sh
 
       - name: Build site
-        run: |
-          hugo build && tree public/
+        shell: nix develop
+        run: hugo build && tree public/
 
       # TODO: Steps below are loosely copied from Jekyll version; paths may need
       # changing
