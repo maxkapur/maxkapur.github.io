@@ -28,7 +28,6 @@
           shellcheck
         ];
         shellHook = ''
-          echo "Dev shell initialized from flake.nix"
           cat > .prettierrc << EOF
           {
             "plugins": ["${pkgs.prettier-plugin-go-template}/lib/node_modules/prettier-plugin-go-template/lib/index.js"],
@@ -42,6 +41,8 @@
             ]
           }
           EOF
+          ./themes/illusion-slopes/download_assets.py >/dev/null
+          echo "Dev shell initialized from flake.nix"
         '';
       };
     };
