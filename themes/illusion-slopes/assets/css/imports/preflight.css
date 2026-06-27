@@ -37,6 +37,12 @@ li {
   line-height: 1.5em;
 }
 
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+}
+
 /* Balance text wrapping on headings */
 h1,
 h2,
