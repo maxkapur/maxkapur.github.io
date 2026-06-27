@@ -115,8 +115,12 @@ code:not(pre code) {
 }
 
 /* Syntax-highlighted code blocks */
-pre code {
-  font-size: var(--font-size-5);
-  display: block;
+pre {
   overflow-x: scroll;
+  padding: var(--horizontal-spacing-unit);
+
+  code {
+    font-size: var(--font-size-5);
+    display: block;
+  }
 }
