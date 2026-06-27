@@ -16,7 +16,6 @@
         buildInputs = with pkgs; [
           hugo
           nixfmt
-          nodejs-slim # For GitHub actions/checkout
           prettier
           prettier-plugin-go-template
           python3

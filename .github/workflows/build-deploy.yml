@@ -16,14 +16,11 @@ permissions: {}
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: nixos/nix:latest
-    defaults:
-      run:
-        shell: nix --extra-experimental-features nix-command --extra-experimental-features flakes develop
     permissions:
       contents: write
     steps:
+      - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 #v31
+
       - uses: actions/checkout@v7
         with:
           persist-credentials: true
