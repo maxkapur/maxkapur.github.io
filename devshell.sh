@@ -1,2 +1,7 @@
 #!/usr/bin/env sh
-nix --extra-experimental-features nix-command --extra-experimental-features flakes develop
+if [ $# -eq 0 ]
+then
+  nix --extra-experimental-features nix-command --extra-experimental-features flakes develop
+else
+  nix --extra-experimental-features nix-command --extra-experimental-features flakes develop --command "$@"
+fi
