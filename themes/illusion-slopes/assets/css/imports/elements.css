@@ -5,8 +5,8 @@ body {
 }
 
 /* Global header and footer */
-body > header,
-body > footer {
+.body-header,
+.body-footer {
   background-color: var(--background-highlight);
   border: var(--line-a);
   padding: var(--horizontal-spacing-unit);

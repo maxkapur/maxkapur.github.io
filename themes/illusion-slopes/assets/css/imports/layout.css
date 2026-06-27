@@ -1,6 +1,12 @@
 body {
-  max-width: 768px;
   margin: var(--layout-spacing-unit);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .body-wrapper {
+    max-width: var(--content-width-2);
+  }
 }
 
 .layout-spacing {
