@@ -37,11 +37,6 @@ li {
   line-height: 1.5em;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-}
-
 /* Balance text wrapping on headings */
 h1,
 h2,
