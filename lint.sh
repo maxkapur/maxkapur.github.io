@@ -2,7 +2,8 @@
 
 set -ex
 
-shellcheck ./*.sh
+nixfmt flake.nix --check
 prettier . --check --verbose
 ruff format --check
 ruff check
+shellcheck ./*.sh
