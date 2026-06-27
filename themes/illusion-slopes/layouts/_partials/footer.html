@@ -1,2 +1,9 @@
-{{ partial "copyright.html" }}
-<nav style="text-align: center;"><a href="#">&uarr; Top of page</a></nav>
+<div class="vertical-spacing">
+  <div>{{ partial "copyright.html" }}</div>
+  <div class="footer-menu-wrapper">
+    {{ partial "menu.html" (dict "menuID" "footer" "page" .) -}}
+    <nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 +++
 title = "Colophon"
 aliases = [ "/colophon/",]
-menus = []
+menus = [ "footer",]
+weight = 500
 date = 2025-02-03T19:16:30-05:00
 lastmod = 2025-02-09T12:29:26-06:00
 

@@ -1,7 +1,7 @@
 +++
 title = "Chipotle"
 aliases = [ "/chipotle/",]
-menus = []
+menus = [ "footer",]
 weight = 999
 date = 2025-02-03T18:41:46-05:00
 lastmod = 2025-02-09T12:29:26-06:00

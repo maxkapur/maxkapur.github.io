@@ -16,6 +16,13 @@ body {
   }
 }
 
+.footer-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--horizontal-spacing-unit);
+  flex-wrap: wrap;
+}
+
 ul.menu {
   list-style-type: none;
   margin: 0;
