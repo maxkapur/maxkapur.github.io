@@ -25,10 +25,6 @@ article.section-item {
 /* Collapse margin between header and subtitle */
 h1:has(+ p.subtitle) {
   margin-bottom: 0;
-
-  + p.subtitle {
-    margin-top: 0;
-  }
 }
 
 p.subtitle {
