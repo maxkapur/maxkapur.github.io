@@ -3,6 +3,6 @@
 set -ex
 
 shellcheck ./*.sh
-npx prettier . --check --verbose
+prettier . --check --verbose
 ruff format --check
 ruff check
