@@ -13,6 +13,7 @@
        devShells.x86_64-linux.default = pkgs.mkShell {
          buildInputs = with pkgs; [
            hugo
+           nodejs-slim  # For GitHub actions/checkout
            prettier
            prettier-plugin-go-template
            python3
