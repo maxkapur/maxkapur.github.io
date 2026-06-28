@@ -1,6 +1,7 @@
 +++
 title = "Formats masterpost"
 aliases = [ "/formatting/",]
+lastmod = 2026-06-28T11:09:09-05:00
 
 [params]
 hidden = true
@@ -17,7 +18,9 @@ Make sure the keyboard element <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</k
 
 ## Heading bravo
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi![^reftest]
+
+[^reftest]: Single-paragraph footnote.
 
 <figure>
   <img
@@ -181,3 +184,7 @@ practical value.[^footnote]
 [^footnote]: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
 
     Ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
+
+Footnote[^inlinefootnote] in the middle of a sentence.
+
+[^inlinefootnote]: Single-paragraph footnote.
