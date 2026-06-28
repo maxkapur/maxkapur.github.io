@@ -4,12 +4,15 @@
     <section>
       <p><strong>Recent posts:</strong></p>
       <ul>
-        {{ range site.RegularPages.ByDate.Reverse | first 5 }}
-          {{ $dateMachine :=
-            .Date | time.Format "2006-01-02T15:04:05-07:00"
+        {{ $posts := where site.RegularPages.ByDate.Reverse
+          "Params.hidden" "ne" true
+        }}
+        {{ range $posts | first 5 }}
+          {{ $dateMachine := .Date |
+            time.Format "2006-01-02T15:04:05-07:00"
           -}}
-          {{ $dateHuman := .Date
-            | time.Format ":date_long"
+          {{ $dateHuman := .Date |
+            time.Format ":date_long"
           -}}
           <li>
             <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
