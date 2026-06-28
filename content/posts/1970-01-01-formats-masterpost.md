@@ -56,6 +56,8 @@ A blockquote:
 >
 > Ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique! Laboriosam sed dignissimos quasi non animi!
 
+## Simple lists
+
 Things I like to eat:
 
 - Apples
@@ -69,6 +71,21 @@ Items on my desk:
  2. Speakers
  3. Coffee
  4. Notepad
+
+List with internal paragraphs:
+
+- Aliquam ipsa ducimus laudantium, ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique!
+
+  Laboriosam sed dignissimos quasi non animi!
+
+- Ab numquam optio cumque perspiciatis voluptatum quis accusantium, atque excepturi, laboriosam similique!
+
+Nested list:
+
+- I don't really
+  - Use these
+  - A lot
+- But might as well check
 
 # Code
 
