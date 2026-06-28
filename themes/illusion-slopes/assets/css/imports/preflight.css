@@ -71,3 +71,9 @@ select {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* Prevent footnote references from increasing line height */
+sup,
+sub {
+  line-height: 0;
+}
