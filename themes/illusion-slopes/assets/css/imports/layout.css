@@ -1,11 +1,7 @@
-.body-wrapper {
-  max-width: var(--content-width-2);
-  margin-left: auto;
-  margin-right: auto;
-  padding: var(--layout-spacing-unit);
-
+body {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: var(--layout-spacing-unit);
 
   /* Float footer to bottom when viewport is taller than content */
@@ -13,6 +9,24 @@
   > *:last-child {
     margin-top: auto;
   }
+}
+
+.max-width-1 {
+  max-width: var(--content-width-1);
+  padding-inline: var(--horizontal-spacing-unit);
+  margin-inline: auto;
+}
+
+.max-width-2 {
+  max-width: var(--content-width-2);
+  padding-inline: var(--horizontal-spacing-unit);
+  margin-inline: auto;
+}
+
+.max-width-3 {
+  max-width: var(--content-width-3);
+  padding-inline: var(--horizontal-spacing-unit);
+  margin-inline: auto;
 }
 
 .layout-spacing {

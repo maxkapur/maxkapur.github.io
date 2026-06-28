@@ -7,10 +7,12 @@
     {{ partial "head.html" . }}
   </head>
   <body>
-    <div class="body-wrapper">
-      <header class="body-header">{{ partial "header.html" . }}</header>
-      <main>{{ block "main" . }}{{ end }}</main>
-      <footer class="body-footer">{{ partial "footer.html" . }}</footer>
-    </div>
+    <header class="body-header">
+      <div class="max-width-2">{{ partial "header.html" . }}</div>
+    </header>
+    <main class="max-width-2">{{ block "main" . }}{{ end }}</main>
+    <footer class="body-footer">
+      <div class="max-width-2">{{ partial "footer.html" . }}</div>
+    </footer>
   </body>
 </html>

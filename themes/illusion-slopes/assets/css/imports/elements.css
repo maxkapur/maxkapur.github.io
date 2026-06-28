@@ -8,11 +8,18 @@ body {
 .body-header,
 .body-footer {
   background-color: var(--background-highlight);
-  border: var(--line-a);
-  padding: var(--horizontal-spacing-unit);
+  padding-top: var(--layout-spacing-unit);
+  padding-bottom: var(--layout-spacing-unit);
 
   h1 {
     font-size: var(--font-size-1);
+  }
+
+  &.body-footer {
+    border-top: var(--line-a);
+  }
+  &.body-header {
+    border-bottom: var(--line-a);
   }
 }
 
