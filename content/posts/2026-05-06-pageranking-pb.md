@@ -26,7 +26,9 @@ yourself. (But to make it clear I'm not covering anything up, let me acknowledge
 that [my interview](https://manuelmoreale.com/interview/max-kapur) is in a
 61-way tie for last place, with all the other blogs that had no links to them.)
 
-A few observations from this exercise below.<!--more-->
+A few observations from this exercise below.
+
+<!--more-->
 
 - I computed the stationary distribution explicitly using `ndarray_linalg::eig`
   because that's one of the libraries I was fiddling with, but for a graph with

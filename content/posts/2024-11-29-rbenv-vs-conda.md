@@ -7,7 +7,9 @@ id = "https://maxkapur.com/2024/11/29/rbenv-vs-conda"
 +++
 
 Why I am using conda instead of rbenv to install Ruby inside of the CI job that
-builds this static site.<!--more-->
+builds this static site.
+
+<!--more-->
 
 # The problem
 

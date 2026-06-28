@@ -11,7 +11,9 @@ KR, and Mono) from within the GitHub Pages artifact instead of calling the
 Google Fonts API. This makes the site a little more “static” by eliminating the
 need for your browser to download font files from an external domain. Here, I
 explain how (and why) I self-host fonts without bringing them into the source
-tree.<!--more-->
+tree.
+
+<!--more-->
 
 The easiest way to self-host fonts with a static site generator like Jekyll is
 to store the `.ttf` or `.woff2` font files and their CSS inside of the `assets/`

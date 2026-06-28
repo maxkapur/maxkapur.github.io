@@ -30,7 +30,9 @@ Below, I present an efficient algorithm for playing Are You the One.
 It exploits both the informational clues and contestants' intuitions to find
 perfect matches quickly. With modest assumptions on the quality of
 players' intuitions, my algorithm wins by episode&nbsp;10 in 100% of simulated
-seasons.<!--more-->
+seasons.
+
+<!--more-->
 
 (I will style the name of the show as *Are You the One?* and the name of the
 underlying game as just Are You the One.)

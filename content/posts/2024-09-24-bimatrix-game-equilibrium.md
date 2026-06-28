@@ -11,7 +11,9 @@ id = "https://maxkapur.com/2024/09/24/bimatrix-game-equilibrium"
 from Asu Ozdaglar give a bilinear program whose solution is the mixed-strategy
 equilibrium for a two-player, non-zero-sum game with finite action spaces—also
 known as a bimatrix game. I wanted to reproduce this highly practical result in
-a more accessible format and offer some implementation notes.<!--more-->
+a more accessible format and offer some implementation notes.
+
+<!--more-->
 
 # Definitions
 

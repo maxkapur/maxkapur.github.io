@@ -10,7 +10,9 @@ The target audience for this post is myself. I recently set up a new (old)
 laptop and tried to bring it to parity with my main Kubuntu workstation in as
 few steps as possible, which turned out to be … a lot of steps, most of them
 manual. I wanted to document the full process and see if I can find worthwhile
-opportunities for automation.<!--more-->
+opportunities for automation.
+
+<!--more-->
 
 00. **Install Kubuntu the usual way.** Configure LUKS disk encryption and user
     account. `sudo apt update -y && sudo apt upgrade -y`.

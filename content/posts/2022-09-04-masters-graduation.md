@@ -10,7 +10,9 @@ On September 29, I received my master’s degree in industrial engineering from 
 
 ![A photograph of Max wearing his cap and gown at Seoul National University.](/assets/images/ms-graduation.jpg)
 
-It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m [rather proud of](https://github.com/maxkapur/CollegeApplication).<!--more-->
+It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m [rather proud of](https://github.com/maxkapur/CollegeApplication).
+
+<!--more-->
 
 As part of my duties in the Management Science/Optimization Lab, I had the opportunity to serve as the course TA for two of my advisor’s optimization courses, both of which have now been published as free online courses:
 

@@ -18,6 +18,7 @@ difference: The Pandora’s Box problem has a time dimension, whereas the colleg
 problem is static.
 
 The unusual thing is that the static problem appears more difficult.
+
 <!--more-->
 
 ## College application vs. the Pandora’s Box problem

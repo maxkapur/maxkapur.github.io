@@ -12,7 +12,9 @@ code, sort of like Word's Track Changes) is not a version control system but a
 
 That got me thinking about other such "metasystems" I use, and the frustration
 that arises when one expects a mere system and instead gets the meta
-thing.<!--more-->
+thing.
+
+<!--more-->
 
 # Anki
 

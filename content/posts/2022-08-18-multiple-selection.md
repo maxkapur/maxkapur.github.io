@@ -18,6 +18,7 @@ Consider the following test question:
 > </ol>
 
 This is a multiple-selection question, so the correct answer is `a` and `b`. How would you grade a question [like this](/posts/2020-05-06-nonnative-teacher/) on an exam?
+
 <!--more-->
 
 When I was in school, the Scantron machines we used supported these kinds of multiple-selection questions, but they were graded all or nothing: You got one point if your answer matched the key exactly, and zero points otherwise. I have it on good authority that the MOOC site [edX](https://www.edx.org/) works the same way.

@@ -10,7 +10,9 @@ This [Stack Exchange](https://stats.stackexchange.com/a/660199) answer reminded
 me of a useful data science trick. In short, if you try to model {{< math "y" />}} as a
 sinusoidal function of {{< math "x" />}}, you obtain a regression formula that is nonlinear
 in the parameters. However, if you know the period, you can use a trig identity
-to linearize the formula and compute an exact least-squares fit.<!--more-->
+to linearize the formula and compute an exact least-squares fit.
+
+<!--more-->
 
 # Background
 

@@ -18,7 +18,9 @@ I made a little [demo of the plugin](https://maxkapur.com/jekyll-related/) with 
 blog whose posts are the articles of the UN Universal Declaration of Human
 Rights. You can also see a demo on the current version of this site if you click
 the "read more" link below to go to this post's individual page. I think it
-works pretty well!<!--more-->
+works pretty well!
+
+<!--more-->
 
 There are still some tweaks I want to make before I publish this plugin to
 [RubyGems.org](https://rubygems.org/). Currently, `jekyll-related` depends on

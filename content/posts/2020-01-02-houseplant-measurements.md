@@ -14,6 +14,7 @@ I have been measuring the leaves of my houseplants.
     alt="alt"
   />
 </figure>
+
 <!--more-->
 
 It <em>is</em> surprising how normal these distributions are.

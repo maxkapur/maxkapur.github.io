@@ -27,7 +27,9 @@ will upload an MP3 instead.)
 After our group disbanded in Gwangju, I got to spend a few days in Naju, my
 “second hometown” where I taught English for two years as a Fulbright grantee. I
 tried a new (to me) gomtang place called 나주곰탕사매기, which has a cool
-aquarium, a garden, and even birds! A few pics below.<!--more-->
+aquarium, a garden, and even birds! A few pics below.
+
+<!--more-->
 
 Here is their garden:
 

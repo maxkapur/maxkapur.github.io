@@ -8,7 +8,9 @@ hidden = true
 id = "https://maxkapur.com/1970/01/01/formats-masterpost"
 +++
 
-Here is a post with all kinds of crazy formatting so that I can test out my CSS.<!--more-->
+Here is a post with all kinds of crazy formatting so that I can test out my CSS.
+
+<!--more-->
 
 # Heading alpha
 

@@ -14,7 +14,9 @@ A puzzle based on the icebreaker game.
 > 2. I used a random number generator to decide whether to place a true or false statement in #1.
 > 3. I do not understand the rules of “two truths and one lie.”
 
-Solution inside.<!--more-->
+Solution inside.
+
+<!--more-->
 
 <details markdown="block">
 <summary>Hint</summary>

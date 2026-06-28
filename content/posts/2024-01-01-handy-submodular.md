@@ -16,7 +16,9 @@ f(X) = 1 -
 
 are submodular for {{< math "p_i, q_i \in [0, 1]" />}} where each {{< math "p_i \leq q_i," />}}
 and examine an application of this small result that demonstrates its
-practical value.<!--more-->
+practical value.
+
+<!--more-->
 
 # Background on submodular functions
 
