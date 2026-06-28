@@ -3,7 +3,7 @@
 set -e
 
 nixfmt flake.nix
-prettier . --write --verbose
+prettier . --write
 ruff format
 ruff check --fix
 shellcheck ./*.sh
