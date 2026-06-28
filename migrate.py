@@ -26,6 +26,9 @@ jekyll_object_start = re.compile(r"{{[^%<]", re.MULTILINE)
 jekyll_tag_start = re.compile(r"[^{]{%", re.MULTILINE)
 
 isodate = re.compile(r"\d{4}\-\d{2}\-\d{2}")
+inline_manual_summary_separator = re.compile(
+    r"(?<!\n\n)<\!--\s*more\s*-->(?!\n\n)", re.MULTILINE
+)
 
 
 def process(path: Path) -> tuple[bool, bool]:
@@ -78,6 +81,15 @@ def process(path: Path) -> tuple[bool, bool]:
     ):
         warnings.warn(f"{path} contains unmigrated Jekyll syntax")
         body = migrate_jekyll_syntax(body)
+        attention_needed = True
+
+    if inline_manual_summary_separator.search(body):
+        # Jekyll lets you put the separator inline, but Hugo docs say it must be
+        # on own line. (Hugo itself seems to process inline separators just fine
+        # but we should conform to what's officially supported.) These require
+        # manual attention because I often used the separator to avoid footnotes
+        # on the homepage.
+        warnings.warn(f"{path} contains inline <!--more--> separator")
         attention_needed = True
 
     output = f"+++\n{frontmatter}+++\n\n{body}\n"
