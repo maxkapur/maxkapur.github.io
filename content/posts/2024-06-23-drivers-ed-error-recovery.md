@@ -1,6 +1,7 @@
 +++
 title = "Driver’s ed should teach error recovery"
 aliases = [ "/2024/06/23/drivers-ed-error-recovery.html",]
+summary = "I live near a one-way street, and drivers keep turning into it the wrong way by\nmistake. Most react by getting flustered and backing dangerously into the\narterial, perhaps following an instinct to “undo” the error. The safer solution\n(in my eyes) is to park the car, wait for traffic to clear, then use a driveway\nto point yourself in the right direction.\n\nUnfortunately, driver’s ed doesn’t teach you how to recover from mistakes like\nthis&mdash;at least, mine didn’t. Instead, driver’s ed teaches the rules of the\nroad and how to follow them. Once you have violated the law, even if by\naccident, you are in undefined territory. Hence, drivers develop a strong\nimpulse to immediately “reverse” errors rather than identify a safe course of\naction."
 
 [params]
 id = "https://maxkapur.com/2024/06/23/drivers-ed-error-recovery"
@@ -17,7 +18,7 @@ this&mdash;at least, mine didn’t. Instead, driver’s ed teaches the rules of 
 road and how to follow them. Once you have violated the law, even if by
 accident, you are in undefined territory. Hence, drivers develop a strong
 impulse to immediately “reverse” errors rather than identify a safe course of
-action.<!--more-->[^errors]
+action.[^errors]
 
 [^errors]: Well, my driver’s ed course did talk about what to do after you get
     in a *collision:* Exchange phone numbers, take lots of pictures, call the

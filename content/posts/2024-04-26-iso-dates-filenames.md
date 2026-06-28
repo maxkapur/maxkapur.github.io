@@ -1,6 +1,7 @@
 +++
 title = "Why I put ISO dates in filenames"
 aliases = [ "/2024/04/26/iso-dates-filenames.html",]
+summary = "I am one of those obnoxious people who begins his filenames with an ISO date,\nlike `2024-03-06_blog_post_idea.md`. I know that file metadata already tracks\ncreation and revision dates, but I don't like those: The creation date is\nmisleading when you duplicate a file to reuse its format or content, and the\nrevision date is all but meaningless because modern software modifies files on\ndisk in all kinds of spurious ways. I put an ISO date in my filenames\nto assign them a *canonical* date. The canonical date means something like “the\nlast date at which this file underwent a significant change,” and I alone (not\nsoftware) can determine what that means."
 
 [params]
 id = "https://maxkapur.com/2024/04/26/iso-dates-filenames"
@@ -14,7 +15,7 @@ revision date is all but meaningless because modern software modifies files on
 disk in all kinds of spurious ways. I put an ISO date in my filenames
 to assign them a *canonical* date. The canonical date means something like “the
 last date at which this file underwent a significant change,” and I alone (not
-software) can determine what that means.<!--more-->[^spurious]
+software) can determine what that means.[^spurious]
 
 [^spurious]: An example of the spurious ways in which modern software modifies files on disk: If you open a Microsoft Excel worksheet, adjust the zoom, and try to close Excel, it will issue a “Do you want to save your changes?” warning. I’m not sure why the zoom level is stored in the `.xlsx` file at all. In Word (as far as I can tell), the zoom level, like scroll position, belongs to your <em>session</em> state and will thus be remembered separately for different viewers of the document.
 

@@ -1,12 +1,13 @@
 +++
 title = "Accidental signals"
 aliases = [ "/2020/04/16/accidental-signals.html",]
+summary = "It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains."
 
 [params]
 id = "https://maxkapur.com/2020/04/16/accidental-signals"
 +++
 
-It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.<!--more-->[^1]
+It is a well-known result in psychology that measures of intelligence correlate across domains. If you are good at math, you are probably also good at verbal reasoning, and vice versa. Therefore, if a company is hiring for a position that requires a variety of skills (as most jobs do), it should pick a candidate who has demonstrated impressive skill in one domain over someone who has demonstrated middling proficiency in a number of different domains.[^1]
 
 Hiring managers’ preference for specialists is widely known. So, smart people, who tend to be good at estimating job-market incentives (thanks to the correlation between domains of intelligence), gravitate toward programs that award narrow, in-demand credentials—even when the credentials are nominally equivalent (a BA in linguistics vs. a BA in English). This can create a feedback loop in which fields that are perceived as “challenging,” like computer science, attract challenge-seeking entrants, raising the standards of proficiency within the field and making it more difficult for a newcomer to rise above average. On the other hand, majors that are perceived as relatively easy, like sociology, may attract less-ambitious students, leading to deflated expectations and dissuading hard workers. (I have met a few people who told me that they majored in the liberal arts because they were “bad at math.” I have never met a STEM major who chose their field because they were “bad at writing.”)
 

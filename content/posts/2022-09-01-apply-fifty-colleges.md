@@ -1,12 +1,13 @@
 +++
 title = "Apply to fifty colleges"
 aliases = [ "/2022/09/01/apply-fifty-colleges.html",]
+summary = "In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools."
 
 [params]
 id = "https://maxkapur.com/2022/09/01/apply-fifty-colleges"
 +++
 
-In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.<!--more-->[^obvious]
+In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools.[^obvious]
 
 [^obvious]: We will avoid the obvious argument that goes, “If you are willing to spend six figures on an a college education, then what’s a few hundred extra in application fees?” This argument is incorrect, because it assumes that each additional application is worth the value of attending that college times the probability of getting in. In actuality, you can only attend *one* of the colleges you get into; thus additional applications make a sublinear contribution to the overall expected utility. Our model will account for this.
 
