@@ -12,19 +12,19 @@ body {
 }
 
 .max-width-1 {
-  max-width: var(--content-width-1);
+  max-width: min(100vw, var(--content-width-1));
   padding-inline: var(--horizontal-spacing-unit);
   margin-inline: auto;
 }
 
 .max-width-2 {
-  max-width: var(--content-width-2);
+  max-width: min(100vw, var(--content-width-2));
   padding-inline: var(--horizontal-spacing-unit);
   margin-inline: auto;
 }
 
 .max-width-3 {
-  max-width: var(--content-width-3);
+  max-width: min(100vw, var(--content-width-3));
   padding-inline: var(--horizontal-spacing-unit);
   margin-inline: auto;
 }
