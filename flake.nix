@@ -19,13 +19,13 @@
           nixfmt
           prettier
           prettier-plugin-go-template
-          python3
-          python313Packages.mdformat
-          python313Packages.requests
-          python313Packages.ruff
-          python313Packages.saneyaml
-          python313Packages.tinycss2
-          python313Packages.toml
+          python314
+          python314Packages.mdformat
+          python314Packages.requests
+          python314Packages.ruff
+          python314Packages.saneyaml
+          python314Packages.tinycss2
+          python314Packages.toml
           shellcheck
         ];
         shellHook = ''
