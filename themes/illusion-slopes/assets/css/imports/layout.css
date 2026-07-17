@@ -48,16 +48,19 @@ body {
   text-align: center;
 }
 
-/* TODO: Some images are p img, others are figure with img and figcaption inside */
 p:has(> img),
 figure {
   display: flex;
   flex-direction: column;
 
-  /* No effect when body has smaller max-width but we will change that;*/
-  max-width: var(--content-width-3);
+  /*
+    TODO: Would be nice if images could exceed the max-width on the article
+    wrapper when viewport is wide
+  */
 
-  & > * {
-    max-width: 100%;
+  figcaption {
+    text-align: center;
+    font-size: var(--font-size-5);
+    color: var(--text-secondary);
   }
 }
