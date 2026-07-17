@@ -1,16 +1,18 @@
 # Illusion Slopes
 
-This repository holds my personal website, Illusion Slopes, which can be viewed at
-[maxkapur.com](https://maxkapur.com).
+This repository holds my personal website, Illusion Slopes, which can be viewed
+at [maxkapur.com](https://maxkapur.com).
 
-The site has been through a few iterations. This version uses the Hugo static site generator,
-which I migrated to [from Jekyll](https://github.com/maxkapur/maxkapur.github.io/pull/98) in 
-summer 2026.
+The site has been through a few iterations. This version uses the Hugo static
+site generator, which I migrated to
+[from Jekyll](https://github.com/maxkapur/maxkapur.github.io/pull/98) in summer
+2026\.
 
-The old Jekyll site itself was a summer 2022 migration [from Blogger](https://maxkapur.com/2022/06/25/migrating-to-jekyll).
+The old Jekyll site itself was a summer 2022 migration
+[from Blogger](https://maxkapur.com/2022/06/25/migrating-to-jekyll).
 
-Prior to that, I used the maxkapur.github.io repo as a basic landing page to host
-a few one-off web essays that have now been moved to separate repos:
+Prior to that, I used the maxkapur.github.io repo as a basic landing page to
+host a few one-off web essays that have now been moved to separate repos:
 
 - [cyborgs-and-ciphers](https://github.com/maxkapur/cyborgs-and-ciphers)
 - [esl-data](https://github.com/maxkapur/esl-data)
