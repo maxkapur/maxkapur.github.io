@@ -23,6 +23,11 @@
         <div class="article-content">
           {{ .Summary }}
         </div>
+        {{ if ne .Summary .Content }}
+          <nav class="smaller">
+            <a href="{{ .RelPermalink }}"> Read &rarr; </a>
+          </nav>
+        {{ end }}
       </article>
     {{ end }}
 
