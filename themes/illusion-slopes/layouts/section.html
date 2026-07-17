@@ -20,10 +20,22 @@
             {{- partial "time.html" . -}}
           </p>
         </header>
+
         <div class="article-content">
           {{ .Summary }}
         </div>
-        {{ if .Truncated }}
+
+        {{/* Insert a "read more" link if summary differs from content. One way
+          this happens is via truncation (inserting the <!--more--> line).
+          Another way is by manually defining a summary in frontmatter. We need
+          to handle the latter case separately because frontmatter summaries
+          actually set .Truncated to false:
+
+          https://gohugo.io/methods/page/truncated/
+        */}}
+        {{ $canReadMore := or .Truncated (.Params.summary) }}
+
+        {{ if $canReadMore }}
           <nav class="smaller">
             <a href="{{ .RelPermalink }}"> Read &rarr; </a>
           </nav>
