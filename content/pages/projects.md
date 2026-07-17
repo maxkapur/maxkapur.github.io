@@ -5,6 +5,7 @@ menus = [ "main",]
 weight = 20
 date = 2024-12-01T11:22:03-06:00
 lastmod = 2025-10-07T19:07:29-05:00
+summary = "A list of some of my work projects, open-source contributions, and academic research."
 
 [params]
 id = "tag:max@maxkapur.com,2026-05-27:pages/Projects"

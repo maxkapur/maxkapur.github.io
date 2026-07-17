@@ -15,6 +15,8 @@ id = "tag:max@maxkapur.com,2026-05-27:pages/Colophon"
 > A colophon … describes how the site is made, with what tools, supporting what
 > technologies.
 
+<!--more-->
+
 # Local tools
 
 - [Micro](https://micro-editor.github.io/) (on desktop) and

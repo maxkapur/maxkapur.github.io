@@ -16,6 +16,8 @@ id = "tag:max@maxkapur.com,2026-05-27:pages/Chipotle"
 > you, you can send them a link instead of having to redescribe/retype your
 > Chipotle order.
 
+<!--more-->
+
 # Chipotle (to-do)
 
 OK, so I have only actually been to Chipotle a few times and can’t remember what

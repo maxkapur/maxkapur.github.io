@@ -16,6 +16,8 @@ starting this site as a college student in 2016. I’m also interested in
 connecting with readers who have similar life experiences or contrasting
 viewpoints.
 
+<!--more-->
+
 I’m enthusiastic about the indie web and the possibilities the internet holds as
 a platform for personal expression and human connection—you know, what social
 media was supposed to be. I try, on this site, to be maximally
