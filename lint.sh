@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 set -ex
+shopt -s globstar
 
 # These checks have mutating counterparts in format.sh
+mdformat ./**/README.md --number --wrap 80 --check
 nixfmt flake.nix --check
 prettier . --check
 ruff format --check

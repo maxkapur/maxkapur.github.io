@@ -20,6 +20,7 @@
           prettier
           prettier-plugin-go-template
           python3
+          python313Packages.mdformat
           python313Packages.requests
           python313Packages.ruff
           python313Packages.saneyaml
