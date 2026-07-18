@@ -35,7 +35,7 @@ id = "tag:max@maxkapur.com,2026-05-27:pages/Colophon"
 
 - [Hugo](https://gohugo.io/) to build the HTML
 - Python for maintenance scripts
-- Ubuntu
+- [Nix](https://nix.dev/concepts/flakes.html) flake for development container
 
 # Hosting
 
