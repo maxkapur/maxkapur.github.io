@@ -14,5 +14,12 @@
       {{ .Content }}
       {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     </div>
+    <footer class="article-footer smaller">
+      {{ with .Site.GetPage .Section }}
+        <p>
+          <a href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+        </p>
+      {{ end }}
+    </footer>
   </article>
 {{ end }}
