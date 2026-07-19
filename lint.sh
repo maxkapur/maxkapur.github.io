@@ -15,3 +15,4 @@ shellcheck ./*.sh
 TEMP_DIR="$(mktemp --directory)"
 hugo build --destination "$TEMP_DIR"
 htmltest --conf .htmltest.yml --skip-external "$TEMP_DIR"
+./check_reserved_paths.py --build-dir "$TEMP_DIR"
