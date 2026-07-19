@@ -42,6 +42,10 @@
             ]
           }
           EOF
+          cat > pyproject.toml << EOF
+          [project]
+          requires-python = "== 3.14"
+          EOF
           ./themes/illusion-slopes/download_assets.py >/dev/null
           echo "Dev shell initialized from flake.nix"
         '';

@@ -30,10 +30,13 @@ def main():
     print(
         f"Checking build at {hugo_build_dir} against {len(pages_names)} reserved paths"
     )
+    exceptions = []
     for name in pages_names:
         if (directory := hugo_build_dir / name).exists():
-            raise IsADirectoryError(directory)
+            exceptions.append(IsADirectoryError(directory))
         print(f"Reserved path {directory} does not exist")
+    if exceptions:
+        raise ExceptionGroup("One or more path collisions occured", exceptions)
 
 
 def get_build_dir():
