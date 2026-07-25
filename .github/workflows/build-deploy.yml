@@ -37,9 +37,6 @@ jobs:
         shell: *nix_shell
         run: hugo build && tree public/
 
-      # TODO: Steps below are loosely copied from Jekyll version; paths may need
-      # changing
-
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v5
