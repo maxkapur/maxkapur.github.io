@@ -1,0 +1,41 @@
+:root {
+  --base-font-family: "IBM Plex Sans", "IBM Plex Sans KR", sans-serif;
+  --math-font-family: "IBM Plex Math", math, sans-serif;
+  --monospace-font-family: "IBM Plex Mono", monospace;
+
+  --content-width-1: 512px;
+  --content-width-2: 768px;
+  --content-width-3: 1024px;
+
+  --base-font-weight: 400;
+  --stronger-font-weight: 550;
+  --strongest-font-weight: 700;
+
+  /* Font scale */
+  --font-size-1: 2rem; /* Standalone h1 */
+  --font-size-2: 1.5rem; /* Article h1 */
+  --font-size-3: 1.2rem; /* Article h2 */
+  --font-size-4: 1rem; /* Article h3 */
+  --font-size-5: 0.9rem; /* Smaller/caption text */
+
+  --vertical-spacing-unit: 0.5em; /* Determines spacing of paragraphs, headers in prose */
+  --horizontal-spacing-unit: 0.5rem; /* E.g. blockquote padding-left */
+  --layout-spacing-unit: 32px; /* For layout of structural elements of the page as a whole*/
+
+  --text-primary: #000000;
+  --text-secondary: #546270;
+
+  --background-primary: #ffffeb;
+  --background-secondary: #b7ccb7;
+  --background-highlight: #fffff5;
+
+  --brand-color-2: #206020;
+  --brand-color-3: #008000;
+
+  /* E.g. outline of header and footer */
+  --line-a: 2px solid var(--background-secondary);
+
+  /* E.g. table boundaries (thick one below header row) */
+  --line-b1: 1px solid var(--text-secondary);
+  --line-b2: 2px solid var(--text-secondary);
+}

@@ -1,0 +1,11 @@
+<div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="{{ site.Home.Permalink }}">{{- site.Title -}}</a>
+    </h1>
+    {{ with site.Params.subtitle -}}
+      <p class="subtitle">{{ . }}</p>
+    {{ end -}}
+  </hgroup>
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) -}}
+</div>

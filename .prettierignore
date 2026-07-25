@@ -1,0 +1,9 @@
+*
+!*/
+!*.html
+!*.css
+!*.js
+!*.json
+!*.jsonc
+!*.xml
+themes/illusion-slopes/assets/fonts/ibm*

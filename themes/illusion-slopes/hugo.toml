@@ -1,0 +1,44 @@
+baseURL = 'https://example.org/'
+locale = 'en-US'
+title = 'My New Hugo Project'
+
+[mediaTypes]
+  [mediaTypes.'application/atom+xml']
+    suffixes = ['xml']
+
+[outputFormats]
+  [outputFormats.atom]
+    baseName = 'feed'
+    isHTML = false
+    isPlainText = false
+    mediaType = 'application/atom+xml'
+    noUgly = true
+    notAlternative = false
+    path = ''
+    permalinkable = false
+    protocol = ''
+    rel = 'alternate'
+    root = false
+    ugly = false
+    weight = 0
+
+[menus]
+  # [[menus.main]]
+  #   name = 'Home'
+  #   pageRef = '/'
+  #   weight = 10
+
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 30
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'

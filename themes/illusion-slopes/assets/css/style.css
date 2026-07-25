@@ -1,0 +1,22 @@
+/*
+  These imports point to CSS files from IBM installed by download_assets.py.
+  To help regenerate this file after an IBM Plex update, run:
+
+  find static/ -iname '*default.min.css'
+
+  This excludes the '*all.min.css' variants, which have more glyphs.
+*/
+
+@import "../fonts/ibm-plex-mono/css/ibm-plex-mono-default.css";
+@import "../fonts/ibm-plex-math/css/ibm-plex-math-default.css";
+@import "../fonts/ibm-plex-sans-kr/css/ibm-plex-sans-kr-default.css";
+@import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.css";
+
+/* https://jacobb.nyc/writing/how-i-write-css-in-2024 */
+
+@import "imports/preflight.css";
+@import "imports/tokens.css";
+@import "imports/elements.css";
+@import "imports/variants.css";
+@import "imports/states.css";
+@import "imports/layout.css";

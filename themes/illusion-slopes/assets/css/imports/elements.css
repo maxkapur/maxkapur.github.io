@@ -1,0 +1,156 @@
+body {
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  font-family: var(--base-font-family);
+}
+
+/* Global header and footer */
+.body-header,
+.body-footer {
+  background-color: var(--background-highlight);
+  padding-top: var(--layout-spacing-unit);
+  padding-bottom: var(--layout-spacing-unit);
+
+  h1 {
+    font-size: var(--font-size-1);
+  }
+
+  &.body-footer {
+    border-top: var(--line-a);
+  }
+  &.body-header {
+    border-bottom: var(--line-a);
+  }
+}
+
+.footer-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--horizontal-spacing-unit);
+  flex-wrap: wrap;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: calc(2 * var(--horizontal-spacing-unit));
+}
+
+h1,
+h2,
+h3,
+h4 {
+  &:not(&:first-child) {
+    margin-top: calc(2 * var(--vertical-spacing-unit));
+  }
+  &:not(&:last-child) {
+    margin-bottom: var(--vertical-spacing-unit);
+  }
+  font-weight: var(--strongest-font-weight);
+}
+
+p {
+  &:not(&:first-child) {
+    margin-top: var(--vertical-spacing-unit);
+  }
+  &:not(&:last-child) {
+    margin-bottom: var(--vertical-spacing-unit);
+  }
+}
+
+/*
+* Paragraph-like spacing between elements of a list if any element has internal
+* paragraphs
+*/
+ul,
+ol {
+  &:has(li p) li {
+    &:not(&:first-child) {
+      margin-top: var(--vertical-spacing-unit);
+    }
+    &:not(&:last-child) {
+      margin-bottom: var(--vertical-spacing-unit);
+    }
+  }
+}
+
+/* Headers within page/post content slide a notch down the font-size scale. */
+.article-content h1 {
+  font-size: var(--font-size-2);
+}
+.article-content h2 {
+  font-size: var(--font-size-3);
+}
+.article-content h3 {
+  font-size: var(--font-size-4);
+}
+
+blockquote {
+  margin-left: var(--horizontal-spacing-unit);
+  padding-left: var(--horizontal-spacing-unit);
+  border-left: var(--line-a);
+}
+
+a {
+  &,
+  &:active,
+  &:hover {
+    color: var(--brand-color-3);
+  }
+  &:visited {
+    color: var(--brand-color-2);
+  }
+  /* <a> without href used for paginator button for current page */
+  &:disabled,
+  &:not([href]) {
+    color: inherit;
+  }
+}
+
+table {
+  background-color: var(--background-highlight);
+  border: var(--line-b1);
+  thead {
+    border-bottom: var(--line-b2);
+    background-color: var(--background-secondary);
+  }
+  th,
+  td {
+    border: var(--line-b1);
+    padding: var(--horizontal-spacing-unit);
+  }
+}
+
+hr {
+  border: none;
+  border-top: var(--line-a);
+}
+
+.katex math {
+  font-family: var(--math-font-family);
+}
+
+ul.pagination {
+  display: flex;
+  list-style-type: none;
+  gap: calc(2 * var(--horizontal-spacing-unit));
+  justify-content: center;
+}
+
+/* Inline code */
+code:not(pre code) {
+  font-size: var(--font-size-5);
+}
+
+/* Syntax-highlighted code blocks */
+pre {
+  overflow-x: scroll;
+  padding: var(--horizontal-spacing-unit);
+
+  code {
+    font-size: var(--font-size-5);
+    display: block;
+  }
+}

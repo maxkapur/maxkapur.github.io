@@ -1,0 +1,5 @@
+{{ if .Inner }}
+  {{ transform.ToMath (.Inner) (dict "displayMode" true) }}
+{{ else }}
+  {{- transform.ToMath (.Get 0) -}}
+{{ end -}}

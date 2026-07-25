@@ -19,24 +19,29 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 #v31
+
       - uses: actions/checkout@v7
         with:
           persist-credentials: true
 
-      - name: Configure toolchain (rake configure)
-        run: rake configure
+      - name: Initialize dev shell
+        shell: &nix_shell "nix develop --command bash --noprofile --norc -eo pipefail {0}"
+        run: echo "Hello"
 
-      - name: Show package info (rake info)
-        run: rake info
+      - name: Lint
+        shell: *nix_shell
+        run: ./lint.sh
 
-      - name: Build site (rake)
-        run: rake
+      - name: Build site
+        shell: *nix_shell
+        run: hugo build && tree public/
 
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v5
         with:
-          path: _site/
+          path: public/
 
       - name: Push site build to static branch
         # For portability, maintain a static branch with the site build checked
@@ -49,7 +54,7 @@ jobs:
           git config --local push.autoSetupRemote true
           git switch -C static
           git reset --hard origin/master
-          git add -f _site/
+          git add -f public/
           git status
           git commit -m "Automatic site build"
           git push -f
