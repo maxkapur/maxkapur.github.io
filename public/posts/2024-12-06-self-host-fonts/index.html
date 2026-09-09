@@ -1,0 +1,160 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>How I self-host fonts on this blog | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2024-12-06-self-host-fonts/">How I self-host fonts on this blog</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2024-12-06T00:00:00&#43;00:00">December 6, 2024</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I recently transitioned this blog to self-host its fonts (IBM Plex Sans, Sans
+KR, and Mono) from within the GitHub Pages artifact instead of calling the
+Google Fonts API. This makes the site a little more “static” by eliminating the
+need for your browser to download font files from an external domain. Here, I
+explain how (and why) I self-host fonts without bringing them into the source
+tree.</p>
+<p>The easiest way to self-host fonts with a static site generator like Jekyll is
+to store the <code>.ttf</code> or <code>.woff2</code> font files and their CSS inside of the <code>assets/</code>
+folder of the source repo. But this turns the font into an in-tree dependency,
+which I wanted to avoid: Although IBM’s
+<a href="https://github.com/IBM/plex/blob/4b8acbebe10a52a14d3a80b3f95cc9ff0ec9b39b/LICENSE.txt">SIL Open Font License</a>
+appears to permit this sort of vendoring, I have an (admittedly puristic) desire
+for my repo to consist only of code I wrote myself. And I wanted to try
+automating the process of downloading and installing a dependency <em>without</em>
+using a package manager like conda or apt.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>My source repo already has a <code>configure.sh</code> script that installs Ruby, Jekyll
+and friends to the local workstation so that it can build and preview the static
+site. To this script, I added <code>curl</code> and <code>unzip</code> commands to
+<a href="https://github.com/maxkapur/maxkapur.github.io/blob/f6521d7800c2e8a3111de226767e808f97f50572/configure.sh#L99-L132">automatically download the latest IBM Plex release and extract</a>
+the fonts to the <code>assets/</code> directory (where they are <code>.gitignore</code>d).</p>
+<p>Now, as long as IBM follows semantic versioning in its font releases, updating
+to a new version of IBM Plex requires no more than changing the version number
+in these lines from <code>configure.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>IBM_PLEX_MONO_SRC=&#34;https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-mono%401.1.0/ibm-plex-mono.zip&#34;
+</span></span><span style="display:flex;"><span>IBM_PLEX_SANS_SRC=&#34;https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans%401.1.0/ibm-plex-sans.zip&#34;
+</span></span><span style="display:flex;"><span>IBM_PLEX_SANS_KR_SRC=&#34;https://github.com/IBM/plex/releases/download/%40ibm%2Fplex-sans-kr%401.1.0/ibm-plex-sans-kr.zip&#34;
+</span></span></code></pre></div><p>(It is also possible to modify these URLs to automatically
+<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases">pull the latest release</a>
+instead of pinning a version.)</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>I <a href="/posts/2024-11-29-rbenv-vs-conda/">already use conda</a> as part
+of my <code>configure.sh</code> script, so installing a font with conda wouldn’t be a
+heavy lift, but only the Sans variant of IBM Plex is
+<a href="https://anaconda.org/conda-forge/font-ttf-ibm-plex-sans">available in conda-forge</a>,
+and I need the KR and Mono variants, too. (The conda package also doesn’t
+include CSS font definitions.)</p>
+<p>These fonts <em>are</em> available
+<a href="https://packages.ubuntu.com/oracular/all/fonts-ibm-plex/filelist">in the Ubuntu apt repositories</a>,
+but then my build script would no longer function on other Linux distros,
+and I’d still have to use <code>./configure.sh</code> to copy the files from
+<code>/usr/share/</code> to my site’s <code>assets/</code> directory.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

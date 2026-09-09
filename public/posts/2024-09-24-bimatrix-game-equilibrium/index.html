@@ -1,0 +1,200 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Bimatrix game equilibrium via nonlinear programming | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2024-09-24-bimatrix-game-equilibrium/">Bimatrix game equilibrium via nonlinear programming</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2024-09-24T00:00:00&#43;00:00">September 24, 2024</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p><a href="https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/9cca6ef4a5399a4e05891f471d667441_MIT6_254S10_lec09.pdf">These lecture notes
+(PDF)</a>
+from Asu Ozdaglar give a bilinear program whose solution is the mixed-strategy
+equilibrium for a two-player, non-zero-sum game with finite action spaces—also
+known as a bimatrix game. I wanted to reproduce this highly practical result in
+a more accessible format and offer some implementation notes.</p>
+<h1 id="definitions">Definitions</h1>
+<p>A <em>bimatrix game</em> is characterized by two matrices <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">A, B \in \mathbb{R}^{n \times m}.</annotation></semantics></math></span> When Alice chooses strategy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> and Bob chooses strategy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span>,
+their payoffs are <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">A_{ij}</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">B_{ij},</annotation></semantics></math></span> respectively. Mixed-strategy
+probability vectors <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> yield expected payoffs of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">x^T A y</annotation></semantics></math></span> and
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>T</mi></msup><mi>B</mi><mi>y</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x^T B y,</annotation></semantics></math></span> respectively.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>y</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x^*, y^*)</annotation></semantics></math></span>
+is an <em>equilibrium</em> if
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup><mo>≤</mo><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">x^T A y^* \leq x^{*T} A y^*</annotation></semantics></math></span>
+and
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>A</mi><mi>y</mi><mo>≤</mo><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">x^{*T} A y \leq x^{*T} A y^*</annotation></semantics></math></span>
+for all probability vectors
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>
+and
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span>.</p>
+<h1 id="result">Result</h1>
+<p><strong>Theorem:</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\implies)</annotation></semantics></math></span> If <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>y</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x^*, y^*)</annotation></semantics></math></span> is an equilibrium, then there
+exist <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">p^*</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">q^*</annotation></semantics></math></span> such that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>y</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>p</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>q</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x^*, y^*, p^*, q^*)</annotation></semantics></math></span> is the optimal
+solution to the following bilinear program:</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>maximize</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><mi>y</mi><mo>+</mo><msup><mi>x</mi><mi>T</mi></msup><mi>B</mi><mi>y</mi><mo>−</mo><mi>p</mi><mo>−</mo><mi>q</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>subject to</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>A</mi><mi>y</mi><mo>≤</mo><mi>p</mi><mn mathvariant="bold">1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(OptA)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msup><mi>B</mi><mi>T</mi></msup><mi>x</mi><mo>≤</mo><mi>q</mi><mn mathvariant="bold">1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(OptB)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>∑</mo><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mo>∑</mo><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(ProbVec1)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>x</mi><mo>≥</mo><mn mathvariant="bold">0</mn><mo separator="true">,</mo><mi>y</mi><mo>≥</mo><mn mathvariant="bold">0</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(ProbVec2)</mtext></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+    \text{maximize} \quad   &amp; f(x, y, p, q) = x^T A y + x^T B y - p - q    \\
+    \text{subject to} \quad &amp; A y \leq p \mathbf{1} &amp; \text{(OptA)} \\
+                            &amp; B^T x \leq q \mathbf{1} &amp; \text{(OptB)} \\
+                            &amp; \sum x_i = \sum y_i = 1 &amp; \text{(ProbVec1)} \\
+                            &amp; x \geq \mathbf{0}, y \geq \mathbf{0} &amp; \text{(ProbVec2)}
+\end{aligned}
+</annotation></semantics></math></span>
+
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>  </mtext><mo>⟸</mo><mtext>  </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\impliedby)</annotation></semantics></math></span> Conversely, the optimal solution of the bilinear program is an
+equilibrium for the game.</p>
+<p><strong>Proof:</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\implies)</annotation></semantics></math></span> For any feasible solution to the bilinear program,
+each element of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> is nonnegative (by ProbVec2), so we can use <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> to
+combine the rows of the condition OptA to obtain a new valid inequality <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><mi>y</mi><mo>≤</mo><msup><mi>x</mi><mi>T</mi></msup><mi>p</mi><mn mathvariant="bold">1</mn><mo>=</mo><mi>p</mi><mo>∑</mo><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">x^T A y \leq x^T p \mathbf{1} = p \sum x_i = p</annotation></semantics></math></span> (by ProbVec1). Applying the same
+logic to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">q,</annotation></semantics></math></span> we find that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>≤</mo><mn>0.</mn></mrow><annotation encoding="application/x-tex">f(x, y, p, q) \leq 0.</annotation></semantics></math></span></p>
+<p>Now consider the equilibrium probability vectors <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>y</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x^*, y^*)</annotation></semantics></math></span> and set <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mo>∗</mo></msup><mo>=</mo><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">p^* = x^{*T} A y^*</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mo>∗</mo></msup><mo>=</mo><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>B</mi><msup><mi>y</mi><mo lspace="0em" rspace="0em">∗</mo></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">q^* = x^{*T} B y^{*}.</annotation></semantics></math></span> Then <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>y</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>p</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>q</mi><mo>∗</mo></msup><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">f(x^*, y^*, p^*, q^*) = 0,</annotation></semantics></math></span>
+and we have only to show that this solution is feasible. To be an equilibrium,
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">x^*</annotation></semantics></math></span> must earn Alice a better payoff against <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo lspace="0em" rspace="0em">∗</mo></msup></mrow><annotation encoding="application/x-tex">y^{*}</annotation></semantics></math></span> than does the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>th
+pure strategy: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mo>∗</mo></msup><mo>=</mo><msup><mi>x</mi><mrow><mo>∗</mo><mi>T</mi></mrow></msup><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup><mo>≥</mo><mo stretchy="false">(</mo><mi>A</mi><msup><mi>y</mi><mo>∗</mo></msup><msub><mo stretchy="false">)</mo><mi>i</mi></msub><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">p^* = x^{*T} A y^* \geq (A y^*)_i.</annotation></semantics></math></span> This is precisely the
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>th row of OptA. OptB follows similarly.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>  </mtext><mo>⟸</mo><mtext>  </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\impliedby)</annotation></semantics></math></span> The bilinear program is clearly feasible and bounded (as shown
+a moment ago). Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>q</mi><mo>ˉ</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\bar x, \bar y, \bar p, \bar q)</annotation></semantics></math></span> denote the optimal
+solution. By Nash’s theorem on the existence of mixed-strategy equilibria, we
+know that an equilibrium exists, and from the first part of the proof, we know
+how to use this equilibrium to produce a feasible solution to the bilinear
+program with an objective value of zero. Thus, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>q</mi><mo>ˉ</mo></mover><mo stretchy="false">)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">f(\bar x, \bar y, \bar p, \bar q) \geq 0,</annotation></semantics></math></span> which rearranges to</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><msup><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mi>T</mi></msup><mi>A</mi><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo>−</mo><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><msup><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mi>T</mi></msup><mi>B</mi><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo>−</mo><mover accent="true"><mi>q</mi><mo>ˉ</mo></mover><mo stretchy="false">)</mo><mo>≥</mo><mn>0.</mn></mrow><annotation encoding="application/x-tex">
+(\bar x^T A \bar y - \bar p) + (\bar x^T B \bar y - \bar q) \geq 0.
+</annotation></semantics></math></span>
+
+<p>By the constraints OptA and OptB, each of the terms in parentheses is less than
+or equal to zero; thus, the inequality on <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>q</mi><mo>ˉ</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\bar x, \bar y, \bar p, \bar q)</annotation></semantics></math></span>
+can hold only when each of these terms <em>equals</em> zero exactly.</p>
+<p>Now consider any probability vector <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> and use it to combine the rows of
+OptA: We have <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo>≤</mo><msup><mi>x</mi><mi>T</mi></msup><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mn mathvariant="bold">1</mn><mo>=</mo><mover accent="true"><mi>p</mi><mo>ˉ</mo></mover><mo>=</mo><msup><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover><mi>T</mi></msup><mi>A</mi><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x^T A \bar y \leq x^T \bar p \mathbf{1} = \bar p = \bar x^T A \bar y,</annotation></semantics></math></span> which says that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar x</annotation></semantics></math></span> is a best response to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar y</annotation></semantics></math></span>. Applying
+the same logic to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>y</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar y</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>q</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar q</annotation></semantics></math></span> completes the proof. ◼</p>
+<h1 id="remarks">Remarks</h1>
+<p>Solving the bilinear program is not necessarily easy. If merely solving a
+bimatrix game of this form is your goal, then mitigations against local optima
+such as <a href="https://en.wikipedia.org/wiki/Iterated_local_search">iterated local
+search</a> are essential. You
+can check whether a solution is local or global by comparing the objective value
+to zero, which is the global optimum guaranteed by Nash’s theorem.</p>
+<p>In practice, I have used the bilinear program above when implementing the
+<a href="https://arxiv.org/abs/2009.12185">double oracle algorithm</a> for games with
+complex action spaces. For example, in a modeling problem I am working on, pure
+strategies are subsets of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math></span> with additional inequality and
+integrality constraints.</p>
+<p>The “first oracle” in the double-oracle algorithm has you compute the
+equilibrium of a subgame with discrete action sets and uses the bilinear program
+above. In the second oracle (typically the hard part), you then augment these
+action sets by computing a pure-strategy best response for each player against
+the mixed-strategy equilibrium obtained from the first oracle. You can use the
+double oracle algorithm to approximate either pure- <em>or</em> mixed-strategy
+equilibria by checking convergence and terminating after either the first or
+second oracle, respectively.</p>
+<p>In my use case, the open-source solver <a href="https://github.com/coin-or/Ipopt">Ipopt</a>
+gives acceptable results for the first oracle. I also learned about
+<a href="https://github.com/mechmotum/cyipopt">cyipopt</a>, a nice set of Python bindings
+for Ipopt that lets you <code>@jit</code> your functions with Numba or Jax for performance.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

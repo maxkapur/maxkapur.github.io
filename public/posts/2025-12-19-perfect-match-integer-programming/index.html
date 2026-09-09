@@ -1,0 +1,389 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Find your perfect match with integer programming | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2025-12-19-perfect-match-integer-programming/">Find your perfect match with integer programming</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-12-19T00:00:00&#43;00:00">December 19, 2025</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>Owen Lacey
+<a href="https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/">blogged</a> about
+a reality game show called <em>Are You the One?</em> in which contestants win a
+prize by guessing the soulmate ordained for them by the show&rsquo;s producers.
+Specifically, there are <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> men and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> women, and each one has an unknown
+&ldquo;perfect&rdquo; match; to win the prize, the contestants (as a group) must pair
+everyone up correctly.</p>
+<p>During each episode, the contestants get two kinds of clues:</p>
+<ol>
+<li>Truth Booth, where the contestants submit a single <em>couple</em> and learn whether
+that couple is a perfect match.</li>
+<li>Match Up, where the contestants submit a <em>matching</em> (assigning everyone to a
+couple) and learn the number (but not the identity) of perfect matches
+present in their matching.</li>
+</ol>
+<p>The game ends after Match Up if all <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> couples in the matching are correct.
+Definitely check out Owen&rsquo;s post, which has a better (and illustrated!)
+explanation of the rules.</p>
+<p>Below, I present an efficient algorithm for playing Are You the One.
+It exploits both the informational clues and contestants&rsquo; intuitions to find
+perfect matches quickly. With modest assumptions on the quality of
+players&rsquo; intuitions, my algorithm wins by episode 10 in 100% of simulated
+seasons.</p>
+<p>(I will style the name of the show as <em>Are You the One?</em> and the name of the
+underlying game as just Are You the One.)</p>
+<h1 id="owens-algorithm-eliminate-alternatives-with-information-theory">Owen&rsquo;s algorithm: Eliminate alternatives with information theory</h1>
+<p>To set the stage, let me summarize Owen&rsquo;s approach. In short, he chooses Truth
+Booth and Match Up submissions on the basis of the expected information to be gained.</p>
+<p>Imagine writing down a list of all <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span> possible matchings at the beginning of
+the season. If, in the episode 1 Truth Booth, we learn that Alice and
+Bob <em>aren&rsquo;t</em> a perfect match, we can cross off all <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n! / n</annotation></semantics></math></span> matchings that
+include this couple. That&rsquo;s progress.</p>
+<p>Similarly, after we get our Match Up score
+at the end of the episode, we can examine each possible matching and ask, &ldquo;If this
+were the ground truth, what would have been our guess&rsquo;s Match Up score?&rdquo; If the
+observed score differs, then that rules out that matching.</p>
+<p>As the season evolves,
+Owen&rsquo;s goal is to narrow things down as quickly as possible by submitting the guesses
+that eliminate the most matchings. Thus, in both subgames, his algorithm has us
+simulate each potential guess against each potential matching. We count up the
+average number of matchings that each guess would cross out. The logarithm of this value
+is called the guess&rsquo;s <em>entropy.</em> We play the guess with the highest entropy.</p>
+<p>This algorithm won the game by episode 10 in 98% of Owen&rsquo;s simulations—convincing
+evidence that <em>Are You the One?</em> is &ldquo;pretty much free money.&rdquo;</p>
+<h1 id="my-design-objectives">My design objectives</h1>
+<p>Owen&rsquo;s post left me with two questions.</p>
+<p>First, the information-theoretic algorithm is
+pessimistic. It assumes zero intuition about which couples belong together;
+every matching is equally likely. But what if we <em>do</em> have some
+intuition about compatibility—can we exploit this knowledge to
+win sooner, or more consistently?</p>
+<ul>
+<li><strong>Objective 1:</strong> Exploit both clues <em>and</em> contestant intuition to
+maximize the win rate.</li>
+</ul>
+<p>Second, computing entropies entails a lot of math. In Truth Booth and Match Up
+alike, to count the number of eliminations, we have little choice but to scan
+the full, long list of potential matchings. There&rsquo;s no shortcut, because previous
+eliminations interact with new clues in complicated ways. And we have to run that
+scan for <em>every</em> possible guess. Owen
+applied a few clever optimizations to avoid provably wrong guesses, but it&rsquo;s
+hard to salvage factorial time complexity:</p>
+<blockquote>
+<p>I ran this information theory simulation 41 times (for no other reason than I
+got bored waiting)</p>
+</blockquote>
+<p>Can we make our algorithm computationally efficient? Here&rsquo;s an arbitrary benchmark
+that I totally didn&rsquo;t come up with until after testing my code.</p>
+<ul>
+<li><strong>Objective 2:</strong> Simulate 100 seasons in under 1 minute on an unremarkable
+desktop (AMD Ryzen 5 4600G processor, 16GB of RAM).</li>
+</ul>
+<p>Point of emphasis: With these objectives, my algorithm and Owen&rsquo;s aren&rsquo;t really
+in competition. My problem setup is more generous (players have additional
+information at the outset), and my goals (win more, simulate faster) are
+therefore more ambitious.</p>
+<h1 id="my-algorithm-balance-intuition-and-informational-constraints">My algorithm: Balance intuition and informational constraints</h1>
+<p>My model of Are You the One includes three components:</p>
+<ol>
+<li>A statistical model of the &ldquo;vibes&rdquo; that contestants get about each couple&rsquo;s compatibility</li>
+<li>An algorithm for choosing which couple to guess for Truth Booth</li>
+<li>An algorithm for choosing which matching to guess for Match Up</li>
+</ol>
+<p>The statistical model lets us slide the strength of contestants&rsquo; intuition
+up and down to experiment with how it affects the win rate.
+The guessing algorithms are based on integer programming (IP), an operations research
+technique that lets us optimize for a goal (my guess reflects my intuition)
+while applying logical constraints (my guess doesn&rsquo;t contradict any clues).
+IP solvers don&rsquo;t need to iterate every possible solution or matching, because they
+leverage the problem&rsquo;s mathematical structure to prune whole families of suboptimal
+solutions from the search space.</p>
+<h2 id="statistical-model-of-contestant-intuitions">Statistical model of contestant intuitions</h2>
+<p>To generate random instances, my model first assigns each couple a compatibility score
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span> drawn from a standard normal distribution. These values represent
+the &ldquo;true&rdquo; compatibility of man <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> with woman <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span> (according to the
+show&rsquo;s producers). We then solve the
+<a href="https://en.wikipedia.org/wiki/Assignment_problem">maximum-weight bipartite matching</a>
+problem to obtain the ground-truth perfect matching.</p>
+<p>This computation sounds fancier than
+it is; the idea is to match everyone up in a way that maximizes the overall
+sum of compatibility scores. <a href="/posts/2021-03-07-stable-matching-planet-money/">More sophisticated matching algorithms</a>
+exist, but the maximum-weight procedure suits our purposes well.
+It generates each of the possible <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span> matchings with equal probability, and
+it comes with extra data <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span> that we can use to drive intuitions.</p>
+<p>Contestants don&rsquo;t get to see <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span>, but instead observe
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span>, which is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span> plus a normal variate with mean zero and
+standard deviation <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-s}</annotation></semantics></math></span>. Here <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span> represents the strength of
+contestants&rsquo; intuition. If <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≪</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s \ll 0</annotation></semantics></math></span>, then their intuitions are essentially
+random noise; if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≫</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s \gg 0</annotation></semantics></math></span> then their intuitions are spot-on.</p>
+<p>The strength parameter <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span> enables us to test how bad players&rsquo; intuitions
+can get before a pessimistic algorithm like Owen&rsquo;s has better odds of
+winning than one based on vibes. I chose to scale <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span> exponentially on the
+hunch that this would yield a roughly linear relationship between <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span> and the
+number of turns to win (which turned out to be true).</p>
+<h2 id="match-up-algorithm">Match Up algorithm</h2>
+<p>I&rsquo;ll present my algorithm for Match Up first, because the Truth Booth algorithm
+builds on it.</p>
+<p>In my algorithm, we pick the guess for Match Up that best resonates with our
+vibes without contradicting any of the clues we&rsquo;ve gathered. Formally, we compute
+the maximum-weight bipartite matching using the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span> values as the weights,
+while applying logical constraints generated by previous rounds of Truth Booth
+and Match Up.</p>
+<p>Let the binary decision variable <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> equal one if man
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> matches with woman <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span> in our Match Up submission, and zero if not.</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span> denote the set of couples <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span> known (from the Truth Booth) to be
+perfect matches, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><menclose notation="updiagonalstrike"><mi>P</mi></menclose></mrow><annotation encoding="application/x-tex">\cancel{P}</annotation></semantics></math></span> the set of couples known <em>not</em> to be perfect
+matches.</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math></span> denote the set of Match Up results. The elements of
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">M</mi></mrow><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math></span> are tuples <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>M</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(M, k)</annotation></semantics></math></span>, where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> is the set of couples <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span> submitted, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> is the score.</p>
+<p>The solution to the following IP is called the <em>best matching:</em></p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>maximize</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>subject to</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mi>j</mi><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>P</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><menclose notation="updiagonalstrike"><mi>P</mi></menclose></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><munder><mo>∑</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>M</mi></mrow></munder><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mi>k</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>M</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="script">M</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mtext> binary</mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">∀</mi><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo><mo>∈</mo><mo stretchy="false">{</mo><mn>1</mn><mo>…</mo><mi>n</mi><msup><mo stretchy="false">}</mo><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+  \text{maximize} \quad     &amp; \sum_{i=1}^n \sum_{j=1}^n v_{ij} x_{ij} \\
+  \text{subject to} \quad   &amp; \sum_{j=1}^n x_{ij} = 1 &amp; \forall i \in \{1 \dots n\} \\
+                            &amp; \sum_{i=1}^n x_{ij} = 1 &amp; \forall j \in \{1 \dots n\} \\
+                            &amp; x_{ij} = 1 &amp; \forall (i, j) \in P \\
+                            &amp; x_{ij} = 0 &amp; \forall (i, j) \in \cancel{P} \\
+                            &amp; \sum_{(i, j) \in M} x_{ij} = k &amp; \forall (M, k) \in \mathcal{M} \\
+                            &amp; x_{ij} \text{ binary} &amp; \forall (i, j) \in \{1 \dots n\}^2
+\end{aligned}
+</annotation></semantics></math></span>
+
+<p>The first two constraints define the
+<a href="https://en.wikipedia.org/wiki/Assignment_problem#Solution_by_linear_programming">bipartite matching polytope</a>.
+The following three constraints require that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> agree with our clues.
+The final constraint just says that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> is binary (not a fraction).</p>
+<h2 id="truth-booth-algorithm">Truth Booth algorithm</h2>
+<p>The Truth Booth is purely informational; we don&rsquo;t win anything with a correct
+guess. However, in the absence of other clues, a correct guess in Truth
+Booth rules out more matchings than an incorrect guess. So, for the Truth Booth, my
+algorithm tries to make a guess that is <em>not certain,</em> but still <em>likely</em> to be
+correct.</p>
+<p>First, we compute the best matching using the IP above. Any of the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span>
+pairs in the best matching is a <em>valid</em> guess for truth booth. But some of them
+are <em>silly</em> guesses, because we already know they are a perfect match; we
+should filter these out (hence the &ldquo;not certain&rdquo; criterion above).</p>
+<p>The easiest couples to filter out are those that were already revealed as a
+perfect match in a past Truth Booth. No sense submitting them again.</p>
+<p>Among the remaining couples, even without a Truth Booth result, we may know
+<em>implicitly</em> that they go together, because all matchings in which they don&rsquo;t
+are contradicted by the sum of our clues. To detect if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span> from the best
+matching is an implicit perfect match, we can solve another IP, which consists
+of the best matching IP with the additional constraint <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_{ij} = 0</annotation></semantics></math></span>. If this
+adjusted IP is <em>infeasible,</em> then <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i, j)</annotation></semantics></math></span> is an implicit perfect match, so
+we shouldn&rsquo;t submit that couple to the truth booth.</p>
+<p>The couples that survive these filters are <em>flexible couples,</em>
+i.e. we can identify a matching, compatible with our clues, in which they pair
+with someone else. Among the flexible couples, my heuristic is to guess the
+couple with the <em>highest</em> vibes. This satisfies the &ldquo;likely&rdquo; criterion above.</p>
+<p>(I experimented with choosing the flexible couple with the <em>poorest</em> vibes.
+There isn&rsquo;t much of an impact to the bottom-line win rate, but the
+script spends longer solving the integer programs.)</p>
+<h1 id="implementation-and-experiments">Implementation and experiments</h1>
+<p>I implemented the algorithm in Julia using the JuMP.jl modeling language and
+SCIP solver. You can find all the source code <a href="https://github.com/maxkapur/AreYouTheOne.jl">here on
+GitHub</a>.</p>
+<p>I ran three experiments to verify that my algorithm fulfills the design objectives.</p>
+<h2 id="experiment-1-intuition-strength-vs-turns-to-win">Experiment 1: Intuition strength vs. turns to win</h2>
+<p>For this experiment, we sample <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span> uniformly between <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-5</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span>. These
+endpoints represent signal-to-noise ratios of 1:32 and 32:1, respectively, so
+the x-axis in the plot below runs the <a href="https://www.etymonline.com/word/gamut">gamut</a>
+from &ldquo;virtually no intuition&rdquo; to &ldquo;spot-on intuition.&rdquo;</p>
+<p>Each point in the scatter plot below corresponds to one full game (one season).
+The y-axis represents how many turns contestants took to make a correct
+guess in Match Up.</p>
+<figure>
+  <img
+    class="compact squareborder"
+    alt="Scatter plot showing negative correlation between strength of intuition and turns to win"
+    src="/assets/images/are-you-the-one/strength-vs-nturns.svg"
+  />
+</figure>
+<p>We see a roughly linear, negative relationship between intuition strength and
+turns taken. We win by episode 10 most of the time, even on the noisy side
+of the plot.</p>
+<h2 id="experiment-2-no-intuition">Experiment 2: No intuition</h2>
+<p>To stress-test my algorithm, let&rsquo;s focus on the left edge of the experiment 1
+plot and slide the intuition strength all the way down to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">s = -\infty</annotation></semantics></math></span>. (What I actually do is
+delete <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ij}</annotation></semantics></math></span> entirely from the expression for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span> and sample
+the vibes as pure Gaussian noise.)</p>
+<p>This case is similar to Owen&rsquo;s setup. Participants have no intuition about which
+couples are perfect matches, and their vibes <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span> serve only to give the IP
+solver something to optimize.</p>
+<p>The histogram below shows how many episodes contestants typically need to win.</p>
+<figure>
+  <img
+    class="compact squareborder"
+    alt="Histogram showing number of turns to win with intuition fixed to negative infinity. A bell curve centered around 8 or 9"
+    src="/assets/images/are-you-the-one/no-intuition.svg"
+  />
+</figure>
+<p>In the challenging environment of experiment 2, my algorithm wins by
+episode 10 only 93% of the time, compared to Owen&rsquo;s 98%. However, 93% is
+still appreciably better than the 74% and 71% accuracy obtained, respectively,
+by random guessing and actual <em>Are You the One?</em> contestants (according to
+Owen&rsquo;s post). And it takes just under two minutes to run all 500 simulations
+reflected in the plot above.</p>
+<h2 id="experiment-3-weak-intuition">Experiment 3: Weak intuition</h2>
+<p>The conditions of experiment 3 cater best to my algorithm&rsquo;s objectives.
+Here, we fix <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s = -1</annotation></semantics></math></span> (a signal-to-noise ratio of 1:2),
+meaning that contestants have some intuition, but it&rsquo;s not particularly strong.</p>
+<figure>
+  <img
+    class="compact squareborder"
+    alt="Histogram showing number of turns to win with intuition fixed to negative one. A bell curve centered around 6 or 7"
+    src="/assets/images/are-you-the-one/weak-intuition.svg"
+  />
+</figure>
+<p>In this case, we eke out a win 100% of the time! And again, running all 500
+simulations takes less than two minutes.</p>
+<h1 id="best-we-can-do">Best we can do?</h1>
+<p>Above, we devised an algorithm for Are You the One that balances competing
+objectives:</p>
+<ul>
+<li>Exploit clues from Truth Booth and Match Up</li>
+<li>Capitalize on contestants&rsquo; intuition about compatibility</li>
+<li>Compute efficiently</li>
+</ul>
+<p>Under favorable conditions, the algorithm wins 100% of simulated games. Under
+unfavorable conditions with scrambled contestant intuitions,
+the algorithm still wins 93% of the time. In every case, it&rsquo;s fast enough to
+simulate many seasons without getting bored.</p>
+<p>Like Owen, I find Are You the One to have charming similarities
+to Wordle. In Wordle, you must balance the information gained by <em>exploring</em>
+unused letters against the win potential of <em>exploiting</em> clues already provided.
+In the <em>New York Times</em> version of Wordle, a pessimistic strategy informed
+by information theory is the only way to guarantee a win. But in two-player
+Wordle, where an opponent chooses the word, you can leverage intuition about the
+opponent&rsquo;s favorite words to guess the answer more quickly.</p>
+<p>Many numerical optimization problems feature such an explore/exploit tradeoff.
+In classic cases of the <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit
+problem</a>, for example, we can
+prove that certain strategies strike an ideal (in a technical sense) balance between
+exploration and exploitation.</p>
+<p>I doubt that my algorithm attains the optimal probability of winning for
+my problem setup, even in the special case of experiment 3 (where the 100% figure
+is merely empirical; if you keep running my script, you&rsquo;ll see losses here and there).
+The information-theoretic concepts introduced in Owen&rsquo;s blog post can be applied to arbitrary, not just
+uniform, distributions over matchings, including the conditional distribution of
+the ground-truth matching on the vibes <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{ij}</annotation></semantics></math></span>. If you can estimate that
+distribution (more simulations …), then you
+can compute the entropies in Owen&rsquo;s algorithm as weighted averages over
+matchings. That algorithm would be, you know, <em>optimal</em> optimal. And <em>very</em> slow.</p>
+<h1 id="further-reading">Further reading</h1>
+<ul>
+<li><a href="https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/">Owen Lacey&rsquo;s blog post</a>
+analyzing Are You the One from an information theory perspective</li>
+<li><a href="https://www.3blue1brown.com/lessons/wordle">3blue1brown video</a> solving Wordle
+with information theory</li>
+<li><a href="https://absurdleonline.github.io/">Adversarial Wordle</a>, where the word keeps
+changing to prolong the game—imagine an analogous variant of Are You the One,
+where the perfect matches change to confound the contestants</li>
+<li><a href="https://github.com/maxkapur/AreYouTheOne.jl">Source code</a> for my algorithm
+and plots</li>
+</ul>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

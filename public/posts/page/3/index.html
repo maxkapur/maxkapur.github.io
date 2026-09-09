@@ -1,0 +1,400 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Posts | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="page" class="active" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <div class="layout-spacing">
+    <header>
+      <h1>Posts</h1>
+      
+    </header>
+
+    
+    
+
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-09-03-abc-smc-evolutionary-algorithm/">Is ABC-SMC just an evolutionary algorithm?</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-09-03T00:00:00&#43;00:00">September 3, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>Suppose we have data <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> and a model that expresses <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> as a noisy function
+of a parameter vector <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span>. We want to determine a value of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span>
+that fits the data. For the purposes of this post, we&rsquo;re concerned with models
+that are &ldquo;difficult,&rdquo; meaning we cannot write down a simple expression for the
+likelihood function and maximize it, whether analytically (as in ordinary least
+squares) or numerically (as in nonlinear regression). In fact, all we really
+know how to do is sample data from the model when given an arbitrary <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span>.
+(We&rsquo;ll get a different <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> every time, because the model is nondeterministic.)</p>
+<p>If you enjoy Bayesian statistics, then you may have already pattern-matched this
+problem statement to the ABC-SMC algorithm. But if you are like me and view
+parameter estimation as an optimization problem (there is no reason to privilege
+this view; it&rsquo;s just how I turned out), then you might instead apply an
+evolutionary algorithm. Below, I describe such an algorithm, then argue that
+ABC-SMC is a special case. This insight suggests improvements to the
+implementation and usage of both evolution and ABC-SMC.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2025-09-03-abc-smc-evolutionary-algorithm/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-08-20-full-of-types/">Full of types</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-08-20T00:00:00&#43;00:00">August 20, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I’m obsessed with this essay
+<a href="https://theoutline.com/post/8627/raising-a-teen-personality-types-growth-mindset">&ldquo;Raising a person in a culture full of types&rdquo;</a>
+by Dan Brooks. Before we get to the author’s message, let&rsquo;s take a moment to
+appreciate his sense of comedic timing, e.g.:</p>
+<blockquote>
+<p>My son talks incessantly about VSCO girls and Karens and other categories of
+people he has learned about from YouTube. He described a classmate as “the
+kind of person who borrows your pencil and doesn’t give it back,” i.e. she
+borrowed his pencil and didn’t give it back. For a while he tried to propagate
+a type of his own invention, “the Suzan,” whose behavior was ill-defined but
+tracked closely with that of my mother of the same name. It did not catch on,
+and eventually he concluded that he was not the kind of person who could come
+up with memes.</p>
+</blockquote>
+<p>Is it just me, or is this a highly clever paragraph?</p>
+<p>Brooks&rsquo;s point, expressed better there than I will here, is that our culture&rsquo;s
+emphasis on “being“ over “doing” prevents us from separating people’s actions
+from their destiny. At best, the idea that people belong to fixed, inescapable
+categories is merely the antithesis of the growth mindset; it saps motivation
+from our desire to try new things (why learn programming if I am not a &ldquo;math
+person&rdquo;?). At worst, as Brooks points out, &ldquo;The illusion of a fixed nature gives
+us an excuse to repeat bad behavior,&rdquo; because every mistake is like a movie
+trailer for the rest of your life. And like a TV commercial, the fixed mindset
+is an illusion with a <em>slope</em> (sorry): it inclines us toward the most automatic
+decision instead of assessing the alternatives on their merits.</p>
+<p>I will not pretend to be a paragon of the growth mindset. I talk myself out of
+good ideas, such as learning how to actually cook, all the time. But if I could
+choose to have one impact on the world, it would be to motivate those around me
+to reject limiting beliefs and embrace challenge—even at the risk of failure.
+And if linking you
+<a href="https://theoutline.com/post/8627/raising-a-teen-personality-types-growth-mindset">again</a>
+to this essay, which has a wonderful subplot about fatherhood, is the way to do
+it, then, OK.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-07-09-related-posts/">Jekyll plugin to recommend related posts</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-07-09T00:00:00&#43;00:00">July 9, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I wrote my first plugin for the Jekyll static website builder: <a href="https://github.com/maxkapur/jekyll-related">a tool that
+recommends related posts</a>
+at the end of each page. It determines the similarity between post pairs using
+a fairly unremarkable token-counting algorithm, so it&rsquo;s fast enough to rerun on
+every site build. You can configure the number of posts to recommend and a
+parameter <code>factor</code> which determines the algorithm&rsquo;s sensitivity to rare vs.
+common words.</p>
+<p>I made a little <a href="https://maxkapur.com/jekyll-related/">demo of the plugin</a> with a fake
+blog whose posts are the articles of the UN Universal Declaration of Human
+Rights. You can also see a demo on the current version of this site if you click
+the &ldquo;read more&rdquo; link below to go to this post&rsquo;s individual page. I think it
+works pretty well!</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2025-07-09-related-posts/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-07-02-tried-recently/">Some things I tried recently</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-07-02T00:00:00&#43;00:00">July 2, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p><a href="https://kagi.com/">Kagi Search:</a> It’s a paid search engine that promises to
+give better results than Google and friends. Indeed, the search results are a
+little more relevant, especially when researching technical topics. I made great
+use of the ability to
+<a href="https://kagi.com/stats?stat=leaderboard">filter and promote entire domains</a>.
+However, the pricing doesn’t work for me: $5/month gets you 300 searches, which
+isn’t enough (I burned through the free 100 searches in a week), and for
+unlimited searches, you have to pay $10 for a bundle deal that also includes AI
+stuff I don’t care about. Kagi wants to become an everything app (probably
+<a href="https://olly.pagecord.com/some-thoughts-on-kagi-search-after-two-months">adding email soon</a>),
+which a tough sell while claiming to be a privacy-focused company. (Same issue
+with Proton, by the way.)</p>
+<p><a href="https://www.fender.com/pages/fender-studio">Fender Studio:</a> Fender, the guitar
+company, just kind of threw this over the fence in May. It’s a free (but not
+open source) digital audio workstation, so it competes with the likes of Ardour
+and GarageBand. But Fender Studio runs on Linux, and quite well at that. On my
+machine, it supports JACK with minimal configuration and achieves lower latency
+than <a href="https://guitarix.org/">Guitarix</a> while doing a lot more. The vendored
+backing tracks are a bit cheesy but well engineered.</p>
+<p><a href="https://github.com/amperser/proselint">Proselint:</a> It’s a prose … linter, i.e.
+you feed it your draft blog post and it complains about vague wording and common
+typography problems like curly vs. straight quotes. I like that Proselint uses
+regex instead of an LLM, so there’s no
+<a href="/posts/2025-06-18-thesaurus-cheating/">creative interference</a>; it’s more
+like an automated style guide than a chatty editor. But my homegrown
+<code>typography.py</code> script (I need to upload this to GitHub sometime) enforces a few
+lesser irks, such as
+<a href="https://editorsmanual.com/articles/number-ranges/">en dashes in numerical ranges</a>,
+that Proselint lets be, so I’m still using both.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-06-26-cls-advice/">CLS advice nobody asked for</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-06-26T00:00:00&#43;00:00">June 26, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>Awesome people occasionally reach out to ask me about the US State Department’s
+<a href="https://clscholarship.org/">Critical Language Scholarship</a> (CLS) program.
+I participated in CLS Korean in
+2016, and I <em>still</em> find myself learning from the experiences I had in Gwangju
+all those years ago (and that&rsquo;s with four additional years of living in Korea
+and several visits in between).</p>
+<p>This year’s CLS cohort is getting started now or so, so I thought I would
+write up a couple of tips for making the most of the program that I’ve
+collected and shared over the years.</p>
+<ol>
+<li>Contribute ideas for activities to do with your language partner, because
+they may run out of them before long. Your outsider perspective might
+generate interesting adventures like visiting a family with young kids or
+sneaking into a college lecture.</li>
+<li>Embrace a Zen attitude with respect to the language policy. Understand that
+some cohort members may need space to process new experiences and cultural
+differences in English; this doesn’t mean they are not getting the most of
+the program. Language acquisition doesn&rsquo;t have to be your <em>only</em> goal.
+(Context: CLS is famously an immersion-based program and requires
+participants to sign a language pledge saying that they won’t use English for
+the duration or the program. In retrospect, I was too much of a stickler
+about it.)</li>
+<li>Identify and recognize your own stress responses and consider how they may
+contribute to or ameliorate the stress experienced by others. This is
+especially true for “elder” CLS participants (grad students and up), whom
+younger participants tend to see as role models in adapting to unforeseen
+challenges.</li>
+<li>Buy an umbrella in Korea and
+<a href="https://www.cvs.com/shop/weather-station-folding-automatic-oversize-umbrella-assorted-colors-prodid-457782-reviews">thank me later</a>.</li>
+</ol>
+<p>And please <a href="mailto:max@maxkapur.com">email me</a> if you are on CLS this
+year and have any stories to share! I still have a
+<a href="/posts/2016-03-12-cls-korea/">few posts</a> around
+<a href="/posts/2016-06-25-first-week-class-cnu/">from my CLS days</a>, but nothing
+profound.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+
+
+    <nav class="pagination-wrapper">
+      
+    <ul class="pagination pagination-terse">
+        <li class="page-item">
+          <a
+            href="/posts/"
+            aria-label="First"
+            class="page-link"
+            role="button"
+            ><span aria-hidden="true">First</span></a
+          >
+        </li>
+      <li class="page-item">
+        <a
+          href="/posts/page/2/"
+          aria-label="Previous"
+          class="page-link"
+          role="button"
+          ><span aria-hidden="true">Previous</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/2/"
+            aria-label="Page 2"
+            class="page-link"
+            role="button"
+            >2</a
+          >
+        </li>
+        <li class="page-item active">
+          <a
+            aria-current="page"
+            aria-label="Page 3"
+            class="page-link"
+            role="button"
+            ><strong>Page 3</strong>
+          </a>
+        </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/4/"
+            aria-label="Page 4"
+            class="page-link"
+            role="button"
+            >4</a
+          >
+        </li>
+      <li class="page-item">
+        <a href="/posts/page/4/" aria-label="Next" class="page-link" role="button"
+          ><span aria-hidden="true">Next</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a href="/posts/page/17/" aria-label="Last" class="page-link" role="button"
+            ><span aria-hidden="true">Last</span></a
+          >
+        </li>
+    </ul>
+    </nav>
+  </div>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

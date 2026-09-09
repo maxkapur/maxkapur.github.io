@@ -1,0 +1,142 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>fzl.fish | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2023-06-17-fzl/">fzl.fish</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2023-06-17T00:00:00&#43;00:00">June 17, 2023</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I’ve been using the following fish alias <code>fzl</code> (“fuzzy list”) to run <code>fzf</code> (“fuzzy find”) in the current directory with a <code>bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <a href="https://github.com/junegunn/fzf#preview-window"><code>fzf README</code></a>.</p>
+<p><code>~/.config/fish/functions/fzl.fish</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> fzl
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># `bat` is aliased to `batcat` on Debian</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> type -q batcat
+</span></span><span style="display:flex;"><span>        set -f bat_command <span style="color:#e6db74">&#34;batcat&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        set -f bat_command <span style="color:#e6db74">&#34;bat&#34;</span>
+</span></span><span style="display:flex;"><span>    end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the overall width of the `bat` preview to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 50% the width of the current terminal</span>
+</span></span><span style="display:flex;"><span>    set -l bat_width <span style="color:#66d9ef">$(</span>math ceil $COLUMNS x 0.5<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># My preferred `bat` options</span>
+</span></span><span style="display:flex;"><span>    set -f bat_command <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        $bat_command <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --style numbers <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --color always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --italic-text always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --wrap auto <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --terminal-width $bat_width
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fzf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview <span style="color:#e6db74">&#34;</span>$bat_command<span style="color:#e6db74"> {}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview-window right,$bat_width,nowrap
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><p>Example below.</p>
+<p><img src="/assets/images/fish-fzl-example.png" alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title &ldquo;Thesis defense&rdquo; is highlighted."></p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>
