@@ -1,0 +1,245 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Circular regression when you already know the period | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2025-04-06-circular-regression/">Circular regression when you already know the period</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-04-06T00:00:00&#43;00:00">April 6, 2025</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>This <a href="https://stats.stackexchange.com/a/660199">Stack Exchange</a> answer reminded
+me of a useful data science trick. In short, if you try to model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> as a
+sinusoidal function of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, you obtain a regression formula that is nonlinear
+in the parameters. However, if you know the period, you can use a trig identity
+to linearize the formula and compute an exact least-squares fit.</p>
+<h1 id="background">Background</h1>
+<p>Suppose you are trying to create a regression model for data that looks like
+this:</p>
+<p><img src="/assets/images/cyclical-data-before.svg" alt="Scatter plot of sample input data. The y variable appears to be a sine wave
+with a period of roughly 6.28, amplitude a little less than 1, shifted to the
+right by about 6 units."></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> is clearly a sinusoidal function of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> (plus noise), so there are three
+parameters we need to estimate:</p>
+<ol>
+<li>The period <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span> (distance between peaks)</li>
+<li>The amplitude <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span> (height of the peaks)</li>
+<li>The phase <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span> (where in the cycle the peaks occur)</li>
+</ol>
+<p>For some data, there’s really only one value for the period that makes
+sense. For example, if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> represents “day of the year” (as in the Stack
+Exchange question), then we are clearly expecting a yearly cycle (or else we
+would have collected exact dates). Thus, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>365.25</mn></mrow><annotation encoding="application/x-tex">T = 365.25</annotation></semantics></math></span> (or however you want to
+handle leap years), and we have only to estimate the amplitude and phase that
+best fit the data.</p>
+<h1 id="problem-statement">Problem statement</h1>
+<p>Without loss of generality, we can assume that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">T = 2 \pi</annotation></semantics></math></span> (if not, multiply
+each <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span> by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">2 \pi / T</annotation></semantics></math></span>). Then our objective is to minimize the error in
+the system of equations</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mi>A</mi><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+y_i = A \sin( x_i + \phi )
+</annotation></semantics></math></span>
+
+<p>for each <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_i, y_i)</annotation></semantics></math></span> in the input data.</p>
+<p>Unfortunately, this model is not linear in the parameters to be estimated (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span>
+and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span>), so we can’t estimate it using ordinary least-squares regression.</p>
+<h1 id="the-trick">The trick</h1>
+<p>The trick is to estimate the following model instead, which <em>is</em> linear in the
+parameters <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\beta_0</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\beta_1</annotation></semantics></math></span>:</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mi>cos</mi><mo>⁡</mo><mi>x</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>sin</mi><mo>⁡</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">
+y_i = \beta_0 \cos x + \beta_1 \sin x
+</annotation></semantics></math></span>
+
+<p>To see that this model is equivalent, apply a <a href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities">trig
+identity</a>
+to find that</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><msub><mi>x</mi><mi>i</mi></msub><mi>sin</mi><mo>⁡</mo><mi>ϕ</mi><mo>+</mo><mi>A</mi><mi>sin</mi><mo>⁡</mo><msub><mi>x</mi><mi>i</mi></msub><mi>cos</mi><mo>⁡</mo><mi>ϕ</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">
+A \sin( x_i + \phi ) = A \cos x_i \sin \phi + A \sin x_i \cos \phi.
+</annotation></semantics></math></span>
+
+<p>Matching coefficients on <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sin x_i</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\cos x_i</annotation></semantics></math></span>, we have</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>β</mi><mn>0</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mi>sin</mi><mo>⁡</mo><mi>ϕ</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>β</mi><mn>1</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ϕ</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\beta_0 &amp;= A \sin \phi \\
+\beta_1 &amp;= A \cos \phi .
+\end{aligned}
+</annotation></semantics></math></span>
+
+<p>Dividing the first equation by the second, we recover
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mi mathvariant="normal">atan2</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>β</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>β</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\phi = \operatorname{atan2}(\beta_0, \beta_1)</annotation></semantics></math></span>. Then
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mi mathvariant="normal">/</mi><mi>sin</mi><mo>⁡</mo><mi>ϕ</mi><mo>=</mo><msub><mi>β</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">A = \beta_0 / \sin \phi = \beta_1 / \cos \phi</annotation></semantics></math></span>.</p>
+<h1 id="demo">Demo</h1>
+<p>The following Python script demonstrates our technique.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rng <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>default_rng()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Make fake training data</span>
+</span></span><span style="display:flex;"><span>    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">128</span>  <span style="color:#75715e"># Number of points</span>
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> rng<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, size)
+</span></span><span style="display:flex;"><span>    A <span style="color:#f92672">=</span> rng<span style="color:#f92672">.</span>standard_exponential()
+</span></span><span style="display:flex;"><span>    phi <span style="color:#f92672">=</span> rng<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>pi)
+</span></span><span style="display:flex;"><span>    sigma <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.20</span> <span style="color:#f92672">*</span> A  <span style="color:#75715e"># Scale of random noise</span>
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> A <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>sin(x <span style="color:#f92672">+</span> phi) <span style="color:#f92672">+</span> rng<span style="color:#f92672">.</span>normal(size<span style="color:#f92672">=</span>size, scale<span style="color:#f92672">=</span>sigma)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># First plot showing what the data looks like</span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>scatter(x, y)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;cyclical-data-before.svg&#34;</span>, transparent<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, bbox_inches<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tight&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Transform x to its cos and sin, then solve</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#   y = x_transformed @ beta</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># by least squares.</span>
+</span></span><span style="display:flex;"><span>    x_transformed <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>stack([np<span style="color:#f92672">.</span>cos(x), np<span style="color:#f92672">.</span>sin(x)])<span style="color:#f92672">.</span>T
+</span></span><span style="display:flex;"><span>    (beta0, beta1), <span style="color:#f92672">*</span>_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>lstsq(x_transformed, y)  <span style="color:#75715e"># Discard other outputs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Recover A and phi using the transformation we derived. Estimate A using</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># both expressions and take the average.</span>
+</span></span><span style="display:flex;"><span>    phi_pred <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>atan2(beta0, beta1)
+</span></span><span style="display:flex;"><span>    A_pred <span style="color:#f92672">=</span> (beta0 <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sin(phi_pred) <span style="color:#f92672">+</span> beta1 <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>cos(phi_pred)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot the estimated model using regularly spaced values of x</span>
+</span></span><span style="display:flex;"><span>    x_pred <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(x<span style="color:#f92672">.</span>min(), x<span style="color:#f92672">.</span>max(), <span style="color:#ae81ff">500</span>)
+</span></span><span style="display:flex;"><span>    y_pred <span style="color:#f92672">=</span> A_pred <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>sin(x_pred <span style="color:#f92672">+</span> phi_pred)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>plot(x_pred, y_pred)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;cyclical-data-with-fit.svg&#34;</span>, transparent<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, bbox_inches<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tight&#34;</span>)
+</span></span></code></pre></div><p>Here is what the predicted model looks like:</p>
+<p><img src="/assets/images/cyclical-data-with-fit.svg" alt="The same scatter plot as above, this time with the estimated sine wave drawn
+on top. The estimated function fits the data
+well."></p>
+<h1 id="notes">Notes</h1>
+<p><strong>When to retain the linearized parameterization:</strong> In the Python code above, we
+computed <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span> just to demonstrate that the technique actually
+works. But the code will throw a zero-division error at the computation of
+<code>A_pred</code> if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span> is a multiple of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi / 2</annotation></semantics></math></span> (which happens when one of the
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>j</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta_j = 0</annotation></semantics></math></span>). In practice, I recommend discarding the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span>
+values and running predictions using the
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mi>cos</mi><mo>⁡</mo><mi>x</mi><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>sin</mi><mo>⁡</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y_i = \beta_0 \cos x + \beta_1 \sin x</annotation></semantics></math></span> model instead. Experienced data
+scientists will recognize this transformation, but you could add a comment along
+the lines of “this is a linear reparamaterization of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">A \sin( x + \phi )</annotation></semantics></math></span>.”</p>
+<p><strong>Linear combination of sinusoids:</strong> You can also use this technique if your
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> variable is a linear combination of sine waves of known periods. For
+example, if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> is “minute of day” and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> is “volume of emails,” you might
+expect an overall daily trend (period of 24 hours) with smaller variations
+within each hour (due to scheduled emails going out at the top of each hour).
+Then you can set <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mi>π</mi><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>24</mn><mo>⋅</mo><mn>60</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">w_i = 2 \pi x_i / (24 \cdot 60)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mi>π</mi><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mn>60</mn></mrow><annotation encoding="application/x-tex">z_i = 2 \pi x_i / 60</annotation></semantics></math></span>,
+and minimize the error in</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>w</mi></msub><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>w</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mi>w</mi></msub><mo stretchy="false">)</mo><mo>+</mo><msub><mi>A</mi><mi>z</mi></msub><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>z</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+y_i = A_w \sin( w_i + \phi_w ) + A_z \sin( z_i + \phi_z )
+</annotation></semantics></math></span>
+
+<p>using the transformation above.</p>
+<p><strong>Fourier transform:</strong> If you <em>don’t</em> know the period <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span> and your <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span> are
+evenly spaced, then what you’re looking for is probably not a regression model
+but a <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier
+transform</a>.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

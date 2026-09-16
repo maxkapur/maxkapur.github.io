@@ -1,0 +1,148 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Migrating to Jekyll | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2022-06-25-migrating-to-jekyll/">Migrating to Jekyll</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-06-25T00:00:00&#43;00:00">June 25, 2022</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>After reflecting on my unsustainable dependency on Google services, I have decided to bite
+the bullet and migrate my blog from Blogger to the open-source <a href="https://github.com/jekyll/jekyll">Jekyll</a>,
+with hosting provided by GitHub. In the full version of this post,
+I explain some of the technical reasons for making this change.</p>
+<h1 id="advantages-of-jekyll">Advantages of Jekyll</h1>
+<p>The Jekyll workflow offers several advantages over Blogger. For one thing, when writing a post in Blogger,
+I was forced to choose between a buggy WYSIWYG editor and raw HTML. To obtain granular control over the
+post formatting, blockquote styles, image sizes, embedded video behavior, and so on, I came to favor the HTML
+editor over time. However, since Blogger’s interface offers only limited control over the blog’s stylesheet, in
+order to obtain the post layouts I wanted, I always had to
+bob and weave among inline CSS styles, a custom stylesheet I appended to the Blogger theme, and various
+sliders in Blogger’s config GUI that let me indirectly modify the underlying template. It was yucky.</p>
+<p>By contrast,
+the Markdown/Jekyll workflow creates a clear distinction between writing and typesetting tasks. I can compose
+my posts in Markdown with minimal distraction from all those HTML tags, and format everything from above by tweaking
+the well-organized stylesheets from Jekyll’s templates. For readers, I hope this means I will be able to maintain
+a more consistent voice in my writing, and because the formatting, typesetting, and layout will be stable from post to
+post, you can expect less visual “noise” from the website itself.</p>
+<p>Because I have total control over every bit of code on this new website, I also can ensure that it is free of the
+cookies, UA sniffers, and other tracking devices that were embedded in Blogger. As someone who aggressively uses
+browser extensions to nerf these devices when another site deploys them on me, it felt hypocritical to subject my
+readers—both of them—to the same surveillance.</p>
+<p>Finally, since Jekyll builds everything to static HTML on the server side,
+the load times should be faster. And later on, if I want to switch hosting providers or set up my own web server in my
+basement, future migrations should be much easier than this one.</p>
+<h1 id="pain-points">Pain points</h1>
+<p>If you are reading this post shortly after it went up, chances are that I am still configuring things and repairing links.
+For example, <a href="https://old.maxkapur.com/">old.maxkapur.com</a> should take you to an archive of the old blog,
+but the links embedded on that blog may 404.</p>
+<p>Another difficulty with this migration is that to host a Jekyll blog using GitHub pages, you have to create a GitHub project named <code>maxkapur.github.io</code> (or whatever your GitHub username is). But I already had a project with that name, which I used to host various one-off essays and coding projects at the URL <a href="https://misc.maxkapur.com">misc.maxkapur.com</a>. Now, I have overwritten the <code>maxkapur.github.io</code> repository with the code for this site and created separate GitHub repositories for the projects that felt worth preserving. If I set things up correctly, then the old links should forward to correctly to their new homes. Of course, you can also
+dig into the <a href="https://github.com/maxkapur/maxkapur.github.io/commits/master">commit history</a> for <code>maxkapur.github.io</code> and find the source code for those
+pages that way. But this will probably break some of the links on the old blog that used absolute paths instead of relative ones.</p>
+<p>Jekyll offers some tools for automatically importing past posts from other blogging services, but I have decided against importing the full history, both because it is a nuisance, and because the design and layout of the old Illusion Slopes concords with the tone and content of those posts in a way that (in my view) the new design does not. Nonetheless, because it is easy to create backdated posts, I will probably pull in a couple of the most recent posts and some of the “greatest hits” (i.e. posts that were major drivers of search engine traffic) from the old Illusion Slopes site. This will help me practice the new workflow and get a feel for where I need to apply further customizations to the Jekyll CSS.</p>
+<h1 id="new-license">New license</h1>
+<p>The previous instance of Illusion Slopes featured a prominent copyright notice in the footer. Going forward, this blog will be licensed under CC BY-SA 4.0, a copyleft license that grants you the right to remix and reuse these materials without asking for permission as long as you credit me (preferably by linking to <a href="https://maxkapur.com">maxkapur.com</a>) and release your work under a similar open license.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

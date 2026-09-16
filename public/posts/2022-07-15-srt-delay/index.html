@@ -1,0 +1,155 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Python utility for manipulating subtitle timings | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2022-07-15-srt-delay/">Python utility for manipulating subtitle timings</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-07-15T00:00:00&#43;00:00">July 15, 2022</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>One of my current projects involves editing several hours’ worth of subtitle files in the
+<code>.srt</code> format to accompany an online course in numerical optimization. Because we haven’t
+decided exactly how we want to break up the videos, I needed an efficient way to delay
+or advance all the subtitles in time, so I wrote a small Python program called <code>srt_delay.py</code> today to help me with this task.</p>
+<p>Usage examples below the cut, or you can just go straight to the <code>README</code> in the <a href="https://github.com/maxkapur/srt_delay">GitHub repository</a>.</p>
+<h2 id="usage">Usage</h2>
+<p>We will demonstrate <code>srt_delay.py</code> using the subtitles for the open-source movie
+<a href="https://en.wikipedia.org/wiki/Elephants_Dream"><em>Elephants Dream</em></a>. The file can
+be downloaded from the repo linked above (<code>sample_input.srt</code>) or from
+<a href="https://commons.wikimedia.org/wiki/TimedText:Elephants_Dream.ogv.en.srt">Wikimedia Commons</a>.</p>
+<p>Here is what the input file looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ head sample_input.srt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>00:00:15,000 --&gt; 00:00:17,951
+</span></span><span style="display:flex;"><span>At the left we can see...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>00:00:18,166 --&gt; 00:00:20,083
+</span></span><span style="display:flex;"><span>At the right we can see the...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>00:00:20,119 --&gt; 00:00:21,962
+</span></span></code></pre></div><p>Each line contains either an index number for the subtitle (<code>1</code>), the subtitle’s
+timing (<code>00:00:18,166 --&gt; 00:00:20,083</code>), or the subtitle text itself.</p>
+<p>Suppose we want to <strong>advance</strong> the subtitles by 1.5 seconds. We can pass
+this interval in <code>.srt</code> timestamp format (<code>00:00:01,500</code>) to <code>srt_delay.py</code>
+with the <code>-a</code> or <code>--advance</code> flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python3 srt_delay.py sample_input.srt -a 00:00:01,500 | head
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>00:00:13,500 --&gt; 00:00:16,451
+</span></span><span style="display:flex;"><span>At the left we can see...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>00:00:16,666 --&gt; 00:00:18,583
+</span></span><span style="display:flex;"><span>At the right we can see the...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>00:00:18,619 --&gt; 00:00:20,462
+</span></span></code></pre></div><p>By default, <code>srt_delay.py</code> prints to standard output. In most cases,
+you will want to save the output to another file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python3 srt_delay.py sample_input.srt -a 00:00:01,500 &gt; sample_input_advanced_by_1.5s.srt
+</span></span></code></pre></div>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

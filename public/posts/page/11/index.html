@@ -1,0 +1,350 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Posts | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="page" class="active" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <div class="layout-spacing">
+    <header>
+      <h1>Posts</h1>
+      
+    </header>
+
+    
+    
+
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2023-06-17-fzl/">fzl.fish</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2023-06-17T00:00:00&#43;00:00">June 17, 2023</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I’ve been using the following fish alias <code>fzl</code> (“fuzzy list”) to run <code>fzf</code> (“fuzzy find”) in the current directory with a <code>bat</code> preview. It’s just a couple of light tweaks to the examples listed in the <a href="https://github.com/junegunn/fzf#preview-window"><code>fzf README</code></a>.</p>
+<p><code>~/.config/fish/functions/fzl.fish</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> fzl
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># `bat` is aliased to `batcat` on Debian</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> type -q batcat
+</span></span><span style="display:flex;"><span>        set -f bat_command <span style="color:#e6db74">&#34;batcat&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        set -f bat_command <span style="color:#e6db74">&#34;bat&#34;</span>
+</span></span><span style="display:flex;"><span>    end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set the overall width of the `bat` preview to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 50% the width of the current terminal</span>
+</span></span><span style="display:flex;"><span>    set -l bat_width <span style="color:#66d9ef">$(</span>math ceil $COLUMNS x 0.5<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># My preferred `bat` options</span>
+</span></span><span style="display:flex;"><span>    set -f bat_command <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        $bat_command <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --style numbers <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --color always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --italic-text always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --wrap auto <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --terminal-width $bat_width
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fzf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview <span style="color:#e6db74">&#34;</span>$bat_command<span style="color:#e6db74"> {}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>        --preview-window right,$bat_width,nowrap
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><p>Example below.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2023-06-17-fzl/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2023-02-05-korean-idioms-fortunes/">Learning Korean idioms with UNIX fortune</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2023-02-05T00:00:00&#43;00:00">February 5, 2023</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p><a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a> is a classic UNIX program that displays random fortunes, pithy quotes, and the like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ fortune
+</span></span><span style="display:flex;"><span>If you think last Tuesday was a drag, wait till you see what happens tomorrow!
+</span></span></code></pre></div><p>Today, I repurposed fortune (really <a href="https://github.com/shlomif/fortune-mod">fortune-mod</a>) as a language study tool by scraping some <a href="https://github.com/maxkapur/korean-fortunes">Korean idioms from Wikiquote</a> from Wikiquote):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ fortune korean
+</span></span><span style="display:flex;"><span>“쇠귀에 경 읽기.”
+</span></span><span style="display:flex;"><span>    아무리 좋은 말을 하면서 가르치려고 하여도 그 뜻을 제대로 헤아리지 못하는 사람을 두고 하는 말.
+</span></span></code></pre></div><p>This one says “Chanting sutras into the ears of a cow,“ defined as “A phrase used when someone fails to understand what you are trying to teach them no matter how well you choose your words.”</p>
+<p>I set <code>fortune korean</code> (with some gentle text styling) as my fish greeting, so I can learn a new idiom every time I open a terminal—see below.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2023-02-05-korean-idioms-fortunes/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2023-01-27-kiss-guitar-modeling/">Applying the KISS principle to amp modeling</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2023-01-27T00:00:00&#43;00:00">January 27, 2023</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I’ve been playing electric guitar using only computer modeling software (without a physical amplifier) for about five years now.
+I started out with Garageband and Mainstage, then briefly experimented with <a href="https://www.kuassa.com/products/amplifikation-vermilion/">Amplifikation Vermilion</a>, and for the last year and half have turned to a free, open-source package called <a href="https://guitarix.org/">Guitarix</a> and a small collection of impulse response files culled from guitar forums.
+In my experience, a good impulse response file fed into a basic convolver does a lot more for your sound than trying to optimize the countless parameters on an expensive simulator.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2023-01-27-kiss-guitar-modeling/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2022-12-17-this-years-reading/">This year’s reading</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-12-17T00:00:00&#43;00:00">December 17, 2022</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>A subset of the books I enjoyed this year:</p>
+<ul>
+<li>Barbara Kingsolver, <em>The Poisonwood Bible,</em> a novel about evangelical Christianity and cultural arrogance.</li>
+<li>손원평, «아몬드», a novel debating whether or not emotions are a distraction.</li>
+<li>Walter Isaacson, <em>The Codebreaker,</em> a biography of biochemist Jennifer Doudna.</li>
+<li>Michael Lewis, <em>The Undoing Project,</em> a biography of behavioral economists Daniel Kahneman and Amos Tversky.</li>
+<li>황보름, «어서 오세요, 휴남동 서점입니다», a slice-of-life novel about a bookstore owner overcoming the loneliness of urban life.</li>
+<li>Ayoko Sono, <em>Ningen no Bunzai,</em> a “collection of writings” (according to <a href="https://en.wikipedia.org/wiki/Ayako_Sono#Works">Wikipedia</a>, and I cannot come up with a better description). I read the Korean translation «약간의 거리를 둔다» by 김욱.</li>
+<li>김애란, «달려라, 아비», short stories about the legacy of childhood experience.</li>
+<li>Jia Tolentino, <em>Trick Mirror,</em> essays about identity, authenticity, and social media.</li>
+</ul>
+<p>In progress:</p>
+<ul>
+<li>김금희, «너무 한낮의 연애», short stories about people at the margins of society.</li>
+<li>David Foster Wallace, <em>Infinite Jest.</em></li>
+</ul>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2022-11-06-two-truths-one-lie/">Two truths and one lie</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-11-06T00:00:00&#43;00:00">November 6, 2022</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>A puzzle based on the icebreaker game.</p>
+<blockquote>
+<p>Two truths and one lie:</p>
+<ol>
+<li>I have a twin.</li>
+<li>I used a random number generator to decide whether to place a true or false statement in #1.</li>
+<li>I do not understand the rules of “two truths and one lie.”</li>
+</ol>
+</blockquote>
+<p>Solution inside.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2022-11-06-two-truths-one-lie/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+
+
+    <nav class="pagination-wrapper">
+      
+    <ul class="pagination pagination-terse">
+        <li class="page-item">
+          <a
+            href="/posts/"
+            aria-label="First"
+            class="page-link"
+            role="button"
+            ><span aria-hidden="true">First</span></a
+          >
+        </li>
+      <li class="page-item">
+        <a
+          href="/posts/page/10/"
+          aria-label="Previous"
+          class="page-link"
+          role="button"
+          ><span aria-hidden="true">Previous</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/10/"
+            aria-label="Page 10"
+            class="page-link"
+            role="button"
+            >10</a
+          >
+        </li>
+        <li class="page-item active">
+          <a
+            aria-current="page"
+            aria-label="Page 11"
+            class="page-link"
+            role="button"
+            ><strong>Page 11</strong>
+          </a>
+        </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/12/"
+            aria-label="Page 12"
+            class="page-link"
+            role="button"
+            >12</a
+          >
+        </li>
+      <li class="page-item">
+        <a href="/posts/page/12/" aria-label="Next" class="page-link" role="button"
+          ><span aria-hidden="true">Next</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a href="/posts/page/17/" aria-label="Last" class="page-link" role="button"
+            ><span aria-hidden="true">Last</span></a
+          >
+        </li>
+    </ul>
+    </nav>
+  </div>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

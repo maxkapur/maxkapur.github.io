@@ -1,0 +1,187 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Systems for making systems | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2026-06-03-metasystems/">Systems for making systems</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-06-03T00:00:00&#43;00:00">June 3, 2026</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I read a comment stating that git (a tool programmers use to collaborate on
+code, sort of like Word&rsquo;s Track Changes) is not a version control system but a
+&ldquo;system for creating a version control system.&rdquo;</p>
+<p>That got me thinking about other such &ldquo;metasystems&rdquo; I use, and the frustration
+that arises when one expects a mere system and instead gets the meta
+thing.</p>
+<h1 id="anki">Anki</h1>
+<p><a href="https://apps.ankiweb.net/">Anki</a> is a system for making a flashcard system.
+I&rsquo;ve used this excellent program for about four years to memorize Korean vocab.
+But the first time I tried Anki, I downloaded a stock deck of Korean words and
+felt confused and overwhelmed.</p>
+<p>Studying with someone else&rsquo;s Anki deck is a mistake, because it skips the most
+important part of spaced repetition learning: determining what you&rsquo;re actually
+trying to learn and breaking it into flashcard-sized units. For example, if
+you&rsquo;re using Anki to learn a language, how do you want to handle synonyms? (That
+might be a separate post.) Creating your own deck forces you to answer such
+questions and clarify your learning goals.</p>
+<h1 id="microsoft-excel">Microsoft Excel</h1>
+<p>Much hated, but much misunderstood. You may think Excel is a spreadsheet tool,
+but it&rsquo;s actually a tool for making spreadsheet tools.</p>
+<p>I learned this the hard way when I did process automation stuff at work and
+witnessed how widely people&rsquo;s Excel conventions vary. Everyone uses the
+file/worksheet/row/column hierarchy differently. Some enlightened people code
+booleans using the native <code>TRUE</code> and <code>FALSE</code>, but others use the strings &ldquo;yes&rdquo;
+and &ldquo;no&rdquo; (or blank), the checkbox widget, or the cell background color (have fun
+querying that in Pandas).</p>
+<p>Did you know that Excel incorporates an entire
+<a href="https://learn.microsoft.com/en-us/office/vba/api/overview/excel">programming language</a>?
+OK, but did you know about the
+<a href="https://learn.microsoft.com/en-us/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview">other one</a>?
+Or sorry, <a href="https://learn.microsoft.com/en-us/powerquery-m/">this one</a>?</p>
+<p>Sometimes, I wish Excel had a
+<a href="https://www.youtube.com/watch?v=VAzdvyFxzy8">bumpers mode</a> that removes all the
+formatting options (especially Merge Cells!!) and forces you to put data in
+named
+<a href="https://support.microsoft.com/en-us/office/overview-of-excel-tables-7ab0bb7d-3a9e-4b56-a3c9-6c94334e492c">tables</a>
+with strict column types. But that would just be a spreadsheet tool. It wouldn&rsquo;t
+be Excel.</p>
+<h1 id="css">CSS</h1>
+<p>CSS is how you set the color, layout, and style of web pages. The CSS for this
+site is quite a mess, a bunch of
+<a href="https://github.com/maxkapur/maxkapur.github.io/blob/938899557c4214dcd1e649cef8bca29913d366ba/_sass/minima/_layout.scss#L187-L195">ad-hoc fixes</a>
+tacked on as I added new features to Illusion Slopes. I&rsquo;ve gotten better at CSS
+since setting up the Jekyll build, but my skills are mainly useful on new
+projects, where I can architect the HTML and CSS from scratch. The mental shift
+I made is from using CSS to style an individual page, to using CSS to create a
+<em>system</em> that styles pages. A <em>cascade</em> of styles, if you will …</p>
+<p><a href="https://jacobb.nyc/writing/how-i-write-css-in-2024">This post</a> from Jacob
+Bleser outlines the kind of CSS system I want to set up for my site once I
+gather the courage to do a big migration.</p>
+<h1 id="powerful-but-frustrating">Powerful but frustrating</h1>
+<p>Everyone new to git has had the <a href="https://xkcd.com/1597/">xkcd 1597</a> experience
+of trashing and re-cloning the repo to make a merge work. Metasystems like git
+are powerful but hard to learn, which explains the abundance of businesses like
+GitHub that purport to make the underlying tool more approachable.</p>
+<p>But a good metasystem tends to resist such taming efforts because it is
+precisely as complex as the problem space requires. Simplifying tools are often
+unwieldly in their own ways (see
+<a href="https://blog.sebin-blog.sebin-nyshkim.net/posts/tailwind-suffering-from-success/nyshkim.net/posts/tailwind-suffering-from-success/">this critique of Tailwind CSS</a>),
+while disappointing power users who want access to the raw workflow—the worst of
+both worlds.</p>
+<p>But hey, they added
+<a href="https://support.microsoft.com/en-us/office/get-started-with-python-in-excel-a33fbcbe-065b-41d3-82cf-23d05397f53d">yet another programming language</a>
+to Excel.</p>
+<!--
+Couldn't figure out where I was going with this
+
+# Life is a metasystem
+
+Life is an opportunity to define our own system. Parents, school, and society
+provide some scaffolding, but it's all subject to interpretation and revision.
+Everyone wants something different from git, and everyone wants something
+different in life.
+-->
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

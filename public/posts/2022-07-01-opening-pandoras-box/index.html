@@ -1,0 +1,181 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Opening Pandora’s Box | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2022-07-01-opening-pandoras-box/">Opening Pandora’s Box</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-07-01T00:00:00&#43;00:00">July 1, 2022</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>A harrowing thing that happens in research is that occasionally, you stumble upon a
+<a href="https://doi.org/10.2307/1910412">paper from 1979 (paywall)</a> that appears to solve
+the exact problem that you’ve been working on for months, but that escaped your
+attention because it used different terminology or notation.</p>
+<p>That <em>almost</em> happened to me this week, but mercy was on my side. The paper linked above, Martin Weitzman’s
+“Optimal Search for the Best Alternative,” considers a problem called the Pandora’s
+Box problem that resembles my college application problem except for one crucial
+difference: The Pandora’s Box problem has a time dimension, whereas the college application
+problem is static.</p>
+<p>The unusual thing is that the static problem appears more difficult.</p>
+<h2 id="college-application-vs-the-pandoras-box-problem">College application vs. the Pandora’s Box problem</h2>
+<p>If we apply the Pandora’s Box problem to college application, we get the following scenario:
+Pandora applies one by one to colleges in the admissions market. At each point in time,
+she can either submit a new college application (which costs money),
+in which case she will observe her admissions outcome after a time delay,
+or she can enroll at one of the schools she has already gotten into (and receive a payoff).
+The problem is to determine an optimal <em>stopping rule</em> for when Pandora should halt her
+search and accept the payoff she has on hand. Weitzman showed how to calculate a
+<em>reservation price</em>—roughly, the expected value of application—for
+each of the colleges. The optimal policy is to halt the search when
+the value of the current best offer exceeds the reservation price of all the colleges
+left to apply to.</p>
+<p>Weitzman’s model is a dynamic model because under the optimal strategy,
+there is no way to predict Pandora’s application decisions from the problem data alone.
+The set of schools she ultimately applies to, or her <em>application portfolio,</em>
+depends on the values of the random variables observed in a given “round” of the admissions game.
+On the other hand, in the static model of college application considered in
+<a href="https://github.com/maxkapur/CollegeApplication">my master’s thesis</a>,
+the decisionmaker commits to her entire application portfolio at the outset.</p>
+<p>Arguably, the static model is more hostile to students than the Pandora’s Box problem.
+If, for example, an unlucky Pandora is rejected from a safety school at an early round of application,
+then she can compensate for the unexpected loss by applying to new safety schools in subsequent
+rounds. By contrast, the static college application problem does not allow
+students to modulate their risk allocation after observing some of the random variables.</p>
+<p>The admissions process used in the United States can be viewed as the concatenation of
+both problems: In the fall, students solve the static problem, send out a batch of
+applications, and pray for a good outcome. Then, after observing their first-round
+admissions outcomes in March, they use the Pandora strategy to pursue additional opportunities
+by negotiating their financial aid offers<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+and applying to schools that offer rolling admissions.</p>
+<h2 id="static-models-arent-necessarily-simpler">Static models aren’t necessarily simpler</h2>
+<p>Often, when we are presented with two optimization models and told that
+one is “static” and the other is “dynamic,” it is safe to guess that the static problem
+is a special case of the dynamic one. College application breaks this intuitive
+principle. In the dynamic Pandora’s box problem, any given moment,
+you are only asking two questions:</p>
+<ul>
+<li>Should I apply to another school?</li>
+<li>If so, which one?</li>
+</ul>
+<p>To answer correctly, you only ever need to compute the marginal utility of <em>individual</em>
+college applications relative to the offers you already have on hand, which is not terribly
+difficult. But in the static college application problem, the expected payoff depends on the
+<em>combination</em> of schools in the application portfolio. This yields a larger array of choices,
+and a more challenging decision problem.</p>
+<p>In my thesis, I prove that the college application problem is hard in a mathematical sense
+called NP–completeness, which means that barring an unprecedented computational breakthrough,
+there is no way to solve it that is both fast and accurate. The NP–completeness proof
+exploits the interaction among simultaneous applications in order to make the
+objective function misbehave.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>For the uninitiated—yes, you can <a href="https://www.forbes.com/sites/markkantrowitz/2021/04/19/how-to-negotiate-a-better-college-financial-aid-offer/?sh=361cdbb61420">negotiate college financial aid offers</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

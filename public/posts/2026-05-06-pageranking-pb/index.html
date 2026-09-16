@@ -1,0 +1,157 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>PageRanking People and Blogs interviews | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2026-05-06-pageranking-pb/">PageRanking People and Blogs interviews</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-05-06T00:00:00&#43;00:00">May 6, 2026</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I recently learned about <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a>, the
+original Google algorithm for ranking webpages. It works by constructing a
+Markov chain on links between pages and computing the stationary distribution.
+The stationary probability of a given page measures the page&rsquo;s centrality in the
+web, an index of popularity.</p>
+<p>I wanted to try implementing the algorithm myself and fiddle with a few Rust
+libraries, so I wrote a <a href="https://github.com/maxkapur/pbnx">script</a> that runs
+PageRank on interviews from the <a href="https://peopleandblogs.com/">People and Blogs</a>
+series. P&amp;B interviews are a tidy dataset for the algorithm, because Manu always
+asks interviewees to recommend other blogs, then he uses these recommendations
+to pick subsequent interviewees. This means the graph is well connected despite
+its small size.</p>
+<p>I was going to share the results here, but ranking blogs by popularity seems
+against the spirit of the indie web ethos, so you&rsquo;ll have to run the program
+yourself. (But to make it clear I&rsquo;m not covering anything up, let me acknowledge
+that <a href="https://manuelmoreale.com/interview/max-kapur">my interview</a> is in a
+61-way tie for last place, with all the other blogs that had no links to them.)</p>
+<p>A few observations from this exercise below.</p>
+<ul>
+<li>I computed the stationary distribution explicitly using <code>ndarray_linalg::eig</code>
+because that&rsquo;s one of the libraries I was fiddling with, but for a graph with
+a large number of nodes, storing the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span> Markov array in memory is
+impractical; you&rsquo;d be better off just simulating the random jumps instead.</li>
+<li>A Monte Carlo simulation would yield cleaner code than my solution, too. Most
+of the bugs I had to fix in my implementation had to do with constructing the
+Markov matrix, normalizing columns, and handling edge cases like nodes with
+outdegree zero. If all you&rsquo;re doing is walking the graph one node at a time,
+you can address the edge cases procedurally in a way that&rsquo;s more obviously
+correct (e.g. &ldquo;if a page has no links, jump randomly to any page&rdquo;).</li>
+<li>The hard work in Google&rsquo;s implementation would surely have been the data
+engineering. You have to find the &ldquo;content&rdquo; part of every page to avoid
+overrepresseing header and footer links like About and Privacy, but semantic
+HTML wasn&rsquo;t a thing yet. And it would take a lot of work to normalize URLs to
+handle synonyms that differ only by a <code>www.</code> prefix or trailing slash (not to
+mention redirects and permalinks).</li>
+</ul>
+<p>Like many developers, the LLM era is interfering with my motivation to post
+<a href="https://domm.plix.at/perl/2025_10_braincoded_static_image_gallery.html">brain coded</a>
+projects like this. That&rsquo;s especially true when, as here, I&rsquo;m exercising a
+language or concept that I&rsquo;m still learning—my PageRank implementation is
+neither performant nor educational. But as I told Manu in the P&amp;B interview, I
+use my blog and GitHub more for accountability than publicity: The goal is to
+simply keep myself writing and coding.</p>
+<p>Publish post.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

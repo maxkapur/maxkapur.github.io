@@ -1,0 +1,147 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Grading multiple-selection questions | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2022-08-18-multiple-selection/">Grading multiple-selection questions</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2022-08-18T00:00:00&#43;00:00">August 18, 2022</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>Consider the following test question:</p>
+<blockquote>
+<p>Which of the following are US States? (select multiple)</p>
+<ol type="a">
+   <li>Washington </li>
+   <li>Delaware   </li>
+   <li>Frankfurt  </li>
+   <li>Memphis    </li>
+</ol>
+</blockquote>
+<p>This is a multiple-selection question, so the correct answer is <code>a</code> and <code>b</code>. How would you grade a question <a href="/posts/2020-05-06-nonnative-teacher/">like this</a> on an exam?</p>
+<p>When I was in school, the Scantron machines we used supported these kinds of multiple-selection questions, but they were graded all or nothing: You got one point if your answer matched the key exactly, and zero points otherwise. I have it on good authority that the MOOC site <a href="https://www.edx.org/">edX</a> works the same way.</p>
+<p>In the era of floating-point arithmetic, all-or-nothing grading for multiple-selection questions is a hard practice to defend.
+A student who answers <code>a</code> is clearly <em>more correct</em> than a student who answers <code>c</code> and <code>d</code>, because the question above is really four questions:</p>
+<blockquote>
+<ol type="a">
+   <li>Is Washington a US state?</li>
+   <li>Is Delaware   a US state?</li>
+   <li>Is Frankfurt  a US state?</li>
+   <li>Is Memphis    a US state?</li>
+</ol>
+</blockquote>
+<h2 id="an-alternative-to-all-or-nothing-grading">An alternative to all-or-nothing grading</h2>
+<p>I propose grading multiple-selection problems as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> true-or-false questions, each weighted <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math></span> points. In this example, a response of <code>a</code> is correct with respect to questions a, c, and d, and receives 0.75 points. A response of <code>c</code> and <code>d</code> is correct with respect to none of the items and receives zero points.</p>
+<p>What about students who guess randomly? A student who guesses randomly receives, in expectation, 0.5 points under my proposal and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">1/ 2^n</annotation></semantics></math></span> points under the all-or-nothing method. Therefore, one objection to my proposal is that it provides students with a strong incentive to guess. I contend that this is not a real problem, because</p>
+<ul>
+<li>The incentive for students to guess is still positive under all-or-nothing grading,</li>
+<li>In creating examinations, there is no objective reason to make “discourage students from guessing” a design goal,</li>
+<li>Even if you insist that reducing the incentive to guess is a good thing, you can accomplish this by instating a penalty (of 0.5 points) for incorrect answers.</li>
+</ul>
+<p>Wrong-answer penalties, however, are a <a href="https://doi.org/10.1287/mnsc.2013.1776">potential source of bias (open-access article)</a> in testing because students vary in their risk aversion.</p>
+<h2 id="better-yet">Better yet</h2>
+<p>Multiple-selection questions are not very user friendly to begin with. Some students fail to realize that they are allowed to choose more than one answer and agonize over technicalities (<em>Maybe he means Washington, DC?</em>). Others (mistakenly) <em>assume</em> that they will be graded all or nothing, recognize the slim chances of success, and just skip the question to pursue lower-hanging fruit.</p>
+<p>Therefore, as long as you accept my argument that multiple-selection questions should be regarded as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> true-or-false questions for grading purposes, why not simply write them out that way on the test sheet? Then there is no way to misread the question as a single selection, and the grading scheme is obvious.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<title>Pytest &#43; Ruff &#43; Mypy | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2025-12-10-pytest-ruff-mypy/">Pytest &#43; Ruff &#43; Mypy</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-12-10T00:00:00&#43;00:00">December 10, 2025</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>There is a <a href="https://pypi.org/project/pytest-ruff/">pytest-ruff</a> plugin for
+Pytest (a Python testing framework) that will automatically run
+<code>ruff format --check</code> and <code>ruff check</code> as part of your test suite. The
+<a href="https://pypi.org/project/pytest-mypy/">pytest-mypy</a> plugin does the same thing
+for Mypy. These plugins are handy, but for some reason , the tests they generate
+are exempted from the <code>pytest -k ...</code> logic. Normally, you can use <code>-k</code> to
+select a subset of tests to run, but if you install one of the plugins
+mentioned, that plugin&rsquo;s tests run no matter what. This can slow you down if,
+like me, you develop on a slow computer.</p>
+<p>So, here&rsquo;s what I use instead of pytest-ruff and pytest-mypy: A humble
+<code>test/test_qa.py</code> file with three functions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> mypy.api
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>REPO_ROOT <span style="color:#f92672">=</span> Path(__file__)<span style="color:#f92672">.</span>parent<span style="color:#f92672">.</span>parent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_mypy</span>():
+</span></span><span style="display:flex;"><span>    stdout, stderr, returncode <span style="color:#f92672">=</span> mypy<span style="color:#f92672">.</span>api<span style="color:#f92672">.</span>run([str(REPO_ROOT)])
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(stdout)
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stderr<span style="color:#f92672">.</span>write(stderr)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> returncode <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_ruff_format</span>():
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run(
+</span></span><span style="display:flex;"><span>        [sys<span style="color:#f92672">.</span>executable, <span style="color:#e6db74">&#34;-m&#34;</span>, <span style="color:#e6db74">&#34;ruff&#34;</span>, <span style="color:#e6db74">&#34;format&#34;</span>, <span style="color:#e6db74">&#34;--check&#34;</span>],
+</span></span><span style="display:flex;"><span>        cwd<span style="color:#f92672">=</span>REPO_ROOT,
+</span></span><span style="display:flex;"><span>        check<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_ruff_lint</span>():
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run(
+</span></span><span style="display:flex;"><span>        [sys<span style="color:#f92672">.</span>executable, <span style="color:#e6db74">&#34;-m&#34;</span>, <span style="color:#e6db74">&#34;ruff&#34;</span>, <span style="color:#e6db74">&#34;check&#34;</span>],
+</span></span><span style="display:flex;"><span>        cwd<span style="color:#f92672">=</span>REPO_ROOT,
+</span></span><span style="display:flex;"><span>        check<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p>(I run Mypy via its Python API instead of the command line to save a tiny bit of
+<code>subprocess.run()</code> overhead, but it doesn&rsquo;t make a massive difference.)</p>
+<p>This gets you all the functionality of the plugins, but with two fewer
+dependencies, and the <code>-k</code> flag works:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Run tests for an in-progress feature and skip QA</span>
+</span></span><span style="display:flex;"><span>pytest -k test_some_feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run only the QA tests</span>
+</span></span><span style="display:flex;"><span>pytest -k test_qa
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run all tests</span>
+</span></span><span style="display:flex;"><span>pytest
+</span></span></code></pre></div>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> 2016–2026 Max Kapur. Licenses: CC BY-SA 4.0
+  (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>
