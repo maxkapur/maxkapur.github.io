@@ -7,26 +7,32 @@ id = 'tag:max@maxkapur.com,2026-05-27:posts/2026-09-30-cheap-easy-rebalancing'
 +++
 
 I have been learning about investments lately and encountered a concept called
-[rebalancing](https://en.wikipedia.org/wiki/Rebalancing_investments). In short,
-many investors have a target allocation across different asset categories. For
-example, you may resolve to hold 80% of your investments in stock and 20% in
-bonds. Over time, stocks tend to grow more quickly than bonds, so if you let
-these investments sit, your mix might drift to something like 90/10.
+[rebalancing](https://en.wikipedia.org/wiki/Rebalancing_investments). 
+Rebalancing means exchanging assets to achieve a target allocation. For
+example, suppose you resolve to hold 80% of your investments in stock and 20% in
+bonds. If you buy assets in those proportions, then let them grow, the stock is
+likely to outperform the bonds. Your mix might drift to something like 90/10,
+and you need to rebalance.
 
-Rebalancing simply means exchanging assets to restore the target allocation. For
-typical investment portfolios, it's not hard to figure out how to do this: In
-the example above, one would exchange 1/9th of the stocks for bonds.
+In a typical investment portfolio, it's not hard to figure out how to do this:
+In the example above, you would exchange 1/9th of the stocks for bonds. But the
+complexity escalates if your target allocation has more than two categories, or
+there is a large number funds which themselves span multiple categories
+(consider a catalog of retirement funds that contain various mix of stocks and
+bonds).
 
-But let's overthink this a bit and consider the general case with {{< math "n"
-/>}} funds and {{< math "m" />}} asset categories. What's the "cheapest" way to
-rebalance (i.e. the minimal number of transactions)? And can we make "AI" (note:
-not actually AI) find the answer for us instead of eyeballing it?
+For this post, let's overthink things a bit and consider the general case of
+portfolio rebalancing with {{< math "n" />}} funds and {{< math "m" />}} asset
+categories. What's the "cheapest" way to rebalance—how can you do it in the
+fewest transactions? And can we make "AI" (note: not actually AI) find the
+answer for us instead of eyeballing it?
 
-## Example
+<!--more-->
 
-*Funds* are held in an investment account and typically represented by a ticker
-symbol like VTI. For example, we might be trying to balance a portfolio with
-{{< math "n = 5" />}} funds as follows:
+# Example
+
+*Funds* are investment products we can buy and sell. Imagine our portfolio is
+currently invested in {{< math "n = 5" />}} funds as follows:
 
 |             Fund|Holding|
 |:----------------|------:|
@@ -36,11 +42,10 @@ symbol like VTI. For example, we might be trying to balance a portfolio with
 |       Ex-US Fund|$250.00|
 |        Bond Fund| $50.00|
 
-In our example (and real life) mutual funds and ETFs can contain an arbitrary
-mix of *asset categories.* Let's suppose we are interested specifically in
-balancing our portfolio to achieve a target mix across US equities, foreign
-equities, and bonds. We research the composition of our funds across these
-{{< math "m = 3" />}} categories to obtain the following:
+We want to (re)balance the portfolio above to achieve a target mix across US
+equities, foreign equities, and bonds—our {{< math "m = 3" />}} *asset
+categories.* With some research, we can look up the asset composition of each
+fund to produce a table like this:
 
 |             Fund|US equities|Foreign equities|Bonds|
 |:----------------|----------:|---------------:|----:|
@@ -50,9 +55,10 @@ equities, and bonds. We research the composition of our funds across these
 |       Ex-US Fund|           |            100%|     |
 |        Bond Fund|           |                | 100%|
 
-To balance a portfolio, we need to plan our target allocation across the asset
-categories. The table below also shows our current allocation, which you can
-calculate using the previous two tables, for comparison.
+Our rebalancing objective consists of a target allocation across the asset
+categories. The table below shows our current allocation (which you can
+calculate using the holdings and asset composition data above) alongside the
+target allocation for comparison.
 
 |       Component|Current allocation|Target allocation|
 |:---------------|-----------------:|----------------:|
@@ -61,22 +67,17 @@ calculate using the previous two tables, for comparison.
 |           Bonds|               10%|               5%|
 
 It looks like we have a little too much in bonds and not enough in US equities.
-Our overall portfolio is worth $1000. So, eyeballing, one way to achieve the
-target allocation might be to sell everything we have in the bond fund
-(decreasing our allocation from 10% to 5% in bonds) and put it into US Tile
-Equity. That still leaves us short of our desired allocation in foreign
-equities, so we'll need to exchange some of our holdings of Ex-US Fund for US
-Tilt Equity, too, to complete the rebalancing. With some fiddling, we arrive at
-the following sequence of transactions:
+So, eyeballing, TODO: rationalize the transactions below
 
-|Exchange amount| From fund|       To fund|
-|--------------:|:---------|:-------------|
-|         $50.00| Bond Fund|US Tilt Equity|
-|         $61.11|Ex-US Fund|US Tilt Equity|
+|Exchange amount|        From fund|          To fund|
+|--------------:|:----------------|:----------------|
+|        $500.00|   Strategy 90/10|Whole-world Stock|
+|        $250.00|       Ex-US Fund|Whole-world Stock|
+|        $333.33|Whole-world Stock|   US Tilt Equity|
 
-But can we do any better?
+This achieves the target allocation. But can we get there any faster?
 
-## Yes
+# Yes
 
 It's possible to rebalance this portfolio in just one transaction:
 
@@ -84,7 +85,7 @@ It's possible to rebalance this portfolio in just one transaction:
 |--------------:|:---------|:-------------|
 |        $111.11|Ex-US Fund|US Tilt Equity|
 
-This results in the following holdings, which you can verify meet the target
+This results in the following holdings, which you can verify meets the target
 allocation:
 
 |             Fund|Current holding|Rebalanced holding|
@@ -95,15 +96,16 @@ allocation:
 |       Ex-US Fund|        $250.00|           $138.89|
 |        Bond Fund|         $50.00|            $50.00|
 
-It's possible to discover the one-transaction solution by staring at the data
-and thinking about it. But for a general solution, with large numbers of funds
-or allocation categories, we can use a mixed-integer linear program to solve
-for the shortest sequence of transactions that rebalances the portfolio.
+You may be able to discover the one-transaction solution for this example by
+staring at the data and thinking about it. But for a general solution, with
+large numbers of funds or allocation categories, we must use a mixed-integer
+linear program to solve for the shortest sequence of transactions that
+rebalances the portfolio.
 
-## The linear program
+# The linear program
 
-Let {{< math "x_{ij} \geq 0" />}} denote the amount of fund {{< math "i" />}} that
-we should exchange for {{< math "j" />}}. This variable can't go negative;
+Let {{< math "x_{ij} \geq 0" />}} denote the amount of fund {{< math "i" />}}
+that we exchange for {{< math "j" />}}. This variable can't go negative;
 {{< math "x_{ji}" />}} represents an exchange in the other direction.
 
 Let {{< math "h_i" />}} denote our initial holdings of fund {{< math "i" />}}. 
@@ -118,17 +120,20 @@ which is a linear function of {{< math "X" />}}.
 
 We'll use a matrix {{< math "C" />}} to denote the composition of the various funds on
 offer: {{< math "c_{ki}" />}} is the proportion of fund {{< math "i" />}} that
-aligns to category {{< math "k" />}}.
+aligns to category {{< math "k" />}}. ({{< math "C" />}} is the transpose of the
+asset composition table from earlier.)
 
-Let {{< math "t_k" />}} denote our target allocation for category {{< math "k" />}}.
-Actually, it will be easier to work with {{< math "d_k = t_k \sum y_i" />}}, which
-is just {{< math "t_k" />}} rescaled to currency units, or the number of "dollars"
-we have invested in each of the {{< math "m" />}} asset categories. 
+Let {{< math "t_k" />}} denote our target allocation for category
+{{< math "k" />}}. Actually, it will be easier to work with
+{{< math "d_k = t_k \sum y_i" />}}, which is just {{< math "t_k" />}} rescaled
+to currency units, or the number of "dollars" we have invested in each of the
+{{< math "m" />}} asset categories. 
 
 We want to minimize the number of nonzero entries in {{< math "X" />}}. To model
 this, we apply the standard integer programming trick of introducing a helper
-binary variable {{< math "z_{ij}" />}} which is zero only if {{< math "x_{ij}" />}} is.
-The objective function is then just the sum of the elements of {{< math "Z" />}}.
+binary variable {{< math "z_{ij}" />}} which is zero only if
+{{< math "x_{ij}" />}} is. The objective function is then just the sum of the
+elements of {{< math "Z" />}}.
 
 Here is the completed linear program:
 
@@ -147,13 +152,13 @@ The {{< math "M" />}} in {{< math "X \leq MZ" />}} is a large constant; I used
 {{< math "M = \sum h_i" />}}. The {{< math "y(x) \geq \mathbf{0}" />}}
 constraint prevents us from trying to sell more units of a fund than we own. 
 
-To avoid taking ourselves too seriously, we've used all the sloppy operations
-researcher notation: {{< math "a \geq b" />}} for vectors or matrices means the inequality
-holds between corresponding elements, {{< math "X" />}} and
+To avoid taking ourselves too seriously, we've used typical sloppy operations
+researcher notation: {{< math "a \geq b" />}} for vectors or matrices means the
+inequality holds between corresponding elements, {{< math "X" />}} and
 {{< math "Z" />}} are technically not matrices because they aren't defined on
 the diagonal, etc.
 
-## The code
+# The code
 
 The rest is just [coding](https://github.com/maxkapur/portfolio_rebalancing). At
 that link, I implemented the integer program in Python using the
