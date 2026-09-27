@@ -169,3 +169,9 @@ of PySCIPOpt was a better match to this task.
 
 My code specifies the problem as above, solves it, and renders the results in
 Markdown tables that I pasted above.
+
+<!--
+AI usage: I wrote the code by hand. This is a good example of a task where
+typing out the code is not the hard part; the real work is in conceptualizing
+the problem and realizing it can be formulated in this way.
+-->
