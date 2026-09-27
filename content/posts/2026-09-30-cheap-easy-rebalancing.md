@@ -15,13 +15,18 @@ these investments sit, your mix might drift to something like 90/10.
 
 Rebalancing simply means exchanging assets to restore the target allocation. For
 typical investment portfolios, it's not hard to figure out how to do this: In
-the example above, one would exchange 1/9th of the stocks for bonds. But let's
-overthink this a bit and consider the general case with {{< math "n" />}} funds
-and {{< math "m" />}} asset categories.
+the example above, one would exchange 1/9th of the stocks for bonds.
 
-By *funds,* I mean the products held in an investment account and typically
-represented by a ticker symbol like VTI. For example, we might be trying to 
-balance a portfolio with {{< math "n = 5" />}} funds as follows:
+But let's overthink this a bit and consider the general case with {{< math "n"
+/>}} funds and {{< math "m" />}} asset categories. What's the "cheapest" way to
+rebalance (i.e. the minimal number of transactions)? And can we make "AI" (note:
+not actually AI) find the answer for us instead of eyeballing it?
+
+## Example
+
+*Funds* are held in an investment account and typically represented by a ticker
+symbol like VTI. For example, we might be trying to balance a portfolio with
+{{< math "n = 5" />}} funds as follows:
 
 |             Fund|Holding|
 |:----------------|------:|
@@ -32,10 +37,10 @@ balance a portfolio with {{< math "n = 5" />}} funds as follows:
 |        Bond Fund| $50.00|
 
 In our example (and real life) mutual funds and ETFs can contain an arbitrary
-mix of asset categories. Let's suppose we are interested specifically in balancing
-our portfolio to achieve a target mix across US equities, foreign equities, and bonds.
-We research the composition of our funds across these {{< math "m = 3" />}} categories
-to obtain the following:
+mix of *asset categories.* Let's suppose we are interested specifically in
+balancing our portfolio to achieve a target mix across US equities, foreign
+equities, and bonds. We research the composition of our funds across these
+{{< math "m = 3" />}} categories to obtain the following:
 
 |             Fund|US equities|Foreign equities|Bonds|
 |:----------------|----------:|---------------:|----:|
@@ -45,9 +50,9 @@ to obtain the following:
 |       Ex-US Fund|           |            100%|     |
 |        Bond Fund|           |                | 100%|
 
-Finally, we need to write down our target allocation across the asset categories.
-The table below also shows our current allocation, which you can calculate using
-the previous two tables.
+To balance a portfolio, we need to plan our target allocation across the asset
+categories. The table below also shows our current allocation, which you can
+calculate using the previous two tables, for comparison.
 
 |       Component|Current allocation|Target allocation|
 |:---------------|-----------------:|----------------:|
@@ -60,7 +65,7 @@ Our overall portfolio is worth $1000. So, eyeballing, one way to achieve the
 target allocation might be to sell everything we have in the bond fund
 (decreasing our allocation from 10% to 5% in bonds) and put it into US Tile
 Equity. That still leaves us short of our desired allocation in foreign
-equities, so we will need to exchange some of our holdings of Ex-US Fund for US
+equities, so we'll need to exchange some of our holdings of Ex-US Fund for US
 Tilt Equity, too, to complete the rebalancing. With some fiddling, we arrive at
 the following sequence of transactions:
 
@@ -69,10 +74,9 @@ the following sequence of transactions:
 |         $50.00| Bond Fund|US Tilt Equity|
 |         $61.11|Ex-US Fund|US Tilt Equity|
 
-But can we do this in fewer than two transactions? And can we make "AI" (note:
-not actually AI) find the answer for us instead of eyeballing it?
+But can we do any better?
 
-## Sure
+## Yes
 
 It's possible to rebalance this portfolio in just one transaction:
 
@@ -93,19 +97,21 @@ allocation:
 
 It's possible to discover the one-transaction solution by staring at the data
 and thinking about it. But for a general solution, with large numbers of funds
-or allocation categories, we can solve for the "cheapest" (fewest transactions)
-way to rebalance the portfolio using a mixed-integer linear program.
+or allocation categories, we can use a mixed-integer linear program to solve
+for the shortest sequence of transactions that rebalances the portfolio.
+
+## The linear program
 
 Let {{< math "x_{ij} \geq 0" />}} denote the amount of fund {{< math "i" />}} that
 we should exchange for {{< math "j" />}}. This variable can't go negative;
 {{< math "x_{ji}" />}} represents an exchange in the other direction.
 
-Let {{< math "a_i" />}} denote our initial holdings of fund {{< math "i" />}}. 
+Let {{< math "h_i" />}} denote our initial holdings of fund {{< math "i" />}}. 
 After applying the transactions {{< math "x_{ij}" />}}, our rebalanced holdings of
 {{< math "i" />}} are
 
 {{< math >}}
-y_i(X) = a_i + \sum_{j=1}^n x_{ji} - \sum_{j=1}^n x_{ij}
+y_i(X) = h_i + \sum_{j=1}^n x_{ji} - \sum_{j=1}^n x_{ij}
 {{< /math >}}
 
 which is a linear function of {{< math "X" />}}.
@@ -129,22 +135,32 @@ Here is the completed linear program:
 {{< math >}}
 \begin{aligned}
   \text{minimize} \quad     & \sum z_{ij} \\
-  \text{subject to} \quad   & C\,y(x) = d \\
+  \text{subject to} \quad   & Cy(x) = d \\
+                            & X \leq MZ \\
                             & y(x) \geq \mathbf{0} \\
-                            & X \leq M\,Z \\
                             & X \geq \mathbf{0} \\
                             & z_{ij} \text{ binary}
 \end{aligned}
 {{< /math >}}
 
-Here we've used all the sloppy operations researcher notation to avoid taking
-ourselves too seriously: {{< math "a \geq b" />}} for vectors means the
-inequality holds between corresponding elements, {{< math "X" />}} and
+The {{< math "M" />}} in {{< math "X \leq MZ" />}} is a large constant; I used
+{{< math "M = \sum h_i" />}}. The {{< math "y(x) \geq \mathbf{0}" />}}
+constraint prevents us from trying to sell more units of a fund than we own. 
+
+To avoid taking ourselves too seriously, we've used all the sloppy operations
+researcher notation: {{< math "a \geq b" />}} for vectors or matrices means the inequality
+holds between corresponding elements, {{< math "X" />}} and
 {{< math "Z" />}} are technically not matrices because they aren't defined on
 the diagonal, etc.
 
-The rest is just [coding](https://github.com/maxkapur/portfolio_rebalancing).
-After solving the integer program, we read out the nonzero entries of
-{{< math "X" />}} to determine which transactions must be executed. If your
-brokerage charges uniform transaction fees, then this program gives the cheapest
-way to rebalance your portfolio.
+## The code
+
+The rest is just [coding](https://github.com/maxkapur/portfolio_rebalancing). At
+that link, I implemented the integer program in Python using the
+(PySCIPOpt)[https://pyscipopt.readthedocs.io/en/latest/index.html] bindings for
+the [SCIP](https://scipopt.org/) solver. (Pyomo)[https://www.pyomo.org/] is the
+more popular Python library for this kind of work, but I thought the simplicity
+of PySCIPOpt was a better match to this task.
+
+My code specifies the problem as above, solves it, and renders the results in
+Markdown tables that I pasted above.
