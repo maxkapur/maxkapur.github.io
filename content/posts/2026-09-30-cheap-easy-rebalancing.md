@@ -1,5 +1,4 @@
 +++
-draft = true
 title = 'Cheap(?) and easy(??) portfolio rebalancing'
 
 [params]
