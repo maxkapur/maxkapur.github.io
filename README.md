@@ -31,6 +31,9 @@ GitHub pull request.
 ```shell
 sudo apt install nix
 
+# Update flake.lock
+nix --extra-experimental-features nix-command --extra-experimental-features flakes flake update
+
 # Preview the site
 ./devshell.sh hugo serve 
 
