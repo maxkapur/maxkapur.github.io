@@ -65,12 +65,13 @@ target allocation for comparison.
 |Foreign equities|               30%|              25%|
 |           Bonds|               10%|               5%|
 
-How can we achieve the target allocation? Perhaps by working backwards&nbsp;… 
-Looking at the funds on offer, we have two "pure" funds that are easy to work
-with: Ex-US Fund for foreign equities, and Bond Fund for bonds. We also have a
-nearly pure US equity fund in US Tilt Equity. A bit of algebra shows that putting 7/9ths
-of our portfolio into US Tilt Equity will achieve our goal for US equities, and then
-we can split the remaining budget across the two pure to round it out:
+How can we achieve the target allocation? Perhaps by working backwards. Among
+the funds on offer, we have two "pure" funds that are easy to work with: Ex-US
+Fund for foreign equities, and Bond Fund for bonds. We also have a nearly pure
+US equity fund in US Tilt Equity. A bit of algebra shows that putting 7/9ths of
+our portfolio into US Tilt Equity will achieve our goal for US equities, and
+then we can split the remaining budget across the two pure to round the
+portfolio out:
 
 |             Fund|Current holding|Rebalanced holding|
 |:----------------|--------------:|-----------------:|
@@ -80,9 +81,8 @@ we can split the remaining budget across the two pure to round it out:
 |       Ex-US Fund|        $250.00|           $172.22|
 |        Bond Fund|         $50.00|            $50.00|
 
-This portfolio is balanced. However, to convert our current portfolio into the
-new one will require at least three exchanges (source: trust me). Here's one
-such sequence:
+This portfolio is balanced. However, to *convert* our current portfolio into
+this one will take at least three exchanges; one such sequence is this:
 
 |Exchange amount|        From fund|          To fund|
 |--------------:|:----------------|:----------------|
@@ -90,7 +90,7 @@ such sequence:
 |         $77.78|       Ex-US Fund|Whole-World Stock|
 |        $677.78|Whole-World Stock|   US Tilt Equity|
 
-But it possible to balance our portfolio using shorter sequence of exchanges?
+Is it possible to balance our portfolio using shorter sequence of exchanges?
 
 # Yes
 
@@ -114,8 +114,8 @@ allocation:
 
 Maybe you were able to identify the two-transaction solution to this problem by
 staring at the data and thinking about it. But in the general case, with large
-numbers of funds or allocation categories, we can find the shortest rebalancing
-sequence using a mixed-integer linear program.
+numbers of funds or allocation categories, that's impractical. Instead, we can
+find the shortest rebalancing sequence using a mixed-integer linear program.
 
 # The linear program
 
