@@ -140,32 +140,31 @@ is the transpose of the asset composition table from earlier.)
 
 Let {{< math "t_k" />}} denote our target allocation for category
 {{< math "k" />}}. Actually, it will be easier to work with
-{{< math "d_k = t_k \sum y_i" />}}, which is just {{< math "t_k" />}} rescaled
+{{< math "d_k = t_k \sum h_i" />}}, which is just {{< math "t_k" />}} rescaled
 to currency units, or the number of "dollars" we have invested in each of the
 {{< math "m" />}} asset categories. 
 
 We want to minimize the number of nonzero entries in {{< math "X" />}}. To model
 this, we apply the standard integer programming trick of introducing a helper
 binary variable {{< math "z_{ij}" />}} which is zero only if
-{{< math "x_{ij}" />}} is. The objective function is then just the sum of the
-elements of {{< math "Z" />}}.
+{{< math "x_{ij}" />}} is. The objective function is then just the sum of
+{{< math "Z" />}}'s elements.
 
 Here is the completed linear program:
 
 {{< math >}}
 \begin{aligned}
   \text{minimize} \quad     & \sum z_{ij} \\
-  \text{subject to} \quad   & Cy(x) = d \\
-                            & X \leq MZ \\
-                            & y(x) \geq \mathbf{0} \\
+  \text{subject to} \quad   & Cy(x) = d & \text{(portfolio is balanced)}\\
+                            & y(x) \geq \mathbf{0} & \text{(final holdings nonnegative)}\\
+                            & X \leq MZ & \text{(}z_{ij}\text{ behave as intended)} \\
                             & X \geq \mathbf{0} \\
                             & z_{ij} \text{ binary}
 \end{aligned}
 {{< /math >}}
 
 The {{< math "M" />}} in {{< math "X \leq MZ" />}} is a large constant; I used
-{{< math "M = \sum h_i" />}}. The {{< math "y(x) \geq \mathbf{0}" />}}
-constraint prevents us from trying to sell more units of a fund than we own. 
+{{< math "M = \sum h_i" />}}.
 
 To avoid taking ourselves too seriously, we've used typical sloppy operations
 researcher notation: {{< math "a \geq b" />}} for vectors or matrices means the
