@@ -9,17 +9,17 @@ id = 'tag:max@maxkapur.com,2026-05-27:posts/2026-09-30-cheap-easy-rebalancing'
 I have been learning about investments lately and encountered a concept called
 [rebalancing](https://en.wikipedia.org/wiki/Rebalancing_investments). 
 Rebalancing means exchanging assets to achieve a target allocation. For
-example, suppose you resolve to hold 80% of your investments in stock and 20% in
-bonds. If you buy assets in those proportions, then let them grow, the stock is
+instance, suppose you resolve to hold 80% of your investments in stock and 20%
+in bonds. If you buy assets in those proportions and let them grow, the stock is
 likely to outperform the bonds. Your mix might drift to something like 90/10,
 and you need to rebalance.
 
 In a typical investment portfolio, it's not hard to figure out how to do this:
 In the example above, you would exchange 1/9th of the stocks for bonds. But the
 complexity escalates if your target allocation has more than two categories, or
-there is a large number funds which themselves span multiple categories
-(consider a catalog of retirement funds that contain various mix of stocks and
-bonds).
+you hold a large number of mutual funds which themselves span multiple
+categories (consider a catalog of retirement strategy funds that contain
+different mixes of stocks and bonds).
 
 For this post, let's overthink things a bit and consider the general case of
 portfolio rebalancing with {{< math "n" />}} funds and {{< math "m" />}} asset
@@ -36,7 +36,7 @@ currently invested in {{< math "n = 5" />}} funds as follows:
 
 |             Fund|Holding|
 |:----------------|------:|
-|Whole-world Stock|$100.00|
+|Whole-World Stock|$100.00|
 |   US Tilt Equity|$100.00|
 |   Strategy 90/10|$500.00|
 |       Ex-US Fund|$250.00|
@@ -49,7 +49,7 @@ fund to produce a table like this:
 
 |             Fund|US equities|Foreign equities|Bonds|
 |:----------------|----------:|---------------:|----:|
-|Whole-world Stock|        60%|             40%|     |
+|Whole-World Stock|        60%|             40%|     |
 |   US Tilt Equity|        90%|             10%|     |
 |   Strategy 90/10|        90%|                |  10%|
 |       Ex-US Fund|           |            100%|     |
@@ -66,41 +66,57 @@ target allocation for comparison.
 |Foreign equities|               30%|              25%|
 |           Bonds|               10%|               5%|
 
-It looks like we have a little too much in bonds and not enough in US equities.
-So, eyeballing, TODO: rationalize the transactions below
+How can we achieve the target allocation? Perhaps by working backwards&nbsp;… 
+Looking at the funds on offer, we have two "pure" funds that are easy to work
+with: Ex-US Fund for foreign equities, and Bond Fund for bonds. We also have a
+nearly pure US equity fund in US Tilt Equity. A bit of algebra shows that putting 7/9ths
+of our portfolio into US Tilt Equity will achieve our goal for US equities, and then
+we can split the remaining budget across the two pure to round it out:
+
+|             Fund|Current holding|Rebalanced holding|
+|:----------------|--------------:|-----------------:|
+|Whole-World Stock|        $100.00|                  |
+|   US Tilt Equity|        $100.00|           $777.78|
+|   Strategy 90/10|        $500.00|                  |
+|       Ex-US Fund|        $250.00|           $172.22|
+|        Bond Fund|         $50.00|            $50.00|
+
+This portfolio is balanced. However, to convert our current portfolio into the
+new one will require at least three exchanges (source: trust me). Here's one
+such sequence:
 
 |Exchange amount|        From fund|          To fund|
 |--------------:|:----------------|:----------------|
-|        $500.00|   Strategy 90/10|Whole-world Stock|
-|        $250.00|       Ex-US Fund|Whole-world Stock|
-|        $333.33|Whole-world Stock|   US Tilt Equity|
+|        $500.00|   Strategy 90/10|Whole-World Stock|
+|         $77.78|       Ex-US Fund|Whole-World Stock|
+|        $677.78|Whole-World Stock|   US Tilt Equity|
 
-This achieves the target allocation. But can we get there any faster?
+But it possible to balance our portfolio using shorter sequence of exchanges?
 
 # Yes
 
-It's possible to rebalance this portfolio in just one transaction:
+It's possible to rebalance this portfolio in two transactions:
 
 |Exchange amount| From fund|       To fund|
 |--------------:|:---------|:-------------|
-|        $111.11|Ex-US Fund|US Tilt Equity|
+|         $61.11|Ex-US Fund|US Tilt Equity|
+|         $50.00| Bond Fund|US Tilt Equity|
 
-This results in the following holdings, which you can verify meets the target
+This results in the following holdings, which you can verify meet the target
 allocation:
 
 |             Fund|Current holding|Rebalanced holding|
 |:----------------|--------------:|-----------------:|
-|Whole-world Stock|        $100.00|           $100.00|
+|Whole-World Stock|        $100.00|           $100.00|
 |   US Tilt Equity|        $100.00|           $211.11|
 |   Strategy 90/10|        $500.00|           $500.00|
-|       Ex-US Fund|        $250.00|           $138.89|
-|        Bond Fund|         $50.00|            $50.00|
+|       Ex-US Fund|        $250.00|           $188.89|
+|        Bond Fund|         $50.00|                  |
 
-You may be able to discover the one-transaction solution for this example by
-staring at the data and thinking about it. But for a general solution, with
-large numbers of funds or allocation categories, we must use a mixed-integer
-linear program to solve for the shortest sequence of transactions that
-rebalances the portfolio.
+Maybe you were able to identify the two-transaction solution to this problem by
+staring at the data and thinking about it. But in the general case, with large
+numbers of funds or allocation categories, we can find the shortest rebalancing
+sequence using a mixed-integer linear program.
 
 # The linear program
 
@@ -108,9 +124,9 @@ Let {{< math "x_{ij} \geq 0" />}} denote the amount of fund {{< math "i" />}}
 that we exchange for {{< math "j" />}}. This variable can't go negative;
 {{< math "x_{ji}" />}} represents an exchange in the other direction.
 
-Let {{< math "h_i" />}} denote our initial holdings of fund {{< math "i" />}}. 
-After applying the transactions {{< math "x_{ij}" />}}, our rebalanced holdings of
-{{< math "i" />}} are
+Let {{< math "h_i" />}} denote our initial holdings of fund {{< math "i" />}}.
+After applying the transactions {{< math "x_{ij}" />}}, our rebalanced holdings
+of {{< math "i" />}} are
 
 {{< math >}}
 y_i(X) = h_i + \sum_{j=1}^n x_{ji} - \sum_{j=1}^n x_{ij}
@@ -118,10 +134,10 @@ y_i(X) = h_i + \sum_{j=1}^n x_{ji} - \sum_{j=1}^n x_{ij}
 
 which is a linear function of {{< math "X" />}}.
 
-We'll use a matrix {{< math "C" />}} to denote the composition of the various funds on
-offer: {{< math "c_{ki}" />}} is the proportion of fund {{< math "i" />}} that
-aligns to category {{< math "k" />}}. ({{< math "C" />}} is the transpose of the
-asset composition table from earlier.)
+We'll use a matrix {{< math "C" />}} to denote the composition of the various
+funds on offer: {{< math "c_{ki}" />}} is the proportion of fund
+{{< math "i" />}} that aligns to category {{< math "k" />}}. ({{< math "C" />}}
+is the transpose of the asset composition table from earlier.)
 
 Let {{< math "t_k" />}} denote our target allocation for category
 {{< math "k" />}}. Actually, it will be easier to work with
@@ -162,16 +178,10 @@ the diagonal, etc.
 
 The rest is just [coding](https://github.com/maxkapur/portfolio_rebalancing). At
 that link, I implemented the integer program in Python using the
-(PySCIPOpt)[https://pyscipopt.readthedocs.io/en/latest/index.html] bindings for
-the [SCIP](https://scipopt.org/) solver. (Pyomo)[https://www.pyomo.org/] is the
+[PySCIPOpt](https://pyscipopt.readthedocs.io/en/latest/index.html) bindings for
+the [SCIP](https://scipopt.org/) solver. [Pyomo](https://www.pyomo.org/) is the
 more popular Python library for this kind of work, but I thought the simplicity
 of PySCIPOpt was a better match to this task.
 
-My code specifies the problem as above, solves it, and renders the results in
-Markdown tables that I pasted above.
-
-<!--
-AI usage: I wrote the code by hand. This is a good example of a task where
-typing out the code is not the hard part; the real work is in conceptualizing
-the problem and realizing it can be formulated in this way.
--->
+My human-written code specifies the problem as above, solves it, and renders the
+results as Markdown tables that I pasted above.
