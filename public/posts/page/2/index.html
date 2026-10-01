@@ -1,0 +1,414 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Illusion Slopes RSS Feed"
+  href="/feed.xml"
+/>
+
+<title>Posts | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="page" class="active" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <div class="layout-spacing">
+    <header>
+      <h1>Posts</h1>
+      
+    </header>
+
+    
+    
+
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-12-10-pytest-ruff-mypy/">Pytest &#43; Ruff &#43; Mypy</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-12-10T00:00:00&#43;00:00">December 10, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>There is a <a href="https://pypi.org/project/pytest-ruff/">pytest-ruff</a> plugin for
+Pytest (a Python testing framework) that will automatically run
+<code>ruff format --check</code> and <code>ruff check</code> as part of your test suite. The
+<a href="https://pypi.org/project/pytest-mypy/">pytest-mypy</a> plugin does the same thing
+for Mypy. These plugins are handy, but for some reason , the tests they generate
+are exempted from the <code>pytest -k ...</code> logic. Normally, you can use <code>-k</code> to
+select a subset of tests to run, but if you install one of the plugins
+mentioned, that plugin&rsquo;s tests run no matter what. This can slow you down if,
+like me, you develop on a slow computer.</p>
+<p>So, here&rsquo;s what I use instead of pytest-ruff and pytest-mypy: A humble
+<code>test/test_qa.py</code> file with three functions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> mypy.api
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>REPO_ROOT <span style="color:#f92672">=</span> Path(__file__)<span style="color:#f92672">.</span>parent<span style="color:#f92672">.</span>parent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_mypy</span>():
+</span></span><span style="display:flex;"><span>    stdout, stderr, returncode <span style="color:#f92672">=</span> mypy<span style="color:#f92672">.</span>api<span style="color:#f92672">.</span>run([str(REPO_ROOT)])
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(stdout)
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stderr<span style="color:#f92672">.</span>write(stderr)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> returncode <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_ruff_format</span>():
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run(
+</span></span><span style="display:flex;"><span>        [sys<span style="color:#f92672">.</span>executable, <span style="color:#e6db74">&#34;-m&#34;</span>, <span style="color:#e6db74">&#34;ruff&#34;</span>, <span style="color:#e6db74">&#34;format&#34;</span>, <span style="color:#e6db74">&#34;--check&#34;</span>],
+</span></span><span style="display:flex;"><span>        cwd<span style="color:#f92672">=</span>REPO_ROOT,
+</span></span><span style="display:flex;"><span>        check<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_ruff_lint</span>():
+</span></span><span style="display:flex;"><span>    subprocess<span style="color:#f92672">.</span>run(
+</span></span><span style="display:flex;"><span>        [sys<span style="color:#f92672">.</span>executable, <span style="color:#e6db74">&#34;-m&#34;</span>, <span style="color:#e6db74">&#34;ruff&#34;</span>, <span style="color:#e6db74">&#34;check&#34;</span>],
+</span></span><span style="display:flex;"><span>        cwd<span style="color:#f92672">=</span>REPO_ROOT,
+</span></span><span style="display:flex;"><span>        check<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p>(I run Mypy via its Python API instead of the command line to save a tiny bit of
+<code>subprocess.run()</code> overhead, but it doesn&rsquo;t make a massive difference.)</p>
+<p>This gets you all the functionality of the plugins, but with two fewer
+dependencies, and the <code>-k</code> flag works:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Run tests for an in-progress feature and skip QA</span>
+</span></span><span style="display:flex;"><span>pytest -k test_some_feature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run only the QA tests</span>
+</span></span><span style="display:flex;"><span>pytest -k test_qa
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run all tests</span>
+</span></span><span style="display:flex;"><span>pytest
+</span></span></code></pre></div>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-11-26-time-person-2006/">Person of the Year 2006</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-11-26T00:00:00&#43;00:00">November 26, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>If you need a fun fact for a corporate icebreaker activity, you can always say,
+&ldquo;I was <em>Time</em> magazine’s Person of the Year in 2006,&rdquo; then stand around
+awkwardly waiting for someone to Google it.</p>
+<p>The
+<a href="https://time.com/6258607/you-time-person-of-the-year-2006/">official announcement</a>
+of &ldquo;your&rdquo; accomplishment makes for good reading in 2025. In tech circles, we
+often regard the early days of Web 2.0 as a time of naivety when we thought that
+letting anyone post on the internet would democratize media and unlock an era of
+creative expression. Of course, we know now that it isn&rsquo;t so simple—that open
+platforms can amplify extreme views, for example, or serve as vectors for
+misinformation. But apparently we <em>also</em> knew this then, in the earliest days of
+YouTube and Facebook:</p>
+<blockquote>
+<p>Web 2.0 harnesses the stupidity of crowds as well as its wisdom. Some of the
+comments on YouTube make you weep for the future of humanity just for the
+spelling alone, never mind the obscenity and the naked hatred.</p>
+<p>But that’s what makes all this interesting. Web 2.0 is a massive social
+experiment, and like any experiment worth trying, it could fail.</p>
+</blockquote>
+<p>Obviously, the course we chose twenty years ago led us to the world of today.
+But we didn&rsquo;t select this path arbitrarily, or without regard for the challenges
+it would present; we examined the risks and decided the experiment was worth it.</p>
+<p>I got a similar sense from reading Thomas Friedman&rsquo;s <em>The World is Flat</em> (2005),
+which lays out a theory of globalization based on the convergence of
+technological development (the internet) and trade liberalization. Some of the
+passages feel quaint:</p>
+<blockquote>
+<p>If there is a skilled person in Timbuktu, he will get work if he knows how to
+access the rest of the world, which is quite easy today. You can make a Web
+site and have an e-mail address and you are up and running. (Ch. 3)</p>
+</blockquote>
+<p>(In the ebook, I commented, &ldquo;Taxes? Immigration law?&rdquo;) But elsewhere, Friedman
+anticipates critiques of globalization which have now become standard:</p>
+<blockquote>
+<p>In the flat world, the balance of power between global companies and the
+individual communities in which they operate is tilting more and more in favor
+of the companies, many of them American-based. These companies command as much
+if not more power than many governments. (Ch. 13)</p>
+</blockquote>
+<p>Not to mention &ldquo;What the world has never witnessed is an old-style pandemic in a
+Wal-Mart world,&rdquo; later on in the same chapter.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-11-23-urban-arts/">Urban Arts Career Pathways Takeover</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-11-23T00:00:00&#43;00:00">November 23, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>My team at work recently got to host a Career Pathways Takeover at
+<a href="https://urbanarts.org/">Urban Arts</a>, a nonprofit based in New York that teaches
+programming, animation, and storytelling education to high schoolers to prepare
+them for success in college and beyond.</p>
+<p>I was so impressed by the students’ thoughtfulness and engagement. We walked our
+group of Game Academy students through our team’s event planning process, and in
+less than an hour they put together a rock-solid plan for a community arts
+program to raise awareness about mental health issues, including how they&rsquo;d use
+data to capture the event&rsquo;s positive impact (where I fit in). I hope the vision
+can become a reality before long…!</p>
+<p>Massive thanks the Urban Arts team for hosting us and for all that you do
+through the Game Academy.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-10-21-cls-application/">Apply for CLS</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-10-21T00:00:00&#43;00:00">October 21, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>This year&rsquo;s application for Critical Language Scholarship from the US State
+Department is now <a href="https://clscholarship.org/apply">open</a>. (Thanks, group chat!)</p>
+<p>CLS is a fully funded summer language immersion program for American
+undergraduate and graduate students. I strongly encourage any interested in
+learning one of the nine
+<a href="https://clscholarship.org/languages">critical languages</a> to apply. Some
+languages require prior language study; others accept beginners.</p>
+<p><em>Feel free to <a href="mailto:max@maxkapur.com">email me</a></em> if you are
+considering the CLS program or have questions about the experience. I completed
+CLS Korean in 2016 and have kept in touch with participants from lots of cohorts
+since then. Here is my <a href="/posts/2025-06-26-cls-advice/">advice post</a>.</p>
+<p>Good CLS blogs:</p>
+<ul>
+<li><a href="https://bethanymaz.wordpress.com/">Bethany Maz</a></li>
+<li><a href="https://paulazhang.wordpress.com/">The Good Things Coming</a> (Paula Zhang)</li>
+</ul>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-09-24-python-scripts/">Python scripts</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-09-24T00:00:00&#43;00:00">September 24, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I cleaned up a few utility Python scripts for the GitHub:</p>
+<ul>
+<li><a href="https://github.com/maxkapur/fetch_python_docs.py">fetch_python_docs.py</a> sets
+up a local mirror of <a href="https://docs.python.org/">docs.python.org</a> on
+<code>http://localhost:8004</code> for offline reference. It can also provide and enable
+a systemd unit file, so you can run the script once, bookmark the local URL,
+and forget about it.</li>
+<li><a href="https://github.com/maxkapur/typography.py">typography.py</a> (which I mentioned
+<a href="/posts/2025-07-02-tried-recently/">here</a>) checks for ASCII typography
+that can be better rendered as Unicode. For example, it recommends changing
+the hyphen in the page range <code>278-81</code> to an en dash.</li>
+<li><a href="https://github.com/maxkapur/dated.py">dated.py</a> applies my <a href="/posts/2024-04-26-iso-dates-filenames/">obnoxious
+filename convention</a> to create
+a dated working copy of a file—useful when collaborating with people who
+aren’t comfortable with version control systems.</li>
+</ul>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+
+
+    <nav class="pagination-wrapper">
+      
+    <ul class="pagination pagination-terse">
+        <li class="page-item">
+          <a
+            href="/posts/"
+            aria-label="First"
+            class="page-link"
+            role="button"
+            ><span aria-hidden="true">First</span></a
+          >
+        </li>
+      <li class="page-item">
+        <a
+          href="/posts/"
+          aria-label="Previous"
+          class="page-link"
+          role="button"
+          ><span aria-hidden="true">Previous</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a
+            href="/posts/"
+            aria-label="Page 1"
+            class="page-link"
+            role="button"
+            >1</a
+          >
+        </li>
+        <li class="page-item active">
+          <a
+            aria-current="page"
+            aria-label="Page 2"
+            class="page-link"
+            role="button"
+            ><strong>Page 2</strong>
+          </a>
+        </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/3/"
+            aria-label="Page 3"
+            class="page-link"
+            role="button"
+            >3</a
+          >
+        </li>
+      <li class="page-item">
+        <a href="/posts/page/3/" aria-label="Next" class="page-link" role="button"
+          ><span aria-hidden="true">Next</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a href="/posts/page/17/" aria-label="Last" class="page-link" role="button"
+            ><span aria-hidden="true">Last</span></a
+          >
+        </li>
+    </ul>
+    </nav>
+  </div>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> ⓒ 2016–2026 Max Kapur. Licenses:
+  CC BY-SA 4.0 (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>

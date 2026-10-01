@@ -1,0 +1,354 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Illusion Slopes RSS Feed"
+  href="/feed.xml"
+/>
+
+<title>Posts | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="page" class="active" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <div class="layout-spacing">
+    <header>
+      <h1>Posts</h1>
+      
+    </header>
+
+    
+    
+
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2026-09-30-cheap-easy-rebalancing/">Cheap(?) and easy(??) portfolio rebalancing</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-09-30T00:00:00&#43;00:00">September 30, 2026</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I have been learning about investments lately and encountered a concept called
+<a href="https://en.wikipedia.org/wiki/Rebalancing_investments">rebalancing</a>.
+Rebalancing means exchanging assets to achieve a target allocation. For
+instance, suppose you resolve to hold 80% of your investments in stock and 20%
+in bonds. If you buy assets in those proportions and let them grow, the stock is
+likely to outperform the bonds. Your mix might drift to something like 90/10,
+and you need to rebalance.</p>
+<p>In a typical investment portfolio, it&rsquo;s not hard to figure out how to do this:
+In the example above, you would exchange 1/9th of the stocks for bonds. But the
+complexity escalates if your target allocation has more than two categories, or
+you hold a large number of mutual funds which themselves span multiple
+categories (consider a catalog of retirement strategy funds that contain
+different mixes of stocks and bonds).</p>
+<p>For this post, let&rsquo;s overthink things a bit and consider the general case of
+portfolio rebalancing with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> funds and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span> asset
+categories. What&rsquo;s the &ldquo;cheapest&rdquo; way to rebalance—how can you do it in the
+fewest transactions? And can we make &ldquo;AI&rdquo; (note: not actually AI) find the
+answer for us instead of eyeballing it?</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2026-09-30-cheap-easy-rebalancing/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2026-07-24-hugo-migration/">Hugo migration</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-07-24T00:00:00&#43;00:00">July 24, 2026</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>If you&rsquo;re reading this, I finally updated the backend of the site to use a new
+framework—from Jekyll to Hugo. I also took the opportunity to redo the homepage
+a bit. I don&rsquo;t have as many blog-post-shaped thoughts as I used to, so I reduced
+the post previews to just links to create room for more freeform content.</p>
+<p>The <a href="https://github.com/maxkapur/maxkapur.github.io/pull/98">Hugo migration</a> was
+a bit of work because I took my time and did it the fun way. The old version of
+the site used Jekyll and had accrued a lot of Jekyll&rsquo;s &ldquo;isms,&rdquo; along with weird
+conventions of my own. I wrote a custom <a href="https://github.com/maxkapur/maxkapur.github.io/blob/d2ad5ba9b81e473a32c48b44e3975ea22b6e4380/migrate.py">content migration
+script</a>
+to transform Jekyll tags automatically where possible and flag for manual
+attention where needed.</p>
+<p>I think/hope it worked. Old post links will redirect you to the new URLs. For
+RSS subscribers, depending on how your reader is configured, you may pick up a
+new copy of every post; you can just mark as read everything before today&rsquo;s
+date.</p>
+        </div>
+
+        
+        
+
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2026-06-03-metasystems/">Systems for making systems</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-06-03T00:00:00&#43;00:00">June 3, 2026</time>
+
+  · Modified <time datetime="2026-10-01T00:00:00&#43;00:00">October 1, 2026</time>
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I read a comment stating that git (a tool programmers use to collaborate on
+code, sort of like Word&rsquo;s Track Changes) is not a version control system but a
+&ldquo;system for creating a version control system.&rdquo;</p>
+<p>That got me thinking about other such &ldquo;metasystems&rdquo; I use, and the frustration
+that arises when one expects a mere system and instead gets the meta
+thing.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2026-06-03-metasystems/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2026-05-06-pageranking-pb/">PageRanking People and Blogs interviews</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-05-06T00:00:00&#43;00:00">May 6, 2026</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>I recently learned about <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a>, the
+original Google algorithm for ranking webpages. It works by constructing a
+Markov chain on links between pages and computing the stationary distribution.
+The stationary probability of a given page measures the page&rsquo;s centrality in the
+web, an index of popularity.</p>
+<p>I wanted to try implementing the algorithm myself and fiddle with a few Rust
+libraries, so I wrote a <a href="https://github.com/maxkapur/pbnx">script</a> that runs
+PageRank on interviews from the <a href="https://peopleandblogs.com/">People and Blogs</a>
+series. P&amp;B interviews are a tidy dataset for the algorithm, because Manu always
+asks interviewees to recommend other blogs, then he uses these recommendations
+to pick subsequent interviewees. This means the graph is well connected despite
+its small size.</p>
+<p>I was going to share the results here, but ranking blogs by popularity seems
+against the spirit of the indie web ethos, so you&rsquo;ll have to run the program
+yourself. (But to make it clear I&rsquo;m not covering anything up, let me acknowledge
+that <a href="https://manuelmoreale.com/interview/max-kapur">my interview</a> is in a
+61-way tie for last place, with all the other blogs that had no links to them.)</p>
+<p>A few observations from this exercise below.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2026-05-06-pageranking-pb/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+      <article class="section-item vertical-spacing">
+        <header class="article-header">
+          <h1>
+            <a href="/posts/2025-12-19-perfect-match-integer-programming/">Find your perfect match with integer programming</a>
+          </h1>
+          <p class="subtitle smaller"><span>
+  Posted <time datetime="2025-12-19T00:00:00&#43;00:00">December 19, 2025</time>
+
+  </span>
+</p>
+        </header>
+
+        <div class="article-content">
+          <p>Owen Lacey
+<a href="https://blog.owenlacey.dev/posts/are-you-the-one-is-free-money/">blogged</a> about
+a reality game show called <em>Are You the One?</em> in which contestants win a
+prize by guessing the soulmate ordained for them by the show&rsquo;s producers.
+Specifically, there are <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> men and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> women, and each one has an unknown
+&ldquo;perfect&rdquo; match; to win the prize, the contestants (as a group) must pair
+everyone up correctly.</p>
+<p>During each episode, the contestants get two kinds of clues:</p>
+<ol>
+<li>Truth Booth, where the contestants submit a single <em>couple</em> and learn whether
+that couple is a perfect match.</li>
+<li>Match Up, where the contestants submit a <em>matching</em> (assigning everyone to a
+couple) and learn the number (but not the identity) of perfect matches
+present in their matching.</li>
+</ol>
+<p>The game ends after Match Up if all <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> couples in the matching are correct.
+Definitely check out Owen&rsquo;s post, which has a better (and illustrated!)
+explanation of the rules.</p>
+<p>Below, I present an efficient algorithm for playing Are You the One.
+It exploits both the informational clues and contestants&rsquo; intuitions to find
+perfect matches quickly. With modest assumptions on the quality of
+players&rsquo; intuitions, my algorithm wins by episode 10 in 100% of simulated
+seasons.</p>
+        </div>
+
+        
+        
+
+        
+          <nav class="smaller">
+            <a href="/posts/2025-12-19-perfect-match-integer-programming/"> Read &rarr; </a>
+          </nav>
+        
+      </article>
+    
+
+
+    <nav class="pagination-wrapper">
+      
+    <ul class="pagination pagination-terse">
+        <li class="page-item active">
+          <a
+            aria-current="page"
+            aria-label="Page 1"
+            class="page-link"
+            role="button"
+            ><strong>Page 1</strong>
+          </a>
+        </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/2/"
+            aria-label="Page 2"
+            class="page-link"
+            role="button"
+            >2</a
+          >
+        </li>
+        <li class="page-item">
+          <a
+            href="/posts/page/3/"
+            aria-label="Page 3"
+            class="page-link"
+            role="button"
+            >3</a
+          >
+        </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Next" class="page-link" role="button"
+          ><span aria-hidden="true">Next</span></a
+        >
+      </li>
+        <li class="page-item">
+          <a href="/posts/page/17/" aria-label="Last" class="page-link" role="button"
+            ><span aria-hidden="true">Last</span></a
+          >
+        </li>
+    </ul>
+    </nav>
+  </div>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> ⓒ 2016–2026 Max Kapur. Licenses:
+  CC BY-SA 4.0 (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>
