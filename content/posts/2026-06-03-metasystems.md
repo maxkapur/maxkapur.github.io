@@ -1,6 +1,7 @@
 +++
 title = "Systems for making systems"
 aliases = [ "/2026/06/03/metasystems.html",]
+lastmod = 2026-10-01
 
 [params]
 id = "https://maxkapur.com/2026/06/03/metasystems"
@@ -26,9 +27,9 @@ felt confused and overwhelmed.
 Studying with someone else's Anki deck is a mistake, because it skips the most
 important part of spaced repetition learning: determining what you're actually
 trying to learn and breaking it into flashcard-sized units. For example, if
-you're using Anki to learn a language, how do you want to handle synonyms? (That
+you're using Anki to study a language, how do you want to handle synonyms? (That
 might be a separate post.) Creating your own deck forces you to answer such
-questions and clarify your learning goals.
+questions.
 
 # Microsoft Excel
 
@@ -40,7 +41,7 @@ witnessed how widely people's Excel conventions vary. Everyone uses the
 file/worksheet/row/column hierarchy differently. Some enlightened people code
 booleans using the native `TRUE` and `FALSE`, but others use the strings "yes"
 and "no" (or blank), the checkbox widget, or the cell background color (have fun
-querying that in Pandas).
+getting that into Pandas).
 
 Did you know that Excel incorporates an entire
 [programming language](https://learn.microsoft.com/en-us/office/vba/api/overview/excel)?
