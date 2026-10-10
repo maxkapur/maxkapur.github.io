@@ -19,13 +19,13 @@
           nixfmt
           prettier
           prettier-plugin-go-template
-          python314
-          python314Packages.mdformat
-          python314Packages.requests
-          python314Packages.ruff
-          python314Packages.saneyaml
-          python314Packages.tinycss2
-          python314Packages.toml
+          python315
+          python315Packages.mdformat
+          python315Packages.requests
+          python315Packages.ruff
+          python315Packages.saneyaml
+          python315Packages.tinycss2
+          python315Packages.toml
           shellcheck
         ];
         shellHook = ''
@@ -44,7 +44,7 @@
           EOF
           cat > pyproject.toml << EOF
           [project]
-          requires-python = "== 3.14"
+          requires-python = "== 3"
           EOF
           ./themes/illusion-slopes/download_assets.py >/dev/null
           echo "Dev shell initialized from flake.nix"
