@@ -1,0 +1,440 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Illusion Slopes RSS Feed"
+  href="/feed.xml"
+/>
+
+<title>Cheap(?) and easy(??) portfolio rebalancing | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2026-09-30-cheap-easy-rebalancing/">Cheap(?) and easy(??) portfolio rebalancing</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-09-30T00:00:00&#43;00:00">September 30, 2026</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I have been learning about investments lately and encountered a concept called
+<a href="https://en.wikipedia.org/wiki/Rebalancing_investments">rebalancing</a>.
+Rebalancing means exchanging assets to achieve a target allocation. For
+instance, suppose you resolve to hold 80% of your investments in stock and 20%
+in bonds. If you buy assets in those proportions and let them grow, the stock is
+likely to outperform the bonds. Your mix might drift to something like 90/10,
+and you need to rebalance.</p>
+<p>In a typical investment portfolio, it&rsquo;s not hard to figure out how to do this:
+In the example above, you would exchange 1/9th of the stocks for bonds. But the
+complexity escalates if your target allocation has more than two categories, or
+you hold a large number of mutual funds which themselves span multiple
+categories (consider a catalog of retirement strategy funds that contain
+different mixes of stocks and bonds).</p>
+<p>For this post, let&rsquo;s overthink things a bit and consider the general case of
+portfolio rebalancing with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> funds and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span> asset
+categories. What&rsquo;s the &ldquo;cheapest&rdquo; way to rebalance—how can you do it in the
+fewest transactions? And can we make &ldquo;AI&rdquo; (note: not actually AI) find the
+answer for us instead of eyeballing it?</p>
+<h1 id="example">Example</h1>
+<p><em>Funds</em> are investment products we can buy and sell. Imagine our portfolio is
+currently invested in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">n = 5</annotation></semantics></math></span> funds as follows:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Fund</th>
+					<th style="text-align: right">Holding</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Whole-World Stock</td>
+					<td style="text-align: right">$100.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">US Tilt Equity</td>
+					<td style="text-align: right">$100.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Strategy 90/10</td>
+					<td style="text-align: right">$500.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: right">$250.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bond Fund</td>
+					<td style="text-align: right">$50.00</td>
+			</tr>
+	</tbody>
+</table>
+<p>We want to (re)balance the portfolio above to achieve a target mix across US
+equities, foreign equities, and bonds—our <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m = 3</annotation></semantics></math></span> <em>asset
+categories.</em> With some research, we can look up the asset composition of each
+fund to produce a table like this:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Fund</th>
+					<th style="text-align: right">US equities</th>
+					<th style="text-align: right">Foreign equities</th>
+					<th style="text-align: right">Bonds</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Whole-World Stock</td>
+					<td style="text-align: right">60%</td>
+					<td style="text-align: right">40%</td>
+					<td style="text-align: right"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">US Tilt Equity</td>
+					<td style="text-align: right">90%</td>
+					<td style="text-align: right">10%</td>
+					<td style="text-align: right"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Strategy 90/10</td>
+					<td style="text-align: right">90%</td>
+					<td style="text-align: right"></td>
+					<td style="text-align: right">10%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: right"></td>
+					<td style="text-align: right">100%</td>
+					<td style="text-align: right"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bond Fund</td>
+					<td style="text-align: right"></td>
+					<td style="text-align: right"></td>
+					<td style="text-align: right">100%</td>
+			</tr>
+	</tbody>
+</table>
+<p>Our rebalancing objective consists of a target allocation across the asset
+categories. The table below shows our current allocation (which you can
+calculate using the holdings and asset composition data above) alongside the
+target allocation for comparison.</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Component</th>
+					<th style="text-align: right">Current allocation</th>
+					<th style="text-align: right">Target allocation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">US equities</td>
+					<td style="text-align: right">60%</td>
+					<td style="text-align: right">70%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Foreign equities</td>
+					<td style="text-align: right">30%</td>
+					<td style="text-align: right">25%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bonds</td>
+					<td style="text-align: right">10%</td>
+					<td style="text-align: right">5%</td>
+			</tr>
+	</tbody>
+</table>
+<p>How can we achieve the target allocation? Perhaps by working backwards. Among
+the funds on offer, we have two &ldquo;pure&rdquo; funds that are easy to work with: Ex-US
+Fund for foreign equities, and Bond Fund for bonds. We also have a nearly pure
+US equity fund in US Tilt Equity. A bit of algebra shows that putting 7/9ths of
+our portfolio into US Tilt Equity will achieve our goal for US equities, and
+then we can split the remaining budget across the two pure to round the
+portfolio out:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Fund</th>
+					<th style="text-align: right">Current holding</th>
+					<th style="text-align: right">Rebalanced holding</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Whole-World Stock</td>
+					<td style="text-align: right">$100.00</td>
+					<td style="text-align: right"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">US Tilt Equity</td>
+					<td style="text-align: right">$100.00</td>
+					<td style="text-align: right">$777.78</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Strategy 90/10</td>
+					<td style="text-align: right">$500.00</td>
+					<td style="text-align: right"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: right">$250.00</td>
+					<td style="text-align: right">$172.22</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bond Fund</td>
+					<td style="text-align: right">$50.00</td>
+					<td style="text-align: right">$50.00</td>
+			</tr>
+	</tbody>
+</table>
+<p>This portfolio is balanced. However, to <em>convert</em> our current portfolio into
+this one will take at least three exchanges; one such sequence is this:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: right">Exchange amount</th>
+					<th style="text-align: left">From fund</th>
+					<th style="text-align: left">To fund</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: right">$500.00</td>
+					<td style="text-align: left">Strategy 90/10</td>
+					<td style="text-align: left">Whole-World Stock</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">$77.78</td>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: left">Whole-World Stock</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">$677.78</td>
+					<td style="text-align: left">Whole-World Stock</td>
+					<td style="text-align: left">US Tilt Equity</td>
+			</tr>
+	</tbody>
+</table>
+<p>Is it possible to balance our portfolio using shorter sequence of exchanges?</p>
+<h1 id="yes">Yes</h1>
+<p>It&rsquo;s possible to rebalance this portfolio in two transactions:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: right">Exchange amount</th>
+					<th style="text-align: left">From fund</th>
+					<th style="text-align: left">To fund</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: right">$61.11</td>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: left">US Tilt Equity</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">$50.00</td>
+					<td style="text-align: left">Bond Fund</td>
+					<td style="text-align: left">US Tilt Equity</td>
+			</tr>
+	</tbody>
+</table>
+<p>This results in the following holdings, which you can verify meet the target
+allocation:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Fund</th>
+					<th style="text-align: right">Current holding</th>
+					<th style="text-align: right">Rebalanced holding</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Whole-World Stock</td>
+					<td style="text-align: right">$100.00</td>
+					<td style="text-align: right">$100.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">US Tilt Equity</td>
+					<td style="text-align: right">$100.00</td>
+					<td style="text-align: right">$211.11</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Strategy 90/10</td>
+					<td style="text-align: right">$500.00</td>
+					<td style="text-align: right">$500.00</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Ex-US Fund</td>
+					<td style="text-align: right">$250.00</td>
+					<td style="text-align: right">$188.89</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bond Fund</td>
+					<td style="text-align: right">$50.00</td>
+					<td style="text-align: right"></td>
+			</tr>
+	</tbody>
+</table>
+<p>Maybe you were able to identify the two-transaction solution to this problem by
+staring at the data and thinking about it. But in the general case, with large
+numbers of funds or allocation categories, that&rsquo;s impractical. Instead, we can
+find the shortest rebalancing sequence using a mixed-integer linear program.</p>
+<h1 id="the-linear-program">The linear program</h1>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_{ij} \geq 0</annotation></semantics></math></span> denote the amount of fund <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>
+that we exchange for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span>. This variable can&rsquo;t go negative;
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ji}</annotation></semantics></math></span> represents an exchange in the other direction.</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">h_i</annotation></semantics></math></span> denote our initial holdings of fund <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>.
+After applying the transactions <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span>, our rebalanced holdings
+of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> are</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mi>i</mi></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub><mo>−</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
+y_i(X) = h_i + \sum_{j=1}^n x_{ji} - \sum_{j=1}^n x_{ij}
+</annotation></semantics></math></span>
+
+<p>which is a linear function of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span>.</p>
+<p>We&rsquo;ll use a matrix <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span> to denote the composition of the various
+funds on offer: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>k</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{ki}</annotation></semantics></math></span> is the proportion of fund
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> that aligns to category <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span>. (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span>
+is the transpose of the asset composition table from earlier.)</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">t_k</annotation></semantics></math></span> denote our target allocation for category
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span>. Actually, it will be easier to work with
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub><mo>=</mo><msub><mi>t</mi><mi>k</mi></msub><mo>∑</mo><msub><mi>h</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">d_k = t_k \sum h_i</annotation></semantics></math></span>, which is just <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">t_k</annotation></semantics></math></span> rescaled
+to currency units, or the number of &ldquo;dollars&rdquo; we have invested in each of the
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span> asset categories.</p>
+<p>We want to minimize the number of nonzero entries in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span>. To model
+this, we apply the standard integer programming trick of introducing a helper
+binary variable <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">z_{ij}</annotation></semantics></math></span> which is zero only if
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{ij}</annotation></semantics></math></span> is. The objective function is then just the sum of
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span>&rsquo;s elements.</p>
+<p>Here is the completed linear program:</p>
+
+  <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>minimize</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>∑</mo><msub><mi>z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>subject to</mtext><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>C</mi><mi>y</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>d</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(portfolio is balanced)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>y</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>≥</mo><mn mathvariant="bold">0</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(final holdings nonnegative)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>X</mi><mo>≤</mo><mi>M</mi><mi>Z</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>(</mtext><msub><mi>z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mtext> behave as intended)</mtext></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>X</mi><mo>≥</mo><mn mathvariant="bold">0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><msub><mi>z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mtext> binary</mtext></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+  \text{minimize} \quad     &amp; \sum z_{ij} \\
+  \text{subject to} \quad   &amp; Cy(x) = d &amp; \text{(portfolio is balanced)}\\
+                            &amp; y(x) \geq \mathbf{0} &amp; \text{(final holdings nonnegative)}\\
+                            &amp; X \leq MZ &amp; \text{(}z_{ij}\text{ behave as intended)} \\
+                            &amp; X \geq \mathbf{0} \\
+                            &amp; z_{ij} \text{ binary}
+\end{aligned}
+</annotation></semantics></math></span>
+
+<p>The <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≤</mo><mi>M</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">X \leq MZ</annotation></semantics></math></span> is a large constant; I used
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∑</mo><msub><mi>h</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">M = \sum h_i</annotation></semantics></math></span>.</p>
+<p>To avoid taking ourselves too seriously, we&rsquo;ve used typical sloppy operations
+researcher notation: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≥</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \geq b</annotation></semantics></math></span> for vectors or matrices means the
+inequality holds between corresponding elements, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span> and
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span> are technically not matrices because they aren&rsquo;t defined on
+the diagonal, etc.</p>
+<h1 id="the-code">The code</h1>
+<p>The rest is just <a href="https://github.com/maxkapur/portfolio_rebalancing">coding</a>. At
+that link, I implemented the integer program in Python using the
+<a href="https://pyscipopt.readthedocs.io/en/latest/index.html">PySCIPOpt</a> bindings for
+the <a href="https://scipopt.org/">SCIP</a> solver. <a href="https://www.pyomo.org/">Pyomo</a> is the
+more popular Python library for this kind of work, but I thought the simplicity
+of PySCIPOpt was a better match to this task.</p>
+<p>My human-written code specifies the problem as above, solves it, and renders the
+results as Markdown tables that I pasted above.</p>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> ⓒ 2016–2026 Max Kapur. Licenses:
+  CC BY-SA 4.0 (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>
