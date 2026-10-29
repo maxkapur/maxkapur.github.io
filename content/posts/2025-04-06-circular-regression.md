@@ -1,6 +1,7 @@
 +++
 title = "Circular regression when you already know the period"
 aliases = [ "/2025/04/06/circular-regression.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/04/06/circular-regression"
@@ -133,7 +134,7 @@ well.](/assets/images/cyclical-data-with-fit.svg)
 # Notes
 
 **When to retain the linearized parameterization:** In the Python code above, we
-computed {{< math "\phi" />}} and {{< math "A" />}} just to demonstrate that the technique actually
+computed {{< math "\phi" />}} and {{< math "A" />}} to demonstrate that the technique actually
 works. But the code will throw a zero-division error at the computation of
 `A_pred` if {{< math "\phi" />}} is a multiple of {{< math "\pi / 2" />}} (which happens when one of the
 {{< math "\beta_j = 0" />}}). In practice, I recommend discarding the {{< math "A" />}} and {{< math "\phi" />}}

@@ -1,6 +1,7 @@
 +++
 title = "Is ABC-SMC just an evolutionary algorithm?"
 aliases = [ "/2025/09/03/abc-smc-evolutionary-algorithm.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/09/03/abc-smc-evolutionary-algorithm"
@@ -67,9 +68,10 @@ the probability distribution implied. This is useful because for many
 statistical models, we can easily *construct* a likelihood function
 ([PyMC](https://www.pymc.io/welcome.html) will do it for us), but maximizing
 {{< math "l(\theta)" />}} is hard (for example, due to nonconcavity or expensive gradient
-computations). With MCMC, we can just draw samples from the posterior {{< math "P(\theta | D)" />}}, which produces not only a point estimate for each entry of {{< math "\theta" />}},
-but also confidence bounds, their covariance … indeed, an estimate of the entire
-distribution.
+computations). With MCMC, we need only to draw samples from the posterior
+{{< math "P(\theta | D)" />}}, which produces not only a point estimate for each
+entry of {{< math "\theta" />}}, but also confidence bounds, their covariance …
+indeed, an estimate of the entire distribution.
 
 Unfortunately, MCMC proves inadequate for regression problems (many involving
 rank and order statistics) where we cannot write out the likelihood function in
@@ -84,7 +86,7 @@ I admit I haven't tried). Thus, we turn to ABC.
 
 ABC is a sketchy alternative to MCMC which works even when we cannot compute a
 likelihood function. All we need is the ability to sample data from the model
-for given values of {{< math "\theta" />}}, just like our problem. [The ABC rejection
+for given values of {{< math "\theta" />}}, as in our problem. [The ABC rejection
 algorithm](https://en.wikipedia.org/wiki/Approximate_Bayesian_computation#The_ABC_rejection_algorithm)
 is basically this:
 
@@ -99,9 +101,9 @@ many times it will loop before accepting {{< math "N" />}} posterior samples. To
 the sample's accuracy, step 4 tempts us to set {{< math "\varepsilon" />}} close to zero.
 But doing so might drive the acceptance rate down to 0.1%, in which case we must
 draw millions of samples from the prior to get thousands from the posterior. (We
-might as well just figure out how many iterations we can afford to compute—say,
-100,000—and accept the 1000 samples of {{< math "\theta" />}} with the lowest distance
-measure. Sound familiar?)
+might as well start by budgeting out how many iterations we can afford to
+compute—say, 100,000—then resolve to accept the 1000 samples of {{< math
+"\theta" />}} with the lowest distance measure. Sound familiar?)
 
 We can tame the ABC rejection algorithm using a modification called sequential
 Monte Carlo (SMC); [here is a good tutorial
@@ -157,7 +159,7 @@ instead of imposing a series of decreasing tolerance, we could choose a fixed,
 large *sample size* from which we always accept the top {{< math "N" />}} by distance.
 Because the samples converge,[^tuning] the sequence of (implicit) tolerances
 still decreases, so this algorithm should still afford the Bayesian
-interpretation of producing a *sample from the posterior* (not just a point
+interpretation of producing a *sample from the posterior* (not only a point
 estimate of {{< math "\theta" />}}). But this modification makes the algorithm's runtime and
 memory usage deterministic, a desirable property (for example, it lets us
 preallocate all the arrays for a performance boost).
@@ -182,7 +184,7 @@ correlation that warrant further investigation.
 [^details]: And we should take care to ensure that the size of each sample
     {{< math "D'_i" />}} is sufficiently large to ward off a [winner's
     curse](https://en.wikipedia.org/wiki/Winner%27s_curse) outcome where the
-    {{< math "\theta" />}} you return is actually a good estimate, not just a "lucky"
+    {{< math "\theta" />}} you return is actually a good estimate, not a "lucky"
     instance where all the noise happened to point in the right direction.
 
 [^superficial]: Another difference between the algorithms as I laid them out is

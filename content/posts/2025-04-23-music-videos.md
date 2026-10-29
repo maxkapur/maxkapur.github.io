@@ -1,16 +1,17 @@
 +++
 title = "Music videos"
 aliases = [ "/2025/04/23/music-videos.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/04/23/music-videos"
 +++
 
-A side effect of my refusal to subscribe to Spotify (I just buy albums on
-Bandcamp or used CDs) is that when someone sends me a song to listen to, I
-usually look it up on YouTube and end up watching the music video. Because of
-this, there are some songs or artists that I like more than I might have without
-the video because the video adds an additional layer of interpretation.
+A side effect of my refusal to subscribe to Spotify (I buy albums on Bandcamp or
+used CDs) is that when someone sends me a song to listen to, I usually look it
+up on YouTube and end up watching the music video. Because of this, there are
+some songs or artists that I like more than I might have without the video
+because the video adds an additional layer of interpretation.
 
 I think I had mentally blocked myself from verbalizing this thought before
 because of my background as a musician. I would like to think of myself as

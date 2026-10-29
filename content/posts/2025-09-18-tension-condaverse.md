@@ -1,6 +1,7 @@
 +++
 title = "Tensions rise in the condaverse"
 aliases = [ "/2025/09/18/tension-condaverse.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/09/18/tension-condaverse"
@@ -18,14 +19,14 @@ and now
 But there have been some issues with the rollout.
 
 The main appeal of conda over something like
-[Poetry](https://python-poetry.org/), [uv](https://docs.astral.sh/uv/), or just
+[Poetry](https://python-poetry.org/), [uv](https://docs.astral.sh/uv/), or
 plain-old `requirements.txt` is that conda can manage arbitrary dependencies,
-not just Python packages. You can
-`conda create --no-default-packages git micro compilers` to set up a Fortran dev
-environment if you want. Dependabot's conda support includes only Python
-packages. A few folks grumbled about this limitation in the GitHub issue
-comments, but it’s understandable: The space of "all conda installable packages"
-is vast indeed, and the Dependabot devs had to start somewhere.
+even beyond Python packages. You can set up a mean Fortran dev environment using
+`conda create --no-default-packages git micro compilers` if you want. But
+Dependabot's conda support includes only Python packages. A few folks grumbled
+about this limitation in the GitHub issue comments, but it’s understandable: The
+space of "all conda installable packages" is vast indeed, and the Dependabot
+team had to start somewhere.
 
 A more compelling criticism of the new feature stems from the fact that
 Dependabot determines the latest versions of Python packages by looking up the

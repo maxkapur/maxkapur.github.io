@@ -2,6 +2,7 @@
 title = "Apply to fifty colleges"
 aliases = [ "/2022/09/01/apply-fifty-colleges.html",]
 summary = "In this post, we’ll use fake numbers and a simplified model to argue that the most college applicants should apply to far more colleges than they actually do. You can probably extend the argument to job applications and the dating game. I’ll also compute a few fake comparative statics and speculate about why real students don’t apply to more schools."
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2022/09/01/apply-fifty-colleges"
@@ -108,7 +109,7 @@ In other words, our comparative statics analysis revealed an error in our so-cal
 
 Most students apply to ten or so colleges. Why not more? What do they know that our model doesn’t?
 
-One idea that might come to mind if you’ve played with [Mulberry](https://maxkapur.com/mulberry/) is that most students apply not just to elite schools and a safety school, but also to a continuum of “target schools” in between. Target schools have higher admissions odds, and indeed make up the [bulk of the admissions market](https://www.pewresearch.org/fact-tank/2019/04/09/a-majority-of-u-s-colleges-admit-most-students-who-apply/). This observation isn’t enough to explain real students’ small application portfolios, however, because elite universities also are (perceived as) much more valuable than target schools.
+One idea that might come to mind if you play with [Mulberry](https://maxkapur.com/mulberry/) is that most students apply not only to elite schools and a safety school, but also to a continuum of “target schools” in between. Target schools have higher admissions odds, and indeed make up the [bulk of the admissions market](https://www.pewresearch.org/fact-tank/2019/04/09/a-majority-of-u-s-colleges-admit-most-students-who-apply/). This observation isn’t enough to explain real students’ small application portfolios, however, because elite universities also are (perceived as) much more valuable than target schools.
 
 The model above can also be applied to a student who has already applied to safety and target schools and is trying to decide how many reach schools to add to her portfolio: Simply discount {{< math "t" />}} to reflect the value of a degree from an elite school relative to the (actuarial) value of a degree from a target school. Conservatively, if we hack {{< math "t" />}} all the way down to \$200k, take {{< math "p = 0.2" />}}, and {{< math "c = 200" />}}, we *still* get a hefty {{< math "x^* = 24" />}}.
 
@@ -120,13 +121,13 @@ Here’s what I think is really going on: Students don’t apply to zillions of 
 
 What, in dollar terms, is the value of the subjective cost students associate with college application, after taking into account this risk aversion? Let’s stick with our conservative {{< math "t = 200000" />}} and {{< math "p = 0.2" />}} scenario, and turn the question around: Given that most students apply to about a dozen colleges, what application cost {{< math "c" />}} makes this number of applications optimal?
 
-To figure this out, we just need to solve our {{< math "x^*" />}} equation for {{< math "c" />}}. The answer is
+To figure this out, we solve our {{< math "x^*" />}} equation for {{< math "c" />}}:
 
 {{< math >}}
 c = - t (1 - p)^x \log{\left(1 - p \right)}
 {{< /math >}}
 
-and plugging in the numbers yields {{< math "c = 3067" />}} dollars per application.
+Plugging in the numbers yields {{< math "c = 3067" />}} dollars per application.
 
 Remember: These numbers are fake. But we have made a plausible argument that the majority of the costs incurred in the college application process are psychological, rather than material. If you can overcome the psychological costs, then by applying to thirty or fifty colleges, you may be able to reap significant material rewards.
 

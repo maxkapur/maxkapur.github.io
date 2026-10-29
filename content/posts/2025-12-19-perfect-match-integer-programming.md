@@ -1,6 +1,7 @@
 +++
 title = "Find your perfect match with integer programming"
 aliases = [ "/2025/12/19/perfect-match-integer-programming.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/12/19/perfect-match-integer-programming"
@@ -35,7 +36,7 @@ seasons.
 <!--more-->
 
 (I will style the name of the show as *Are You the One?* and the name of the
-underlying game as just Are You the One.)
+underlying game as Are You the One.)
 
 # Owen's algorithm: Eliminate alternatives with information theory
 
@@ -180,7 +181,7 @@ The solution to the following IP is called the *best matching:*
 The first two constraints define the
 [bipartite matching polytope](https://en.wikipedia.org/wiki/Assignment_problem#Solution_by_linear_programming).
 The following three constraints require that {{< math "x_{ij}" />}} agree with our clues.
-The final constraint just says that {{< math "x_{ij}" />}} is binary (not a fraction).
+The final constraint says that {{< math "x_{ij}" />}} is binary (not a fraction).
 
 ## Truth Booth algorithm
 
@@ -322,8 +323,8 @@ exploration and exploitation.
 I doubt that my algorithm attains the optimal probability of winning for
 my problem setup, even in the special case of experiment&nbsp;3 (where the 100% figure
 is merely empirical; if you keep running my script, you'll see losses here and there).
-The information-theoretic concepts introduced in Owen's blog post can be applied to arbitrary, not just
-uniform, distributions over matchings, including the conditional distribution of
+The information-theoretic concepts introduced in Owen's blog post can be applied to arbitrary
+(not just uniform) distributions over matchings, including the conditional distribution of
 the ground-truth matching on the vibes {{< math "v_{ij}" />}}. If you can estimate that
 distribution (more simulations&nbsp;…), then you
 can compute the entropies in Owen's algorithm as weighted averages over

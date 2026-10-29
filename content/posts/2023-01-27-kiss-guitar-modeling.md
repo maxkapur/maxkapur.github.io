@@ -1,6 +1,7 @@
 +++
 title = "Applying the KISS principle to amp modeling"
 aliases = [ "/2023/01/27/kiss-guitar-modeling.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2023/01/27/kiss-guitar-modeling"
@@ -22,14 +23,15 @@ With a physical amp, you experience each note in several different ways: the phy
 A digital amp model, even one with low latency and good dynamic response, can sound sterile and distant when fed into headphones or bookshelf monitors because it doesn’t provide these rich audiospatial cues.
 I rely on three devices to create a sense of physical space in my simulated guitar sound:
 
-- Delaying the right channel by 20–40 ms.
-Just a simple sample delay at any point in the signal chain will do.
-It creates the sense of an amp sitting just to the left of your head, but still filling the room with sound.
-- Judicious use of a chorus effect.
-This also helps cut through the mix when playing along with recordings.
-- Rolling off the bass a little.
-The principle here is that if your overall sound has a heavy low end, then your body will expect to feel sympathetic vibrations through the floor and chair.
-By opting for a warmer tone, you remove this cue.
+- Delaying the right channel by 20–40 ms. A simple sample delay at any
+  point in the signal chain will do. It creates the sense of an amp sitting just
+  to the left of your head, but still filling the room with sound.
+- Judicious use of a chorus effect. This also helps cut through the mix when
+  playing along with recordings.
+- Rolling off the bass a little. The principle here is that if your overall
+  sound has a heavy low end, then your body will expect to feel sympathetic
+  vibrations through the floor and chair. By opting for a warmer tone, you
+  remove this cue.
 
 My primary goal is to keep my setup as simple and portable as possible.
 I don’t subscribe to a particular chorus or reverb effect, nor do I have any impulse response files I couldn’t live without.

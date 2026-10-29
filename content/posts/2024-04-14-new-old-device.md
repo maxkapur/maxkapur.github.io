@@ -1,6 +1,7 @@
 +++
 title = "New old device"
 aliases = [ "/2024/04/14/new-old-device.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/04/14/new-old-device"
@@ -36,12 +37,12 @@ image viewing.[^imageview]
 [^imageview]: Image viewing works even on the Clip’s simple two-color display. It uses random [dithering](https://en.wikipedia.org/wiki/Dither) to represent fractional lightness values, and rerolls the randomness with each screen refresh to produce a nice composition effect. This kills the battery in short time.
 
 Rockbox distributes an installation wizard for Linux platforms, but I couldn’t
-get it to work (it 404’d trying to download the fonts package[^404]). Fortunately,
-the “manual” installation isn’t hard. You just download one of the official
-firmware updates from Sandisk, then apply Rockbox’s patch and transfer the
-result to the device’s root directory. By design, the Clip attempts to execute
-*any* file in the root directory whose name matches a certain pattern. This
-firmware update mechanism was a welcome convenience for tinkerers, but it’s
+get it to work (it 404’d trying to download the fonts package[^404]).
+Fortunately, the “manual” installation isn’t hard. You download one of the
+official firmware updates from Sandisk, then apply Rockbox’s patch and transfer
+the result to the device’s root directory. By design, the Clip attempts to
+execute *any* file in the root directory whose name matches a certain pattern.
+This firmware update mechanism was a welcome convenience for tinkerers, but it’s
 probably too insecure for today’s internet-mandatory smartphones.
 
 [^404]: I wasn’t sure how best to spell *404’d,* and couldn’t find the verb form in any of the dictionaries I checked, but I settled on this spelling by comparison with a reference to *86’d* in this [Merriam-Webster article](https://www.merriam-webster.com/wordplay/eighty-six-meaning-origin). The more you know.

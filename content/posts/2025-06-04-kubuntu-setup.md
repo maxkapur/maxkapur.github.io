@@ -1,6 +1,7 @@
 +++
 title = "My poorly automated Kubuntu setup"
 aliases = [ "/2025/06/04/kubuntu-setup.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/06/04/kubuntu-setup"
@@ -56,8 +57,8 @@ opportunities for automation.
     repos.
 
     💻 Automated. I created this script for the first time as part of this setup.
-    In the past, I just installed packages as I thought of them. Eventually I
-    want to integrate `setup.sh` with my dotfiles.
+    In the past, I installed packages as I thought of them. Eventually I want to
+    integrate `setup.sh` with my dotfiles.
 
 05. **Set up Nextcloud** using the desktop client (installed in `setup.sh`).
     Configure offline folders.

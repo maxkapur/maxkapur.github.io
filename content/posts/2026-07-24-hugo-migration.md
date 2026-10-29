@@ -1,5 +1,6 @@
 +++
 title = 'Hugo migration'
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = 'tag:max@maxkapur.com,2026-05-27:posts/2026-07-17-hugo-migration'
@@ -20,5 +21,4 @@ attention where needed.
 
 I think/hope it worked. Old post links will redirect you to the new URLs. For
 RSS subscribers, depending on how your reader is configured, you may pick up a
-new copy of every post; you can just mark as read everything before today's
-date.
+new copy of every post; you can mark as read everything before today's date.

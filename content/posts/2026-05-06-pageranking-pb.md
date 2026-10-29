@@ -1,6 +1,7 @@
 +++
 title = "PageRanking People and Blogs interviews"
 aliases = [ "/2026/05/06/pageranking-pb.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2026/05/06/pageranking-pb"
@@ -32,8 +33,9 @@ A few observations from this exercise below.
 
 - I computed the stationary distribution explicitly using `ndarray_linalg::eig`
   because that's one of the libraries I was fiddling with, but for a graph with
-  a large number of nodes, storing the {{< math "O(n^2)" />}} Markov array in memory is
-  impractical; you'd be better off just simulating the random jumps instead.
+  a large number of nodes, storing the {{< math "O(n^2)" />}} Markov array in
+  memory is impractical; you'd be better off simulating the random jumps
+  instead.
 - A Monte Carlo simulation would yield cleaner code than my solution, too. Most
   of the bugs I had to fix in my implementation had to do with constructing the
   Markov matrix, normalizing columns, and handling edge cases like nodes with
