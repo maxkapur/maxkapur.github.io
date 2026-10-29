@@ -1,6 +1,7 @@
 +++
 title = "Housekeeping"
 aliases = [ "/2024/03/10/housekeeping.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/03/10/housekeeping"
@@ -9,19 +10,17 @@ id = "https://maxkapur.com/2024/03/10/housekeeping"
 Completed some overdue site maintenance over the past few weeks:
 
 - **RSS feed styling:**
-  With help from a
-  [template found on GitHub](https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f),
-  I created a stylesheet for the RSS feed so that it looks nice when
-  viewed in the browser. Ctrl+F “via RSS” on this page to find the link,
-  or just scroll all the way to the bottom, or maybe
-  [try this link](/feed.xml).
+  With help from a [template found on
+  GitHub](https://gist.github.com/andrewstiefel/57a0a400aa2deb6c9fe18c6da4e16e0f),
+  I created a stylesheet for the RSS feed so that it looks nice when viewed in
+  the browser. Ctrl+F “via RSS” on this page to find the link, or scroll all the
+  way to the bottom, or maybe [try this link](/feed.xml).
 
-  I am not a big consumer of RSS feeds myself; I prefer to just
-  bookmark blog URLs and read posts in their original context. But RSS
-  is an important bit of
+  I am not a big consumer of RSS feeds myself; I prefer to bookmark blog URLs
+  and read posts in their original context. But RSS is an important bit of
   [plumbing](https://inessential.com/2013/03/14/why_i_love_rss_and_you_do_too.html)
-  for the indie web, and probably covers accessibility use cases
-  that I haven’t anticipated.
+  for the indie web, and probably covers accessibility use cases that I haven’t
+  anticipated.
 
   (Technically, I am serving an Atom feed rather than RSS, but
   [people use the terms interchangeably](https://indieweb.org/RSS).)

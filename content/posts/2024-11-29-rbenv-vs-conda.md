@@ -1,6 +1,7 @@
 +++
 title = "Replacing rbenv with conda"
 aliases = [ "/2024/11/29/rbenv-vs-conda.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/11/29/rbenv-vs-conda"
@@ -72,7 +73,7 @@ After installing conda (and [mamba](https://github.com/mamba-org/mamba) because
 why not), I created build scripts `configure.sh`, `build.sh`, and so on that
 simply wrap `mamba create` and `mamba run`. The
 [GitHub Action that builds the site](https://github.com/maxkapur/maxkapur.github.io/actions/runs/11923546983/workflow)
-is now basically just this:
+is now reduced to this:
 
 ```shell
 ./configure.sh  # Create the conda environment and run bundle install
@@ -94,5 +95,5 @@ Alas, my GitHub Action workflow still has one third-party dependency: The
 action. Despite the name, it can set up either Miniconda or Miniforge, and it is
 a little easier to work with than Miniforge’s interactive installer script.
 
-I *think* this is a sustainable solution, although those are probably bold words
-from the guy who just set all this up last week.
+I *think* this is a sustainable solution, although those are bold words for a
+guy who set all this up last week.

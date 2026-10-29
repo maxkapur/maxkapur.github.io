@@ -1,6 +1,7 @@
 +++
 title = "A handy class of submodular functions"
 aliases = [ "/2024/01/01/handy-submodular.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/01/01/handy-submodular"
@@ -59,8 +60,8 @@ winter is one minus the probability that all of them are closed, which is {{< ma
 
 With this interpretation in mind, we are tempted to give {{< math "f(X)" />}} a
 tortured-but-accurate name such as the “parallel process success probability
-with quality upgrades” function—but we’ll just stick with
-{{< math "f(X)" />}} for now.
+with quality upgrades” function—but we’ll stick with {{< math "f(X)" />}} for
+now.
 
 The applicability of {{< math "f(X)" />}} in its current form is, admittedly, a bit
 narrow. The versatility of this functional form shows itself more clearly
@@ -103,9 +104,9 @@ f(X \cup \{j\}) - f(X)
 \end{aligned}
 {{< /math >}}
 
-The penultimate inequality follows from monotonicity, and the final
-equality is just applying the first three steps in reverse, with {{< math "Y" />}}
-instead of {{< math "X." />}}
+The penultimate inequality follows from monotonicity, and the final equality by
+applying the first three steps in reverse, with {{< math "Y" />}} instead of
+{{< math "X." />}}
 
 In the {{< math "p_j = 1" />}} case, {{< math "f(X \cup \{j\}) = 1" />}} for any {{< math "X" />}} and
 the inequality collapses to {{< math "- f(X) \geq - f(Y)," />}} which is just
@@ -129,7 +130,7 @@ g(X) = 1 - \prod_{i \in X} (1 - s_i)
 {{< /math >}}
 
 of the way to the destination from your starting point. This {{< math "g(X)" />}}
-is just {{< math "f(X)" />}} where each {{< math "p_i = 0" />}} and {{< math "q_i = s_i" />}}.
+is {{< math "f(X)" />}} where each {{< math "p_i = 0" />}} and {{< math "q_i = s_i" />}}.
 
 **The multidimensional Zeno walk:** Now, consider a process optimization
 problem. We have a set {{< math "\Psi" />}} (indexed by {{< math "j" />}}) of *goals* to achieve,
@@ -220,7 +221,7 @@ Paywall:
 
 [^zeno]: In the original Zeno walk, each {{< math "s_i = \frac{1}{2}," />}} and the (supposedly unachievable) “goal” is to reach the destination rather than to get as close as possible to it.
 
-[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively—but that would just be a knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than {{< math "k" />}} units of joy” may separately elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
+[^whatever]: Depending on the context, it may be more appropriate to have tasks advance goals additively—the knapsack problem. Here, we are interested in the more difficult case where tasks make diminishing marginal contributions against the goals. One way this arises in real life is when tasks address goals in redundant ways. For example, against the goal “get rid of all the junk in my house,” the tasks “throw away any items not used in the past six months” and “throw away any items that spark fewer than {{< math "k" />}} units of joy” may separately elicit a 50 percent reduction in the total junk, but doing *both* tasks won’t necessarily remove all the junk, because there is some overlap in the junk removed by both operations.
 
 [^conic]: The fact that a conic combination of submodular functions is submodular isn’t mentioned on the [Wikipedia article](https://en.wikipedia.org/wiki/Submodular_set_function), but it falls right out of the second definition.
 

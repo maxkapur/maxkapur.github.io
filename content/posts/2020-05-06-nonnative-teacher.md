@@ -1,6 +1,7 @@
 +++
 title = "The benefits of a nonnative teacher"
 aliases = [ "/2020/05/06/nonnative-teacher.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2020/05/06/nonnative-teacher"
@@ -19,8 +20,8 @@ say *I am going to school* but wrong to say *I am going to home?* A native
 speaker has to think about this: Is there a reason we drop the *to* before
 *home,* maybe something to do with the fact that you can attend, in theory,
 multiple schools but can have only one true home? Or is it because it just
-“sounds better”? Or maybe it’s just a random exception, but then, which one is
-the exception and which one is the rule?
+“sounds better”? Or maybe it’s a random exception, but then, which one is the
+exception and which one is the rule?
 
 Someone who learned English as an adult can tell you immediately that *I am
 going home* is a random exception, and that *to* is the rule when you are going
@@ -92,12 +93,12 @@ and eliminates choice A because standardized examinations test rules, not
 exceptions.
 
 Now, native speakers can learn to speak abstractly about grammar like nonnative
-speakers do, but it’s an acquired skill, just like algebra. While it’s
-theoretically possible for a native speaker to deduce the rules of his
-language’s grammar from first principles, a speaker who learned the language as
-an adult learned those rules at the same time, whereas native teachers like me
-have to scramble through Google to find answers or make up rules that seem right
-at first but collapse upon inspection.
+speakers do, but it’s an acquired skill. While it’s theoretically possible for a
+native speaker to deduce the rules of his language’s grammar from first
+principles, a speaker who learned the language as an adult learned those rules
+at the same time, whereas native teachers like me have to scramble through
+Google to find answers or make up rules that seem right at first but collapse
+upon inspection.
 
 I have learned a great deal of Korean from native speakers, but my foundation in
 the Korean language was established in a class at the UW taught by an American.

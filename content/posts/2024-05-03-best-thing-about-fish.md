@@ -1,6 +1,7 @@
 +++
 title = "The best thing about fish"
 aliases = [ "/2024/05/03/best-thing-about-fish.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/05/03/best-thing-about-fish"
@@ -19,13 +20,12 @@ pressing <kbd>Tab</kbd>. If there are multiple matches, you use the arrow keys
 to scroll through them until you get the one you want.
 
 This works fine if you put the most-unique part of your filenames at the
-beginning. But I like to begin my filenames with
-[ISO dates](/posts/2024-04-26-iso-dates-filenames/),
-so to tab-complete `2024-03-06_blog_post_idea.md` in PowerShell, I have to
-type `2024` and then jab the arrow key a bunch of times, which is like using a
-phone book that is sorted by phone number. In fish, I can just type `blogpost`
-(even without the underscore) and it will autocomplete to
-`2024-03-06_blog_post_idea.md`.
+beginning. But I like to begin my filenames with [ISO
+dates](/posts/2024-04-26-iso-dates-filenames/), so to tab-complete
+`2024-03-06_blog_post_idea.md` in PowerShell, I have to type `2024` and then jab
+the arrow key a bunch of times, which is like using a phone book that is sorted
+by phone number. In fish, `blogpost` (even without the underscore) will
+tab-complete to `2024-03-06_blog_post_idea.md`.
 
 Similar completions work for the options of most command-line programs, and it’s
 (relatively) easy to extend the built-in completions with your own

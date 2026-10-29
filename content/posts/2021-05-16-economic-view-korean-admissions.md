@@ -1,6 +1,7 @@
 +++
 title = "An economic view of the Korean college admissions market"
 aliases = [ "/2021/05/16/economic-view-korean-admissions.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2021/05/16/economic-view-korean-admissions"
@@ -27,4 +28,4 @@ Why study the Korean college admissions market from an economic perspective? Any
 
 Loosely speaking, when the preference orders are more or less random, the set of possible stable assignments is relatively large, and we can start to &ldquo;play&rdquo; with other distributional goals, like trying to obtain gender parity at each university while preserving overall stability. This is what a lot of current papers in stable assignment are doing now. However, in a stylized Korean admissions market in which most students have a similar preference order over the schools <em>and</em> all schools assess students in the same way, there is only one stable assignment (as I can show mathematically). Although we don&rsquo;t get to play with distributional goals, because the stable assignment is unique, we can examine it in greater detail, and compute comparative statics such as the marginal effect of a change in student population on the selectivity of each university.
 
-Another reason to take a closer look at correlated admissions procedures like the one used in Korea is that such market designs are common around the world, not just in Asia, but also in many European countries and in local school-choice markets in places like New York City. It&rsquo;s cool, if you know how to program, that we have a simple algorithm for computing stable assignments in arbitrary discrete admissions markets given lists of student and school preferences. But by narrowing our focus to the case of correlated admissions, we can make more ambitious quantitative predictions about the long-run behavior of the market, including, hopefully, computing the efficiency cost of admissions quotas and limits on the number of applications each student has.
+Another reason to take a closer look at correlated admissions procedures like the one used in Korea is that such market designs are common around the world, not only in Asia, but also in many European countries and in local school-choice markets in places like New York City. It&rsquo;s cool, if you know how to program, that we have a simple algorithm for computing stable assignments in arbitrary discrete admissions markets given lists of student and school preferences. But by narrowing our focus to the case of correlated admissions, we can make more ambitious quantitative predictions about the long-run behavior of the market, including, hopefully, computing the efficiency cost of admissions quotas and limits on the number of applications each student has.

@@ -2,6 +2,7 @@
 title = "Why I put ISO dates in filenames"
 aliases = [ "/2024/04/26/iso-dates-filenames.html",]
 summary = "I am one of those obnoxious people who begins his filenames with an ISO date,\nlike `2024-03-06_blog_post_idea.md`. I know that file metadata already tracks\ncreation and revision dates, but I don't like those: The creation date is\nmisleading when you duplicate a file to reuse its format or content, and the\nrevision date is all but meaningless because modern software modifies files on\ndisk in all kinds of spurious ways. I put an ISO date in my filenames\nto assign them a *canonical* date. The canonical date means something like “the\nlast date at which this file underwent a significant change,” and I alone (not\nsoftware) can determine what that means."
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2024/04/26/iso-dates-filenames"
@@ -26,7 +27,7 @@ a new, ISO-datestamped copy) before making big changes despite knowing I can
 roll things back in our sync software (OneDrive). I do so because I have
 essentially unlimited storage space (1TB), and visiting the web UI means leaving
 the comfort of my local file manager for a terrible, laggy web app. But this
-practice is not just a matter of personal preference; it’s also a crucial
+practice is more than a personal preference; it’s also a crucial
 mitigation against the version-control issues wrought by the collaboration
 features of the “modern office tech stack.” See, I have colleagues who, at the
 end of their work day, leave their computer on with all their Office files
