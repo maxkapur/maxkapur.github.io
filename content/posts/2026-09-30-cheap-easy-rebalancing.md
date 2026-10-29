@@ -140,14 +140,14 @@ is the transpose of the asset composition table from earlier.)
 
 Let {{< math "t_k" />}} denote our target allocation for category
 {{< math "k" />}}. Actually, it will be easier to work with
-{{< math "d_k = t_k \sum h_i" />}}, which is just {{< math "t_k" />}} rescaled
+{{< math "d_k = t_k \sum h_i" />}}, which is {{< math "t_k" />}} rescaled
 to currency units, or the number of "dollars" we have invested in each of the
 {{< math "m" />}} asset categories. 
 
 We want to minimize the number of nonzero entries in {{< math "X" />}}. To model
 this, we apply the standard integer programming trick of introducing a helper
 binary variable {{< math "z_{ij}" />}} which is zero only if
-{{< math "x_{ij}" />}} is. The objective function is then just the sum of
+{{< math "x_{ij}" />}} is. The objective function is then the sum of
 {{< math "Z" />}}'s elements.
 
 Here is the completed linear program:
@@ -174,7 +174,7 @@ the diagonal, etc.
 
 # The code
 
-The rest is just [coding](https://github.com/maxkapur/portfolio_rebalancing). At
+The rest is [coding](https://github.com/maxkapur/portfolio_rebalancing). At
 that link, I implemented the integer program in Python using the
 [PySCIPOpt](https://pyscipopt.readthedocs.io/en/latest/index.html) bindings for
 the [SCIP](https://scipopt.org/) solver. [Pyomo](https://www.pyomo.org/) is the

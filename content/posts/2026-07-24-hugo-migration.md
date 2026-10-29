@@ -20,5 +20,4 @@ attention where needed.
 
 I think/hope it worked. Old post links will redirect you to the new URLs. For
 RSS subscribers, depending on how your reader is configured, you may pick up a
-new copy of every post; you can just mark as read everything before today's
-date.
+new copy of every post; you can mark as read everything before today's date.
