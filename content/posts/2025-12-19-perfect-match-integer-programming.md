@@ -1,6 +1,7 @@
 +++
 title = "Find your perfect match with integer programming"
 aliases = [ "/2025/12/19/perfect-match-integer-programming.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/12/19/perfect-match-integer-programming"

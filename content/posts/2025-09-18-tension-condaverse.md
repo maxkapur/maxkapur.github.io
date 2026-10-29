@@ -1,6 +1,7 @@
 +++
 title = "Tensions rise in the condaverse"
 aliases = [ "/2025/09/18/tension-condaverse.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/09/18/tension-condaverse"

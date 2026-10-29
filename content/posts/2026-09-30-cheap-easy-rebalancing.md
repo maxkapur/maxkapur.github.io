@@ -1,5 +1,6 @@
 +++
 title = 'Cheap(?) and easy(??) portfolio rebalancing'
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = 'tag:max@maxkapur.com,2026-05-27:posts/2026-09-30-cheap-easy-rebalancing'

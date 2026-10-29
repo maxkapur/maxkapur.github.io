@@ -1,6 +1,7 @@
 +++
 title = "Is ABC-SMC just an evolutionary algorithm?"
 aliases = [ "/2025/09/03/abc-smc-evolutionary-algorithm.html",]
+lastmod = 2026-10-29T16:11:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/09/03/abc-smc-evolutionary-algorithm"
