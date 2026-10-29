@@ -1,6 +1,7 @@
 +++
 title = "Is using a thesaurus cheating?"
 aliases = [ "/2025/06/18/thesaurus-cheating.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/06/18/thesaurus-cheating"
@@ -39,15 +40,14 @@ corrections, and supply keywords I can look up in an official reference—but
 never to generate code, text, or ideas. (Sometimes it does that anyway, which I
 find highly annoying.)
 
-“We use tools to embody their virtues,” writes
-[Fernando Borretti](https://borretti.me/article/you-can-choose-tools-that-make-you-happy).
-I guess I value [authenticity](/posts/2025-03-12-authenticity-ai-policy/)
-or craftsmanship—my fingerprints on the finished product—more highly than laying
+“We use tools to embody their virtues,” writes [Fernando
+Borretti](https://borretti.me/article/you-can-choose-tools-that-make-you-happy).
+I guess I value [authenticity](/posts/2025-03-12-authenticity-ai-policy/) or
+craftsmanship—my fingerprints on the finished product—more highly than laying
 down as much code or text as I can in a fixed amount of time. This value
-judgment (and it really is just that) precludes more aggressive uses of LLM tech
-that, yes, might make me more productive in the short term. I’ll own that
-tradeoff.
-When it comes to new technology, we often speak of “early” and “late”
+judgment (and that's really all it is) precludes more aggressive uses of LLM
+tech that, yes, might make me more productive in the short term. I’ll own that
+tradeoff. When it comes to new technology, we often speak of “early” and “late”
 adopters—as though tech literacy means no more than finding the smooth part of a
 hype wave. My goal is to adopt tools not on the basis of urgent marketing or the
 fear of being left behind, but because I can use that tool to make myself

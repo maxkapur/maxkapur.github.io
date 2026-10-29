@@ -1,6 +1,7 @@
 +++
 title = "Reasons it’s hard to abandon a smartphone"
 aliases = [ "/2025/04/16/need-smartphone.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/04/16/need-smartphone"
@@ -19,7 +20,7 @@ Reasons (excuses?) that I cannot
   to bother the staff to open the package room for you.
 - During the pandemic, Korea adopted a contact tracing system that involved
   scanning a QR code in an app on your phone at every business you entered. Many
-  businesses would let you just write your phone number on a clipboard as an
+  businesses would let you write your phone number on a clipboard as an
   alternative, but some (Starbucks) required the app. Was the app secure? Has
   the database ever been breached? I sure hope not.
 - Concert tickets from dice.fm. They have an exclusive deal with many venues

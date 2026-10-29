@@ -1,6 +1,7 @@
 +++
 title = "How I organize browser tabs"
 aliases = [ "/2025/04/30/organize-tabs.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/04/30/organize-tabs"
@@ -18,7 +19,7 @@ like, how annoyed would I be if I closed this by accident?
 - High priority: Things that I keep open all day (email, GitHub issues).
 - Medium priority: Documentation or reference material for the current task.
 - Low priority: Random ephemera, landing pages from clicking a confirmation
-  email, article I already read but just need to copy a quote from, etc.
+  email, article I already read but need to copy a quote from, etc.
 
 Whenever I start to have more than 15 or 20 tabs, I get a cramped feeling and
 start axing tabs from right to left until I arrive at one that I still want

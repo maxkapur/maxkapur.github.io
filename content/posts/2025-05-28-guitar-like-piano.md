@@ -1,6 +1,7 @@
 +++
 title = "Still playing guitar like piano"
 aliases = [ "/2025/05/28/guitar-like-piano.html",]
+lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
 id = "https://maxkapur.com/2025/05/28/guitar-like-piano"
@@ -8,7 +9,7 @@ id = "https://maxkapur.com/2025/05/28/guitar-like-piano"
 
 I still play the guitar like a piano. It’s most obvious when I try to play along
 with the lead guitar part in a recording of a two-guitar band. Often, the lead
-guitar just has a simple single-note riff or triads in the upper register, but I
+guitar has a simple single-note riff or triads in the upper register, but I
 cannot resist the impulse to insert bass notes in the “left hand” (often
 grabbing them with my thumb). It doesn’t feel like a complete part without them.
 
@@ -27,5 +28,5 @@ My pianist problem is that when I play the guitar with a capo, I can never
 decide whether to think in the transposed or concert key. The open chord
 voicings certainly are easiest to remember in the transposed key, but as soon as
 I need to play a melody higher on the neck, it’s like the capo isn’t there, and
-I have to think in concert key to make any sense of it. Most often, I just get
-really confused and put away the capo.
+I have to think in concert key to make any sense of it. Most often, I get
+confused and put away the capo.
