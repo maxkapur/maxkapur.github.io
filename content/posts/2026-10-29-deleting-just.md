@@ -1,6 +1,6 @@
 +++
 draft = true
-title = 'Deleting "just" from posts'
+title = "Deleting “just” from posts"
 
 [params]
 id = 'tag:max@maxkapur.com,2026-05-27:posts/2026-10-29-deleting-just'
