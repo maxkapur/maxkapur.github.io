@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Deleting “just” from posts"
 
 [params]
