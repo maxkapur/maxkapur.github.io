@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""t"""
+"""Remove EXIF data from JPG images.
+
+Use the default options recommended in the `exiftool` FAQ:
+https://exiftool.org/faq.html#Q32
+"""
 
 import subprocess
 import argparse
@@ -17,7 +21,6 @@ def main():
 
     files = list(DIR.glob("**/*.jpg"))
 
-    # https://exiftool.org/faq.html#Q32
     command = [
         "exiftool",
         "-ext",
