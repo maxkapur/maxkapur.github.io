@@ -10,6 +10,7 @@ prettier . --check
 ruff format --check
 ruff check
 shellcheck ./*.sh
+./remove_exif_data.py --dry-run
 
 # These checks don't
 TEMP_DIR="$(mktemp --directory)"
