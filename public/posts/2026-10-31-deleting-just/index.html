@@ -1,0 +1,151 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Illusion Slopes RSS Feed"
+  href="/feed.xml"
+/>
+
+<title>Deleting “just” from posts | Illusion Slopes</title>
+
+        <link
+          rel="stylesheet"
+          href="/css/style.6cf3173eb0cc0fb9a8c50d8e4529e0e9805fbade451f731607ecda8067887a6f.css"
+          integrity="sha256-bPMXPrDMD7moxQ2ORSng6YBfut5FH3MWB&#43;zagGeIem8="
+          crossorigin="anonymous"
+        />
+
+        <script
+          src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js"
+          integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE="
+          crossorigin="anonymous"
+        ></script>
+
+  </head>
+  <body>
+    <header class="body-header">
+      <div class="max-width-2"><div class="vertical-spacing centered">
+  <hgroup>
+    <h1>
+      <a class="subtle" href="https://maxkapur.com/">Illusion Slopes</a>
+    </h1>
+    <p class="subtitle">Max’s personal homepage</p>
+    </hgroup>
+  
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/about/">About</a
+      >
+    </li>
+    <li>
+      <a href="/pages/projects/">Projects</a
+      >
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a
+      >
+    </li>
+    </ul>
+  </nav>
+</div>
+</div>
+    </header>
+    <main class="max-width-2">
+  <article class="page-item layout-spacing">
+    <header class="article-header">
+      <h1>
+        <a class="subtle" href="/posts/2026-10-31-deleting-just/">Deleting “just” from posts</a>
+      </h1>
+      <p class="subtitle smaller"><span>
+  Posted <time datetime="2026-10-31T00:00:00&#43;00:00">October 31, 2026</time>
+
+  </span>
+</p>
+    </header>
+    <div class="article-content">
+      <p>I read that you can tighten up prose by avoiding the word &ldquo;just&rdquo; and thought,
+sure, let&rsquo;s try that.</p>
+<p>I found <a href="https://github.com/maxkapur/maxkapur.github.io/pull/110">43 offenders</a>
+on my blog. (I only went back to 2020 or so—anything older is beyond
+redemption.) The worst instances are those where &ldquo;just&rdquo; is used as a synonym of
+&ldquo;only,&rdquo; but that modifier is already implied by the sentence structure:</p>
+<blockquote>
+<p>A student who wishes to apply to a top university needs more than <del>just</del>
+confidence in her academic talent.</p>
+</blockquote>
+<p>Another tic of mine is to use &ldquo;just&rdquo; just to mean &ldquo;simply,&rdquo; when it&rsquo;s really up
+to the reader to decide whether what follows is simple:</p>
+<blockquote>
+<p>To figure this out, we <del>just need to</del> solve our <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">x^*</annotation></semantics></math></span> equation
+for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span>.</p>
+</blockquote>
+<p>I opted to let &ldquo;just&rdquo; stand in cases where it makes a sentence more precise:</p>
+<blockquote>
+<p>it takes just under two minutes</p>
+</blockquote>
+<p>I also think &ldquo;just&rdquo; pulls its weight when used to mean &ldquo;exactly&rdquo;:</p>
+<blockquote>
+<p>it&rsquo;s just the opposite</p>
+</blockquote>
+<p>Shell commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Finding removal candidates, one year at time</span>
+</span></span><span style="display:flex;"><span>git grep --line-number --extended-regexp --ignore-case <span style="color:#e6db74">&#39;\bjust\b&#39;</span> content/posts/2025*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># How many &#34;just&#34;s did I remove? (Probably some false positives)</span>
+</span></span><span style="display:flex;"><span>git diff master HEAD | grep -E <span style="color:#e6db74">&#39;^\-.*\bjust\b&#39;</span> | wc -l  <span style="color:#75715e"># 43</span>
+</span></span></code></pre></div>
+      
+
+    </div>
+    <footer class="article-footer smaller">
+      
+        <p>
+          <a href="/posts/">&larr; Posts</a>
+        </p>
+      
+    </footer>
+  </article>
+</main>
+    <footer class="body-footer">
+      <div class="max-width-2"><div class="vertical-spacing">
+  <div><p>
+  <strong>Illusion Slopes.</strong> ⓒ 2016–2026 Max Kapur. Licenses:
+  CC BY-SA 4.0 (content) and Apache (theme). See
+  <a href="https://github.com/maxkapur/maxkapur.github.io">GitHub</a> for source
+  code and license text.
+</p>
+</div>
+  <div class="footer-menu-wrapper">
+    
+  <nav>
+    <ul class="menu">
+    <li>
+      <a href="/pages/colophon/">Colophon</a
+      >
+    </li>
+    <li>
+      <a href="/pages/chipotle/">Chipotle</a
+      >
+    </li>
+    </ul>
+  </nav>
+<nav>
+      <a href="#">&uarr; Top of page</a>
+    </nav>
+  </div>
+</div>
+</div>
+    </footer>
+  </body>
+</html>
