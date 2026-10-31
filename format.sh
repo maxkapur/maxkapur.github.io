@@ -9,3 +9,4 @@ prettier . --write
 ruff format
 ruff check --fix
 shellcheck ./*.sh
+./remove_exif_data.py
