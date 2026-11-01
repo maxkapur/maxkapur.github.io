@@ -31,10 +31,11 @@ def main():
             path.copy(dest)
             cloned_paths.append(dest)
 
-        before_checksums = [checksum(path) for path in cloned_paths]
-
         if not cloned_paths:
-            return
+            sys.stderr.write(f"No .jpg files found in {DIR!s}\n")
+            sys.exit(1)
+
+        before_checksums = [checksum(path) for path in cloned_paths]
 
         command = [
             "exiftool",
