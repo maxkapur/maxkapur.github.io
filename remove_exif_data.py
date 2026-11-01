@@ -29,7 +29,6 @@ def main():
         "-tagsfromfile",
         "@",
         "-colorspacetags",
-        "-recurse",
     ]
     command += [str(path) for path in files]
     subprocess.run(command, check=True)
