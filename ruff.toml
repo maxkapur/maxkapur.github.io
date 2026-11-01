@@ -1,2 +1,8 @@
+# Ruff v0.16 adds automatic formatting of Markdown code blocks. This version of
+# Ruff isn't available in Nix packages yet, but sometimes I run the newer Ruff
+# outside of the devshell. Exclude markdown explicitly for now; we can apply the
+# formatting when the Nix version catches up.
+extend-exclude = ["**/*.md"]
+
 [lint]
 extend-select = ["I"]
