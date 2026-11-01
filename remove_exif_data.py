@@ -37,6 +37,8 @@ def main():
 
         before_checksums = [checksum(path) for path in cloned_paths]
 
+        # Run exiftool and inspect checksums instead of relying on exiftool's
+        # "x image files updated" output, which gives false positives.
         command = [
             "exiftool",
             "-ext",
