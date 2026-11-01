@@ -5,11 +5,10 @@ Use the default options recommended in the `exiftool` FAQ:
 https://exiftool.org/faq.html#Q32
 """
 
-import subprocess
 import argparse
-from pathlib import Path
-
+import subprocess
 import sys
+from pathlib import Path
 
 DIR = Path(__file__).parent / "static"
 
