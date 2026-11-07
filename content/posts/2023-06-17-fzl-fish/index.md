@@ -1,6 +1,6 @@
 +++
 title = "fzl.fish"
-aliases = [ "/2023/06/17/fzl.fish.html",]
+aliases = [ "/2023/06/17/fzl.fish.html", "/posts/2023-06-17-fzl/"]
 lastmod = 2026-10-29T15:10:00+00:00
 
 [params]

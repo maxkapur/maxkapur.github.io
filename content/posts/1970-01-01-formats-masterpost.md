@@ -122,7 +122,7 @@ Example below.
 
 {{< figure
   alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title \"Thesis defense\" is highlighted."
-  src="../2023-06-17-fzl.fish/fish-fzl-example.png"
+  src="../2023-06-17-fzl-fish/fish-fzl-example.png"
 >}}
 
 ## Python example
