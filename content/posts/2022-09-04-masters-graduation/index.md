@@ -8,7 +8,10 @@ id = "https://maxkapur.com/2022/09/04/masters-graduation"
 
 On September 29, I received my master’s degree in industrial engineering from Seoul National University!
 
-![A photograph of Max wearing his cap and gown at Seoul National University.](/assets/images/ms-graduation.jpg)
+{{< figure
+  alt="A photograph of Max wearing his cap and gown at Seoul National University."
+  src="ms-graduation.jpg"
+>}}
 
 It’s been a wonderful two years. Despite the challenges of social distancing, I was able to take a diverse assortment of courses in optimization, economics, and human factors; participate in research projects in two different labs; present at a conference in Jeju; and write (in both Korean and English) a thesis I’m [rather proud of](https://github.com/maxkapur/CollegeApplication).
 

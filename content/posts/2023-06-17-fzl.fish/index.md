@@ -43,4 +43,7 @@ Example below.
 
 <!--more-->
 
-![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/images/fish-fzl-example.png)
+{{< figure
+  alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title \"Thesis defense\" is highlighted."
+  src="fish-fzl-example.png"
+>}}
