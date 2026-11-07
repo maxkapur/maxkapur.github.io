@@ -26,11 +26,11 @@ AI and no marketing.
 
 Here’s what I look like:
 
-<img
+{{< figure
     class="compact"
     alt="Profile picture of me reading a book"
-    src="/assets/images/profile.jpg"
-/>
+    src="profile.jpg"
+>}}
 
 # Bio
 
