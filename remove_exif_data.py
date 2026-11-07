@@ -12,7 +12,7 @@ from hashlib import file_digest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-DIR = Path(__file__).parent / "static"
+DIR = Path(__file__).parent / "content"
 "Directory to glob for .jpg images."
 
 

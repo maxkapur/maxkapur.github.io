@@ -33,20 +33,16 @@ aquarium, a garden, and even birds! A few pics below.
 
 Here is their garden:
 
-<figure>
-<img
-  src="/assets/images/naju-gomtang-samaegi-garden.jpg"
+{{< figure
+  src="naju-gomtang-samaegi-garden.jpg"
   class="compact"
   alt="The garden at gomtang samaegi (나주곰탕사매기)."
-/>
-</figure>
+>}}
 
 And here is the soup:
 
-<figure>
-<img
-  src="/assets/images/naju-gomtang-samaegi-soup.jpg"
+{{< figure
+  src="naju-gomtang-samaegi-soup.jpg"
   class="compact"
   alt="The soup at gomtang samaegi (나주곰탕사매기)."
-/>
-</figure>
+>}}

@@ -12,10 +12,8 @@ The defense process was relatively painless: I received some very helpful commen
 
 I also was able to give a brief presentation about my research at a conference in Jeju at the end of last month. Here’s a terrible photo for Mom:
 
-<figure>
-<img
-  src="/assets/images/jeju-conference.jpg"
+{{< figure
+  src="jeju-conference.jpg"
   class="compact"
   alt="Max giving a presentation about the college application problem at a conference in Jeju"
-/>
-</figure>
+>}}

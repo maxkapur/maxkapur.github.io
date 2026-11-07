@@ -22,7 +22,7 @@ this:
 
 ![Scatter plot of sample input data. The y variable appears to be a sine wave
 with a period of roughly 6.28, amplitude a little less than 1, shifted to the
-right by about 6 units.](/assets/images/cyclical-data-before.svg)
+right by about 6 units.](cyclical-data-before.svg)
 
 {{< math "y" />}} is clearly a sinusoidal function of {{< math "x" />}} (plus noise), so there are three
 parameters we need to estimate:
@@ -129,7 +129,7 @@ Here is what the predicted model looks like:
 
 ![The same scatter plot as above, this time with the estimated sine wave drawn
 on top. The estimated function fits the data
-well.](/assets/images/cyclical-data-with-fit.svg)
+well.](cyclical-data-with-fit.svg)
 
 # Notes
 

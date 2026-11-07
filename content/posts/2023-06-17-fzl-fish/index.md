@@ -1,6 +1,6 @@
 +++
 title = "fzl.fish"
-aliases = [ "/2023/06/17/fzl.fish.html",]
+aliases = [ "/2023/06/17/fzl.fish.html", "/posts/2023-06-17-fzl/"]
 lastmod = 2026-10-29T15:10:00+00:00
 
 [params]
@@ -43,4 +43,7 @@ Example below.
 
 <!--more-->
 
-![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/images/fish-fzl-example.png)
+{{< figure
+  alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title \"Thesis defense\" is highlighted."
+  src="fish-fzl-example.png"
+>}}

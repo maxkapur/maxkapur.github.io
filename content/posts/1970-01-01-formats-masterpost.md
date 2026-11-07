@@ -24,17 +24,12 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsa ducimus la
 
 [^reftest]: Single-paragraph footnote.
 
-<figure>
-  <img
-    src="/assets/images/number-of-degrees.png"
-    class="squareborder"
-    alt="A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop."
-  />
-  <figcaption>
-  (National Center for Education Statistics,
-  <a href="https://nces.ed.gov/programs/coe/indicator_cta.asp">Undergraduate Degree Fields</a>)
-  </figcaption>
-</figure>
+{{< figure
+  src="../2020-04-16-accidental-signals/number-of-degrees.png"
+  alt="A graph showing the number of college degrees granted in various fields of study between the years 2000 and 2017. The number of degrees granted in health professions and related programs and business has increased steadily, wile the number in the social sciences and history has increased before beginning to drop."
+  caption="(National Center for Education Statistics, [Undergraduate Degree Fields](https://nces.ed.gov/programs/coe/indicator_cta.asp))"
+  class="squareborder"
+>}}
 
 What a figure!
 
@@ -125,7 +120,10 @@ end
 
 Example below.
 
-![A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title "Thesis defense" is highlighted.](/assets/images/fish-fzl-example.png)
+{{< figure
+  alt="A screengrab of the terminal output produced by fzl.fish. It shows a list of filenames corresponding to posts on this blog; the post title \"Thesis defense\" is highlighted."
+  src="../2023-06-17-fzl-fish/fish-fzl-example.png"
+>}}
 
 ## Python example
 

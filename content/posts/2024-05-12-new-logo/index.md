@@ -9,17 +9,23 @@ id = "https://maxkapur.com/2024/05/12/new-logo"
 
 I created a new logo for the site today:
 
-<p style="max-width: 48px">
-<img src="/assets/images/logo-new.svg" alt="New logo: A stylized letter M formed by joining four segments with colors drawn from the site theme" />
-</p>
+{{< figure
+  src="logo-new.svg"
+  alt="New logo: A stylized letter M formed by joining four segments with colors drawn from the site theme"
+  width="48px"
+  height="48px"
+>}}
 
 The old one was a square with my initials, MK, which seemed self-indulgent (not
 to mention that I share these initials with half my extended family, so I can
 hardly claim them):
 
-<p style="max-width: 48px">
-<img src="/assets/images/logo-old.svg" alt="Old logo: The initials MK in green on a yellowish background" />
-</p>
+{{< figure
+  src="logo-old.svg"
+  alt="Old logo: The initials MK in green on a yellowish background"
+  width="48px"
+  height="48px"
+>}}
 
 The new logo still kind of forms a stylized letter *m,* if you imagine the three
 theme-colored vertical segments as hanging from the horizontal segment on top.

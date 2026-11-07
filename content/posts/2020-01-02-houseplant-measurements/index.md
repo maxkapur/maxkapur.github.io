@@ -8,30 +8,27 @@ id = "https://maxkapur.com/2020/01/02/houseplant-measurements"
 
 I have been measuring the leaves of my houseplants.
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-1-length-width.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-1-length-width.png"
+  class="compact squareborder"
+  alt="Scatter plot showing positively correlated length and width of houseplant leaves, color coded for Aretha (big plant) and Brad (small plant)"
+>}}
 
 <!--more-->
 
 It <em>is</em> surprising how normal these distributions are.
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-2-area-qq.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-2-area-qq.png"
+  class="compact squareborder"
+  alt="q-q plot for area of Brad and Aretha leaves against a normal distribution"
+>}}
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-3-ratio-qq.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-3-ratio-qq.png"
+  class="compact squareborder"
+  alt="q-q plot for aspect ratio of Brad and Aretha leaves against a normal distribution"
+>}}
 
 I’m putting my stats notes
 [here](https://github.com/maxkapur/maxkapur.github.io/blob/e08d16ffa237fcb418a96fcae35298d3b04e733d/math/stats.ipynb).
