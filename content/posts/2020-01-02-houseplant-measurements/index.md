@@ -8,30 +8,24 @@ id = "https://maxkapur.com/2020/01/02/houseplant-measurements"
 
 I have been measuring the leaves of my houseplants.
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-1-length-width.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-1-length-width.png"
+  class="compact squareborder"
+>}}
 
 <!--more-->
 
 It <em>is</em> surprising how normal these distributions are.
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-2-area-qq.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-2-area-qq.png"
+  class="compact squareborder"
+>}}
 
-<figure>
-  <img class="compact squareborder"
-    src="/assets/images/houseplants-3-ratio-qq.png"
-    alt="alt"
-  />
-</figure>
+{{< figure
+  src="houseplants-3-ratio-qq.png"
+  class="compact squareborder"
+>}}
 
 I’m putting my stats notes
 [here](https://github.com/maxkapur/maxkapur.github.io/blob/e08d16ffa237fcb418a96fcae35298d3b04e733d/math/stats.ipynb).

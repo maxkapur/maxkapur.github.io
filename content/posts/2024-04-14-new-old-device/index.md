@@ -11,13 +11,11 @@ On a recent visit home, I dug this 2007
 [Sansa Clip](https://en.wikipedia.org/wiki/SanDisk_portable_media_players#Sansa_Clip)
 out of a box.
 
-<figure>
-<img
-  src="/assets/images/rockbox-sansa-clip.jpg"
+{{< figure
+  src="rockbox-sansa-clip.jpg"
   class="compact"
   alt="An image of an Obama-era Sansa clip (released in late 2007, probably manufactured later) running the Rockbox custom firmware"
-/>
-</figure>
+>}}
 
 It’s battery life is shot, but everything works, and I unearthed some critical
 throwback jams from the built-in 4GB of flash memory (among other things, the

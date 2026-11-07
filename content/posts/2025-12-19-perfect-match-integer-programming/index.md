@@ -235,13 +235,11 @@ Each point in the scatter plot below corresponds to one full game (one season).
 The y-axis represents how many turns contestants took to make a correct
 guess in Match Up.
 
-<figure>
-  <img
-    class="compact squareborder"
-    alt="Scatter plot showing negative correlation between strength of intuition and turns to win"
-    src="strength-vs-nturns.svg"
-  />
-</figure>
+{{< figure
+  class="compact squareborder"
+  alt="Scatter plot showing negative correlation between strength of intuition and turns to win"
+  src="strength-vs-nturns.svg"
+>}}
 
 We see a roughly linear, negative relationship between intuition strength and
 turns taken. We win by episode&nbsp;10 most of the time, even on the noisy side
@@ -260,13 +258,11 @@ solver something to optimize.
 
 The histogram below shows how many episodes contestants typically need to win.
 
-<figure>
-  <img
-    class="compact squareborder"
-    alt="Histogram showing number of turns to win with intuition fixed to negative infinity. A bell curve centered around 8 or 9"
-    src="no-intuition.svg"
-  />
-</figure>
+{{< figure
+  class="compact squareborder"
+  alt="Histogram showing number of turns to win with intuition fixed to negative infinity. A bell curve centered around 8 or 9"
+  src="no-intuition.svg"
+>}}
 
 In the challenging environment of experiment&nbsp;2, my algorithm wins by
 episode&nbsp;10 only 93% of the time, compared to Owen's 98%. However, 93% is
@@ -281,13 +277,11 @@ The conditions of experiment&nbsp;3 cater best to my algorithm's objectives.
 Here, we fix {{< math "s = -1" />}} (a signal-to-noise ratio of 1:2),
 meaning that contestants have some intuition, but it's not particularly strong.
 
-<figure>
-  <img
-    class="compact squareborder"
-    alt="Histogram showing number of turns to win with intuition fixed to negative one. A bell curve centered around 6 or 7"
-    src="weak-intuition.svg"
-  />
-</figure>
+{{< figure
+  class="compact squareborder"
+  alt="Histogram showing number of turns to win with intuition fixed to negative one. A bell curve centered around 6 or 7"
+  src="weak-intuition.svg"
+>}}
 
 In this case, we eke out a win 100% of the time! And again, running all 500
 simulations takes less than two minutes.
