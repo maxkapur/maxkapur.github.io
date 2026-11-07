@@ -4,7 +4,7 @@ menus = [ "main",]
 aliases = [ "/about/",]
 weight = 10
 date = 2024-12-01T11:22:03-06:00
-lastmod = 2025-03-16T13:21:35-04:00
+lastmod = 2026-11-07T16:17:18+00:00
 
 [params]
 id = "tag:max@maxkapur.com,2026-05-27:pages/About"
@@ -12,22 +12,29 @@ id = "tag:max@maxkapur.com,2026-05-27:pages/About"
 
 Illusion Slopes is a personal website.
 
-Why have a personal website? I've revised my goals for this website more times than
-I can count. Sometimes, the purpose of my website is to cultivate a professional
-image. Other times, Illusion Slopes is a place to be myself and write about anything *other*
-than work. And on yet other days, it's a tech cauldron—a space where I practice
-new programming or version control concepts, or play at web design, without writing
-any new posts at all.
+Why have a personal website? I've revised my goals for this website more times
+than I can count. Sometimes, the purpose of my website is to cultivate a
+professional image. Other times, Illusion Slopes is a place to be myself and
+write about anything *other* than work. And on yet other days, it's a tech
+cauldron—a space where I practice new programming concepts, tighten my version
+control system, or play at web design, and neglect to write any new posts at
+all.
 
-So, I can't promise much in terms of consistency or regularity. But generally,
-when I write, I write about these topics:
+In other words, I can't promise much in terms of consistency or regularity. But
+generally, when I write, I write about these topics:
 
-- [Numerical optimization](../../posts/2025-12-19-perfect-match-integer-programming) and [game theory](../../posts/2021-03-07-stable-matching-planet-money) IRL
-- Professional/educational experiences such as [teaching English in Korea](../../posts/2018-08-25-a-thing-here) and the [Critical Language Scholarship](../../posts/2016-06-25-first-week-class-cnu) program
-- Things I [read](../../posts/2024-12-08-novels-to-understand-korea) and [opinions](../../posts/2025-08-20-full-of-types) about them
-- Learning and studying Korean now that I'm no longer in school ([Anki](../../posts/2026-06-03-metasystems) shoutout)
+- [Numerical optimization](/posts/2025-12-19-perfect-match-integer-programming/)
+  and [game theory](/posts/2021-03-07-stable-matching-planet-money/) IRL
+- Professional/educational experiences such as [teaching English in
+  Korea](/posts/2018-08-25-a-thing-here/) and the [Critical Language
+  Scholarship](/posts/2016-06-25-first-week-class-cnu/) program
+- Things I [read](/posts/2024-12-08-novels-to-understand-korea/) and
+  [opinions](/posts/2025-08-20-full-of-types/) about them
+- Learning and studying Korean now that I'm no longer in school
+  ([Anki](/posts/2026-06-03-metasystems/) shoutout)
 
-Here’s a photo of me from the cafe at [Dixon Gallery & Gardens](https://www.dixon.org/) in Memphis:
+Here’s a photo of me from the cafe at [Dixon Gallery &
+Gardens](https://www.dixon.org/) in Memphis:
 
 {{< figure
     class="compact"
@@ -37,8 +44,8 @@ Here’s a photo of me from the cafe at [Dixon Gallery & Gardens](https://www.di
 
 # Bio
 
-What follows is the biography I copy-paste into LinkedIn. It's due for an update,
-but not today.
+What follows is the biography I copy-paste into LinkedIn. It's due for an
+update, but not today.
 
 I currently work as an operations research analyst at a private consulting firm,
 where I use modeling, simulation, numerical optimization, and algorithmic game
@@ -48,9 +55,9 @@ In 2022, I completed my master&rsquo;s degree in industrial engineering at Seoul
 National University, where my [thesis
 research](https://github.com/maxkapur/CollegeApplication) concerned numerical
 modeling of college admissions markets. I also worked as a research assistant in
-the
-[Management Science/Optimization Lab](https://web.archive.org/web/20230323144548/http://polytope.snu.ac.kr/)
-at SNU, where I supported a variety of projects related to linear and nonlinear
+the [Management Science/Optimization
+Lab](https://web.archive.org/web/20230323144548/http://polytope.snu.ac.kr/) at
+SNU, where I supported a variety of projects related to linear and nonlinear
 programming, combinatorial optimization, and urban transit network models.
 
 Prior to my studies at SNU, I taught English for two years as a US State
@@ -61,8 +68,8 @@ video](https://www.youtube.com/playlist?list=PL06yMQdXWrp9VsynaPe2mg2gjHfr45VZO)
 
 # Contact
 
-The best way to reach me is by emailing me at [max@maxkapur.com](mailto:max@maxkapur.com).
-You can also find me on
+The best way to reach me is by emailing me at
+[max@maxkapur.com](mailto:max@maxkapur.com). You can also find me on
 [GitHub](https://github.com/maxkapur),
 [LinkedIn](https://www.linkedin.com/in/maxkapur), and
 [YouTube](https://www.youtube.com/channel/UCRfryFgD6JkqJiTA_MTkHXw).
