@@ -10,21 +10,24 @@ lastmod = 2025-03-16T13:21:35-04:00
 id = "tag:max@maxkapur.com,2026-05-27:pages/About"
 +++
 
-Illusion Slopes is a personal blog. I write about whatever’s on my mind. My goal
-is to document my thoughts and gain perspective on how they have evolved since
-starting this site as a college student in 2016. I’m also interested in
-connecting with readers who have similar life experiences or contrasting
-viewpoints.
+Illusion Slopes is a personal website.
 
-<!--more-->
+Why have a personal website? I've revised my goals for this website more times than
+I can count. Sometimes, the purpose of my website is to cultivate a professional
+image. Other times, Illusion Slopes is a place to be myself and write about anything *other*
+than work. And on yet other days, it's a tech cauldron—a space where I practice
+new programming or version control concepts, or play at web design, without writing
+any new posts at all.
 
-I’m enthusiastic about the indie web and the possibilities the internet holds as
-a platform for personal expression and human connection—you know, what social
-media was supposed to be. I try, on this site, to be maximally
-[authentic](/posts/2025-03-12-authenticity-ai-policy/), which means no
-AI and no marketing.
+So, I can't promise much in terms of consistency or regularity. But generally,
+when I write, I write about these topics:
 
-Here’s what I look like:
+- [Numerical optimization](../../posts/2025-12-19-perfect-match-integer-programming) and [game theory](../../posts/2021-03-07-stable-matching-planet-money) IRL
+- Professional/educational experiences such as [teaching English in Korea](../../posts/2018-08-25-a-thing-here) and the [Critical Language Scholarship](../../posts/2016-06-25-first-week-class-cnu) program
+- Things I [read](../../posts/2024-12-08-novels-to-understand-korea) and [opinions](../../posts/2025-08-20-full-of-types) about them
+- Learning and studying Korean now that I'm no longer in school ([Anki](../../posts/2026-06-03-metasystems) shoutout)
+
+Here’s a photo of me from the cafe at [Dixon Gallery & Gardens](https://www.dixon.org/) in Memphis:
 
 {{< figure
     class="compact"
@@ -33,6 +36,9 @@ Here’s what I look like:
 >}}
 
 # Bio
+
+What follows is the biography I copy-paste into LinkedIn. It's due for an update,
+but not today.
 
 I currently work as an operations research analyst at a private consulting firm,
 where I use modeling, simulation, numerical optimization, and algorithmic game
@@ -63,8 +69,7 @@ You can also find me on
 
 I especially love hearing from applicants and current participants about the US
 State Department&rsquo;s Fulbright and Critical Language scholarships and the
-Government of Korea Scholarship, all of which were transformative experiences in
-my personal and professional life.
+Government of Korea Scholarship, all of which were transformative experiences.
 
 # Disclaimer
 
