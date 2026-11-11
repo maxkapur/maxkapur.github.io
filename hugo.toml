@@ -40,9 +40,14 @@ posts = "/posts/:year-:month-:day-:slug"
 # Shadow the [menus] key from the theme's hugo.toml to suppress "Tags" link, as
 # I don't use tags
 [[menus.main]]
-name = 'Posts'
+name = 'Blog'
 pageRef = '/posts'
-weight = 999
+weight = 800
+
+[[menus.main]]
+name = 'Sitemap'
+pageRef = '/sitemap'
+weight = 900
 
 [markup.goldmark]
 renderer.unsafe = true
