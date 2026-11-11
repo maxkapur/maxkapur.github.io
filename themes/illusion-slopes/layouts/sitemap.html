@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <div class="vertical-spacing">
+    <header>{{ .Content }}</header>
+    <section>
+      <p><strong>All pages:</strong></p>
+      <ul>
+        {{ $posts := where site.RegularPages "Section" "pages" }}
+        {{ range $posts.ByTitle }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      <section></section>
+
+      <p><strong>All posts:</strong></p>
+      <ul>
+        {{ $posts := where site.RegularPages "Section" "posts" }}
+        {{ range $posts.ByDate.Reverse }}
+          {{ $dateMachine := .Date |
+            time.Format "2006-01-02T15:04:05-07:00"
+          -}}
+          {{ $dateHuman := .Date |
+            time.Format ":date_long"
+          -}}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <span class="smaller">
+              (<time datetime="{{ $dateMachine }}">{{- $dateHuman -}}</time>)
+            </span>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  </div>
+{{ end }}
