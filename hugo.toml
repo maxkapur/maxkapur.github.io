@@ -44,10 +44,5 @@ name = 'Blog'
 pageRef = '/posts'
 weight = 800
 
-[[menus.main]]
-name = 'Sitemap'
-pageRef = '/sitemap'
-weight = 900
-
 [markup.goldmark]
 renderer.unsafe = true
