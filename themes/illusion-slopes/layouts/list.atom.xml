@@ -67,6 +67,7 @@
     </author>
   {{- end }}
 
+
   <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
 
   {{- range $pages }}
