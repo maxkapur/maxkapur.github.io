@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48.000011"
+   viewBox="0 0 12.7 12.700003"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="logo-old.svg"
+   inkscape:export-filename="favicon.png"
+   inkscape:export-xdpi="50.799999"
+   inkscape:export-ydpi="50.799999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffeb"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1708566"
+     inkscape:cx="26.026592"
+     inkscape:cy="4.1458288"
+     inkscape:window-width="1368"
+     inkscape:window-height="856"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="2376.3569"
+       y="566.92914"
+       width="41.580933"
+       height="65.301796"
+       id="rect1071" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-143.64996,-143.64999)">
+    <rect
+       style="fill:#ffffeb;fill-opacity:1;stroke-width:0.0112183"
+       id="rect1"
+       width="12.7"
+       height="12.700003"
+       x="143.64996"
+       y="143.64999" />
+    <path
+       style="font-weight:800;font-size:7.46714px;font-family:Rubik;-inkscape-font-specification:'Rubik Ultra-Bold';fill:#008000;stroke-width:0.00846667"
+       d="m 144.89245,152.61349 q -0.0821,0 -0.14188,-0.0523 -0.0597,-0.0597 -0.0597,-0.14187 v -4.83871 q 0,-0.0821 0.0597,-0.13441 0.0597,-0.0597 0.14188,-0.0597 h 0.99313 q 0.13441,0 0.20161,0.0747 0.0672,0.0747 0.0896,0.10454 l 1.19474,2.07586 1.19474,-2.07586 q 0.0224,-0.0299 0.0896,-0.10454 0.0672,-0.0747 0.20161,-0.0747 h 0.99313 q 0.0821,0 0.13441,0.0597 0.0597,0.0523 0.0597,0.13441 v 4.83871 q 0,0.0821 -0.0597,0.14187 -0.0523,0.0523 -0.13441,0.0523 h -1.12007 q -0.0821,0 -0.14188,-0.0523 -0.0523,-0.0597 -0.0523,-0.14187 V 150 l -0.67204,1.1798 q -0.0373,0.0597 -0.0971,0.11948 -0.0597,0.0597 -0.17175,0.0597 h -0.45549 q -0.10454,0 -0.16428,-0.0597 -0.0597,-0.0597 -0.0971,-0.11948 L 146.20667,150 v 2.41935 q 0,0.0821 -0.0597,0.14187 -0.0523,0.0523 -0.13441,0.0523 z m 6.27987,0 q -0.0747,0 -0.13441,-0.0523 -0.0597,-0.0597 -0.0597,-0.14187 v -4.83871 q 0,-0.0821 0.0597,-0.13441 0.0597,-0.0597 0.13441,-0.0597 h 1.18728 q 0.0821,0 0.13441,0.0597 0.0597,0.0523 0.0597,0.13441 v 1.5681 l 1.11261,-1.60543 q 0.0373,-0.0523 0.10454,-0.10454 0.0672,-0.0523 0.18668,-0.0523 h 1.36648 q 0.0672,0 0.11201,0.0523 0.0523,0.0448 0.0523,0.112 0,0.0448 -0.0299,0.0821 l -1.5681,2.25508 1.70251,2.47909 q 0.0299,0.0299 0.0299,0.0821 0,0.0672 -0.0523,0.11947 -0.0448,0.0448 -0.11201,0.0448 h -1.41129 q -0.14187,0 -0.21655,-0.0672 -0.0672,-0.0672 -0.0821,-0.0971 l -1.19475,-1.73238 v 1.70251 q 0,0.0821 -0.0597,0.14187 -0.0523,0.0523 -0.13441,0.0523 z"
+       id="text1127"
+       aria-label="MK" />
+  </g>
+</svg>
