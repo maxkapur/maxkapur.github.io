@@ -1,3 +1,4 @@
 +++
 layout = "sitemap"
+title = "Sitemap"
 +++
