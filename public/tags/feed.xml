@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">
+      Tags | Illusion Slopes</title>
+    <link href="https://maxkapur.com/tags/feed.xml" rel="self" />
+  <link href="https://maxkapur.com/" rel="alternate" />
+    <subtitle type="text">Max’s personal homepage</subtitle>
+    <id>https://maxkapur.com/tags/</id>
+    <icon>https://maxkapur.com/favicon/favicon.png</icon>
+    <author>
+        <name>Max Kapur</name>
+        <email>max@maxkapur.com</email>
+    </author>
+
+
+  <rights type="text">Creative Commons CC BY-SA 4.0 license</rights>
+
+</feed>
