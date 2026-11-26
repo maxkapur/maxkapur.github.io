@@ -18,7 +18,8 @@ params.author.name = "Max Kapur"
 params.author.email = "max@maxkapur.com"
 
 # Build settings
-cleanDestinationDir = true
+[build]
+cleanDestinationDir.enable = true
 
 [outputs]
 home = ["html", "atom"]
